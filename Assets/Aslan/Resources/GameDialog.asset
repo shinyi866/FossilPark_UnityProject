@@ -51,7 +51,7 @@ MonoBehaviour:
     success: "\u770B\u5230\u771F\u7684\u7570\u2FD2\u9F8D\u4E86\uFF01\u771F\u958B\u2F3C\uFF0C\u597D\u8036\u6211\u5011\u56DE\u53BB\u5427\uFF01"
     fail: "\u6C92\u6709\u770B\u5230\u7570\u2FD2\u9F8D..."
     pictureNotify: "\u9EDE\u6309\u76F8\u6A5F\u8207\u6885\u82B1\u9E7F\u62CD\u7167"
-    animalDialogPicture: {fileID: 21300000, guid: f5a2652cd30644795804c0e4ec67da93,
+    animalDialogPicture: {fileID: 21300000, guid: 088cdb012e74645f29ad7629442dfb8e,
       type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: dbdcf7ee770a6441da39653beced9a79,
       type: 3}
@@ -66,7 +66,7 @@ MonoBehaviour:
     success: "\u4F60\u771F\u53B2\u5BB3\uFF0C\u62FF\u5230\u4E86\u597D\u591A\u679C\u2F26\uFF01\u2F00\u8D77\u62CD\u5F35\u7167\u7247\u5F8C\u56DE\u53BB\u5427"
     fail: "\u679C\u2F26\u4E0D\u5920\u591A\u554A\uFF01\r\u6211\u9084\u662F\u8981\u8DDF\u4F60\u56DE\u53BB"
     pictureNotify: "\u9EDE\u6309\u76F8\u6A5F\u8207\u7334\u2F26\u62CD\u7167"
-    animalDialogPicture: {fileID: 21300000, guid: 9c7d80084545440d5a4d82872e66f22d,
+    animalDialogPicture: {fileID: 21300000, guid: 6800d9c2d927c45f0a77579a9121d1bc,
       type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: 4158b7969ef464f2ea3f222ac183b4aa,
       type: 3}
@@ -81,7 +81,7 @@ MonoBehaviour:
     success: "\u7D42\u65BC\u9003\u96E2\u4E86\u4ED6\u7684\u8FFD\u8D95\u6211\u5011\u5FEB\u62CD\u7167\u56DE\u5BB6\u5427\uFF01\u9EDE\u6309\u76F8\u6A5F\u62CD\u4E0B\u6D77\u8C5A\uFF01"
     fail: "\u5DEE\u9EDE\u5C31\u88AB\u5403\u6389\u4E86\uFF01\u6211\u5011\u56DE\u53BB\u5427\uFF01"
     pictureNotify: "\u9EDE\u6309\u76F8\u6A5F\u8207\u6D77\u8C5A\u62CD\u7167"
-    animalDialogPicture: {fileID: 21300000, guid: 3d247237a4e63486abc512514217a9c5,
+    animalDialogPicture: {fileID: 21300000, guid: e666fd2aa530d406f87a6ddaa8078baa,
       type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: a3cb0111319d742bea6f2dce7bc23d91,
       type: 3}
@@ -96,7 +96,7 @@ MonoBehaviour:
     success: "\u6642\u7A7A\u626D\u66F2\u5BB3\u6211\u7684\u9AA8\u982D\u90FD\u6563\u4E86\uFF01\u771F\u662F\u7D2F\u2F08\uFF0C\u5FEB\u8B93\u6211\u56DE\u5230\u6B63\u5E38\u7684\u6642\u7A7A\u4E0A\u5427\uFF01"
     fail: 
     pictureNotify: "\u9EDE\u6309\u76F8\u6A5F\u8207\u7280\u2F5C\u62CD\u7167"
-    animalDialogPicture: {fileID: 21300000, guid: 9f681716443784d75aa9519cae7be71b,
+    animalDialogPicture: {fileID: 21300000, guid: c8e9d4d5ff280458f99442f5f1e3c19f,
       type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: cc7c3e4af88a54caabfb5b2a64e76f64,
       type: 3}
@@ -113,7 +113,8 @@ MonoBehaviour:
     success: "\u597D\u53B2\u5BB3\u554A\uFF01\u5C45\u7136\u90FD\u88AB\u4F60\u627E\u5230\u4E86\uFF0C\u6211\u4E5F\u73A9\u5920\u4E86\uFF0C\u6211\u5011\u8D95\u5FEB\u900F\u904E\u62CD\u7167\uFF0C\u56DE\u53BB\u5230\u6A5F\u5668\u88E1\u4F11\u606F\u5427\uFF01"
     fail: "\u6211\u5728\u9019\u88E1\u62C9\uFF01\u9019\u5834\u904A\u6232\u662F\u6211\u8D0F\u4E86\uFF5E\u6211\u5011\u56DE\u53BB\u5427\uFF01"
     pictureNotify: "\u9EDE\u6309\u76F8\u6A5F\u8207\u731B\u746A\u8C61\u62CD\u7167"
-    animalDialogPicture: {fileID: 0}
+    animalDialogPicture: {fileID: 21300000, guid: c4e38cb9ad1ac44df85347a94a43c90d,
+      type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: 7e9963564df53418c9fbd21cc081a2e5,
       type: 3}
   - missionID: 7
@@ -128,7 +129,7 @@ MonoBehaviour:
     success: "\u6211\u7684\u7259\u2FD2\u8B8A\u5F97\u597D\u4E7E\u6DE8\u554A\uFF01\u5FEB\u4F86\u62CD\u4E0B\u6211\u5E25\u6C23\u7684\u81C9\u9F90\u5427\uFF01"
     fail: 
     pictureNotify: "\u9EDE\u6309\u76F8\u6A5F\u8207\u9C77\u9B5A\u62CD\u7167"
-    animalDialogPicture: {fileID: 21300000, guid: 7d56af94f107b431eafcc28c264db314,
+    animalDialogPicture: {fileID: 21300000, guid: 0c499eb7a35a64fa38c49b0027296b84,
       type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: ddc49c32ded8142a592c1d919bbc07d0,
       type: 3}
@@ -143,6 +144,6 @@ MonoBehaviour:
     success: 
     fail: 
     pictureNotify: 
-    animalDialogPicture: {fileID: 21300000, guid: 7d56af94f107b431eafcc28c264db314,
+    animalDialogPicture: {fileID: 21300000, guid: 088cdb012e74645f29ad7629442dfb8e,
       type: 3}
     animalNotifyPicture: {fileID: 0}
