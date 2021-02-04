@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f071276c0bb746d8ae33fc888dc641a, type: 3}
+  m_Name: ScoreImage
+  m_EditorClassIdentifier: 
+  ScoreItems:
+  - score: 0
+    ScoreImage: {fileID: 21300000, guid: 7fa723acc181a4181a6f8eaf00c7353e, type: 3}
+  - score: 1
+    ScoreImage: {fileID: 21300000, guid: 392c5649c9a43451e874b294de8e3802, type: 3}
+  - score: 2
+    ScoreImage: {fileID: 21300000, guid: 13e187723da964634a0f5e056e439d76, type: 3}
+  - score: 3
+    ScoreImage: {fileID: 21300000, guid: da770a541e4a945c19e1eb54b263e0b9, type: 3}
+  - score: 4
+    ScoreImage: {fileID: 21300000, guid: b58bf44afc6af413398ff4d27dd30547, type: 3}
+  - score: 5
+    ScoreImage: {fileID: 21300000, guid: 099f7100cc33b4077b50f44bb5081fb1, type: 3}
+  - score: 6
+    ScoreImage: {fileID: 21300000, guid: b1d320033dcc94915bf1747fc7626dc0, type: 3}

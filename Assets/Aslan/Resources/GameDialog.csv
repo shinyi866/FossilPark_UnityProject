@@ -1,0 +1,14 @@
+missionID,roundMessage,enterMessage,enterButton,gameDescription,dialogButton,gameNotify,success,fail,pictureNotify,animalDialogPicture,animalNotifyPicture
+0,附近似乎有時光機器，趕緊找找看吧！,,體驗開始,,,,,,,,
+1,附近似乎有時光機器，趕緊找找看吧！,,啟動逆走鐘,,,,,,,,
+2,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,我們找到了梅花鹿管理員了，趕緊帶他回到逆走鐘時光機中吧！,帶回管理員,"嗨！我是逆走中時光機中的梅花鹿，因為機器故障來到這裡！難得來到這，聽說附近有三隻稀有的異⿒龍！我有五張底片，我想找到他們並拍照留念！",尋找古⽣物,"協助梅花鹿在園區內拍攝三隻異⿒龍,看到真的異⿒龍了！,咦？這裡沒有異⿒龍啊?,這隻你已經拍過囉，再找找看有沒有別隻！",看到真的異⿒龍了！真開⼼，好耶我們回去吧！,沒有看到異⿒龍...,點按相機與梅花鹿拍照,Assets/Aslan/ArtSprite/MainUI/clock_0/clockbg.png,Assets/Aslan/ArtSprite/GameUI/induction2/Sika_deer.png
+3,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,我們在樹上找到了⾦絲猴管理員了，趕緊帶他回到逆走鐘時光機中吧！,帶回管理員,"嗨！你在找我嗎！我在這裡找到⼀顆好⾼的樹，我喜歡這裡！我們來玩點遊戲再回去吧！",⼀起玩遊戲,左右移動接取猴⼦丟下的果⼦！成功後猴⼦就會跟我們回去了喔！,你真厲害，拿到了好多果⼦！⼀起拍張照片後回去吧,"果⼦不夠多啊！我還是要跟你回去",點按相機與猴⼦拍照,Assets/Aslan/ArtSprite/MainUI/clock_0/frame_0.png,Assets/Aslan/ArtSprite/GameUI/induction2/monkey.png
+4,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,我們在遠古的海洋找到海豚管理員了，牠好像被什麼追趕著，快上去看看！,上前看看,"你是來帶我回去的嗎！真是得救了！我現在正被滄龍追趕著！快救救我！",協助他逃離,點按海豚，幫助他逃離蒼龍的追趕！,終於逃離了他的追趕我們快拍照回家吧！點按相機拍下海豚！,差點就被吃掉了！我們回去吧！,點按相機與海豚拍照,Assets/Aslan/ArtSprite/MainUI/clock_0/frame_1.png,Assets/Aslan/ArtSprite/GameUI/induction2/dolphin.png
+5,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,我們在地上看到了犀⽜理員....的化⽯，把它拼湊起來他應該就會出現了吧！,拼湊犀⽜化⽯,,,點按犀⽜化⽯將犀⽜拼湊完成,時空扭曲害我的骨頭都散了！真是累⼈，快讓我回到正常的時空上吧！,,點按相機與犀⽜拍照,Assets/Aslan/ArtSprite/MainUI/clock_0/frame_2.png,Assets/Aslan/ArtSprite/GameUI/induction2/crocodile.png
+6,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,我們在這片冰雪之中似乎發現了猛獁象的蹤跡。,尋找猛獁象,"我被傳送到這片冰天雪地之中，雪很鬆軟，我很喜歡。
+我們⼀起在這片冰天雪地之中玩躲貓貓吧！",⼀起玩遊戲,"在冰雪之中找到猛獁象,  找到猛獁象了！原來你躲在這！,咦？這裡沒有猛獁象啊?",好厲害啊！居然都被你找到了，我也玩夠了，我們趕快透過拍照，回去到機器裡休息吧！,我在這裡拉！這場遊戲是我贏了～我們回去吧！,點按相機與猛瑪象拍照,Assets/ArtSprite/Aslan/MainUI/clock_0/frame_3.png,Assets/Aslan/ArtSprite/GameUI/induction2/Hayasaka.png
+7,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,在沼澤附近發現了鱷⿂的蹤跡，他窩在沼澤不知道怎麼了，我們去看看他吧！,前往尋找,"我在這裡！
+你說拍照就可以回到時光機裡⾯嗎？
+可是我牙⿒很髒，不想拍照噎！
+你可以幫我刷牙嗎？",幫鱷⿂刷牙,"使⽤牙刷幫鱷⿂把牙⿒刷乾淨。,使⽤牙刷幫鱷⿂刷牙",我的牙⿒變得好乾淨啊！快來拍下我帥氣的臉龐吧！,,點按相機與鱷魚拍照,Assets/Aslan/ArtSprite/MainUI/clock_0/gear1.png,Assets/Aslan/ArtSprite/GameUI/induction2/mammoth.png
+8,附近似乎有特別的動物，趕緊找找看吧！,時光機被漸漸地修復了，我們正⼀點點地回到過去！草原上好像有什麼特別的⽣物快去看看！,前往觀看,,,拿取⾁塊與樹葉可以餵食恐龍喔！,,,,Assets/Aslan/ArtSprite/MainUI/clock_0/gear1.png,

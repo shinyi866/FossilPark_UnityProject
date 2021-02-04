@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10817171dd9ea48e3880a174b1bfedac, type: 3}
+  m_Name: AnimalItemObj
+  m_EditorClassIdentifier: 
+  AnimalItems:
+  - MainImage: {fileID: 21300000, guid: 4b950162f0a144e00a113db06816d874, type: 3}
+    NameImage: {fileID: 21300000, guid: 577a8c9dd138e4bb3995ff800aee28e9, type: 3}
+    text: 000000
+  - MainImage: {fileID: 21300000, guid: 3facd46c94489479a954fad7b3fbe529, type: 3}
+    NameImage: {fileID: 21300000, guid: b7dde79b9338b44418f05898f70bffe5, type: 3}
+    text: 1111111
+  - MainImage: {fileID: 21300000, guid: 20ddc8f716d0a42bea56b5f18573b42d, type: 3}
+    NameImage: {fileID: 21300000, guid: 7042abd7618b04d409beeaf4598bc189, type: 3}
+    text: 2222222
+  - MainImage: {fileID: 21300000, guid: 3ca64901fb0784247a409f40de361e69, type: 3}
+    NameImage: {fileID: 21300000, guid: 768d7222a304a4a60af8b6a05afa6cd5, type: 3}
+    text: 333333
+  - MainImage: {fileID: 21300000, guid: 97db337cf87494702ab64d348ae1778e, type: 3}
+    NameImage: {fileID: 21300000, guid: c4c01a175374f4534a3f68dad0f3f40f, type: 3}
+    text: 4444444
+  - MainImage: {fileID: 21300000, guid: c076d053c10c44ce29d4e59ad49a0907, type: 3}
+    NameImage: {fileID: 21300000, guid: 107436985b0e84c609c1a43663f216a7, type: 3}
+    text: 55555555
+  DinosaurlItems:
+  - MainImage: {fileID: 21300000, guid: d0aad28dafd7f4d658e7f1b0629b9e6a, type: 3}
+    NameImage: {fileID: 21300000, guid: a3678664a3efd413cae222e223c27e57, type: 3}
+    text: ddd000000
+  - MainImage: {fileID: 21300000, guid: 20eff8d25474c4fcfb022abff18d5417, type: 3}
+    NameImage: {fileID: 21300000, guid: d53336d4477ea43c8947e78371d2690c, type: 3}
+    text: ddd1111111
+  - MainImage: {fileID: 21300000, guid: 850daa4fe0ece47bdbb87275fcaf890e, type: 3}
+    NameImage: {fileID: 21300000, guid: a9ea87f3cc1f942428c2843698d6dbfe, type: 3}
+    text: ddd2222222
+  - MainImage: {fileID: 21300000, guid: 30f4eac1aeeb64c0d81755b7730116e6, type: 3}
+    NameImage: {fileID: 21300000, guid: 3d474d504bafa4cabb1ff5365cba3101, type: 3}
+    text: ddd333333
+  - MainImage: {fileID: 21300000, guid: b1d320033dcc94915bf1747fc7626dc0, type: 3}
+    NameImage: {fileID: 21300000, guid: 7231f2dfa62a646a68d52e0137dd1a45, type: 3}
+    text: ddd4444444
