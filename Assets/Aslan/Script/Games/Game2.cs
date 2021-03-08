@@ -15,7 +15,8 @@ namespace GameMission
         private int missionIndex = 2;
         private string videoPath = "Video/4096.mp4";
         private Camera _camera;
-        private bool isGameStart;
+        private bool isARGameStart;
+        private bool isUnARGameStart;
         //private int times = 5;
         private int successTimes;
         //private int failTimes;
@@ -31,14 +32,14 @@ namespace GameMission
 
         public void GameStart()
         {
-            isGameStart = true;
-
             if (MainApp.Instance.isARsupport)
             {
+                isARGameStart = true;
                 // TODO: wait Joy
             }
             else
             {
+                isUnARGameStart = true;
                 UnsupportAR();
             }
         }
@@ -103,14 +104,18 @@ namespace GameMission
 
         private void Update()
         {
-            if (!isGameStart) return;
+            if (isARGameStart)
+            {
+                isARGameStart = false;
+                Debug.Log("AR Game");
+            }
 
-            if (successTimes == 3)
+            if (isUnARGameStart && successTimes == 3)
             {
                 modal.PictureButton.interactable = false;
                 modal.ConfirmButton.onClick.AddListener(() =>
                 {
-                    isGameStart = false;
+                    isUnARGameStart = false;
                     GameResult(true);
                 });
             }
