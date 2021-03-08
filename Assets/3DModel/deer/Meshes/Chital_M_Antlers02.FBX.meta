@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: ac002c9c1fb6de946ab77eade6f9e5ae
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Chital_Antlers_02_LOD0
+    100002: Chital_Antlers_02_LOD1
+    100004: Chital_Antlers_02_LOD2
+    100006: Chital_Antlers_02_LOD3
+    100008: //RootNode
+    100010: RigChest
+    100012: RigHead
+    100014: RigJaw1
+    100016: RigLBLeg1
+    100018: RigLBLeg2
+    100020: RigLBLeg3
+    100022: RigLBLegAnkle
+    100024: RigLEar1
+    100026: RigLEye1
+    100028: RigLEyelid1
+    100030: RigLFLeg1
+    100032: RigLFLeg2
+    100034: RigLFLeg3
+    100036: RigLFLegAnkle
+    100038: RigLFLegCollarbone
+    100040: RigNeck1
+    100042: RigNeck2
+    100044: RigNeck3
+    100046: RigPelvis
+    100048: RigRBLeg1
+    100050: RigRBLeg2
+    100052: RigRBLeg3
+    100054: RigRBLegAnkle
+    100056: RigREar1
+    100058: RigREye1
+    100060: RigREyelid1
+    100062: RigRFLeg1
+    100064: RigRFLeg2
+    100066: RigRFLeg3
+    100068: RigRFLegAnkle
+    100070: RigRFLegCollarbone
+    100072: RigRoot
+    100074: RigSpine1
+    100076: RigSpine2
+    100078: RigSpine3
+    100080: RigTail1
+    100082: RigTail2
+    100084: RigTail3
+    100086: RigTail4
+    100088: RigTongue1
+    100090: RigTongue2
+    100092: RigTongue3
+    400000: Chital_Antlers_02_LOD0
+    400002: Chital_Antlers_02_LOD1
+    400004: Chital_Antlers_02_LOD2
+    400006: Chital_Antlers_02_LOD3
+    400008: //RootNode
+    400010: RigChest
+    400012: RigHead
+    400014: RigJaw1
+    400016: RigLBLeg1
+    400018: RigLBLeg2
+    400020: RigLBLeg3
+    400022: RigLBLegAnkle
+    400024: RigLEar1
+    400026: RigLEye1
+    400028: RigLEyelid1
+    400030: RigLFLeg1
+    400032: RigLFLeg2
+    400034: RigLFLeg3
+    400036: RigLFLegAnkle
+    400038: RigLFLegCollarbone
+    400040: RigNeck1
+    400042: RigNeck2
+    400044: RigNeck3
+    400046: RigPelvis
+    400048: RigRBLeg1
+    400050: RigRBLeg2
+    400052: RigRBLeg3
+    400054: RigRBLegAnkle
+    400056: RigREar1
+    400058: RigREye1
+    400060: RigREyelid1
+    400062: RigRFLeg1
+    400064: RigRFLeg2
+    400066: RigRFLeg3
+    400068: RigRFLegAnkle
+    400070: RigRFLegCollarbone
+    400072: RigRoot
+    400074: RigSpine1
+    400076: RigSpine2
+    400078: RigSpine3
+    400080: RigTail1
+    400082: RigTail2
+    400084: RigTail3
+    400086: RigTail4
+    400088: RigTongue1
+    400090: RigTongue2
+    400092: RigTongue3
+    2100000: Chital_M
+    4300000: Chital_Antlers_02_LOD0
+    4300002: Chital_Antlers_02_LOD1
+    4300004: Chital_Antlers_02_LOD2
+    4300006: Chital_Antlers_02_LOD3
+    9500000: //RootNode
+    13700000: Chital_Antlers_02_LOD0
+    13700002: Chital_Antlers_02_LOD1
+    13700004: Chital_Antlers_02_LOD2
+    13700006: Chital_Antlers_02_LOD3
+    20500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chital_M
+    second: {fileID: 2100000, guid: ab99a9541b809d047af217ee9a052891, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.0625
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

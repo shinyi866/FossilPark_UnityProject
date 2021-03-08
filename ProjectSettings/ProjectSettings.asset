@@ -131,7 +131,6 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: ac6e9b97d560b4e27b557ab5b110301d, type: 2}
-  - {fileID: 4800000, guid: e7c77f6eaab324a819efdc13b8125a39, type: 3}
   - {fileID: 1490021752312323230, guid: 8cfc1e0539a844333bfb8a2b2af75192, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -547,7 +546,7 @@ PlayerSettings:
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
   cameraUsageDescription: Required for augmented reality support.
-  locationUsageDescription: 
+  locationUsageDescription: Use to detect ibeacon
   microphoneUsageDescription: 
   switchNetLibKey: 
   switchSocketMemoryPoolSize: 6144

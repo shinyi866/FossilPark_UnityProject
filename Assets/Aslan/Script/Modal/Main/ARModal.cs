@@ -12,9 +12,6 @@ namespace View
         private Button BackButton;
 
         [SerializeField]
-        private Button PictureButton;
-
-        [SerializeField]
         private CanvasGroup picturePanel;
 
         [SerializeField]
@@ -27,7 +24,10 @@ namespace View
         private GameObject backGameObject;
 
         [SerializeField]
-        private GameObject imageGameObject;
+        private GameObject pictureGameObject;
+
+        //[SerializeField]
+        //private GameObject imageGameObject;
 
         [SerializeField]
         private GameObject mainSaveButton;
@@ -36,6 +36,7 @@ namespace View
         private GameObject gameSaveButton;
 
         private Texture2D currentImage;
+        private Button PictureButton;
 
         // switch game AR view and main AR view
         public void ShowView(bool isMainView)
@@ -43,24 +44,26 @@ namespace View
             backGameObject.SetActive(isMainView);
             mainSaveButton.SetActive(isMainView);
 
-            imageGameObject.SetActive(!isMainView);
+            //imageGameObject.SetActive(!isMainView);
             gameSaveButton.SetActive(!isMainView);
         }
 
         private void Awake()
         {
+            PictureButton = pictureGameObject.GetComponent<Button>();
+
+            PictureButton.onClick.AddListener(() => { TakePicture(); });
+
+
             BackButton.onClick.AddListener(() =>
             {
                 Modals.instance.CloseAR(); // TODO error?
             });
 
-            PictureButton.onClick.AddListener(() => { TakePicture(); });
-
             mainSaveButton.GetComponent<Button>().onClick.AddListener(() =>
             {
                 SavePhotoPanel(false);
-                //SaveImage();
-                // TODO save picture to phone
+                SaveImage();
             });
 
             gameSaveButton.GetComponent<Button>().onClick.AddListener(() =>
@@ -112,6 +115,8 @@ namespace View
                 picturePanel.alpha = (isShow) ? 1 : 0;
                 picturePanel.interactable = isShow;
                 picturePanel.blocksRaycasts = isShow;
+
+                pictureGameObject.SetActive(!isShow);
             }
         }
 

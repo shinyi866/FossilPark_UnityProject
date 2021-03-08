@@ -101,7 +101,7 @@ public class PlaceARObject : MonoBehaviour
         {
             case TypeFlag.ARObjectType.Animals:
                 //material.mainTextureOffset = animalMarkSprite[currentAnimal].textureRectOffset;
-                spawnedObject = Instantiate(animalObjects[currentAnimal], placementPose.position, placementPose.rotation);
+                spawnedObject = Instantiate(animalObjects[currentAnimal-2], new Vector3(placementPose.position.x, -1, placementPose.position.z), placementPose.rotation);
                 break;
             case TypeFlag.ARObjectType.Dinosaurls:
                 spawnedObject = Instantiate(dinosaurlObjects[currentAnimal], placementPose.position, placementPose.rotation);

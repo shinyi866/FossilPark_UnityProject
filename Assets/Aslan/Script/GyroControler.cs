@@ -27,6 +27,7 @@ public class GyroControler : MonoBehaviour
     */
     private bool EnableGyro()
     {
+        /*
         if (SystemInfo.supportsGyroscope)
         {
             gyroscope = Input.gyro;
@@ -36,6 +37,14 @@ public class GyroControler : MonoBehaviour
             rot = new Quaternion(0, 0, 1, 0);
 
             return true;
+        }*/
+
+        if (SystemInfo.supportsGyroscope)
+        {
+            Input.gyro.enabled = true;
+            transform.parent.Rotate(new Vector3(90f, 0f, 0f));
+
+            return true;
         }
 
         return false;
@@ -43,9 +52,16 @@ public class GyroControler : MonoBehaviour
 
     void Update()
     {
+        /*
         if (gyroEnable)
         {
             transform.localRotation = gyroscope.attitude * rot;
+        }
+        */
+        if (gyroEnable)
+        {
+            // Invert the z and w of the gyro attitude
+            this.transform.localRotation = new Quaternion(Input.gyro.attitude.x, Input.gyro.attitude.y, -Input.gyro.attitude.z, -Input.gyro.attitude.w);
         }
     }
 }
