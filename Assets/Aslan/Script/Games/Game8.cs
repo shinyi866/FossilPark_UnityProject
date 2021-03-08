@@ -4,6 +4,7 @@ using UnityEngine;
 using View;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
+using RootMotion.FinalIK;
 
 namespace GameMission
 {
@@ -15,8 +16,14 @@ namespace GameMission
         public GameObject[] dinosaurlScenes; // 0:grass, 1:meat, 2:fish
         public GameObject[] dinosaurs; // 0:grass, 1:meat, 2:fish
         public Transform[] topBons;// 0:grass, 1:meat, 2:fish
-        public Transform testTarget;
-        public bool Test;
+        public Transform testTarget;        
+        public bool TestMode;
+
+        [HideInInspector]
+        public bool isEat;
+
+        // vector to caculate food direction
+        //public Transform centerPoint;
 
         public System.Action<bool> gameOverEvent;
 
@@ -24,6 +31,10 @@ namespace GameMission
         //private Transform Target;
         private Button[] foodButton = new Button[3]; // 0:grass, 1:meat, 2:fish
         private Dictionary<string, GameObject> arObjects = new Dictionary<string, GameObject>();
+
+        private float ccidWeight = 0.0f;
+        private bool isSetWeight;
+
         private bool isGameStart;
 
         public void Init()
@@ -64,6 +75,8 @@ namespace GameMission
 
             dinosaurlScenes[index].SetActive(true);
             foodButton[index].interactable = false;
+
+            isEat = false;
         }
 
         // AR Image Track
@@ -107,7 +120,8 @@ namespace GameMission
                 GameObject showARObject = arObjects[imageNmae];
                 showARObject.SetActive(true);
                 showARObject.transform.position = imagePosition;
-                
+                dinosaurs[0].GetComponent<CCDIK>().solver.target = showARObject.transform;
+
                 foreach (GameObject b in arObjects.Values)
                 {
                     Debug.Log($"Show in arObjects.Values: {b.name}");
@@ -115,42 +129,72 @@ namespace GameMission
                     {
                         b.SetActive(false);
                     }
+
+                    if (isEat) { showARObject.SetActive(false); }
                 }
             }
         }
 
-        // Dinosaurl find target to eat
+        // Dinosaurl find need walk or not
         private void TargetDirection()
         {
-            var ARobject = dinosaurs[0];
             Transform showARfood = arObjects["grass"].GetComponent<Transform>();
-            float targetDirection;
 
-            if (Test)
+            Vector3 forward = dinosaurs[0].transform.TransformDirection(Vector3.forward);
+            Vector3 testToFood = testTarget.position - dinosaurs[0].transform.position;
+            Vector3 arToFood = showARfood.position - dinosaurs[0].transform.position;
+
+            float dotResult;
+            Vector3 lookAtTarget = new Vector3(testTarget.position.x, dinosaurs[0].transform.position.y, testTarget.position.z);
+
+            dinosaurs[0].transform.LookAt(lookAtTarget);
+
+            if (TestMode)
             {
-                targetDirection = (topBons[0].position - testTarget.position).sqrMagnitude;
+                dinosaurs[0].GetComponent<CCDIK>().solver.target = testTarget;
+                dotResult = Vector3.Dot(forward, testToFood);
             }
             else
             {
-                targetDirection = (topBons[0].position - showARfood.position).magnitude;//.sqrMagnitude;
+                dotResult = Vector3.Dot(forward, arToFood);
             }
-            
-            float compeleteLength = 0.88f;
-            var lengthPow = Mathf.Pow(compeleteLength, 2);
-            var touchTarget = lengthPow - targetDirection;
-            Debug.Log("targetDirection " + targetDirection);
-            //Debug.Log("lengthPow " + lengthPow);
-            Debug.Log("touchTarget " + touchTarget);
 
-            if (touchTarget < 1.4 && touchTarget > 0.8)
+            //Debug.Log("dotResult " + dotResult);
+
+            if(dotResult > 2.5)
             {
-                Debug.Log("can touch ");
-                ARobject.GetComponent<Animator>().SetBool("walk", false);
+                dinosaurs[0].GetComponent<Animator>().SetBool("walk", true);
+                Debug.Log("walk");
             }
             else
             {
-                Debug.Log("walk ");
-                ARobject.GetComponent<Animator>().SetBool("walk", true);
+                dinosaurs[0].GetComponent<Animator>().SetBool("walk", false);
+                Debug.Log("not walk");
+
+                if (dotResult > 1.8)
+                {
+                    Debug.Log("Can Eat");
+
+                    if (isEat)
+                    {
+                        dinosaurs[0].GetComponent<CCDIK>().solver.target = null;
+                        ccidWeight -= Time.deltaTime * 0.03f;
+                        dinosaurs[0].GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
+                        Debug.Log("End Eat");
+                    }
+                    else
+                    {
+                        ccidWeight += Time.deltaTime * 0.03f;
+                        dinosaurs[0].GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
+                        Debug.Log("Eat");
+                    }
+                }
+                else
+                {
+                    ccidWeight -= Time.deltaTime * 0.03f;
+                    dinosaurs[0].GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
+                    Debug.Log("Not Eat");
+                }
             }
         }
 
@@ -159,12 +203,6 @@ namespace GameMission
             if (!isGameStart) return;
 
             TargetDirection();
-
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                dinosaurs[0].GetComponent<Animator>().SetBool("walk", true);
-            }
-
         }
     }
 }

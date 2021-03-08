@@ -7,7 +7,7 @@ namespace GameMission
 {
     public class Game6 : Game
     {
-        public GameObject target;
+        //public GameObject target;
         public System.Action<bool> gameOverEvent;
 
         private Camera _camera;
@@ -16,8 +16,8 @@ namespace GameMission
         private bool isGameStart;
         private int missionIndex = 6;
         private int successTimes;
-        private int failTimes;
-        private int times = 3;
+        //private int failTimes;
+        //private int times = 3;
 
         public void Init()
         {
@@ -42,22 +42,36 @@ namespace GameMission
 
             modal.PictureButton.onClick.AddListener(() =>
             {
-                times--;
-
-                if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 5))
+                if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 3))
                 {
                     var cube = hit.transform;
                     var tag = hit.transform.gameObject.tag;
 
                     modal.TakePicture();
-                    modal.ShowInfo(missionIndex, TypeFlag.PictureType.SuccessCatch);
+
+                    if (tag == "Cube1")
+                    {
+                        cube.position = cube.position + new Vector3(-2, 0, 0);
+                        modal.ShowInfo(missionIndex, TypeFlag.PictureType.SuccessCatch1);
+
+                    }
+                    if (tag == "Cube2")
+                    {
+                        cube.position = cube.position + new Vector3(2, 0, 0);
+                        modal.ShowInfo(missionIndex, TypeFlag.PictureType.SuccessCatch2);
+                    }
+
                     successTimes++;
+                }
+                else if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 5))
+                {
+                    modal.TakePicture();
+                    modal.ShowInfo(missionIndex, TypeFlag.PictureType.HasCatch);
                 }
                 else
                 {
                     modal.TakePicture();
                     modal.ShowInfo(missionIndex, TypeFlag.PictureType.FailCatch);
-                    failTimes++;
                 }
             });
         }
@@ -70,19 +84,7 @@ namespace GameMission
             //trackAnimal[0].transform.position = _camera.transform.position + videoSphere.transform.right * 150;
             //trackAnimal[0].transform.rotation = videoSphere.transform.rotation;
 
-            if (times == 0)
-            {
-                modal.PictureButton.interactable = false;
-                modal.ConfirmButton.onClick.AddListener(() =>
-                {
-                    bool isSuccess = successTimes == 1;
-                    isGameStart = false;
-                    modal.ResetView();
-                    GameResult(isSuccess);
-                });
-            }
-
-            if (successTimes == 1)
+            if (successTimes == 2)
             {
                 modal.PictureButton.interactable = false;
                 modal.ConfirmButton.onClick.AddListener(() =>

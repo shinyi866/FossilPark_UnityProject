@@ -84,14 +84,20 @@ namespace View
                     message.text = gameData.gameNotify[0];
                     missionMessage.text = gameData.gameNotify[0];
                     break;
-                case TypeFlag.PictureType.SuccessCatch:
+                case TypeFlag.PictureType.SuccessCatch1:
                     missionMessage.text = gameData.gameNotify[1];
                     break;
-                case TypeFlag.PictureType.FailCatch:
+                case TypeFlag.PictureType.SuccessCatch2:
                     missionMessage.text = gameData.gameNotify[2];
                     break;
-                case TypeFlag.PictureType.HasCatch:
+                case TypeFlag.PictureType.SuccessCatch3:
                     missionMessage.text = gameData.gameNotify[3];
+                    break;
+                case TypeFlag.PictureType.HasCatch:
+                    missionMessage.text = gameData.gameNotify[4];
+                    break;
+                case TypeFlag.PictureType.FailCatch:
+                    missionMessage.text = gameData.gameNotify[5];
                     break;
             }
             

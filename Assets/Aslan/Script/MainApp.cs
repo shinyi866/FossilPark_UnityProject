@@ -26,10 +26,13 @@ public class MainApp : Singleton<MainApp>
 
     private void Awake()
     {
+        StartCoroutine(CheckARSupport());
+    }
+
+    private void Start()
+    {
         var modal = Modals.instance.OpenModal<MainModal>();
         modal.StarMainView();
-
-        StartCoroutine(CheckARSupport());
     }
 
     public void Score()

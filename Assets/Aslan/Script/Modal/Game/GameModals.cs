@@ -93,6 +93,13 @@ namespace View
             PlaceARObject.instance.EnterAR(index, type);
         }
 
+        // Round missions notify (3-8m)
+        public void RoundNotify(int index)
+        {
+            var model = _instance.OpenModal<NotifyModal>();
+            model.ShowInfo(index, TypeFlag.NotifyType.RoundNotify);
+        }
+        // Show and enter missions (1-2m)
         public void ShowNotify(int index)
         {
             var model = _instance.OpenModal<NotifyModal>();

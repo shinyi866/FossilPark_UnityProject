@@ -45,6 +45,7 @@ namespace View
                 case TypeFlag.NotifyType.RoundNotify:
                     notifyText.text = gameData.roundMessage;
                     buttonObj[0].SetActive(true);
+                    image.sprite = gameData.animalNotifyPicture;
                     Debug.Log("RoundNotify ");
                     break;
 

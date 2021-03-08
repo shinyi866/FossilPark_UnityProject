@@ -1,12 +1,12 @@
 missionID,roundMessage,enterMessage,enterButton,gameDescription,dialogButton,gameNotify,success,fail,pictureNotify,animalDialogPicture,animalNotifyPicture
 0,附近似乎有時光機器，趕緊找找看吧！,,體驗開始,,,,,,,,
 1,附近似乎有時光機器，趕緊找找看吧！,,啟動逆走鐘,,,,,,,,
-2,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,我們找到了梅花鹿管理員了，趕緊帶他回到逆走鐘時光機中吧！,帶回管理員,"嗨！我是逆走中時光機中的梅花鹿，因為機器故障來到這裡！難得來到這，聽說附近有三隻稀有的異⿒龍！我有五張底片，我想找到他們並拍照留念！",尋找古⽣物,"協助梅花鹿在園區內拍攝三隻異⿒龍,看到真的異⿒龍了！,咦？這裡沒有異⿒龍啊?,這隻你已經拍過囉，再找找看有沒有別隻！",看到真的異⿒龍了！真開⼼，好耶我們回去吧！,沒有看到異⿒龍...,點按相機與梅花鹿拍照,Assets/Aslan/ArtSprite/GameUI/animals/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png
+2,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,我們找到了梅花鹿管理員了，趕緊帶他回到逆走鐘時光機中吧！,帶回管理員,"嗨！我是逆走中時光機中的梅花鹿，因為機器故障來到這裡！難得來到這，聽說附近有三隻稀有的異⿒龍！我有五張底片，我想找到他們並拍照留念！",尋找古⽣物,"協助找尋化石！,這是大象化石,這是犀牛化石,這是鹿角化石,這你已經拍過囉！,這裡埋有化石，再找找吧！",看到真的異⿒龍了！真開⼼，好耶我們回去吧！,沒有看到異⿒龍...,點按相機與梅花鹿拍照,Assets/Aslan/ArtSprite/GameUI/animals/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png
 3,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,我們在樹上找到了⾦絲猴管理員了，趕緊帶他回到逆走鐘時光機中吧！,帶回管理員,"嗨！你在找我嗎！我在這裡找到⼀顆好⾼的樹，我喜歡這裡！我們來玩點遊戲再回去吧！",⼀起玩遊戲,左右移動接取猴⼦丟下的果⼦！成功後猴⼦就會跟我們回去了喔！,你真厲害，拿到了好多果⼦！⼀起拍張照片後回去吧,"果⼦不夠多啊！我還是要跟你回去",點按相機與猴⼦拍照,Assets/Aslan/ArtSprite/GameUI/animals/02monkey.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/monkey.png
 4,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,我們在遠古的海洋找到海豚管理員了，牠好像被什麼追趕著，快上去看看！,上前看看,"你是來帶我回去的嗎！真是得救了！我現在正被滄龍追趕著！快救救我！",協助他逃離,點按海豚，幫助他逃離蒼龍的追趕！,終於逃離了他的追趕我們快拍照回家吧！點按相機拍下海豚！,差點就被吃掉了！我們回去吧！,點按相機與海豚拍照,Assets/Aslan/ArtSprite/GameUI/animals/03dolphin.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/dolphin.png
 5,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,我們在地上看到了犀⽜理員....的化⽯，把它拼湊起來他應該就會出現了吧！,拼湊犀⽜化⽯,,,點按犀⽜化⽯將犀⽜拼湊完成,時空扭曲害我的骨頭都散了！真是累⼈，快讓我回到正常的時空上吧！,,點按相機與犀⽜拍照,Assets/Aslan/ArtSprite/GameUI/animals/04Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png
 6,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,我們在這片冰雪之中似乎發現了猛獁象的蹤跡。,尋找猛獁象,"我被傳送到這片冰天雪地之中，雪很鬆軟，我很喜歡。
-我們⼀起在這片冰天雪地之中玩躲貓貓吧！",⼀起玩遊戲,"在冰雪之中找到猛獁象,  找到猛獁象了！原來你躲在這！,咦？這裡沒有猛獁象啊?",好厲害啊！居然都被你找到了，我也玩夠了，我們趕快透過拍照，回去到機器裡休息吧！,我在這裡拉！這場遊戲是我贏了～我們回去吧！,點按相機與猛瑪象拍照,Assets/Aslan/ArtSprite/GameUI/animals/05mammoth.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Hayasaka.png
+我們⼀起在這片冰天雪地之中玩躲貓貓吧！",⼀起玩遊戲,"畫面中哪隻猛獁象哪隻是劍齒象呢？, 找到猛獁象了！,找到劍齒象了！, ,這隻你已經拍過囉！,這裡沒有大象歐，再找找吧！",好厲害啊！居然都被你找到了，我也玩夠了，我們趕快透過拍照，回去到機器裡休息吧！,我在這裡拉！這場遊戲是我贏了～我們回去吧！,點按相機與猛瑪象拍照,Assets/Aslan/ArtSprite/GameUI/animals/05mammoth.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Hayasaka.png
 7,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！,在沼澤附近發現了鱷⿂的蹤跡，他窩在沼澤不知道怎麼了，我們去看看他吧！,前往尋找,"我在這裡！
 你說拍照就可以回到時光機裡⾯嗎？
 可是我牙⿒很髒，不想拍照噎！
