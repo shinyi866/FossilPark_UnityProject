@@ -29,12 +29,19 @@ public class MediaPlayerController : MonoBehaviour
     public void LoadAndPlayVideo(string filePath)
     {
         _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, true);
+        _mediaPlayer.Control.SetLooping(true);
+    }
+
+    public void LoadAndPlayVideoNotLoop(string filePath)
+    {
+        _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, true);
+        _mediaPlayer.Control.SetLooping(false);
     }
 
     public void LoadVideo(string filePath)
     {
         _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, false);
-        _mediaPlayer.m_Loop = true;
+        _mediaPlayer.Control.SetLooping(true);
     }
 
     public void PlayVideo()
@@ -55,5 +62,10 @@ public class MediaPlayerController : MonoBehaviour
     public void OpenMeshRender(bool isOpen)
     {
         meshRenderer.enabled = isOpen;
+    }
+
+    public bool isVideoFinish()
+    {
+        return _mediaPlayer.Control.IsFinished();
     }
 }
