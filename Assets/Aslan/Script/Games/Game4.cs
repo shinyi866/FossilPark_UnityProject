@@ -9,28 +9,37 @@ namespace GameMission
 {
     public class Game4 : Game
     {
+        [SerializeField]
+        private GameObject fossilDolphin;
+
+        [SerializeField]
+        private GameObject fossilBaleenWhale;
+
+        [SerializeField]
+        private GameObject answer;
+
+        [SerializeField]
+        private GameObject[] answerBox; // 0: A1, 1: A2
+
+        [SerializeField]
+        private Material[] material; // 0: true, 1: false. 2: normal
+
+        [SerializeField, Range(0f, 1f)]
+        private float errorRound = 0.1f;
+
         public System.Action<bool> gameOverEvent;
 
-        [Header("限時幾秒")]
-        public float OverTime = 10;
-
-        float VideoTime = 12;
-        [Header("計時UI")]
-        public Text timeUI;
-        float f;
-        [Header("進度條")]
-        public RectTransform strip;
-        public GameObject gameUI;
-
         private bool isGameStart;
-        private int passClick = 30;
+        private bool finishGame;
+        private Camera _camera;
 
         private string videoPath = "Video/LadyVisit.mp4";
-        private string successVidePath = "Video/4096.mp4";
-        private string failVidePath = "AVProVideoSamples/SampleSphere.mp4";
+        private string successVidePath = "Video/ele.mp4";
 
         public void Init()
         {
+            _camera = CameraCtrl.instance.GetCurrentCamera();
+
             Modals.instance.CloseAllModal();
             MediaPlayerController.instance.LoadVideo(videoPath);
         }
@@ -39,11 +48,69 @@ namespace GameMission
         {
             isGameStart = true;
             MediaPlayerController.instance.PlayVideo();
+
+            SetPosition(); 
         }
 
-        public void UI_Enter()
+        private void SetPosition()
         {
-            if (f <= passClick) { f++; }
+
+            var _cameraFront = _camera.transform.forward;
+            _cameraFront.z = 3f;
+
+            _cameraFront.y = -1.4f;
+            answer.transform.position = _camera.transform.position + _cameraFront;
+
+            _cameraFront.y = 0f;
+            _cameraFront.x = -1.5f;
+            fossilDolphin.transform.position = _camera.transform.position + _cameraFront;
+            answerBox[0].transform.position = new Vector3(fossilDolphin.transform.position.x, -0.8f, fossilDolphin.transform.position.z);
+            _cameraFront.x = 1.5f;
+            fossilBaleenWhale.transform.position = _camera.transform.position + _cameraFront;
+            answerBox[1].transform.position = new Vector3(fossilBaleenWhale.transform.position.x, -0.8f, fossilBaleenWhale.transform.position.z);
+        }
+
+        private void DetectAnswer()
+        {
+            Transform[] answersTransform = answer.GetComponentsInChildren<Transform>();
+            
+            for (int i = 1; i < answersTransform.Length; i++)
+            {
+                for (int j = 0; j < answerBox.Length; j++)
+                {
+
+                    if (Vector3.Distance(answersTransform[i].transform.position, answerBox[j].transform.position) < errorRound)
+                    {
+                        answersTransform[i].transform.position = answerBox[j].transform.position; 
+                        Debug.Log("Fit!");
+
+                        if (Vector3.Distance(answerBox[j].transform.position, answersTransform[j + 1].transform.position) == 0)
+                        {
+                            answerBox[j].GetComponent<MeshRenderer>().material = material[0];
+                            Debug.Log("Bingo!");
+                        }
+                        else
+                        {
+                            answerBox[j].GetComponent<MeshRenderer>().material = material[1];
+                        }
+                    }
+                    /*
+                    else
+                    {
+                        answerBox[j].GetComponent<MeshRenderer>().material = material[2];
+                    }
+                    */
+                }
+            }
+
+            if (Vector3.Distance(answerBox[0].transform.position, answersTransform[1].transform.position) == 0 && Vector3.Distance(answerBox[1].transform.position, answersTransform[2].transform.position) == 0)
+            {
+                SetPosition();
+                Object.SetActive(false);
+                MediaPlayerController.instance.CloseVideo();
+                MediaPlayerController.instance.LoadAndPlayVideoNotLoop(successVidePath);
+                finishGame = true;
+            }
         }
 
         private void GameResult(bool isSuccess)
@@ -56,42 +123,13 @@ namespace GameMission
         {
             if (!isGameStart) return;
 
-            if (f >= passClick)
-            {
-                VideoTime = 0;
-                MediaPlayerController.instance.LoadAndPlayVideo(successVidePath);
+            if (!finishGame) { DetectAnswer(); }
 
-                gameUI.SetActive(false);
-                isGameStart = false;
+            if(MediaPlayerController.instance.isVideoFinish() && finishGame) // TODO: event?
+            {
                 GameResult(true);
+                isGameStart = false;
             }
-            else
-            {
-                if (VideoTime > 0)
-                {
-                    VideoTime -= Time.deltaTime;
-                    timeUI.text = Mathf.RoundToInt(VideoTime).ToString();
-                    strip.localScale = new Vector3(0 + (f / passClick), 1, 1);
-                }
-                else
-                {
-                    bool isSuccess = f >= passClick;
-
-                    if (f >= passClick)
-                    {
-                        MediaPlayerController.instance.LoadAndPlayVideo(successVidePath);
-                    }
-                    else
-                    {
-                        MediaPlayerController.instance.LoadAndPlayVideo(failVidePath);
-                    }
-
-                    gameUI.SetActive(false);
-                    isGameStart = false;
-                    GameResult(isSuccess);
-                }
-            }
-
         }
     }
 }

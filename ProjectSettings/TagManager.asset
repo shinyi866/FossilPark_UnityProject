@@ -10,6 +10,8 @@ TagManager:
   - Cube3
   - Wall1
   - Wall2
+  - Rotate
+  - Position
   layers:
   - Default
   - TransparentFX
