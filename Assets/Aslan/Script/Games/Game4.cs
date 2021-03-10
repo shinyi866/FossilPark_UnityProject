@@ -16,21 +16,39 @@ namespace GameMission
         private GameObject fossilBaleenWhale;
 
         [SerializeField]
-        private GameObject answer;
+        private GameObject answerModel;
 
         [SerializeField]
-        private GameObject[] answerBox; // 0: A1, 1: A2
+        private GameObject answerBoxModel;
+
+        [SerializeField]
+        private GameObject dolphinContainer;
+
+        [SerializeField]
+        private GameObject whaleContainer;
+
+        [SerializeField]
+        private GameObject answerContainer;
 
         [SerializeField]
         private Material[] material; // 0: true, 1: false. 2: normal
 
+        [SerializeField]
+        private Material[] materialAns; // 0: blue, 1:yellow
+
         [SerializeField, Range(0f, 1f)]
-        private float errorRound = 0.1f;
+        private float errorRound = 0.2f;
 
         public System.Action<bool> gameOverEvent;
 
         private bool isGameStart;
         private bool finishGame;
+        private float downTime = 3;
+        private int boxAnswerNumber = 3;
+
+        private List<GameObject> AnsBox = new List<GameObject>();
+        private List<GameObject> Ans = new List<GameObject>();
+
         private Camera _camera;
 
         private string videoPath = "Video/LadyVisit.mp4";
@@ -54,63 +72,115 @@ namespace GameMission
 
         private void SetPosition()
         {
-
+            Vector3 transform;
             var _cameraFront = _camera.transform.forward;
-            _cameraFront.z = 3f;
+            
+            var fossilDolphinPos = _cameraFront + new Vector3(-1.5f, 0.8f, 3f);
+            fossilDolphin.transform.position = _camera.transform.position + fossilDolphinPos;
+            dolphinContainer.transform.position = new Vector3(fossilDolphin.transform.position.x, fossilDolphin.transform.position.y, fossilDolphin.transform.position.z);
 
-            _cameraFront.y = -1.4f;
-            answer.transform.position = _camera.transform.position + _cameraFront;
+            for (int i = 1; i <= boxAnswerNumber; i++)
+            {
+                GameObject clone = Instantiate(answerBoxModel, new Vector3(dolphinContainer.transform.position.x, dolphinContainer.transform.position.y - 0.5f * i, dolphinContainer.transform.position.z) , dolphinContainer.transform.rotation);
+                clone.transform.SetParent(dolphinContainer.transform);
+                clone.SetActive(true);
 
-            _cameraFront.y = 0f;
-            _cameraFront.x = -1.5f;
-            fossilDolphin.transform.position = _camera.transform.position + _cameraFront;
-            answerBox[0].transform.position = new Vector3(fossilDolphin.transform.position.x, -0.8f, fossilDolphin.transform.position.z);
-            _cameraFront.x = 1.5f;
-            fossilBaleenWhale.transform.position = _camera.transform.position + _cameraFront;
-            answerBox[1].transform.position = new Vector3(fossilBaleenWhale.transform.position.x, -0.8f, fossilBaleenWhale.transform.position.z);
+                //fossilDolphinBox.Add(clone);
+                AnsBox.Add(clone);
+            }
+
+            var fossilBaleenWhalePos = _cameraFront + new Vector3(1.5f, 0.8f, 3f);
+            fossilBaleenWhale.transform.position = _camera.transform.position + fossilBaleenWhalePos;
+            whaleContainer.transform.position = new Vector3(fossilBaleenWhale.transform.position.x, fossilBaleenWhale.transform.position.y, fossilBaleenWhale.transform.position.z);
+
+            for (int i = 1; i <= boxAnswerNumber; i++)
+            {
+                GameObject clone = Instantiate(answerBoxModel, new Vector3(whaleContainer.transform.position.x, whaleContainer.transform.position.y - 0.5f * i, whaleContainer.transform.position.z), whaleContainer.transform.rotation);
+                clone.transform.SetParent(whaleContainer.transform);
+                clone.SetActive(true);
+
+                //fossilBaleenWhaleBox.Add(clone);
+                AnsBox.Add(clone);
+            }
+            
+            var answerPos = _cameraFront + new Vector3(0f, -1.8f, 1f);
+
+            for (int i = 1; i <= boxAnswerNumber*2; i++)
+            {
+                GameObject clone = Instantiate(answerModel, answerContainer.transform);
+                if (i < 4)
+                {
+                    clone.GetComponent<MeshRenderer>().material = materialAns[0];
+                    //fossilDolphinAns.Add(clone);
+                    Ans.Add(clone);
+                }
+                else
+                {
+                    clone.GetComponent<MeshRenderer>().material = materialAns[1];
+                    //fossilBaleenWhaleAns.Add(clone);
+                    Ans.Add(clone);
+                }
+                clone.transform.position = RandomPosition(answerPos, new Vector3(3f, 1f, 1f));
+                clone.SetActive(true);
+            }
         }
 
+        private Vector3 RandomPosition(Vector3 center, Vector3 size)
+        {
+            return center + new Vector3((Random.value - 0.5f) * size.x,(Random.value - 0.5f) * size.y, center.z);
+        }
+        
         private void DetectAnswer()
         {
-            Transform[] answersTransform = answer.GetComponentsInChildren<Transform>();
-            
-            for (int i = 1; i < answersTransform.Length; i++)
+            float distance = 0;
+
+            for (int i = 0; i < AnsBox.Count; i++)
             {
-                for (int j = 0; j < answerBox.Length; j++)
+                for (int j = 0; j < Ans.Count; j++)
                 {
-
-                    if (Vector3.Distance(answersTransform[i].transform.position, answerBox[j].transform.position) < errorRound)
+                    if (Vector3.Distance(AnsBox[i].transform.position, Ans[j].transform.position) < errorRound)
                     {
-                        answersTransform[i].transform.position = answerBox[j].transform.position; 
-                        Debug.Log("Fit!");
-
-                        if (Vector3.Distance(answerBox[j].transform.position, answersTransform[j + 1].transform.position) == 0)
+                        Ans[j].transform.position = AnsBox[i].transform.position;
+                        
+                        if (Vector3.Distance(AnsBox[j].transform.position, Ans[j].transform.position) == 0)
                         {
-                            answerBox[j].GetComponent<MeshRenderer>().material = material[0];
+                            Ans[j].GetComponent<MeshRenderer>().material = material[0];
+                            Ans[j].tag = "Untagged";
+                            distance = 0;
                             Debug.Log("Bingo!");
                         }
                         else
                         {
-                            answerBox[j].GetComponent<MeshRenderer>().material = material[1];
+                            Ans[j].GetComponent<MeshRenderer>().material = material[1];
                         }
                     }
                     /*
                     else
                     {
-                        answerBox[j].GetComponent<MeshRenderer>().material = material[2];
+                        fossilDolphinAns[j].GetComponent<MeshRenderer>().material = materialAns[0];
                     }
                     */
+                    
+                    distance += Vector3.Distance(AnsBox[i].transform.position, Ans[j].transform.position);
+                    
                 }
             }
-
-            if (Vector3.Distance(answerBox[0].transform.position, answersTransform[1].transform.position) == 0 && Vector3.Distance(answerBox[1].transform.position, answersTransform[2].transform.position) == 0)
+            
+            if (distance == 0)
             {
-                SetPosition();
-                Object.SetActive(false);
-                MediaPlayerController.instance.CloseVideo();
-                MediaPlayerController.instance.LoadAndPlayVideoNotLoop(successVidePath);
-                finishGame = true;
+                downTime -= Time.deltaTime;
+                Debug.Log("finish!!!");
+                if (downTime < 0)
+                {
+                    SetPosition();
+                    Object.SetActive(false);
+
+                    MediaPlayerController.instance.CloseVideo();
+                    MediaPlayerController.instance.LoadAndPlayVideoNotLoop(successVidePath);
+                    finishGame = true;
+                }
             }
+            
         }
 
         private void GameResult(bool isSuccess)
