@@ -140,33 +140,39 @@ namespace GameMission
                 {
                     if (Vector3.Distance(AnsBox[i].transform.position, Ans[j].transform.position) < errorRound)
                     {
-                        Ans[j].transform.position = AnsBox[i].transform.position;
+                        //Debug.Log("in");
                         
-                        if (Vector3.Distance(AnsBox[j].transform.position, Ans[j].transform.position) == 0)
+                        Ans[j].transform.position = AnsBox[i].transform.position;
+
+                        if(i == j)
                         {
                             Ans[j].GetComponent<MeshRenderer>().material = material[0];
                             Ans[j].tag = "Untagged";
                             distance = 0;
                             Debug.Log("Bingo!");
                         }
-                        else
+                        if (i != j)
                         {
                             Ans[j].GetComponent<MeshRenderer>().material = material[1];
+                            distance += Vector3.Distance(AnsBox[i].transform.position, Ans[j].transform.position);
                         }
                     }
-                    /*
                     else
                     {
-                        fossilDolphinAns[j].GetComponent<MeshRenderer>().material = materialAns[0];
+                        distance += Vector3.Distance(AnsBox[i].transform.position, Ans[j].transform.position);
+
+                        if (i == 0)
+                        {
+                            if (j < 3)
+                                Ans[j].GetComponent<MeshRenderer>().material = materialAns[0];
+                            else
+                                Ans[j].GetComponent<MeshRenderer>().material = materialAns[1];
+                        }
                     }
-                    */
-                    
-                    distance += Vector3.Distance(AnsBox[i].transform.position, Ans[j].transform.position);
-                    
                 }
             }
             
-            if (distance == 0)
+            if (distance == 0) // all error can in or very close
             {
                 downTime -= Time.deltaTime;
                 Debug.Log("finish!!!");
