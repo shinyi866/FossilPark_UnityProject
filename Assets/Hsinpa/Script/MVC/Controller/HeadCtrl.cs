@@ -29,14 +29,37 @@ namespace Hsinpa.Ctrl
         private void ShowSettingModal() {
             DialogueModal dialogueModal = Modals.instance.OpenModal<DialogueModal>();
 
-            string[] eventArray = new string[] { EventFlag.Event.OnARMode_PlaneAR, EventFlag.Event.OnARMode_NoAR };
-
             dialogueModal.SetDialogue(StringSet.Dialogue.StartModeTitle, StringSet.Dialogue.StartModeContent,
-                new string[] { StringSet.Dialogue.StartModePlaneAR, StringSet.Dialogue.StartModeNoAR },
+                new string[] { StringSet.Dialogue.CrocodileMissionTitle, StringSet.Dialogue.RhenoMissionTitle },
              (int index) => {
-                 Modals.instance.Close();
-                 Hsinpa.DinosaurApp.Instance.Notify(eventArray[index]);
+                 if (index == 0)
+                     ShowCrocodileDialogue(dialogueModal);
+                 else
+                     ShowRhenoDialogue(dialogueModal);    
              });
+        }
+
+        private void ShowCrocodileDialogue(DialogueModal dialogueModal)
+        {
+            string[] eventArray = new string[] { EventFlag.Event.OnCrocodileARMode_PlaneAR, EventFlag.Event.OnCrocodileARMode_NoAR };
+
+            dialogueModal.SetDialogue(StringSet.Dialogue.ARModeTitle, StringSet.Dialogue.StartModeContent,
+            new string[] { StringSet.Dialogue.StartModePlaneAR, StringSet.Dialogue.StartModeNoAR },
+            (int index) => {
+                Modals.instance.Close();
+                Hsinpa.DinosaurApp.Instance.Notify(eventArray[index]);
+            });
+        }
+
+        private void ShowRhenoDialogue(DialogueModal dialogueModal) 
+        {
+            string[] eventArray = new string[] { EventFlag.Event.OnRhenoARMode_PlaneAR, EventFlag.Event.OnRhenoARMode_NoAR };
+            dialogueModal.SetDialogue(StringSet.Dialogue.ARModeTitle, StringSet.Dialogue.StartModeContent,
+            new string[] { StringSet.Dialogue.StartModePlaneAR, StringSet.Dialogue.StartModeNoAR },
+            (int index) => {
+                Modals.instance.Close();
+                Hsinpa.DinosaurApp.Instance.Notify(eventArray[index]);
+            });
         }
 
     }

@@ -60,13 +60,13 @@ namespace Hsinpa.Ctrl {
         {
             switch (p_event)
             {
-                case EventFlag.Event.OnARMode_NoAR:
+                case EventFlag.Event.OnRhenoARMode_NoAR:
                     {
                         PerformNoARAction();
                     }
                     break;
 
-                case EventFlag.Event.OnARMode_PlaneAR:
+                case EventFlag.Event.OnRhenoARMode_PlaneAR:
                     {
                         PerformPlaneARAction();
                     }

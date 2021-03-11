@@ -143,6 +143,18 @@ namespace Utility {
 			if (p_action != null)
 				p_action();
 		}
-
+		public static Color[] ToColor(Texture2D tex)
+		{
+			Color[] col = tex.GetPixels();
+			return tex.GetPixels();
+		}
+		public static Texture2D toTexture2D(RenderTexture rTex, Texture2D tex2D)
+		{
+			//Texture2D tex = new Texture2D(size, size, TextureFormat.RGB24, false);
+			RenderTexture.active = rTex;
+			tex2D.ReadPixels(new Rect(0, 0, rTex.width, rTex.height), 0, 0);
+			tex2D.Apply();
+			return tex2D;
+		}
 	}
 }
