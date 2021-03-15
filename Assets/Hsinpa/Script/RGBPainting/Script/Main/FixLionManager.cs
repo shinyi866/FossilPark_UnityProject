@@ -69,6 +69,7 @@ namespace Expect.App {
         // Start is called before the first frame update
         void Start()
         {
+            inputWrapper.SetUp();
             FixLionInput.SetUp();
             FixLionInput.HoldItemEvent += OnTouchToolEvent;
             PaintingManager.OnTargetDirtIsClear += OnDirtIsCleared;
@@ -198,7 +199,7 @@ namespace Expect.App {
         }
 
         private void UpdateLightDirAccordingToTarget() {
-            Vector3 direction = (targetGameObject.transform.position - inputWrapper.cameraObject.transform.position);
+            Vector3 direction = (targetGameObject.transform.position - inputWrapper.arCamera.transform.position);
             lightingObject.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
 

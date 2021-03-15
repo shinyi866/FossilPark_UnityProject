@@ -23,7 +23,7 @@ namespace Hsinpa.App {
 
         private int toolIndex;
         private int toolCount;
-        private int layerMask = 1 << 9;
+        private int layerMask = 1 << 22;
 
         public System.Action<bool> OnTargetDirtIsClear;
         public System.Action<bool> OnTargetPainting;
@@ -51,6 +51,8 @@ namespace Hsinpa.App {
 
                 //Physics.Raycast
                 int hits = Physics.RaycastNonAlloc(InputWrapper.instance.platformInput.GetRay(), m_Results, raycastLength, layerMask);
+
+                Debug.Log("Hits Count " + hits);
 
                 if (hits > 0)
                 {
