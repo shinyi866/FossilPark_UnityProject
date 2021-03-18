@@ -12,9 +12,14 @@ namespace Hsinpa.Ctrl
         private RaycastInputHandler _raycastInputHandler;
 
         [SerializeField]
+        private ARFoundationHelper _arHelper;
+
+        [SerializeField]
         private PaintingManager _paintingManager;
 
         bool _arEnable = false;
+
+        public GeneralFlag.GeneralState _state = GeneralFlag.GeneralState.Idle;
 
         public override void OnNotify(string p_event, params object[] p_objects)
         {
@@ -65,6 +70,8 @@ namespace Hsinpa.Ctrl
             Debug.Log("Croco PerformNoARAction");
             _paintingManager.gameObject.SetActive(true);
             _paintingManager.gameObject.transform.position = new Vector3(0, 0, 1.2f);
+            _state = GeneralFlag.GeneralState.UnderGoing;
+
             InitPaintProcedure();
         }
 
@@ -72,6 +79,11 @@ namespace Hsinpa.Ctrl
         {
             Debug.Log("Croco PerformPlaneARAction");
             _paintingManager.gameObject.SetActive(true);
+            _arHelper.ActivateAR(true);
+            _arHelper.AcitvateARPlane(true);
+
+            _state = GeneralFlag.GeneralState.Preparation;
+
             InitPaintProcedure();
         }
 
@@ -81,7 +93,41 @@ namespace Hsinpa.Ctrl
 
         private void OnRaycastInputEvent(RaycastInputHandler.InputStruct inputStruct)
         {
+            switch (inputStruct.inputType)
+            {
+                case RaycastInputHandler.InputType.SingleTap:
+                    {
+                        OnSingleTap(inputStruct);
+                    }
+                    break;
+                case RaycastInputHandler.InputType.DoubleTap:
+                    {
+                        OnDoubleTap();
+                    }
+                    break;
+            }
+        }
+
+        private void OnSingleTap(RaycastInputHandler.InputStruct inputStruct)
+        {
+            if (inputStruct.gameObject.layer == GeneralFlag.Layer.PlaneInt && _state == GeneralFlag.GeneralState.Preparation)
+            {
+                Vector3 dir = (inputStruct.raycastPosition - _arHelper.arCamera.transform.position).normalized;
+                dir.y = 0;
+                Quaternion faceQuat = Quaternion.LookRotation(dir);
+
+                _paintingManager.transform.position = inputStruct.raycastPosition;
+                _paintingManager.transform.rotation = faceQuat;
+
+                _arHelper.AcitvateARPlane(false);
+                _state = GeneralFlag.GeneralState.UnderGoing;
+            }
+        }
+
+        private void OnDoubleTap()
+        {
 
         }
+
     }
 }

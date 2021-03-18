@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _raycastInputHandler: {fileID: 5792027905143237172}
+  _arHelper: {fileID: 5792027905781614435}
   _paintingManager: {fileID: 8423454240112462624}
+  _state: 0
 --- !u!1 &2047925070559582694
 GameObject:
   m_ObjectHideFlags: 0

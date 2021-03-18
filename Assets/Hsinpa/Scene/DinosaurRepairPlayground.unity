@@ -602,11 +602,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hsinpa
       objectReference: {fileID: 0}
-    - target: {fileID: 5792027904542657930, guid: 0034034ce1f3a9643922789c5dd830bb,
-        type: 3}
-      propertyPath: TestMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5792027904542657931, guid: 0034034ce1f3a9643922789c5dd830bb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -662,15 +657,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5792027905056538217, guid: 0034034ce1f3a9643922789c5dd830bb,
-        type: 3}
-      propertyPath: _angleThreshold
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5792027906153729236, guid: 0034034ce1f3a9643922789c5dd830bb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 48941ebc76cf74340876c66f162324a1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0034034ce1f3a9643922789c5dd830bb, type: 3}
