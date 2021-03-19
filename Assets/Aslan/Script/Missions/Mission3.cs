@@ -18,19 +18,24 @@ namespace GameMission
             game.Init();
             game.gameOverEvent += EndGame;
 
-            var model = GameModals.instance.OpenModal<NotifyModal>();
-            model.ShowInfo(missionIndex, TypeFlag.NotifyType.GameNotify);
+            var model = GameModals.instance.OpenModal<TitleModal>();
+            model.ShowInfo(missionIndex, TypeFlag.TitleType.GameTitle);
             model.ConfirmButton.onClick.AddListener(() =>
             {
                 var gameModal = GameModals.instance.OpenModal<ARGameModal>();
-                gameModal.ShowModal(TypeFlag.ARGameType.Game3);
+                gameModal.ShowModal(missionIndex, TypeFlag.ARGameType.Game3);
                 game.GameStart();
             });
         }
 
+        public override void StartGame()
+        {
+
+        }
+
         public void EndGame(bool isSuccess)
         {
-            TypeFlag.DialogType type = isSuccess ? TypeFlag.DialogType.SuccessDialog : TypeFlag.DialogType.FailDialog;
+            TypeFlag.DialogType type = isSuccess ? TypeFlag.DialogType.EndDialog : TypeFlag.DialogType.FailDialog;
             game.gameOverEvent -= EndGame;
 
             if (isSuccess)

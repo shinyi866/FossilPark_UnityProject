@@ -1,0 +1,2955 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &252711698102524461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4749027142302374884}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4749027142302374884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252711698102524461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8894960195354835266}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565876}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FLLegDigit11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565824}
+  m_LocalRotation: {x: 0.36813346, y: 0.39133346, z: -0.57725084, w: 0.6149125}
+  m_LocalPosition: {x: -0.87051433, y: -0.013459777, z: 0.31230354}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999999}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565779}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565772}
+  m_Layer: 0
+  m_Name: Brachiosaurus_RLegAnkle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565825}
+  m_LocalRotation: {x: -0.027418867, y: -0.010699592, z: -0.3507572, w: 0.9360038}
+  m_LocalPosition: {x: -1.6316702, y: -0.00000015258789, z: 0.00000015258789}
+  m_LocalScale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+  m_Children:
+  - {fileID: 1865307035857565873}
+  m_Father: {fileID: 1865307035857565783}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565866}
+  m_Layer: 0
+  m_Name: BrachiosaurusNeck10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565826}
+  m_LocalRotation: {x: -0.0056065833, y: 0.0058289827, z: 0.054675717, w: 0.9984715}
+  m_LocalPosition: {x: -0.6057014, y: -0.00056063005, z: -0.00025157942}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565782}
+  - {fileID: 1865307035857565874}
+  m_Father: {fileID: 1865307035857565872}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.67800003, y: 0.632, z: 6.2650003}
+--- !u!1 &1865307035857565827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565869}
+  m_Layer: 0
+  m_Name: BrachiosaurusTail6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565827}
+  m_LocalRotation: {x: 0.0000000038348427, y: -0.000000010183309, z: -0.033790864,
+    w: 0.9994289}
+  m_LocalPosition: {x: -1.2071923, y: 0, z: 1.4551915e-13}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565816}
+  m_Father: {fileID: 1865307035857565789}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565816}
+  m_Layer: 0
+  m_Name: BrachiosaurusTail7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565828}
+  m_LocalRotation: {x: 0.000000004376021, y: -0.0000000045739594, z: -0.0119803995,
+    w: 0.99992824}
+  m_LocalPosition: {x: -0.46899536, y: -0.00000030517577, z: 1.4551915e-13}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565803}
+  m_Father: {fileID: 1865307035857565869}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565811}
+  m_Layer: 0
+  m_Name: Brachiosaurus_LLeg2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565829}
+  m_LocalRotation: {x: -0.07825486, y: 0.027692521, z: 0.25161043, w: 0.9642621}
+  m_LocalPosition: {x: -2.9347057, y: 0.00000015258789, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000002, z: 0.99999994}
+  m_Children:
+  - {fileID: 1865307035857565820}
+  m_Father: {fileID: 1865307035857565865}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565858}
+  m_Layer: 0
+  m_Name: BrachiosaurusSpine2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565830}
+  m_LocalRotation: {x: -0.0000000030856624, y: -0.00000002682901, z: -0.16708998,
+    w: 0.98594165}
+  m_LocalPosition: {x: -1.6837504, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999999, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565784}
+  - {fileID: 1865307035857565771}
+  m_Father: {fileID: 1865307035857565861}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565768}
+  m_Layer: 0
+  m_Name: BrachiosaurusNeck2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565831}
+  m_LocalRotation: {x: -0.0000000016381098, y: -0.000000018860156, z: 0.13969189,
+    w: 0.99019504}
+  m_LocalPosition: {x: -1.4789447, y: -0.00000061035155, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565778}
+  - {fileID: 1865307035857565788}
+  m_Father: {fileID: 1865307035857565765}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565791}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FRLegCollarbone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565832}
+  m_LocalRotation: {x: 0.49973288, y: -0.35852337, z: -0.36603555, w: 0.69838816}
+  m_LocalPosition: {x: 1.2781152, y: -0.5131891, z: -0.6976242}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565785}
+  m_Father: {fileID: 1865307035857565769}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565864}
+  m_Layer: 0
+  m_Name: BrachiosaurusNeck8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565833}
+  m_LocalRotation: {x: -0.000000004591566, y: -0.000000019772003, z: -0.07080866,
+    w: 0.9974899}
+  m_LocalPosition: {x: -0.94971067, y: -0.00000030517577, z: -3.6379787e-14}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565872}
+  m_Father: {fileID: 1865307035857565875}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565785}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FRLeg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565834}
+  m_LocalRotation: {x: 0.6571867, y: -0.4255553, z: 0.29673916, w: 0.5467671}
+  m_LocalPosition: {x: -2.5039084, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1.0000001}
+  m_Children:
+  - {fileID: 1865307035857565766}
+  - {fileID: 1865307035857565810}
+  m_Father: {fileID: 1865307035857565791}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565878}
+  m_Layer: 0
+  m_Name: Brachiosaurus1Bone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565835}
+  m_LocalRotation: {x: 0.000000033092736, y: -0.00000014439361, z: -0.64278764, w: 0.76604444}
+  m_LocalPosition: {x: -0, y: 0, z: -0.00000011406344}
+  m_LocalScale: {x: 0.9999999, y: 0.99999976, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565771}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565762}
+  m_Layer: 0
+  m_Name: BrachiosaurusTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565836}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565812}
+  m_Father: {fileID: 1865307035857565859}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565872}
+  m_Layer: 0
+  m_Name: BrachiosaurusNeck9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565837}
+  m_LocalRotation: {x: -0.000000025887005, y: 0.0000000029440377, z: -0.07969399,
+    w: 0.9968194}
+  m_LocalPosition: {x: -0.7357385, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565866}
+  m_Father: {fileID: 1865307035857565864}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565821}
+  - component: {fileID: 1865307035857565793}
+  - component: {fileID: 1865307035857565804}
+  - component: {fileID: 1865307035857565794}
+  - component: {fileID: 1865307035857565792}
+  - component: {fileID: 1865307035857565852}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565838}
+  m_LocalRotation: {x: 0.6577339, y: -0.25714263, z: -0.6539064, w: -0.2714223}
+  m_LocalPosition: {x: -0.34, y: 0.43, z: 0}
+  m_LocalScale: {x: 0.5033789, y: 0.47851074, z: 0.8088807}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565813}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1865307035857565793
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565838}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1865307035857565804
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565838}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1865307035857565794
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1865307035857565792
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565838}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1865307035857565852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565838}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abdd53248f0a846b38697818d0ac7f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodInMouth: {fileID: 6168804212403485152}
+  mission: {fileID: 0}
+--- !u!1 &1865307035857565839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565877}
+  m_Layer: 0
+  m_Name: Brachiosaurus_LLegDigit11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565839}
+  m_LocalRotation: {x: 0.0003032459, y: -0.00042221643, z: -0.5834974, w: 0.81211483}
+  m_LocalPosition: {x: -0.50181687, y: 0.028975677, z: 0.02892021}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565820}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565860}
+  m_Layer: 0
+  m_Name: BrachiosaurusTongue1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565841}
+  m_LocalRotation: {x: -5.1820276e-14, y: 8.3582846e-14, z: 0.25881907, w: 0.9659258}
+  m_LocalPosition: {x: -0.32141724, y: -0.07026367, z: 0.000000073434634}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565870}
+  m_Father: {fileID: 1865307035857565777}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565789}
+  m_Layer: 0
+  m_Name: BrachiosaurusTail5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565842}
+  m_LocalRotation: {x: 0.0000000036169614, y: -0.000000013625776, z: -0.048322886,
+    w: 0.9988318}
+  m_LocalPosition: {x: -1.2071921, y: 0, z: 7.2759575e-14}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565869}
+  m_Father: {fileID: 1865307035857565857}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565774}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FLLeg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565843}
+  m_LocalRotation: {x: -0.65718883, y: 0.42558137, z: 0.29671687, w: 0.54675627}
+  m_LocalPosition: {x: -2.5039082, y: 0.00000015258789, z: 0.00000061035155}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565879}
+  - {fileID: 1865307035857565770}
+  m_Father: {fileID: 1865307035857565822}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565879}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FLLeg2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565844}
+  m_LocalRotation: {x: 0.023514047, y: 0.056457896, z: -0.31847563, w: 0.9459561}
+  m_LocalPosition: {x: -2.278958, y: -0.0000024414062, z: 0.0000008392334}
+  m_LocalScale: {x: 1.0000013, y: 0.99999875, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565779}
+  m_Father: {fileID: 1865307035857565774}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565861}
+  m_Layer: 0
+  m_Name: BrachiosaurusSpine1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565845}
+  m_LocalRotation: {x: 0.000000031819884, y: 0.000000066899844, z: 0.18754432, w: 0.9822562}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565858}
+  m_Father: {fileID: 1865307035857565812}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565779}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FLLegAnkle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565846}
+  m_LocalRotation: {x: -0.004414838, y: -0.029017748, z: 0.13602136, w: 0.99027103}
+  m_LocalPosition: {x: -1.5919397, y: 0.00000030517577, z: 0}
+  m_LocalScale: {x: 0.999999, y: 1.000001, z: 0.99999994}
+  m_Children:
+  - {fileID: 1865307035857565876}
+  - {fileID: 1865307035857565863}
+  m_Father: {fileID: 1865307035857565879}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565868}
+  - component: {fileID: 1865307035857565721}
+  m_Layer: 0
+  m_Name: Brachiosaurus_LOD0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565847}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565859}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &1865307035857565721
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565847}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b4a2672cafa3cdd468ca967ada0f2ecd, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -4038457804458131182, guid: cef1e35ef4872a8419e71b2cd256e375, type: 3}
+  m_Bones:
+  - {fileID: 1865307035857565863}
+  - {fileID: 1865307035857565779}
+  - {fileID: 1865307035857565876}
+  - {fileID: 1865307035857565879}
+  - {fileID: 1865307035857565813}
+  - {fileID: 1865307035857565777}
+  - {fileID: 1865307035857565775}
+  - {fileID: 1865307035857565763}
+  - {fileID: 1865307035857565808}
+  - {fileID: 1865307035857565874}
+  - {fileID: 1865307035857565814}
+  - {fileID: 1865307035857565866}
+  - {fileID: 1865307035857565872}
+  - {fileID: 1865307035857565782}
+  - {fileID: 1865307035857565864}
+  - {fileID: 1865307035857565875}
+  - {fileID: 1865307035857565790}
+  - {fileID: 1865307035857565809}
+  - {fileID: 1865307035857565815}
+  - {fileID: 1865307035857565788}
+  - {fileID: 1865307035857565768}
+  - {fileID: 1865307035857565778}
+  - {fileID: 1865307035857565862}
+  - {fileID: 1865307035857565765}
+  - {fileID: 1865307035857565769}
+  - {fileID: 1865307035857565822}
+  - {fileID: 1865307035857565773}
+  - {fileID: 1865307035857565774}
+  - {fileID: 1865307035857565770}
+  - {fileID: 1865307035857565878}
+  - {fileID: 1865307035857565771}
+  - {fileID: 1865307035857565858}
+  - {fileID: 1865307035857565784}
+  - {fileID: 1865307035857565861}
+  - {fileID: 1865307035857565865}
+  - {fileID: 1865307035857565812}
+  - {fileID: 1865307035857565764}
+  - {fileID: 1865307035857565811}
+  - {fileID: 1865307035857565787}
+  - {fileID: 1865307035857565781}
+  - {fileID: 1865307035857565886}
+  - {fileID: 1865307035857565817}
+  - {fileID: 1865307035857565856}
+  - {fileID: 1865307035857565857}
+  - {fileID: 1865307035857565789}
+  - {fileID: 1865307035857565869}
+  - {fileID: 1865307035857565820}
+  - {fileID: 1865307035857565877}
+  - {fileID: 1865307035857565870}
+  - {fileID: 1865307035857565767}
+  - {fileID: 1865307035857565860}
+  - {fileID: 1865307035857565803}
+  - {fileID: 1865307035857565816}
+  - {fileID: 1865307035857565786}
+  - {fileID: 1865307035857565776}
+  - {fileID: 1865307035857565800}
+  - {fileID: 1865307035857565819}
+  - {fileID: 1865307035857565766}
+  - {fileID: 1865307035857565780}
+  - {fileID: 1865307035857565818}
+  - {fileID: 1865307035857565791}
+  - {fileID: 1865307035857565785}
+  - {fileID: 1865307035857565810}
+  - {fileID: 1865307035857565801}
+  - {fileID: 1865307035857565783}
+  - {fileID: 1865307035857565772}
+  - {fileID: 1865307035857565873}
+  - {fileID: 1865307035857565867}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1865307035857565812}
+  m_AABB:
+    m_Center: {x: -2.4314048, y: -0.2735269, z: -0.00000017881393}
+    m_Extent: {x: 9.991169, y: 6.3589315, z: 1.8403106}
+  m_DirtyAABB: 0
+--- !u!1 &1865307035857565848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565812}
+  m_Layer: 0
+  m_Name: BrachiosaurusPelvis
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565848}
+  m_LocalRotation: {x: -0.56098557, y: -0.43045926, z: 0.5609856, w: 0.43045932}
+  m_LocalPosition: {x: -0.00000008229752, y: 1.8827506, z: 4.8903375}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565787}
+  - {fileID: 1865307035857565865}
+  - {fileID: 1865307035857565817}
+  - {fileID: 1865307035857565861}
+  - {fileID: 1865307035857565781}
+  m_Father: {fileID: 1865307035857565762}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565813}
+  m_Layer: 0
+  m_Name: BrachiosaurusHeadBone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565849}
+  m_LocalRotation: {x: -7.1054274e-15, y: 8.1712415e-14, z: 5.8060167e-28, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565818}
+  - {fileID: 1865307035857565786}
+  - {fileID: 1865307035857565867}
+  - {fileID: 1865307035857565808}
+  - {fileID: 1865307035857565763}
+  - {fileID: 1865307035857565780}
+  - {fileID: 1865307035857565777}
+  - {fileID: 1865307035857565775}
+  - {fileID: 6832011297141187418}
+  - {fileID: 1865307035857565821}
+  - {fileID: 8894960195354835266}
+  m_Father: {fileID: 1865307035857565814}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565782}
+  m_Layer: 0
+  m_Name: Brachiosaurus_Neck_Skin3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565850}
+  m_LocalRotation: {x: 0.00000001518636, y: -0.000000018221451, z: -0.76604444, w: 0.6427877}
+  m_LocalPosition: {x: -0.57998776, y: -0.0000009155273, z: 1.4551915e-13}
+  m_LocalScale: {x: 0.9999999, y: 0.9999997, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565866}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565875}
+  m_Layer: 0
+  m_Name: BrachiosaurusNeck7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565851}
+  m_LocalRotation: {x: -0.000000015823083, y: -0.0000000052637175, z: -0.083352596,
+    w: 0.99652016}
+  m_LocalPosition: {x: -0.85915524, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565864}
+  m_Father: {fileID: 1865307035857565790}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565780}
+  m_Layer: 0
+  m_Name: BrachiosaurusEyelid_Upper_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565853}
+  m_LocalRotation: {x: 0.33383375, y: -0.25857794, z: 0.39469567, w: 0.81603175}
+  m_LocalPosition: {x: -0.24887207, y: -0.08304016, z: -0.20888996}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565813}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565809}
+  m_Layer: 0
+  m_Name: BrachiosaurusNeck5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565854}
+  m_LocalRotation: {x: 0.0000000065551076, y: -0.0000000037573464, z: 0.024234757,
+    w: 0.9997063}
+  m_LocalPosition: {x: -0.8724286, y: 0, z: -7.2759575e-14}
+  m_LocalScale: {x: 0.9999999, y: 0.9999998, z: 0.99999994}
+  m_Children:
+  - {fileID: 1865307035857565790}
+  m_Father: {fileID: 1865307035857565815}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565865}
+  m_Layer: 0
+  m_Name: Brachiosaurus_LLeg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565855}
+  m_LocalRotation: {x: -0.6523103, y: 0.755477, z: -0.029375434, w: 0.053692143}
+  m_LocalPosition: {x: -0.022192534, y: -0.08279846, z: 0.90640694}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_Children:
+  - {fileID: 1865307035857565811}
+  - {fileID: 1865307035857565764}
+  m_Father: {fileID: 1865307035857565812}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565814}
+  m_Layer: 0
+  m_Name: BrachiosaurusHead
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565880}
+  m_LocalRotation: {x: 0.000000026724816, y: -0.000000026915501, z: -0.08648185, w: 0.99625343}
+  m_LocalPosition: {x: -0.3522888, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999996, y: 0.99999976, z: 1.0000001}
+  m_Children:
+  - {fileID: 1865307035857565813}
+  m_Father: {fileID: 1865307035857565874}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565786}
+  m_Layer: 0
+  m_Name: BrachiosaurusEye_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565881}
+  m_LocalRotation: {x: -0.4304591, y: 0.56098574, z: 0.27059796, w: 0.6532815}
+  m_LocalPosition: {x: -0.24887207, y: -0.08304199, z: 0.20888996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565813}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565784}
+  m_Layer: 0
+  m_Name: Brachiosaurus2Bone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565882}
+  m_LocalRotation: {x: 0.000000029064125, y: -0.00000017443178, z: -0.76604444, w: 0.64278764}
+  m_LocalPosition: {x: -0.00000015258789, y: 0.00000061035155, z: -0.00000013101001}
+  m_LocalScale: {x: 1.0000001, y: 0.9999999, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565858}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565788}
+  m_Layer: 0
+  m_Name: BrachiosaurusNeck3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565883}
+  m_LocalRotation: {x: 0.0003745232, y: -0.00054644834, z: 0.11752476, w: 0.9930697}
+  m_LocalPosition: {x: -0.99699557, y: 0.00020815246, z: -0.00031380256}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565815}
+  m_Father: {fileID: 1865307035857565768}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0.05, y: -0.057000004, z: 13.499001}
+--- !u!1 &1865307035857565884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565863}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FLLegDigit21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565884}
+  m_LocalRotation: {x: 0.00032404665, y: -0.00034503755, z: -0.6846464, w: 0.7288753}
+  m_LocalPosition: {x: -0.8717082, y: 0.00603363, z: -0.0005245972}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565779}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565777}
+  m_Layer: 0
+  m_Name: BrachiosaurusJaw
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565885}
+  m_LocalRotation: {x: -1.7120642e-13, y: 6.8677946e-14, z: -0.6087614, w: 0.7933533}
+  m_LocalPosition: {x: -0.117534176, y: 0.1199176, z: -0.00000022778883}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565860}
+  m_Father: {fileID: 1865307035857565813}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565810}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FRLeg_Muscle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565887}
+  m_LocalRotation: {x: 0.00000016858745, y: 0.7071066, z: -0.00000016858735, w: 0.70710695}
+  m_LocalPosition: {x: 0.00000061035155, y: 0.00000061035155, z: 0.00000015258789}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565785}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565766}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FRLeg2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565890}
+  m_LocalRotation: {x: -0.023559669, y: -0.05659738, z: -0.31845582, w: 0.9459533}
+  m_LocalPosition: {x: -2.278958, y: -0.0000019836425, z: -0.0000007629394}
+  m_LocalScale: {x: 1.0000002, y: 0.99999964, z: 0.9999998}
+  m_Children:
+  - {fileID: 1865307035857565800}
+  m_Father: {fileID: 1865307035857565785}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565862}
+  m_Layer: 0
+  m_Name: Brachiosaurus_Neck_Skin1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565892}
+  m_LocalRotation: {x: -0.00000001624495, y: -0.00000013850911, z: -0.6755902, w: 0.7372773}
+  m_LocalPosition: {x: -0.8874829, y: 0.05174591, z: 0.000000073062544}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565765}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565856}
+  m_Layer: 0
+  m_Name: BrachiosaurusTail3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565893}
+  m_LocalRotation: {x: 0.0000000040006762, y: -0.000000019573891, z: -0.06644863,
+    w: 0.99778986}
+  m_LocalPosition: {x: -1.0419734, y: 0, z: -7.2759575e-14}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565857}
+  m_Father: {fileID: 1865307035857565886}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565775}
+  m_Layer: 0
+  m_Name: BrachiosaurusNose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565894}
+  m_LocalRotation: {x: -7.1054274e-15, y: 8.1712415e-14, z: 5.8060167e-28, w: 1}
+  m_LocalPosition: {x: -0.5732837, y: -0.06267822, z: 0.000000017196871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565813}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565818}
+  m_Layer: 0
+  m_Name: BrachiosaurusBrachiosaurusEyelid_Lower_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565895}
+  m_LocalRotation: {x: -0.51278067, y: 0.7419467, z: -0.06546534, w: -0.426949}
+  m_LocalPosition: {x: -0.24887207, y: -0.08304016, z: -0.20888996}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565813}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565886}
+  m_Layer: 0
+  m_Name: BrachiosaurusTail2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565920}
+  m_LocalRotation: {x: 0.000000006824616, y: -0.00000001902558, z: -0.09075989, w: 0.9958728}
+  m_LocalPosition: {x: -1.3626648, y: 0, z: 1.4551915e-13}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565856}
+  m_Father: {fileID: 1865307035857565781}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565803}
+  m_Layer: 0
+  m_Name: BrachiosaurusTail8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565921}
+  m_LocalRotation: {x: 0.000000004244843, y: -0.0000000043570236, z: -0.011980399,
+    w: 0.99992824}
+  m_LocalPosition: {x: -0.50543576, y: 0, z: 7.2759575e-14}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565816}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565771}
+  m_Layer: 0
+  m_Name: BrachiosaurusSpine3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565922}
+  m_LocalRotation: {x: 0.0000000061805983, y: -0.000000034829956, z: -0.18901807,
+    w: 0.9819736}
+  m_LocalPosition: {x: -1.6251941, y: 0.00000061035155, z: -1.4551915e-13}
+  m_LocalScale: {x: 1.0000002, y: 1.0000001, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565878}
+  - {fileID: 1865307035857565769}
+  m_Father: {fileID: 1865307035857565858}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565820}
+  m_Layer: 0
+  m_Name: Brachiosaurus_LLegAnkle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565923}
+  m_LocalRotation: {x: 0.02747687, y: 0.010851507, z: -0.35070193, w: 0.9360211}
+  m_LocalPosition: {x: -1.6316702, y: -0.0000007629394, z: 0.000000076293944}
+  m_LocalScale: {x: 0.99999994, y: 1.0000005, z: 0.9999999}
+  m_Children:
+  - {fileID: 1865307035857565877}
+  m_Father: {fileID: 1865307035857565811}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565800}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FRLegAnkle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565924}
+  m_LocalRotation: {x: 0.0044197286, y: 0.029297806, z: 0.13603745, w: 0.99026054}
+  m_LocalPosition: {x: -1.5919402, y: 0.00000030517577, z: -0.000000076293944}
+  m_LocalScale: {x: 1.0000001, y: 1.0000004, z: 1.0000002}
+  m_Children:
+  - {fileID: 1865307035857565819}
+  - {fileID: 1865307035857565776}
+  m_Father: {fileID: 1865307035857565766}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565801}
+  m_Layer: 0
+  m_Name: Brachiosaurus_RLeg_Muscle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565925}
+  m_LocalRotation: {x: 0.061628416, y: 0.70441604, z: 0.061628416, w: 0.70441604}
+  m_LocalPosition: {x: -1.247629, y: -0.053046416, z: 0.21429443}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565817}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565817}
+  m_Layer: 0
+  m_Name: Brachiosaurus_RLeg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565926}
+  m_LocalRotation: {x: -0.6523106, y: 0.7554767, z: 0.029375615, w: -0.05369233}
+  m_LocalPosition: {x: -0.022192383, y: -0.08279846, z: -0.90640694}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565783}
+  - {fileID: 1865307035857565801}
+  m_Father: {fileID: 1865307035857565812}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565773}
+  m_Layer: 0
+  m_Name: BrachiosaurusRibcageBone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565927}
+  m_LocalRotation: {x: -0.000000030995267, y: -0.00000013472658, z: -0.7372773, w: 0.6755902}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565769}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565765}
+  m_Layer: 0
+  m_Name: BrachiosaurusNeck1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565928}
+  m_LocalRotation: {x: 0.000000015747782, y: 0.000000036595452, z: 0.14282268, w: 0.9897483}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565862}
+  - {fileID: 1865307035857565768}
+  m_Father: {fileID: 1865307035857565769}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565867}
+  m_Layer: 0
+  m_Name: BrachiosaurusEye_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565929}
+  m_LocalRotation: {x: 0.4304592, y: -0.5609857, z: 0.27059802, w: 0.65328145}
+  m_LocalPosition: {x: -0.24887207, y: -0.08304199, z: -0.20888996}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565813}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565763}
+  m_Layer: 0
+  m_Name: BrachiosaurusEyelid_Upper_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565930}
+  m_LocalRotation: {x: -0.3338338, y: 0.2585779, z: 0.39469573, w: 0.8160317}
+  m_LocalPosition: {x: -0.24887328, y: -0.08304138, z: 0.20888996}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565813}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565874}
+  m_Layer: 0
+  m_Name: BrachiosaurusNeck11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565931}
+  m_LocalRotation: {x: -0.00000005878225, y: 0.000000016983755, z: -0.034469623, w: 0.99940574}
+  m_LocalPosition: {x: -0.57998776, y: -0.0000009155273, z: 1.4551915e-13}
+  m_LocalScale: {x: 1.0000002, y: 1.0000001, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565814}
+  m_Father: {fileID: 1865307035857565866}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565815}
+  m_Layer: 0
+  m_Name: BrachiosaurusNeck4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565932}
+  m_LocalRotation: {x: -0.0015069707, y: 0.0035619736, z: 0.11965597, w: 0.9928079}
+  m_LocalPosition: {x: -0.996046, y: 0.00016430672, z: -0.00017559735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565809}
+  m_Father: {fileID: 1865307035857565788}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.22000001, y: 0.38500002, z: 13.744}
+--- !u!1 &1865307035857565933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565769}
+  m_Layer: 0
+  m_Name: BrachiosaurusRibcage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565933}
+  m_LocalRotation: {x: -0.000000020673903, y: -0.000000011387039, z: 0.17626888, w: 0.9843421}
+  m_LocalPosition: {x: -1.6133237, y: 0, z: 0}
+  m_LocalScale: {x: 0.99999976, y: 0.9999999, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565822}
+  - {fileID: 1865307035857565791}
+  - {fileID: 1865307035857565765}
+  - {fileID: 1865307035857565773}
+  m_Father: {fileID: 1865307035857565771}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565870}
+  m_Layer: 0
+  m_Name: BrachiosaurusTongue2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565934}
+  m_LocalRotation: {x: -8.3144497e-14, y: 2.1696286e-14, z: -0.13052617, w: 0.9914449}
+  m_LocalPosition: {x: -0.11284729, y: -0.0000012207031, z: 1.4551915e-13}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565767}
+  m_Father: {fileID: 1865307035857565860}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565767}
+  m_Layer: 0
+  m_Name: BrachiosaurusTongue3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565935}
+  m_LocalRotation: {x: -5.0151106e-14, y: 5.431476e-14, z: 0.13052621, w: 0.9914449}
+  m_LocalPosition: {x: -0.16178955, y: 0, z: -1.4551915e-13}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565870}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565764}
+  m_Layer: 0
+  m_Name: Brachiosaurus_LLeg_Muscle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565936}
+  m_LocalRotation: {x: -0.061628416, y: -0.70441604, z: 0.061628416, w: 0.70441604}
+  m_LocalPosition: {x: -1.247629, y: -0.053046264, z: -0.21429451}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565865}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565822}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FLLegCollarbone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565937}
+  m_LocalRotation: {x: -0.4997329, y: 0.3585234, z: -0.36603564, w: 0.69838816}
+  m_LocalPosition: {x: 1.2781152, y: -0.5131885, z: 0.69762427}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_Children:
+  - {fileID: 1865307035857565774}
+  m_Father: {fileID: 1865307035857565769}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565776}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FRLegDigit21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565938}
+  m_LocalRotation: {x: -0.00020737163, y: 0.00022084433, z: -0.6846666, w: 0.7288564}
+  m_LocalPosition: {x: -0.87170815, y: 0.0060342406, z: 0.0005245209}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565800}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565790}
+  m_Layer: 0
+  m_Name: BrachiosaurusNeck6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565939}
+  m_LocalRotation: {x: 0.00021833357, y: -0.0007971706, z: -0.0006296127, w: 0.9999995}
+  m_LocalPosition: {x: -0.8798639, y: 0.00015414767, z: -0.00015429627}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
+  m_Children:
+  - {fileID: 1865307035857565875}
+  m_Father: {fileID: 1865307035857565809}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.025, y: -0.091000006, z: -0.072000004}
+--- !u!1 &1865307035857565940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565778}
+  m_Layer: 0
+  m_Name: Brachiosaurus_Neck_Skin2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565940}
+  m_LocalRotation: {x: -0.0000000825318, y: -0.00000012859034, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.609187, y: 0, z: -0.0000000017206184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565768}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565787}
+  m_Layer: 0
+  m_Name: Brachiosaurus3Bone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565941}
+  m_LocalRotation: {x: -0.0000000049411844, y: -0.00000015732434, z: -0.7933533, w: 0.6087614}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565812}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565857}
+  m_Layer: 0
+  m_Name: BrachiosaurusTail4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565943}
+  m_LocalRotation: {x: 0.0000000036888947, y: -0.000000014844962, z: -0.054410793,
+    w: 0.99851865}
+  m_LocalPosition: {x: -1.2071921, y: 0.00000030517577, z: -7.2759575e-14}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565789}
+  m_Father: {fileID: 1865307035857565856}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565783}
+  m_Layer: 0
+  m_Name: Brachiosaurus_RLeg2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565944}
+  m_LocalRotation: {x: 0.0782548, y: -0.027692568, z: 0.2516107, w: 0.9642621}
+  m_LocalPosition: {x: -2.9347057, y: -0.00000030517577, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000004, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565772}
+  m_Father: {fileID: 1865307035857565817}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565819}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FRLegDigit11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565945}
+  m_LocalRotation: {x: -0.36804587, y: -0.39142802, z: -0.5773306, w: 0.61482984}
+  m_LocalPosition: {x: -0.8705142, y: -0.013459777, z: -0.3123037}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565800}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565859}
+  - component: {fileID: 1865307035857565797}
+  - component: {fileID: 1865307035857565720}
+  - component: {fileID: 1865307035857565725}
+  m_Layer: 0
+  m_Name: Brachiosaurus_IK_new
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565946}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.35}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_Children:
+  - {fileID: 1865307035857565868}
+  - {fileID: 1865307035857565760}
+  - {fileID: 1865307035857565762}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!95 &1865307035857565797
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565946}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: cef1e35ef4872a8419e71b2cd256e375, type: 3}
+  m_Controller: {fileID: 9100000, guid: ecc699c041d59d7408a87e036b68b81a, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!205 &1865307035857565720
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565946}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.0000011920929, y: 5.78384, z: 0.39501095}
+  m_Size: 22.593094
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.25
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 1865307035857565721}
+  - screenRelativeHeight: 0.01
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 1865307035857565798}
+  m_Enabled: 1
+--- !u!114 &1865307035857565725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b9a1a9e9a934b23a7db351dd9ec69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixTransforms: 1
+  solver:
+    IKPosition: {x: 0.033965982, y: 2.7777083, z: 0.76330745}
+    IKPositionWeight: 0
+    root: {fileID: 1865307035857565859}
+    target: {fileID: 0}
+    tolerance: 0
+    maxIterations: 8
+    useRotationLimits: 1
+    XY: 0
+    bones:
+    - transform: {fileID: 1865307035857565765}
+      weight: 1
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0, y: 0, z: 0}
+      defaultLocalRotation: {x: 0.000000015747782, y: 0.000000036595452, z: 0.14282268,
+        w: 0.9897483}
+      length: 0.29578915
+      sqrMag: 0
+      axis: {x: -0.29578924, y: -0.000000096661054, z: -0.000000019494156}
+    - transform: {fileID: 1865307035857565768}
+      weight: 0.5
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -1.4789447, y: -0.00000061035155, z: 0}
+      defaultLocalRotation: {x: -0.0000000016381098, y: -0.000000018860156, z: 0.13969189,
+        w: 0.99019504}
+      length: 0.19939908
+      sqrMag: 0
+      axis: {x: -0.19939914, y: 0.00004136111, z: -0.00006271742}
+    - transform: {fileID: 1865307035857565788}
+      weight: 0.4
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.99699557, y: 0.00020815246, z: -0.00031380256}
+      defaultLocalRotation: {x: 0.0003745232, y: -0.00054644834, z: 0.11752476, w: 0.9930697}
+      length: 0.19920914
+      sqrMag: 0
+      axis: {x: -0.19920917, y: 0.00003279818, z: -0.00003509493}
+    - transform: {fileID: 1865307035857565815}
+      weight: 0.3
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.996046, y: 0.00016430672, z: -0.00017559735}
+      defaultLocalRotation: {x: -0.0015069707, y: 0.0035619736, z: 0.11965597, w: 0.9928079}
+      length: 0.1744857
+      sqrMag: 0
+      axis: {x: -0.17448579, y: -0.00000007929502, z: 0.000000010410974}
+    - transform: {fileID: 1865307035857565809}
+      weight: 0.2
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.8724286, y: 0, z: -7.2759575e-14}
+      defaultLocalRotation: {x: 0.0000000065551076, y: -0.0000000037573464, z: 0.024234757,
+        w: 0.9997063}
+      length: 0.17597242
+      sqrMag: 0
+      axis: {x: -0.1759725, y: 0.00003061247, z: -0.00003084015}
+    - transform: {fileID: 1865307035857565790}
+      weight: 0.2
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.8798639, y: 0.00015414767, z: -0.00015429627}
+      defaultLocalRotation: {x: 0.00021833357, y: -0.0007971706, z: -0.0006296127,
+        w: 0.9999995}
+      length: 0.1718311
+      sqrMag: 0
+      axis: {x: -0.17183115, y: 0.00000023491674, z: 0.000000017148565}
+    - transform: {fileID: 1865307035857565875}
+      weight: 0.2
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.85915524, y: 0, z: 0}
+      defaultLocalRotation: {x: -0.000000015823083, y: -0.0000000052637175, z: -0.083352596,
+        w: 0.99652016}
+      length: 0.18994264
+      sqrMag: 0
+      axis: {x: -0.1899428, y: -0.00000055505615, z: 0.000000048444832}
+    - transform: {fileID: 1865307035857565864}
+      weight: 0.317
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.94971067, y: -0.00000030517577, z: -3.6379787e-14}
+      defaultLocalRotation: {x: -0.000000004591566, y: -0.000000019772003, z: -0.07080866,
+        w: 0.9974899}
+      length: 0.14714754
+      sqrMag: 0
+      axis: {x: -0.14714763, y: -0.0000002128604, z: 0.000000041989278}
+    - transform: {fileID: 1865307035857565872}
+      weight: 0.317
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.7357385, y: 0, z: 0}
+      defaultLocalRotation: {x: -0.000000025887005, y: 0.0000000029440377, z: -0.07969399,
+        w: 0.9968194}
+      length: 0.12114045
+      sqrMag: 0
+      axis: {x: -0.12114052, y: -0.00011242049, z: -0.00005024253}
+    - transform: {fileID: 1865307035857565866}
+      weight: 0.17
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.6057014, y: -0.00056063005, z: -0.00025157942}
+      defaultLocalRotation: {x: -0.0056065833, y: 0.0058289827, z: 0.054675717, w: 0.9984715}
+      length: 0.115997545
+      sqrMag: 0
+      axis: {x: -0.11599766, y: 0.00000005506799, z: 0.000000062690305}
+    - transform: {fileID: 1865307035857565874}
+      weight: 0.07
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.57998776, y: -0.0000009155273, z: 1.4551915e-13}
+      defaultLocalRotation: {x: -0.00000005878225, y: 0.000000016983755, z: -0.034469623,
+        w: 0.99940574}
+      length: 0.0704576
+      sqrMag: 0
+      axis: {x: -0.07045764, y: 0.00000021983196, z: 0.00000003034093}
+    - transform: {fileID: 1865307035857565814}
+      weight: 0
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.3522888, y: 0, z: 0}
+      defaultLocalRotation: {x: 0.000000026724816, y: -0.000000026915501, z: -0.08648185,
+        w: 0.99625343}
+      length: 0.15520874
+      sqrMag: 0
+      axis: {x: -0.09480017, y: 0.11979971, z: 0.027400145}
+    - transform: {fileID: 0}
+      weight: 0
+      solverPosition: {x: 0, y: 0, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0, w: 0}
+      defaultLocalPosition: {x: -0.474, y: 0.599, z: 0.137}
+      defaultLocalRotation: {x: 0, y: 0, z: 0, w: 1}
+      length: 0
+      sqrMag: 0
+      axis: {x: -1.8232331, y: -0.36459363, z: 0.004963148}
+--- !u!1 &1865307035857565947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565808}
+  m_Layer: 0
+  m_Name: BrachiosaurusEyelid_Lower_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565947}
+  m_LocalRotation: {x: -0.51278067, y: 0.7419467, z: 0.06546534, w: 0.426949}
+  m_LocalPosition: {x: -0.24887328, y: -0.08304138, z: 0.20888996}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565813}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565770}
+  m_Layer: 0
+  m_Name: Brachiosaurus_FLLeg_Muscle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565948}
+  m_LocalRotation: {x: -0.00000016858742, y: -0.7071066, z: -0.00000016858733, w: 0.70710695}
+  m_LocalPosition: {x: 0.0000012207031, y: 0.00000015258789, z: -0.000000076293944}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565774}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565760}
+  - component: {fileID: 1865307035857565798}
+  m_Layer: 0
+  m_Name: Brachiosaurus_LOD1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565949}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565859}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &1865307035857565798
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565949}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b4a2672cafa3cdd468ca967ada0f2ecd, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -5381589999996058411, guid: cef1e35ef4872a8419e71b2cd256e375, type: 3}
+  m_Bones:
+  - {fileID: 1865307035857565863}
+  - {fileID: 1865307035857565779}
+  - {fileID: 1865307035857565876}
+  - {fileID: 1865307035857565813}
+  - {fileID: 1865307035857565777}
+  - {fileID: 1865307035857565808}
+  - {fileID: 1865307035857565775}
+  - {fileID: 1865307035857565786}
+  - {fileID: 1865307035857565763}
+  - {fileID: 1865307035857565874}
+  - {fileID: 1865307035857565814}
+  - {fileID: 1865307035857565782}
+  - {fileID: 1865307035857565866}
+  - {fileID: 1865307035857565872}
+  - {fileID: 1865307035857565864}
+  - {fileID: 1865307035857565875}
+  - {fileID: 1865307035857565790}
+  - {fileID: 1865307035857565809}
+  - {fileID: 1865307035857565815}
+  - {fileID: 1865307035857565788}
+  - {fileID: 1865307035857565768}
+  - {fileID: 1865307035857565778}
+  - {fileID: 1865307035857565862}
+  - {fileID: 1865307035857565765}
+  - {fileID: 1865307035857565769}
+  - {fileID: 1865307035857565822}
+  - {fileID: 1865307035857565773}
+  - {fileID: 1865307035857565774}
+  - {fileID: 1865307035857565770}
+  - {fileID: 1865307035857565878}
+  - {fileID: 1865307035857565771}
+  - {fileID: 1865307035857565858}
+  - {fileID: 1865307035857565861}
+  - {fileID: 1865307035857565784}
+  - {fileID: 1865307035857565879}
+  - {fileID: 1865307035857565865}
+  - {fileID: 1865307035857565812}
+  - {fileID: 1865307035857565764}
+  - {fileID: 1865307035857565787}
+  - {fileID: 1865307035857565811}
+  - {fileID: 1865307035857565781}
+  - {fileID: 1865307035857565886}
+  - {fileID: 1865307035857565856}
+  - {fileID: 1865307035857565817}
+  - {fileID: 1865307035857565857}
+  - {fileID: 1865307035857565789}
+  - {fileID: 1865307035857565869}
+  - {fileID: 1865307035857565860}
+  - {fileID: 1865307035857565820}
+  - {fileID: 1865307035857565877}
+  - {fileID: 1865307035857565870}
+  - {fileID: 1865307035857565767}
+  - {fileID: 1865307035857565803}
+  - {fileID: 1865307035857565816}
+  - {fileID: 1865307035857565776}
+  - {fileID: 1865307035857565800}
+  - {fileID: 1865307035857565819}
+  - {fileID: 1865307035857565818}
+  - {fileID: 1865307035857565867}
+  - {fileID: 1865307035857565780}
+  - {fileID: 1865307035857565791}
+  - {fileID: 1865307035857565785}
+  - {fileID: 1865307035857565810}
+  - {fileID: 1865307035857565766}
+  - {fileID: 1865307035857565801}
+  - {fileID: 1865307035857565783}
+  - {fileID: 1865307035857565772}
+  - {fileID: 1865307035857565873}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1865307035857565812}
+  m_AABB:
+    m_Center: {x: -2.4265597, y: -0.27359176, z: -0.0000009536743}
+    m_Extent: {x: 9.986324, y: 6.356271, z: 2.0006483}
+  m_DirtyAABB: 0
+--- !u!1 &1865307035857565950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565781}
+  m_Layer: 0
+  m_Name: BrachiosaurusTail1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565950}
+  m_LocalRotation: {x: 0.0000000033789407, y: 0.00000019399631, z: 0.9828949, w: -0.18416728}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1865307035857565886}
+  m_Father: {fileID: 1865307035857565812}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865307035857565951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865307035857565873}
+  m_Layer: 0
+  m_Name: Brachiosaurus_RLegDigit11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865307035857565873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865307035857565951}
+  m_LocalRotation: {x: -0.00020763186, y: 0.0002890921, z: -0.5834534, w: 0.81214654}
+  m_LocalPosition: {x: -0.5018169, y: 0.028975524, z: -0.028920135}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865307035857565772}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2727377453458177991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8894960195354835266}
+  m_Layer: 0
+  m_Name: watertree_leaves1_lod0 (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8894960195354835266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2727377453458177991}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4749027142302374884}
+  m_Father: {fileID: 1865307035857565813}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6438625119155979441
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1865307035857565813}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.04553047
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5812007
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.29695055
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.13480939
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6978102
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.6901506
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.13630639
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -67.886
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 268.444
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -88.32001
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_Name
+      value: richart
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 075f651bce0b9429e8d9215fb6845072,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 075f651bce0b9429e8d9215fb6845072, type: 3}
+--- !u!4 &6832011297141187418 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 075f651bce0b9429e8d9215fb6845072,
+    type: 3}
+  m_PrefabInstance: {fileID: 6438625119155979441}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6168804212403485152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 075f651bce0b9429e8d9215fb6845072,
+    type: 3}
+  m_PrefabInstance: {fileID: 6438625119155979441}
+  m_PrefabAsset: {fileID: 0}

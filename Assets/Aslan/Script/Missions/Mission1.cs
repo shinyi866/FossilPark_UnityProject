@@ -18,6 +18,11 @@ namespace GameMission
 
             Debug.Log("1");
         }
+
+        public override void StartGame()
+        {
+
+        }
     }
 }
 

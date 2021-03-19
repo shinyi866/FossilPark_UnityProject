@@ -43,8 +43,8 @@ namespace GameMission
             _camera = CameraCtrl.instance.GetCurrentCamera();
             handBall.SetActive(false);
             count = fruit;
-            leftButton = gameModal.leftButton;
-            rightButton = gameModal.rightButton;
+            leftButton = gameModal.game3Panel.leftButton;
+            rightButton = gameModal.game3Panel.rightButton;
 
             var _cameraFront = _camera.transform.forward;
             _cameraFront.y = -0.8f;
@@ -136,8 +136,8 @@ namespace GameMission
         {
             if (!isGameStart) return;
 
-            gameModal.getFruitText.text = "接到果子數： " + CatchFruit.fruitCount.ToString();
-            gameModal.countText.text = "剩餘果子數： " + count.ToString();
+            gameModal.game3Panel.text.text = "接到果子數： " + CatchFruit.fruitCount.ToString();
+            //gameModal.countText.text = "剩餘果子數： " + count.ToString();
 
             if (AnimatorIsEnd() && isThrowing)
             {

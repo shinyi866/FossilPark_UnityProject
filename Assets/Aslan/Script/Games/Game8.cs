@@ -16,12 +16,13 @@ namespace GameMission
         public GameObject[] dinosaurlScenes; // 0:grass, 1:meat, 2:fish
         public GameObject[] dinosaurs; // 0:grass, 1:meat, 2:fish
         public Transform[] topBons;// 0:grass, 1:meat, 2:fish
-        public Transform testTarget;        
+        public Transform testTarget;
+        public ARPlaneManager planeManager;
         public bool TestMode;
-
+        
         [HideInInspector]
         public bool isEat;
-
+        
         // vector to caculate food direction
         //public Transform centerPoint;
 
@@ -31,6 +32,9 @@ namespace GameMission
         //private Transform Target;
         private Button[] foodButton = new Button[3]; // 0:grass, 1:meat, 2:fish
         private Dictionary<string, GameObject> arObjects = new Dictionary<string, GameObject>();
+        // AR place
+        private Vector2 touchPosition = default;
+        private Camera _camera;
 
         private float ccidWeight = 0.0f;
         private bool isSetWeight;
@@ -39,7 +43,10 @@ namespace GameMission
 
         public void Init()
         {
-            foreach(var b in dinosaurlScenes) { b.SetActive(false); }
+            _camera = CameraCtrl.instance.GetCurrentCamera();
+            planeManager.enabled = true;
+
+            foreach (var b in dinosaurlScenes) { b.SetActive(false); }
 
             // setup all game objects in dictionary
             foreach (GameObject food in foodGameObject)
@@ -60,7 +67,7 @@ namespace GameMission
 
         private void ButtonSetUp()
         {
-            for (int i = 0; i < foodButton.Length; i++) { foodButton[i] = GameModals.instance.GetModal<ARGameModal>().foodButton[i]; }
+            for (int i = 0; i < foodButton.Length; i++) { foodButton[i] = GameModals.instance.GetModal<ARGameModal>().game8Panel.foodButtons[i]; }
             for (int i = 0; i < foodButton.Length; i++)
             {
                 int closureIndex = i;
@@ -203,6 +210,24 @@ namespace GameMission
             if (!isGameStart) return;
 
             TargetDirection();
+            
+        }
+
+        private void ARTapObject()
+        {
+            Touch touch = Input.GetTouch(0);
+            touchPosition = touch.position;
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                Ray ray = _camera.ScreenPointToRay(touch.position);
+                RaycastHit hitObject;
+
+                if (Physics.Raycast(ray, out hitObject))
+                {
+
+                }
+            }
         }
     }
 }

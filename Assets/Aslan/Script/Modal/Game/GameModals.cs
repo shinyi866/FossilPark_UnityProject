@@ -96,25 +96,50 @@ namespace View
         // Round missions notify (3-8m)
         public void RoundNotify(int index)
         {
-            var model = _instance.OpenModal<NotifyModal>();
-            model.ShowInfo(index, TypeFlag.NotifyType.RoundNotify);
+            var model = _instance.OpenModal<TitleModal>();
+            model.ShowInfo(index, TypeFlag.TitleType.RoundTitleNotify);
         }
         // Show and enter missions (1-2m)
         public void ShowNotify(int index)
         {
-            var model = _instance.OpenModal<NotifyModal>();
-            model.ShowInfo(index, TypeFlag.NotifyType.EnterNotify);
-            model.ConfirmButton.onClick.AddListener(() => EnterMessage(index));
+            var model = _instance.OpenModal<TitleModal>();
+            model.ShowInfo(index, TypeFlag.TitleType.EnterTitle);
+            model.ConfirmButton.onClick.AddListener(() =>
+            {
+                EnterModel(index);
+                GameMissions.instance.EnterGame();
+            });
         }
 
-        private void EnterMessage(int index)
+        private void EnterModel(int index)
         {
             var model = _instance.OpenModal<DialogModal>();
             model.ShowInfo(index, TypeFlag.DialogType.EnterDialog);
-            model.ConfirmButton.onClick.AddListener(() =>
+            model.NextButton.onClick.AddListener(() => StartDialogModel(index));
+        }
+
+        private void StartDialogModel(int index)
+        {
+            var model = _instance.OpenModal<TitleModal>();
+            model.ShowInfo(index, TypeFlag.TitleType.GameTitle);
+            model.ConfirmButton.onClick.AddListener(() => GuideModel(index));
+        }
+
+        private void GuideModel(int index)
+        {
+            var model = _instance.OpenModal<PictureModal>();
+            model.ShowInfo(index, TypeFlag.PictureType.GuideType);
+
+            model.GuideConfirmButtonOne.onClick.AddListener(()=>
             {
                 CloseModal();
-                GameMissions.instance.EnterGame();
+                GameMissions.instance.StartGame();
+            });
+
+            model.GuideConfirmButtonTwo.onClick.AddListener(() =>
+            {
+                CloseModal();
+                GameMissions.instance.StartGame();
             });
         }
     }

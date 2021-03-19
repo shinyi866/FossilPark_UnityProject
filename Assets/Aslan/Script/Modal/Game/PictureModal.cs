@@ -10,36 +10,47 @@ namespace View
     {
         [SerializeField]
         private CanvasGroup ARpicturePanel;
+        //===[SerializeField]
+        //===private CanvasGroup photoButtonPanel;
         [SerializeField]
-        private CanvasGroup findAnimalPanel;
+        private OnePictureGuidePanel onePictureGuidePanel;
         [SerializeField]
-        private CanvasGroup photoButtonPanel;
+        private TwoPictureGuidePanel twoPictureGuidePanel;
 
         [SerializeField]
         private Button SaveButton;
         [SerializeField]
         private Button ExitButton;
 
-        public Button ConfirmButton;
-        public Button PictureButton;
-
         [SerializeField]
         private Image ARimage;
-        [SerializeField]
-        private Image missionImage;
+        //[SerializeField]
+        //private Image missionImage;
 
-        [SerializeField]
-        private Text message;
-        [SerializeField]
-        private Text missionMessage;
+        //[SerializeField]
+        //private Text message;
+        //[SerializeField]
+        //private Text missionMessage;
+
+        [HideInInspector]
+        public Button ConfirmButton;
+        [HideInInspector]
+        public Button PictureButton;
+        [HideInInspector]
+        public Button GuideConfirmButtonOne;
+        [HideInInspector]
+        public Button GuideConfirmButtonTwo;
 
         private Image _image;
         private GameDialogData data;
         private TypeFlag.PictureType currentType;
+        private CanvasGroup[] GameCanvasGroups;
 
         private void Awake()
         {
             data = MainApp.Instance.database;
+
+            GameCanvasGroups = new CanvasGroup[] { ARpicturePanel, onePictureGuidePanel.canvasGroup, twoPictureGuidePanel.canvasGroup };
 
             //PictureButton.onClick.AddListener(() => { TakePicture(); });
 
@@ -51,53 +62,83 @@ namespace View
             //ExitButton.onClick.AddListener(() => { SavePhotoPanel(false); });
             ConfirmButton.onClick.AddListener(() =>
             {
-                ShowPhotoPanel(photoButtonPanel, true);
-                ShowPhotoPanel(findAnimalPanel, false);
+                //===ShowPhotoPanel(photoButtonPanel, true);
+                ShowPanel(onePictureGuidePanel.canvasGroup, false);
             });
+
+            GuideConfirmButtonOne = onePictureGuidePanel.button;
+            GuideConfirmButtonTwo = twoPictureGuidePanel.button;
+        }
+
+        private void Init()
+        {
+            foreach (var c in GameCanvasGroups) { ShowPanel(c, false); }
+
+            GuideConfirmButtonOne.onClick.RemoveAllListeners();
+            GuideConfirmButtonTwo.onClick.RemoveAllListeners();
         }
 
         public void ResetView()
         {
             PictureButton.interactable = true;
-            ShowPhotoPanel(ARpicturePanel, false);
-            ShowPhotoPanel(findAnimalPanel, false);
+            ShowPanel(ARpicturePanel, false);
+            ShowPanel(onePictureGuidePanel.canvasGroup, false);
         }
 
         public void ShowInfo(int index, TypeFlag.PictureType type)
         {
             var gameData = data.m_Data[index];
 
-            ShowPhotoPanel(ARpicturePanel, false);
-            ShowPhotoPanel(findAnimalPanel, false);
-            
+            Init();
             currentType = type;
 
             switch (type)
             {
                 case TypeFlag.PictureType.ARtype:
                     _image = ARimage;
-                    message.text = gameData.pictureNotify;
+                    //message.text = gameData.pictureNotify;
                     break;
                 case TypeFlag.PictureType.MissionType:
-                    ShowPhotoPanel(photoButtonPanel, true); // open photo button
-                    _image = missionImage;
-                    message.text = gameData.gameNotify[0];
-                    missionMessage.text = gameData.gameNotify[0];
+                    //===ShowPhotoPanel(photoButtonPanel, true); // open photo button
+                    //_image = missionImage;
+                    //message.text = gameData.gameNotify[0];
+                    //missionMessage.text = gameData.gameNotify[0];
+                    break;
+                case TypeFlag.PictureType.GuideType:
+                    var id = gameData.guideID;
+
+                    if (id == 1)
+                    {
+                        ShowPanel(onePictureGuidePanel.canvasGroup, true);
+                        onePictureGuidePanel.text.text = gameData.gameGuide[0];
+                        onePictureGuidePanel.image.sprite = gameData.guidePicture1;
+                    }
+
+                    if (id == 2)
+                    {
+                        ShowPanel(twoPictureGuidePanel.canvasGroup, true);
+                        twoPictureGuidePanel.text.text = gameData.gameGuide[0];
+                        twoPictureGuidePanel.leftText.text = gameData.gameGuide[1];
+                        twoPictureGuidePanel.rightText.text = gameData.gameGuide[2];
+                        twoPictureGuidePanel.leftImage.sprite = gameData.guidePicture1;
+                        twoPictureGuidePanel.rightImage.sprite = gameData.guidePicture2;
+                    }
+                    
                     break;
                 case TypeFlag.PictureType.SuccessCatch1:
-                    missionMessage.text = gameData.gameNotify[1];
+                    //missionMessage.text = gameData.gameNotify[1];
                     break;
                 case TypeFlag.PictureType.SuccessCatch2:
-                    missionMessage.text = gameData.gameNotify[2];
+                    //missionMessage.text = gameData.gameNotify[2];
                     break;
                 case TypeFlag.PictureType.SuccessCatch3:
-                    missionMessage.text = gameData.gameNotify[3];
+                    //missionMessage.text = gameData.gameNotify[3];
                     break;
                 case TypeFlag.PictureType.HasCatch:
-                    missionMessage.text = gameData.gameNotify[4];
+                    //missionMessage.text = gameData.gameNotify[4];
                     break;
                 case TypeFlag.PictureType.FailCatch:
-                    missionMessage.text = gameData.gameNotify[5];
+                    //missionMessage.text = gameData.gameNotify[5];
                     break;
             }
             
@@ -105,7 +146,7 @@ namespace View
 
         public void TakePicture()
         {
-            ShowPhotoPanel(photoButtonPanel, false);
+            //===ShowPhotoPanel(photoButtonPanel, false);
             StartCoroutine(RenderScreenShot());
         }
 
@@ -131,17 +172,17 @@ namespace View
 
             if (currentType == TypeFlag.PictureType.ARtype)
             {
-                ShowPhotoPanel(ARpicturePanel, true);
+                ShowPanel(ARpicturePanel, true);
             }
             else
             {
-                ShowPhotoPanel(findAnimalPanel, true);
+                ShowPanel(onePictureGuidePanel.canvasGroup, true);
             }   
 
             _camera.targetTexture = null;
         }
 
-        private void ShowPhotoPanel(CanvasGroup canvasGroup, bool isShow)
+        private void ShowPanel(CanvasGroup canvasGroup, bool isShow)
         {
             if (canvasGroup != null)
             {
@@ -151,4 +192,25 @@ namespace View
             }
         }
     }
+}
+
+[System.Serializable]
+public class OnePictureGuidePanel
+{
+    public CanvasGroup canvasGroup;
+    public Text text;
+    public Image image;
+    public Button button;
+}
+
+[System.Serializable]
+public class TwoPictureGuidePanel
+{
+    public CanvasGroup canvasGroup;
+    public Text text;
+    public Text leftText;
+    public Text rightText;
+    public Image leftImage;
+    public Image rightImage;
+    public Button button;
 }

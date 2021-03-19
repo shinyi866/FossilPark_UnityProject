@@ -8,18 +8,26 @@ public class GameDialogData : ScriptableObject
     public class Data
     {
         public int missionID;
-        public string roundMessage;
+        public string[] roundMessage;
         public string enterMessage;
         public string enterButton;
         public string gameDescription;
-        public string dialogButton;
-        public string[] gameNotify;
-        public string success;
-        public string fail;
+        public string[] gameTitle;
+        public string titleButton;
+        public int guideID;
+        public string[] gameGuide;
+        public string guideButton;
+        public string gameNotify;
+        public string[] gamePrompt;
+        public string endMessage;
         public string pictureNotify;
+        public string ARguide;
 
         public Sprite animalDialogPicture;
         public Sprite animalNotifyPicture;
+        public Sprite guidePicture1;
+        public Sprite guidePicture2;
+        public Sprite ARmark;
     }
 
     public Data[] m_Data;

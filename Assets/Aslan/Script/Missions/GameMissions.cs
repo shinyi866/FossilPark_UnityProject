@@ -51,6 +51,11 @@ namespace GameMission
         {
             currentMission.EnterGame();
         }
+
+        public void StartGame()
+        {
+            currentMission.StartGame();
+        }
     }
 }
 

@@ -45,3 +45,13 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: fish
     m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5586923334647981568
+      m_GuidHigh: 3065071419336262808
+    m_SerializedTextureGuid:
+      m_GuidLow: 17640088706647203628
+      m_GuidHigh: 13941894879877038859
+    m_Size: {x: 0.3, y: 0.29637682}
+    m_SpecifySize: 1
+    m_Name: dinosaurl
+    m_Texture: {fileID: 0}

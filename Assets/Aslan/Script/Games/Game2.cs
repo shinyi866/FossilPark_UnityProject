@@ -13,10 +13,11 @@ namespace GameMission
         public System.Action<bool> gameOverEvent;
 
         private int missionIndex = 2;
-        private string videoPath = "Video/4096.mp4";
+        
         private Camera _camera;
         private bool isARGameStart;
         private bool isUnARGameStart;
+        //private bool _isARsupport;
         //private int times = 5;
         private int successTimes;
         //private int failTimes;
@@ -30,18 +31,25 @@ namespace GameMission
             Modals.instance.CloseAllModal();
         }
 
-        public void GameStart()
+        public void GameStart(bool isARsupport)
         {
-            if (MainApp.Instance.isARsupport)
+            if (isARsupport)
             {
                 isARGameStart = true;
-                // TODO: wait Joy
+                SupportAR();
             }
             else
             {
                 isUnARGameStart = true;
                 UnsupportAR();
             }
+
+        }
+
+        private void SupportAR()
+        {
+            var modal = GameModals.instance.OpenModal<ARGameModal>();
+            modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game2);
         }
 
         private void GameResult(bool isSuccess)
@@ -52,9 +60,6 @@ namespace GameMission
 
         private void UnsupportAR()
         {
-            
-            MediaPlayerController.instance.LoadVideo(videoPath);
-            MediaPlayerController.instance.PlayVideo();
             RaycastHit hit;
 
             modal.PictureButton.onClick.AddListener(() =>
@@ -91,13 +96,11 @@ namespace GameMission
                 {
                     modal.TakePicture();
                     modal.ShowInfo(missionIndex, TypeFlag.PictureType.HasCatch);
-                    //failTimes++;
                 }
                 else
                 {
                     modal.TakePicture();
                     modal.ShowInfo(missionIndex, TypeFlag.PictureType.FailCatch);
-                    //failTimes++;
                 }
             });
         }

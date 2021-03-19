@@ -75,9 +75,9 @@ namespace GameMission
             Vector3 transform;
             var _cameraFront = _camera.transform.forward;
             
-            var fossilDolphinPos = _cameraFront + new Vector3(-1.5f, 0.8f, 3f);
+            var fossilDolphinPos = _cameraFront + new Vector3(-1.5f, 1f, 3f);
             fossilDolphin.transform.position = _camera.transform.position + fossilDolphinPos;
-            dolphinContainer.transform.position = new Vector3(fossilDolphin.transform.position.x, fossilDolphin.transform.position.y, fossilDolphin.transform.position.z);
+            dolphinContainer.transform.position = new Vector3(fossilDolphin.transform.position.x, fossilDolphin.transform.position.y - 0.5f, fossilDolphin.transform.position.z);
 
             for (int i = 1; i <= boxAnswerNumber; i++)
             {
@@ -89,9 +89,9 @@ namespace GameMission
                 AnsBox.Add(clone);
             }
 
-            var fossilBaleenWhalePos = _cameraFront + new Vector3(1.5f, 0.8f, 3f);
+            var fossilBaleenWhalePos = _cameraFront + new Vector3(1.5f, 1f, 3f);
             fossilBaleenWhale.transform.position = _camera.transform.position + fossilBaleenWhalePos;
-            whaleContainer.transform.position = new Vector3(fossilBaleenWhale.transform.position.x, fossilBaleenWhale.transform.position.y, fossilBaleenWhale.transform.position.z);
+            whaleContainer.transform.position = new Vector3(fossilBaleenWhale.transform.position.x, fossilBaleenWhale.transform.position.y - 0.5f, fossilBaleenWhale.transform.position.z);
 
             for (int i = 1; i <= boxAnswerNumber; i++)
             {
@@ -169,6 +169,8 @@ namespace GameMission
                                 Ans[j].GetComponent<MeshRenderer>().material = materialAns[1];
                         }
                     }
+
+                    distance += Vector3.Distance(AnsBox[i].transform.position, Ans[j].transform.position); //??
                 }
             }
             

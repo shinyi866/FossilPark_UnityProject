@@ -9,26 +9,46 @@ namespace GameMission
     {
         private Game2 game;
         private int missionIndex = 2;
+        private bool isARsupport;
+        private string videoPath = "Video/4096.mp4";
 
         public override void EnterGame()
         {
+            isARsupport = MainApp.Instance.isARsupport;
+
             game = Games.instance.OpenGame<Game2>();
             game.Init();
             game.gameOverEvent += EndGame;
 
-            var model = GameModals.instance.OpenModal<NotifyModal>();
-            model.ShowInfo(missionIndex, TypeFlag.NotifyType.GameNotify);
+            if(!isARsupport)
+            {
+                MediaPlayerController.instance.LoadVideo(videoPath);
+                MediaPlayerController.instance.PlayVideo();
+            }
+            
+
+            //game.GameStart(MainApp.Instance.isARsupport);
+            /*
+            var model = GameModals.instance.OpenModal<TitleModal>();
+            model.ShowInfo(missionIndex, TypeFlag.TitleType.GameTitle);
             model.ConfirmButton.onClick.AddListener(() =>
             {
-                var gameModel = GameModals.instance.OpenModal<PictureModal>();
-                gameModel.ShowInfo(missionIndex, TypeFlag.PictureType.MissionType);
+                Debug.Log("enter");
+                //var gameModel = GameModals.instance.OpenModal<PictureModal>();
+                //gameModel.ShowInfo(missionIndex, TypeFlag.PictureType.MissionType);
                 game.GameStart();
             });
+            */
+        }
+
+        public override void StartGame()
+        {
+            game.GameStart(isARsupport);
         }
 
         public void EndGame(bool isSuccess)
         {
-            TypeFlag.DialogType type = isSuccess ? TypeFlag.DialogType.SuccessDialog : TypeFlag.DialogType.FailDialog;
+            TypeFlag.DialogType type = isSuccess ? TypeFlag.DialogType.EndDialog : TypeFlag.DialogType.FailDialog;
             game.gameOverEvent -= EndGame;
 
             if (isSuccess)

@@ -12,6 +12,12 @@ namespace GameMission
 
         public override void EnterGame()
         {
+
+        }
+
+        public override void StartGame()
+        {
+
         }
 
         public void EndGame(bool isSuccess)

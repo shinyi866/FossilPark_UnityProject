@@ -10,6 +10,7 @@ public class PlaceARObject : MonoBehaviour
     public GameObject[] animalObjects;
     public GameObject[] dinosaurlObjects;
     public Sprite[] animalMarkSprite;
+    public ARPlaneManager planeManager;
     //public MeshRenderer mesh;
     public GameObject placeMark;
 
@@ -44,6 +45,7 @@ public class PlaceARObject : MonoBehaviour
         isARpage = true;
         currentType = type;
         currentAnimal = index;
+        planeManager.enabled = true;
         //material = mesh.material;
         placeMark.SetActive(true);
     }
@@ -51,6 +53,7 @@ public class PlaceARObject : MonoBehaviour
     public void CloseAR()
     {
         isARpage = false;
+        planeManager.enabled = false;
         Destroy(spawnedObject);
         spawnedObject = null;
     }

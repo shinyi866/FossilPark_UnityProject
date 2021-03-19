@@ -7,8 +7,15 @@ namespace View
 {
     public class ARGameModal : Modal
     {
-        public CanvasGroup[] GameCanvasGroup; // sort: mission3, mission5, mission6, mission7
+        [SerializeField]
+        private Text text;
 
+        public Game2Panel game2Panel;
+        public Game3Panel game3Panel;
+        public Game6Panel game6Panel;
+        public Game8Panel game8Panel;
+
+        /*
         [Header("Mission3")]
         public GameObject unSupportView;
         public Text countText;
@@ -18,27 +25,40 @@ namespace View
 
         [Header("Mission8")]
         public Button[] foodButton; // 0: grass, 1:meat, 2:fish
+        */
 
-        public void ShowModal(TypeFlag.ARGameType type)
+        private CanvasGroup[] GameCanvasGroups;
+        private GameDialogData data;
+
+        private void Awake()
+        {
+            data = MainApp.Instance.database;
+            GameCanvasGroups = new CanvasGroup[] { game2Panel.canvasGroup, game3Panel.canvasGroup, game6Panel.canvasGroup, game8Panel.canvasGroup };
+        }
+
+        public void ShowModal(int index, TypeFlag.ARGameType type)
         {
             var supportAR = MainApp.Instance.isARsupport;
+            var gameData = data.m_Data[index];
 
-            foreach (var c in GameCanvasGroup) { ShowCanvas(c, false); }
+            foreach (var c in GameCanvasGroups) { ShowCanvas(c, false); }
+
+            text.text = gameData.gameNotify;
 
             switch(type)
             {
-                case TypeFlag.ARGameType.Game3:
-                    if (!supportAR) { unSupportView.SetActive(true); }
-                    ShowCanvas(GameCanvasGroup[0], true);
+                case TypeFlag.ARGameType.Game2:
+                    ShowCanvas(game2Panel.canvasGroup, true);
                     break;
-                case TypeFlag.ARGameType.Game5:
-                    ShowCanvas(GameCanvasGroup[1], true);
+                case TypeFlag.ARGameType.Game3:
+                    //===if (!supportAR) { unSupportView.SetActive(true); }
+                    ShowCanvas(game3Panel.canvasGroup, true);
                     break;
                 case TypeFlag.ARGameType.Game6:
-                    ShowCanvas(GameCanvasGroup[2], true);
+                    ShowCanvas(game6Panel.canvasGroup, true);
                     break;
-                case TypeFlag.ARGameType.Game7:
-                    ShowCanvas(GameCanvasGroup[3], true);
+                case TypeFlag.ARGameType.Game8:
+                    ShowCanvas(game8Panel.canvasGroup, true);
                     break;
             }
         }
@@ -53,5 +73,38 @@ namespace View
             }
         }
     }
+}
+
+[System.Serializable]
+public class Game2Panel
+{
+    public CanvasGroup canvasGroup;
+    public Image[] images;
+}
+
+[System.Serializable]
+public class Game3Panel
+{
+    public CanvasGroup canvasGroup;
+    public Image image;
+    public Text text;
+    public GameObject unSupportView;
+    public Button leftButton;
+    public Button rightButton;
+}
+
+[System.Serializable]
+public class Game6Panel
+{
+    public CanvasGroup canvasGroup;
+    public Button button;
+}
+
+[System.Serializable]
+public class Game8Panel
+{
+    public CanvasGroup canvasGroup;
+    public Button[] foodButtons;
+    public Button pictureButton;
 }
 

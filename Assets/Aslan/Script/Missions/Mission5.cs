@@ -27,28 +27,33 @@ namespace GameMission
             game.SetActive(true);
             rhino.OnEndGameEvent += EndGame;
 
-            var model = GameModals.instance.OpenModal<NotifyModal>();
-            model.ShowInfo(missionIndex, TypeFlag.NotifyType.GameNotify);
+            var model = GameModals.instance.OpenModal<TitleModal>();
+            model.ShowInfo(missionIndex, TypeFlag.TitleType.GameTitle);
             model.ConfirmButton.onClick.AddListener(() =>
             {
                 var gameModal = GameModals.instance.OpenModal<ARGameModal>();
-                gameModal.ShowModal(TypeFlag.ARGameType.Game5);
+                //gameModal.ShowModal(TypeFlag.ARGameType.Game5);
                 rhino.EnterGame();
             });
+        }
+
+        public override void StartGame()
+        {
+
         }
 
         public void EndGame(bool isSuccess)
         {
             arPlaneManager.planePrefab = null;
 
-            TypeFlag.DialogType type = isSuccess ? TypeFlag.DialogType.SuccessDialog : TypeFlag.DialogType.FailDialog;
+            //===TypeFlag.NotifyType type = isSuccess ? TypeFlag.NotifyType.SuccessDialog : TypeFlag.NotifyType.FailDialog;
             rhino.OnEndGameEvent -= EndGame;
 
             if (isSuccess)
                 MainApp.Instance.Score();
 
             var model = GameModals.instance.OpenModal<DialogModal>();
-            model.ShowInfo(missionIndex, type);
+            //===model.ShowInfo(missionIndex, type);
             model.ConfirmButton.onClick.AddListener(() =>
             {
                 Games.instance.ClosGame();

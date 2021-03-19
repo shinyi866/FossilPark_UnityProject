@@ -8,6 +8,7 @@ namespace GameMission
     public abstract class Mission : MonoBehaviour
     {
         public abstract void EnterGame();
+        public abstract void StartGame();
     }
 
 }
