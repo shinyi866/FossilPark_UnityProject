@@ -15,18 +15,6 @@ namespace View
         public Game6Panel game6Panel;
         public Game8Panel game8Panel;
 
-        /*
-        [Header("Mission3")]
-        public GameObject unSupportView;
-        public Text countText;
-        public Text getFruitText;
-        public Button leftButton;
-        public Button rightButton;
-
-        [Header("Mission8")]
-        public Button[] foodButton; // 0: grass, 1:meat, 2:fish
-        */
-
         private CanvasGroup[] GameCanvasGroups;
         private GameDialogData data;
 
