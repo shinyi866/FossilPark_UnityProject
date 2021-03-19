@@ -27,7 +27,8 @@ public class GeneralFlag
     {
         Idle,
         Preparation,
-        UnderGoing
+        UnderGoing,
+        End
     }
 
     public class MatPropertyName {
