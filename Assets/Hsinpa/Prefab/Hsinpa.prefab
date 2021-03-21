@@ -65,7 +65,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7753830245071303695
 Transform:
   m_ObjectHideFlags: 0
@@ -528,12 +528,14 @@ MonoBehaviour:
   _arHelper: {fileID: 5792027905781614435}
   _lighthouseAnchorView: {fileID: 5792027905977881519}
   _raycastInputHandler: {fileID: 5792027905143237172}
-  correctBoneTemplate: {fileID: -857235554823736698, guid: f1bd633f7d83d3642a777cb912505981,
+  correctBoneTemplate: {fileID: -3811797635336335018, guid: 9a0be6c3c6d3a9d43a0f7932e425a358,
     type: 3}
   boneRandomSetSRP: {fileID: 11400000, guid: a952f555176f64d468c0cb57a01fdbfb, type: 2}
+  _finishTimelineAnimationPrefab: {fileID: 3619879481246236132, guid: b133a45ebe88d074e9bdc2fb87cd79a8,
+    type: 3}
   colorLookupTable: {fileID: 11400000, guid: 4978beee82a752b4d9c5bbd7b3859916, type: 2}
-  _angleThreshold: 0.6
-  _distThreshold: 2.5
+  _angleThreshold: 0.95
+  _distThreshold: 0.1
   _state: 0
 --- !u!1 &5792027905143237169
 GameObject:
@@ -992,6 +994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RhinoTemplate[2]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163301544743786842, guid: f1bd633f7d83d3642a777cb912505981,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7503833027932685280, guid: f1bd633f7d83d3642a777cb912505981,
         type: 3}

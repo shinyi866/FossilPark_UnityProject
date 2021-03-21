@@ -597,10 +597,20 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2047925070559582694, guid: 0034034ce1f3a9643922789c5dd830bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5792027904542657929, guid: 0034034ce1f3a9643922789c5dd830bb,
         type: 3}
       propertyPath: m_Name
       value: Hsinpa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792027904542657929, guid: 0034034ce1f3a9643922789c5dd830bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5792027904542657931, guid: 0034034ce1f3a9643922789c5dd830bb,
         type: 3}
@@ -657,5 +667,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5792027905056538217, guid: 0034034ce1f3a9643922789c5dd830bb,
+        type: 3}
+      propertyPath: _finishTimelineAnimation
+      value: 
+      objectReference: {fileID: 3619879481246236132, guid: b133a45ebe88d074e9bdc2fb87cd79a8,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0034034ce1f3a9643922789c5dd830bb, type: 3}
