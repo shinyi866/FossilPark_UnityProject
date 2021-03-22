@@ -24,7 +24,7 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 6,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是臺灣猛獁象！
 你知道嗎！
-台灣更新世「左鎮動物群」中，長鼻目除了猛獁象外 還有劍齒象兩大類。劍齒象有著像一把短利刃的門牙 ，而猛獁象則身披長長的毛，並且門齒劇烈彎曲。","臺灣長鼻目,你可以從場景中分辨出誰是猛獁象，哪個是劍齒象嗎？",分辨大象,1,找到正確的大象後，按下拍照按鈕拍攝大象。,開始,"拍攝草原猛獁象！, 拍攝劍齒象！","你成功分辨了！他是猛獁象！,你成功分辨了！他是劍齒象！,錯了！牠是不是劍齒象拉！",居然能分出我們的差別，真是太厲害了！,拍照,Assets/Aslan/ArtSprite/GameUI/animals/05mammoth.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png
+台灣更新世「左鎮動物群」中，長鼻目除了猛獁象外 還有劍齒象兩大類。劍齒象有著像一把短利刃的門牙 ，而猛獁象則身披長長的毛，並且門齒劇烈彎曲。","臺灣長鼻目,你可以從場景中分辨出誰是猛獁象，哪個是劍齒象嗎？",分辨大象,1,找到正確的大象後，按下拍照按鈕拍攝大象。,開始,"拍攝草原猛獁象！, 拍攝劍齒象！","你成功分辨了！他是猛獁象！,你成功分辨了！他是劍齒象！,剛剛拍過了喔！,錯了！再找找看！",居然能分出我們的差別，真是太厲害了！,拍照,Assets/Aslan/ArtSprite/GameUI/animals/05mammoth.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png
 7,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是臺灣長吻鱷！
 我躺在這個地方很久了，土層中有許多我的化石碎 片，可以幫我清修並復原成原來的樣子嗎？","小小清修師,化石五步驟:  清理 -> 分類 -> 修補 -> 固化 -> 組架

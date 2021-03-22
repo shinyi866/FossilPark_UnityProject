@@ -9,9 +9,9 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: mongrass
   m_Shader: {fileID: 14000, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: EFFECT_HUE_VARIATION GEOM_TYPE_FROND _ALPHATEST_ON _DISTANCEBLEND_ON
-    _DOUBLESIDED_ON _EMISSION _MASKMAP _MATERIAL_FEATURE_TRANSMISSION _NORMALMAP_TANGENT_SPACE
-    _THICKNESSMAP _WINDCOLORMIX_ON _WINDQUALITY_NONE
+  m_ShaderKeywords: EFFECT_BUMP EFFECT_HUE_VARIATION GEOM_TYPE_FROND _ALPHATEST_ON
+    _DISTANCEBLEND_ON _DOUBLESIDED_ON _EMISSION _MASKMAP _MATERIAL_FEATURE_TRANSMISSION
+    _NORMALMAP_TANGENT_SPACE _THICKNESSMAP _WINDCOLORMIX_ON _WINDQUALITY_NONE
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
@@ -205,7 +205,7 @@ Material:
     - _CullFarStart: 15
     - _CullMode: 0
     - _CullModeForward: 0
-    - _Cutoff: 0.46
+    - _Cutoff: 0.5
     - _DISTANCEBLEND: 1
     - _DepthOffsetEnable: 0
     - _DetailAlbedoScale: 1
@@ -363,7 +363,7 @@ Material:
     - _BaseColor: {r: 0.8962264, g: 0.89199895, b: 0.89199895, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.8962264, g: 0.89199895, b: 0.89199895, a: 1}
+    - _Color: {r: 0.8980392, g: 0.8937204, b: 0.8901961, a: 1}
     - _DiffusionProfileAsset: {r: -7.1912784e+34, g: 1.5250164e+22, b: 0.000001157826,
         a: 6.643526e-13}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}

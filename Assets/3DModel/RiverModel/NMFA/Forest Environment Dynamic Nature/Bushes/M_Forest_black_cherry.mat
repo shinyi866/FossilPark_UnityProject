@@ -173,7 +173,7 @@ Material:
     - _CullFarStart: 60
     - _CullMode: 0
     - _CullModeForward: 0
-    - _Cutoff: 0.302
+    - _Cutoff: 0.48
     - _DepthOffsetEnable: 0
     - _DetailAlbedoScale: 1
     - _DetailNormalMapScale: 1
@@ -215,7 +215,7 @@ Material:
     - _EnableWind: 1
     - _EnergyConservingSpecularColor: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.35
     - _GlossyReflections: 1
     - _HdrpVersion: 1
     - _HeightAmplitude: 0.02
@@ -309,7 +309,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
+    - _Color: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
     - _DiffusionProfileAsset: {r: -1.8019567e-30, g: 2.8583547e+22, b: 2.0825967e+12,
         a: 8.838735e-11}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}

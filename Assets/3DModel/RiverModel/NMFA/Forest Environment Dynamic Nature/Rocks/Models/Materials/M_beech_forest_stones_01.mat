@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 35087183b332c44418e1d4c71262a724, type: 3}
+        m_Texture: {fileID: 2800000, guid: 080baed15661a90488bf4ea1680f3a30, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CoatMaskMap:
@@ -187,7 +187,7 @@ Material:
     - _BaseSmoothnessRemapMin: 0
     - _BaseUsePlanarUV: 0
     - _BlendMode: 0
-    - _BumpScale: 0.43
+    - _BumpScale: 1
     - _CoatMask: 0
     - _CoverAORemapMax: 1
     - _CoverAORemapMin: 0
@@ -250,7 +250,7 @@ Material:
     - _EnableWind: 0
     - _EnergyConservingSpecularColor: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.19
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HdrpVersion: 2
     - _HeightAmplitude: 0.02
@@ -343,7 +343,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseTilingOffset: {r: 1, g: 1, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.7264151, g: 0.5448113, b: 0.5448113, a: 1}
     - _CoverBaseColor: {r: 1, g: 1, b: 1, a: 0}
     - _CoverTilingOffset: {r: 1, g: 1, b: 0, a: 0}
     - _DetailTilingOffset: {r: 11, g: 11, b: 0, a: 0}

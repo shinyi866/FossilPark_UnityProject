@@ -10,7 +10,7 @@ public class ClickGame : MonoBehaviour
     [Header("遊玩中影片")]
     public VideoClip vc;//360
     [Header("過關影片")]
-    [Tooltip("放置過關時要播的影片")]
+    [Tooltip("放置過關時要撥的影片")]
     public VideoClip vc2;
     [Header("限時幾秒")]
     public float OverTime = 10;

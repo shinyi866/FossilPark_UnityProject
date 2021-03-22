@@ -30,7 +30,7 @@ public class FossilClass : MonoBehaviour
     int lack = 3;
     private void Start()
     {
-        _camera = CameraCtrl.instance.GetCurrentCamera(); //Camera.main;
+        _camera = Camera.main;
         dt = image.transform.Find("Text").GetComponent<Text>();
         st = sc.transform.Find("Text").GetComponent<Text>();
 
@@ -45,6 +45,10 @@ public class FossilClass : MonoBehaviour
 
     void FixedUpdate()
     {
+        
+       
+
+        
         
         if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, Mathf.Infinity, HitLayer))
         {

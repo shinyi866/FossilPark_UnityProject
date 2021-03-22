@@ -24,7 +24,10 @@ namespace View
             data = MainApp.Instance.database;
             GameCanvasGroups = new CanvasGroup[] { game2Panel.canvasGroup, game3Panel.canvasGroup, game6Panel.canvasGroup, game8Panel.canvasGroup };
 
-            gamePromptPanel.button.onClick.AddListener(() => ShowPanel(gamePromptPanel.canvasGroup, false));
+            gamePromptPanel.button.onClick.AddListener(() => {
+                ShowPanel(gamePromptPanel.canvasGroup, false);
+                gamePromptPanel.image.sprite = null;
+            });
         }
 
         public void ShowModal(int index, TypeFlag.ARGameType type)
@@ -35,8 +38,9 @@ namespace View
             foreach (var c in GameCanvasGroups) { ShowPanel(c, false); }
 
             text.text = gameData.gameNotify;
+            SwitchConfirmButton(false);
 
-            switch(type)
+            switch (type)
             {
                 case TypeFlag.ARGameType.Game2:
                     ShowPanel(game2Panel.canvasGroup, true);
@@ -51,14 +55,41 @@ namespace View
                 case TypeFlag.ARGameType.Game8:
                     ShowPanel(game8Panel.canvasGroup, true);
                     break;
-                case TypeFlag.ARGameType.GamePrompt:
-                    ShowPanel(gamePromptPanel.canvasGroup, true);
-
-                    break;
                 default:
                     text.text = gameData.gameNotify;
                     break;
             }
+        }
+
+        public void ShowPrompt(int index, TypeFlag.ARGameType type)
+        {
+            var gameData = data.m_Data[index];
+
+            switch (type)
+            {
+                case TypeFlag.ARGameType.GamePrompt1:
+                    gamePromptPanel.text.text = gameData.gamePrompt[0];
+                    ShowPanel(gamePromptPanel.canvasGroup, true);
+                    break;
+                case TypeFlag.ARGameType.GamePrompt2:
+                    gamePromptPanel.text.text = gameData.gamePrompt[1];
+                    ShowPanel(gamePromptPanel.canvasGroup, true);
+                    break;
+                case TypeFlag.ARGameType.GamePrompt3:
+                    gamePromptPanel.text.text = gameData.gamePrompt[2];
+                    ShowPanel(gamePromptPanel.canvasGroup, true);
+                    break;
+                case TypeFlag.ARGameType.GamePrompt4:
+                    gamePromptPanel.text.text = gameData.gamePrompt[3];
+                    ShowPanel(gamePromptPanel.canvasGroup, true);
+                    break;
+            }
+        }
+
+        public void SwitchConfirmButton(bool switchToConfirm)
+        {
+            gamePromptPanel.button.gameObject.SetActive(!switchToConfirm);
+            gamePromptPanel.button_confirm.gameObject.SetActive(switchToConfirm);
         }
 
         private void ShowPanel(CanvasGroup canvasGroup,bool isShow)
@@ -95,7 +126,6 @@ namespace View
 
             Sprite screenShot = Sprite.Create(renderResult, rect, Vector2.zero);
             gamePromptPanel.image.sprite = screenShot;
-            ShowPanel(gamePromptPanel.canvasGroup, true);
 
             _camera.targetTexture = null;
         }
@@ -142,5 +172,6 @@ public class GamePromptPanel
     public Text text;
     public Image image;
     public Button button;
+    public Button button_confirm;
 }
 

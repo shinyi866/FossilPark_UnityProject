@@ -11,7 +11,7 @@ namespace GameMission
         public System.Action<bool> gameOverEvent;
 
         private Camera _camera;
-        //private PictureModal pictureModal;
+        private ARGameModal modal;
         private string videoPath = "Video/ele.mp4";
         private bool isGameStart;
         private int missionIndex = 6;
@@ -36,48 +36,41 @@ namespace GameMission
         public void GameStart()
         {
             isGameStart = true;
-            var modal = GameModals.instance.OpenModal<ARGameModal>();
+            modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game6);
-            //pictureModal.ShowInfo(missionIndex, TypeFlag.PictureType.MissionType);
             MediaPlayerController.instance.PlayVideo();            
             RaycastHit hit;
 
             modal.game6Panel.button.onClick.AddListener(() =>
             {
-                Debug.Log("take picture");
                 modal.TakePicture();
+
                 if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 3))
                 {
                     var cube = hit.transform;
                     var tag = hit.transform.gameObject.tag;
-
-                    //===pictureModal.TakePicture();
-                    modal.TakePicture();
-                    Debug.Log("take picture1");
+                    
                     if (tag == "Cube1")
                     {
                         cube.position = cube.position + new Vector3(-2, 0, 0);
-                        modal.ShowModal(6, TypeFlag.ARGameType.GamePrompt);
-                        //===pictureModal.ShowInfo(missionIndex, TypeFlag.PictureType.Result1);
+                        modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt1);
 
                     }
                     if (tag == "Cube2")
                     {
                         cube.position = cube.position + new Vector3(2, 0, 0);
-                        //===pictureModal.ShowInfo(missionIndex, TypeFlag.PictureType.Result2);
+                        modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt2);
                     }
 
                     successTimes++;
                 }
                 else if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 5))
                 {
-                    //===pictureModal.TakePicture();
-                    //===pictureModal.ShowInfo(missionIndex, TypeFlag.PictureType.HasCatch);
+                    modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt3);
                 }
                 else
                 {
-                    //===pictureModal.TakePicture();
-                    //===pictureModal.ShowInfo(missionIndex, TypeFlag.PictureType.FailCatch);
+                    modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt4);
                 }
             });
         }
@@ -92,12 +85,12 @@ namespace GameMission
 
             if (successTimes == 2)
             {
-                //==pictureModal.PictureButton.interactable = false;
-                //==pictureModal.ConfirmButton.onClick.AddListener(() =>
-                //=={
+                modal.SwitchConfirmButton(true);
+                modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
+                {
                     isGameStart = false;
                     GameResult(true);
-                //==});
+                });
             }
 
         }
