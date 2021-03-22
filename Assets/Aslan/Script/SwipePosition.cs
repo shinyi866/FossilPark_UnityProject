@@ -45,7 +45,7 @@ public class SwipePosition : MonoBehaviour
         }
         else if (Input.GetMouseButton(0) && gameObject && gameObject.tag == "Position")
         {
-            Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 3.8f);
+            Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 4f);//3.8f
             gameObject.transform.position = _camera.ScreenToWorldPoint(mousePosition);
             //Debug.Log("position");
         }

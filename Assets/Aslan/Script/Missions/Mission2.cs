@@ -25,7 +25,10 @@ namespace GameMission
                 MediaPlayerController.instance.LoadVideo(videoPath);
                 MediaPlayerController.instance.PlayVideo();
             }
-            
+            else
+            {
+                GameModals.instance.OpenAR();
+            }
 
             //game.GameStart(MainApp.Instance.isARsupport);
             /*

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraCtrl : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CameraCtrl : MonoBehaviour
     public GameObject ARcamera;
 
     private Camera currentCamera;
+    private Sprite _sprite;
 
     private static CameraCtrl _instance;
 

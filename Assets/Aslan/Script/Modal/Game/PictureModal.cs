@@ -8,38 +8,30 @@ namespace View
 {
     public class PictureModal : Modal
     {
+        //[SerializeField]
+        //private PhotoButtonPanel photoButtonPanel;
         [SerializeField]
-        private CanvasGroup ARpicturePanel;
-        //===[SerializeField]
-        //===private CanvasGroup photoButtonPanel;
+        private ARpicturePanel arPicturePanel;
         [SerializeField]
         private OnePictureGuidePanel onePictureGuidePanel;
         [SerializeField]
         private TwoPictureGuidePanel twoPictureGuidePanel;
 
-        [SerializeField]
-        private Button SaveButton;
-        [SerializeField]
-        private Button ExitButton;
-
-        [SerializeField]
-        private Image ARimage;
-        //[SerializeField]
-        //private Image missionImage;
-
-        //[SerializeField]
-        //private Text message;
-        //[SerializeField]
-        //private Text missionMessage;
-
         [HideInInspector]
         public Button ConfirmButton;
-        [HideInInspector]
-        public Button PictureButton;
+        //[HideInInspector]
+        //public Button PictureButton;
         [HideInInspector]
         public Button GuideConfirmButtonOne;
         [HideInInspector]
         public Button GuideConfirmButtonTwo;
+
+        [HideInInspector]
+        public Button SaveButton;
+        [HideInInspector]
+        public Button ExitButton;
+        [HideInInspector]
+        public Image ARimage;
 
         private Image _image;
         private GameDialogData data;
@@ -50,9 +42,16 @@ namespace View
         {
             data = MainApp.Instance.database;
 
-            GameCanvasGroups = new CanvasGroup[] { ARpicturePanel, onePictureGuidePanel.canvasGroup, twoPictureGuidePanel.canvasGroup };
+            GuideConfirmButtonOne = onePictureGuidePanel.button;
+            GuideConfirmButtonTwo = twoPictureGuidePanel.button;
+            //PictureButton = photoButtonPanel.button;
+            SaveButton = arPicturePanel.saveButton;
+            ExitButton = arPicturePanel.exitButton;
+            ARimage = arPicturePanel.arImage;
 
-            //PictureButton.onClick.AddListener(() => { TakePicture(); });
+            GameCanvasGroups = new CanvasGroup[] { arPicturePanel.canvasGroup, onePictureGuidePanel.canvasGroup, twoPictureGuidePanel.canvasGroup};
+
+            //===PictureButton.onClick.AddListener(() => { TakePicture(); });
 
             SaveButton.onClick.AddListener(() =>
             {
@@ -65,9 +64,6 @@ namespace View
                 //===ShowPhotoPanel(photoButtonPanel, true);
                 ShowPanel(onePictureGuidePanel.canvasGroup, false);
             });
-
-            GuideConfirmButtonOne = onePictureGuidePanel.button;
-            GuideConfirmButtonTwo = twoPictureGuidePanel.button;
         }
 
         private void Init()
@@ -80,8 +76,8 @@ namespace View
 
         public void ResetView()
         {
-            PictureButton.interactable = true;
-            ShowPanel(ARpicturePanel, false);
+            //PictureButton.interactable = true;
+            ShowPanel(arPicturePanel.canvasGroup, false);
             ShowPanel(onePictureGuidePanel.canvasGroup, false);
         }
 
@@ -99,8 +95,8 @@ namespace View
                     //message.text = gameData.pictureNotify;
                     break;
                 case TypeFlag.PictureType.MissionType:
-                    //===ShowPhotoPanel(photoButtonPanel, true); // open photo button
-                    //_image = missionImage;
+                    //ShowPanel(photoButtonPanel.canvasGroup, true); // open photo button
+                    //_image = onePictureGuidePanel.image;
                     //message.text = gameData.gameNotify[0];
                     //missionMessage.text = gameData.gameNotify[0];
                     break;
@@ -125,13 +121,14 @@ namespace View
                     }
                     
                     break;
-                case TypeFlag.PictureType.SuccessCatch1:
-                    //missionMessage.text = gameData.gameNotify[1];
+                case TypeFlag.PictureType.Result1:
+                    ShowPanel(onePictureGuidePanel.canvasGroup, true);
+                    onePictureGuidePanel.text.text = gameData.gamePrompt[0];
                     break;
-                case TypeFlag.PictureType.SuccessCatch2:
+                case TypeFlag.PictureType.Result2:
                     //missionMessage.text = gameData.gameNotify[2];
                     break;
-                case TypeFlag.PictureType.SuccessCatch3:
+                case TypeFlag.PictureType.Result3:
                     //missionMessage.text = gameData.gameNotify[3];
                     break;
                 case TypeFlag.PictureType.HasCatch:
@@ -144,6 +141,7 @@ namespace View
             
         }
 
+        /*
         public void TakePicture()
         {
             //===ShowPhotoPanel(photoButtonPanel, false);
@@ -172,7 +170,7 @@ namespace View
 
             if (currentType == TypeFlag.PictureType.ARtype)
             {
-                ShowPanel(ARpicturePanel, true);
+                ShowPanel(arPicturePanel.canvasGroup, true);
             }
             else
             {
@@ -181,7 +179,7 @@ namespace View
 
             _camera.targetTexture = null;
         }
-
+        */
         private void ShowPanel(CanvasGroup canvasGroup, bool isShow)
         {
             if (canvasGroup != null)
@@ -214,3 +212,21 @@ public class TwoPictureGuidePanel
     public Image rightImage;
     public Button button;
 }
+
+[System.Serializable]
+public class ARpicturePanel
+{
+    public CanvasGroup canvasGroup;
+    public Button saveButton;
+    public Button exitButton;
+    public Image arImage;
+}
+
+/*
+[System.Serializable]
+public class PhotoButtonPanel
+{
+    public CanvasGroup canvasGroup;
+    public Button button;
+}
+*/

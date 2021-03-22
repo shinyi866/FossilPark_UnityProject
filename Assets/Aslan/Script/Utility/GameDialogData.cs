@@ -19,9 +19,8 @@ public class GameDialogData : ScriptableObject
         public string guideButton;
         public string gameNotify;
         public string[] gamePrompt;
-        public string endMessage;
+        public string[] endMessage;
         public string pictureNotify;
-        public string ARguide;
 
         public Sprite animalDialogPicture;
         public Sprite animalNotifyPicture;

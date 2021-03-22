@@ -52,12 +52,13 @@ namespace View
                     break;
                 case TypeFlag.DialogType.EndDialog:
                     buttonObj[1].SetActive(true);
-                    message.text = gameData.endMessage;
+                    message.text = gameData.endMessage[0];
                     ConfirmButton.GetComponentInChildren<Text>().text = gameData.pictureNotify;
                     break;
                 case TypeFlag.DialogType.FailDialog:
-                    //===message.text = gameData.fail;
-                    ConfirmButton.GetComponentInChildren<Text>().text = "確定";
+                    buttonObj[1].SetActive(true);
+                    message.text = gameData.endMessage[1];
+                    ConfirmButton.GetComponentInChildren<Text>().text = gameData.pictureNotify;
                     break;
             }
 

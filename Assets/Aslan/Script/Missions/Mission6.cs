@@ -16,6 +16,7 @@ namespace GameMission
             game.Init();
             game.gameOverEvent += EndGame;
 
+            /*
             var model = GameModals.instance.OpenModal<TitleModal>();
             model.ShowInfo(missionIndex, TypeFlag.TitleType.GameTitle);
             model.ConfirmButton.onClick.AddListener(() =>
@@ -24,24 +25,24 @@ namespace GameMission
                 gameModel.ShowInfo(missionIndex, TypeFlag.PictureType.MissionType);
                 game.GameStart();
             });
+            */
         }
 
         public override void StartGame()
         {
-
+            game.GameStart();
         }
 
         public void EndGame(bool isSuccess)
         {
-            //===TypeFlag.NotifyType type = isSuccess ? TypeFlag.NotifyType.SuccessDialog : TypeFlag.NotifyType.FailDialog;
             game.gameOverEvent -= EndGame;
 
             if (isSuccess)
                 MainApp.Instance.Score();
 
-            var model = GameModals.instance.OpenModal<DialogModal>();
-            //===model.ShowInfo(missionIndex, type);
-            model.ConfirmButton.onClick.AddListener(() =>
+            var modal = GameModals.instance.OpenModal<PictureModal>();
+            modal.ShowInfo(missionIndex, TypeFlag.PictureType.GuideType);
+            modal.GuideConfirmButtonTwo.onClick.AddListener(() =>
             {
                 Games.instance.ClosGame();
                 MediaPlayerController.instance.CloseVideo();

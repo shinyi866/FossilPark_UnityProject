@@ -18,6 +18,7 @@ namespace GameMission
             game.Init();
             game.gameOverEvent += EndGame;
 
+            /*
             var model = GameModals.instance.OpenModal<TitleModal>();
             model.ShowInfo(missionIndex, TypeFlag.TitleType.GameTitle);
             model.ConfirmButton.onClick.AddListener(() =>
@@ -26,11 +27,12 @@ namespace GameMission
                 gameModal.ShowModal(missionIndex, TypeFlag.ARGameType.Game3);
                 game.GameStart();
             });
+            */
         }
 
         public override void StartGame()
         {
-
+            game.GameStart();
         }
 
         public void EndGame(bool isSuccess)

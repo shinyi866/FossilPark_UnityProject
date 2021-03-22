@@ -15,6 +15,7 @@ namespace GameMission
         public Animator monleyAnimator;
 
         public System.Action<bool> gameOverEvent;
+        private int missionIndex = 3;
 
         private Camera _camera;
         private ARGameModal gameModal;
@@ -59,7 +60,8 @@ namespace GameMission
             if (MainApp.Instance.isARsupport)
             {
                 isARStart = true;
-
+                GameModals.instance.OpenModal<ARGameModal>();
+                gameModal.ShowModal(missionIndex, TypeFlag.ARGameType.Game3);
                 SetBasketPosition();
                 //ThrowBallTest();
                 StartCoroutine(StartThrowBall());
@@ -136,7 +138,7 @@ namespace GameMission
         {
             if (!isGameStart) return;
 
-            gameModal.game3Panel.text.text = "接到果子數： " + CatchFruit.fruitCount.ToString();
+            gameModal.game3Panel.text.text = CatchFruit.fruitCount.ToString();// "接到果子數： " + CatchFruit.fruitCount.ToString();
             //gameModal.countText.text = "剩餘果子數： " + count.ToString();
 
             if (AnimatorIsEnd() && isThrowing)

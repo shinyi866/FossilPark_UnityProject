@@ -10,6 +10,7 @@ namespace View
         [SerializeField]
         private Text text;
 
+        public GamePromptPanel gamePromptPanel;
         public Game2Panel game2Panel;
         public Game3Panel game3Panel;
         public Game6Panel game6Panel;
@@ -22,6 +23,8 @@ namespace View
         {
             data = MainApp.Instance.database;
             GameCanvasGroups = new CanvasGroup[] { game2Panel.canvasGroup, game3Panel.canvasGroup, game6Panel.canvasGroup, game8Panel.canvasGroup };
+
+            gamePromptPanel.button.onClick.AddListener(() => ShowPanel(gamePromptPanel.canvasGroup, false));
         }
 
         public void ShowModal(int index, TypeFlag.ARGameType type)
@@ -29,29 +32,36 @@ namespace View
             var supportAR = MainApp.Instance.isARsupport;
             var gameData = data.m_Data[index];
 
-            foreach (var c in GameCanvasGroups) { ShowCanvas(c, false); }
+            foreach (var c in GameCanvasGroups) { ShowPanel(c, false); }
 
             text.text = gameData.gameNotify;
 
             switch(type)
             {
                 case TypeFlag.ARGameType.Game2:
-                    ShowCanvas(game2Panel.canvasGroup, true);
+                    ShowPanel(game2Panel.canvasGroup, true);
                     break;
                 case TypeFlag.ARGameType.Game3:
                     //===if (!supportAR) { unSupportView.SetActive(true); }
-                    ShowCanvas(game3Panel.canvasGroup, true);
+                    ShowPanel(game3Panel.canvasGroup, true);
                     break;
                 case TypeFlag.ARGameType.Game6:
-                    ShowCanvas(game6Panel.canvasGroup, true);
+                    ShowPanel(game6Panel.canvasGroup, true);
                     break;
                 case TypeFlag.ARGameType.Game8:
-                    ShowCanvas(game8Panel.canvasGroup, true);
+                    ShowPanel(game8Panel.canvasGroup, true);
+                    break;
+                case TypeFlag.ARGameType.GamePrompt:
+                    ShowPanel(gamePromptPanel.canvasGroup, true);
+
+                    break;
+                default:
+                    text.text = gameData.gameNotify;
                     break;
             }
         }
 
-        private void ShowCanvas(CanvasGroup canvasGroup,bool isShow)
+        private void ShowPanel(CanvasGroup canvasGroup,bool isShow)
         {
             if (canvasGroup != null)
             {
@@ -59,6 +69,35 @@ namespace View
                 canvasGroup.interactable = isShow;
                 canvasGroup.blocksRaycasts = isShow;
             }
+        }
+
+
+        public void TakePicture()
+        {
+            StartCoroutine(RenderScreenShot());
+        }
+
+        private IEnumerator RenderScreenShot()
+        {
+            Camera _camera = CameraCtrl.instance.GetCurrentCamera();
+            yield return new WaitForSeconds(0.1f);
+
+            _camera.targetTexture = new RenderTexture(_camera.pixelWidth, _camera.pixelHeight, 0); // (222, 128, 0);
+
+            RenderTexture renderTexture = _camera.targetTexture;
+            Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.ARGB32, false);
+            _camera.Render();
+            RenderTexture.active = renderTexture;
+            Rect rect = new Rect(0, 0, renderTexture.width, renderTexture.height);
+
+            renderResult.ReadPixels(rect, 0, 0);
+            renderResult.Apply();
+
+            Sprite screenShot = Sprite.Create(renderResult, rect, Vector2.zero);
+            gamePromptPanel.image.sprite = screenShot;
+            ShowPanel(gamePromptPanel.canvasGroup, true);
+
+            _camera.targetTexture = null;
         }
     }
 }
@@ -94,5 +133,14 @@ public class Game8Panel
     public CanvasGroup canvasGroup;
     public Button[] foodButtons;
     public Button pictureButton;
+}
+
+[System.Serializable]
+public class GamePromptPanel
+{
+    public CanvasGroup canvasGroup;
+    public Text text;
+    public Image image;
+    public Button button;
 }
 

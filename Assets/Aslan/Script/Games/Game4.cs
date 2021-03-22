@@ -45,6 +45,7 @@ namespace GameMission
         private bool finishGame;
         private float downTime = 3;
         private int boxAnswerNumber = 3;
+        private int missionIndex = 4;
 
         private List<GameObject> AnsBox = new List<GameObject>();
         private List<GameObject> Ans = new List<GameObject>();
@@ -65,6 +66,8 @@ namespace GameMission
         public void GameStart()
         {
             isGameStart = true;
+            var modal = GameModals.instance.OpenModal<ARGameModal>();
+            modal.ShowModal(missionIndex,TypeFlag.ARGameType.Original);
             MediaPlayerController.instance.PlayVideo();
 
             SetPosition(); 
