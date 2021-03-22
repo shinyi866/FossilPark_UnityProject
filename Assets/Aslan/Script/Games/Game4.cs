@@ -186,6 +186,7 @@ namespace GameMission
                     SetPosition();
                     Object.SetActive(false);
 
+                    GameModals.instance.CloseModal();
                     MediaPlayerController.instance.CloseVideo();
                     MediaPlayerController.instance.LoadAndPlayVideoNotLoop(successVidePath);
                     finishGame = true;

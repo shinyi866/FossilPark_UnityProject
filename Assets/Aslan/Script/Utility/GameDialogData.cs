@@ -27,6 +27,8 @@ public class GameDialogData : ScriptableObject
         public Sprite guidePicture1;
         public Sprite guidePicture2;
         public Sprite ARmark;
+        public Sprite endPicutre;
+        public Sprite endPicutre2;
     }
 
     public Data[] m_Data;

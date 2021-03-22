@@ -111,6 +111,14 @@ namespace View
                     }
                     
                     break;
+                case TypeFlag.PictureType.EndGuide:
+                    ShowPanel(twoPictureGuidePanel.canvasGroup, true);
+                    twoPictureGuidePanel.text.text = gameData.endMessage[0];
+                    twoPictureGuidePanel.leftText.text = gameData.endMessage[1];
+                    twoPictureGuidePanel.rightText.text = gameData.endMessage[2];
+                    twoPictureGuidePanel.leftImage.sprite = gameData.endPicutre;
+                    twoPictureGuidePanel.rightImage.sprite = gameData.endPicutre2;
+                    break;
             }
             
         }

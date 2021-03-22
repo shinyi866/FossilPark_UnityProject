@@ -1,6 +1,6 @@
-missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleButton,guideID,gameGuide,guideButton,gameNotify,gamePrompt,endMessage,pictureNotify,animalDialogPicture,animalNotifyPicture,guidePicture1,guidePicture2,ARmark
-0,附近似乎有時光機器，趕緊找找看吧！,,體驗開始,,,,,,,,,,,,,,,
-1,附近似乎有時光機器，趕緊找找看吧！,,帶回管理員,,,,,,,,,,,,,,,
+missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleButton,guideID,gameGuide,guideButton,gameNotify,gamePrompt,endMessage,pictureNotify,animalDialogPicture,animalNotifyPicture,guidePicture1,guidePicture2,ARmark,endPicutre,endPicutre2
+0,附近似乎有時光機器，趕緊找找看吧！,,體驗開始,,,,,,,,,,,,,,,,,
+1,附近似乎有時光機器，趕緊找找看吧！,,帶回管理員,,,,,,,,,,,,,,,,,
 2,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"你好我是時間管理員的梅花鹿 
 這裡是左鎮菜寮溪溪床！
@@ -9,22 +9,26 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 試著找找看三個化石吧！",尋找化石,2,"觀察溪床，點按你找到的化石，即可完成蒐集！,點按化石,成功採集",開始,觀察溪床，蒐集三個化石！,"成功採集！你採集到的是鹿角化石,成功採集！你採集到的是犀牛左下顎,成功採集！你採集到的是劍齒象臼齒","太棒了！
 近幾年台灣各地陸續發現哺乳類化石，在菜寮溪地區出土的種類和數目最多。
 包括古象、野牛、梅花鹿、犀牛、貝類等，也有古鹿的化石歐！
-使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png
+使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,
 3,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是金絲猴！
 距今90-45萬年前我們遷徙到台灣尋找新天地，但面臨 台灣獼猴強大的壓力，現在很難找到食物，你可以幫幫我嗎？","果子蒐集趣,幫助金絲猴收集果子！
-接下金絲猴摘下的果子吧！",蒐集果子,1,左右移動，可以接下金絲猴丟下的果子！,開始,左右移動時請注意週遭安全！,,"謝謝！\n有這麼多應該夠了！我們是雜食性動物！\n主食植物為嫩枝芽、樹葉、漿果、竹筍、苔蘚等等。\n使用相機拍攝我讓我回到時光機中吧！,糟糕！果子好像不太夠\n我們是雜食性動物！\n主食植物為嫩枝芽、樹葉、漿果、竹筍、苔蘚等等。\n使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/02monkey.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/monkey.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png
+接下金絲猴摘下的果子吧！",蒐集果子,1,左右移動，可以接下金絲猴丟下的果子！,開始,左右移動時請注意週遭安全！,,"謝謝！\n有這麼多應該夠了！我們是雜食性動物！\n主食植物為嫩枝芽、樹葉、漿果、竹筍、苔蘚等等。\n使用相機拍攝我讓我回到時光機中吧！,糟糕！果子好像不太夠\n我們是雜食性動物！\n主食植物為嫩枝芽、樹葉、漿果、竹筍、苔蘚等等。\n使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/02monkey.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/monkey.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,
 4,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！你好！
-左鎮出土的化石中發現許多鬚鯨類和齒鯨類化石，兩 這最大的區別是鬚鯨類的口中有鬚，沒有牙齒，外鼻 孔有兩個；而齒鯨類的口中沒有鬚，有牙齒，外鼻孔 只有一個。","鯨豚知多少,你可以從兩種不同的骨頭中， 分辨出那個是齒鯨頭骨，哪個是鬚鯨頭骨嗎？",分辨鯨豚,2,"觀察化石，將標籤移動到正確的化石上！,正確,錯誤",開始,觀察化石貼上正確的標籤！,,終於逃離了他的追趕我們快拍照回家吧！點按相機拍下海豚！,拍照,Assets/Aslan/ArtSprite/GameUI/animals/03dolphin.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/dolphin.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png
+左鎮出土的化石中發現許多鬚鯨類和齒鯨類化石，兩 這最大的區別是鬚鯨類的口中有鬚，沒有牙齒，外鼻 孔有兩個；而齒鯨類的口中沒有鬚，有牙齒，外鼻孔 只有一個。","鯨豚知多少,你可以從兩種不同的骨頭中， 分辨出那個是齒鯨頭骨，哪個是鬚鯨頭骨嗎？",分辨鯨豚,2,"觀察化石，將標籤移動到正確的化石上！,正確,錯誤",開始,觀察化石貼上正確的標籤！,,"你真是太厲害了！
+使用相機拍攝我讓我回到時光機中吧！,齒鯨,鬚鯨",拍照,Assets/Aslan/ArtSprite/GameUI/animals/03dolphin.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/dolphin.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png
 5,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！你好我是早坂犀牛！
 「左鎮動物群」的動物化石，多在溪床被發現，甚少直 接從地層露頭中被採集。
-而我！早坂中國犀為原地埋藏，因此出土化石的完整度 高達7成。","沙坑中的犀牛化石,你能將挖掘出來的化石，排列到正確的位子上嗎？",排列犀牛,2,"點按犀牛化石，將化石移動到正確的位置上！,點按化石,成功擺放",開始,犀牛犀牛犀牛犀牛,,時空扭曲害我的骨頭都散了！真是累⼈，快讓我回到正常的時空上吧！,拍照,Assets/Aslan/ArtSprite/GameUI/animals/04Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png
+而我！早坂中國犀為原地埋藏，因此出土化石的完整度 高達7成。","沙坑中的犀牛化石,你能將挖掘出來的化石，排列到正確的位子上嗎？",排列犀牛,2,"點按犀牛化石，將化石移動到正確的位置上！,點按化石,成功擺放",開始,犀牛犀牛犀牛犀牛,,"據我們拼湊的犀牛化石特徵，可確定屬於犀科犀屬的一種，學名為Rhinoceros hayasakai SHIKAMA & OTSUKA，中文定名為早坂犀牛。
+比過去從中國大陸所產的中國犀牛(Rhinoceros sinensis)及其他幾種犀牛時代更早，體形更小，可謂中國犀牛的祖先型，在學術上是重要的化石標本喔！,成功！看來你非常了解本園區最重要的犀牛呢！
+園區的Logo就是在說我喔！
+使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/04Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,
 6,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是臺灣猛獁象！
 你知道嗎！
-台灣更新世「左鎮動物群」中，長鼻目除了猛獁象外 還有劍齒象兩大類。劍齒象有著像一把短利刃的門牙 ，而猛獁象則身披長長的毛，並且門齒劇烈彎曲。","臺灣長鼻目,你可以從場景中分辨出誰是猛獁象，哪個是劍齒象嗎？",分辨大象,1,找到正確的大象後，按下拍照按鈕拍攝大象。,開始,"拍攝草原猛獁象！, 拍攝劍齒象！","你成功分辨了！他是猛獁象！,你成功分辨了！他是劍齒象！,剛剛拍過了喔！,錯了！再找找看！",居然能分出我們的差別，真是太厲害了！,拍照,Assets/Aslan/ArtSprite/GameUI/animals/05mammoth.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png
+台灣更新世「左鎮動物群」中，長鼻目除了猛獁象外 還有劍齒象兩大類。劍齒象有著像一把短利刃的門牙 ，而猛獁象則身披長長的毛，並且門齒劇烈彎曲。","臺灣長鼻目,你可以從場景中分辨出誰是猛獁象，哪個是劍齒象嗎？",分辨大象,1,找到正確的大象後，按下拍照按鈕拍攝大象。,開始,"拍攝草原猛獁象！, 拍攝劍齒象！","你成功分辨了！他是猛獁象！,你成功分辨了！他是劍齒象！,剛剛拍過了喔！,錯了！再找找看！","居然能分出我們的差別，真是太厲害了！,猛獁象,劍齒象",拍照,Assets/Aslan/ArtSprite/GameUI/animals/05mammoth.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png
 7,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是臺灣長吻鱷！
 我躺在這個地方很久了，土層中有許多我的化石碎 片，可以幫我清修並復原成原來的樣子嗎？","小小清修師,化石五步驟:  清理 -> 分類 -> 修補 -> 固化 -> 組架
@@ -38,5 +42,5 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 清理 -> 分類 -> 修補 -> 固化 -> 組架 
 記熟了嗎？
 使用相機拍攝我讓我回到時光機中吧！
-",拍照,Assets/Aslan/ArtSprite/GameUI/animals/06crocodile.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/mammoth.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png
-8,附近似乎有特別的動物，趕緊找找看吧！,時光機被漸漸地修復了，我們正⼀點點地回到過去！草原上好像有什麼特別的⽣物快去看看！,前往觀看,,,,,,,拿取⾁塊與樹葉可以餵食恐龍喔！,,,,Assets/Aslan/ArtSprite/GameUI/animals/01Sika_deer.png,,,,
+",拍照,Assets/Aslan/ArtSprite/GameUI/animals/06crocodile.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/mammoth.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,
+8,附近似乎有特別的動物，趕緊找找看吧！,時光機被漸漸地修復了，我們正⼀點點地回到過去！草原上好像有什麼特別的⽣物快去看看！,前往觀看,,,,,,,拿取⾁塊與樹葉可以餵食恐龍喔！,,,,Assets/Aslan/ArtSprite/GameUI/animals/01Sika_deer.png,,,,,,

@@ -33,6 +33,8 @@ MonoBehaviour:
     guidePicture1: {fileID: 0}
     guidePicture2: {fileID: 0}
     ARmark: {fileID: 0}
+    endPicutre: {fileID: 0}
+    endPicutre2: {fileID: 0}
   - missionID: 1
     roundMessage:
     - "\u9644\u8FD1\u4F3C\u4E4E\u6709\u6642\u5149\u6A5F\u5668\uFF0C\u8D95\u7DCA\u627E\u627E\u770B\u5427\uFF01"
@@ -53,6 +55,8 @@ MonoBehaviour:
     guidePicture1: {fileID: 0}
     guidePicture2: {fileID: 0}
     ARmark: {fileID: 0}
+    endPicutre: {fileID: 0}
+    endPicutre2: {fileID: 0}
   - missionID: 2
     roundMessage:
     - "\u767C\u73FE\u8E64\u8DE1"
@@ -86,6 +90,8 @@ MonoBehaviour:
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    endPicutre: {fileID: 0}
+    endPicutre2: {fileID: 0}
   - missionID: 3
     roundMessage:
     - "\u767C\u73FE\u8E64\u8DE1"
@@ -114,6 +120,8 @@ MonoBehaviour:
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 0}
     ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    endPicutre: {fileID: 0}
+    endPicutre2: {fileID: 0}
   - missionID: 4
     roundMessage:
     - "\u767C\u73FE\u8E64\u8DE1"
@@ -134,7 +142,9 @@ MonoBehaviour:
     gameNotify: "\u89C0\u5BDF\u5316\u77F3\u8CBC\u4E0A\u6B63\u78BA\u7684\u6A19\u7C64\uFF01"
     gamePrompt: []
     endMessage:
-    - "\u7D42\u65BC\u9003\u96E2\u4E86\u4ED6\u7684\u8FFD\u8D95\u6211\u5011\u5FEB\u62CD\u7167\u56DE\u5BB6\u5427\uFF01\u9EDE\u6309\u76F8\u6A5F\u62CD\u4E0B\u6D77\u8C5A\uFF01"
+    - "\u4F60\u771F\u662F\u592A\u53B2\u5BB3\u4E86\uFF01\n\u4F7F\u7528\u76F8\u6A5F\u62CD\u651D\u6211\u8B93\u6211\u56DE\u5230\u6642\u5149\u6A5F\u4E2D\u5427\uFF01"
+    - "\u9F52\u9BE8"
+    - "\u9B1A\u9BE8"
     pictureNotify: "\u62CD\u7167"
     animalDialogPicture: {fileID: 21300000, guid: e666fd2aa530d406f87a6ddaa8078baa,
       type: 3}
@@ -143,6 +153,8 @@ MonoBehaviour:
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    endPicutre: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    endPicutre2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
   - missionID: 5
     roundMessage:
     - "\u767C\u73FE\u8E64\u8DE1"
@@ -163,7 +175,10 @@ MonoBehaviour:
     gameNotify: "\u7280\u725B\u7280\u725B\u7280\u725B\u7280\u725B"
     gamePrompt: []
     endMessage:
-    - "\u6642\u7A7A\u626D\u66F2\u5BB3\u6211\u7684\u9AA8\u982D\u90FD\u6563\u4E86\uFF01\u771F\u662F\u7D2F\u2F08\uFF0C\u5FEB\u8B93\u6211\u56DE\u5230\u6B63\u5E38\u7684\u6642\u7A7A\u4E0A\u5427\uFF01"
+    - "\u64DA\u6211\u5011\u62FC\u6E4A\u7684\u7280\u725B\u5316\u77F3\u7279\u5FB5\uFF0C\u53EF\u78BA\u5B9A\u5C6C\u65BC\u7280\u79D1\u7280\u5C6C\u7684\u4E00\u7A2E\uFF0C\u5B78\u540D\u70BARhinoceros
+      hayasakai SHIKAMA & OTSUKA\uFF0C\u4E2D\u6587\u5B9A\u540D\u70BA\u65E9\u5742\u7280\u725B\u3002\n\u6BD4\u904E\u53BB\u5F9E\u4E2D\u570B\u5927\u9678\u6240\u7522\u7684\u4E2D\u570B\u7280\u725B(Rhinoceros
+      sinensis)\u53CA\u5176\u4ED6\u5E7E\u7A2E\u7280\u725B\u6642\u4EE3\u66F4\u65E9\uFF0C\u9AD4\u5F62\u66F4\u5C0F\uFF0C\u53EF\u8B02\u4E2D\u570B\u7280\u725B\u7684\u7956\u5148\u578B\uFF0C\u5728\u5B78\u8853\u4E0A\u662F\u91CD\u8981\u7684\u5316\u77F3\u6A19\u672C\u5594\uFF01"
+    - "\u6210\u529F\uFF01\u770B\u4F86\u4F60\u975E\u5E38\u4E86\u89E3\u672C\u5712\u5340\u6700\u91CD\u8981\u7684\u7280\u725B\u5462\uFF01\n\u5712\u5340\u7684Logo\u5C31\u662F\u5728\u8AAA\u6211\u5594\uFF01\n\u4F7F\u7528\u76F8\u6A5F\u62CD\u651D\u6211\u8B93\u6211\u56DE\u5230\u6642\u5149\u6A5F\u4E2D\u5427\uFF01"
     pictureNotify: "\u62CD\u7167"
     animalDialogPicture: {fileID: 21300000, guid: c8e9d4d5ff280458f99442f5f1e3c19f,
       type: 3}
@@ -172,6 +187,8 @@ MonoBehaviour:
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    endPicutre: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    endPicutre2: {fileID: 0}
   - missionID: 6
     roundMessage:
     - "\u767C\u73FE\u8E64\u8DE1"
@@ -195,6 +212,8 @@ MonoBehaviour:
     - "\u932F\u4E86\uFF01\u518D\u627E\u627E\u770B\uFF01"
     endMessage:
     - "\u5C45\u7136\u80FD\u5206\u51FA\u6211\u5011\u7684\u5DEE\u5225\uFF0C\u771F\u662F\u592A\u53B2\u5BB3\u4E86\uFF01"
+    - "\u731B\u7341\u8C61"
+    - "\u528D\u9F52\u8C61"
     pictureNotify: "\u62CD\u7167"
     animalDialogPicture: {fileID: 21300000, guid: c4e38cb9ad1ac44df85347a94a43c90d,
       type: 3}
@@ -203,6 +222,8 @@ MonoBehaviour:
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    endPicutre: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    endPicutre2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
   - missionID: 7
     roundMessage:
     - "\u767C\u73FE\u8E64\u8DE1"
@@ -239,6 +260,8 @@ MonoBehaviour:
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 0}
     ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    endPicutre: {fileID: 0}
+    endPicutre2: {fileID: 0}
   - missionID: 8
     roundMessage:
     - "\u9644\u8FD1\u4F3C\u4E4E\u6709\u7279\u5225\u7684\u52D5\u7269\uFF0C\u8D95\u7DCA\u627E\u627E\u770B\u5427\uFF01"
@@ -260,3 +283,5 @@ MonoBehaviour:
     guidePicture1: {fileID: 0}
     guidePicture2: {fileID: 0}
     ARmark: {fileID: 0}
+    endPicutre: {fileID: 0}
+    endPicutre2: {fileID: 0}

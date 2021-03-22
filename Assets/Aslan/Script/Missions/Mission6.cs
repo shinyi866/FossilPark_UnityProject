@@ -41,7 +41,7 @@ namespace GameMission
                 MainApp.Instance.Score();
 
             var modal = GameModals.instance.OpenModal<PictureModal>();
-            modal.ShowInfo(missionIndex, TypeFlag.PictureType.GuideType);
+            modal.ShowInfo(missionIndex, TypeFlag.PictureType.EndGuide);
             modal.GuideConfirmButtonTwo.onClick.AddListener(() =>
             {
                 Games.instance.ClosGame();
