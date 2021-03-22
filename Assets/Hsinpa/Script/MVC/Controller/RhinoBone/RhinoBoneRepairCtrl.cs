@@ -9,6 +9,8 @@ using Hsinpa.Other;
 using UnityEngine.Rendering;
 using Hsinpa.CloudAnchor;
 using System.Threading.Tasks;
+using UnityEngine.Playables;
+using Utility;
 
 namespace Hsinpa.Ctrl {
 
@@ -33,6 +35,9 @@ namespace Hsinpa.Ctrl {
 
         [SerializeField]
         private DinosaurBoneSRP boneRandomSetSRP;
+
+        [SerializeField]
+        private GameObject _finishTimelineAnimationPrefab;
 
         [SerializeField]
         private ColorSRP colorLookupTable;
@@ -244,9 +249,19 @@ namespace Hsinpa.Ctrl {
                 OnDoubleTap();
 
                 if (spawnRandomBoneTemplate.IsAllMetricMeet())
-                    DoEndGameAction();
-                
+                    ShowRhinoTimelineAnim();
             }
+        }
+
+        private void ShowRhinoTimelineAnim() {
+            var gRhinoFinishObj = GameObject.Instantiate(_finishTimelineAnimationPrefab, spawnCorrectBoneTemplate.transform.position, spawnCorrectBoneTemplate.transform.rotation, _worldContainer);
+            var timelineObj = gRhinoFinishObj.GetComponentInChildren<PlayableDirector>();
+            spawnRandomBoneTemplate.gameObject.SetActive(false);
+            spawnCorrectBoneTemplate.gameObject.SetActive(false);
+
+            _ = UtilityMethod.DoDelayWork((float)timelineObj.duration * 0.5f, () => {
+                DoEndGameAction();
+            });
         }
 
         private void DoEndGameAction() {
@@ -256,6 +271,7 @@ namespace Hsinpa.Ctrl {
             if (OnEndGameEvent != null)
                 OnEndGameEvent(true);
 
+            Debug.Log("Rhino Mission Done");
             //DinosaurApp.Instance.Notify(EventFlag.Event.GameStart);
         }
 
@@ -265,6 +281,7 @@ namespace Hsinpa.Ctrl {
             //Debug.Log($"Angle {m.angle}, Dist {m.distance}");
 
             return (m.angle > _angleThreshold && m.distance < _distThreshold);
+            //return false;
         }
 
     }

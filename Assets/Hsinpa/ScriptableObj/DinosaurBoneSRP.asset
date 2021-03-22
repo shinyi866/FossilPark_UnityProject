@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DinosaurBoneSRP
   m_EditorClassIdentifier: 
   templates:
-  - {fileID: -857235554823736698, guid: b684a0c6d34cc8b4bbd50e9196ef5547, type: 3}
+  - {fileID: 8188266251171657544, guid: 4bae4ccd2c9d85942bafa63e6fe80b52, type: 3}
