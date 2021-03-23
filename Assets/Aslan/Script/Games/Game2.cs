@@ -12,19 +12,17 @@ namespace GameMission
         public System.Action<bool> gameOverEvent;
 
         private int missionIndex = 2;
-        
-        public Camera _camera;
+
         private bool isARGameStart;
         private bool isUnARGameStart;
         private int successTimes;
-        private PictureModal modal;
 
         public void Init()
         {
             //_camera = CameraCtrl.instance.GetCurrentCamera();
-            modal = GameModals.instance.GetModal<PictureModal>();
+            //modal = GameModals.instance.GetModal<PictureModal>();
 
-            Modals.instance.CloseAllModal();
+            //Modals.instance.CloseAllModal();
         }
 
         public void GameStart(bool isARsupport)
@@ -70,11 +68,11 @@ namespace GameMission
             if (isUnARGameStart && successTimes == 3)
             {
                 //===modal.PictureButton.interactable = false;
-                modal.ConfirmButton.onClick.AddListener(() =>
-                {
+                //modal.ConfirmButton.onClick.AddListener(() =>
+                //{
                     isUnARGameStart = false;
                     GameResult(true);
-                });
+                //});
             }
 
         }
