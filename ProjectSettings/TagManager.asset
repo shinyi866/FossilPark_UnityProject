@@ -12,6 +12,9 @@ TagManager:
   - Wall2
   - Rotate
   - Position
+  - "\u9E7F"
+  - "\u8C9D\u6BBC"
+  - "\u7280\u725B"
   layers:
   - Default
   - TransparentFX
@@ -35,7 +38,7 @@ TagManager:
   - 
   - ARPlane
   - ARDetectableItem
-  - 
+  - ARNoneMovable
   - 
   - 
   - 

@@ -14,7 +14,7 @@ public class InputStandalone : InputInterface
 
     public Vector3 faceDir { get =>  (GetMouseWorldPos() - _camera.transform.position).normalized; }
 
-    public float raycastLength => 100;
+    public float raycastLength => 1000;
 
     public bool GetMouse()
     {

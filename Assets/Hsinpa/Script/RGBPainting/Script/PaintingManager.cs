@@ -50,12 +50,15 @@ namespace Hsinpa.App {
                 diretion.y = -diretion.y;
 
                 //Physics.Raycast
+                Ray ray = InputWrapper.instance.platformInput.GetRay();
                 int hits = Physics.RaycastNonAlloc(InputWrapper.instance.platformInput.GetRay(), m_Results, raycastLength, layerMask);
 
-                Debug.Log("Hits Count " + hits);
+                //Debug.Log("Hits Count " + hits);
 
                 if (hits > 0)
                 {
+                    Debug.Log("m_Results[0].textureCoord " + m_Results[0].textureCoord + ", toolIndex " + toolIndex);
+
                     drawToTexture.DrawOnMesh(m_Results[0].textureCoord, _toolSRP.tools[toolIndex].mask_color);
                 }
 
@@ -131,10 +134,8 @@ namespace Hsinpa.App {
         }
 
         public void ResetPaint() {
+            UnEquip();
             drawToTexture.ResetBuffer();
-
-            _hintState = HintState.None;
-            drawToTexture.EnableColorHint(HintState.None );
         }
     }
 }

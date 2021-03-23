@@ -1,5 +1,6 @@
 ﻿using Hsinpa.App;
 using Hsinpa.GameInput;
+using Hsinpa.View;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,9 +18,16 @@ namespace Hsinpa.Ctrl
         [SerializeField]
         private PaintingManager _paintingManager;
 
+        [SerializeField]
+        private BoneARTemplate crocodileTarget;
+
         bool _arEnable = false;
 
         public GeneralFlag.GeneralState _state = GeneralFlag.GeneralState.Idle;
+
+        private int currentToolIndex = -1;
+
+        public System.Action<bool> OnEndGameEvent;
 
         public override void OnNotify(string p_event, params object[] p_objects)
         {
@@ -48,13 +56,17 @@ namespace Hsinpa.Ctrl
 
         public void Start()
         {
-            _paintingManager.gameObject.SetActive(false);
+            crocodileTarget.gameObject.SetActive(false);
+            _paintingManager.OnTargetDirtIsClear += OnPaintIsDone;
             _raycastInputHandler.OnInputEvent += OnRaycastInputEvent;
+
+            crocodileTarget.SetUp(OnPlaneARReadyClick);
         }
 
         public void EnterGame()
         {
 
+            _paintingManager.ResetPaint();
             if (_arEnable)
             {
                 PerformPlaneARAction();
@@ -68,8 +80,10 @@ namespace Hsinpa.Ctrl
         private void PerformNoARAction()
         {
             Debug.Log("Croco PerformNoARAction");
-            _paintingManager.gameObject.SetActive(true);
-            _paintingManager.gameObject.transform.position = new Vector3(0, 0, 1.2f);
+            crocodileTarget.gameObject.SetActive(true);
+            crocodileTarget.ShowConfirmBtn(false);
+
+            _arHelper.SetARCameraPos(new Vector3(0, 0.8f, 0), Quaternion.Euler(90, 0, 0));
             _state = GeneralFlag.GeneralState.UnderGoing;
 
             InitPaintProcedure();
@@ -78,17 +92,27 @@ namespace Hsinpa.Ctrl
         private void PerformPlaneARAction()
         {
             Debug.Log("Croco PerformPlaneARAction");
-            _paintingManager.gameObject.SetActive(true);
+            crocodileTarget.gameObject.SetActive(true);
+            crocodileTarget.transform.position = new Vector3(1000, 1000, 100);
+            crocodileTarget.ShowConfirmBtn(true);
             _arHelper.ActivateAR(true);
             _arHelper.AcitvateARPlane(true);
 
             _state = GeneralFlag.GeneralState.Preparation;
+        }
 
+        private void OnPlaneARReadyClick()
+        {
+            _arHelper.AcitvateARPlane(false);
+            crocodileTarget.ShowConfirmBtn(false);
+
+            _state = GeneralFlag.GeneralState.UnderGoing;
             InitPaintProcedure();
         }
 
         private void InitPaintProcedure() {
-            _paintingManager.EquipTool(ToolSRP.ToolEnum.Tool_1);
+            currentToolIndex = 0;
+            _paintingManager.EquipTool((ToolSRP.ToolEnum) currentToolIndex);
         }
 
         private void OnRaycastInputEvent(RaycastInputHandler.InputStruct inputStruct)
@@ -116,11 +140,8 @@ namespace Hsinpa.Ctrl
                 dir.y = 0;
                 Quaternion faceQuat = Quaternion.LookRotation(dir);
 
-                _paintingManager.transform.position = inputStruct.raycastPosition;
-                _paintingManager.transform.rotation = faceQuat;
-
-                _arHelper.AcitvateARPlane(false);
-                _state = GeneralFlag.GeneralState.UnderGoing;
+                crocodileTarget.transform.position = inputStruct.raycastPosition;
+                crocodileTarget.transform.rotation = faceQuat;
             }
         }
 
@@ -129,5 +150,26 @@ namespace Hsinpa.Ctrl
 
         }
 
+        private void OnPaintIsDone(bool isDone) {
+            if (!isDone) return;
+
+            int nextCurrentToolIndex = currentToolIndex + 1;
+            if (nextCurrentToolIndex > (int)ToolSRP.ToolEnum.Tool_3) {
+                _paintingManager.ResetPaint();
+
+                if (OnEndGameEvent != null)
+                    OnEndGameEvent(true);
+
+                return;
+            }
+
+            currentToolIndex = nextCurrentToolIndex;
+            _paintingManager.EquipTool((ToolSRP.ToolEnum)nextCurrentToolIndex);
+        }
+
+        private void OnDestroy()
+        {
+            _paintingManager.OnTargetDirtIsClear -= OnPaintIsDone;
+        }
     }
 }

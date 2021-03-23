@@ -30,6 +30,7 @@ namespace Hsinpa.Input {
             if (arCamera != null) return;
 
             arCamera = Camera.main;
+
             platformInput = new InputStandalone(arCamera);
         }
     }
