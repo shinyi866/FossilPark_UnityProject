@@ -44,7 +44,10 @@ namespace GameMission
             currentMission = missions[index];
             currentIndex = index;
 
-            GameModals.instance.ShowNotify(index);
+            if (index == 0 || index == 1)
+                GameModals.instance.ShowNotifyOther(index);
+            else
+                GameModals.instance.ShowNotify(index);
         }
 
         public void EnterGame()

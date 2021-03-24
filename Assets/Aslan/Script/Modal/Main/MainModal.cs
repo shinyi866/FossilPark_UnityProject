@@ -94,7 +94,6 @@ namespace View
                 int closureIndex = i;
                 missionButtons[closureIndex].onClick.AddListener(() =>
                 {
-                    Debug.Log("closureIndex " + closureIndex);
                     GameMissions.instance.ShowMission(closureIndex);
                 });
             }

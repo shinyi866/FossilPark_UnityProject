@@ -99,7 +99,19 @@ namespace View
             var model = _instance.OpenModal<TitleModal>();
             model.ShowInfo(index, TypeFlag.TitleType.RoundTitleNotify);
         }
-        // Show and enter missions (1-2m)
+
+        // Show and enter missions (1-2m) mission0-1
+        public void ShowNotifyOther(int index)
+        {
+            var model = _instance.OpenModal<TitleModal>();
+            model.ShowInfo(index, TypeFlag.TitleType.EnterGame0);
+            model.Game0ConfirmButton.onClick.AddListener(() =>
+            {
+                Debug.Log("Game 0");
+            });
+        }
+
+        // Show and enter missions (1-2m) mission2-8
         public void ShowNotify(int index)
         {
             var model = _instance.OpenModal<TitleModal>();
@@ -135,12 +147,13 @@ namespace View
                 CloseModal();
                 GameMissions.instance.StartGame();
             });
-
+            /*
             model.GuideConfirmButtonTwo.onClick.AddListener(() =>
             {
                 CloseModal();
                 GameMissions.instance.StartGame();
             });
+            */
         }
     }
 }
