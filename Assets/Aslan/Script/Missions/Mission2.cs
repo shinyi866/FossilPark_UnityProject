@@ -43,9 +43,6 @@ namespace GameMission
             TypeFlag.DialogType type = isSuccess ? TypeFlag.DialogType.EndDialog : TypeFlag.DialogType.FailDialog;
             game.gameOverEvent -= EndGame;
 
-            if (isSuccess)
-                MainApp.Instance.Score();
-
             var model = GameModals.instance.OpenModal<DialogModal>();
             model.ShowInfo(missionIndex, type);
             model.ConfirmButton.onClick.AddListener(() =>

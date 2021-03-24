@@ -14,7 +14,8 @@ public class MainApp : Singleton<MainApp>
     public GameDialogData database => _database;
 
     [SerializeField]
-    private ScoreImage scoreObject;
+    private MainGuideData _guideData;
+    public MainGuideData guideData => _guideData;
 
     [HideInInspector]
     public bool isARsupport;
@@ -22,7 +23,7 @@ public class MainApp : Singleton<MainApp>
     public Text text;
     public bool arModel;
 
-    private int score = 0;
+    private int playerGuide;
 
     private void Awake()
     {
@@ -32,18 +33,14 @@ public class MainApp : Singleton<MainApp>
     private void Start()
     {
         var modal = Modals.instance.OpenModal<MainModal>();
-        modal.StarMainView();
-    }
+        
+        
+        playerGuide = PlayerPrefs.GetInt("guide"); // 0: strat guide view, 1: main view
 
-    public void Score()
-    {
-        var modal = Modals.instance.GetModel<MainModal>();
-        var image = modal.scoreImage;
-
-        score++;
-
-        if(score < scoreObject.ScoreItems.Length)
-            image.sprite = scoreObject.ScoreItems[score].ScoreImage;
+        if(playerGuide != 1)
+            modal.StarIntroView();
+        else
+            modal.StarMainView();
     }
 
     private IEnumerator CheckARSupport()
@@ -86,4 +83,23 @@ public class MainApp : Singleton<MainApp>
         if (arModel) { isARsupport = true; }
         
     }
+
+    /*** 石尚 maybe use socre system
+
+    [SerializeField]
+    private ScoreImage scoreObject;
+
+    private int score = 0;
+
+    public void Score()
+    {
+        var modal = Modals.instance.GetModel<MainModal>();
+        var image = modal.scoreImage;
+
+        score++;
+
+        if(score < scoreObject.ScoreItems.Length)
+            image.sprite = scoreObject.ScoreItems[score].ScoreImage;
+    }
+    */
 }

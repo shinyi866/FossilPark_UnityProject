@@ -31,6 +31,26 @@ public class CSVImport : AssetPostprocessor
                 Debug.Log("Reimported Asset: " + str);
 #endif
             }
+
+            if (str.IndexOf("/MainGuide.csv") != -1)
+            {
+                TextAsset data = AssetDatabase.LoadAssetAtPath<TextAsset>(str);
+                string assetfile = str.Replace(".csv", ".asset");
+                MainGuideData gameData = AssetDatabase.LoadAssetAtPath<MainGuideData>(assetfile);
+                if (gameData == null)
+                {
+                    gameData = new MainGuideData();
+                    AssetDatabase.CreateAsset(gameData, assetfile);
+                }
+
+                gameData.m_Data = CSVSerializer.Deserialize<MainGuideData.GuideData>(data.text);
+
+                EditorUtility.SetDirty(gameData);
+                AssetDatabase.SaveAssets();
+#if DEBUG_LOG || UNITY_EDITOR
+                Debug.Log("Reimported Asset: " + str);
+#endif
+            }
         }
     }
 }

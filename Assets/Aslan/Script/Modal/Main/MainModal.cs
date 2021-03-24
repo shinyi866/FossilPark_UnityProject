@@ -8,6 +8,13 @@ namespace View
 {
     public class MainModal : Modal
     {
+        [SerializeField]
+        private CanvasGroup introView;
+        [SerializeField]
+        private Image introImage;
+        [SerializeField]
+        private GuideView guideView;
+
         [Header("Buttons")]
         [SerializeField]
         private Button[] animalButtons;
@@ -27,6 +34,17 @@ namespace View
         private Sprite[] clockSprite;
 
         private int clockOutSide = 0;
+        private DialogModal modal;
+
+        public void StarIntroView()
+        {
+            PlayerPrefs.SetInt("guide", 1);
+            ShowPanel(introView, true);
+
+            modal = GameModals.instance.OpenModal<DialogModal>();
+            modal.ShowIntro();
+            modal.IntroEndAction += GuideUIView;
+        }
 
         public void StarMainView()
         {
@@ -90,5 +108,57 @@ namespace View
             if (clockOutSide == 4) { clockImage.sprite = clockSprite[2]; }
             if (clockOutSide == 6) { clockImage.sprite = clockSprite[3]; }
         }
+
+        private void GuideUIView()
+        {
+            modal.IntroEndAction -= GuideUIView;
+            introImage.enabled = false;
+            foreach (var b in guideView.gameObjects) { b.SetActive(false); }
+
+            var i = 0;
+            ShowPanel(guideView.canvasGroup, true);
+            guideView.gameObjects[i].SetActive(true);
+
+            guideView.button.onClick.AddListener(()=>
+            {
+                foreach (var b in guideView.gameObjects) { b.SetActive(false); }
+
+                if( i != guideView.gameObjects.Length - 1)
+                {
+                    i++;
+                    guideView.gameObjects[i].SetActive(true);
+                    Debug.Log("i: " + i);
+
+                    if(i == guideView.gameObjects.Length - 1)
+                    {
+                        guideView.button.onClick.AddListener(() =>
+                        {
+                            ShowPanel(guideView.canvasGroup, false);
+                            ShowPanel(introView, false);
+
+                            StarMainView();
+                        });
+                    }
+                }
+            });
+        }
+
+        private void ShowPanel(CanvasGroup canvasGroup, bool isShow)
+        {
+            if (canvasGroup != null)
+            {
+                canvasGroup.alpha = (isShow) ? 1 : 0;
+                canvasGroup.interactable = isShow;
+                canvasGroup.blocksRaycasts = isShow;
+            }
+        }
     }
+}
+
+[System.Serializable]
+public class GuideView
+{
+    public CanvasGroup canvasGroup;
+    public GameObject[] gameObjects; // guideImage1, guideImage2, guideImage3
+    public Button button;
 }

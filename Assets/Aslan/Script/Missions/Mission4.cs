@@ -37,9 +37,6 @@ namespace GameMission
         {
             game.gameOverEvent -= EndGame;
 
-            if (isSuccess)
-                MainApp.Instance.Score();
-
             var modal = GameModals.instance.OpenModal<PictureModal>();
             modal.ShowInfo(missionIndex, TypeFlag.PictureType.EndGuide);
             modal.GuideConfirmButtonTwo.onClick.AddListener(() =>

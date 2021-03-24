@@ -33,14 +33,11 @@ namespace GameMission
             //===TypeFlag.NotifyType type = isSuccess ? TypeFlag.NotifyType.SuccessDialog : TypeFlag.NotifyType.FailDialog;
             rhinoCtrl.OnEndGameEvent -= EndGame;
 
-            if (isSuccess)
-                MainApp.Instance.Score();
-
             var model = GameModals.instance.OpenModal<DialogModal>();
-            //===model.ShowInfo(missionIndex, type);
+            model.ShowInfo(missionIndex, TypeFlag.DialogType.EndDialog);
             model.ConfirmButton.onClick.AddListener(() =>
             {
-                //Games.instance.ClosGame();
+                Games.instance.ClosGame();
                 MediaPlayerController.instance.CloseVideo();
                 GameModals.instance.CloseModal();
                 GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
