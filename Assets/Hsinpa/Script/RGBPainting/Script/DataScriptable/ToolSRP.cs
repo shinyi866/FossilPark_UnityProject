@@ -8,9 +8,8 @@ public class ToolSRP : ScriptableObject
     public Tool[] tools;
 
     public enum ToolEnum { 
-        Tool_1, Tool_2, Tool_3
+        None = -1, Tool_1, Tool_2, Tool_3
     }
-
 
     [Serializable]
     public struct Tool {

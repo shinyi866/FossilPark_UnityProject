@@ -38,10 +38,12 @@ namespace Hsinpa {
             StartCoroutine(
                 ARFoundationUtility.AysncCheckARReady( (bool avilable) => {
 
-                    if (avilable)
-                        _lightHouseAnchorManager.SetUp();
-                    else
-                        AppStart(false);
+                    AppStart(avilable);
+
+                    //if (avilable)
+                    //    _lightHouseAnchorManager.SetUp();
+                    //else
+                    //    AppStart(false);
             }));
         }
 
