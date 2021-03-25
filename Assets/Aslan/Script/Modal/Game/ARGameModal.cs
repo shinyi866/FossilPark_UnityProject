@@ -11,6 +11,7 @@ namespace View
         private Text text;
 
         public GamePromptPanel gamePromptPanel;
+        public Game0Panel game0Panel;
         public Game2Panel game2Panel;
         public Game3Panel game3Panel;
         public Game6Panel game6Panel;
@@ -22,7 +23,7 @@ namespace View
         private void Awake()
         {
             data = MainApp.Instance.database;
-            GameCanvasGroups = new CanvasGroup[] { game2Panel.canvasGroup, game3Panel.canvasGroup, game6Panel.canvasGroup, game8Panel.canvasGroup };
+            GameCanvasGroups = new CanvasGroup[] { game0Panel.canvasGroup, game2Panel.canvasGroup, game3Panel.canvasGroup, game6Panel.canvasGroup, game8Panel.canvasGroup };
 
             gamePromptPanel.button.onClick.AddListener(() => {
                 ShowPanel(gamePromptPanel.canvasGroup, false);
@@ -42,6 +43,9 @@ namespace View
 
             switch (type)
             {
+                case TypeFlag.ARGameType.Game0:
+                    ShowPanel(game0Panel.canvasGroup, true);
+                    break;
                 case TypeFlag.ARGameType.Game2:
                     ShowPanel(game2Panel.canvasGroup, true);
                     break;
@@ -130,6 +134,13 @@ namespace View
             _camera.targetTexture = null;
         }
     }
+}
+
+[System.Serializable]
+public class Game0Panel
+{
+    public CanvasGroup canvasGroup;
+    public Button button;
 }
 
 [System.Serializable]

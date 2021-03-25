@@ -12,16 +12,17 @@ namespace GameMission
 
         public override void EnterGame()
         {
-            GameModals.instance.OpenAR();
 
-            game = Games.instance.OpenGame<Game0>();
-            game.Init();
-            Debug.Log("0");
         }
 
         public override void StartGame()
         {
+            GameModals.instance.OpenAR();
 
+            game = Games.instance.OpenGame<Game0>();
+            game.Init();
+            game.GameStart();
+            Debug.Log("0");
         }
     }
 }

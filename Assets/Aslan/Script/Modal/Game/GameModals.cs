@@ -108,6 +108,7 @@ namespace View
             model.Game0ConfirmButton.onClick.AddListener(() =>
             {
                 Debug.Log("Game 0");
+                GuideModel(index);
             });
         }
 
@@ -147,13 +148,6 @@ namespace View
                 CloseModal();
                 GameMissions.instance.StartGame();
             });
-            /*
-            model.GuideConfirmButtonTwo.onClick.AddListener(() =>
-            {
-                CloseModal();
-                GameMissions.instance.StartGame();
-            });
-            */
         }
     }
 }

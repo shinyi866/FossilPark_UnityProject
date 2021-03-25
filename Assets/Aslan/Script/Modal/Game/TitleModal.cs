@@ -77,7 +77,8 @@ namespace View
                     ShowPanel(enterGame0TitlePanel.canvasGroup, true);
                     titleText.text = gameData.gameTitle[0];
                     enterGame0TitlePanel.text.text = gameData.enterMessage;
-                    ConfirmButton.GetComponentInChildren<Text>().text = gameData.enterButton;
+                    enterGame0TitlePanel.image.sprite = gameData.guidePicture1;
+                    Game0ConfirmButton.GetComponentInChildren<Text>().text = gameData.enterButton;
                     break;
             }
         }
