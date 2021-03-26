@@ -89,6 +89,7 @@ namespace GameMission
                 modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
                 {
                     isGameStart = false;
+                    modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
                     GameResult(true);
                 });
             }

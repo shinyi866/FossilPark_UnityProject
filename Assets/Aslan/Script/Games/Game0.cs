@@ -7,7 +7,9 @@ namespace GameMission
 {
     public class Game0 : Game
     {
-        public GameObject ClockObject;
+        [SerializeField]
+        private GameObject ClockObject;
+        public System.Action gameOverEvent;
 
         private int missionIndex;
         private Camera _camera;
@@ -25,12 +27,19 @@ namespace GameMission
             modal.game0Panel.button.onClick.AddListener(()=> {
                 placeClock = true;
                 ClockObject.SetActive(true);
+                GameResult();
             });
         }
 
         public void GameStart()
         {
             isGameStart = true;
+        }
+
+        private void GameResult()
+        {
+            if (gameOverEvent != null)
+                gameOverEvent();
         }
 
         void Update()

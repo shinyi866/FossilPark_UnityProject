@@ -96,7 +96,7 @@ namespace View
             gamePromptPanel.button_confirm.gameObject.SetActive(switchToConfirm);
         }
 
-        private void ShowPanel(CanvasGroup canvasGroup,bool isShow)
+        public void ShowPanel(CanvasGroup canvasGroup,bool isShow)
         {
             if (canvasGroup != null)
             {
@@ -182,7 +182,7 @@ public class GamePromptPanel
     public CanvasGroup canvasGroup;
     public Text text;
     public Image image;
-    public Button button;
-    public Button button_confirm;
+    public Button button; // close modal
+    public Button button_confirm; //other modal addListener
 }
 

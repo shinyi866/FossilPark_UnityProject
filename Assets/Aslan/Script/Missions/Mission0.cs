@@ -8,7 +8,6 @@ namespace GameMission
     public class Mission0 : Mission
     {
         private Game0 game;
-        private int missionIndex = 0;
 
         public override void EnterGame()
         {
@@ -16,13 +15,22 @@ namespace GameMission
         }
 
         public override void StartGame()
-        {
+        {            
             GameModals.instance.OpenAR();
-
+            Debug.Log("0");
             game = Games.instance.OpenGame<Game0>();
+            game.gameOverEvent += EndGame;
             game.Init();
             game.GameStart();
-            Debug.Log("0");
+        }
+
+        public void EndGame()
+        {
+            game.gameOverEvent -= EndGame;
+
+            GameModals.instance.CloseModal();
+            var modal = Modals.instance.OpenModal<ARModal>();
+            modal.ShowView(false);
         }
     }
 }

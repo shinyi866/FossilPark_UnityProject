@@ -107,7 +107,6 @@ namespace View
             model.ShowInfo(index, TypeFlag.TitleType.EnterGame0);
             model.Game0ConfirmButton.onClick.AddListener(() =>
             {
-                Debug.Log("Game 0");
                 GuideModel(index);
             });
         }

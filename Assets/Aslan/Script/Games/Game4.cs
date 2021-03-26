@@ -67,24 +67,24 @@ namespace GameMission
         {
             isGameStart = true;
             var modal = GameModals.instance.OpenModal<ARGameModal>();
-            modal.ShowModal(missionIndex,TypeFlag.ARGameType.Original);
+            modal.ShowModal(missionIndex, TypeFlag.ARGameType.Original);
             MediaPlayerController.instance.PlayVideo();
 
-            SetPosition(); 
+            SetPosition();
         }
 
         private void SetPosition()
         {
             Vector3 transform;
             var _cameraFront = _camera.transform.forward;
-            
+
             var fossilDolphinPos = _cameraFront + new Vector3(-1.5f, 1f, 3f);
             fossilDolphin.transform.position = _camera.transform.position + fossilDolphinPos;
             dolphinContainer.transform.position = new Vector3(fossilDolphin.transform.position.x, fossilDolphin.transform.position.y - 0.5f, fossilDolphin.transform.position.z);
 
             for (int i = 1; i <= boxAnswerNumber; i++)
             {
-                GameObject clone = Instantiate(answerBoxModel, new Vector3(dolphinContainer.transform.position.x, dolphinContainer.transform.position.y - 0.5f * i, dolphinContainer.transform.position.z) , dolphinContainer.transform.rotation);
+                GameObject clone = Instantiate(answerBoxModel, new Vector3(dolphinContainer.transform.position.x, dolphinContainer.transform.position.y - 0.5f * i, dolphinContainer.transform.position.z), dolphinContainer.transform.rotation);
                 clone.transform.SetParent(dolphinContainer.transform);
                 clone.SetActive(true);
 
@@ -105,10 +105,10 @@ namespace GameMission
                 //fossilBaleenWhaleBox.Add(clone);
                 AnsBox.Add(clone);
             }
-            
+
             var answerPos = _cameraFront + new Vector3(0f, -1.8f, 1f);
 
-            for (int i = 1; i <= boxAnswerNumber*2; i++)
+            for (int i = 1; i <= boxAnswerNumber * 2; i++)
             {
                 GameObject clone = Instantiate(answerModel, answerContainer.transform);
                 if (i < 4)
@@ -130,9 +130,9 @@ namespace GameMission
 
         private Vector3 RandomPosition(Vector3 center, Vector3 size)
         {
-            return center + new Vector3((Random.value - 0.5f) * size.x,(Random.value - 0.5f) * size.y, center.z);
+            return center + new Vector3((Random.value - 0.5f) * size.x, (Random.value - 0.5f) * size.y, center.z);
         }
-        
+
         private void DetectAnswer()
         {
             float distance = 0;
@@ -144,10 +144,10 @@ namespace GameMission
                     if (Vector3.Distance(AnsBox[i].transform.position, Ans[j].transform.position) < errorRound)
                     {
                         //Debug.Log("in");
-                        
+
                         Ans[j].transform.position = AnsBox[i].transform.position;
 
-                        if(i == j)
+                        if (i == j)
                         {
                             Ans[j].GetComponent<MeshRenderer>().material = material[0];
                             Ans[j].tag = "Untagged";
@@ -176,7 +176,7 @@ namespace GameMission
                     distance += Vector3.Distance(AnsBox[i].transform.position, Ans[j].transform.position); //??
                 }
             }
-            
+
             if (distance == 0) // all error can in or very close
             {
                 downTime -= Time.deltaTime;
@@ -192,7 +192,7 @@ namespace GameMission
                     finishGame = true;
                 }
             }
-            
+
         }
 
         private void GameResult(bool isSuccess)
@@ -207,7 +207,7 @@ namespace GameMission
 
             if (!finishGame) { DetectAnswer(); }
 
-            if(MediaPlayerController.instance.isVideoFinish() && finishGame) // TODO: event?
+            if (MediaPlayerController.instance.isVideoFinish() && finishGame) // TODO: event?
             {
                 GameResult(true);
                 isGameStart = false;

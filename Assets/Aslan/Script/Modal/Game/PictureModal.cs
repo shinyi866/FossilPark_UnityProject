@@ -99,8 +99,7 @@ namespace View
                         onePictureGuidePanel.text.text = gameData.gameGuide[0];
                         onePictureGuidePanel.image.sprite = gameData.guidePicture1;
                     }
-
-                    if (id == 2)
+                    else if (id == 2)
                     {
                         ShowPanel(twoPictureGuidePanel.canvasGroup, true);
                         twoPictureGuidePanel.text.text = gameData.gameGuide[0];
@@ -108,6 +107,10 @@ namespace View
                         twoPictureGuidePanel.rightText.text = gameData.gameGuide[2];
                         twoPictureGuidePanel.leftImage.sprite = gameData.guidePicture1;
                         twoPictureGuidePanel.rightImage.sprite = gameData.guidePicture2;
+                    }
+                    else
+                    {
+                        Debug.Log("None guide ID");
                     }
                     
                     break;

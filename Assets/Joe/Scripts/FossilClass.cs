@@ -109,6 +109,7 @@ public class FossilClass : MonoBehaviour
                 modal.SwitchConfirmButton(true);
                 modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
                 {
+                    modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
                     GameResult(true);
                 });
             }
@@ -124,6 +125,7 @@ public class FossilClass : MonoBehaviour
                 modal.SwitchConfirmButton(true);
                 modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
                 {
+                    modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
                     GameResult(true);
                 });
             }
@@ -139,6 +141,7 @@ public class FossilClass : MonoBehaviour
                 modal.SwitchConfirmButton(true);
                 modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
                 {
+                    modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
                     GameResult(true);
                 });
             }

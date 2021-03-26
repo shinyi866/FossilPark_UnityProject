@@ -55,7 +55,7 @@ public class CameraCtrl : MonoBehaviour
         ARcamera.SetActive(isAR);
 
         currentCamera = isAR? ARcamera.GetComponent<Camera>() : MainCamera.GetComponent<Camera>();
-        MediaPlayerController.instance.OpenMeshRender(!isAR);
+        MediaPlayerController.instance.OpenSphereVideo(!isAR);
     }
 
     public Camera GetCurrentCamera()

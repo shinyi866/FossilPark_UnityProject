@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameMission;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -70,6 +71,8 @@ namespace View
             {
                 SavePhotoPanel(false);
                 Modals.instance.CloseAR();
+                Modals.instance.CloseModal();
+                Games.instance.ClosGame();
                 //SaveImage();
                 // TODO play video
             });

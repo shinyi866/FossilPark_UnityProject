@@ -9,7 +9,12 @@ public class MediaPlayerController : MonoBehaviour
     private MediaPlayer _mediaPlayer = null;
 
     [SerializeField]
-    private MeshRenderer meshRenderer;
+    private GameObject sphereVideo;
+    [SerializeField]
+    private GameObject planeVideo;
+
+    //[SerializeField]
+    //private MeshRenderer meshRenderer;
 
     private static MediaPlayerController _instance;
 
@@ -38,6 +43,16 @@ public class MediaPlayerController : MonoBehaviour
         _mediaPlayer.Control.SetLooping(false);
     }
 
+    public void LoadAndPlay2DVideoNotLoop(string filePath)
+    {
+        //SwitchTo2DPlane(true);
+        OpenSphereVideo(false);
+        //Instantiate(planeVideo);
+
+        _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, true);
+        _mediaPlayer.Control.SetLooping(false);
+    }
+
     public void LoadVideo(string filePath)
     {
         _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, false);
@@ -59,13 +74,25 @@ public class MediaPlayerController : MonoBehaviour
         //_mediaPlayer.VideoOpened();
     }
 
-    public void OpenMeshRender(bool isOpen)
+    public void OpenSphereVideo(bool isOpen)
     {
-        meshRenderer.enabled = isOpen;
+        sphereVideo.SetActive(isOpen);
+        //meshRenderer.enabled = isOpen;
     }
 
     public bool isVideoFinish()
     {
         return _mediaPlayer.Control.IsFinished();
+    }
+    
+    public void SwitchTo2DPlane(bool isOpen)
+    {
+        sphereVideo.SetActive(!isOpen);
+        planeVideo.SetActive(isOpen);
+    }
+    
+    public void Destroy2DPlane()
+    {
+        Destroy(planeVideo);
     }
 }
