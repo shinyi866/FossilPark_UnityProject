@@ -1,6 +1,6 @@
 missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleButton,guideID,gameGuide,guideButton,gameNotify,gamePrompt,endMessage,pictureNotify,animalDialogPicture,animalNotifyPicture,guidePicture1,guidePicture2,ARmark,endPicutre,endPicutre2
 0,附近似乎有時光機器，趕緊找找看吧！,前方就是我們看到的就是逆走鐘時光機！它是很厲害的時光機！快去跟他拍照吧！,體驗開始,請將圓形對準正中央的逆走鐘後按下,逆走鐘,前往拍照,1,請將圓形對準正中央的逆走鐘後按下,前往拍照,請將下方圓圈對齊台上的大逆走鐘後按下,,,,,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,,,
-1,附近似乎有時光機器，趕緊找找看吧！,,帶回管理員,這就是逆走時鐘！快上去看看！,"時光機器,這就是逆走時鐘！快上去看看！",前往觀看,1,KiKi KoKo 正在為了孵化恐龍蛋化石爭吵著,,,Yoooooo,"糟糕！時光機故障了！
+1,附近似乎有時光機器，趕緊找找看吧！,,帶回管理員,這就是逆走時鐘！快上去看看！,"時光機器,這就是逆走時鐘！快上去看看！",前往觀看,1,KiKi KoKo 正在為了孵化恐龍蛋化石爭吵著,,四處尋找看看有逆走中的建築在哪？它就是時光機喔！,Yoooooo,"糟糕！時光機故障了！
 剛剛還在上面的六位管理員不見了！
 我們要找到管理時鐘的管理員們，修復逆走鐘，就可以再次使用時間回朔的功能了！
 我們去尋找他們，並使用相機拍攝他們，讓他們重新啟動時光機吧！",,,,,,,,
@@ -46,4 +46,5 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 記熟了嗎？
 使用相機拍攝我讓我回到時光機中吧！
 ",拍照,Assets/Aslan/ArtSprite/GameUI/animals/06crocodile.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/mammoth.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,
-8,附近似乎有特別的動物，趕緊找找看吧！,時光機被漸漸地修復了，我們正⼀點點地回到過去！草原上好像有什麼特別的⽣物快去看看！,前往觀看,,,,,,,拿取⾁塊與樹葉可以餵食恐龍喔！,,,,Assets/Aslan/ArtSprite/GameUI/animals/01Sika_deer.png,,,,,,
+8,附近似乎有特別的動物，趕緊找找看吧！,時光機被漸漸地修復了，我們正⼀點點地回到過去！草原上好像有什麼特別的⽣物快去看看！,前往觀看,拿取⾁塊與樹葉可以餵食恐龍喔！,"發現蹤跡,我們好像發現了不可以思議的古生物！
+快上前去看看！",前往觀看,1,拿取⾁塊與樹葉可以餵食恐龍喔！,開始,拿取⾁塊與樹葉可以餵食恐龍喔！,留下美好的紀念！,,,Assets/Aslan/ArtSprite/GameUI/animals/01Sika_deer.png,,,,,,

@@ -12,12 +12,9 @@ namespace GameMission
 
         public override void EnterGame()
         {
+            /*
             GameModals.instance.OpenAR();
-
-            game = Games.instance.OpenGame<Game8>();
-            game.Init();
-            game.gameOverEvent += EndGame;
-
+            
             var model = GameModals.instance.OpenModal<TitleModal>();
             model.ShowInfo(missionIndex, TypeFlag.TitleType.GameTitle);
             model.ConfirmButton.onClick.AddListener(() =>
@@ -26,11 +23,17 @@ namespace GameMission
                 gameModal.ShowModal(missionIndex, TypeFlag.ARGameType.Game8);
                 game.GameStart();
             });
+            */
         }
 
         public override void StartGame()
         {
-
+            GameModals.instance.OpenAR();
+            Debug.Log("8");
+            game = Games.instance.OpenGame<Game8>();
+            game.Init();
+            game.gameOverEvent += EndGame;
+            game.GameStart();
         }
 
         public void EndGame(bool isSuccess)

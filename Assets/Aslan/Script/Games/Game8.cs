@@ -41,6 +41,9 @@ namespace GameMission
 
         private bool isGameStart;
 
+        private ARGameModal modal;
+        private int missionIndex = 8;
+
         public void Init()
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
@@ -56,6 +59,9 @@ namespace GameMission
                 arObjects.Add(food.name, newARObject);
             }
 
+            modal = GameModals.instance.OpenModal<ARGameModal>();
+            modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game8);
+
             ButtonSetUp();
         }
 
@@ -67,7 +73,7 @@ namespace GameMission
 
         private void ButtonSetUp()
         {
-            for (int i = 0; i < foodButton.Length; i++) { foodButton[i] = GameModals.instance.GetModal<ARGameModal>().game8Panel.foodButtons[i]; }
+            for (int i = 0; i < foodButton.Length; i++) { foodButton[i] = modal.game8Panel.foodButtons[i]; }
             for (int i = 0; i < foodButton.Length; i++)
             {
                 int closureIndex = i;

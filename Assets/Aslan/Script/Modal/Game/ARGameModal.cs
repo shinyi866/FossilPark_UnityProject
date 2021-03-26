@@ -19,6 +19,7 @@ namespace View
 
         private CanvasGroup[] GameCanvasGroups;
         private GameDialogData data;
+        private Texture2D currentImage;
 
         private void Awake()
         {
@@ -26,11 +27,41 @@ namespace View
             GameCanvasGroups = new CanvasGroup[] { game0Panel.canvasGroup, game2Panel.canvasGroup, game3Panel.canvasGroup, game6Panel.canvasGroup, game8Panel.canvasGroup };
 
             SwitchConfirmButton(false); //default button
+            gamePromptPanel.buttonsObject.SetActive(false); //default button
 
             gamePromptPanel.button.onClick.AddListener(() => {
                 ShowPanel(gamePromptPanel.canvasGroup, false);
                 gamePromptPanel.image.sprite = null;
             });
+
+            // save picture
+            gamePromptPanel.button_save.onClick.AddListener(() => {
+                //SaveImage();
+
+                gamePromptPanel.button.gameObject.SetActive(true); //default button
+                gamePromptPanel.buttonsObject.SetActive(false); //default button
+                ShowPanel(gamePromptPanel.canvasGroup, false);
+                gamePromptPanel.image.sprite = null;
+                currentImage = null;
+            });
+
+            // leave
+            gamePromptPanel.button_leave.onClick.AddListener(() => {
+                gamePromptPanel.button.gameObject.SetActive(true); //default button
+                gamePromptPanel.buttonsObject.SetActive(false); //default button
+                ShowPanel(gamePromptPanel.canvasGroup, false);
+                gamePromptPanel.image.sprite = null;
+                currentImage = null;
+            });
+
+
+            game8Panel.pictureButton.onClick.AddListener(() =>
+            {
+                TakePicture();
+                ShowPrompt(8, TypeFlag.ARGameType.PicturePrompt);
+            });
+
+            
         }
 
         public void ShowModal(int index, TypeFlag.ARGameType type)
@@ -76,37 +107,43 @@ namespace View
                 case TypeFlag.ARGameType.GamePrompt1:
                     gamePromptPanel.text.text = gameData.gamePrompt[0];
                     ShowPanel(gamePromptPanel.canvasGroup, true);
-                    text.text = gameData.gameNotify[0];
-                    if (gameData.gamePrompt.Length > 0)
+                    
+                    if (gameData.gamePrompt.Length > 1)
                         text.text = gameData.gameNotify[0];
                     break;
                 case TypeFlag.ARGameType.GamePrompt2:
                     gamePromptPanel.text.text = gameData.gamePrompt[1];
                     ShowPanel(gamePromptPanel.canvasGroup, true);
 
-                    if (gameData.gamePrompt.Length > 0)
+                    if (gameData.gamePrompt.Length > 1)
                         text.text = gameData.gameNotify[1];
                     break;
                 case TypeFlag.ARGameType.GamePrompt3:
                     gamePromptPanel.text.text = gameData.gamePrompt[2];
                     ShowPanel(gamePromptPanel.canvasGroup, true);
 
-                    if (gameData.gamePrompt.Length > 0)
+                    if (gameData.gamePrompt.Length > 1)
                         text.text = gameData.gameNotify[2];
                     break;
                 case TypeFlag.ARGameType.GamePrompt4:
                     gamePromptPanel.text.text = gameData.gamePrompt[3];
                     ShowPanel(gamePromptPanel.canvasGroup, true);
 
-                    if (gameData.gamePrompt.Length > 0)
+                    if (gameData.gamePrompt.Length > 1)
                         text.text = gameData.gameNotify[3];
                     break;
                 case TypeFlag.ARGameType.GamePrompt5:
                     gamePromptPanel.text.text = gameData.gamePrompt[4];
                     ShowPanel(gamePromptPanel.canvasGroup, true);
 
-                    if (gameData.gamePrompt.Length > 0)
+                    if (gameData.gamePrompt.Length > 1)
                         text.text = gameData.gameNotify[4];
+                    break;
+                case TypeFlag.ARGameType.PicturePrompt:
+                    gamePromptPanel.text.text = gameData.gamePrompt[0];
+                    gamePromptPanel.button.gameObject.SetActive(false);
+                    gamePromptPanel.buttonsObject.SetActive(true);
+                    ShowPanel(gamePromptPanel.canvasGroup, true);
                     break;
             }
         }
@@ -151,8 +188,23 @@ namespace View
 
             Sprite screenShot = Sprite.Create(renderResult, rect, Vector2.zero);
             gamePromptPanel.image.sprite = screenShot;
+            currentImage = renderResult;
 
             _camera.targetTexture = null;
+        }
+
+        private void SaveImage()
+        {
+            if (currentImage == null) return;
+
+            // save in memory
+            string filename = FileName();
+            NativeGallery.Permission permission = NativeGallery.SaveImageToGallery(currentImage, "FossilParkGallery", filename, (success, path) => Debug.Log("Media save result: " + success + " " + path));
+        }
+
+        private string FileName()
+        {
+            return string.Format("screen_{0}.png", System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"));
         }
     }
 }
@@ -203,7 +255,9 @@ public class GamePromptPanel
     public CanvasGroup canvasGroup;
     public Text text;
     public Image image;
+    public GameObject buttonsObject;
     public Button button; // close modal
     public Button button_confirm; //other modal addListener
+    public Button button_save; //picture save
+    public Button button_leave; //picture leave
 }
-

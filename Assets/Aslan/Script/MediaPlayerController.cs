@@ -45,9 +45,8 @@ public class MediaPlayerController : MonoBehaviour
 
     public void LoadAndPlay2DVideoNotLoop(string filePath)
     {
-        //SwitchTo2DPlane(true);
+        SwitchTo2DPlane(true);
         OpenSphereVideo(false);
-        //Instantiate(planeVideo);
 
         _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, true);
         _mediaPlayer.Control.SetLooping(false);
@@ -93,6 +92,7 @@ public class MediaPlayerController : MonoBehaviour
     
     public void Destroy2DPlane()
     {
+        OpenSphereVideo(true);
         Destroy(planeVideo);
     }
 }

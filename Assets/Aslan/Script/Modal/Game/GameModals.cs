@@ -100,7 +100,7 @@ namespace View
             model.ShowInfo(index, TypeFlag.TitleType.RoundTitleNotify);
         }
 
-        // Show and enter missions (1-2m) mission0-1
+        // Show and enter missions (1-2m) mission0-1, 8
         public void ShowNotifyOther(int index)
         {
             var model = _instance.OpenModal<TitleModal>();
@@ -111,7 +111,7 @@ namespace View
             });
         }
 
-        // Show and enter missions (1-2m) mission2-8
+        // Show and enter missions (1-2m) mission2-7
         public void ShowNotify(int index)
         {
             var model = _instance.OpenModal<TitleModal>();
