@@ -17,7 +17,7 @@ public class GameDialogData : ScriptableObject
         public int guideID;
         public string[] gameGuide;
         public string guideButton;
-        public string gameNotify;
+        public string[] gameNotify;
         public string[] gamePrompt;
         public string[] endMessage;
         public string pictureNotify;
