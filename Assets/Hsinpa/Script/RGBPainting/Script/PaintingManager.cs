@@ -57,8 +57,6 @@ namespace Hsinpa.App {
 
                 if (hits > 0)
                 {
-                    Debug.Log("m_Results[0].textureCoord " + m_Results[0].textureCoord + ", toolIndex " + toolIndex);
-
                     drawToTexture.DrawOnMesh(m_Results[0].textureCoord, _toolSRP.tools[toolIndex].mask_color);
                 }
 

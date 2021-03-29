@@ -17,7 +17,7 @@ public class ToolSRP : ScriptableObject
         public Color mask_color;
         public AudioClip audioClip;
 
-        [Range(0, 0.02f)]
+        [Range(0, 0.5f)]
         public float difficulty;
 
         public bool isValid => !string.IsNullOrEmpty(tool_id);

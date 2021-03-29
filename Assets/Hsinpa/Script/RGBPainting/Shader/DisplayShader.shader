@@ -19,7 +19,7 @@
     }
     SubShader
     {
-        Tags {  "RenderType"="Opaque"  "LightMode"="ForwardBase" }
+        Tags {  "RenderType"="Opaque" "LightMode"="ForwardBase" }
 
         Pass
         {
@@ -30,7 +30,6 @@
 
             #include "Lighting.cginc"
             #include "UnityCG.cginc"
-            #include "UnityLightingCommon.cginc" // for _LightColor0
 
             struct appdata
             {
@@ -144,9 +143,9 @@
                 
                 col = lerp(col , dirtEffect, _DirtTransition);
                 
-                col *= _LightColor0.rgba;
+                col *= _LightColor0;
 
-                return dirtEffect;
+                return col;
             }
             ENDCG
         }

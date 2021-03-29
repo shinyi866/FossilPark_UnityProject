@@ -4,6 +4,9 @@ using Hsinpa.View;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using Utility;
+using View;
 
 namespace Hsinpa.Ctrl
 {
@@ -20,6 +23,15 @@ namespace Hsinpa.Ctrl
 
         [SerializeField]
         private BoneARTemplate crocodileTarget;
+
+        [SerializeField]
+        private BoneARTemplate crocodileTargetTimelineAnim;
+
+        [SerializeField]
+        private PlayableAsset StartPlayableAnim;
+
+        [SerializeField]
+        private PlayableAsset EndPlayableAnim;
 
         bool _arEnable = false;
 
@@ -56,15 +68,17 @@ namespace Hsinpa.Ctrl
 
         public void Start()
         {
+            crocodileTargetTimelineAnim.gameObject.SetActive(false);
             crocodileTarget.gameObject.SetActive(false);
             _paintingManager.OnTargetDirtIsClear += OnPaintIsDone;
             _raycastInputHandler.OnInputEvent += OnRaycastInputEvent;
 
-            crocodileTarget.SetUp(OnPlaneARReadyClick);
+            crocodileTargetTimelineAnim.SetUp(OnPlaneARReadyClick);
         }
 
         public void EnterGame()
         {
+            OpenHintUIModal(TypeFlag.ARGameType.GamePrompt1);
 
             _paintingManager.ResetPaint();
             if (_arEnable)
@@ -80,8 +94,8 @@ namespace Hsinpa.Ctrl
         private void PerformNoARAction()
         {
             Debug.Log("Croco PerformNoARAction");
-            crocodileTarget.gameObject.SetActive(true);
-            crocodileTarget.ShowConfirmBtn(false);
+            crocodileTargetTimelineAnim.gameObject.SetActive(true);
+            crocodileTargetTimelineAnim.ShowConfirmBtn(false);
 
             _arHelper.SetARCameraPos(new Vector3(0, 0.8f, 0), Quaternion.Euler(90, 0, 0));
             _state = GeneralFlag.GeneralState.UnderGoing;
@@ -92,9 +106,9 @@ namespace Hsinpa.Ctrl
         private void PerformPlaneARAction()
         {
             Debug.Log("Croco PerformPlaneARAction");
-            crocodileTarget.gameObject.SetActive(true);
-            crocodileTarget.transform.position = new Vector3(1000, 1000, 100);
-            crocodileTarget.ShowConfirmBtn(true);
+            crocodileTargetTimelineAnim.gameObject.SetActive(true);
+            crocodileTargetTimelineAnim.transform.position = new Vector3(1000, 1000, 100);
+            crocodileTargetTimelineAnim.ShowConfirmBtn(true);
             _arHelper.ActivateAR(true);
             _arHelper.AcitvateARPlane(true);
 
@@ -104,15 +118,27 @@ namespace Hsinpa.Ctrl
         private void OnPlaneARReadyClick()
         {
             _arHelper.AcitvateARPlane(false);
-            crocodileTarget.ShowConfirmBtn(false);
+            crocodileTargetTimelineAnim.ShowConfirmBtn(false);
 
             _state = GeneralFlag.GeneralState.UnderGoing;
             InitPaintProcedure();
         }
 
         private void InitPaintProcedure() {
-            currentToolIndex = 0;
-            _paintingManager.EquipTool((ToolSRP.ToolEnum) currentToolIndex);
+
+            crocodileTargetTimelineAnim.SetAndPlayTimelineAnim(StartPlayableAnim);
+
+            _ = UtilityMethod.DoDelayWork((float)StartPlayableAnim.duration, () =>
+            {
+                currentToolIndex = 0;
+                _paintingManager.EquipTool((ToolSRP.ToolEnum)currentToolIndex);
+
+
+                crocodileTargetTimelineAnim.gameObject.SetActive(false);
+                crocodileTarget.gameObject.SetActive(true);
+                crocodileTarget.transform.position = crocodileTargetTimelineAnim.transform.position;
+                crocodileTarget.transform.rotation = crocodileTargetTimelineAnim.transform.rotation;
+            });
         }
 
         private void OnRaycastInputEvent(RaycastInputHandler.InputStruct inputStruct)
@@ -140,8 +166,8 @@ namespace Hsinpa.Ctrl
                 dir.y = 0;
                 Quaternion faceQuat = Quaternion.LookRotation(dir);
 
-                crocodileTarget.transform.position = inputStruct.raycastPosition;
-                crocodileTarget.transform.rotation = faceQuat;
+                crocodileTargetTimelineAnim.transform.position = inputStruct.raycastPosition;
+                crocodileTargetTimelineAnim.transform.rotation = faceQuat;
             }
         }
 
@@ -157,11 +183,29 @@ namespace Hsinpa.Ctrl
             if (nextCurrentToolIndex > (int)ToolSRP.ToolEnum.Tool_3) {
                 _paintingManager.ResetPaint();
 
-                if (OnEndGameEvent != null)
-                    OnEndGameEvent(true);
+
+                crocodileTarget.gameObject.SetActive(false);
+
+                crocodileTargetTimelineAnim.SetAndPlayTimelineAnim(EndPlayableAnim);
+
+                _ = UtilityMethod.DoDelayWork((float)EndPlayableAnim.duration, () =>
+                {
+                    crocodileTargetTimelineAnim.gameObject.SetActive(false);
+
+                    OpenHintUIModal(TypeFlag.ARGameType.GamePrompt5);
+
+                    if (OnEndGameEvent != null)
+                        OnEndGameEvent(true);
+                });
 
                 return;
             }
+
+            if (nextCurrentToolIndex == (int)ToolSRP.ToolEnum.Tool_2)
+                OpenHintUIModal(TypeFlag.ARGameType.GamePrompt3);
+
+            if (nextCurrentToolIndex == (int)ToolSRP.ToolEnum.Tool_3)
+                OpenHintUIModal(TypeFlag.ARGameType.GamePrompt4);
 
             currentToolIndex = nextCurrentToolIndex;
             _paintingManager.EquipTool((ToolSRP.ToolEnum)nextCurrentToolIndex);
@@ -170,6 +214,18 @@ namespace Hsinpa.Ctrl
         private void OnDestroy()
         {
             _paintingManager.OnTargetDirtIsClear -= OnPaintIsDone;
+        }
+
+        private void OpenHintUIModal(TypeFlag.ARGameType type) {
+
+            Debug.Log("CrocoModal Open " + type.ToString("g"));
+            if (GameModals.instance == null) return;
+
+            int missionindex = 7;
+            var modal = GameModals.instance.OpenModal<ARGameModal>();
+
+            if (modal != null)
+                modal.ShowPrompt(missionindex, type);
         }
     }
 }
