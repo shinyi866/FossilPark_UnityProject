@@ -180,9 +180,8 @@ namespace Hsinpa.Ctrl
             if (!isDone) return;
 
             int nextCurrentToolIndex = currentToolIndex + 1;
-            if (nextCurrentToolIndex > (int)ToolSRP.ToolEnum.Tool_3) {
+            if (nextCurrentToolIndex > (int)ToolSRP.ToolEnum.Tool_2) {
                 _paintingManager.ResetPaint();
-
 
                 crocodileTarget.gameObject.SetActive(false);
 
@@ -204,8 +203,6 @@ namespace Hsinpa.Ctrl
             if (nextCurrentToolIndex == (int)ToolSRP.ToolEnum.Tool_2)
                 OpenHintUIModal(TypeFlag.ARGameType.GamePrompt3);
 
-            if (nextCurrentToolIndex == (int)ToolSRP.ToolEnum.Tool_3)
-                OpenHintUIModal(TypeFlag.ARGameType.GamePrompt4);
 
             currentToolIndex = nextCurrentToolIndex;
             _paintingManager.EquipTool((ToolSRP.ToolEnum)nextCurrentToolIndex);
