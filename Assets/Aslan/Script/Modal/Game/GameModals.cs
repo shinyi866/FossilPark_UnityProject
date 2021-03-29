@@ -122,6 +122,7 @@ namespace View
             {
                 EnterModel(index);
                 GameMissions.instance.EnterGame();
+                Debug.Log("2-7");
             });
         }
 
@@ -148,6 +149,14 @@ namespace View
             {
                 CloseModal();
                 GameMissions.instance.StartGame();
+                Debug.Log("yo1");
+            });
+
+            model.GuideConfirmButtonTwo.onClick.AddListener(() =>
+            {
+                CloseModal();
+                GameMissions.instance.StartGame();
+                Debug.Log("yo2");
             });
         }
     }
