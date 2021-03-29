@@ -33,17 +33,11 @@ MonoBehaviour:
     text: 55555555
   DinosaurlItems:
   - MainImage: {fileID: 21300000, guid: d0aad28dafd7f4d658e7f1b0629b9e6a, type: 3}
-    NameImage: {fileID: 21300000, guid: a3678664a3efd413cae222e223c27e57, type: 3}
-    text: ddd000000
+    NameImage: {fileID: 21300000, guid: fb22083c92e014f1c88e929b6a958d14, type: 3}
+    text: "\u4E09\u89D2\u9F8D\u89E3\u8AAA"
   - MainImage: {fileID: 21300000, guid: 20eff8d25474c4fcfb022abff18d5417, type: 3}
-    NameImage: {fileID: 21300000, guid: d53336d4477ea43c8947e78371d2690c, type: 3}
-    text: ddd1111111
+    NameImage: {fileID: 21300000, guid: 7231f2dfa62a646a68d52e0137dd1a45, type: 3}
+    text: "\u66B4\u9F8D"
   - MainImage: {fileID: 21300000, guid: 850daa4fe0ece47bdbb87275fcaf890e, type: 3}
     NameImage: {fileID: 21300000, guid: a9ea87f3cc1f942428c2843698d6dbfe, type: 3}
-    text: ddd2222222
-  - MainImage: {fileID: 21300000, guid: 30f4eac1aeeb64c0d81755b7730116e6, type: 3}
-    NameImage: {fileID: 21300000, guid: 3d474d504bafa4cabb1ff5365cba3101, type: 3}
-    text: ddd333333
-  - MainImage: {fileID: 21300000, guid: b1d320033dcc94915bf1747fc7626dc0, type: 3}
-    NameImage: {fileID: 21300000, guid: 7231f2dfa62a646a68d52e0137dd1a45, type: 3}
-    text: ddd4444444
+    text: "\u5E03\u5F0F"

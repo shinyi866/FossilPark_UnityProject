@@ -1,5 +1,5 @@
 missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleButton,guideID,gameGuide,guideButton,gameNotify,gamePrompt,endMessage,pictureNotify,animalDialogPicture,animalNotifyPicture,guidePicture1,guidePicture2,ARmark,endPicutre,endPicutre2
-0,附近似乎有時光機器，趕緊找找看吧！,前方就是我們看到的就是逆走鐘時光機！它是很厲害的時光機！快去跟他拍照吧！,體驗開始,請將圓形對準正中央的逆走鐘後按下,逆走鐘,前往拍照,1,請將圓形對準正中央的逆走鐘後按下,前往拍照,請將下方圓圈對齊台上的大逆走鐘後按下,,,,,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,,,
+0,附近似乎有時光機器，趕緊找找看吧！,前方就是我們看到的就是逆走鐘時光機！它是很厲害的時光機！快去跟他拍照吧！,體驗開始,請將圓形對準正中央的逆走鐘後按下,逆走鐘,前往拍照,1,請將圓形對準正中央的逆走鐘後按下,前往拍照,請將下方圓圈對齊台上的大逆走鐘後按下,,,,,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,,,
 1,附近似乎有時光機器，趕緊找找看吧！,,帶回管理員,這就是逆走時鐘！快上去看看！,"時光機器,這就是逆走時鐘！快上去看看！",前往觀看,1,KiKi KoKo 正在為了孵化恐龍蛋化石爭吵著,,四處尋找看看有逆走中的建築在哪？它就是時光機喔！,Yoooooo,"糟糕！時光機故障了！
 剛剛還在上面的六位管理員不見了！
 我們要找到管理時鐘的管理員們，修復逆走鐘，就可以再次使用時間回朔的功能了！

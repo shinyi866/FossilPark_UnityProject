@@ -32,9 +32,9 @@ MonoBehaviour:
     endMessage: []
     pictureNotify: 
     animalDialogPicture: {fileID: 0}
-    animalNotifyPicture: {fileID: 21300000, guid: dbdcf7ee770a6441da39653beced9a79,
+    animalNotifyPicture: {fileID: 21300000, guid: 9e2527c75c5da43768c771c1849bf49c,
       type: 3}
-    guidePicture1: {fileID: 21300000, guid: dbdcf7ee770a6441da39653beced9a79, type: 3}
+    guidePicture1: {fileID: 21300000, guid: 6e177b292fb1946c384505647f0bfdc1, type: 3}
     guidePicture2: {fileID: 21300000, guid: dbdcf7ee770a6441da39653beced9a79, type: 3}
     ARmark: {fileID: 0}
     endPicutre: {fileID: 0}
