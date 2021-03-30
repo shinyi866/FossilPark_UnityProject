@@ -513,6 +513,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hsinpa
       objectReference: {fileID: 0}
+    - target: {fileID: 5792027904542657930, guid: 0034034ce1f3a9643922789c5dd830bb,
+        type: 3}
+      propertyPath: TestMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5792027904542657931, guid: 0034034ce1f3a9643922789c5dd830bb,
         type: 3}
       propertyPath: m_LocalPosition.x

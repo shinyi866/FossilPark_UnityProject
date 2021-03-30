@@ -97,7 +97,7 @@ namespace Hsinpa.Ctrl
             crocodileTargetTimelineAnim.gameObject.SetActive(true);
             crocodileTargetTimelineAnim.ShowConfirmBtn(false);
 
-            _arHelper.SetARCameraPos(new Vector3(0, 0.8f, 0), Quaternion.Euler(90, 0, 0));
+            _arHelper.SetARCameraPos(new Vector3(0, 0.3f, 0), Quaternion.Euler(90, 0, 0));
             _state = GeneralFlag.GeneralState.UnderGoing;
 
             InitPaintProcedure();
@@ -173,7 +173,9 @@ namespace Hsinpa.Ctrl
 
         private void OnDoubleTap()
         {
-
+            Debug.Log("OnDoubleTap");
+            if (_state == GeneralFlag.GeneralState.UnderGoing)
+                _paintingManager.ShowColorHintEvent((_paintingManager.hintState == PaintingManager.HintState.Flash) ? PaintingManager.HintState.None : PaintingManager.HintState.Flash);
         }
 
         private void OnPaintIsDone(bool isDone) {
