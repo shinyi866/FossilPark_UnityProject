@@ -54,9 +54,9 @@ MonoBehaviour:
     - "KiKi KoKo \u6B63\u5728\u70BA\u4E86\u5B75\u5316\u6050\u9F8D\u86CB\u5316\u77F3\u722D\u5435\u8457"
     guideButton: 
     gameNotify:
-    - "\u56DB\u8655\u5C0B\u627E\u770B\u770B\u6709\u9006\u8D70\u4E2D\u7684\u5EFA\u7BC9\u5728\u54EA\uFF1F\u5B83\u5C31\u662F\u6642\u5149\u6A5F\u5594\uFF01"
+    - "\u89C0\u770B\u6642\u5149\u6A5F\u52D5\u756B"
     gamePrompt:
-    - Yoooooo
+    - "\u56DB\u8655\u5C0B\u627E\u770B\u770B\u6709\u9006\u8D70\u4E2D\u7684\u5EFA\u7BC9\u5728\u54EA\uFF1F\u5B83\u5C31\u662F\u6642\u5149\u6A5F\u5594\uFF01"
     endMessage:
     - "\u7CDF\u7CD5\uFF01\u6642\u5149\u6A5F\u6545\u969C\u4E86\uFF01\n\u525B\u525B\u9084\u5728\u4E0A\u9762\u7684\u516D\u4F4D\u7BA1\u7406\u54E1\u4E0D\u898B\u4E86\uFF01\n\u6211\u5011\u8981\u627E\u5230\u7BA1\u7406\u6642\u9418\u7684\u7BA1\u7406\u54E1\u5011\uFF0C\u4FEE\u5FA9\u9006\u8D70\u9418\uFF0C\u5C31\u53EF\u4EE5\u518D\u6B21\u4F7F\u7528\u6642\u9593\u56DE\u6714\u7684\u529F\u80FD\u4E86\uFF01\n\u6211\u5011\u53BB\u5C0B\u627E\u4ED6\u5011\uFF0C\u4E26\u4F7F\u7528\u76F8\u6A5F\u62CD\u651D\u4ED6\u5011\uFF0C\u8B93\u4ED6\u5011\u91CD\u65B0\u555F\u52D5\u6642\u5149\u6A5F\u5427\uFF01"
     pictureNotify: 
@@ -148,8 +148,8 @@ MonoBehaviour:
     guideID: 2
     gameGuide:
     - "\u89C0\u5BDF\u5316\u77F3\uFF0C\u5C07\u6A19\u7C64\u79FB\u52D5\u5230\u6B63\u78BA\u7684\u5316\u77F3\u4E0A\uFF01"
-    - "\u6B63\u78BA"
-    - "\u932F\u8AA4"
+    - "\u9B1A\u9BE8\u982D\u9AA8"
+    - "\u9F52\u9BE8\u982D\u9AA8"
     guideButton: "\u958B\u59CB"
     gameNotify:
     - "\u89C0\u5BDF\u5316\u77F3\u8CBC\u4E0A\u6B63\u78BA\u7684\u6A19\u7C64\uFF01"
@@ -163,11 +163,11 @@ MonoBehaviour:
       type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: a3cb0111319d742bea6f2dce7bc23d91,
       type: 3}
-    guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
-    guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    guidePicture1: {fileID: 21300000, guid: a5284a7c6b38c4d20964bce20e20d5a5, type: 3}
+    guidePicture2: {fileID: 21300000, guid: 5e18229dc673e414c8e05de99571b9e8, type: 3}
     ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
-    endPicutre: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
-    endPicutre2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    endPicutre: {fileID: 21300000, guid: 3b1275bc9258041f1b9fdb134ac2a5f8, type: 3}
+    endPicutre2: {fileID: 21300000, guid: 55230049bea14436faccdc0992413902, type: 3}
   - missionID: 5
     roundMessage:
     - "\u767C\u73FE\u8E64\u8DE1"

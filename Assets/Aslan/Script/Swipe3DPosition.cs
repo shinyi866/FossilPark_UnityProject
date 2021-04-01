@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SwipePosition : MonoBehaviour
+public class Swipe3DPosition : MonoBehaviour
 {
     private Touch touch;
     private float rotateSpeed = 0.2f;

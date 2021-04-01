@@ -1,6 +1,6 @@
 missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleButton,guideID,gameGuide,guideButton,gameNotify,gamePrompt,endMessage,pictureNotify,animalDialogPicture,animalNotifyPicture,guidePicture1,guidePicture2,ARmark,endPicutre,endPicutre2
 0,附近似乎有時光機器，趕緊找找看吧！,前方就是我們看到的就是逆走鐘時光機！它是很厲害的時光機！快去跟他拍照吧！,體驗開始,請將圓形對準正中央的逆走鐘後按下,逆走鐘,前往拍照,1,請將圓形對準正中央的逆走鐘後按下,前往拍照,請將下方圓圈對齊台上的大逆走鐘後按下,,,,,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,,,
-1,附近似乎有時光機器，趕緊找找看吧！,,帶回管理員,這就是逆走時鐘！快上去看看！,"時光機器,這就是逆走時鐘！快上去看看！",前往觀看,1,KiKi KoKo 正在為了孵化恐龍蛋化石爭吵著,,四處尋找看看有逆走中的建築在哪？它就是時光機喔！,Yoooooo,"糟糕！時光機故障了！
+1,附近似乎有時光機器，趕緊找找看吧！,,帶回管理員,這就是逆走時鐘！快上去看看！,"時光機器,這就是逆走時鐘！快上去看看！",前往觀看,1,KiKi KoKo 正在為了孵化恐龍蛋化石爭吵著,,觀看時光機動畫,四處尋找看看有逆走中的建築在哪？它就是時光機喔！,"糟糕！時光機故障了！
 剛剛還在上面的六位管理員不見了！
 我們要找到管理時鐘的管理員們，修復逆走鐘，就可以再次使用時間回朔的功能了！
 我們去尋找他們，並使用相機拍攝他們，讓他們重新啟動時光機吧！",,,,,,,,
@@ -19,8 +19,8 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 接下金絲猴摘下的果子吧！",蒐集果子,1,左右移動，可以接下金絲猴丟下的果子！,開始,左右移動時請注意週遭安全！,,"謝謝！\n有這麼多應該夠了！我們是雜食性動物！\n主食植物為嫩枝芽、樹葉、漿果、竹筍、苔蘚等等。\n使用相機拍攝我讓我回到時光機中吧！,糟糕！果子好像不太夠\n我們是雜食性動物！\n主食植物為嫩枝芽、樹葉、漿果、竹筍、苔蘚等等。\n使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/02monkey.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/monkey.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,
 4,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！你好！
-左鎮出土的化石中發現許多鬚鯨類和齒鯨類化石，兩 這最大的區別是鬚鯨類的口中有鬚，沒有牙齒，外鼻 孔有兩個；而齒鯨類的口中沒有鬚，有牙齒，外鼻孔 只有一個。","鯨豚知多少,你可以從兩種不同的骨頭中， 分辨出那個是齒鯨頭骨，哪個是鬚鯨頭骨嗎？",分辨鯨豚,2,"觀察化石，將標籤移動到正確的化石上！,正確,錯誤",開始,觀察化石貼上正確的標籤！,,"你真是太厲害了！
-使用相機拍攝我讓我回到時光機中吧！,齒鯨,鬚鯨",拍照,Assets/Aslan/ArtSprite/GameUI/animals/03dolphin.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/dolphin.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png
+左鎮出土的化石中發現許多鬚鯨類和齒鯨類化石，兩 這最大的區別是鬚鯨類的口中有鬚，沒有牙齒，外鼻 孔有兩個；而齒鯨類的口中沒有鬚，有牙齒，外鼻孔 只有一個。","鯨豚知多少,你可以從兩種不同的骨頭中， 分辨出那個是齒鯨頭骨，哪個是鬚鯨頭骨嗎？",分辨鯨豚,2,"觀察化石，將標籤移動到正確的化石上！,鬚鯨頭骨,齒鯨頭骨",開始,觀察化石貼上正確的標籤！,,"你真是太厲害了！
+使用相機拍攝我讓我回到時光機中吧！,齒鯨,鬚鯨",拍照,Assets/Aslan/ArtSprite/GameUI/animals/03dolphin.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/dolphin.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6toothed_whale.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8toothed_whale.png
 5,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！你好我是早坂犀牛！
 「左鎮動物群」的動物化石，多在溪床被發現，甚少直 接從地層露頭中被採集。

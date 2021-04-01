@@ -15,6 +15,7 @@ TagManager:
   - "\u9E7F"
   - "\u8C9D\u6BBC"
   - "\u7280\u725B"
+  - Ans
   layers:
   - Default
   - TransparentFX
