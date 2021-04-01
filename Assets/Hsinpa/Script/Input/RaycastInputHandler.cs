@@ -60,31 +60,32 @@ namespace Hsinpa.GameInput
 
         private void Update()
         {
-            if (selectedAnchor != null) {
 
-                var touches = UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches;
-                int touchCount = touches.Count;
+            var touches = UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches;
+            int touchCount = touches.Count;
 
-                //UI AND ARPLANE Detection
-                if (
+            //UI AND ARPLANE Detection
+            if (
 #if UNITY_EDITOR
-                    UnityEngine.Input.GetMouseButtonDown(0)
+                UnityEngine.Input.GetMouseButtonDown(0)
 #else
-                    UnityEngine.Input.GetMouseButtonDown(0) && (touchCount == 1) 
+                UnityEngine.Input.GetMouseButtonDown(0) && (touchCount == 1) 
 #endif
-                    &&
-                    CheckIsDoubleTabActivate())
-                {
+                &&
+                CheckIsDoubleTabActivate())
+            {
 
-                    Debug.Log("Double click");
-                    _inputStruct.raycastPosition = Vector3.zero;
-                    _inputStruct.inputType = InputType.DoubleTap;
+                Debug.Log("Double click");
+                _inputStruct.raycastPosition = Vector3.zero;
+                _inputStruct.inputType = InputType.DoubleTap;
 
-                    if (OnInputEvent != null)
-                        OnInputEvent(_inputStruct);
-                    return;
-                }
+                if (OnInputEvent != null)
+                    OnInputEvent(_inputStruct);
+                return;
+            }
 
+            if (selectedAnchor != null)
+            {
                 _lightHouseEditMode.OnUpdate(touches, touchCount);
 
                 return;

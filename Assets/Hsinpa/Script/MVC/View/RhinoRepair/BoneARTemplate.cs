@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.Playables;
 
 namespace Hsinpa.View
 {
@@ -10,6 +11,9 @@ namespace Hsinpa.View
     {
         [SerializeField]
         private Button confirmBtn;
+
+        [SerializeField]
+        private PlayableDirector director;
 
         private List<BoneARItem> _items;
         private Metric _metric;
@@ -49,6 +53,14 @@ namespace Hsinpa.View
                 return _items[index];
 
             return null;
+        }
+
+        public void SetAndPlayTimelineAnim(PlayableAsset playableAsset) {
+            if (director != null) {
+                this.gameObject.SetActive(true);
+                director.playableAsset = playableAsset;
+                director.Play();
+            }
         }
 
         public bool IsAllMetricMeet() {

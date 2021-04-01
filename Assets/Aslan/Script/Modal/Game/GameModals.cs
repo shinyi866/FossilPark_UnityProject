@@ -21,7 +21,9 @@ namespace View
                 if(_instance == null)
                 {
                     _instance = FindObjectOfType<GameModals>();
-                    _instance.SetUp();
+
+                    if (_instance != null)
+                        _instance.SetUp();
                 }
 
                 return _instance;

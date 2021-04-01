@@ -30,6 +30,7 @@ namespace Hsinpa.App {
 
         public enum HintState { None, Flash };
         private HintState _hintState;
+        public HintState hintState => _hintState;
 
         private float checkCompleteTime = 3f;
         private float recordCompleteTime = 0;
@@ -57,8 +58,6 @@ namespace Hsinpa.App {
 
                 if (hits > 0)
                 {
-                    Debug.Log("m_Results[0].textureCoord " + m_Results[0].textureCoord + ", toolIndex " + toolIndex);
-
                     drawToTexture.DrawOnMesh(m_Results[0].textureCoord, _toolSRP.tools[toolIndex].mask_color);
                 }
 
@@ -114,9 +113,14 @@ namespace Hsinpa.App {
 
         private void CheckShowColorHintEvent() {
             if (InputWrapper.instance.platformInput.ClickOnMenuKey()) {
-                _hintState = (HintState)(((int)_hintState + 1) % 2);
-                drawToTexture.EnableColorHint(_hintState);
+                ShowColorHintEvent((HintState)(((int)_hintState + 1) % 2));
             }
+        }
+
+        public void ShowColorHintEvent(HintState hState)
+        {
+            _hintState = hState;
+            drawToTexture.EnableColorHint(hState);
         }
 
         public ToolSRP.Tool EquipTool(ToolSRP.ToolEnum toolEnum) {
