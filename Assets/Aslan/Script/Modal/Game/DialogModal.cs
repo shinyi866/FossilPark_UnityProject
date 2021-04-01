@@ -7,15 +7,12 @@ namespace View
 {
     public class DialogModal : Modal
     {
-        [SerializeField]
-        private IntroDialogPanel introDialogPanel;
-        [SerializeField]
-        private EnterDialogPanel enterDialogPanel;
-        [SerializeField]
-        private EndDialogPanel endDialogPanel;
+        public IntroDialogPanel introDialogPanel;
+        public EnterDialogPanel enterDialogPanel;
+        public EndDialogPanel endDialogPanel;
+        public Text message;
+        public Image logoImage;
 
-        [SerializeField]
-        private Text message;
         [SerializeField]
         private Image image;
 

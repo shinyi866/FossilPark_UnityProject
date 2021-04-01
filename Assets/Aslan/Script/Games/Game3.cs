@@ -31,7 +31,7 @@ namespace GameMission
         private float Xmin = -0.4f;
         private float Xmax = 0.2f;
         private int speed = 135;
-        private int passCount = 4;
+        private int passCount = 1;
 
         // unsupport AR
         private Button leftButton;
@@ -83,7 +83,7 @@ namespace GameMission
 
             basket.transform.position = _camera.transform.position + _cameraFront;
         }
-
+        /*
         private void ThrowBallTest()
         {
             isThrowing = true;
@@ -91,14 +91,13 @@ namespace GameMission
             GameObject ball = Instantiate(fruitPrefab, throwPosition.transform.position, throwPosition.transform.rotation);
             _ball = ball;
         }
-
+        */
         private IEnumerator StartThrowBall()
         {           
             yield return new WaitForSeconds(1);
 
             for (int i = 0; i <= fruit; i++)
-            {
-                count -= 1;
+            {                
                 isThrowing = true;
                 monleyAnimator.SetBool("throw", true);
                 GameObject ball = Instantiate(fruitPrefab, throwPosition.transform.position, throwPosition.transform.rotation);
@@ -112,13 +111,12 @@ namespace GameMission
 
         public void ThrowOut()
         {
+            count -= 1;
             handBall.SetActive(false);
 
             _ball.SetActive(true);
             _ball.GetComponent<Rigidbody>().AddForce((throwPosition.transform.forward + new Vector3(Random.Range(Xmin, Xmax), 2, 0)) * speed); // Random.Range(Xmin, Xmax)
             _ball = null;
-
-            
 
             Debug.Log("2剩餘果子數： " + count);
         }

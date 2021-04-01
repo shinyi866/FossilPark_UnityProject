@@ -156,8 +156,8 @@ MonoBehaviour:
     gamePrompt: []
     endMessage:
     - "\u4F60\u771F\u662F\u592A\u53B2\u5BB3\u4E86\uFF01\n\u4F7F\u7528\u76F8\u6A5F\u62CD\u651D\u6211\u8B93\u6211\u56DE\u5230\u6642\u5149\u6A5F\u4E2D\u5427\uFF01"
-    - "\u9F52\u9BE8"
     - "\u9B1A\u9BE8"
+    - "\u9F52\u9BE8"
     pictureNotify: "\u62CD\u7167"
     animalDialogPicture: {fileID: 21300000, guid: e666fd2aa530d406f87a6ddaa8078baa,
       type: 3}
@@ -186,7 +186,7 @@ MonoBehaviour:
     - "\u6210\u529F\u64FA\u653E"
     guideButton: "\u958B\u59CB"
     gameNotify:
-    - "\u7280\u725B\u7280\u725B\u7280\u725B\u7280\u725B"
+    - "\u8ACB\u5C07\u7280\u725B\u7684\u5316\u77F3\u653E\u7F6E\u65BC\u6B63\u78BA\u7684\u4F4D\u7F6E\u4E0A\uFF01"
     gamePrompt: []
     endMessage:
     - "\u64DA\u6211\u5011\u62FC\u6E4A\u7684\u7280\u725B\u5316\u77F3\u7279\u5FB5\uFF0C\u53EF\u78BA\u5B9A\u5C6C\u65BC\u7280\u79D1\u7280\u5C6C\u7684\u4E00\u7A2E\uFF0C\u5B78\u540D\u70BARhinoceros

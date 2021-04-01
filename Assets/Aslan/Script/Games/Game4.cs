@@ -9,9 +9,9 @@ namespace GameMission
 {
     public class Game4 : Game
     {
+        [Header("GameObject")]
         [SerializeField]
         private GameObject fossilDolphin;
-
         [SerializeField]
         private GameObject fossilBaleenWhale;
 
@@ -35,6 +35,10 @@ namespace GameMission
         [SerializeField]
         private GameObject button;
 
+        [Header("Canvas")]
+        [SerializeField]
+        private GameObject canvas;
+
         [SerializeField, Range(0f, 40f)]
         private float errorRound = 20f;
 
@@ -43,8 +47,6 @@ namespace GameMission
 
         private bool isGameStart;
         private bool finishGame;
-        private float downTime = 3;
-        private int boxAnswerNumber = 3;
         private int missionIndex = 4;
 
         private List<GameObject> AnsBox = new List<GameObject>();
@@ -70,6 +72,7 @@ namespace GameMission
         {
             isGameStart = true;
             button.SetActive(false);
+            canvas.SetActive(true);
 
             var modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Original);
@@ -87,7 +90,6 @@ namespace GameMission
                 else
                 {
                     Object.SetActive(false);
-                    Debug.Log("finish!!!");
                     GameModals.instance.CloseModal();
                     MediaPlayerController.instance.CloseVideo();
                     MediaPlayerController.instance.LoadAndPlayVideoNotLoop(successVidePath);
@@ -309,6 +311,9 @@ namespace GameMission
 
         [SerializeField]
         private Material[] materialAns; // 0: blue, 1:yellow
+
+        private float downTime = 3;
+        private int boxAnswerNumber = 3;
         
         private void SetPosition()
         {

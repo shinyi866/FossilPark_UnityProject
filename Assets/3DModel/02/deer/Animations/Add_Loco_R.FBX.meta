@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 445e716edafc5444f982f4807550f4de
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: RigChest
+    100004: RigHead
+    100006: RigJaw1
+    100008: RigLBLeg1
+    100010: RigLBLeg2
+    100012: RigLBLeg3
+    100014: RigLBLegAnkle
+    100016: RigLEar1
+    100018: RigLEye1
+    100020: RigLEyelid1
+    100022: RigLFLeg1
+    100024: RigLFLeg2
+    100026: RigLFLeg3
+    100028: RigLFLegAnkle
+    100030: RigLFLegCollarbone
+    100032: RigNeck1
+    100034: RigNeck2
+    100036: RigNeck3
+    100038: RigPelvis
+    100040: RigRBLeg1
+    100042: RigRBLeg2
+    100044: RigRBLeg3
+    100046: RigRBLegAnkle
+    100048: RigREar1
+    100050: RigREye1
+    100052: RigREyelid1
+    100054: RigRFLeg1
+    100056: RigRFLeg2
+    100058: RigRFLeg3
+    100060: RigRFLegAnkle
+    100062: RigRFLegCollarbone
+    100064: RigRoot
+    100066: RigSpine1
+    100068: RigSpine2
+    100070: RigSpine3
+    100072: RigTail1
+    100074: RigTail2
+    100076: RigTail3
+    100078: RigTail4
+    100080: RigTongue1
+    100082: RigTongue2
+    100084: RigTongue3
+    400000: //RootNode
+    400002: RigChest
+    400004: RigHead
+    400006: RigJaw1
+    400008: RigLBLeg1
+    400010: RigLBLeg2
+    400012: RigLBLeg3
+    400014: RigLBLegAnkle
+    400016: RigLEar1
+    400018: RigLEye1
+    400020: RigLEyelid1
+    400022: RigLFLeg1
+    400024: RigLFLeg2
+    400026: RigLFLeg3
+    400028: RigLFLegAnkle
+    400030: RigLFLegCollarbone
+    400032: RigNeck1
+    400034: RigNeck2
+    400036: RigNeck3
+    400038: RigPelvis
+    400040: RigRBLeg1
+    400042: RigRBLeg2
+    400044: RigRBLeg3
+    400046: RigRBLegAnkle
+    400048: RigREar1
+    400050: RigREye1
+    400052: RigREyelid1
+    400054: RigRFLeg1
+    400056: RigRFLeg2
+    400058: RigRFLeg3
+    400060: RigRFLegAnkle
+    400062: RigRFLegCollarbone
+    400064: RigRoot
+    400066: RigSpine1
+    400068: RigSpine2
+    400070: RigSpine3
+    400072: RigTail1
+    400074: RigTail2
+    400076: RigTail3
+    400078: RigTail4
+    400080: RigTongue1
+    400082: RigTongue2
+    400084: RigTongue3
+    7400000: Add_Loco_R
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

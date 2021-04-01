@@ -20,11 +20,11 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 4,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！你好！
 左鎮出土的化石中發現許多鬚鯨類和齒鯨類化石，兩 這最大的區別是鬚鯨類的口中有鬚，沒有牙齒，外鼻 孔有兩個；而齒鯨類的口中沒有鬚，有牙齒，外鼻孔 只有一個。","鯨豚知多少,你可以從兩種不同的骨頭中， 分辨出那個是齒鯨頭骨，哪個是鬚鯨頭骨嗎？",分辨鯨豚,2,"觀察化石，將標籤移動到正確的化石上！,鬚鯨頭骨,齒鯨頭骨",開始,觀察化石貼上正確的標籤！,,"你真是太厲害了！
-使用相機拍攝我讓我回到時光機中吧！,齒鯨,鬚鯨",拍照,Assets/Aslan/ArtSprite/GameUI/animals/03dolphin.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/dolphin.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6toothed_whale.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8toothed_whale.png
+使用相機拍攝我讓我回到時光機中吧！,鬚鯨,齒鯨",拍照,Assets/Aslan/ArtSprite/GameUI/animals/03dolphin.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/dolphin.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6toothed_whale.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8toothed_whale.png
 5,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！你好我是早坂犀牛！
 「左鎮動物群」的動物化石，多在溪床被發現，甚少直 接從地層露頭中被採集。
-而我！早坂中國犀為原地埋藏，因此出土化石的完整度 高達7成。","沙坑中的犀牛化石,你能將挖掘出來的化石，排列到正確的位子上嗎？",排列犀牛,2,"點按犀牛化石，將化石移動到正確的位置上！,點按化石,成功擺放",開始,犀牛犀牛犀牛犀牛,,"據我們拼湊的犀牛化石特徵，可確定屬於犀科犀屬的一種，學名為Rhinoceros hayasakai SHIKAMA & OTSUKA，中文定名為早坂犀牛。
+而我！早坂中國犀為原地埋藏，因此出土化石的完整度 高達7成。","沙坑中的犀牛化石,你能將挖掘出來的化石，排列到正確的位子上嗎？",排列犀牛,2,"點按犀牛化石，將化石移動到正確的位置上！,點按化石,成功擺放",開始,請將犀牛的化石放置於正確的位置上！,,"據我們拼湊的犀牛化石特徵，可確定屬於犀科犀屬的一種，學名為Rhinoceros hayasakai SHIKAMA & OTSUKA，中文定名為早坂犀牛。
 比過去從中國大陸所產的中國犀牛(Rhinoceros sinensis)及其他幾種犀牛時代更早，體形更小，可謂中國犀牛的祖先型，在學術上是重要的化石標本喔！,成功！看來你非常了解本園區最重要的犀牛呢！
 園區的Logo就是在說我喔！
 使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/04Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,
