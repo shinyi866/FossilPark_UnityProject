@@ -15,7 +15,7 @@ namespace GameMission
         private string videoPath = "Video/ele.mp4";
         private bool isGameStart;
         private int missionIndex = 6;
-        private int successTimes;
+        private int successTimes = 0;
         //private int failTimes;
         //private int times = 3;
 
@@ -45,26 +45,32 @@ namespace GameMission
             {
                 modal.TakePicture();
 
-                if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 3))
+                if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 6))
                 {
                     var cube = hit.transform;
                     var tag = hit.transform.gameObject.tag;
                     
-                    if (tag == "Cube1")
+                    if (tag == "Cube1" && successTimes == 0)
                     {
                         cube.position = cube.position + new Vector3(-2, 0, 0);
                         modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt1);
-
+                        modal.text.text = MainApp.Instance.database.m_Data[missionIndex].gameNotify[1];
+                        successTimes++;
                     }
-                    if (tag == "Cube2")
+                    else if (tag == "Cube2" && successTimes == 1)
                     {
                         cube.position = cube.position + new Vector3(2, 0, 0);
                         modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt2);
+                        successTimes++;
+                    }
+                    else
+                    {
+                        modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt4);
                     }
 
-                    successTimes++;
+
                 }
-                else if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 5))
+                else if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 7))
                 {
                     modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt3);
                 }
@@ -72,6 +78,7 @@ namespace GameMission
                 {
                     modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt4);
                 }
+                
             });
         }
 

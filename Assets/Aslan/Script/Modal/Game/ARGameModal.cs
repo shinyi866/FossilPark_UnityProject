@@ -7,8 +7,7 @@ namespace View
 {
     public class ARGameModal : Modal
     {
-        [SerializeField]
-        private Text text;
+        public Text text;
 
         public GamePromptPanel gamePromptPanel;
         public Game0Panel game0Panel;
