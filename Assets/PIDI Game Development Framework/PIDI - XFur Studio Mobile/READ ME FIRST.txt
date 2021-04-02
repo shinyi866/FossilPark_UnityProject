@@ -1,0 +1,4 @@
+ As of version 1.25, this asset no longer provides any package to ensure further compatibility with XFur Studio for Desktop. 
+ It is heavily recommended to NOT mix both the desktop and mobile version of XFur to avoid any issues. 
+
+ To read the online documentation, please visit : https://pidiwiki.irreverent-software.com/wiki/doku.php?id=xfur_mobile

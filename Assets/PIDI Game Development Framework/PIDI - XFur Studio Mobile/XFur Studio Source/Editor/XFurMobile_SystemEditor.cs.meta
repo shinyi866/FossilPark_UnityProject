@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1b0b52030fc2e194da43a3aabbab3f5a
+timeCreated: 1538614862
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pidiSkin2: {fileID: 11400000, guid: 8b9959b507c4b864882cb24025dc7fb5, type: 2}
+  - logo: {fileID: 2800000, guid: 8e9ee47817812eb4087234f1be6bf921, type: 3}
+  - mTarget: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

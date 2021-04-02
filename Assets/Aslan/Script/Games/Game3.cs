@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 using View;
 
@@ -9,28 +10,34 @@ namespace GameMission
     public class Game3 : Game
     {
         public GameObject basket;
-        public GameObject fruitPrefab;
+        public GameObject[] fruitPrefabs;
         public GameObject throwPosition;
         public GameObject handBall;
-        public Animator monleyAnimator;
+        public GameObject monkey;        
 
         public System.Action<bool> gameOverEvent;
         private int missionIndex = 3;
 
         private Camera _camera;
         private ARGameModal gameModal;
+        private Animator monleyAnimator;
+        private PlayableDirector playableDirector;
+
         private bool isGameStart;
         private bool isUnARStart;
         private bool isARStart;
         private bool isThrowing;
-        private int fruit = 8;
+        private bool isCreateHandBall;
+        private int fruit = 5;
         private int count;
+        private int currentFruitIndex;
         private GameObject _ball;
+        private GameObject currentBall;
 
         // set thorw ball parameter
         private float Xmin = -0.4f;
         private float Xmax = 0.2f;
-        private int speed = 135;
+        private int speed = 165;
         private int passCount = 1;
 
         // unsupport AR
@@ -42,7 +49,9 @@ namespace GameMission
         {
             gameModal = GameModals.instance.GetModal<ARGameModal>();
             _camera = CameraCtrl.instance.GetCurrentCamera();
-            handBall.SetActive(false);
+            monleyAnimator = monkey.GetComponent<Animator>();
+            playableDirector = monkey.GetComponent<PlayableDirector>();
+
             count = fruit;
             leftButton = gameModal.game3Panel.leftButton;
             rightButton = gameModal.game3Panel.rightButton;
@@ -56,6 +65,7 @@ namespace GameMission
         public void GameStart()
         {
             isGameStart = true;
+            monkey.SetActive(true);
 
             if (MainApp.Instance.isARsupport)
             {
@@ -63,8 +73,6 @@ namespace GameMission
                 GameModals.instance.OpenModal<ARGameModal>();
                 gameModal.ShowModal(missionIndex, TypeFlag.ARGameType.Game3);
                 SetBasketPosition();
-                //ThrowBallTest();
-                StartCoroutine(StartThrowBall());
             }
             else
             {
@@ -83,48 +91,6 @@ namespace GameMission
 
             basket.transform.position = _camera.transform.position + _cameraFront;
         }
-        /*
-        private void ThrowBallTest()
-        {
-            isThrowing = true;
-            monleyAnimator.SetBool("throw", true);
-            GameObject ball = Instantiate(fruitPrefab, throwPosition.transform.position, throwPosition.transform.rotation);
-            _ball = ball;
-        }
-        */
-        private IEnumerator StartThrowBall()
-        {           
-            yield return new WaitForSeconds(1);
-
-            for (int i = 0; i <= fruit; i++)
-            {                
-                isThrowing = true;
-                monleyAnimator.SetBool("throw", true);
-                GameObject ball = Instantiate(fruitPrefab, throwPosition.transform.position, throwPosition.transform.rotation);
-                _ball = ball;
-
-                yield return new WaitForSeconds(4.8f);
-            }
-
-            StopAllCoroutines();
-        }
-
-        public void ThrowOut()
-        {
-            count -= 1;
-            handBall.SetActive(false);
-
-            _ball.SetActive(true);
-            _ball.GetComponent<Rigidbody>().AddForce((throwPosition.transform.forward + new Vector3(Random.Range(Xmin, Xmax), 2, 0)) * speed); // Random.Range(Xmin, Xmax)
-            _ball = null;
-
-            Debug.Log("2剩餘果子數： " + count);
-        }
-
-        private bool AnimatorIsEnd()
-        {
-            return monleyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Throw") && monleyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f;
-        }
 
         private void GameResult(bool isSuccess)
         {
@@ -137,22 +103,34 @@ namespace GameMission
             if (!isGameStart) return;
 
             gameModal.game3Panel.text.text = CatchFruit.fruitCount.ToString();// "接到果子數： " + CatchFruit.fruitCount.ToString();
-            //gameModal.countText.text = "剩餘果子數： " + count.ToString();
 
-            if (AnimatorIsEnd() && isThrowing)
+            if (TriggerFruitPlane.fruitTouchPlane == fruit)
             {
-                monleyAnimator.SetBool("throw", false);
-                isThrowing = false;
-                handBall.SetActive(true);
-                Destroy(_ball);
-                Debug.Log("end");
-            }
-
-            if (count < 0)
-            {
-                bool isSuccess = CatchFruit.fruitCount > passCount;
+                bool isSuccess = CatchFruit.fruitCount >= passCount;
                 GameResult(isSuccess);
                 isGameStart = false;
+            }
+            else
+            {
+                if (playableDirector.time < 0.5f && !isCreateHandBall)
+                {
+                    count -= 1;
+                    currentFruitIndex = Random.Range(0, fruitPrefabs.Length);
+                    currentBall = Instantiate(fruitPrefabs[currentFruitIndex], handBall.transform);
+                    currentBall.transform.SetParent(handBall.transform);
+                    isThrowing = false;
+                    isCreateHandBall = true;
+                }
+
+                if (playableDirector.time >= 7.2f && !isThrowing)
+                {
+                    GameObject ball = Instantiate(fruitPrefabs[currentFruitIndex], throwPosition.transform);
+                    ball.AddComponent<Rigidbody>();
+                    ball.GetComponent<Rigidbody>().AddForce((throwPosition.transform.forward + new Vector3(Random.Range(Xmin, Xmax), 2, 0)) * speed);
+                    Destroy(currentBall);
+                    isCreateHandBall = false;
+                    isThrowing = true;
+                }
             }
 
             if (isARStart)
