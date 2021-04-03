@@ -104,6 +104,7 @@ public class FossilClass : MonoBehaviour
             modal.game2Panel.findImages[0].enabled = true;
             modal.gamePromptPanel.image.sprite = modal.game2Panel.findImages[0].sprite;
             modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt1);
+            modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game2);
 
             if (lack == 0)
             {
@@ -123,6 +124,7 @@ public class FossilClass : MonoBehaviour
             modal.game2Panel.findImages[1].enabled = true;
             modal.gamePromptPanel.image.sprite = modal.game2Panel.findImages[1].sprite;
             modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt2);
+            modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game2);
 
             if (lack == 0)
             {
@@ -142,6 +144,7 @@ public class FossilClass : MonoBehaviour
             modal.game2Panel.findImages[2].enabled = true;
             modal.gamePromptPanel.image.sprite = modal.game2Panel.findImages[2].sprite;
             modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt3);
+            modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game2);
 
             if (lack == 0)
             {

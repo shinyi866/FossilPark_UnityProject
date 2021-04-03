@@ -100,6 +100,7 @@ namespace View
         public void ShowPrompt(int index, TypeFlag.ARGameType type)
         {
             var gameData = data.m_Data[index];
+            foreach (var c in GameCanvasGroups) { ShowPanel(c, false); }
 
             switch (type)
             {

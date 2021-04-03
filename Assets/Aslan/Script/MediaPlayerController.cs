@@ -33,12 +33,14 @@ public class MediaPlayerController : MonoBehaviour
 
     public void LoadAndPlayVideo(string filePath)
     {
+        OpenSphereVideo(true);
         _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, true);
         _mediaPlayer.Control.SetLooping(true);
     }
 
     public void LoadAndPlayVideoNotLoop(string filePath)
     {
+        OpenSphereVideo(true);
         _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, true);
         _mediaPlayer.Control.SetLooping(false);
     }
@@ -54,6 +56,7 @@ public class MediaPlayerController : MonoBehaviour
 
     public void LoadVideo(string filePath)
     {
+        OpenSphereVideo(true);
         _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, false);
         _mediaPlayer.Control.SetLooping(true);
     }
@@ -91,8 +94,7 @@ public class MediaPlayerController : MonoBehaviour
     }
     
     public void Destroy2DPlane()
-    {
-        OpenSphereVideo(true);
+    {        
         Destroy(planeVideo);
     }
 }

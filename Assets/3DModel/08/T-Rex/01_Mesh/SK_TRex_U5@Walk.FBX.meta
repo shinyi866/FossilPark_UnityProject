@@ -1,0 +1,368 @@
+fileFormatVersion: 2
+guid: 883c3207bbb687b40b7a3aafca3ccc0b
+timeCreated: 1483002539
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: B_NonSkinned_Foot_L
+    100002: B_TRex_Arm_L
+    100004: B_TRex_Arm_R
+    100006: B_TRex_Calf_L
+    100008: B_TRex_Calf_R
+    100010: B_TRex_Eye_L
+    100012: B_TRex_Eye_R
+    100014: B_TRex_Eyelid_Inf_L
+    100016: B_TRex_Eyelid_Inf_R
+    100018: B_TRex_Eyelid_Sup_L
+    100020: B_TRex_Eyelid_Sup_R
+    100022: B_TRex_Finger_01_L
+    100024: B_TRex_Finger_01_R
+    100026: B_TRex_Finger_02_L
+    100028: B_TRex_Finger_02_R
+    100030: B_TRex_Foot_L
+    100032: B_TRex_Foot_R
+    100034: B_TRex_ForeArm_L
+    100036: B_TRex_ForeArm_R
+    100038: B_TRex_Hand_L
+    100040: B_TRex_Hand_R
+    100042: B_TRex_Head_C
+    100044: B_TRex_Jaw_C
+    100046: B_TRex_Nostril_Inf_L
+    100048: B_TRex_Nostril_Inf_R
+    100050: B_TRex_Nostril_Sup_L
+    100052: B_TRex_Nostril_Sup_R
+    100054: B_TRex_Shoulder_L
+    100056: B_TRex_Shoulder_R
+    100058: B_TRex_Spine_00
+    100060: B_TRex_Spine_01
+    100062: B_TRex_Spine_02
+    100064: B_TRex_Spine_03
+    100066: B_TRex_Spine_04
+    100068: B_TRex_Spine_05
+    100070: B_TRex_Tail_00
+    100072: B_TRex_Tail_01
+    100074: B_TRex_Tail_02
+    100076: B_TRex_Tail_03
+    100078: B_TRex_Tail_04
+    100080: B_TRex_Tail_05
+    100082: B_TRex_Thigh_L
+    100084: B_TRex_Thigh_R
+    100086: B_TRex_Toe_Ext_01_L
+    100088: B_TRex_Toe_Ext_01_R
+    100090: B_TRex_Toe_Ext_02_L
+    100092: B_TRex_Toe_Ext_02_R
+    100094: B_TRex_Toe_Int_01_L
+    100096: B_TRex_Toe_Int_01_R
+    100098: B_TRex_Toe_Int_02_L
+    100100: B_TRex_Toe_Int_02_R
+    100102: B_TRex_Toe_Mid_01_L
+    100104: B_TRex_Toe_Mid_01_R
+    100106: B_TRex_Toe_Mid_02_L
+    100108: B_TRex_Toe_Mid_02_R
+    100110: B_TRex_Tongue_01_C
+    100112: B_TRex_Tongue_02_C
+    100114: B_TRex_Tongue_03_C
+    100116: B_TRex_Wrist_L
+    100118: B_TRex_Wrist_R
+    100120: CTRL_TRex
+    100122: H_TRex_Root_C
+    100124: H_TRex_Spine_Root_C
+    100126: SK_TRex
+    100128: //RootNode
+    400000: B_NonSkinned_Foot_L
+    400002: B_TRex_Arm_L
+    400004: B_TRex_Arm_R
+    400006: B_TRex_Calf_L
+    400008: B_TRex_Calf_R
+    400010: B_TRex_Eye_L
+    400012: B_TRex_Eye_R
+    400014: B_TRex_Eyelid_Inf_L
+    400016: B_TRex_Eyelid_Inf_R
+    400018: B_TRex_Eyelid_Sup_L
+    400020: B_TRex_Eyelid_Sup_R
+    400022: B_TRex_Finger_01_L
+    400024: B_TRex_Finger_01_R
+    400026: B_TRex_Finger_02_L
+    400028: B_TRex_Finger_02_R
+    400030: B_TRex_Foot_L
+    400032: B_TRex_Foot_R
+    400034: B_TRex_ForeArm_L
+    400036: B_TRex_ForeArm_R
+    400038: B_TRex_Hand_L
+    400040: B_TRex_Hand_R
+    400042: B_TRex_Head_C
+    400044: B_TRex_Jaw_C
+    400046: B_TRex_Nostril_Inf_L
+    400048: B_TRex_Nostril_Inf_R
+    400050: B_TRex_Nostril_Sup_L
+    400052: B_TRex_Nostril_Sup_R
+    400054: B_TRex_Shoulder_L
+    400056: B_TRex_Shoulder_R
+    400058: B_TRex_Spine_00
+    400060: B_TRex_Spine_01
+    400062: B_TRex_Spine_02
+    400064: B_TRex_Spine_03
+    400066: B_TRex_Spine_04
+    400068: B_TRex_Spine_05
+    400070: B_TRex_Tail_00
+    400072: B_TRex_Tail_01
+    400074: B_TRex_Tail_02
+    400076: B_TRex_Tail_03
+    400078: B_TRex_Tail_04
+    400080: B_TRex_Tail_05
+    400082: B_TRex_Thigh_L
+    400084: B_TRex_Thigh_R
+    400086: B_TRex_Toe_Ext_01_L
+    400088: B_TRex_Toe_Ext_01_R
+    400090: B_TRex_Toe_Ext_02_L
+    400092: B_TRex_Toe_Ext_02_R
+    400094: B_TRex_Toe_Int_01_L
+    400096: B_TRex_Toe_Int_01_R
+    400098: B_TRex_Toe_Int_02_L
+    400100: B_TRex_Toe_Int_02_R
+    400102: B_TRex_Toe_Mid_01_L
+    400104: B_TRex_Toe_Mid_01_R
+    400106: B_TRex_Toe_Mid_02_L
+    400108: B_TRex_Toe_Mid_02_R
+    400110: B_TRex_Tongue_01_C
+    400112: B_TRex_Tongue_02_C
+    400114: B_TRex_Tongue_03_C
+    400116: B_TRex_Wrist_L
+    400118: B_TRex_Wrist_R
+    400120: CTRL_TRex
+    400122: H_TRex_Root_C
+    400124: H_TRex_Spine_Root_C
+    400126: SK_TRex
+    400128: //RootNode
+    4300000: SK_TRex
+    7400000: Walk
+    9500000: //RootNode
+    13700000: SK_TRex
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CTRL_TRex
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_L/B_TRex_Arm_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_L/B_TRex_Arm_L/B_TRex_ForeArm_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_L/B_TRex_Arm_L/B_TRex_ForeArm_L/B_TRex_Wrist_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_L/B_TRex_Arm_L/B_TRex_ForeArm_L/B_TRex_Wrist_L/B_TRex_Hand_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_L/B_TRex_Arm_L/B_TRex_ForeArm_L/B_TRex_Wrist_L/B_TRex_Hand_L/B_TRex_Finger_01_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_L/B_TRex_Arm_L/B_TRex_ForeArm_L/B_TRex_Wrist_L/B_TRex_Hand_L/B_TRex_Finger_02_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_R/B_TRex_Arm_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_R/B_TRex_Arm_R/B_TRex_ForeArm_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_R/B_TRex_Arm_R/B_TRex_ForeArm_R/B_TRex_Wrist_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_R/B_TRex_Arm_R/B_TRex_ForeArm_R/B_TRex_Wrist_R/B_TRex_Hand_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_R/B_TRex_Arm_R/B_TRex_ForeArm_R/B_TRex_Wrist_R/B_TRex_Hand_R/B_TRex_Finger_01_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Shoulder_R/B_TRex_Arm_R/B_TRex_ForeArm_R/B_TRex_Wrist_R/B_TRex_Hand_R/B_TRex_Finger_02_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Eye_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Eye_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Eyelid_Inf_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Eyelid_Inf_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Eyelid_Sup_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Eyelid_Sup_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Jaw_C
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Jaw_C/B_TRex_Tongue_01_C
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Jaw_C/B_TRex_Tongue_01_C/B_TRex_Tongue_02_C
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Jaw_C/B_TRex_Tongue_01_C/B_TRex_Tongue_02_C/B_TRex_Tongue_03_C
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Nostril_Inf_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Nostril_Inf_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Nostril_Sup_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Spine_01/B_TRex_Spine_02/B_TRex_Spine_03/B_TRex_Spine_04/B_TRex_Spine_05/B_TRex_Head_C/B_TRex_Nostril_Sup_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_L/B_TRex_Calf_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_L/B_TRex_Calf_L/B_TRex_Foot_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_L/B_TRex_Calf_L/B_TRex_Foot_L/B_NonSkinned_Foot_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_L/B_TRex_Calf_L/B_TRex_Foot_L/B_NonSkinned_Foot_L/B_TRex_Toe_Ext_01_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_L/B_TRex_Calf_L/B_TRex_Foot_L/B_NonSkinned_Foot_L/B_TRex_Toe_Ext_01_L/B_TRex_Toe_Ext_02_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_L/B_TRex_Calf_L/B_TRex_Foot_L/B_NonSkinned_Foot_L/B_TRex_Toe_Int_01_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_L/B_TRex_Calf_L/B_TRex_Foot_L/B_NonSkinned_Foot_L/B_TRex_Toe_Int_01_L/B_TRex_Toe_Int_02_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_L/B_TRex_Calf_L/B_TRex_Foot_L/B_NonSkinned_Foot_L/B_TRex_Toe_Mid_01_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_L/B_TRex_Calf_L/B_TRex_Foot_L/B_NonSkinned_Foot_L/B_TRex_Toe_Mid_02_L
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_R/B_TRex_Calf_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_R/B_TRex_Calf_R/B_TRex_Foot_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_R/B_TRex_Calf_R/B_TRex_Foot_R/B_TRex_Toe_Mid_01_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_R/B_TRex_Calf_R/B_TRex_Foot_R/B_TRex_Toe_Mid_01_R/B_TRex_Toe_Ext_01_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_R/B_TRex_Calf_R/B_TRex_Foot_R/B_TRex_Toe_Mid_01_R/B_TRex_Toe_Ext_01_R/B_TRex_Toe_Ext_02_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_R/B_TRex_Calf_R/B_TRex_Foot_R/B_TRex_Toe_Mid_01_R/B_TRex_Toe_Int_01_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_R/B_TRex_Calf_R/B_TRex_Foot_R/B_TRex_Toe_Mid_01_R/B_TRex_Toe_Int_01_R/B_TRex_Toe_Int_02_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Spine_00/B_TRex_Thigh_R/B_TRex_Calf_R/B_TRex_Foot_R/B_TRex_Toe_Mid_01_R/B_TRex_Toe_Mid_02_R
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Tail_00
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Tail_00/B_TRex_Tail_01
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Tail_00/B_TRex_Tail_01/B_TRex_Tail_02
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Tail_00/B_TRex_Tail_01/B_TRex_Tail_02/B_TRex_Tail_03
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Tail_00/B_TRex_Tail_01/B_TRex_Tail_02/B_TRex_Tail_03/B_TRex_Tail_04
+        weight: 1
+      - path: CTRL_TRex/H_TRex_Root_C/H_TRex_Spine_Root_C/B_TRex_Tail_00/B_TRex_Tail_01/B_TRex_Tail_02/B_TRex_Tail_03/B_TRex_Tail_04/B_TRex_Tail_05
+        weight: 1
+      - path: SK_TRex
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: CTRL_TRex
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 638f8e8933eeda247b852b4e32c65cd0,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

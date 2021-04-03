@@ -22,7 +22,7 @@ MonoBehaviour:
     gameTitle:
     - "\u9006\u8D70\u9418"
     titleButton: "\u524D\u5F80\u62CD\u7167"
-    guideID: 1
+    guideID: 0
     gameGuide:
     - "\u8ACB\u5C07\u5713\u5F62\u5C0D\u6E96\u6B63\u4E2D\u592E\u7684\u9006\u8D70\u9418\u5F8C\u6309\u4E0B"
     guideButton: "\u524D\u5F80\u62CD\u7167"
@@ -31,11 +31,12 @@ MonoBehaviour:
     gamePrompt: []
     endMessage: []
     pictureNotify: 
-    animalDialogPicture: {fileID: 0}
+    animalDialogPicture: {fileID: 21300000, guid: 9e2527c75c5da43768c771c1849bf49c,
+      type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: 9e2527c75c5da43768c771c1849bf49c,
       type: 3}
-    guidePicture1: {fileID: 21300000, guid: 6e177b292fb1946c384505647f0bfdc1, type: 3}
-    guidePicture2: {fileID: 21300000, guid: dbdcf7ee770a6441da39653beced9a79, type: 3}
+    guidePicture1: {fileID: 21300000, guid: a6d56647d544f493aa27c0f186044cea, type: 3}
+    guidePicture2: {fileID: 21300000, guid: 6e177b292fb1946c384505647f0bfdc1, type: 3}
     ARmark: {fileID: 0}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}
@@ -49,7 +50,7 @@ MonoBehaviour:
     - "\u6642\u5149\u6A5F\u5668"
     - "\u9019\u5C31\u662F\u9006\u8D70\u6642\u9418\uFF01\u5FEB\u4E0A\u53BB\u770B\u770B\uFF01"
     titleButton: "\u524D\u5F80\u89C0\u770B"
-    guideID: 1
+    guideID: 0
     gameGuide:
     - "KiKi KoKo \u6B63\u5728\u70BA\u4E86\u5B75\u5316\u6050\u9F8D\u86CB\u5316\u77F3\u722D\u5435\u8457"
     guideButton: 
@@ -59,11 +60,13 @@ MonoBehaviour:
     - "\u56DB\u8655\u5C0B\u627E\u770B\u770B\u6709\u9006\u8D70\u4E2D\u7684\u5EFA\u7BC9\u5728\u54EA\uFF1F\u5B83\u5C31\u662F\u6642\u5149\u6A5F\u5594\uFF01"
     endMessage:
     - "\u7CDF\u7CD5\uFF01\u6642\u5149\u6A5F\u6545\u969C\u4E86\uFF01\n\u525B\u525B\u9084\u5728\u4E0A\u9762\u7684\u516D\u4F4D\u7BA1\u7406\u54E1\u4E0D\u898B\u4E86\uFF01\n\u6211\u5011\u8981\u627E\u5230\u7BA1\u7406\u6642\u9418\u7684\u7BA1\u7406\u54E1\u5011\uFF0C\u4FEE\u5FA9\u9006\u8D70\u9418\uFF0C\u5C31\u53EF\u4EE5\u518D\u6B21\u4F7F\u7528\u6642\u9593\u56DE\u6714\u7684\u529F\u80FD\u4E86\uFF01\n\u6211\u5011\u53BB\u5C0B\u627E\u4ED6\u5011\uFF0C\u4E26\u4F7F\u7528\u76F8\u6A5F\u62CD\u651D\u4ED6\u5011\uFF0C\u8B93\u4ED6\u5011\u91CD\u65B0\u555F\u52D5\u6642\u5149\u6A5F\u5427\uFF01"
-    pictureNotify: 
-    animalDialogPicture: {fileID: 0}
-    animalNotifyPicture: {fileID: 0}
-    guidePicture1: {fileID: 0}
-    guidePicture2: {fileID: 0}
+    pictureNotify: "\u62CD\u7167"
+    animalDialogPicture: {fileID: 21300000, guid: 9e2527c75c5da43768c771c1849bf49c,
+      type: 3}
+    animalNotifyPicture: {fileID: 21300000, guid: 9e2527c75c5da43768c771c1849bf49c,
+      type: 3}
+    guidePicture1: {fileID: 21300000, guid: a6d56647d544f493aa27c0f186044cea, type: 3}
+    guidePicture2: {fileID: 21300000, guid: 6e177b292fb1946c384505647f0bfdc1, type: 3}
     ARmark: {fileID: 0}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}

@@ -69,9 +69,9 @@ namespace View
 
             gameSaveButton.GetComponent<Button>().onClick.AddListener(() =>
             {
+                ShowView(true);
                 SavePhotoPanel(false);
                 Modals.instance.CloseAR();
-                Modals.instance.CloseModal();
                 Games.instance.ClosGame();
                 //SaveImage();
                 // TODO play video

@@ -12,12 +12,12 @@ namespace GameMission
     {
         public Text txt;
         public ARTrackedImageManager ARTrackedImage;
+        public ARPlaneManager planeManager;
         public GameObject[] foodGameObject; // 0:grass, 1:meat, 2:fish
         public GameObject[] dinosaurlScenes; // 0:grass, 1:meat, 2:fish
         public GameObject[] dinosaurs; // 0:grass, 1:meat, 2:fish
         public Transform[] topBons;// 0:grass, 1:meat, 2:fish
         public Transform testTarget;
-        public ARPlaneManager planeManager;
         public bool TestMode;
         
         [HideInInspector]
@@ -43,11 +43,13 @@ namespace GameMission
 
         private ARGameModal modal;
         private int missionIndex = 8;
+        private int currentIndex;
 
         public void Init()
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
             planeManager.enabled = true;
+            planeManager.planesChanged += PlaneChange;
 
             foreach (var b in dinosaurlScenes) { b.SetActive(false); }
 
@@ -57,6 +59,7 @@ namespace GameMission
                 GameObject newARObject = Instantiate(food, Vector3.zero, Quaternion.identity);
                 newARObject.name = food.name;
                 arObjects.Add(food.name, newARObject);
+                newARObject.SetActive(false);
             }
 
             modal = GameModals.instance.OpenModal<ARGameModal>();
@@ -77,6 +80,7 @@ namespace GameMission
             for (int i = 0; i < foodButton.Length; i++)
             {
                 int closureIndex = i;
+                currentIndex = closureIndex;
                 foodButton[closureIndex].onClick.AddListener(() => { SwitchDinosaurlScene(closureIndex); });
             }
         }
@@ -86,10 +90,27 @@ namespace GameMission
             foreach (var o in dinosaurlScenes) { o.SetActive(false); }
             foreach (var b in foodButton) { b.interactable = true; }
 
-            dinosaurlScenes[index].SetActive(true);
+            dinosaurlScenes[index].SetActive(false);
             foodButton[index].interactable = false;
 
             isEat = false;
+        }
+
+        // AR Plane Track
+        private void PlaneChange(ARPlanesChangedEventArgs args)
+        {
+            if(args.added != null)
+            {
+                modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game8);
+
+                ARPlane aRPlane = args.added[0];
+                dinosaurlScenes[currentIndex].transform.position = new Vector3(dinosaurlScenes[currentIndex].transform.position.x, aRPlane.transform.position.y, dinosaurlScenes[currentIndex].transform.position.z);
+                dinosaurlScenes[currentIndex].SetActive(true);
+            }
+            else
+            {
+                modal.text.text = "請掃描周遭地面";
+            }
         }
 
         // AR Image Track

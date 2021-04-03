@@ -79,6 +79,13 @@ namespace View
             CameraCtrl.instance.SwitchCamera(true);
         }
 
+        public void CloseAR()
+        {
+            Modals.instance.CloseAllModal();
+            CameraCtrl.instance.SwitchCamera(false);
+            PlaceARObject.instance.CloseAR();
+        }
+
         public void GetBackAnimalAR(int index, TypeFlag.ARObjectType type)
         {
             foreach (Modal modal in modals) { modal.Show(false); }

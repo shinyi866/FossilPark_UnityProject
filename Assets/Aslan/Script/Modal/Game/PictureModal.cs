@@ -93,7 +93,13 @@ namespace View
                 case TypeFlag.PictureType.GuideType:
                     var id = gameData.guideID;
 
-                    if (id == 1)
+                    if (id == 0)
+                    {
+                        ShowPanel(onePictureGuidePanel.canvasGroup, true);
+                        onePictureGuidePanel.text.text = gameData.gameGuide[0];
+                        onePictureGuidePanel.image.sprite = gameData.guidePicture2;
+                    }
+                    else if (id == 1)
                     {
                         ShowPanel(onePictureGuidePanel.canvasGroup, true);
                         onePictureGuidePanel.text.text = gameData.gameGuide[0];

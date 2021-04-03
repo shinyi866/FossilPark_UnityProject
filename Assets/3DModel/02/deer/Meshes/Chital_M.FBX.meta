@@ -1,326 +1,114 @@
 fileFormatVersion: 2
 guid: 2804b4f392f6a9f44a960316f6d635c3
 ModelImporter:
-  serializedVersion: 19301
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: //RootNode
-  - first:
-      1: 100002
-    second: Chital_M_LOD0
-  - first:
-      1: 100004
-    second: Chital_M_LOD1
-  - first:
-      1: 100006
-    second: Chital_M_LOD2
-  - first:
-      1: 100008
-    second: Chital_M_LOD3
-  - first:
-      1: 100010
-    second: RigChest
-  - first:
-      1: 100012
-    second: RigHead
-  - first:
-      1: 100014
-    second: RigJaw1
-  - first:
-      1: 100016
-    second: RigLBLeg1
-  - first:
-      1: 100018
-    second: RigLBLeg2
-  - first:
-      1: 100020
-    second: RigLBLeg3
-  - first:
-      1: 100022
-    second: RigLBLegAnkle
-  - first:
-      1: 100024
-    second: RigLEar1
-  - first:
-      1: 100026
-    second: RigLEye1
-  - first:
-      1: 100028
-    second: RigLEyelid1
-  - first:
-      1: 100030
-    second: RigLFLeg1
-  - first:
-      1: 100032
-    second: RigLFLeg2
-  - first:
-      1: 100034
-    second: RigLFLeg3
-  - first:
-      1: 100036
-    second: RigLFLegAnkle
-  - first:
-      1: 100038
-    second: RigLFLegCollarbone
-  - first:
-      1: 100040
-    second: RigNeck1
-  - first:
-      1: 100042
-    second: RigNeck2
-  - first:
-      1: 100044
-    second: RigNeck3
-  - first:
-      1: 100046
-    second: RigPelvis
-  - first:
-      1: 100048
-    second: RigRBLeg1
-  - first:
-      1: 100050
-    second: RigRBLeg2
-  - first:
-      1: 100052
-    second: RigRBLeg3
-  - first:
-      1: 100054
-    second: RigRBLegAnkle
-  - first:
-      1: 100056
-    second: RigREar1
-  - first:
-      1: 100058
-    second: RigREye1
-  - first:
-      1: 100060
-    second: RigREyelid1
-  - first:
-      1: 100062
-    second: RigRFLeg1
-  - first:
-      1: 100064
-    second: RigRFLeg2
-  - first:
-      1: 100066
-    second: RigRFLeg3
-  - first:
-      1: 100068
-    second: RigRFLegAnkle
-  - first:
-      1: 100070
-    second: RigRFLegCollarbone
-  - first:
-      1: 100072
-    second: RigRoot
-  - first:
-      1: 100074
-    second: RigSpine1
-  - first:
-      1: 100076
-    second: RigSpine2
-  - first:
-      1: 100078
-    second: RigSpine3
-  - first:
-      1: 100080
-    second: RigTail1
-  - first:
-      1: 100082
-    second: RigTail2
-  - first:
-      1: 100084
-    second: RigTail3
-  - first:
-      1: 100086
-    second: RigTail4
-  - first:
-      1: 100088
-    second: RigTongue1
-  - first:
-      1: 100090
-    second: RigTongue2
-  - first:
-      1: 100092
-    second: RigTongue3
-  - first:
-      4: 400000
-    second: //RootNode
-  - first:
-      4: 400002
-    second: Chital_M_LOD0
-  - first:
-      4: 400004
-    second: Chital_M_LOD1
-  - first:
-      4: 400006
-    second: Chital_M_LOD2
-  - first:
-      4: 400008
-    second: Chital_M_LOD3
-  - first:
-      4: 400010
-    second: RigChest
-  - first:
-      4: 400012
-    second: RigHead
-  - first:
-      4: 400014
-    second: RigJaw1
-  - first:
-      4: 400016
-    second: RigLBLeg1
-  - first:
-      4: 400018
-    second: RigLBLeg2
-  - first:
-      4: 400020
-    second: RigLBLeg3
-  - first:
-      4: 400022
-    second: RigLBLegAnkle
-  - first:
-      4: 400024
-    second: RigLEar1
-  - first:
-      4: 400026
-    second: RigLEye1
-  - first:
-      4: 400028
-    second: RigLEyelid1
-  - first:
-      4: 400030
-    second: RigLFLeg1
-  - first:
-      4: 400032
-    second: RigLFLeg2
-  - first:
-      4: 400034
-    second: RigLFLeg3
-  - first:
-      4: 400036
-    second: RigLFLegAnkle
-  - first:
-      4: 400038
-    second: RigLFLegCollarbone
-  - first:
-      4: 400040
-    second: RigNeck1
-  - first:
-      4: 400042
-    second: RigNeck2
-  - first:
-      4: 400044
-    second: RigNeck3
-  - first:
-      4: 400046
-    second: RigPelvis
-  - first:
-      4: 400048
-    second: RigRBLeg1
-  - first:
-      4: 400050
-    second: RigRBLeg2
-  - first:
-      4: 400052
-    second: RigRBLeg3
-  - first:
-      4: 400054
-    second: RigRBLegAnkle
-  - first:
-      4: 400056
-    second: RigREar1
-  - first:
-      4: 400058
-    second: RigREye1
-  - first:
-      4: 400060
-    second: RigREyelid1
-  - first:
-      4: 400062
-    second: RigRFLeg1
-  - first:
-      4: 400064
-    second: RigRFLeg2
-  - first:
-      4: 400066
-    second: RigRFLeg3
-  - first:
-      4: 400068
-    second: RigRFLegAnkle
-  - first:
-      4: 400070
-    second: RigRFLegCollarbone
-  - first:
-      4: 400072
-    second: RigRoot
-  - first:
-      4: 400074
-    second: RigSpine1
-  - first:
-      4: 400076
-    second: RigSpine2
-  - first:
-      4: 400078
-    second: RigSpine3
-  - first:
-      4: 400080
-    second: RigTail1
-  - first:
-      4: 400082
-    second: RigTail2
-  - first:
-      4: 400084
-    second: RigTail3
-  - first:
-      4: 400086
-    second: RigTail4
-  - first:
-      4: 400088
-    second: RigTongue1
-  - first:
-      4: 400090
-    second: RigTongue2
-  - first:
-      4: 400092
-    second: RigTongue3
-  - first:
-      21: 2100000
-    second: Chital_M
-  - first:
-      43: 4300000
-    second: Chital_M_LOD0
-  - first:
-      43: 4300002
-    second: Chital_M_LOD1
-  - first:
-      43: 4300004
-    second: Chital_M_LOD2
-  - first:
-      43: 4300006
-    second: Chital_M_LOD3
-  - first:
-      74: 7400000
-    second: Take 001
-  - first:
-      95: 9500000
-    second: //RootNode
-  - first:
-      137: 13700000
-    second: Chital_M_LOD0
-  - first:
-      137: 13700002
-    second: Chital_M_LOD1
-  - first:
-      137: 13700004
-    second: Chital_M_LOD2
-  - first:
-      137: 13700006
-    second: Chital_M_LOD3
-  - first:
-      205: 20500000
-    second: //RootNode
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Chital_M_LOD0
+    100004: Chital_M_LOD1
+    100006: Chital_M_LOD2
+    100008: Chital_M_LOD3
+    100010: RigChest
+    100012: RigHead
+    100014: RigJaw1
+    100016: RigLBLeg1
+    100018: RigLBLeg2
+    100020: RigLBLeg3
+    100022: RigLBLegAnkle
+    100024: RigLEar1
+    100026: RigLEye1
+    100028: RigLEyelid1
+    100030: RigLFLeg1
+    100032: RigLFLeg2
+    100034: RigLFLeg3
+    100036: RigLFLegAnkle
+    100038: RigLFLegCollarbone
+    100040: RigNeck1
+    100042: RigNeck2
+    100044: RigNeck3
+    100046: RigPelvis
+    100048: RigRBLeg1
+    100050: RigRBLeg2
+    100052: RigRBLeg3
+    100054: RigRBLegAnkle
+    100056: RigREar1
+    100058: RigREye1
+    100060: RigREyelid1
+    100062: RigRFLeg1
+    100064: RigRFLeg2
+    100066: RigRFLeg3
+    100068: RigRFLegAnkle
+    100070: RigRFLegCollarbone
+    100072: RigRoot
+    100074: RigSpine1
+    100076: RigSpine2
+    100078: RigSpine3
+    100080: RigTail1
+    100082: RigTail2
+    100084: RigTail3
+    100086: RigTail4
+    100088: RigTongue1
+    100090: RigTongue2
+    100092: RigTongue3
+    400000: //RootNode
+    400002: Chital_M_LOD0
+    400004: Chital_M_LOD1
+    400006: Chital_M_LOD2
+    400008: Chital_M_LOD3
+    400010: RigChest
+    400012: RigHead
+    400014: RigJaw1
+    400016: RigLBLeg1
+    400018: RigLBLeg2
+    400020: RigLBLeg3
+    400022: RigLBLegAnkle
+    400024: RigLEar1
+    400026: RigLEye1
+    400028: RigLEyelid1
+    400030: RigLFLeg1
+    400032: RigLFLeg2
+    400034: RigLFLeg3
+    400036: RigLFLegAnkle
+    400038: RigLFLegCollarbone
+    400040: RigNeck1
+    400042: RigNeck2
+    400044: RigNeck3
+    400046: RigPelvis
+    400048: RigRBLeg1
+    400050: RigRBLeg2
+    400052: RigRBLeg3
+    400054: RigRBLegAnkle
+    400056: RigREar1
+    400058: RigREye1
+    400060: RigREyelid1
+    400062: RigRFLeg1
+    400064: RigRFLeg2
+    400066: RigRFLeg3
+    400068: RigRFLegAnkle
+    400070: RigRFLegCollarbone
+    400072: RigRoot
+    400074: RigSpine1
+    400076: RigSpine2
+    400078: RigSpine3
+    400080: RigTail1
+    400082: RigTail2
+    400084: RigTail3
+    400086: RigTail4
+    400088: RigTongue1
+    400090: RigTongue2
+    400092: RigTongue3
+    2100000: Chital_M
+    4300000: Chital_M_LOD0
+    4300002: Chital_M_LOD1
+    4300004: Chital_M_LOD2
+    4300006: Chital_M_LOD3
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Chital_M_LOD0
+    13700002: Chital_M_LOD1
+    13700004: Chital_M_LOD2
+    13700006: Chital_M_LOD3
+    20500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -328,7 +116,7 @@ ModelImporter:
       name: Chital_M
     second: {fileID: 2100000, guid: ab99a9541b809d047af217ee9a052891, type: 2}
   materials:
-    materialImportMode: 1
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -345,7 +133,6 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -364,23 +151,17 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -388,17 +169,14 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 116
+    normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
-    blendShapeNormalImportMode: 1
-    normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -408,16 +186,14 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
