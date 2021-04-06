@@ -6,32 +6,7 @@ ModelImporter:
   - first:
       74: -1636505458387109804
     second: cro_idle
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #1
-    second: {fileID: 2100000, guid: 3e7dd4896fb39ce4195756c7b0dece28, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #2
-    second: {fileID: 2100000, guid: 776263e26fed02d4e93737106534a244, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #3
-    second: {instanceID: 0}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #4
-    second: {instanceID: 0}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: empty
-    second: {instanceID: 0}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0

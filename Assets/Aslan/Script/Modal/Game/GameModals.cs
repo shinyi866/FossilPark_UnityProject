@@ -83,7 +83,7 @@ namespace View
         {
             Modals.instance.CloseAllModal();
             CameraCtrl.instance.SwitchCamera(false);
-            PlaceARObject.instance.CloseAR();
+            //PlaceARObject.instance.CloseAR(); //TODO: test
         }
 
         public void GetBackAnimalAR(int index, TypeFlag.ARObjectType type)

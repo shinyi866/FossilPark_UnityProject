@@ -19,10 +19,6 @@ namespace GameMission
 
         public void Init()
         {
-            //_camera = CameraCtrl.instance.GetCurrentCamera();
-            //modal = GameModals.instance.GetModal<PictureModal>();
-
-            //Modals.instance.CloseAllModal();
         }
 
         public void GameStart(bool isARsupport)

@@ -73,7 +73,7 @@ namespace GameMission
 
         private IEnumerator CheckARSupport()
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(20f);
 
             var model = GameModals.instance.OpenModal<DialogModal>();
             model.ShowInfo(missionIndex, TypeFlag.DialogType.EndDialog);

@@ -43,10 +43,10 @@ public class Swipe3DPosition : MonoBehaviour
                 pointObject = hit.transform.position - hit.point;
             }
         }
-        else if (Input.GetMouseButton(0) && gameObject && gameObject.tag == "Position")
+        else if (Input.GetMouseButton(0) && transform.gameObject.tag == "Ans")
         {
-            Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 4f);//3.8f
-            gameObject.transform.position = _camera.ScreenToWorldPoint(mousePosition);
+            Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);//3.8f
+            transform.position = _camera.ScreenToWorldPoint(mousePosition);
             //Debug.Log("position");
         }
         else if (Input.GetMouseButton(0) && gameObject && gameObject.tag == "Rotate")
@@ -55,33 +55,6 @@ public class Swipe3DPosition : MonoBehaviour
             gameObject.transform.rotation = rotationY * transform.rotation;
             //Debug.Log("rotate");
         }
-        else if (Input.GetMouseButtonUp(0) && gameObject)
-        {
-            gameObject = null;
-        }
-
-                /*
-         if (Input.touchCount > 0)
-         {
-             touch = Input.GetTouch(0);
-
-             if (touch.phase == TouchPhase.Moved)
-             {
-                 transform.position = new Vector3(touch.deltaPosition.x, touch.deltaPosition.y, transform.position.z);
-             }
-         }
-
-         if(Input.touchCount > 0)
-         {
-             touch = Input.GetTouch(0);
-
-             if(touch.phase == TouchPhase.Moved)
-             {
-                 rotationY = Quaternion.Euler(0f, -touch.deltaPosition.x * rotateSpeed, 0f);
-                 transform.rotation = rotationY * transform.rotation;
-             }
-         }
-         */
     }
     
 }

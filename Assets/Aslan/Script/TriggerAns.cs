@@ -5,9 +5,6 @@ using GameMission;
 
 public class TriggerAns : MonoBehaviour
 {
-    [SerializeField]
-    private Game4 game4;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Ans")

@@ -37,18 +37,10 @@ public class FossilClass : MonoBehaviour
 
     private void Start()
     {
-        _camera = Camera.main;
         _camera = CameraCtrl.instance.GetCurrentCamera();
         dt = image.transform.Find("Text").GetComponent<Text>();
-        //st = sc.transform.Find("Text").GetComponent<Text>();
 
         modal = GameModals.instance.GetModal<ARGameModal>();
-    }
-
-    private void Update()
-    {
-
-
     }
 
     private void GameResult(bool isSuccess)
@@ -95,7 +87,6 @@ public class FossilClass : MonoBehaviour
 
     public void UI_Enter()
     {
-        //sc.SetActive(true);
         hit.collider.gameObject.SetActive(false); 
         lack--;
 

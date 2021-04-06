@@ -90,7 +90,7 @@ namespace GameMission
             foreach (var o in dinosaurlScenes) { o.SetActive(false); }
             foreach (var b in foodButton) { b.interactable = true; }
 
-            dinosaurlScenes[index].SetActive(false);
+            dinosaurlScenes[index].SetActive(true);
             foodButton[index].interactable = false;
 
             isEat = false;

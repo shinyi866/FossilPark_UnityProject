@@ -20,7 +20,7 @@ namespace GameMission
             game = Games.instance.OpenGame<Game2>();
             game.Init();
             game.gameOverEvent += EndGame;
-            fossilClass.gameOverEvent += AREndGame;
+            //fossilClass.gameOverEvent += AREndGame;
 
             if (!isARsupport)
             {
@@ -56,7 +56,7 @@ namespace GameMission
 
         public void AREndGame(bool isSuccess)
         {
-            fossilClass.gameOverEvent -= AREndGame;
+            //fossilClass.gameOverEvent -= AREndGame;
 
             var model = GameModals.instance.OpenModal<DialogModal>();
             model.ShowInfo(missionIndex, TypeFlag.DialogType.EndDialog);
