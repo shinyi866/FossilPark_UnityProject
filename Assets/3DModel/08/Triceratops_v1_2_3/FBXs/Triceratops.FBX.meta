@@ -15,12 +15,7 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Triceratops
-    second: {fileID: 2100000, guid: 5ad6b752edb447941a5c76c353e0b8eb, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0

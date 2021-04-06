@@ -6,4 +6,5 @@
     public enum ARGameType { Game0, Game2, Game3, Game6, Game8, GamePrompt1, GamePrompt2, GamePrompt3, GamePrompt4, GamePrompt5, PicturePrompt, Original };
     public enum PictureType { ARtype, GuideType, EndGuide};
     public enum ARObjectType { Animals, Dinosaurls };
+    public enum DinosaurlsType { Brachiosaurus, Triceratop, TRex };
 }
