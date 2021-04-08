@@ -12,6 +12,8 @@ namespace GameMission
     {
         public Text txt;
         public Text txt1;
+        public Text txt2;
+        public Text txt3;
         public ARTrackedImageManager ARTrackedImage;
         public ARPlaneManager planeManager;
         public GameObject[] foodGameObject; // 0:grass, 1:meat, 2:fish
@@ -23,6 +25,8 @@ namespace GameMission
         
         [HideInInspector]
         public bool isEat;
+        [HideInInspector]
+        public bool resetEatFood;
         
         // vector to caculate food direction
         //public Transform centerPoint;
@@ -38,11 +42,12 @@ namespace GameMission
         private Camera _camera;
 
         private float ccidWeight = 0.0f;
-        private bool isSetWeight;
+        //private bool isSetWeight;
 
         private bool isGameStart;
+        private bool startCompass;
 
-        private Transform showARfood;
+        private GameObject showARfood;
         private ARGameModal modal;
         private ARPlane currentARPlane;
         private int missionIndex = 8;
@@ -70,12 +75,26 @@ namespace GameMission
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game8);
 
             ButtonSetUp();
+            InitializeCompass();
         }
 
         public void GameStart()
         {
             SwitchDinosaurlScene((int)TypeFlag.DinosaurlsType.Brachiosaurus);
             isGameStart = true;
+        }
+
+        private void InitializeCompass()
+        {
+            Input.compass.enabled = true;
+            Input.location.Start();
+            StartCoroutine(InitializeCheck());
+        }
+
+        private IEnumerator InitializeCheck()
+        {
+            yield return new WaitForSeconds(1f);
+            startCompass = Input.compass.enabled;
         }
 
         private void ButtonSetUp()
@@ -99,6 +118,7 @@ namespace GameMission
 
             dinosaurlScenes[index].SetActive(true);
             foodButton[index].interactable = false;
+            //dinosaurs[index].transform.rotation = Quaternion.Euler(0, Input.compass.trueHeading-90, 0); //??
 
             isEat = false;
         }
@@ -116,15 +136,6 @@ namespace GameMission
 
                 dinosaurlScenes[currentIndex].SetActive(true);
                 dinosaurlScenes[currentIndex].transform.position = new Vector3(dinosaurlScenes[currentIndex].transform.position.x, aRPlane.transform.position.y, dinosaurlScenes[currentIndex].transform.position.z);                               
-            }
-            else if(args.added != null && currentARPlane != null)
-            {
-                if (args.added[0].transform.position.y < currentARPlane.transform.position.y)
-                {
-                    txt1.text = "2aRPlane " + args.added[0].transform.position;
-                    currentARPlane = args.added[0];
-                    dinosaurlScenes[currentIndex].transform.position = new Vector3(dinosaurlScenes[currentIndex].transform.position.x, args.added[0].transform.position.y, dinosaurlScenes[currentIndex].transform.position.z);
-                }
             }
             else
             {
@@ -173,8 +184,9 @@ namespace GameMission
                 GameObject showARObject = arObjects[imageNmae];
                 showARObject.SetActive(true);
                 showARObject.transform.position = imagePosition;
-                showARfood = arObjects[imageNmae].GetComponent<Transform>();
-                dinosaurs[0].GetComponent<CCDIK>().solver.target = showARObject.transform;
+                //dinosaurs[currentIndex].GetComponent<CCDIK>().solver.target = showARObject.transform;
+                showARfood = arObjects[imageNmae];
+                resetEatFood = true;
 
                 foreach (GameObject b in arObjects.Values)
                 {
@@ -201,139 +213,111 @@ namespace GameMission
             float dotResult = 0;
 
             dinosaurlsType = GetCurrentType(currentIndex);
-
+            
             if (TestMode)
             {
+                resetEatFood = true;
                 Vector3 lookAtTarget = new Vector3(testTarget.position.x, dinosaurs[currentIndex].transform.position.y, testTarget.position.z);
                 dinosaurs[currentIndex].transform.LookAt(lookAtTarget);                
                 dotResult = Vector3.Dot(forward, testToFood);
                 dinosaurs[currentIndex].GetComponent<CCDIK>().solver.target = testTarget;
+                switch (dinosaurlsType)
+                {
+                    case TypeFlag.DinosaurlsType.Brachiosaurus:
+                        DinosaursEat(dotResult, 6.5f, 5.3f);
+                        break;
+                    case TypeFlag.DinosaurlsType.TRex:
+                        DinosaursEat(dotResult, 4f, 3.5f);
+                        break;
+                    case TypeFlag.DinosaurlsType.Triceratop:
+                        DinosaursEat(dotResult, 4f, 3.5f);
+                        break;
+                }
+                //resetEatFood = false;
             }
             else
             {
-                if(showARfood != null)
+                if(showARfood != null && resetEatFood)
                 {
-                    arToFood = showARfood.position - dinosaurs[currentIndex].transform.position;
-                    dinosaurs[currentIndex].GetComponent<CCDIK>().solver.target = showARfood;
+                    arToFood = showARfood.transform.position - dinosaurs[currentIndex].transform.position;
+                    dinosaurs[currentIndex].GetComponent<CCDIK>().solver.target = showARfood.transform;
                     Vector3 lookAtTarget = new Vector3(arToFood.x, dinosaurs[currentIndex].transform.position.y, arToFood.z);
                     dinosaurs[currentIndex].transform.LookAt(lookAtTarget);
                     dotResult = Vector3.Dot(forward, arToFood);
+                    Debug.Log("resetEatFood " + resetEatFood);
+
+                    switch (dinosaurlsType)
+                    {
+                        case TypeFlag.DinosaurlsType.Brachiosaurus:
+                            DinosaursEat(dotResult, 6.5f, 5.3f);
+                            break;
+                        case TypeFlag.DinosaurlsType.TRex:
+                            DinosaursEat(dotResult, 4f, 3.5f);
+                            break;
+                        case TypeFlag.DinosaurlsType.Triceratop:
+                            DinosaursEat(dotResult, 4f, 3.5f);
+                            break;
+                    }                    
                 }
             }
 
             Debug.Log("dotResult " + dotResult);
             txt.text = dotResult.ToString();
-            // brachiosa: > 6.5            
+            // walk: brachiosa: > 6.5, TRex: > 4 Triceratop > 3.9,
+            // eat: brachiosa: < 5.3, TRex: < 3.5 Triceratop < 3.5,
 
-            switch (dinosaurlsType)
-            {
-                case TypeFlag.DinosaurlsType.Brachiosaurus:
-                    break;
-                case TypeFlag.DinosaurlsType.TRex:
-                    if (dotResult > 6.5)
-                    {
-                        dinosaurs[currentIndex].GetComponent<Animator>().SetBool("walk", true);
-                    }
-                    else
-                    {
-                        dinosaurs[currentIndex].GetComponent<Animator>().SetBool("walk", false);
-                        //Debug.Log("not walk");
-
-                        if (dotResult < 5.3)//1.8
-                        {
-                            Debug.Log("Can Eat");
-
-                            if (isEat)
-                            {
-                                dinosaurs[currentIndex].GetComponent<Animator>().SetBool("eat", false);
-                                Debug.Log("End Eat");
-                            }
-                            else
-                            {
-                                dinosaurs[currentIndex].GetComponent<Animator>().SetBool("eat", true);
-                                Debug.Log("Eat");
-                            }
-                        }
-                        else
-                        {
-                            Debug.Log("Not Eat");
-                        }
-                    }
-                    break;
-                case TypeFlag.DinosaurlsType.Triceratop:
-                    if (dotResult > 3)
-                    {
-                        dinosaurs[currentIndex].GetComponent<Animator>().SetBool("walk", true);
-                        Debug.Log("Tricerato");
-                    }
-                    else
-                    {
-                        dinosaurs[currentIndex].GetComponent<Animator>().SetBool("walk", false);
-                        //Debug.Log("not walk");
-
-                        if (dotResult < 2.5)//1.8
-                        {
-                            Debug.Log("Can Eat");
-
-                            if (isEat)
-                            {
-                                dinosaurs[currentIndex].GetComponent<Animator>().SetBool("eat", false);
-                                Debug.Log("End Eat");
-                            }
-                            else
-                            {
-                                dinosaurs[currentIndex].GetComponent<Animator>().SetBool("eat", true);
-                                Debug.Log("Eat");
-                            }
-                        }
-                        else
-                        {
-                            Debug.Log("Not Eat");
-                        }
-                    }
-                    break;
-
-            }
-            
+            txt1.text = "dotResult: " + dotResult;
         }
 
-        private void BrachiosaurusEat(float dotResult)
+        private void DinosaursEat(float dotResult, float walkDotResult, float eatDotResult)
         {
-            if (dotResult > 6.5)
+            if (dotResult > walkDotResult)
             {
-                dinosaurs[currentIndex].GetComponent<Animator>().SetBool("walk", true);
-                //Debug.Log("walk");
+                dinosaurs[currentIndex].GetComponent<Animator>().SetBool("walk", true);                
             }
             else
             {
                 dinosaurs[currentIndex].GetComponent<Animator>().SetBool("walk", false);
                 //Debug.Log("not walk");
 
-                if (dotResult < 5.3)//1.8
+                if (dotResult < eatDotResult)
                 {
                     Debug.Log("Can Eat");
+                    txt3.text = "Can Eat";
 
-                    if (isEat)
+                    if (!isEat)
                     {
-                        dinosaurs[currentIndex].GetComponent<Animator>().SetBool("eat", false);
-                        dinosaurs[0].GetComponent<CCDIK>().solver.target = null;
-                        ccidWeight -= Time.deltaTime * 0.03f;
-                        dinosaurs[0].GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
-                        Debug.Log("End Eat");
+                        dinosaurs[currentIndex].GetComponent<Animator>().SetBool("eat", true);
+
+                        if (ccidWeight < 0.6)
+                        {
+                            ccidWeight += Time.deltaTime * 0.05f;
+                            dinosaurs[currentIndex].GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
+                        }
+
+                        Debug.Log("Eat");
+                        txt3.text = "Eat";
                     }
                     else
                     {
-                        dinosaurs[currentIndex].GetComponent<Animator>().SetBool("eat", true);
-                        ccidWeight += Time.deltaTime * 0.03f;
-                        dinosaurs[0].GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
-                        Debug.Log("Eat");
+                        dinosaurs[currentIndex].GetComponent<Animator>().SetBool("eat", false);
+                        dinosaurs[currentIndex].GetComponent<CCDIK>().solver.target = null;
+                        if (ccidWeight > 0.3)
+                        {
+                            ccidWeight -= Time.deltaTime * 0.05f;
+                            dinosaurs[currentIndex].GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
+                            resetEatFood = false;
+                        }
+
+                        Debug.Log("End Eat");
+                        txt3.text = "End Eat";
+                        
                     }
                 }
                 else
                 {
-                    ccidWeight -= Time.deltaTime * 0.03f;
-                    dinosaurs[0].GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
                     Debug.Log("Not Eat");
+                    txt3.text = "Not Eat";
                 }
             }
         }
@@ -342,8 +326,13 @@ namespace GameMission
         {
             if (!isGameStart) return;
 
+            if (!startCompass) return;
+
+            _camera.transform.rotation = Quaternion.Euler(_camera.transform.rotation.eulerAngles.x, Input.compass.trueHeading, _camera.transform.rotation.eulerAngles.z);
+            txt2.text = $"_camera.transform.rotation: {_camera.transform.rotation}, headingAccuracy: {Input.compass.headingAccuracy},  magneticHeading: {Input.compass.magneticHeading},  rawVector: {Input.compass.rawVector},  timestamp: {Input.compass.timestamp}, trueHeading: {Input.compass.trueHeading}";            
+
             //if (showARfood != null) //AR test
-                TargetDirection();
+            TargetDirection();
             
         }
 
