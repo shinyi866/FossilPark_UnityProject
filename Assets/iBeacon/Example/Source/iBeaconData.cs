@@ -4,8 +4,8 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-using GameMission;
-using View;
+//using GameMission;
+//using View;
 
 public class iBeaconData : MonoBehaviour
 {
@@ -270,7 +270,7 @@ public class iBeaconData : MonoBehaviour
         }
 
 		DisplayOnBeaconFound();
-		MissionSearch();
+		iBeaconMissionSetting.Instance.MissionSearch(mybeacons);
 	}
 
     private void ThreePoint()
@@ -293,7 +293,7 @@ public class iBeaconData : MonoBehaviour
 		dText.text = string.Format("D1: {0}, D2: {1}, D3: {2}", D1, D2, D3);
 	}
 
-	/* search mission */
+	/* search mission 
 	private void MissionSearch()
 	{
 		var beacons = iBeaconData.mybeacons;
@@ -303,6 +303,11 @@ public class iBeaconData : MonoBehaviour
 		foreach (Beacon b in beacons)
 		{
 			int mission = b.minor;
+
+            if(mission == 4)
+            {
+
+            }
 
 			if (b.accuracy < 2)
 			{
@@ -319,7 +324,7 @@ public class iBeaconData : MonoBehaviour
 
 		}
 	}
-
+    */
 	private void DisplayOnBeaconFound()
     {
 		removeFoundBeacons();
