@@ -44,7 +44,6 @@ namespace GameMission
             model.ShowInfo(missionIndex, type);
             model.ConfirmButton.onClick.AddListener(() =>
             {
-                Games.instance.ClosGame();
                 GameModals.instance.CloseModal();
                 GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
             });

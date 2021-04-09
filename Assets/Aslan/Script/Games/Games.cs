@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using View;
 
 namespace GameMission
 {
@@ -63,6 +64,13 @@ namespace GameMission
         {
             if (currentGame != null)
                 currentGame.OpenGame(false);
+
+            MediaPlayerController.instance.CloseVideo();
+            GameModals.instance.CloseAllModal();
+            //GameModals.instance.CloseModal();
+            GameModals.instance.CloseAR();
+
+            MainApp.Instance.isEnterGame = false;
         }
     }
 }

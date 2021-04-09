@@ -7,49 +7,53 @@ using View;
 
 public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 {
-	public MissionRange[] ranges;
-
+    [SerializeField]
+    private MissionRange[] ranges;
     [SerializeField]
     private Transform container;
     [SerializeField]
     private Transform setTransform;
 
-    [SerializeField]
-	private Text testTxt;
-
-    //private Transform missionClone;
     private List<GameObject> cloneTransform = new List<GameObject>();
+    private List<int> hasPlay = new List<int>();
+    private bool isCheckPlayStatus;
 
-    private void Start()
-    {
-        SetPosition();
-    }
+    private void Start() { SetPosition(); }
 
     /* search mission */
     public void MissionSearch(List<Beacon> mybeacons)
 	{
-		var beacons = mybeacons;
-		Debug.Log("mybeacons " + mybeacons.Count + " ranges " + ranges.Length);
-		if (beacons == null) return;
+        if (!MainApp.Instance.isEnterGame)
+            isCheckPlayStatus = false;
 
-		foreach (Beacon b in beacons)
+        if (mybeacons == null || isCheckPlayStatus) return;
+
+		foreach (Beacon b in mybeacons)
 		{
-			testTxt.text = b.accuracy.ToString();
-
 			int mission = b.minor;
 
             for(int i = 0; i < ranges.Length; i++)
             {
                 if(mission == i)
                 {
-					if (b.accuracy < ranges[i].minRange)
+                    if (ranges[i].minRange < 0 && ranges[i].maxRange < 0) return;
+
+                    if (MainApp.Instance.isEnterGame)
+                    {
+                        ranges[i].minRange = -1;
+                        ranges[i].maxRange = -1;
+                        isCheckPlayStatus = true;
+                        return;
+                    }
+
+                    if (b.accuracy < ranges[i].minRange)
 					{
 						GameMissions.instance.ShowMission(mission);
 					}
 					else if (b.accuracy > ranges[i].minRange && b.accuracy < ranges[i].maxRange)
 					{
 						GameModals.instance.RoundNotify(mission);
-					}
+                    }
 					else
 					{
 						GameModals.instance.CloseModal();
@@ -83,7 +87,6 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
     private void SetPosition()
     {
         float height = 62f;
-        //float containHeight = 265f;
 
         for (int i = 0; i < ranges.Length; i++)
         {

@@ -19,6 +19,8 @@ public class MainApp : Singleton<MainApp>
 
     [HideInInspector]
     public bool isARsupport;
+    [HideInInspector]
+    public bool isEnterGame;
 
     public Text text;
     public bool arModel;
@@ -52,25 +54,21 @@ public class MainApp : Singleton<MainApp>
         {
             case ARSessionState.Unsupported:
                 isARsupport = false;
-                Debug.Log("supportResult: Unsupported");
                 text.text = "supportResult: Unsupported";
                 break;
 
             case ARSessionState.None:
                 isARsupport = false;
-                Debug.Log("supportResult: None");
                 text.text = "supportResult: None";
                 break;
 
             case ARSessionState.NeedsInstall:
                 isARsupport = false;
-                Debug.Log("supportResult: NeedsInstall");
                 text.text = "supportResult: NeedsInstall";
                 break;
 
             case ARSessionState.Ready:
                 isARsupport = true;
-                Debug.Log("supportResult: Ready");
                 text.text = "supportResult: Ready";
                 break;
 

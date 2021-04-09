@@ -49,7 +49,7 @@ namespace GameMission
                 model.ConfirmButton.onClick.AddListener(() =>
                 {
                     model.logoImage.enabled = false;
-                    Games.instance.ClosGame();
+                    //Games.instance.ClosGame();
                     MediaPlayerController.instance.CloseVideo();
                     GameModals.instance.CloseModal();
                     GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);

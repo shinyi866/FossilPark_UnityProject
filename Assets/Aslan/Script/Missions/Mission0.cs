@@ -27,6 +27,7 @@ namespace GameMission
         public void EndGame()
         {
             game.gameOverEvent -= EndGame;
+            //Games.instance.ClosGame();
             //GameModals.instance.CloseAR();
             GameModals.instance.CloseModal();
             var modal = Modals.instance.OpenModal<ARModal>();

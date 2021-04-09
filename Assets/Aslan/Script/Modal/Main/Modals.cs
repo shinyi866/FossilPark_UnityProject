@@ -84,12 +84,24 @@ namespace View
             PlaceARObject.instance.EnterAR(index, type);
         }
 
-        public void CloseAR()
+        public void CloseARInMain()
         {
             foreach (Modal modal in modals) { modal.Show(false); }
 
             if (currentModal == null) return;
             currentModal.Show(true);
+
+            CameraCtrl.instance.SwitchCamera(false);
+            MediaPlayerController.instance.CloseVideo();
+            MainModal mainModal = _instance.GetModel<MainModal>();
+            mainModal.Show(true);
+
+            PlaceARObject.instance.CloseAR();
+        }
+
+        public void CloseARInGame()
+        {
+            foreach (Modal modal in modals) { modal.Show(false); }
 
             CameraCtrl.instance.SwitchCamera(false);
             MediaPlayerController.instance.CloseVideo();

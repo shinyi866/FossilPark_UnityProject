@@ -20,7 +20,8 @@ namespace GameMission
             game = Games.instance.OpenGame<Game2>();
             game.Init();
             game.gameOverEvent += EndGame;
-            //fossilClass.gameOverEvent += AREndGame;
+            //fossilClass.gameOverEvent += EndGame;
+            fossilClass.gameOverEvent += AREndGame;
 
             if (!isARsupport)
             {
@@ -62,7 +63,6 @@ namespace GameMission
             model.ShowInfo(missionIndex, TypeFlag.DialogType.EndDialog);
             model.ConfirmButton.onClick.AddListener(() =>
             {
-                Games.instance.ClosGame();
                 MediaPlayerController.instance.CloseVideo();
                 GameModals.instance.CloseModal();
                 GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);

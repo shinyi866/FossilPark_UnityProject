@@ -16,13 +16,18 @@ namespace GameMission
         private bool isGameStart;
         private bool isVideoEnd;
         private bool isARanimationEnd; // wait real animation, use animation end etect
+        private GameDialogData data;
         private ARGameModal modal;
+        private DialogModal dialogmodel;
         private string videoPath = "AVProVideoSamples/BigBuckBunny_720p30.mp4";
 
         public void Init()
         {
             GameModals.instance.OpenAR();
             _camera = CameraCtrl.instance.GetCurrentCamera();
+            modal = GameModals.instance.OpenModal<ARGameModal>();
+            data = MainApp.Instance.database;
+            modal.text.text = data.m_Data[missionIndex].gameNotify[0];
             ARObject.SetActive(false);
         }
 
@@ -57,8 +62,8 @@ namespace GameMission
 
         private void ShowARObject()
         {
-            modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.SwitchConfirmButton(true);
+            modal.text.text = data.m_Data[missionIndex].gamePrompt[0];
             modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt1);            
             modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
             {
@@ -73,11 +78,13 @@ namespace GameMission
 
         private IEnumerator CheckARSupport()
         {
-            yield return new WaitForSeconds(20f);
+            GameModals.instance.CloseModal();
 
-            var model = GameModals.instance.OpenModal<DialogModal>();
-            model.ShowInfo(missionIndex, TypeFlag.DialogType.EndDialog);
-            model.ConfirmButton.onClick.AddListener(() =>
+            yield return new WaitForSeconds(5f);
+
+            var dialogmodel = GameModals.instance.OpenModal<DialogModal>();
+            dialogmodel.ShowInfo(missionIndex, TypeFlag.DialogType.EndDialog);
+            dialogmodel.ConfirmButton.onClick.AddListener(() =>
             {
                 isGameStart = false;
                 GameResult();

@@ -58,15 +58,17 @@ namespace View
 
             BackButton.onClick.AddListener(() =>
             {
-                Modals.instance.CloseAR(); // TODO error?
+                Modals.instance.CloseARInMain(); // TODO error?
             });
 
             mainSaveButton.GetComponent<Button>().onClick.AddListener(() =>
             {
-                Modals.instance.CloseAR();
-                GameModals.instance.CloseModal();
-                Games.instance.ClosGame();
+                //Modals.instance.CloseModal();
+                //GameModals.instance.CloseModal();
+                //Games.instance.ClosGame();
                 SavePhotoPanel(false);
+                ClosePicturePanel(false);
+                Modals.instance.CloseARInMain();
                 //SaveImage();
             });
 
@@ -74,9 +76,12 @@ namespace View
             {
                 ShowView(true);
                 SavePhotoPanel(false);
-                Modals.instance.CloseAR();
-                GameModals.instance.CloseModal();
+                ClosePicturePanel(false);
                 Games.instance.ClosGame();
+                Modals.instance.CloseARInGame();
+                //Modals.instance.CloseModal();
+                //GameModals.instance.CloseModal();
+
                 //SaveImage();
                 // TODO play video
             });
@@ -125,6 +130,13 @@ namespace View
 
                 pictureGameObject.SetActive(!isShow);
             }
+        }
+
+        private void ClosePicturePanel(bool isShow)
+        {
+            this.canvasGroup.alpha = (isShow) ? 1 : 0;
+            this.canvasGroup.interactable = isShow;
+            this.canvasGroup.blocksRaycasts = isShow;
         }
 
         private void SaveImage()
