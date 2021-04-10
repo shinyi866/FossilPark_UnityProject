@@ -10,49 +10,40 @@ namespace GameMission
 {
     public class Game8 : Game
     {
-        public Text txt;
         public Text txt1;
         public Text txt2;
         public Text txt3;
         public ARTrackedImageManager ARTrackedImage;
         public ARPlaneManager planeManager;
-        public GameObject[] foodGameObject; // 0:grass, 1:meat, 2:fish
-        public GameObject[] dinosaurlScenes; // 0:grass, 1:meat, 2:fish
-        public GameObject[] dinosaurs; // 0:grass, 1:meat, 2:fish
-        public Transform[] topBons;// 0:grass, 1:meat, 2:fish
+        public GameObject[] foodGameObject; // 0:plant2, 1:plant, 2:meat
+        public GameObject[] dinosaurlScenes; // 0:brachiosaurus, 1:triceratop 2:TRex
+        public GameObject[] dinosaurs; // 0:brachiosaurus, 1:triceratop 2:TRex
         public Transform testTarget;
         public bool TestMode;
-        
-        [HideInInspector]
-        public bool isEat;
-        [HideInInspector]
-        public bool resetEatFood;
-        
-        // vector to caculate food direction
-        //public Transform centerPoint;
 
+        public static bool isEat;
+        public static bool resetEatFood;
         public System.Action<bool> gameOverEvent;
 
         private ARTrackedImage _trackImage;
-        //private Transform Target;
-        private Button[] foodButton = new Button[3]; // 0:grass, 1:meat, 2:fish
+        private Button[] foodButton = new Button[3]; // 0:brachiosaurus, 1:triceratop 2:TRex
         private Dictionary<string, GameObject> arObjects = new Dictionary<string, GameObject>();
         // AR place
         private Vector2 touchPosition = default;
         private Camera _camera;
 
+        private string currentImageName;
+        private int missionIndex = 8;
+        private int currentIndex = 0;
         private float ccidWeight = 0.0f;
-        //private bool isSetWeight;
-
         private bool isGameStart;
         private bool startCompass;
 
+        private GameObject currentDinosaurl;
         private GameObject showARfood;
         private ARGameModal modal;
         private ARPlane currentARPlane;
-        private int missionIndex = 8;
-        private int currentIndex = 0;
-        private TypeFlag.DinosaurlsType dinosaurlsType;
+        private TypeFlag.DinosaurlsType dinosaurlsType;        
 
         public void Init()
         {
@@ -116,9 +107,15 @@ namespace GameMission
             foreach (var o in dinosaurlScenes) { o.SetActive(false); }
             foreach (var b in foodButton) { b.interactable = true; }
 
-            dinosaurlScenes[index].SetActive(true);
+            if (currentDinosaurl != null)
+                Destroy(currentDinosaurl);
+
+            currentDinosaurl = Instantiate(dinosaurs[index]);
+            currentDinosaurl.transform.SetParent(dinosaurlScenes[index].transform);
+
+            if(TestMode) dinosaurlScenes[currentIndex].SetActive(true);
+
             foodButton[index].interactable = false;
-            //dinosaurs[index].transform.rotation = Quaternion.Euler(0, Input.compass.trueHeading-90, 0); //??
 
             isEat = false;
         }
@@ -135,7 +132,7 @@ namespace GameMission
                 txt1.text = "1aRPlane " + aRPlane.transform.position;
 
                 dinosaurlScenes[currentIndex].SetActive(true);
-                dinosaurlScenes[currentIndex].transform.position = new Vector3(dinosaurlScenes[currentIndex].transform.position.x, aRPlane.transform.position.y, dinosaurlScenes[currentIndex].transform.position.z);                               
+                currentDinosaurl.transform.position = new Vector3(currentDinosaurl.transform.position.x, aRPlane.transform.position.y, currentDinosaurl.transform.position.z);                               
             }
             else
             {
@@ -175,23 +172,22 @@ namespace GameMission
 
         private void UpdateARImage(ARTrackedImage trackImage)
         {
-            var imageNmae = trackImage.referenceImage.name;
+            currentImageName = trackImage.referenceImage.name;
             var imagePosition = trackImage.transform.position;
-            //txt.text = imageNmae;
 
             if (dinosaurlScenes != null)
             {
-                GameObject showARObject = arObjects[imageNmae];
+                GameObject showARObject = arObjects[currentImageName];
                 showARObject.SetActive(true);
                 showARObject.transform.position = imagePosition;
-                //dinosaurs[currentIndex].GetComponent<CCDIK>().solver.target = showARObject.transform;
-                showARfood = arObjects[imageNmae];
+                //currentDinosaurl.GetComponent<CCDIK>().solver.target = showARObject.transform;
+                showARfood = arObjects[currentImageName];
                 resetEatFood = true;
 
                 foreach (GameObject b in arObjects.Values)
                 {
                     Debug.Log($"Show in arObjects.Values: {b.name}");
-                    if (b.name != imageNmae)
+                    if (b.name != currentImageName)
                     {
                         b.SetActive(false);
                     }
@@ -204,10 +200,8 @@ namespace GameMission
         // Dinosaurl find need walk or not
         private void TargetDirection()
         {
-            //Transform showARfood = arObjects["grass"].GetComponent<Transform>();
-
-            Vector3 forward = dinosaurs[currentIndex].transform.TransformDirection(Vector3.forward);
-            Vector3 testToFood = testTarget.position - dinosaurs[currentIndex].transform.position;
+            Vector3 forward = currentDinosaurl.transform.TransformDirection(Vector3.forward);
+            Vector3 testToFood = testTarget.position - currentDinosaurl.transform.position;
             Vector3 arToFood;
 
             float dotResult = 0;
@@ -217,82 +211,75 @@ namespace GameMission
             if (TestMode)
             {
                 resetEatFood = true;
-                Vector3 lookAtTarget = new Vector3(testTarget.position.x, dinosaurs[currentIndex].transform.position.y, testTarget.position.z);
-                dinosaurs[currentIndex].transform.LookAt(lookAtTarget);                
+                Vector3 lookAtTarget = new Vector3(testTarget.position.x, currentDinosaurl.transform.position.y, testTarget.position.z);
+                currentDinosaurl.transform.LookAt(lookAtTarget);                
                 dotResult = Vector3.Dot(forward, testToFood);
-                dinosaurs[currentIndex].GetComponent<CCDIK>().solver.target = testTarget;
+                currentDinosaurl.GetComponent<CCDIK>().solver.target = testTarget;
                 switch (dinosaurlsType)
                 {
                     case TypeFlag.DinosaurlsType.Brachiosaurus:
-                        DinosaursEat(dotResult, 6.5f, 5.3f);
+                        DinosaursEat(dotResult, 5.8f, 5.3f, 4f, 0.04f);
                         break;
                     case TypeFlag.DinosaurlsType.TRex:
-                        DinosaursEat(dotResult, 4f, 3.5f);
+                        DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
                         break;
                     case TypeFlag.DinosaurlsType.Triceratop:
-                        DinosaursEat(dotResult, 4f, 3.5f);
+                        DinosaursEat(dotResult, 4f, 3.6f, 2.6f, 0.05f);
                         break;
                 }
-                //resetEatFood = false;
+                Debug.Log("TestMode ");
             }
             else
             {
-                if(showARfood != null && resetEatFood)
+                if(showARfood != null && resetEatFood && CheckFoodDinosaurls(currentImageName))
                 {
-                    arToFood = showARfood.transform.position - dinosaurs[currentIndex].transform.position;
-                    dinosaurs[currentIndex].GetComponent<CCDIK>().solver.target = showARfood.transform;
-                    Vector3 lookAtTarget = new Vector3(arToFood.x, dinosaurs[currentIndex].transform.position.y, arToFood.z);
-                    dinosaurs[currentIndex].transform.LookAt(lookAtTarget);
+                    arToFood = showARfood.transform.position - currentDinosaurl.transform.position;
+                    currentDinosaurl.GetComponent<CCDIK>().solver.target = showARfood.transform;
+                    Vector3 lookAtTarget = new Vector3(arToFood.x, currentDinosaurl.transform.position.y, arToFood.z);
+                    currentDinosaurl.transform.LookAt(lookAtTarget);
                     dotResult = Vector3.Dot(forward, arToFood);
                     Debug.Log("resetEatFood " + resetEatFood);
 
                     switch (dinosaurlsType)
                     {
                         case TypeFlag.DinosaurlsType.Brachiosaurus:
-                            DinosaursEat(dotResult, 6.5f, 5.3f);
+                            DinosaursEat(dotResult, 5.8f, 5.3f, 4f, 0.04f);
                             break;
                         case TypeFlag.DinosaurlsType.TRex:
-                            DinosaursEat(dotResult, 4f, 3.5f);
+                            DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
                             break;
                         case TypeFlag.DinosaurlsType.Triceratop:
-                            DinosaursEat(dotResult, 4f, 3.5f);
+                            DinosaursEat(dotResult, 4f, 3.6f, 2.6f, 0.05f);
                             break;
                     }                    
                 }
             }
 
             Debug.Log("dotResult " + dotResult);
-            txt.text = dotResult.ToString();
-            // walk: brachiosa: > 6.5, TRex: > 4 Triceratop > 3.9,
-            // eat: brachiosa: < 5.3, TRex: < 3.5 Triceratop < 3.5,
-
             txt1.text = "dotResult: " + dotResult;
         }
 
-        private void DinosaursEat(float dotResult, float walkDotResult, float eatDotResult)
+        private void DinosaursEat(float dotResult, float walkDotResult, float eatDotResult, float limitResult, float trackSpeed)
         {
             if (dotResult > walkDotResult)
             {
-                dinosaurs[currentIndex].GetComponent<Animator>().SetBool("walk", true);                
+                currentDinosaurl.GetComponent<Animator>().SetBool("walk", true);                
             }
             else
             {
-                dinosaurs[currentIndex].GetComponent<Animator>().SetBool("walk", false);
-                //Debug.Log("not walk");
-
-                if (dotResult < eatDotResult)
+                if (dotResult < eatDotResult && dotResult > limitResult)
                 {
                     Debug.Log("Can Eat");
                     txt3.text = "Can Eat";
 
                     if (!isEat)
                     {
-                        dinosaurs[currentIndex].GetComponent<Animator>().SetBool("eat", true);
+                        currentDinosaurl.GetComponent<Animator>().SetBool("eat", true);
 
                         if (ccidWeight < 0.6)
                         {
-                            ccidWeight += Time.deltaTime * 0.05f;
-                            dinosaurs[currentIndex].GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
+                            ccidWeight += Time.deltaTime * trackSpeed;
+                            currentDinosaurl.GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
                         }
 
                         Debug.Log("Eat");
@@ -300,14 +287,12 @@ namespace GameMission
                     }
                     else
                     {
-                        dinosaurs[currentIndex].GetComponent<Animator>().SetBool("eat", false);
-                        dinosaurs[currentIndex].GetComponent<CCDIK>().solver.target = null;
-                        if (ccidWeight > 0.3)
-                        {
-                            ccidWeight -= Time.deltaTime * 0.05f;
-                            dinosaurs[currentIndex].GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
-                            resetEatFood = false;
-                        }
+                        currentDinosaurl.GetComponent<Animator>().SetBool("eat", false);
+                        currentDinosaurl.GetComponent<CCDIK>().solver.target = null;
+
+                        ccidWeight -= Time.deltaTime * trackSpeed;
+                        currentDinosaurl.GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
+                        resetEatFood = false;
 
                         Debug.Log("End Eat");
                         txt3.text = "End Eat";
@@ -316,17 +301,47 @@ namespace GameMission
                 }
                 else
                 {
+                    currentDinosaurl.GetComponent<Animator>().SetBool("walk", false);
+                    currentDinosaurl.GetComponent<Animator>().SetBool("eat", false);
+
+                    ccidWeight -= Time.deltaTime * trackSpeed;
+                    currentDinosaurl.GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
+
                     Debug.Log("Not Eat");
                     txt3.text = "Not Eat";
                 }
             }
         }
 
+        private bool CheckFoodDinosaurls(string foodName)
+        {
+            bool returnValue = false;
+
+            if (foodName == null) return false;
+
+            for (int i = 0; i < foodGameObject.Length; i++)
+            {
+                if (foodName == foodGameObject[i].name)
+                {
+                    if (i == currentIndex)
+                        returnValue = true;
+                }
+            }
+
+            return returnValue;
+        }
+
         private void LateUpdate()
         {
-            if (!isGameStart) return;
-
-            if (!startCompass) return;
+            if(TestMode)
+            {
+                if (!isGameStart) return;
+            }
+            else
+            {
+                if (!isGameStart && !startCompass) return;
+            }
+            
 
             _camera.transform.rotation = Quaternion.Euler(_camera.transform.rotation.eulerAngles.x, Input.compass.trueHeading, _camera.transform.rotation.eulerAngles.z);
             txt2.text = $"_camera.transform.rotation: {_camera.transform.rotation}, headingAccuracy: {Input.compass.headingAccuracy},  magneticHeading: {Input.compass.magneticHeading},  rawVector: {Input.compass.rawVector},  timestamp: {Input.compass.timestamp}, trueHeading: {Input.compass.trueHeading}";            
