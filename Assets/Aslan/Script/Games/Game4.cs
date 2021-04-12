@@ -57,7 +57,7 @@ namespace GameMission
 
         private Camera _camera;
 
-        private string videoPath = "Video/LadyVisit.mp4";
+        private string videoPath = "Video/underground.mp4";
         private string successVidePath = "Video/ele.mp4";
 
         public void Init()
@@ -65,7 +65,7 @@ namespace GameMission
             _camera = CameraCtrl.instance.GetCurrentCamera();
 
             Modals.instance.CloseAllModal();
-            MediaPlayerController.instance.LoadVideo(videoPath);
+            MediaPlayerController.instance.LoadAndPlayVideoNotLoop(videoPath);
         }
 
         public void GameStart()
@@ -76,7 +76,7 @@ namespace GameMission
 
             var modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Original);
-            MediaPlayerController.instance.PlayVideo();
+            
 
             button.GetComponent<Button>().onClick.AddListener(()=>
             {
@@ -109,8 +109,8 @@ namespace GameMission
 
         private void SetPlacePosition()
         {
-            float height = 125f;
-            float containHeight = 265f;
+            float height = 80f;
+            float containHeight = 160f;
 
             for (int i = 0; i < 3; i++)
             {
@@ -124,8 +124,8 @@ namespace GameMission
 
                 containRect.sizeDelta = new Vector2(0, 400);
                 containRect2.sizeDelta = new Vector2(0, 400);
-                rankRectTransform.anchoredPosition = new Vector2(0, containHeight - height * (i + 1));
-                rankRectTransform2.anchoredPosition = new Vector2(0, containHeight - height * (i + 1));
+                rankRectTransform.anchoredPosition = new Vector2(6, containHeight - height * (i + 1));
+                rankRectTransform2.anchoredPosition = new Vector2(6, containHeight - height * (i + 1));
 
                 AnsBox.Add(rankTransform.gameObject);
                 AnsBox.Add(rankTransform2.gameObject);
@@ -136,8 +136,9 @@ namespace GameMission
 
         private void SetAnsPosition()
         {
-            float contain = -650f;
-            float horizontal = 300f;
+            float contain = 60f;
+            float vertical = 60f;
+            float revertical = 130f;
 
             for (int i = 0; i < 3; i++)
             {
@@ -147,8 +148,8 @@ namespace GameMission
 
                 containRect.sizeDelta = new Vector2(400, 300);
 
-                var setPos = new Vector2(contain + horizontal * (i + 1) + 1000, 130);
-                ansRectTransform.anchoredPosition = new Vector2(contain + horizontal * (i + 1), -15);
+                var setPos = new Vector2(1000f, contain - revertical * (i + 1) + 500f);
+                ansRectTransform.anchoredPosition = new Vector2(-95f, contain - vertical * (i + 1));
                 ansRectTransform.GetComponentInChildren<Text>().text = ans1[i];
 
                 AnsOrgPos.Add(setPos);
@@ -164,8 +165,8 @@ namespace GameMission
 
                 containRect2.sizeDelta = new Vector2(400, 300);
 
-                var setPos = new Vector2(contain + horizontal * (i + 1) + 1000, 30);
-                ansRectTransform2.anchoredPosition = new Vector2(contain + horizontal * (i + 1), -105);
+                var setPos = new Vector2(1510f, contain - revertical * (i + 1) + 500f); 
+                ansRectTransform2.anchoredPosition = new Vector2(125f, contain - vertical * (i + 1));
                 ansRectTransform2.GetComponentInChildren<Text>().text = ans2[i];
 
                 AnsOrgPos.Add(setPos);
@@ -258,14 +259,17 @@ namespace GameMission
         private void SetBonePosition()
         {
             var _cameraFront = _camera.transform.forward;
-            var pos = _cameraFront + new Vector3(-1.8f, 1.2f, 3f);
+            var _frontPos = _cameraFront * 3;
+            var _leftPos = _camera.transform.right * -2.2f;
+            var _rightPos = _camera.transform.right * 2.2f;
+            var _upPos = _camera.transform.up * 0.8f;
+
             var rotateSpeed = 20f * Time.deltaTime;
 
-            fossilDolphin.transform.position = _camera.transform.position + pos;
+            fossilDolphin.transform.position = _camera.transform.position + _frontPos + _leftPos + _upPos;
             fossilDolphin.transform.Rotate(0, rotateSpeed, 0);
 
-            pos = _cameraFront + new Vector3(1.8f, 1.2f, 3f);
-            fossilBaleenWhale.transform.position = _camera.transform.position + pos;
+            fossilBaleenWhale.transform.position = _camera.transform.position + _frontPos + _rightPos + _upPos;
             fossilBaleenWhale.transform.Rotate(0, rotateSpeed, 0);
         }
 
@@ -278,9 +282,9 @@ namespace GameMission
                 DetectAnswer();
                 SetBonePosition();
             }
-
+            
             if (AnsInBoxCount == 6) { button.SetActive(true); }
-            else { button.SetActive(false); }
+            else { button.SetActive(false); Debug.Log("Ans Count " + AnsInBoxCount); }
 
             if (MediaPlayerController.instance.isVideoFinish() && finishGame) // TODO: event?
             {
