@@ -68,7 +68,7 @@ namespace View
             var supportAR = MainApp.Instance.isARsupport;
             var gameData = data.m_Data[index];
 
-            foreach (var c in GameCanvasGroups) { ShowPanel(c, false); }
+            CloseAllPanel();
 
             text.text = gameData.gameNotify[0];
             SwitchConfirmButton(false);
@@ -100,7 +100,7 @@ namespace View
         public void ShowPrompt(int index, TypeFlag.ARGameType type)
         {
             var gameData = data.m_Data[index];
-            foreach (var c in GameCanvasGroups) { ShowPanel(c, false); }
+            CloseAllPanel();
 
             switch (type)
             {
@@ -164,6 +164,10 @@ namespace View
             }
         }
 
+        public void CloseAllPanel()
+        {
+            foreach (var c in GameCanvasGroups) { ShowPanel(c, false); }
+        }
 
         public void TakePicture()
         {

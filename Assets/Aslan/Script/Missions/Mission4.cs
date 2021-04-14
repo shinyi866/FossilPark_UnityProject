@@ -41,7 +41,7 @@ namespace GameMission
             modal.ShowInfo(missionIndex, TypeFlag.PictureType.EndGuide);
             modal.GuideConfirmButtonTwo.onClick.AddListener(() =>
             {
-                //Games.instance.ClosGame();
+                Games.instance.ClosGame();
                 MediaPlayerController.instance.CloseVideo();
                 GameModals.instance.CloseModal();
                 GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);

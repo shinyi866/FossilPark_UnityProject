@@ -57,7 +57,7 @@ namespace GameMission
 
         private Camera _camera;
 
-        private string videoPath = "Video/underground.mp4";
+        private string videoPath = "Video/shale.mp4";
         private string successVidePath = "Video/ele.mp4";
 
         public void Init()
@@ -175,9 +175,6 @@ namespace GameMission
             }
 
             RandomAnsPosition();
-
-            foreach (var orgPos in AnsOrgPos) { Debug.Log("1orgPos " + orgPos); }
-            foreach (var a in Ans) { Debug.Log("1ansPos " + a.transform.position); }
         }
 
         private void RandomAnsPosition()
@@ -260,8 +257,8 @@ namespace GameMission
         {
             var _cameraFront = _camera.transform.forward;
             var _frontPos = _cameraFront * 3;
-            var _leftPos = _camera.transform.right * -2.2f;
-            var _rightPos = _camera.transform.right * 2.2f;
+            var _leftPos = _camera.transform.right * -2f;
+            var _rightPos = _camera.transform.right * 2f;
             var _upPos = _camera.transform.up * 0.8f;
 
             var rotateSpeed = 20f * Time.deltaTime;

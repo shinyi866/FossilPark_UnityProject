@@ -27,6 +27,7 @@ namespace GameMission
             modal.game0Panel.button.onClick.AddListener(()=> {
                 placeClock = true;
                 ClockObject.SetActive(true);
+                modal.CloseAllPanel();
                 GameResult();
             });
         }

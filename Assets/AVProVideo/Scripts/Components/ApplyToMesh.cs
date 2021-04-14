@@ -29,7 +29,7 @@ namespace RenderHeads.Media.AVProVideo
 		// TODO: add specific material / material index to target in the mesh if there are multiple materials
 
 		[Header("Media Source")]
-        
+
 		[SerializeField]
 		private MediaPlayer _media = null;
 

@@ -86,6 +86,7 @@ namespace GameMission
             dialogmodel.ShowInfo(missionIndex, TypeFlag.DialogType.EndDialog);
             dialogmodel.ConfirmButton.onClick.AddListener(() =>
             {
+                GameModals.instance.CloseModal();
                 isGameStart = false;
                 GameResult();
             });

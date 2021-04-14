@@ -9,10 +9,10 @@ public class PlaceARObject : MonoBehaviour
 {
     public GameObject[] animalObjects;
     public GameObject[] dinosaurlObjects;
-    public Sprite[] animalMarkSprite;
+    public Texture[] animalMarkTexture;
     public ARPlaneManager planeManager;
-    //public MeshRenderer mesh;
     public GameObject placeMark;
+    public Material material;
 
     private ARRaycastManager raycastManager;
     private Pose placementPose;
@@ -22,8 +22,6 @@ public class PlaceARObject : MonoBehaviour
     private int currentAnimal;
     private TypeFlag.ARObjectType currentType;
     private GameObject spawnedObject;
-    //private Material material;
-    private Vector2 offset;
 
     private static PlaceARObject _instance;
 
@@ -45,8 +43,7 @@ public class PlaceARObject : MonoBehaviour
         isARpage = true;
         currentType = type;
         currentAnimal = index;
-        planeManager.enabled = true;
-        //material = mesh.material;
+        planeManager.enabled = true;        
         placeMark.SetActive(true);
     }
 
@@ -63,7 +60,7 @@ public class PlaceARObject : MonoBehaviour
         raycastManager = FindObjectOfType<ARRaycastManager>();
         _camera = CameraCtrl.instance.GetCurrentCamera();
     }
-
+    
     private void Update()
     {
         if (!isARpage) return;
@@ -95,7 +92,7 @@ public class PlaceARObject : MonoBehaviour
             }
         }
     }
-
+    
     private void PlaceObject()
     {
         placeMark.SetActive(false);
@@ -103,7 +100,7 @@ public class PlaceARObject : MonoBehaviour
         switch (currentType)
         {
             case TypeFlag.ARObjectType.Animals:
-                //material.mainTextureOffset = animalMarkSprite[currentAnimal].textureRectOffset;
+                material.mainTexture = animalMarkTexture[currentAnimal - 2];
                 spawnedObject = Instantiate(animalObjects[currentAnimal-2], new Vector3(placementPose.position.x, -1, placementPose.position.z), placementPose.rotation);
                 break;
             case TypeFlag.ARObjectType.Dinosaurls:
