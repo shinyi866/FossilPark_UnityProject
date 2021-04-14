@@ -12,13 +12,11 @@ namespace GameMission
 
         public override void EnterGame()
         {
-
+            
         }
 
         public override void StartGame()
         {
-            GameModals.instance.OpenAR();
-            Debug.Log("1");
             game = Games.instance.OpenGame<Game1>();
             game.gameOverEvent += EndGame;
             game.Init();

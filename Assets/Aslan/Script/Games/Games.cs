@@ -69,8 +69,6 @@ namespace GameMission
             GameModals.instance.CloseAllModal();
             //GameModals.instance.CloseModal();
             GameModals.instance.CloseAR();
-
-            MainApp.Instance.isEnterGame = false;
         }
     }
 }

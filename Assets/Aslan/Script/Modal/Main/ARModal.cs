@@ -79,6 +79,8 @@ namespace View
                 ClosePicturePanel(false);
                 Games.instance.ClosGame();
                 Modals.instance.CloseARInGame();
+
+                iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon
                 //Modals.instance.CloseModal();
                 //GameModals.instance.CloseModal();
 

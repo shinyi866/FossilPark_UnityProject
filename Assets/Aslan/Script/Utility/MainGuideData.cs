@@ -14,9 +14,6 @@ public class MainGuideData : ScriptableObject
 
         public Sprite guideAnimal;
         public Sprite guidePicture;
-        public Sprite mainPicture1;
-        public Sprite mainPicture2;
-        public Sprite mainPicture3;
     }
 
     public GuideData[] m_Data;

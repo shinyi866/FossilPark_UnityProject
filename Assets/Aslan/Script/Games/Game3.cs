@@ -86,7 +86,7 @@ namespace GameMission
         {
             var _cameraFront = _camera.transform.forward;
 
-            _cameraFront.y = -0.8f;
+            _cameraFront.y = -1f;
             _cameraFront.z = 1f;
 
             basket.transform.position = _camera.transform.position + _cameraFront;

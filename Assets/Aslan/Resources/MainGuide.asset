@@ -22,8 +22,5 @@ MonoBehaviour:
     - "\u9EDE\u6B64\u89C0\u770B\u6050\u9F8D\u86CB\u5B75\u5316\u6210\u679C"
     - "\u6536\u56DE\u7684\u6642\u7A7A\u7BA1\u7406\u54E1\u5C07\u6703\u56DE\u5230\u6642\u9418\u4E0A"
     - "\u9EDE\u6B64\u89C0\u770B\u6050\u9F8D\u5716\u9451\u8CC7\u6599"
-    guideAnimal: {fileID: 21300000, guid: cc7c3e4af88a54caabfb5b2a64e76f64, type: 3}
+    guideAnimal: {fileID: 21300000, guid: 9e2527c75c5da43768c771c1849bf49c, type: 3}
     guidePicture: {fileID: 21300000, guid: cc7c3e4af88a54caabfb5b2a64e76f64, type: 3}
-    mainPicture1: {fileID: 21300000, guid: cc7c3e4af88a54caabfb5b2a64e76f64, type: 3}
-    mainPicture2: {fileID: 21300000, guid: cc7c3e4af88a54caabfb5b2a64e76f64, type: 3}
-    mainPicture3: {fileID: 21300000, guid: cc7c3e4af88a54caabfb5b2a64e76f64, type: 3}

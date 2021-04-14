@@ -7,14 +7,12 @@ public class MediaPlayerController : MonoBehaviour
 {
     [SerializeField]
     private MediaPlayer _mediaPlayer = null;
-
     [SerializeField]
     private GameObject sphereVideo;
     [SerializeField]
     private GameObject planeVideo;
-
-    //[SerializeField]
-    //private MeshRenderer meshRenderer;
+    [SerializeField]
+    private GyroControler gyroControler;
 
     private static MediaPlayerController _instance;
 
@@ -46,7 +44,8 @@ public class MediaPlayerController : MonoBehaviour
     }
 
     public void LoadAndPlay2DVideoNotLoop(string filePath)
-    {
+    {        
+        gyroControler.enabled = false;
         SwitchTo2DPlane(true);
         OpenSphereVideo(false);
 
@@ -94,7 +93,8 @@ public class MediaPlayerController : MonoBehaviour
     }
     
     public void Destroy2DPlane()
-    {        
+    {
+        gyroControler.enabled = true;
         Destroy(planeVideo);
     }
 }

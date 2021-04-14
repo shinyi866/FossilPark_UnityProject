@@ -12,7 +12,7 @@ namespace GameMission
         public System.Action gameOverEvent;
 
         private int missionIndex = 1;
-        private Camera _camera;
+        //private Camera _camera;
         private bool isGameStart;
         private bool isVideoEnd;
         private bool isARanimationEnd; // wait real animation, use animation end etect
@@ -23,8 +23,8 @@ namespace GameMission
 
         public void Init()
         {
-            GameModals.instance.OpenAR();
-            _camera = CameraCtrl.instance.GetCurrentCamera();
+            Modals.instance.CloseAllModal();
+            //_camera = CameraCtrl.instance.GetCurrentCamera();
             modal = GameModals.instance.OpenModal<ARGameModal>();
             data = MainApp.Instance.database;
             modal.text.text = data.m_Data[missionIndex].gameNotify[0];
@@ -67,6 +67,7 @@ namespace GameMission
             modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt1);            
             modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
             {
+                GameModals.instance.OpenAR();
                 MediaPlayerController.instance.Destroy2DPlane();
                 modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
                 modal.SwitchConfirmButton(false);
@@ -93,6 +94,7 @@ namespace GameMission
             
             isARanimationEnd = false;
 
+            StopAllCoroutines();
         }
     }
 }

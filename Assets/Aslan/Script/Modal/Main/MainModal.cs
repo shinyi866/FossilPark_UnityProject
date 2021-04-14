@@ -38,6 +38,7 @@ namespace View
 
         public void StarIntroView()
         {
+            iBeaconMissionSetting.Instance.isEnterGame = true;
             PlayerPrefs.SetInt("guide", 1);
             ShowPanel(introView, true);
 
@@ -48,6 +49,7 @@ namespace View
 
         public void StarMainView()
         {
+            iBeaconMissionSetting.Instance.isEnterGame = false;
             MainButtonClick();
             MissionsButtonClick();
         }
@@ -117,6 +119,7 @@ namespace View
             var i = 0;
             ShowPanel(guideView.canvasGroup, true);
             guideView.gameObjects[i].SetActive(true);
+            guideView.gameObjects[i].GetComponentInChildren<Text>().text = MainApp.Instance.guideData.m_Data[0].gamePrompt[i];
 
             guideView.button.onClick.AddListener(()=>
             {
@@ -126,6 +129,7 @@ namespace View
                 {
                     i++;
                     guideView.gameObjects[i].SetActive(true);
+                    guideView.gameObjects[i].GetComponentInChildren<Text>().text = MainApp.Instance.guideData.m_Data[0].gamePrompt[i];
                     Debug.Log("i: " + i);
 
                     if(i == guideView.gameObjects.Length - 1)

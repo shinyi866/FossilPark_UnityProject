@@ -15,18 +15,15 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
     private Transform setTransform;
 
     private List<GameObject> cloneTransform = new List<GameObject>();
-    private List<int> hasPlay = new List<int>();
-    private bool isCheckPlayStatus;
+
+    public bool isEnterGame;
 
     private void Start() { SetPosition(); }
 
     /* search mission */
     public void MissionSearch(List<Beacon> mybeacons)
 	{
-        if (!MainApp.Instance.isEnterGame)
-            isCheckPlayStatus = false;
-
-        if (mybeacons == null || isCheckPlayStatus) return;
+        if (mybeacons == null || isEnterGame) return;
 
 		foreach (Beacon b in mybeacons)
 		{
@@ -38,14 +35,6 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
                 {
                     if (ranges[i].minRange < 0 && ranges[i].maxRange < 0) return;
 
-                    if (MainApp.Instance.isEnterGame)
-                    {
-                        ranges[i].minRange = -1;
-                        ranges[i].maxRange = -1;
-                        isCheckPlayStatus = true;
-                        return;
-                    }
-
                     if (b.accuracy < ranges[i].minRange)
 					{
 						GameMissions.instance.ShowMission(mission);
@@ -54,35 +43,15 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 					{
 						GameModals.instance.RoundNotify(mission);
                     }
-					else
-					{
+					else if(b.accuracy > ranges[i].maxRange)
+
+                    {
 						GameModals.instance.CloseModal();
 					}
 				}
             }
 		}
 	}
-
-    public void UpdateMissionRange()
-    {
-        for (int i = 0; i < ranges.Length; i++)
-        {
-            for(int j = 0; j < cloneTransform.Count; j++)
-            {
-                InputField[] inputValue = cloneTransform[j].GetComponentsInChildren<InputField>();
-
-                if ( i == j && !string.IsNullOrEmpty(inputValue[0].text) && !string.IsNullOrEmpty(inputValue[1].text))
-                {
-                    ranges[i].minRange = double.Parse(inputValue[0].text);
-                    ranges[i].maxRange = double.Parse(inputValue[1].text);
-                }
-
-                RefreshValue();
-                inputValue[0].text = null;
-                inputValue[1].text = null;
-            }            
-        }
-    }
 
     private void SetPosition()
     {
@@ -122,6 +91,36 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
                 }
             }
         }
+    }
+
+    public void UpdateMissionRange()
+    {
+        for (int i = 0; i < ranges.Length; i++)
+        {
+            for (int j = 0; j < cloneTransform.Count; j++)
+            {
+                InputField[] inputValue = cloneTransform[j].GetComponentsInChildren<InputField>();
+
+                if (i == j && !string.IsNullOrEmpty(inputValue[0].text) && !string.IsNullOrEmpty(inputValue[1].text))
+                {
+                    ranges[i].minRange = double.Parse(inputValue[0].text);
+                    ranges[i].maxRange = double.Parse(inputValue[1].text);
+                }
+
+                RefreshValue();
+                inputValue[0].text = null;
+                inputValue[1].text = null;
+            }
+        }
+    }
+
+    public void IBeaconNotDetect(int index)
+    {
+        isEnterGame = true;
+
+        ranges[index].minRange = -1;
+        ranges[index].maxRange = -1;
+        RefreshValue();
     }
 }
 

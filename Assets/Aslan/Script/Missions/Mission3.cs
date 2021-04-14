@@ -17,17 +17,6 @@ namespace GameMission
             game = Games.instance.OpenGame<Game3>();
             game.Init();
             game.gameOverEvent += EndGame;
-
-            /*
-            var model = GameModals.instance.OpenModal<TitleModal>();
-            model.ShowInfo(missionIndex, TypeFlag.TitleType.GameTitle);
-            model.ConfirmButton.onClick.AddListener(() =>
-            {
-                var gameModal = GameModals.instance.OpenModal<ARGameModal>();
-                gameModal.ShowModal(missionIndex, TypeFlag.ARGameType.Game3);
-                game.GameStart();
-            });
-            */
         }
 
         public override void StartGame()
@@ -44,6 +33,7 @@ namespace GameMission
             model.ShowInfo(missionIndex, type);
             model.ConfirmButton.onClick.AddListener(() =>
             {
+                Games.instance.ClosGame();
                 GameModals.instance.CloseModal();
                 GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
             });

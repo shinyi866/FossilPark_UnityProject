@@ -1,4 +1,4 @@
-missionID,introMessage,gamePrompt,guideAnimal,guidePicture,mainPicture1,mainPicture2,mainPicture3
+missionID,introMessage,gamePrompt,guideAnimal,guidePicture
 0,"嗨！冒險家！歡迎來到
 【臺南左鎮化石園區】
 我們是kiki與koko！歡迎你來到這裡！,在這裏有一個神奇的時光機叫做逆走鐘！
@@ -7,4 +7,4 @@ missionID,introMessage,gamePrompt,guideAnimal,guidePicture,mainPicture1,mainPict
 只要找回他們就可以將逆走鐘修復了！
 與我們一起進去園區
 開始尋找管理員的冒險吧！
-","點此觀看恐龍蛋孵化成果,收回的時空管理員將會回到時鐘上,點此觀看恐龍圖鑑資料",Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png
+","點此觀看恐龍蛋孵化成果,收回的時空管理員將會回到時鐘上,點此觀看恐龍圖鑑資料",Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png

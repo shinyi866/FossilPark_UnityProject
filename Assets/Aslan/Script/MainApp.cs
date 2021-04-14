@@ -19,8 +19,6 @@ public class MainApp : Singleton<MainApp>
 
     [HideInInspector]
     public bool isARsupport;
-    [HideInInspector]
-    public bool isEnterGame;
 
     public Text text;
     public bool arModel;
@@ -37,11 +35,12 @@ public class MainApp : Singleton<MainApp>
         var modal = Modals.instance.OpenModal<MainModal>();
         
         playerGuide = PlayerPrefs.GetInt("guide"); // 0: strat guide view, 1: main view
-
+        
         if(playerGuide != 1)
             modal.StarIntroView();
         else
             modal.StarMainView();
+            
     }
 
     private IEnumerator CheckARSupport()

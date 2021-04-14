@@ -69,7 +69,7 @@ namespace GameMission
                 ARPlane aRPlane = args.added[0];
 
                 Object.SetActive(true);
-                Object.transform.position = new Vector3(Object.transform.position.x, aRPlane.transform.position.y, Object.transform.position.z);
+                Object.transform.position = new Vector3(Object.transform.position.x, aRPlane.transform.position.y - 1.5f, Object.transform.position.z);
             }
             else
             {
