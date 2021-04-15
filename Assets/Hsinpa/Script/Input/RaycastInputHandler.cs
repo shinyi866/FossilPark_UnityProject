@@ -8,6 +8,7 @@ using LightHouse.Edit;
 using Utility;
 using UnityEngine.InputSystem.EnhancedTouch;
 using Hsinpa.Ctrl;
+using UnityEngine.Rendering;
 
 namespace Hsinpa.GameInput
 {
@@ -33,7 +34,7 @@ namespace Hsinpa.GameInput
         private RaycastHit[] anchorHits = new RaycastHit[1];
         private GameObject selectedAnchor;
 
-        public enum InputType { SingleTap, DoubleTap, None };
+        public enum InputType { SingleTap, DoubleTap, Up, None };
         public System.Action<InputStruct> OnInputEvent;
 
         private InputStruct _inputStruct;
