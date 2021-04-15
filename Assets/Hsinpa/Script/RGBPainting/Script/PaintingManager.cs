@@ -19,6 +19,9 @@ namespace Hsinpa.App {
         [SerializeField]
         private Transform targetModel;
 
+        [SerializeField]
+        private Transform brushObject;
+
         RaycastHit[] m_Results = new RaycastHit[1];
 
         private int toolIndex;
@@ -59,6 +62,12 @@ namespace Hsinpa.App {
                 if (hits > 0)
                 {
                     drawToTexture.DrawOnMesh(m_Results[0].textureCoord, _toolSRP.tools[toolIndex].mask_color);
+
+                    brushObject.gameObject.SetActive(true);
+                    brushObject.transform.position = m_Results[0].point;
+                }
+                else {
+                    brushObject.gameObject.SetActive(false);
                 }
 
                 if (recordCompleteTime < Time.time) {
@@ -135,6 +144,7 @@ namespace Hsinpa.App {
             toolIndex = -1;
             _hintState = HintState.None;
             drawToTexture.EnableColorHint( HintState.None );
+            brushObject.gameObject.SetActive(false);
         }
 
         public void ResetPaint() {

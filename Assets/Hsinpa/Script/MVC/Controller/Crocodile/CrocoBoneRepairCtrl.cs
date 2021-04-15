@@ -1,6 +1,7 @@
 ﻿using Hsinpa.App;
 using Hsinpa.GameInput;
 using Hsinpa.View;
+using Microsoft.Azure.SpatialAnchors.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -192,7 +193,6 @@ namespace Hsinpa.Ctrl
                 _ = UtilityMethod.DoDelayWork((float)EndPlayableAnim.duration, () =>
                 {
                     crocodileTargetTimelineAnim.gameObject.SetActive(false);
-
                     OpenHintUIModal(TypeFlag.ARGameType.GamePrompt5);
 
                     if (OnEndGameEvent != null)
