@@ -11,7 +11,11 @@ namespace GameMission
     public class Game2 : Game
     {
         [SerializeField]
+        private GameObject riverObject;
+        [SerializeField]
         private ARPlaneManager planeManager;
+        [SerializeField]
+        private GameObject UIobject;
         [SerializeField]
         private bool TestMode;
 
@@ -22,17 +26,28 @@ namespace GameMission
         private bool isARGameStart;
         private bool isUnARGameStart;
         private int successTimes;
+        private Camera _camera;
+        private GameObject placeObject;
         private ARGameModal modal;
 
         public void Init()
         {
-            if (TestMode) return;
+            _camera = CameraCtrl.instance.GetCurrentCamera();
+            /*
+            placeObject = Instantiate(riverObject);
+            var frontPos = _camera.transform.forward * 3;
+            placeObject.transform.SetParent(this.transform);
+            placeObject.transform.position = new Vector3(riverObject.transform.position.x, -3, frontPos.z);
+            */
+            if (!TestMode) return;
 
-            Object.SetActive(false);
+            //riverObject.SetActive(false);
         }        
 
         public void GameStart(bool isARsupport)
         {
+            UIobject.SetActive(true);
+
             if (isARsupport)
             {
                 isARGameStart = true;
@@ -64,12 +79,16 @@ namespace GameMission
         // AR Plane Track
         private void PlaneChange(ARPlanesChangedEventArgs args)
         {
-            if (args.added != null)
+            if (args.added != null && placeObject == null)
             {
                 ARPlane aRPlane = args.added[0];
 
-                Object.SetActive(true);
-                Object.transform.position = new Vector3(Object.transform.position.x, aRPlane.transform.position.y - 1.5f, Object.transform.position.z);
+                placeObject = Instantiate(riverObject, aRPlane.transform.position, Quaternion.identity);
+                //placeObject.transform.position = new Vector3(placeObject.transform.position.x, aRPlane.transform.position.y, placeObject.transform.position.z);
+                //riverObject.SetActive(true);
+                //riverObject.transform.position = new Vector3(riverObject.transform.position.x, aRPlane.transform.position.y - 3, riverObject.transform.position.z);
+                Debug.Log("======placeObject " + placeObject.transform.position);
+                Debug.Log("======aRPlane " + aRPlane.transform.position);
             }
             else
             {
@@ -79,6 +98,8 @@ namespace GameMission
 
         private void UnsupportAR()
         {
+            planeManager.enabled = false;
+            planeManager.planesChanged -= PlaneChange;
             Debug.Log("unsupport AR");
         }
         

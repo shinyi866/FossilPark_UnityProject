@@ -52,7 +52,7 @@ public class FossilClass : MonoBehaviour
     void FixedUpdate()
     {
         
-        if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 10, HitLayer))
+        if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 15, HitLayer))
         {
             image.SetActive(true);
             bt.SetActive(false);

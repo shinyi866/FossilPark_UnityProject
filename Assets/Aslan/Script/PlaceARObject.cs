@@ -45,6 +45,9 @@ public class PlaceARObject : MonoBehaviour
         currentAnimal = index;
         planeManager.enabled = true;        
         placeMark.SetActive(true);
+
+        if(currentType == TypeFlag.ARObjectType.Animals)
+            material.mainTexture = animalMarkTexture[currentAnimal - 2];
     }
 
     public void CloseAR()
@@ -100,7 +103,6 @@ public class PlaceARObject : MonoBehaviour
         switch (currentType)
         {
             case TypeFlag.ARObjectType.Animals:
-                material.mainTexture = animalMarkTexture[currentAnimal - 2];
                 spawnedObject = Instantiate(animalObjects[currentAnimal-2], new Vector3(placementPose.position.x, -1, placementPose.position.z), placementPose.rotation);
                 break;
             case TypeFlag.ARObjectType.Dinosaurls:

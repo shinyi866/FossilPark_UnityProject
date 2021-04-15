@@ -42,7 +42,7 @@ namespace GameMission
         private GameObject currentDinosaurl;
         private GameObject showARfood;
         private ARGameModal modal;
-        private ARPlane currentARPlane;
+        private GameObject placeObject;
         private TypeFlag.DinosaurlsType dinosaurlsType;        
 
         public void Init()
@@ -123,12 +123,11 @@ namespace GameMission
         // AR Plane Track
         private void PlaneChange(ARPlanesChangedEventArgs args)
         {
-            if (args.added != null && currentARPlane == null)
+            if (args.added != null && placeObject == null)
             {
                 modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game8);
 
                 ARPlane aRPlane = args.added[0];
-                currentARPlane = aRPlane;
                 txt1.text = "1aRPlane " + aRPlane.transform.position;
 
                 dinosaurlScenes[currentIndex].SetActive(true);

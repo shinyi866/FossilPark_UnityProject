@@ -9,22 +9,26 @@ namespace GameMission
     {
         [SerializeField]
         private GameObject ARObject;
+        [SerializeField]
+        private GameObject videoPlane;
         public System.Action gameOverEvent;
 
         private int missionIndex = 1;
         //private Camera _camera;
         private bool isGameStart;
         private bool isVideoEnd;
+        private bool isSetVideoPlane;
         private bool isARanimationEnd; // wait real animation, use animation end etect
         private GameDialogData data;
         private ARGameModal modal;
-        private DialogModal dialogmodel;
+        private Camera _camera;
         private string videoPath = "AVProVideoSamples/BigBuckBunny_720p30.mp4";
 
         public void Init()
         {
-            Modals.instance.CloseAllModal();
-            //_camera = CameraCtrl.instance.GetCurrentCamera();
+            Modals.instance.CloseAllModal();            
+            GameModals.instance.OpenAR(); // Stop AR Camera rotate
+            _camera = CameraCtrl.instance.GetCurrentCamera();
             modal = GameModals.instance.OpenModal<ARGameModal>();
             data = MainApp.Instance.database;
             modal.text.text = data.m_Data[missionIndex].gameNotify[0];
@@ -53,6 +57,11 @@ namespace GameMission
                 ShowARObject();
                 isVideoEnd = true;
             }
+            if(!isSetVideoPlane)
+            {
+                var frontPos = _camera.transform.forward * 5;
+                videoPlane.transform.position = _camera.transform.position + frontPos;
+            }
 
             if(isARanimationEnd)
             {
@@ -67,12 +76,12 @@ namespace GameMission
             modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt1);            
             modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
             {
-                GameModals.instance.OpenAR();
                 MediaPlayerController.instance.Destroy2DPlane();
                 modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
                 modal.SwitchConfirmButton(false);
                 ARObject.SetActive(true);
 
+                isSetVideoPlane = false;
                 isARanimationEnd = true;
             });            
         }
