@@ -94,11 +94,13 @@ namespace Hsinpa.Ctrl
 
         private void PerformNoARAction()
         {
+            _arHelper.ActivateFullAR(false);
+
             Debug.Log("Croco PerformNoARAction");
             crocodileTargetTimelineAnim.gameObject.SetActive(true);
             crocodileTargetTimelineAnim.ShowConfirmBtn(false);
 
-            _arHelper.SetARCameraPos(new Vector3(0, 0.3f, 0), Quaternion.Euler(90, 0, 0));
+            _arHelper.SetARCameraPos(new Vector3(0, 0.5f, 0), Quaternion.Euler(90, 0, 0));
             _state = GeneralFlag.GeneralState.UnderGoing;
 
             InitPaintProcedure();
