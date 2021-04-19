@@ -20,7 +20,7 @@ namespace Hsinpa.App {
         private Transform targetModel;
 
         [SerializeField]
-        private Transform brushObject;
+        private Hsinpa.View.ToolItemSwitcher toolSwitcher;
 
         RaycastHit[] m_Results = new RaycastHit[1];
 
@@ -43,6 +43,8 @@ namespace Hsinpa.App {
             drawToTexture.SetUp(targetMaterial);
             toolCount = _toolSRP.tools.Length;
             toolIndex = -1;
+
+            toolSwitcher.HideAll();
         }
 
         private void Update()
@@ -63,11 +65,11 @@ namespace Hsinpa.App {
                 {
                     drawToTexture.DrawOnMesh(m_Results[0].textureCoord, _toolSRP.tools[toolIndex].mask_color);
 
-                    brushObject.gameObject.SetActive(true);
-                    brushObject.transform.position = m_Results[0].point;
+                    toolSwitcher.gameObject.SetActive(true);
+                    toolSwitcher.transform.position = m_Results[0].point;
                 }
                 else {
-                    brushObject.gameObject.SetActive(false);
+                    toolSwitcher.gameObject.SetActive(false);
                 }
 
                 if (recordCompleteTime < Time.time) {
@@ -97,7 +99,7 @@ namespace Hsinpa.App {
             if (OnTargetDirtIsClear != null) {
                 OnTargetDirtIsClear(dirtIsClear);
             }
-            Debug.LogError("Color Score " + colorScore +", pass " + (dirtIsClear));
+            Debug.Log("Color Score " + colorScore +", pass " + (dirtIsClear));
         }
 
         private void CheckIfToolIsPick() {
@@ -137,6 +139,8 @@ namespace Hsinpa.App {
             _hintState = HintState.None;
             drawToTexture.SetPaintColor(_toolSRP.tools[toolIndex].mask_color);
 
+            toolSwitcher.EnableTool((int)toolEnum);
+
             return _toolSRP.tools[toolIndex];
         }
 
@@ -144,7 +148,7 @@ namespace Hsinpa.App {
             toolIndex = -1;
             _hintState = HintState.None;
             drawToTexture.EnableColorHint( HintState.None );
-            brushObject.gameObject.SetActive(false);
+            toolSwitcher.HideAll();
         }
 
         public void ResetPaint() {

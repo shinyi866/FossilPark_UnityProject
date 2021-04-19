@@ -15,6 +15,8 @@
         _ColorHintPower ("Color Hint Power", Range(0, 1)) = 0
         _ColorHint ("ColorHint", Color) = (0,0,0,1)
 
+        _LightIntensity ("Light Intensity", Range(1, 3)) = 1
+
         [MaterialToggle] _OverrideColor ("Override Color", Float) = 0
     }
     SubShader
@@ -60,6 +62,7 @@
             float4 _Color;
             float4 _ColorHint;
             float _ColorHintPower;
+            float _LightIntensity;
 
             uniform float _OverrideColor;
 
@@ -143,7 +146,7 @@
                 
                 col = lerp(col , dirtEffect, _DirtTransition);
                 
-                col *= _LightColor0;
+                col *= (_LightColor0 * _LightIntensity);
 
                 return col;
             }
