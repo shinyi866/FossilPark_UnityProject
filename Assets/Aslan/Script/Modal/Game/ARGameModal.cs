@@ -100,7 +100,7 @@ namespace View
         public void ShowPrompt(int index, TypeFlag.ARGameType type)
         {
             var gameData = data.m_Data[index];
-            CloseAllPanel();
+            //CloseAllPanel();
 
             switch (type)
             {

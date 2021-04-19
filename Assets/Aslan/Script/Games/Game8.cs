@@ -37,36 +37,37 @@ namespace GameMission
         private int currentIndex = 0;
         private float ccidWeight = 0.0f;
         private bool isGameStart;
-        private bool startCompass;
 
         private GameObject currentDinosaurl;
         private GameObject showARfood;
         private ARGameModal modal;
-        private GameObject placeObject;
+        private ARPlane placeObject;
         private TypeFlag.DinosaurlsType dinosaurlsType;        
 
         public void Init()
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
             planeManager.enabled = true;
-            planeManager.planesChanged += PlaneChange;
+            Object.transform.rotation = Compass.Instance.transform.rotation;
+            //planeManager.planesChanged += PlaneChange;
 
             foreach (var b in dinosaurlScenes) { b.SetActive(false); }
 
             // setup all game objects in dictionary
-            foreach (GameObject food in foodGameObject)
+            for(int i = 0; i < foodGameObject.Length; i++)
             {
-                GameObject newARObject = Instantiate(food, Vector3.zero, Quaternion.identity);
-                newARObject.name = food.name;
-                arObjects.Add(food.name, newARObject);
+                GameObject newARObject = Instantiate(foodGameObject[i], Vector3.zero, Quaternion.identity);
+                newARObject.name = foodGameObject[i].name;
+                arObjects.Add(foodGameObject[i].name, newARObject);
                 newARObject.SetActive(false);
+
+                dinosaurs[i].GetComponent<CCDIK>().solver.target = newARObject.transform; // set dinosaurl eat food
             }
 
             modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game8);
 
             ButtonSetUp();
-            InitializeCompass();
         }
 
         public void GameStart()
@@ -75,18 +76,7 @@ namespace GameMission
             isGameStart = true;
         }
 
-        private void InitializeCompass()
-        {
-            Input.compass.enabled = true;
-            Input.location.Start();
-            StartCoroutine(InitializeCheck());
-        }
-
-        private IEnumerator InitializeCheck()
-        {
-            yield return new WaitForSeconds(1f);
-            startCompass = Input.compass.enabled;
-        }
+        
 
         private void ButtonSetUp()
         {
@@ -107,17 +97,18 @@ namespace GameMission
             foreach (var o in dinosaurlScenes) { o.SetActive(false); }
             foreach (var b in foodButton) { b.interactable = true; }
 
-            if (currentDinosaurl != null)
-                Destroy(currentDinosaurl);
+            //if (currentDinosaurl != null)
+            //    Destroy(currentDinosaurl);
 
-            currentDinosaurl = Instantiate(dinosaurs[index]);
-            currentDinosaurl.transform.SetParent(dinosaurlScenes[index].transform);
+            currentDinosaurl = dinosaurs[index]; // Instantiate(dinosaurs[index]);
+            //currentDinosaurl.transform.SetParent(dinosaurlScenes[index].transform);
 
-            if(TestMode) dinosaurlScenes[currentIndex].SetActive(true);
+            dinosaurlScenes[currentIndex].SetActive(true);
 
             foodButton[index].interactable = false;
 
             isEat = false;
+            //placeObject = null;
         }
 
         // AR Plane Track
@@ -130,8 +121,9 @@ namespace GameMission
                 ARPlane aRPlane = args.added[0];
                 txt1.text = "1aRPlane " + aRPlane.transform.position;
 
+                placeObject = aRPlane;
                 dinosaurlScenes[currentIndex].SetActive(true);
-                currentDinosaurl.transform.position = new Vector3(currentDinosaurl.transform.position.x, aRPlane.transform.position.y, currentDinosaurl.transform.position.z);                               
+                currentDinosaurl.transform.position = new Vector3(currentDinosaurl.transform.position.x, aRPlane.transform.position.y-1, currentDinosaurl.transform.position.z);                               
             }
             else
             {
@@ -230,10 +222,10 @@ namespace GameMission
             }
             else
             {
-                if(showARfood != null && resetEatFood && CheckFoodDinosaurls(currentImageName))
+                if(showARfood != null && resetEatFood)// && CheckFoodDinosaurls(currentImageName))
                 {
                     arToFood = showARfood.transform.position - currentDinosaurl.transform.position;
-                    currentDinosaurl.GetComponent<CCDIK>().solver.target = showARfood.transform;
+                    //currentDinosaurl.GetComponent<CCDIK>().solver.target = showARfood.transform;
                     Vector3 lookAtTarget = new Vector3(arToFood.x, currentDinosaurl.transform.position.y, arToFood.z);
                     currentDinosaurl.transform.LookAt(lookAtTarget);
                     dotResult = Vector3.Dot(forward, arToFood);
@@ -332,15 +324,7 @@ namespace GameMission
 
         private void LateUpdate()
         {
-            if(TestMode)
-            {
-                if (!isGameStart) return;
-            }
-            else
-            {
-                if (!isGameStart && !startCompass) return;
-            }
-            
+            if (!isGameStart) return;
 
             _camera.transform.rotation = Quaternion.Euler(_camera.transform.rotation.eulerAngles.x, Input.compass.trueHeading, _camera.transform.rotation.eulerAngles.z);
             txt2.text = $"_camera.transform.rotation: {_camera.transform.rotation}, headingAccuracy: {Input.compass.headingAccuracy},  magneticHeading: {Input.compass.magneticHeading},  rawVector: {Input.compass.rawVector},  timestamp: {Input.compass.timestamp}, trueHeading: {Input.compass.trueHeading}";            

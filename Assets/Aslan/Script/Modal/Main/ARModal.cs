@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using GameMission;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.ARFoundation;
 
 namespace View
 {
@@ -39,6 +40,9 @@ namespace View
         private Texture2D currentImage;
         private Button PictureButton;
 
+        [SerializeField]
+        private ARPlaneManager planeManager;
+
         // switch game AR view and main AR view
         public void ShowView(bool isMainView)
         {
@@ -69,6 +73,8 @@ namespace View
                 SavePhotoPanel(false);
                 ClosePicturePanel(false);
                 Modals.instance.CloseARInMain();
+                iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon???
+                CloseARPlane();
                 //SaveImage();
             });
 
@@ -81,6 +87,7 @@ namespace View
                 Modals.instance.CloseARInGame();
 
                 iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon
+                CloseARPlane();
                 //Modals.instance.CloseModal();
                 //GameModals.instance.CloseModal();
 
@@ -89,6 +96,16 @@ namespace View
             });
 
             ExitButton.onClick.AddListener(() => { SavePhotoPanel(false); });
+        }
+
+        private void CloseARPlane()
+        {
+            planeManager.enabled = false;
+
+            foreach(ARPlane aRPlane in planeManager.trackables)
+            {
+                aRPlane.gameObject.SetActive(false);
+            }
         }
 
         private void TakePicture()

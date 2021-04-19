@@ -32,6 +32,7 @@ public class FossilClass : MonoBehaviour
 
     private int missionIndex = 2;
     private int currentID;
+    private bool isGameStart;
     private ARGameModal modal;
     public System.Action<bool> gameOverEvent;
 
@@ -39,19 +40,22 @@ public class FossilClass : MonoBehaviour
     {
         _camera = CameraCtrl.instance.GetCurrentCamera();
         dt = image.transform.Find("Text").GetComponent<Text>();
-
+        isGameStart = true;
         modal = GameModals.instance.GetModal<ARGameModal>();
     }
 
     private void GameResult(bool isSuccess)
     {
-        if (gameOverEvent != null)
+        isGameStart = false;
+
+        if (gameOverEvent != null)            
             gameOverEvent(isSuccess);
     }
 
     void FixedUpdate()
     {
-        
+        if (!isGameStart) return;
+
         if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 15, HitLayer))
         {
             image.SetActive(true);

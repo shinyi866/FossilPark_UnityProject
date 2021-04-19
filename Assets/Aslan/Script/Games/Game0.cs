@@ -54,6 +54,7 @@ namespace GameMission
 
                 _cameraFront.y = 0;
                 ClockObject.transform.position = _camera.transform.position + _frontPos;
+                ClockObject.transform.rotation = Quaternion.LookRotation(_cameraFront);
             }
         }
     }

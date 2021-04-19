@@ -241,8 +241,8 @@ MonoBehaviour:
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
-    endPicutre: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
-    endPicutre2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    endPicutre: {fileID: 21300000, guid: 09478aa6aa03840e98e331e030009097, type: 3}
+    endPicutre2: {fileID: 21300000, guid: 5b421416bca924f5eb68ad8a4c5ea762, type: 3}
   - missionID: 7
     roundMessage:
     - "\u767C\u73FE\u8E64\u8DE1"
@@ -307,7 +307,7 @@ MonoBehaviour:
     - "\u7559\u4E0B\u7F8E\u597D\u7684\u7D00\u5FF5\uFF01"
     endMessage: []
     pictureNotify: 
-    animalDialogPicture: {fileID: 21300000, guid: 088cdb012e74645f29ad7629442dfb8e,
+    animalDialogPicture: {fileID: 21300000, guid: 9e2527c75c5da43768c771c1849bf49c,
       type: 3}
     animalNotifyPicture: {fileID: 0}
     guidePicture1: {fileID: 0}

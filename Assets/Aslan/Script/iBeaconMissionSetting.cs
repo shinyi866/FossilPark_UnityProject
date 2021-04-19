@@ -125,7 +125,7 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 }
 
 [System.Serializable]
-public struct MissionRange
+public class MissionRange
 {
 	public double minRange;
 	public double maxRange;

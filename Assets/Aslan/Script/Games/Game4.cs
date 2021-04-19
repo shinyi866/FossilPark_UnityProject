@@ -58,7 +58,7 @@ namespace GameMission
         private Camera _camera;
 
         private string videoPath = "Video/shale.mp4";
-        private string successVidePath = "Video/ele.mp4";
+        private string successVidePath = "Video/dolphin360.mp4";
 
         public void Init()
         {
