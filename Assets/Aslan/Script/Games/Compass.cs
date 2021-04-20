@@ -31,7 +31,7 @@ public class Compass : Singleton<Compass>
     {
         if (!startCompass) return;
 
-        transform.eulerAngles = new Vector3(0, (_camera.transform.rotation.eulerAngles.y - Input.compass.magneticHeading), 0);
+        transform.eulerAngles = new Vector3(0, (_camera.transform.rotation.eulerAngles.y - (float)ARLocation.ARLocationProvider.Instance.CurrentHeading.heading), 0);
         //text.text = $"_camera.transform.rotation: {_camera.transform.rotation}, headingAccuracy: {Input.compass.magneticHeading}";
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AnimalItemObj
   m_EditorClassIdentifier: 
   AnimalItems:
-  - MainImage: {fileID: 21300000, guid: 4b950162f0a144e00a113db06816d874, type: 3}
+  - MainImage: {fileID: 21300000, guid: f6f9a52da73e2468e82dd93769a04e90, type: 3}
     NameImage: {fileID: 21300000, guid: 577a8c9dd138e4bb3995ff800aee28e9, type: 3}
     text: 000000
   - MainImage: {fileID: 21300000, guid: 3facd46c94489479a954fad7b3fbe529, type: 3}
