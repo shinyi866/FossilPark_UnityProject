@@ -42,6 +42,8 @@ namespace Hsinpa.Ctrl
 
         public System.Action<bool> OnEndGameEvent;
 
+        private Vector3 offsetRotation = Vector3.zero;
+
         public override void OnNotify(string p_event, params object[] p_objects)
         {
             switch (p_event)
@@ -54,8 +56,8 @@ namespace Hsinpa.Ctrl
 
                 case EventFlag.Event.OnCrocodileARMode_PlaneAR:
                     {
-                        PerformPlaneARAction();
-
+                        CheckAndProcessWithCompassAR(0);
+                        //PerformPlaneARAction();
                     }
                     break;
 
@@ -77,14 +79,15 @@ namespace Hsinpa.Ctrl
             crocodileTargetTimelineAnim.SetUp(OnPlaneARReadyClick);
         }
 
-        public void EnterGame()
+        public void EnterGame(float yRotationOffset)
         {
             OpenHintUIModal(TypeFlag.ARGameType.GamePrompt1);
 
             _paintingManager.ResetPaint();
             if (_arEnable)
             {
-                PerformPlaneARAction();
+                CheckAndProcessWithCompassAR(yRotationOffset);
+                //PerformPlaneARAction();
             }
             else
             {
@@ -106,6 +109,32 @@ namespace Hsinpa.Ctrl
             InitPaintProcedure();
         }
 
+        private void CheckAndProcessWithCompassAR(float yRotationOffset) {
+            try {
+                var forwardDir = _arHelper.arCamera.transform.forward;
+                forwardDir.y = -1;
+                forwardDir *= 0.3f;
+                //Quaternion.FromToRotation(Compass.Instance.transform.rotation, offsetRotation)
+
+                crocodileTargetTimelineAnim.transform.position = _arHelper.arCamera.transform.position + forwardDir;
+
+                //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
+                var faceDir = Compass.Instance.transform.rotation.eulerAngles;
+                faceDir.y += yRotationOffset;
+                faceDir.x = 0;
+                faceDir.z = 0;
+
+                crocodileTargetTimelineAnim.transform.rotation = Quaternion.Euler(faceDir);
+
+                OnPlaneARReadyClick();
+
+            }
+            catch
+            {
+                PerformPlaneARAction();
+            }
+        }
+
         private void PerformPlaneARAction()
         {
             Debug.Log("Croco PerformPlaneARAction");
@@ -122,6 +151,7 @@ namespace Hsinpa.Ctrl
         {
             _arHelper.AcitvateARPlane(false);
             crocodileTargetTimelineAnim.ShowConfirmBtn(false);
+
 
             _state = GeneralFlag.GeneralState.UnderGoing;
             InitPaintProcedure();
