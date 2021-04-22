@@ -110,29 +110,34 @@ namespace Hsinpa.Ctrl
         }
 
         private void CheckAndProcessWithCompassAR(float yRotationOffset) {
+            _arHelper.ActivateAR(true);
+
+            crocodileTargetTimelineAnim.gameObject.SetActive(true);
+
             try {
                 var forwardDir = _arHelper.arCamera.transform.forward;
-                forwardDir.y = -1;
-                forwardDir *= 0.3f;
-                //Quaternion.FromToRotation(Compass.Instance.transform.rotation, offsetRotation)
+                    forwardDir.y = -1;
+                    forwardDir *= 0.3f;
+                    //Quaternion.FromToRotation(Compass.Instance.transform.rotation, offsetRotation)
 
-                crocodileTargetTimelineAnim.transform.position = _arHelper.arCamera.transform.position + forwardDir;
+                    crocodileTargetTimelineAnim.transform.position = _arHelper.arCamera.transform.position + forwardDir;
 
-                //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
-                var faceDir = Compass.Instance.transform.rotation.eulerAngles;
-                faceDir.y += yRotationOffset;
-                faceDir.x = 0;
-                faceDir.z = 0;
+                    //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
+                    var faceDir = Compass.Instance.transform.rotation.eulerAngles;
+                    faceDir.y += yRotationOffset;
+                    faceDir.x = 0;
+                    faceDir.z = 0;
 
-                crocodileTargetTimelineAnim.transform.rotation = Quaternion.Euler(faceDir);
+                    crocodileTargetTimelineAnim.transform.rotation = Quaternion.Euler(faceDir);
 
-                OnPlaneARReadyClick();
+                    OnPlaneARReadyClick();
+                }
+                catch (System.Exception e)
+                {
+                    Debug.Log("Exception " + e.Message);
 
-            }
-            catch
-            {
-                PerformPlaneARAction();
-            }
+                    PerformPlaneARAction();
+                }
         }
 
         private void PerformPlaneARAction()
@@ -141,7 +146,7 @@ namespace Hsinpa.Ctrl
             crocodileTargetTimelineAnim.gameObject.SetActive(true);
             crocodileTargetTimelineAnim.transform.position = new Vector3(1000, 1000, 100);
             crocodileTargetTimelineAnim.ShowConfirmBtn(true);
-            _arHelper.ActivateAR(true);
+            //_arHelper.ActivateAR(true);
             _arHelper.AcitvateARPlane(true);
 
             _state = GeneralFlag.GeneralState.Preparation;
