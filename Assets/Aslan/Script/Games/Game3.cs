@@ -13,7 +13,8 @@ namespace GameMission
         public GameObject[] fruitPrefabs;
         public GameObject throwPosition;
         public GameObject handBall;
-        public GameObject monkey;        
+        public GameObject monkey;
+        public GameObject monkeyScene;
 
         public System.Action<bool> gameOverEvent;
         private int missionIndex = 3;
@@ -31,6 +32,7 @@ namespace GameMission
         private int fruit = 5;
         private int count;
         private int currentFruitIndex;
+        private float time = 3;
         private GameObject _ball;
         private GameObject currentBall;
 
@@ -51,15 +53,17 @@ namespace GameMission
             _camera = CameraCtrl.instance.GetCurrentCamera();
             monleyAnimator = monkey.GetComponent<Animator>();
             playableDirector = monkey.GetComponent<PlayableDirector>();
+            monkeyScene.transform.rotation = Compass.Instance.transform.rotation;
 
             count = fruit;
             leftButton = gameModal.game3Panel.leftButton;
             rightButton = gameModal.game3Panel.rightButton;
-
+            /*
             var _cameraFront = _camera.transform.forward;
             _cameraFront.y = -0.8f;
             _cameraFront.z = 1f;
             basket.transform.position = _camera.transform.position + _cameraFront;
+            */
         }
 
         public void GameStart()
@@ -79,6 +83,16 @@ namespace GameMission
                 isUnARStart = true;
 
                 UnsupportAR();
+            }
+        }
+
+        private void ResetDirection()
+        {
+            if (time > 0)
+            {
+                Object.transform.rotation = Compass.Instance.transform.rotation;
+                //basket.transform.rotation = Compass.Instance.transform.rotation;
+                time -= Time.deltaTime;
             }
         }
 
@@ -102,6 +116,7 @@ namespace GameMission
         {
             if (!isGameStart) return;
 
+            ResetDirection();
             gameModal.game3Panel.text.text = CatchFruit.fruitCount.ToString();// "接到果子數： " + CatchFruit.fruitCount.ToString();
 
             if (TriggerFruitPlane.fruitTouchPlane == fruit)

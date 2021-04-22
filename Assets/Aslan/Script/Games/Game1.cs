@@ -14,6 +14,7 @@ namespace GameMission
         public System.Action gameOverEvent;
 
         private int missionIndex = 1;
+        private float time = 3;
         //private Camera _camera;
         private bool isGameStart;
         private bool isVideoEnd;
@@ -28,6 +29,7 @@ namespace GameMission
         {
             Modals.instance.CloseAllModal();            
             GameModals.instance.OpenAR(); // Stop AR Camera rotate
+            Object.transform.rotation = Compass.Instance.transform.rotation;
             _camera = CameraCtrl.instance.GetCurrentCamera();
             modal = GameModals.instance.OpenModal<ARGameModal>();
             data = MainApp.Instance.database;
@@ -41,6 +43,15 @@ namespace GameMission
             MediaPlayerController.instance.LoadAndPlay2DVideoNotLoop(videoPath);
         }
 
+        private void ResetDirection()
+        {
+            if (time > 0)
+            {
+                Object.transform.rotation = Compass.Instance.transform.rotation;
+                time -= Time.deltaTime;
+            }
+        }
+
         private void GameResult()
         {
             if (gameOverEvent != null)
@@ -50,6 +61,8 @@ namespace GameMission
         private void Update()
         {
             if (!isGameStart) return;
+
+            ResetDirection();
 
             if (MediaPlayerController.instance.isVideoFinish() && !isVideoEnd)
             {

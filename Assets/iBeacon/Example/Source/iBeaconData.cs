@@ -273,58 +273,6 @@ public class iBeaconData : MonoBehaviour
 		iBeaconMissionSetting.Instance.MissionSearch(mybeacons);
 	}
 
-    private void ThreePoint()
-    {
-		if (_mybeacons.Count != 3) return;
-
-		double D1 = 0;
-		double D2 = 0;
-		double D3 = 0;
-
-        foreach(Beacon b in _mybeacons)
-        {
-            if (b.minor == 0) { D1 = b.accuracy; }
-			if (b.minor == 1) { D2 = b.accuracy; }
-			if (b.minor == 2) { D3 = b.accuracy; }
-		}
-
-		var point = ThreePointMethod.Main(D1, D2, D3);
-		pointText.text = string.Format("(x,y) = ({0}, {1})", point.X, point.Y);
-		dText.text = string.Format("D1: {0}, D2: {1}, D3: {2}", D1, D2, D3);
-	}
-
-	/* search mission 
-	private void MissionSearch()
-	{
-		var beacons = iBeaconData.mybeacons;
-		
-		if (beacons == null) return;
-
-		foreach (Beacon b in beacons)
-		{
-			int mission = b.minor;
-
-            if(mission == 4)
-            {
-
-            }
-
-			if (b.accuracy < 2)
-			{
-				GameMissions.instance.ShowMission(mission);
-			}
-			else if (b.accuracy > 2 && b.accuracy < 5)
-			{
-				GameModals.instance.RoundNotify(mission);
-			}
-			else
-			{
-				GameModals.instance.CloseModal();
-			}
-
-		}
-	}
-    */
 	private void DisplayOnBeaconFound()
     {
 		removeFoundBeacons();
@@ -360,7 +308,7 @@ public class iBeaconData : MonoBehaviour
 				Texts[1].text = "Major:" + b.major.ToString();
 				Texts[2].text = "Minor:" + b.minor.ToString();
 				Texts[3].text = "Strength:" + b.strength.ToString() + " db";
-				Texts[4].text = "Accuracy:" + b.accuracy.ToString().Substring(0, 10) + " m";
+				if (b.accuracy >= 0) { Texts[4].text = "Accuracy:" + b.accuracy.ToString().Substring(0, 10) + " m"; }
 				Texts[5].text = "Rssi:" + b.rssi.ToString() + " db";
 				Debug.Log("found Beacon rssi: " + b.rssi.ToString() + " db");
 			}
@@ -370,8 +318,6 @@ public class iBeaconData : MonoBehaviour
 				Debug.Log("Find iBeacon Error");
             }
 		}
-
-		//ThreePoint(); error?
 	}
 
 	private void removeFoundBeacons()

@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class Compass : Singleton<Compass>
 {
-    private bool startCompass;
+    [SerializeField]
+    private Text text;
+    [SerializeField]
     private Camera _camera;
+
+    private bool startCompass;
 
     void Start()
     {
-        _camera = CameraCtrl.instance.GetCurrentCamera(); 
+        //_camera = CameraCtrl.instance.GetCurrentCamera(); 
         InitializeCompass();
     }
 
@@ -30,8 +34,10 @@ public class Compass : Singleton<Compass>
     void Update()
     {
         if (!startCompass) return;
+        if (_camera.gameObject.activeInHierarchy == false) return;
 
         transform.eulerAngles = new Vector3(0, (_camera.transform.rotation.eulerAngles.y - (float)ARLocation.ARLocationProvider.Instance.CurrentHeading.heading), 0);
-        //text.text = $"_camera.transform.rotation: {_camera.transform.rotation}, headingAccuracy: {Input.compass.magneticHeading}";
+        var r = Quaternion.Euler(0, 0, (float)ARLocation.ARLocationProvider.Instance.CurrentHeading.heading);
+        text.text = $"transform.eulerAngles: {transform.eulerAngles}, _camera.transform.rotation: {_camera.transform.rotation.eulerAngles.y}, r: {r}, CurrentHeading.heading: {(float)ARLocation.ARLocationProvider.Instance.CurrentHeading.heading}";
     }
 }

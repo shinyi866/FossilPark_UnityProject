@@ -50,10 +50,12 @@ namespace GameMission
             if(!placeClock)
             {
                 var _cameraFront = _camera.transform.forward;
+                var _cameraUp = _camera.transform.up;
                 var _frontPos = _cameraFront * 3;
+                var _downPos = _cameraUp * -0.5f;
 
-                _cameraFront.y = 0;
-                ClockObject.transform.position = _camera.transform.position + _frontPos;
+                //_cameraFront.y = 0;
+                ClockObject.transform.position = _camera.transform.position + _frontPos + _downPos;
                 ClockObject.transform.rotation = Quaternion.LookRotation(_cameraFront);
             }
         }

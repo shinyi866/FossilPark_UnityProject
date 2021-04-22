@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameMission;
 using View;
+using System;
 
 public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 {
@@ -34,6 +35,7 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
                 if(mission == i)
                 {
                     if (ranges[i].minRange < 0 && ranges[i].maxRange < 0) return;
+                    if (b.accuracy < 0) return;
 
                     if (b.accuracy < ranges[i].minRange)
 					{
@@ -87,7 +89,7 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
                 {
                     Text[] Texts = cloneTransform[i].GetComponentsInChildren<Text>();
                     Texts[1].text = "Min: " + ranges[j].minRange;
-                    Texts[2].text = "Min: " + ranges[j].maxRange;
+                    Texts[2].text = "Max: " + ranges[j].maxRange;
                 }
             }
         }
@@ -103,15 +105,16 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 
                 if (i == j && !string.IsNullOrEmpty(inputValue[0].text) && !string.IsNullOrEmpty(inputValue[1].text))
                 {
-                    ranges[i].minRange = double.Parse(inputValue[0].text);
-                    ranges[i].maxRange = double.Parse(inputValue[1].text);
-                }
+                    ranges[i].minRange = Convert.ToDouble(inputValue[0].text);
+                    ranges[i].maxRange = Convert.ToDouble(inputValue[1].text);
 
-                RefreshValue();
-                inputValue[0].text = null;
-                inputValue[1].text = null;
+                    inputValue[0].text = null;
+                    inputValue[1].text = null;
+                }
             }
         }
+
+        RefreshValue();
     }
 
     public void IBeaconNotDetect(int index)

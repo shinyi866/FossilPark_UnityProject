@@ -25,27 +25,17 @@ namespace GameMission
 
         private bool isARGameStart;
         private bool isUnARGameStart;
+        private bool isGameStart;
         private int successTimes;
+        private float time = 3;
         //private Camera _camera;
         private GameObject placeObject;
         private ARGameModal modal;
 
         public void Init()
         {
-            //_camera = CameraCtrl.instance.GetCurrentCamera();
-            //placeObject = Instantiate(riverObject);
-            /*
-            placeObject = Instantiate(riverObject);
-            var frontPos = _camera.transform.forward * 3;
-            placeObject.transform.SetParent(this.transform);
-            placeObject.transform.position = new Vector3(riverObject.transform.position.x, 0, frontPos.z);
-            */
-            if (!TestMode) return;
-
-            riverObject.SetActive(false);
-            Object.transform.rotation = Compass.Instance.transform.rotation;
-            //placeObject = Instantiate(riverObject);
-        }        
+            isGameStart = true;
+        }
 
         public void GameStart(bool isARsupport)
         {
@@ -62,6 +52,15 @@ namespace GameMission
                 //UnsupportAR();
             }
 
+        }
+
+        private void ResetDirection()
+        {
+            if(time > 0)
+            {
+                Object.transform.rotation = Compass.Instance.transform.rotation;
+                time -= Time.deltaTime;
+            }
         }
 
         private void SupportAR()
@@ -110,6 +109,10 @@ namespace GameMission
         
         private void Update()
         {
+            if (!isGameStart) return;
+
+            ResetDirection();
+
             if (isARGameStart)
             {
                 isARGameStart = false;

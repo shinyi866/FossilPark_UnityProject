@@ -15,7 +15,8 @@ MonoBehaviour:
   m_Data:
   - missionID: 0
     roundMessage:
-    - "\u9644\u8FD1\u4F3C\u4E4E\u6709\u6642\u5149\u6A5F\u5668\uFF0C\u8D95\u7DCA\u627E\u627E\u770B\u5427\uFF01"
+    - "\u767C\u73FE\u8E64\u8DE1"
+    - "\u9644\u8FD1\u4F3C\u4E4E\u6709\u9006\u8D70\u9418\uFF0C\u8D95\u7DCA\u627E\u627E\u770B\u5427\uFF01"
     enterMessage: "\u524D\u65B9\u5C31\u662F\u6211\u5011\u770B\u5230\u7684\u5C31\u662F\u9006\u8D70\u9418\u6642\u5149\u6A5F\uFF01\u5B83\u662F\u5F88\u53B2\u5BB3\u7684\u6642\u5149\u6A5F\uFF01\u5FEB\u53BB\u8DDF\u4ED6\u62CD\u7167\u5427\uFF01"
     enterButton: "\u9AD4\u9A57\u958B\u59CB"
     gameDescription: "\u8ACB\u5C07\u5713\u5F62\u5C0D\u6E96\u6B63\u4E2D\u592E\u7684\u9006\u8D70\u9418\u5F8C\u6309\u4E0B"
@@ -37,18 +38,18 @@ MonoBehaviour:
       type: 3}
     guidePicture1: {fileID: 21300000, guid: a6d56647d544f493aa27c0f186044cea, type: 3}
     guidePicture2: {fileID: 21300000, guid: 6e177b292fb1946c384505647f0bfdc1, type: 3}
-    ARmark: {fileID: 0}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}
   - missionID: 1
     roundMessage:
+    - "\u767C\u73FE\u8E64\u8DE1"
     - "\u9644\u8FD1\u4F3C\u4E4E\u6709\u6642\u5149\u6A5F\u5668\uFF0C\u8D95\u7DCA\u627E\u627E\u770B\u5427\uFF01"
-    enterMessage: 
+    enterMessage: "\u9019\u5C31\u662F\u6642\u5149\u6A5F\u5668\uFF01\u5FEB\u4E0A\u53BB\u770B\u770B\uFF01"
     enterButton: "\u5E36\u56DE\u7BA1\u7406\u54E1"
-    gameDescription: "\u9019\u5C31\u662F\u9006\u8D70\u6642\u9418\uFF01\u5FEB\u4E0A\u53BB\u770B\u770B\uFF01"
+    gameDescription: "\u9019\u5C31\u662F\u6642\u5149\u6A5F\u5668\uFF01\u5FEB\u4E0A\u53BB\u770B\u770B\uFF01"
     gameTitle:
     - "\u6642\u5149\u6A5F\u5668"
-    - "\u9019\u5C31\u662F\u9006\u8D70\u6642\u9418\uFF01\u5FEB\u4E0A\u53BB\u770B\u770B\uFF01"
+    - "\u9019\u5C31\u662F\u6642\u5149\u6A5F\u5668\uFF01\u5FEB\u4E0A\u53BB\u770B\u770B\uFF01"
     titleButton: "\u524D\u5F80\u89C0\u770B"
     guideID: 0
     gameGuide:
@@ -67,7 +68,6 @@ MonoBehaviour:
       type: 3}
     guidePicture1: {fileID: 21300000, guid: a6d56647d544f493aa27c0f186044cea, type: 3}
     guidePicture2: {fileID: 21300000, guid: 6e177b292fb1946c384505647f0bfdc1, type: 3}
-    ARmark: {fileID: 0}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}
   - missionID: 2
@@ -103,7 +103,6 @@ MonoBehaviour:
       type: 3}
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
-    ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}
   - missionID: 3
@@ -134,7 +133,6 @@ MonoBehaviour:
       type: 3}
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 0}
-    ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}
   - missionID: 4
@@ -168,7 +166,6 @@ MonoBehaviour:
       type: 3}
     guidePicture1: {fileID: 21300000, guid: a5284a7c6b38c4d20964bce20e20d5a5, type: 3}
     guidePicture2: {fileID: 21300000, guid: 5e18229dc673e414c8e05de99571b9e8, type: 3}
-    ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     endPicutre: {fileID: 21300000, guid: 3b1275bc9258041f1b9fdb134ac2a5f8, type: 3}
     endPicutre2: {fileID: 21300000, guid: 55230049bea14436faccdc0992413902, type: 3}
   - missionID: 5
@@ -199,11 +196,10 @@ MonoBehaviour:
     pictureNotify: "\u62CD\u7167"
     animalDialogPicture: {fileID: 21300000, guid: c8e9d4d5ff280458f99442f5f1e3c19f,
       type: 3}
-    animalNotifyPicture: {fileID: 21300000, guid: cc7c3e4af88a54caabfb5b2a64e76f64,
+    animalNotifyPicture: {fileID: 21300000, guid: 7e9963564df53418c9fbd21cc081a2e5,
       type: 3}
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
-    ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     endPicutre: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     endPicutre2: {fileID: 0}
   - missionID: 6
@@ -236,11 +232,10 @@ MonoBehaviour:
     pictureNotify: "\u62CD\u7167"
     animalDialogPicture: {fileID: 21300000, guid: c4e38cb9ad1ac44df85347a94a43c90d,
       type: 3}
-    animalNotifyPicture: {fileID: 21300000, guid: 7e9963564df53418c9fbd21cc081a2e5,
+    animalNotifyPicture: {fileID: 21300000, guid: ddc49c32ded8142a592c1d919bbc07d0,
       type: 3}
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
-    ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     endPicutre: {fileID: 21300000, guid: 09478aa6aa03840e98e331e030009097, type: 3}
     endPicutre2: {fileID: 21300000, guid: 5b421416bca924f5eb68ad8a4c5ea762, type: 3}
   - missionID: 7
@@ -280,11 +275,10 @@ MonoBehaviour:
     pictureNotify: "\u62CD\u7167"
     animalDialogPicture: {fileID: 21300000, guid: 0c499eb7a35a64fa38c49b0027296b84,
       type: 3}
-    animalNotifyPicture: {fileID: 21300000, guid: ddc49c32ded8142a592c1d919bbc07d0,
+    animalNotifyPicture: {fileID: 21300000, guid: cc7c3e4af88a54caabfb5b2a64e76f64,
       type: 3}
     guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     guidePicture2: {fileID: 0}
-    ARmark: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}
   - missionID: 8
@@ -312,6 +306,5 @@ MonoBehaviour:
     animalNotifyPicture: {fileID: 0}
     guidePicture1: {fileID: 0}
     guidePicture2: {fileID: 0}
-    ARmark: {fileID: 0}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}

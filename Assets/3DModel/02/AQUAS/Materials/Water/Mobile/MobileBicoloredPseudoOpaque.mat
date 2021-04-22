@@ -81,16 +81,16 @@ Material:
     - _FoamSpeed: -120
     - _FoamTiling: 300
     - _FoamVisibility: 0.227
-    - _Gloss: 0.47
+    - _Gloss: 0.38
     - _Glossiness: 0.5
-    - _LightWrapping: 2
+    - _LightWrapping: 1.97
     - _Metallic: 0
     - _Mode: 0
     - _NormalTiling: 235.97
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Reflectionintensity: 0.14
-    - _Refraction: 0.573
+    - _Refraction: 0.9
     - _ShallowDeepBlend: 5.3
     - _ShoreFade: 0.33
     - _ShoreTransparency: 0.5
@@ -98,7 +98,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _UseReflections: 1
-    - _WaveSpeed: 120
+    - _WaveSpeed: 60
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
