@@ -123,28 +123,36 @@ namespace Hsinpa.Ctrl {
         private void CheckAndProcessWithCompassAR(float yRotationOffset)
         {
 
+            _arHelper.AcitvateARPlane(false);
+            _arHelper.ActivateAR(true);
+            _ = _lighthouseAnchorView.StartWatcher(GeneralFlag.MissionID.BoneRepairHome);
+            _rhinoBoneHelper.Clean();
+
+            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(1000, 500, 0), Quaternion.identity);
+            spawnRandomBoneTemplate = _rhinoBoneHelper.CreateBoneRandomSet(spawnCorrectBoneTemplate.transform.position, spawnCorrectBoneTemplate.transform.rotation);
+            
+            Initialization();
+
             try {
-
                 var forwardDir = _arHelper.arCamera.transform.forward;
-                forwardDir.y = -1;
-                forwardDir *= 0.3f;
-                //Quaternion.FromToRotation(Compass.Instance.transform.rotation, offsetRotation)
+                    forwardDir.y = -1;
+                    forwardDir *= 0.3f;
+                    //Quaternion.FromToRotation(Compass.Instance.transform.rotation, offsetRotation)
 
-                spawnCorrectBoneTemplate.transform.position = _arHelper.arCamera.transform.position + forwardDir;
+                    spawnCorrectBoneTemplate.transform.position = _arHelper.arCamera.transform.position + forwardDir;
+                    //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
+                    var faceDir = Compass.Instance.transform.rotation.eulerAngles;
+                    faceDir.y += yRotationOffset;
+                    faceDir.x = 0;
+                    faceDir.z = 0;
 
-                //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
-                var faceDir = Compass.Instance.transform.rotation.eulerAngles;
-                faceDir.y += yRotationOffset;
-                faceDir.x = 0;
-                faceDir.z = 0;
+                    spawnCorrectBoneTemplate.transform.rotation = Quaternion.Euler(faceDir);
 
-                spawnCorrectBoneTemplate.transform.rotation = Quaternion.Euler(faceDir);
-
-                OnPlaneARReadyClick();
-
-            }
-            catch 
+                    OnPlaneARReadyClick();
+                }
+            catch (System.Exception e)
             {
+                Debug.Log("Exception " + e.Message);
                 PerformPlaneARAction();
             }
         }
@@ -153,15 +161,6 @@ namespace Hsinpa.Ctrl {
         {
             Debug.Log("Rhino PerformPlaneARAction");
 
-            _arHelper.AcitvateARPlane(false);
-            _arHelper.ActivateAR(true);
-            _ = _lighthouseAnchorView.StartWatcher(GeneralFlag.MissionID.BoneRepairHome);
-            _rhinoBoneHelper.Clean();
-            
-            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(1000, 500, 0), Quaternion.identity);
-            spawnRandomBoneTemplate = _rhinoBoneHelper.CreateBoneRandomSet(spawnCorrectBoneTemplate.transform.position, spawnCorrectBoneTemplate.transform.rotation);
-
-            Initialization();
             _ = StartPlaneARIfAnchorNotFound(waitForSecondPlaneARActivate);
             _state = GeneralFlag.GeneralState.Preparation;
         }
