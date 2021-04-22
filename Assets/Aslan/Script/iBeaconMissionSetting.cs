@@ -14,8 +14,12 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
     private Transform container;
     [SerializeField]
     private Transform setTransform;
+    [SerializeField]
+    private Text text;
 
     private List<GameObject> cloneTransform = new List<GameObject>();
+    private Beacon minBeacon;
+    private double minDistance = Mathf.Infinity;
 
     public bool isEnterGame;
 
@@ -26,34 +30,39 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 	{
         if (mybeacons == null || isEnterGame) return;
 
-		foreach (Beacon b in mybeacons)
-		{
-			int mission = b.minor;
-
-            for(int i = 0; i < ranges.Length; i++)
+        foreach(Beacon b in mybeacons)
+        {
+            if (b.accuracy < minDistance && b.accuracy > 0)
             {
-                if(mission == i)
-                {
-                    if (ranges[i].minRange < 0 && ranges[i].maxRange < 0) return;
-                    if (b.accuracy < 0) return;
-
-                    if (b.accuracy < ranges[i].minRange)
-					{
-						GameMissions.instance.ShowMission(mission);
-					}
-					else if (b.accuracy > ranges[i].minRange && b.accuracy < ranges[i].maxRange)
-					{
-						GameModals.instance.RoundNotify(mission);
-                    }
-					else if(b.accuracy > ranges[i].maxRange)
-
-                    {
-						GameModals.instance.CloseModal();
-					}
-				}
+                minDistance = b.accuracy;
+                minBeacon = b;
             }
-		}
-	}
+        }
+        text.text = $"minDistance: {minBeacon.accuracy}, minIndex: {minBeacon.minor}";
+        for (int j = 0; j < ranges.Length; j++)
+        {
+            int mission = minBeacon.minor;
+
+            if (mission == j)
+            {
+                if (ranges[j].minRange < 0 && ranges[j].maxRange < 0) return;
+
+                if (minBeacon.accuracy < ranges[j].minRange)
+                {
+                    Handheld.Vibrate();
+                    GameMissions.instance.ShowMission(mission);
+                }
+                else if (minBeacon.accuracy > ranges[j].minRange && minBeacon.accuracy < ranges[j].maxRange)
+                {
+                    GameModals.instance.RoundNotify(mission);
+                }
+                else if (minBeacon.accuracy > ranges[j].maxRange)
+                {
+                    GameModals.instance.CloseModal();
+                }
+            }
+        }
+    }
 
     private void SetPosition()
     {

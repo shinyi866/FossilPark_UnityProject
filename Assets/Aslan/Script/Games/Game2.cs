@@ -28,13 +28,15 @@ namespace GameMission
         private bool isGameStart;
         private int successTimes;
         private float time = 3;
-        //private Camera _camera;
+        private Camera _camera;
         private GameObject placeObject;
         private ARGameModal modal;
 
         public void Init()
         {
             isGameStart = true;
+            _camera = CameraCtrl.instance.GetCurrentCamera();
+            _camera.transform.position = Compass.Instance.transform.position;
         }
 
         public void GameStart(bool isARsupport)

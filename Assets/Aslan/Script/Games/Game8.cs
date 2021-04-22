@@ -47,8 +47,9 @@ namespace GameMission
         public void Init()
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
-            planeManager.enabled = true;
+            _camera.transform.position = Compass.Instance.transform.position;            
             Object.transform.rotation = Compass.Instance.transform.rotation;
+            //planeManager.enabled = true;
             //planeManager.planesChanged += PlaneChange;
 
             foreach (var b in dinosaurlScenes) { b.SetActive(false); }

@@ -58,6 +58,10 @@ namespace GameMission
             count = fruit;
             leftButton = gameModal.game3Panel.leftButton;
             rightButton = gameModal.game3Panel.rightButton;
+
+            _camera = CameraCtrl.instance.GetCurrentCamera();
+            _camera.transform.position = Compass.Instance.transform.position;
+
             /*
             var _cameraFront = _camera.transform.forward;
             _cameraFront.y = -0.8f;

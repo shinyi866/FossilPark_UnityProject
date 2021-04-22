@@ -31,6 +31,7 @@ namespace GameMission
             GameModals.instance.OpenAR(); // Stop AR Camera rotate
             Object.transform.rotation = Compass.Instance.transform.rotation;
             _camera = CameraCtrl.instance.GetCurrentCamera();
+            _camera.transform.position = Compass.Instance.transform.position;
             modal = GameModals.instance.OpenModal<ARGameModal>();
             data = MainApp.Instance.database;
             modal.text.text = data.m_Data[missionIndex].gameNotify[0];
@@ -103,7 +104,7 @@ namespace GameMission
         {
             GameModals.instance.CloseModal();
 
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(25f);
 
             var dialogmodel = GameModals.instance.OpenModal<DialogModal>();
             dialogmodel.ShowInfo(missionIndex, TypeFlag.DialogType.EndDialog);
