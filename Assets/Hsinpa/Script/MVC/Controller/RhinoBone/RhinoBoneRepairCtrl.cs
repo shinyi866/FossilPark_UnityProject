@@ -73,7 +73,7 @@ namespace Hsinpa.Ctrl {
 
                 case EventFlag.Event.OnRhenoARMode_PlaneAR:
                     {
-                        PerformPlaneARAction();
+                        CheckAndProcessWithCompassAR(0);
                     }
                     break;
 
@@ -95,11 +95,11 @@ namespace Hsinpa.Ctrl {
             _lighthouseAnchorView.OnMainAnchorDetectEvent += OnAzureAnchorIsFind;
         }
 
-        public void EnterGame()
+        public void EnterGame(float yRotationOffset)
         {
             if (_arEnable)
             {
-                PerformPlaneARAction();
+                CheckAndProcessWithCompassAR(yRotationOffset);
             }
             else
             {
@@ -120,8 +120,39 @@ namespace Hsinpa.Ctrl {
             _state = GeneralFlag.GeneralState.UnderGoing;
         }
 
+        private void CheckAndProcessWithCompassAR(float yRotationOffset)
+        {
+
+            try {
+
+                var forwardDir = _arHelper.arCamera.transform.forward;
+                forwardDir.y = -1;
+                forwardDir *= 0.3f;
+                //Quaternion.FromToRotation(Compass.Instance.transform.rotation, offsetRotation)
+
+                spawnCorrectBoneTemplate.transform.position = _arHelper.arCamera.transform.position + forwardDir;
+
+                //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
+                var faceDir = Compass.Instance.transform.rotation.eulerAngles;
+                faceDir.y += yRotationOffset;
+                faceDir.x = 0;
+                faceDir.z = 0;
+
+                spawnCorrectBoneTemplate.transform.rotation = Quaternion.Euler(faceDir);
+
+                OnPlaneARReadyClick();
+
+            }
+            catch 
+            {
+                PerformPlaneARAction();
+            }
+        }
+
         private void PerformPlaneARAction()
         {
+            Debug.Log("Rhino PerformPlaneARAction");
+
             _arHelper.AcitvateARPlane(false);
             _arHelper.ActivateAR(true);
             _ = _lighthouseAnchorView.StartWatcher(GeneralFlag.MissionID.BoneRepairHome);
@@ -136,6 +167,8 @@ namespace Hsinpa.Ctrl {
         }
 
         private void OnPlaneARReadyClick() {
+            Debug.Log("Rhino OnPlaneARReadyClick");
+
             _arHelper.AcitvateARPlane(false);
             spawnCorrectBoneTemplate.ShowConfirmBtn(false);
             _rhinoBoneHelper.MoveBoneTemplate(spawnRandomBoneTemplate, spawnCorrectBoneTemplate.transform.position, spawnCorrectBoneTemplate.transform.rotation);
