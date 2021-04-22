@@ -171,7 +171,7 @@ namespace GameMission
             {
                 GameObject showARObject = arObjects[currentImageName];
                 showARObject.SetActive(true);
-                //showARObject.transform.position = imagePosition;
+                showARObject.transform.position = imagePosition;
                 //showARObject.transform.rotation = trackImage.transform.rotation;
                 showARfood = arObjects[currentImageName];
                 resetEatFood = true;
