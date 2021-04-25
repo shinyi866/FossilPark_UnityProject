@@ -18,6 +18,7 @@ namespace GameMission
         public GameObject[] foodGameObject; // 0:plant2, 1:plant, 2:meat
         public GameObject[] dinosaurlScenes; // 0:brachiosaurus, 1:triceratop 2:TRex
         public GameObject[] dinosaurs; // 0:brachiosaurus, 1:triceratop 2:TRex
+        public Transform[] dinosaursTransform;
         public Transform testTarget;
         public bool TestMode;
 
@@ -97,7 +98,7 @@ namespace GameMission
         {
             foreach (var o in dinosaurlScenes) { o.SetActive(false); }
             foreach (var b in foodButton) { b.interactable = true; }
-
+            ResetDinosaurls();
             //if (currentDinosaurl != null)
             //    Destroy(currentDinosaurl);
 
@@ -216,7 +217,7 @@ namespace GameMission
                         DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
                         break;
                     case TypeFlag.DinosaurlsType.Triceratop:
-                        DinosaursEat(dotResult, 4f, 3.6f, 2.6f, 0.05f);
+                        DinosaursEat(dotResult, 4f, 3.8f, 2.6f, 0.05f);
                         break;
                 }
                 Debug.Log("TestMode ");
@@ -241,7 +242,7 @@ namespace GameMission
                             DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
                             break;
                         case TypeFlag.DinosaurlsType.Triceratop:
-                            DinosaursEat(dotResult, 4f, 3.6f, 2.6f, 0.05f);
+                            DinosaursEat(dotResult, 4f, 3.8f, 2.6f, 0.05f);
                             break;
                     }                    
                 }
@@ -253,6 +254,8 @@ namespace GameMission
 
         private void DinosaursEat(float dotResult, float walkDotResult, float eatDotResult, float limitResult, float trackSpeed)
         {
+            ccidWeight = currentDinosaurl.GetComponent<CCDIK>().solver.GetIKPositionWeight();
+
             if (dotResult > walkDotResult)
             {
                 currentDinosaurl.GetComponent<Animator>().SetBool("walk", true);                
@@ -305,6 +308,23 @@ namespace GameMission
             }
         }
 
+        private void ResetDinosaurls()
+        {
+            for(int i = 0; i < dinosaurs.Length; i++)
+            {
+                for(int j = 0; j < dinosaursTransform.Length; j++)
+                {
+                    if(i == j)
+                    {
+                        dinosaurs[i].transform.position = dinosaursTransform[j].transform.position;
+                        dinosaurs[i].transform.rotation = dinosaursTransform[j].transform.rotation;
+                        dinosaurs[i].GetComponent<CCDIK>().solver.SetIKPositionWeight(0);
+                    }
+                }
+            }
+        }
+
+        /*
         private bool CheckFoodDinosaurls(string foodName)
         {
             bool returnValue = false;
@@ -322,7 +342,7 @@ namespace GameMission
 
             return returnValue;
         }
-
+        */
         private void LateUpdate()
         {
             if (!isGameStart) return;

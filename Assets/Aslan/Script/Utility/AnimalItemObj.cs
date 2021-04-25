@@ -3,7 +3,7 @@
 [System.Serializable]
 public class Item
 {
-    public Sprite MainImage;
+    public Sprite[] MainImage;
     public Sprite NameImage;
     public string text;
 }

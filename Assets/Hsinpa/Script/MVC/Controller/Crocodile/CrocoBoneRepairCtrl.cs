@@ -115,6 +115,7 @@ namespace Hsinpa.Ctrl
             crocodileTargetTimelineAnim.gameObject.SetActive(true);
 
             try {
+                /*
                 var forwardDir = _arHelper.arCamera.transform.forward;
                     forwardDir.y = -1;
                     forwardDir *= 0.3f;
@@ -129,8 +130,13 @@ namespace Hsinpa.Ctrl
                     faceDir.z = 0;
 
                     crocodileTargetTimelineAnim.transform.rotation = Quaternion.Euler(faceDir);
+                    */
 
-                    OnPlaneARReadyClick();
+                var faceDir = Compass.Instance.transform.rotation.eulerAngles;
+                faceDir.y += yRotationOffset;
+                _paintingManager.gameObject.transform.rotation = Quaternion.Euler(faceDir);
+
+                OnPlaneARReadyClick();
                 }
                 catch (System.Exception e)
                 {

@@ -32,13 +32,35 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 
         foreach(Beacon b in mybeacons)
         {
-            if (b.accuracy < minDistance && b.accuracy > 0)
+            // TODO: search 2,8 mission
+
+            if (b.accuracy > 0 && b.accuracy < minDistance)
             {
                 minDistance = b.accuracy;
                 minBeacon = b;
             }
         }
+
         text.text = $"minDistance: {minBeacon.accuracy}, minIndex: {minBeacon.minor}";
+
+        int mission = minBeacon.minor;
+
+        if (ranges[mission].minRange < 0 && ranges[mission].maxRange < 0) return;
+
+        if (minBeacon.accuracy < ranges[mission].minRange)
+        {
+            Handheld.Vibrate();
+            GameMissions.instance.ShowMission(mission);
+        }
+        else if (minBeacon.accuracy > ranges[mission].minRange && minBeacon.accuracy < ranges[mission].maxRange)
+        {
+            GameModals.instance.RoundNotify(mission);
+        }
+        else if (minBeacon.accuracy > ranges[mission].maxRange)
+        {
+            GameModals.instance.CloseModal();
+        }
+        /*
         for (int j = 0; j < ranges.Length; j++)
         {
             int mission = minBeacon.minor;
@@ -62,6 +84,7 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
                 }
             }
         }
+        */
     }
 
     private void SetPosition()

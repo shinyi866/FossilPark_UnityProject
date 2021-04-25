@@ -301,23 +301,20 @@ public class iBeaconData : MonoBehaviour
 				t.text = "";
 			Debug.Log("found Beacon: " + b.ToString());
 
-			if (b.accuracy < 5f)
-            {
-				if (b.type == BeaconType.iBeacon)
-				{
-					Texts[0].text = "UUID:" + b.UUID.ToString();
-					Texts[1].text = "Major:" + b.major.ToString();
-					Texts[2].text = "Minor:" + b.minor.ToString();
-					Texts[3].text = "Strength:" + b.strength.ToString() + " db";
-					if (b.accuracy >= 0) { Texts[4].text = "Accuracy:" + b.accuracy.ToString().Substring(0, 10) + " m"; }
-					Texts[5].text = "Rssi:" + b.rssi.ToString() + " db";
-					Debug.Log("found Beacon rssi: " + b.rssi.ToString() + " db");
-				}
-				else
-				{
-					Texts[0].text = "Find iBeacon Error";
-					Debug.Log("Find iBeacon Error");
-				}
+			if (b.type == BeaconType.iBeacon && b.accuracy >= 0)
+			{
+				Texts[0].text = "UUID:" + b.UUID.ToString();
+				Texts[1].text = "Major:" + b.major.ToString();
+				Texts[2].text = "Minor:" + b.minor.ToString();
+				Texts[3].text = "Strength:" + b.strength.ToString() + " db";
+				Texts[4].text = "Accuracy:" + b.accuracy.ToString().Substring(0, 10) + " m";
+				Texts[5].text = "Rssi:" + b.rssi.ToString() + " db";
+				Debug.Log("found Beacon rssi: " + b.rssi.ToString() + " db");
+			}
+			else
+			{
+				Texts[0].text = "Find iBeacon Error";
+				Debug.Log("Find iBeacon Error");
 			}
 		}
 	}

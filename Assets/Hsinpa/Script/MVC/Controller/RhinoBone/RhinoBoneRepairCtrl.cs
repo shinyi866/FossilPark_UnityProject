@@ -128,27 +128,37 @@ namespace Hsinpa.Ctrl {
             _ = _lighthouseAnchorView.StartWatcher(GeneralFlag.MissionID.BoneRepairHome);
             _rhinoBoneHelper.Clean();
 
-            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(1000, 500, 0), Quaternion.identity);
+            //spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(1000, 500, 0), Quaternion.identity);
+            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(0, -1.3f, 1.5f), Quaternion.identity);
             spawnRandomBoneTemplate = _rhinoBoneHelper.CreateBoneRandomSet(spawnCorrectBoneTemplate.transform.position, spawnCorrectBoneTemplate.transform.rotation);
             
             Initialization();
 
             try {
+                /*
                 var forwardDir = _arHelper.arCamera.transform.forward;
                     forwardDir.y = -1;
                     forwardDir *= 0.3f;
                     //Quaternion.FromToRotation(Compass.Instance.transform.rotation, offsetRotation)
 
                     spawnCorrectBoneTemplate.transform.position = _arHelper.arCamera.transform.position + forwardDir;
-                    //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
-                    var faceDir = Compass.Instance.transform.rotation.eulerAngles;
+                    
+                //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
+                
+                var faceDir = Compass.Instance.transform.rotation.eulerAngles;
                     faceDir.y += yRotationOffset;
                     faceDir.x = 0;
                     faceDir.z = 0;
 
                     spawnCorrectBoneTemplate.transform.rotation = Quaternion.Euler(faceDir);
+                    spawnCorrectBoneTemplate.transform.rotation = Compass.Instance.transform.rotation;
+                    */
 
-                    OnPlaneARReadyClick();
+                var faceDir = Compass.Instance.transform.rotation.eulerAngles;
+                faceDir.y += yRotationOffset;
+                _worldContainer.transform.rotation = Quaternion.Euler(faceDir);
+
+                OnPlaneARReadyClick();
                 }
             catch (System.Exception e)
             {
