@@ -62,7 +62,7 @@ namespace View
 
             if (buttonIndex >= 0 && buttonIndex < animalButtons.Length)
             {
-                animalButtons[buttonIndex].GetComponent<Image>().enabled = true;
+                animalButtons[buttonIndex].GetComponent<Button>().interactable = true;
                 ChangeClock();
             }
         }
@@ -107,7 +107,12 @@ namespace View
             if (clockOutSide == 0) { clockImage.sprite = clockSprite[0]; }
             if (clockOutSide == 2) { clockImage.sprite = clockSprite[1]; }
             if (clockOutSide == 4) { clockImage.sprite = clockSprite[2]; }
-            if (clockOutSide == 6) { clockImage.sprite = clockSprite[3]; }
+            if (clockOutSide == 6)
+            {
+                clockImage.sprite = clockSprite[3];
+                var eggModal = Modals.instance.GetModel<EggModal>();
+                eggModal.StartButton.interactable = true;
+            }
         }
 
         private void GuideUIView()

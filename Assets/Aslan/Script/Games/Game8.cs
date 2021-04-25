@@ -111,6 +111,10 @@ namespace GameMission
 
             isEat = false;
             //placeObject = null;
+            var eggModal = Modals.instance.GetModel<EggModal>();
+            eggModal.type = index;
+            eggModal.RotateTimes();
+            eggModal.startMachine = true;
         }
 
         // AR Plane Track
