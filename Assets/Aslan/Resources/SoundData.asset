@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e18e22ef99be4a7b8819c7ddf236521, type: 3}
+  m_Name: SoundData
+  m_EditorClassIdentifier: 
+  SoundItems:
+  - bgm: {fileID: 8300000, guid: 6d9f2c8692d1f4f5eaf093a45cc3d6f6, type: 3}
+    alertMission: {fileID: 8300000, guid: 93911bd1398314bc3ae82fa502180ce4, type: 3}
+    bonematch: {fileID: 8300000, guid: 60b291720c10a43f7aa806394bf5e054, type: 3}
+    enterMission: {fileID: 8300000, guid: 1d48a65d927014374b1af274f7cf32bb, type: 3}
+    error: {fileID: 8300000, guid: 31fdde25b420442f59c43cdf32f80845, type: 3}
+    fnish: {fileID: 8300000, guid: 6fab1f5590fe64f5482bcd9b4a6a9672, type: 3}
+    finishAll: {fileID: 8300000, guid: 74ae284447a4949d0af918225b9bfa62, type: 3}
+    next: {fileID: 8300000, guid: bce942402384d483194bca3bee101657, type: 3}
+    takePicture: {fileID: 8300000, guid: d2ac6e7524db1463da6cc6a1fe75a19d, type: 3}

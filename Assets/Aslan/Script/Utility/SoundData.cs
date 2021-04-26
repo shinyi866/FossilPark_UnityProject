@@ -1,18 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SoundData : MonoBehaviour
+[System.Serializable]
+public class Sound
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioClip bgm;
+    public AudioClip alertMission;
+    public AudioClip bonematch;
+    public AudioClip enterMission;
+    public AudioClip error;
+    public AudioClip fnish;
+    public AudioClip finishAll;
+    public AudioClip next;
+    public AudioClip takePicture;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+}
+
+[CreateAssetMenu(fileName = "SoundData", menuName = "ScriptableObjects/SoundData", order = 0)]
+public class SoundData : ScriptableObject
+{
+    [SerializeField]
+    public Sound[] SoundItems;
+
 }

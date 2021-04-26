@@ -106,7 +106,7 @@ namespace Hsinpa.Ctrl
             crocodileTargetTimelineAnim.gameObject.SetActive(true);
             crocodileTargetTimelineAnim.ShowConfirmBtn(false);
 
-            //_arHelper.arCamera.transform.position = Compass.Instance.transform.position;
+            _arHelper.arCamera.transform.position = Compass.Instance.transform.position;
             //_arHelper.SetARCameraPos(new Vector3(0, 0.5f, 0), Quaternion.Euler(90, 0, 0));
             _state = GeneralFlag.GeneralState.UnderGoing;
 
@@ -127,7 +127,7 @@ namespace Hsinpa.Ctrl
                 //crocodileTargetTimelineAnim.transform.position = new Vector3(0, 0, 0.3f); //_arHelper.arCamera.transform.position + forwardDir;
 
                 //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
-                _arHelper.arCamera.transform.position = Compass.Instance.transform.position;
+                //_arHelper.arCamera.transform.position = Compass.Instance.transform.position;
 
                 var faceDir = Compass.Instance.transform.rotation.eulerAngles;
                 faceDir.y += yRotationOffset;

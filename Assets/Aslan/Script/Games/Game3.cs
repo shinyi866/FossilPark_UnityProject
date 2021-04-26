@@ -108,6 +108,7 @@ namespace GameMission
             _cameraFront.z = 1f;
 
             basket.transform.position = _camera.transform.position + _cameraFront;
+            basket.transform.rotation = Quaternion.identity;
         }
 
         private void GameResult(bool isSuccess)

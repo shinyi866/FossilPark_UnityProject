@@ -16,6 +16,7 @@ namespace GameMission
         public ARTrackedImageManager ARTrackedImage;
         public ARPlaneManager planeManager;
         public GameObject[] foodGameObject; // 0:plant2, 1:plant, 2:meat
+        public GameObject[] foodinMouth;
         public GameObject[] dinosaurlScenes; // 0:brachiosaurus, 1:triceratop 2:TRex
         public GameObject[] dinosaurs; // 0:brachiosaurus, 1:triceratop 2:TRex
         public Transform[] dinosaursTransform;
@@ -40,6 +41,7 @@ namespace GameMission
         private bool isGameStart;
 
         private GameObject currentDinosaurl;
+        private GameObject currentFood;
         private GameObject showARfood;
         private ARGameModal modal;
         private ARPlane placeObject;
@@ -98,14 +100,16 @@ namespace GameMission
         {
             foreach (var o in dinosaurlScenes) { o.SetActive(false); }
             foreach (var b in foodButton) { b.interactable = true; }
+            foreach(var f in foodinMouth) { f.SetActive(false); }
             ResetDinosaurls();
             //if (currentDinosaurl != null)
             //    Destroy(currentDinosaurl);
 
             currentDinosaurl = dinosaurs[index]; // Instantiate(dinosaurs[index]);
+            //currentFood = arObjects[foodGameObject[index].name];
             //currentDinosaurl.transform.SetParent(dinosaurlScenes[index].transform);
 
-            dinosaurlScenes[currentIndex].SetActive(true);
+            dinosaurlScenes[index].SetActive(true);
 
             foodButton[index].interactable = false;
 
@@ -174,22 +178,46 @@ namespace GameMission
 
             if (dinosaurlScenes != null)
             {
-                GameObject showARObject = arObjects[currentImageName];
-                showARObject.SetActive(true);
-                showARObject.transform.position = imagePosition;
-                //showARObject.transform.rotation = trackImage.transform.rotation;
-                showARfood = arObjects[currentImageName];
-                resetEatFood = true;
-
-                foreach (GameObject b in arObjects.Values)
+                if(currentImageName != "ticket")
                 {
-                    Debug.Log($"Show in arObjects.Values: {b.name}");
-                    if (b.name != currentImageName)
-                    {
-                        b.SetActive(false);
-                    }
+                    GameObject showARObject = arObjects[currentImageName];
+                    showARObject.SetActive(true);
+                    showARObject.transform.position = imagePosition;
+                    //showARObject.transform.rotation = trackImage.transform.rotation;
+                    showARfood = arObjects[currentImageName];
+                    resetEatFood = true;
 
-                    if (isEat) { showARObject.SetActive(false); }
+                    foreach (GameObject b in arObjects.Values)
+                    {
+                        Debug.Log($"Show in arObjects.Values: {b.name}");
+                        if (b.name != currentImageName)
+                        {
+                            b.SetActive(false);
+                        }
+
+                        if (isEat) { showARObject.SetActive(false); }
+                    }
+                }
+                else
+                {
+                    currentImageName = foodGameObject[currentIndex].name;
+                    GameObject showARObject = arObjects[currentImageName];
+                    showARObject.SetActive(true);
+                    showARObject.transform.position = imagePosition;
+
+                    showARfood = arObjects[currentImageName];
+                    resetEatFood = true;
+
+                    foreach (GameObject b in arObjects.Values)
+                    {
+                        Debug.Log($"Show in arObjects.Values: {b.name}");
+                        if (b.name != currentImageName)
+                        {
+                            b.SetActive(false);
+                        }
+
+                        if (isEat) { showARObject.SetActive(false); }
+                    }
                 }
             }
         }
@@ -221,14 +249,14 @@ namespace GameMission
                         DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
                         break;
                     case TypeFlag.DinosaurlsType.Triceratop:
-                        DinosaursEat(dotResult, 4f, 3.8f, 2.6f, 0.05f);
+                        DinosaursEat(dotResult, 4f, 2.5f, 2.1f, 0.05f);
                         break;
                 }
                 Debug.Log("TestMode ");
             }
             else
             {
-                if(showARfood != null && resetEatFood)// && CheckFoodDinosaurls(currentImageName))
+                if(showARfood != null && resetEatFood)
                 {
                     arToFood = showARfood.transform.position - currentDinosaurl.transform.position;
                     //currentDinosaurl.GetComponent<CCDIK>().solver.target = showARfood.transform;
@@ -246,7 +274,7 @@ namespace GameMission
                             DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
                             break;
                         case TypeFlag.DinosaurlsType.Triceratop:
-                            DinosaursEat(dotResult, 4f, 3.8f, 2.6f, 0.05f);
+                            DinosaursEat(dotResult, 4f, 2.5f, 2.1f, 0.05f);
                             break;
                     }                    
                 }
@@ -259,8 +287,8 @@ namespace GameMission
         private void DinosaursEat(float dotResult, float walkDotResult, float eatDotResult, float limitResult, float trackSpeed)
         {
             ccidWeight = currentDinosaurl.GetComponent<CCDIK>().solver.GetIKPositionWeight();
-
-            if (dotResult > walkDotResult)
+            
+            if (dotResult > walkDotResult && arObjects[currentImageName].activeSelf)
             {
                 currentDinosaurl.GetComponent<Animator>().SetBool("walk", true);                
             }
@@ -280,6 +308,7 @@ namespace GameMission
                             ccidWeight += Time.deltaTime * trackSpeed;
                             currentDinosaurl.GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
                         }
+
 
                         Debug.Log("Eat");
                         txt3.text = "Eat";
@@ -352,16 +381,17 @@ namespace GameMission
             if (!isGameStart) return;
 
             _camera.transform.rotation = Quaternion.Euler(_camera.transform.rotation.eulerAngles.x, Input.compass.trueHeading, _camera.transform.rotation.eulerAngles.z);
-            txt2.text = $"_camera.transform.rotation: {_camera.transform.rotation}, headingAccuracy: {Input.compass.headingAccuracy},  magneticHeading: {Input.compass.magneticHeading},  rawVector: {Input.compass.rawVector},  timestamp: {Input.compass.timestamp}, trueHeading: {Input.compass.trueHeading}";            
+            txt2.text = $"_camera.transform.rotation: {_camera.transform.rotation}, headingAccuracy: {Input.compass.headingAccuracy},  magneticHeading: {Input.compass.magneticHeading},  rawVector: {Input.compass.rawVector},  timestamp: {Input.compass.timestamp}, trueHeading: {Input.compass.trueHeading}";
 
-            //if (showARfood != null) //AR test
+            if (currentImageName == null) return; //AR mode
             TargetDirection();
-            
-        }
 
+        }
+        
         private TypeFlag.DinosaurlsType GetCurrentType(int index)
         {
             return (TypeFlag.DinosaurlsType)index;
         }
+        
     }
 }

@@ -14,7 +14,7 @@ public class TriggerARObject : MonoBehaviour
         {
             Game8.isEat = true;
             foodInMouth.SetActive(true);
-            target.gameObject.SetActive(false);
+            target.transform.parent.gameObject.SetActive(false);
             StartCoroutine(WaitToEat());
             Debug.Log("eating");
         }
