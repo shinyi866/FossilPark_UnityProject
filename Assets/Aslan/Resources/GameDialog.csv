@@ -12,11 +12,11 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 試著找找看三個化石吧！",尋找化石,2,"觀察溪床，點按你找到的化石，即可完成蒐集！,點按化石,成功採集",開始,觀察溪床，蒐集三個化石！,"成功採集！你採集到的是鹿角化石,成功採集！你採集到的是犀牛左下顎,成功採集！你採集到的是劍齒象臼齒","太棒了！
 近幾年台灣各地陸續發現哺乳類化石，在菜寮溪地區出土的種類和數目最多。
 包括古象、野牛、梅花鹿、犀牛、貝類等，也有古鹿的化石歐！
-使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,
+使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02/example1.png,Assets/Aslan/ArtSprite/GameUI/02/example2.png,,
 3,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是金絲猴！
 距今90-45萬年前我們遷徙到台灣尋找新天地，但面臨 台灣獼猴強大的壓力，現在很難找到食物，你可以幫幫我嗎？","果子蒐集趣,幫助金絲猴收集果子！
-接下金絲猴摘下的果子吧！",蒐集果子,1,左右移動，可以接下金絲猴丟下的果子！,開始,左右移動時請注意週遭安全！,,"謝謝！\n有這麼多應該夠了！我們是雜食性動物！\n主食植物為嫩枝芽、樹葉、漿果、竹筍、苔蘚等等。\n使用相機拍攝我讓我回到時光機中吧！,糟糕！果子好像不太夠\n我們是雜食性動物！\n主食植物為嫩枝芽、樹葉、漿果、竹筍、苔蘚等等。\n使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/02monkey.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/monkey.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,,,
+接下金絲猴摘下的果子吧！",蒐集果子,1,左右移動，可以接下金絲猴丟下的果子！,開始,左右移動時請注意週遭安全！,,"謝謝！\n有這麼多應該夠了！我們是雜食性動物！\n主食植物為嫩枝芽、樹葉、漿果、竹筍、苔蘚等等。\n使用相機拍攝我讓我回到時光機中吧！,糟糕！果子好像不太夠\n我們是雜食性動物！\n主食植物為嫩枝芽、樹葉、漿果、竹筍、苔蘚等等。\n使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/02monkey.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/monkey.png,Assets/Aslan/ArtSprite/GameUI/03/example.png,,,
 4,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！你好！
 左鎮出土的化石中發現許多鬚鯨類和齒鯨類化石，兩 這最大的區別是鬚鯨類的口中有鬚，沒有牙齒，外鼻 孔有兩個；而齒鯨類的口中沒有鬚，有牙齒，外鼻孔 只有一個。","鯨豚知多少,你可以從兩種不同的骨頭中， 分辨出那個是齒鯨頭骨，哪個是鬚鯨頭骨嗎？",分辨鯨豚,2,"觀察化石，將標籤移動到正確的化石上！,鬚鯨頭骨,齒鯨頭骨",開始,觀察化石貼上正確的標籤！,,"你真是太厲害了！
@@ -31,7 +31,7 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 6,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是臺灣猛獁象！
 你知道嗎！
-台灣更新世「左鎮動物群」中，長鼻目除了猛獁象外 還有劍齒象兩大類。劍齒象有著像一把短利刃的門牙 ，而猛獁象則身披長長的毛，並且門齒劇烈彎曲。","臺灣長鼻目,你可以從場景中分辨出誰是猛獁象，哪個是劍齒象嗎？",分辨大象,1,找到正確的大象後，按下拍照按鈕拍攝大象。,開始,"拍攝草原猛獁象！, 拍攝劍齒象！","你成功分辨了！他是猛獁象！,你成功分辨了！他是劍齒象！,剛剛拍過了喔！,錯了！再找找看！","居然能分出我們的差別，真是太厲害了！,猛獁象,劍齒象",拍照,Assets/Aslan/ArtSprite/GameUI/animals/05mammoth.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/mammoth.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/06/mammoth.png,Assets/Aslan/ArtSprite/GameUI/06/sabertooth.png
+台灣更新世「左鎮動物群」中，長鼻目除了猛獁象外 還有劍齒象兩大類。劍齒象有著像一把短利刃的門牙 ，而猛獁象則身披長長的毛，並且門齒劇烈彎曲。","臺灣長鼻目,你可以從場景中分辨出誰是猛獁象，哪個是劍齒象嗎？",分辨大象,1,找到正確的大象後，按下拍照按鈕拍攝大象。,開始,"拍攝草原猛獁象！, 拍攝劍齒象！","你成功分辨了！他是猛獁象！,你成功分辨了！他是劍齒象！,剛剛拍過了喔！,錯了！再找找看！","居然能分出我們的差別，真是太厲害了！,猛獁象,劍齒象",拍照,Assets/Aslan/ArtSprite/GameUI/animals/05mammoth.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/mammoth.png,Assets/Aslan/ArtSprite/GameUI/06/example.png,,Assets/Aslan/ArtSprite/GameUI/06/mammoth.png,Assets/Aslan/ArtSprite/GameUI/06/sabertooth.png
 7,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是臺灣長吻鱷！
 我躺在這個地方很久了，土層中有許多我的化石碎 片，可以幫我清修並復原成原來的樣子嗎？","小小清修師,化石五步驟:  清理 -> 分類 -> 修補 -> 固化 -> 組架

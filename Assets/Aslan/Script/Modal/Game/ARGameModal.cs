@@ -171,25 +171,47 @@ namespace View
 
         public void TakePicture()
         {
+            //StartCoroutine(StartPhoto());
             StartCoroutine(RenderScreenShot());
+        }
+
+        IEnumerator StartPhoto()
+        {
+            yield return new WaitForEndOfFrame();
+
+            RenderTexture renderTexture = new RenderTexture(Screen.width, Screen.height, 0);
+            ScreenCapture.CaptureScreenshotIntoRenderTexture(renderTexture);
+            Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGBA32, false);
+            Rect rect = new Rect(0, 0, renderTexture.width, renderTexture.height);
+
+            renderResult.ReadPixels(rect, 0, 0);
+            renderResult.Apply();
+            
+            Sprite screenShot = Sprite.Create(renderResult, rect, Vector2.zero);
+            gamePromptPanel.image.sprite = screenShot;
+            currentImage = renderResult;
         }
 
         private IEnumerator RenderScreenShot()
         {
             Camera _camera = CameraCtrl.instance.GetCurrentCamera();
-            yield return new WaitForSeconds(0.1f);
-
+            yield return new WaitForEndOfFrame();  //WaitForSeconds(0.1f);
+            Debug.Log("yoooo");
             _camera.targetTexture = new RenderTexture(_camera.pixelWidth, _camera.pixelHeight, 0); // (222, 128, 0);
 
             RenderTexture renderTexture = _camera.targetTexture;
-            Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.ARGB32, false);
+            Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGBA32, false);//TextureFormat.ARGB32
             _camera.Render();
             RenderTexture.active = renderTexture;
             Rect rect = new Rect(0, 0, renderTexture.width, renderTexture.height);
 
             renderResult.ReadPixels(rect, 0, 0);
             renderResult.Apply();
-
+            //byte[] bytes = renderResult.EncodeToPNG();
+            //string s = string.Format("{0}/good.png", Application.dataPath);
+            //System.IO.File.WriteAllBytes(s, bytes);
+            //Texture2D newTexture = new Texture2D(renderTexture.width, renderTexture.height);
+            //newTexture.LoadImage(bytes);
             Sprite screenShot = Sprite.Create(renderResult, rect, Vector2.zero);
             gamePromptPanel.image.sprite = screenShot;
             currentImage = renderResult;

@@ -91,6 +91,7 @@ public class MediaPlayerController : MonoBehaviour
     
     public void Destroy2DPlane()
     {
-        Destroy(planeVideo);
+        //Destroy(planeVideo);
+        planeVideo.SetActive(false);
     }
 }

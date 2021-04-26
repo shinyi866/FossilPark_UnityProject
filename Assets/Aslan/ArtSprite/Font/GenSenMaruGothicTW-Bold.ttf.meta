@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 60586c0bbe8f74999baa2608e9fa618a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: GenSenMaruGothic TW TTF
+  fontNames:
+  - GenSenMaruGothic TW TTF
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 300310a1ba5ac4a26b4c95e609d44848, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

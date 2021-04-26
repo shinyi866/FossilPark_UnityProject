@@ -101,8 +101,8 @@ MonoBehaviour:
       type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: dbdcf7ee770a6441da39653beced9a79,
       type: 3}
-    guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
-    guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    guidePicture1: {fileID: 21300000, guid: bfba5c30ff1e5437fad75770c6ae869e, type: 3}
+    guidePicture2: {fileID: 21300000, guid: 8894a58e38e0e4987be630519d14b5d8, type: 3}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}
   - missionID: 3
@@ -131,7 +131,7 @@ MonoBehaviour:
       type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: 4158b7969ef464f2ea3f222ac183b4aa,
       type: 3}
-    guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    guidePicture1: {fileID: 21300000, guid: 59aba63ed48dd46cc8f26190d6b1360b, type: 3}
     guidePicture2: {fileID: 0}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}
@@ -234,8 +234,8 @@ MonoBehaviour:
       type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: ddc49c32ded8142a592c1d919bbc07d0,
       type: 3}
-    guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
-    guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    guidePicture1: {fileID: 21300000, guid: 21e731aa2385d4c9bb111e7b18a849fa, type: 3}
+    guidePicture2: {fileID: 0}
     endPicutre: {fileID: 21300000, guid: 09478aa6aa03840e98e331e030009097, type: 3}
     endPicutre2: {fileID: 21300000, guid: 5b421416bca924f5eb68ad8a4c5ea762, type: 3}
   - missionID: 7
