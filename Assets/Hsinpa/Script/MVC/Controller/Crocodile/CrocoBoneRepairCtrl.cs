@@ -14,6 +14,9 @@ namespace Hsinpa.Ctrl
     public class CrocoBoneRepairCtrl : ObserverPattern.Observer
     {
         [SerializeField]
+        private Transform _worldContainer;
+
+        [SerializeField]
         private RaycastInputHandler _raycastInputHandler;
 
         [SerializeField]
@@ -134,7 +137,7 @@ namespace Hsinpa.Ctrl
 
                 var faceDir = Compass.Instance.transform.rotation.eulerAngles;
                 faceDir.y += yRotationOffset;
-                _paintingManager.gameObject.transform.rotation = Quaternion.Euler(faceDir);
+                _worldContainer.gameObject.transform.rotation = Quaternion.Euler(faceDir);
 
                 OnPlaneARReadyClick();
                 }

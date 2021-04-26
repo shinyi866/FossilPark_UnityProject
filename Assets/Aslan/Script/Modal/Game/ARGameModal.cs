@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GameMission;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,7 +61,14 @@ namespace View
                 ShowPrompt(8, TypeFlag.ARGameType.PicturePrompt);
             });
 
-            
+            game8Panel.backButton.onClick.AddListener(() => {
+                Games.instance.ClosGame();
+                GameModals.instance.CloseModal();
+                ShowPanel(game8Panel.canvasGroup, false);
+                Modals.instance.OpenModal<MainModal>();
+                iBeaconMissionSetting.Instance.isEnterGame = false;
+            });
+
         }
 
         public void ShowModal(int index, TypeFlag.ARGameType type)
@@ -274,6 +282,7 @@ public class Game8Panel
     public CanvasGroup canvasGroup;
     public Button[] foodButtons;
     public Button pictureButton;
+    public Button backButton;
 }
 
 [System.Serializable]
