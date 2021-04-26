@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74366572f83c78f489237bb1ea55c94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _worldContainer: {fileID: 0}
   _raycastInputHandler: {fileID: 5792027905143237172}
   _arHelper: {fileID: 5792027905781614435}
   _paintingManager: {fileID: 8423454240112462624}
@@ -1782,8 +1783,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolHolders:
-  - {fileID: 1372036460583566665}
   - {fileID: 7262041257166693414}
+  - {fileID: 1372036460583566665}
 --- !u!1 &7296269452868420815
 GameObject:
   m_ObjectHideFlags: 0

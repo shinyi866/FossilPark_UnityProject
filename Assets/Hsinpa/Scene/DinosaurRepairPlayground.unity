@@ -573,7 +573,7 @@ PrefabInstance:
     - target: {fileID: 2041733064310324598, guid: 0034034ce1f3a9643922789c5dd830bb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3750142466095249619, guid: 0034034ce1f3a9643922789c5dd830bb,
         type: 3}
@@ -645,6 +645,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5792027905056538217, guid: 0034034ce1f3a9643922789c5dd830bb,
+        type: 3}
+      propertyPath: _finishTimelineAnimationPrefab
+      value: 
+      objectReference: {fileID: 7076310261572414039, guid: 1dd0a7f00fa66be4389f6552c12e1fbf,
+        type: 3}
     - target: {fileID: 7274032636935780510, guid: 0034034ce1f3a9643922789c5dd830bb,
         type: 3}
       propertyPath: m_IsActive
