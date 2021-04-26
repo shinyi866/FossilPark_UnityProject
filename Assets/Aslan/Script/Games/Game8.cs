@@ -249,7 +249,7 @@ namespace GameMission
                         DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
                         break;
                     case TypeFlag.DinosaurlsType.Triceratop:
-                        DinosaursEat(dotResult, 4f, 2.5f, 2.1f, 0.05f);
+                        DinosaursEat(dotResult, 3.2f, 2.8f, 2.5f, 0.05f);
                         break;
                 }
                 Debug.Log("TestMode ");
@@ -274,7 +274,7 @@ namespace GameMission
                             DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
                             break;
                         case TypeFlag.DinosaurlsType.Triceratop:
-                            DinosaursEat(dotResult, 4f, 2.5f, 2.1f, 0.05f);
+                            DinosaursEat(dotResult, 3.2f, 2.8f, 2.5f, 0.05f);
                             break;
                     }                    
                 }

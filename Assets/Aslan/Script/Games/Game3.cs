@@ -39,7 +39,7 @@ namespace GameMission
         // set thorw ball parameter
         private float Xmin = -0.4f;
         private float Xmax = 0.2f;
-        private int speed = 165;
+        private int speed = 174;
         private int passCount = 1;
 
         // unsupport AR
@@ -105,10 +105,10 @@ namespace GameMission
             var _cameraFront = _camera.transform.forward;
 
             _cameraFront.y = -1f;
-            _cameraFront.z = 1f;
+            //_cameraFront *= 1f;
 
             basket.transform.position = _camera.transform.position + _cameraFront;
-            basket.transform.rotation = Quaternion.identity;
+            basket.transform.rotation = _camera.transform.rotation;
         }
 
         private void GameResult(bool isSuccess)
