@@ -8,6 +8,8 @@ namespace View
 {
     public class InfoModal : Modal
     {
+        [Range(0, 25)]
+        public int speed = 15;
         [Header("Info Item")]
         [SerializeField]
         private AnimalItemObj animalItemObj;
@@ -121,7 +123,7 @@ namespace View
         {
             if (currentSprites == null || currentSprites.Length < 1) return;
             
-            MainImage.sprite = currentSprites[(int)(Time.time*30)% currentSprites.Length];
+            MainImage.sprite = currentSprites[(int)(Time.time* speed) % currentSprites.Length];
         }
     }
 }

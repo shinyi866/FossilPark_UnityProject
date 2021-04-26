@@ -72,33 +72,33 @@ Material:
     - _Cutoff: 0.5
     - _DepthTransparency: 3
     - _DetailNormalMapScale: 1
-    - _Distortion: 0.27
+    - _Distortion: 0.58
     - _DstBlend: 0
-    - _Fade: 1
+    - _Fade: 1.62
     - _FoamBlend: 1
-    - _FoamContrast: 0.155
-    - _FoamIntensity: 1.17
-    - _FoamSpeed: -120
-    - _FoamTiling: 300
+    - _FoamContrast: 0.191
+    - _FoamIntensity: 1.4
+    - _FoamSpeed: 61.8
+    - _FoamTiling: 13800.97
     - _FoamVisibility: 0.227
-    - _Gloss: 0.38
+    - _Gloss: 0.37
     - _Glossiness: 0.5
     - _LightWrapping: 1.97
     - _Metallic: 0
     - _Mode: 0
-    - _NormalTiling: 235.97
+    - _NormalTiling: 12860.45
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Reflectionintensity: 0.14
-    - _Refraction: 0.9
-    - _ShallowDeepBlend: 5.3
+    - _Reflectionintensity: 0.23
+    - _Refraction: 0.857
+    - _ShallowDeepBlend: 8.02
     - _ShoreFade: 0.33
     - _ShoreTransparency: 0.5
     - _Specular: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _UseReflections: 1
-    - _WaveSpeed: 60
+    - _WaveSpeed: 49.53
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
