@@ -105,9 +105,8 @@ namespace Hsinpa.Ctrl
             Debug.Log("Croco PerformNoARAction");
             crocodileTargetTimelineAnim.gameObject.SetActive(true);
             crocodileTargetTimelineAnim.ShowConfirmBtn(false);
-
-            _arHelper.arCamera.transform.position = Compass.Instance.transform.position;
-            _arHelper.SetARCameraPos(new Vector3(0, 0.5f, 0), Quaternion.Euler(90, 0, 0));
+            
+            //_arHelper.SetARCameraPos(new Vector3(0, 0.5f, 0), Quaternion.Euler(90, 0, 0));
             _state = GeneralFlag.GeneralState.UnderGoing;
 
             InitPaintProcedure();
@@ -119,20 +118,18 @@ namespace Hsinpa.Ctrl
             crocodileTargetTimelineAnim.gameObject.SetActive(true);
 
             try {
-                var forwardDir = _arHelper.arCamera.transform.forward;
-                forwardDir.y = -1.3f;
+                //var forwardDir = _arHelper.arCamera.transform.forward;
+                //    forwardDir.y = -1;
+                //    forwardDir *= 0.3f;
                 //Quaternion.FromToRotation(Compass.Instance.transform.rotation, offsetRotation)
 
                 //crocodileTargetTimelineAnim.transform.position = new Vector3(0, 0, 0.3f); //_arHelper.arCamera.transform.position + forwardDir;
-                var resetPosition = _arHelper.arCamera.transform.position + forwardDir;
-                crocodileTargetTimelineAnim.transform.position = resetPosition;
+
                 //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
                 //_arHelper.arCamera.transform.position = Compass.Instance.transform.position;
 
-                var faceDir = Compass.Instance.transform.rotation.eulerAngles;
-                faceDir.y += yRotationOffset;
-                _worldContainer.gameObject.transform.rotation = Quaternion.Euler(faceDir);
-                
+                Compass.Instance.SetUp(_worldContainer.gameObject, yRotationOffset);
+
                 OnPlaneARReadyClick();
                 }
                 catch (System.Exception e)

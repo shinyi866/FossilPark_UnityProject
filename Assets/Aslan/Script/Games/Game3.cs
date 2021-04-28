@@ -37,9 +37,9 @@ namespace GameMission
         private GameObject currentBall;
 
         // set thorw ball parameter
-        private float Xmin = -0.4f;
-        private float Xmax = 0.2f;
-        private int speed = 174;
+        private float Xmin = -0.2f;
+        private float Xmax = 0.1f;
+        private int speed = 176;
         private int passCount = 1;
 
         // unsupport AR
@@ -53,21 +53,10 @@ namespace GameMission
             _camera = CameraCtrl.instance.GetCurrentCamera();
             monleyAnimator = monkey.GetComponent<Animator>();
             playableDirector = monkey.GetComponent<PlayableDirector>();
-            monkeyScene.transform.rotation = Compass.Instance.transform.rotation;
 
             count = fruit;
             leftButton = gameModal.game3Panel.leftButton;
             rightButton = gameModal.game3Panel.rightButton;
-
-            _camera = CameraCtrl.instance.GetCurrentCamera();
-            _camera.transform.position = Compass.Instance.transform.position;
-
-            /*
-            var _cameraFront = _camera.transform.forward;
-            _cameraFront.y = -0.8f;
-            _cameraFront.z = 1f;
-            basket.transform.position = _camera.transform.position + _cameraFront;
-            */
         }
 
         public void GameStart()
@@ -94,8 +83,7 @@ namespace GameMission
         {
             if (time > 0)
             {
-                Object.transform.rotation = Compass.Instance.transform.rotation;
-                //basket.transform.rotation = Compass.Instance.transform.rotation;
+                Compass.Instance.SetUp(Object, 85);
                 time -= Time.deltaTime;
             }
         }
@@ -105,10 +93,8 @@ namespace GameMission
             var _cameraFront = _camera.transform.forward;
 
             _cameraFront.y = -1f;
-            //_cameraFront *= 1f;
 
             basket.transform.position = _camera.transform.position + _cameraFront;
-            basket.transform.rotation = _camera.transform.rotation;
         }
 
         private void GameResult(bool isSuccess)

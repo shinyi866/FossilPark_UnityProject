@@ -3,7 +3,7 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 1,"發現蹤跡,附近似乎有時光機器，趕緊找找看吧！",這就是時光機器！快上去看看！,帶回管理員,這就是時光機器！快上去看看！,"時光機器,這就是時光機器！快上去看看！",前往觀看,0,KiKi KoKo 正在為了孵化恐龍蛋化石爭吵著,,觀看時光機動畫,四處尋找看看有逆走中的建築在哪？它就是時光機喔！,"糟糕！時光機故障了！
 剛剛還在上面的六位管理員不見了！
 我們要找到管理時鐘的管理員們，修復逆走鐘，就可以再次使用時間回朔的功能了！
-我們去尋找他們，並使用相機拍攝他們，讓他們重新啟動時光機吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100_1.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100.png,,
+我們去尋找他們，並使用相機拍攝他們，讓他們重新啟動時光機吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/01/time.png,Assets/Aslan/ArtSprite/GameUI/01/time.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100.png,Assets/Aslan/ArtSprite/GameUI/01/pic.png,
 2,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"你好我是時間管理員的梅花鹿 
 這裡是左鎮菜寮溪溪床！

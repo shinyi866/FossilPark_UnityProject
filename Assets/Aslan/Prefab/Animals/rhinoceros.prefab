@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 343255911299111906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 1792195988763143417}
   - {fileID: 7330030319009962813}
@@ -82,6 +82,14 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 1049793003436660880, guid: 6a9354915594e4c448361dea1760ca52, type: 2}
     value: {fileID: 343255911299111909}
+  - key: {fileID: 5058654626837028154, guid: 6a9354915594e4c448361dea1760ca52, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7515957655322100416, guid: 6a9354915594e4c448361dea1760ca52, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -2342979073795422433, guid: 6a9354915594e4c448361dea1760ca52, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -271613633410375010, guid: 6a9354915594e4c448361dea1760ca52, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &343255911299111909
@@ -598,7 +606,6 @@ Transform:
   m_LocalPosition: {x: 0.000000011971824, y: 0.00000056762696, z: -0.274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4389899767273062753}
   - {fileID: 4389899766650384321}
   m_Father: {fileID: 1119335557726011736}
   m_RootOrder: 1
@@ -1118,7 +1125,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7330030319009962813}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -36.969, y: 227.21799, z: 0}
 --- !u!108 &4389899766650384320
 Light:
@@ -1131,7 +1138,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.89293, g: 0.8915094, b: 1, a: 1}
+  m_Color: {r: 0.43955177, g: 0.43801177, b: 0.4811321, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1139,98 +1146,6 @@ Light:
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!1 &4389899767273062782
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4389899767273062753}
-  - component: {fileID: 4389899767273062752}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4389899767273062753
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4389899767273062782}
-  m_LocalRotation: {x: 0.00000008940696, y: 0.9298879, z: -0.00000017881392, w: 0.36784318}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7330030319009962813}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 136.835, z: 0}
---- !u!108 &4389899767273062752
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4389899767273062782}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.98620105, b: 0.9764151, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

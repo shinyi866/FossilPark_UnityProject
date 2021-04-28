@@ -25,10 +25,11 @@ public class TriggerARObject : MonoBehaviour
         yield return new WaitForSeconds(10);
 
         foodInMouth.SetActive(false);
-
-        yield return new WaitForSeconds(5);
+        
+        yield return new WaitForSeconds(3);
         // Reset eat parameter
         Game8.resetEatFood = true;
         Game8.isEat = false;
+        
     }
 }

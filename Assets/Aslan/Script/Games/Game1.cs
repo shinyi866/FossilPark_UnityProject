@@ -15,7 +15,6 @@ namespace GameMission
 
         private int missionIndex = 1;
         private float time = 3;
-        //private Camera _camera;
         private bool isGameStart;
         private bool isVideoEnd;
         private bool isSetVideoPlane;
@@ -29,9 +28,8 @@ namespace GameMission
         {
             Modals.instance.CloseAllModal();            
             GameModals.instance.OpenAR(); // Stop AR Camera rotate
-            Object.transform.rotation = Compass.Instance.transform.rotation;
+            
             _camera = CameraCtrl.instance.GetCurrentCamera();
-            _camera.transform.position = Compass.Instance.transform.position;
             modal = GameModals.instance.OpenModal<ARGameModal>();
             data = MainApp.Instance.database;
             modal.text.text = data.m_Data[missionIndex].gameNotify[0];
@@ -48,7 +46,7 @@ namespace GameMission
         {
             if (time > 0)
             {
-                Object.transform.rotation = Compass.Instance.transform.rotation;
+                Compass.Instance.SetUp(Object, 0);
                 time -= Time.deltaTime;
             }
         }
@@ -87,6 +85,7 @@ namespace GameMission
         {
             modal.SwitchConfirmButton(true);
             modal.text.text = data.m_Data[missionIndex].gamePrompt[0];
+            modal.gamePromptPanel.image.sprite = data.m_Data[missionIndex].endPicutre;
             modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt1);            
             modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
             {
