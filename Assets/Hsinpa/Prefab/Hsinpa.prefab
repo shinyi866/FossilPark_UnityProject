@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74366572f83c78f489237bb1ea55c94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldContainer: {fileID: 0}
+  _worldContainer: {fileID: 7130396997272426828}
   _raycastInputHandler: {fileID: 5792027905143237172}
   _arHelper: {fileID: 5792027905781614435}
   _paintingManager: {fileID: 8423454240112462624}
@@ -474,7 +474,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3750142466095249619}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
@@ -914,7 +914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lightHouseAnchorManager: {fileID: 5792027904327538979}
-  TestMode: 0
+  TestMode: 1
 --- !u!1 &5792027905056538199
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +965,7 @@ MonoBehaviour:
   correctBoneTemplate: {fileID: -3811797635336335018, guid: 9a0be6c3c6d3a9d43a0f7932e425a358,
     type: 3}
   boneRandomSetSRP: {fileID: 11400000, guid: a952f555176f64d468c0cb57a01fdbfb, type: 2}
-  _finishTimelineAnimationPrefab: {fileID: 3619879481246236132, guid: b133a45ebe88d074e9bdc2fb87cd79a8,
+  _finishTimelineAnimationPrefab: {fileID: 7076310261572414039, guid: 1dd0a7f00fa66be4389f6552c12e1fbf,
     type: 3}
   colorLookupTable: {fileID: 11400000, guid: 4978beee82a752b4d9c5bbd7b3859916, type: 2}
   _angleThreshold: 0.95
@@ -1578,7 +1578,7 @@ MonoBehaviour:
   _Range: 0.04
   DrawShader: {fileID: 4800000, guid: 9b55552181b9fe144bf55fdf52af3727, type: 3}
   ScoreShader: {fileID: 4800000, guid: df5db4e76c9e1574b865c44077811875, type: 3}
-  maskTexture: {fileID: 2800000, guid: 9ab7447605dd32846801dc0f15c5d68c, type: 3}
+  maskTexture: {fileID: 2800000, guid: 45fbf6b230c92234e9152dd38c48f234, type: 3}
 --- !u!1 &6812692002853643250
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,7 +2826,7 @@ PrefabInstance:
     - target: {fileID: 5190995479793532909, guid: 9a0be6c3c6d3a9d43a0f7932e425a358,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a0be6c3c6d3a9d43a0f7932e425a358, type: 3}

@@ -128,9 +128,13 @@ namespace Hsinpa.Ctrl {
             _ = _lighthouseAnchorView.StartWatcher(GeneralFlag.MissionID.BoneRepairHome);
             _rhinoBoneHelper.Clean();
 
-            _arHelper.arCamera.transform.position = Compass.Instance.transform.position;
+            //_arHelper.arCamera.transform.position = Compass.Instance.transform.position;
             //spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(1000, 500, 0), Quaternion.identity);
-            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(0, -1.3f, 1.5f), Quaternion.identity);
+            var forwardDir = _arHelper.arCamera.transform.forward;
+            forwardDir.y = -1.3f;
+            var resetPosition = _arHelper.arCamera.transform.position + forwardDir;
+
+            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(resetPosition, Quaternion.identity);
             spawnRandomBoneTemplate = _rhinoBoneHelper.CreateBoneRandomSet(spawnCorrectBoneTemplate.transform.position, spawnCorrectBoneTemplate.transform.rotation);
             
             Initialization();
