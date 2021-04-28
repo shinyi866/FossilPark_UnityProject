@@ -50,8 +50,8 @@ namespace GameMission
         public void Init()
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
-            _camera.transform.position = Compass.Instance.transform.position;            
-            Object.transform.rotation = Compass.Instance.transform.rotation;
+
+            Compass.Instance.SetUp(Object, 74);
             //planeManager.enabled = true;
             //planeManager.planesChanged += PlaneChange;
 
@@ -60,7 +60,7 @@ namespace GameMission
             // setup all game objects in dictionary
             for(int i = 0; i < foodGameObject.Length; i++)
             {
-                GameObject newARObject = Instantiate(foodGameObject[i], Vector3.zero, Quaternion.identity);
+                GameObject newARObject = Instantiate(foodGameObject[i], foodGameObject[i].transform.position, foodGameObject[i].transform.rotation);
                 newARObject.name = foodGameObject[i].name;
                 arObjects.Add(foodGameObject[i].name, newARObject);
                 newARObject.SetActive(false);
@@ -243,7 +243,7 @@ namespace GameMission
                 switch (dinosaurlsType)
                 {
                     case TypeFlag.DinosaurlsType.Brachiosaurus:
-                        DinosaursEat(dotResult, 5.8f, 5.3f, 4f, 0.04f);
+                        DinosaursEat(dotResult, 5f, 4.8f, 4f, 0.04f);
                         break;
                     case TypeFlag.DinosaurlsType.TRex:
                         DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
@@ -268,7 +268,7 @@ namespace GameMission
                     switch (dinosaurlsType)
                     {
                         case TypeFlag.DinosaurlsType.Brachiosaurus:
-                            DinosaursEat(dotResult, 5.8f, 5.3f, 4f, 0.04f);
+                            DinosaursEat(dotResult, 5f, 4.8f, 4f, 0.04f);
                             break;
                         case TypeFlag.DinosaurlsType.TRex:
                             DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
@@ -288,7 +288,7 @@ namespace GameMission
         {
             ccidWeight = currentDinosaurl.GetComponent<CCDIK>().solver.GetIKPositionWeight();
             
-            if (dotResult > walkDotResult && arObjects[currentImageName].activeSelf)
+            if (dotResult > walkDotResult && arObjects[currentImageName].activeSelf) //&& testTarget.gameObject.activeSelf)//
             {
                 currentDinosaurl.GetComponent<Animator>().SetBool("walk", true);                
             }
@@ -308,7 +308,6 @@ namespace GameMission
                             ccidWeight += Time.deltaTime * trackSpeed;
                             currentDinosaurl.GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
                         }
-
 
                         Debug.Log("Eat");
                         txt3.text = "Eat";
@@ -383,9 +382,15 @@ namespace GameMission
             _camera.transform.rotation = Quaternion.Euler(_camera.transform.rotation.eulerAngles.x, Input.compass.trueHeading, _camera.transform.rotation.eulerAngles.z);
             txt2.text = $"_camera.transform.rotation: {_camera.transform.rotation}, headingAccuracy: {Input.compass.headingAccuracy},  magneticHeading: {Input.compass.magneticHeading},  rawVector: {Input.compass.rawVector},  timestamp: {Input.compass.timestamp}, trueHeading: {Input.compass.trueHeading}";
 
-            if (currentImageName == null) return; //AR mode
-            TargetDirection();
-
+            if(!TestMode)
+            {
+                if (currentImageName == null) return; //AR mode
+                TargetDirection();
+            }
+            else
+            {
+                TargetDirection();
+            }
         }
         
         private TypeFlag.DinosaurlsType GetCurrentType(int index)

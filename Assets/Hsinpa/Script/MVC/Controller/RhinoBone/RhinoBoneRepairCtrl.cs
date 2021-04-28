@@ -128,9 +128,8 @@ namespace Hsinpa.Ctrl {
             _ = _lighthouseAnchorView.StartWatcher(GeneralFlag.MissionID.BoneRepairHome);
             _rhinoBoneHelper.Clean();
 
-            _arHelper.arCamera.transform.position = Compass.Instance.transform.position;
             //spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(1000, 500, 0), Quaternion.identity);
-            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(0, -1.3f, 1.5f), Quaternion.identity);
+            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(0, -0.5f, 1.5f), Quaternion.identity);
             spawnRandomBoneTemplate = _rhinoBoneHelper.CreateBoneRandomSet(spawnCorrectBoneTemplate.transform.position, spawnCorrectBoneTemplate.transform.rotation);
             
             Initialization();
@@ -155,9 +154,7 @@ namespace Hsinpa.Ctrl {
                     spawnCorrectBoneTemplate.transform.rotation = Compass.Instance.transform.rotation;
                     */
 
-                var faceDir = Compass.Instance.transform.rotation.eulerAngles;
-                faceDir.y += yRotationOffset;
-                _worldContainer.transform.rotation = Quaternion.Euler(faceDir);
+                Compass.Instance.SetUp(_worldContainer.gameObject, yRotationOffset);
 
                 OnPlaneARReadyClick();
                 }

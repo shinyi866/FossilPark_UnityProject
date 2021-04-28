@@ -35,8 +35,6 @@ namespace GameMission
         public void Init()
         {
             isGameStart = true;
-            _camera = CameraCtrl.instance.GetCurrentCamera();
-            _camera.transform.position = Compass.Instance.transform.position;
         }
 
         public void GameStart(bool isARsupport)
@@ -60,7 +58,7 @@ namespace GameMission
         {
             if(time > 0)
             {
-                Object.transform.rotation = Compass.Instance.transform.rotation;
+                Compass.Instance.SetUp(Object, 0);
                 time -= Time.deltaTime;
             }
         }

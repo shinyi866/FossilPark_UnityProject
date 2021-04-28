@@ -49,6 +49,7 @@ namespace View
 
         public void StarMainView()
         {
+            SoundPlayerController.Instance.PlayBackgroundMusic();
             iBeaconMissionSetting.Instance.isEnterGame = false;
             MainButtonClick();
             MissionsButtonClick();

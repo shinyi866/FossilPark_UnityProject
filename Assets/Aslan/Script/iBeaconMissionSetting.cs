@@ -19,7 +19,6 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 
     private List<GameObject> cloneTransform = new List<GameObject>();
     private Beacon minBeacon;
-    private double minDistance = Mathf.Infinity;
 
     public bool isEnterGame;
 
@@ -28,7 +27,9 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
     /* search mission */
     public void MissionSearch(List<Beacon> mybeacons)
 	{
-        if (mybeacons == null || isEnterGame) return;
+        if (mybeacons.Count == 0 || mybeacons == null || isEnterGame) return;
+
+        double minDistance = Mathf.Infinity;
 
         foreach(Beacon b in mybeacons)
         {
@@ -60,31 +61,6 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
         {
             GameModals.instance.CloseModal();
         }
-        /*
-        for (int j = 0; j < ranges.Length; j++)
-        {
-            int mission = minBeacon.minor;
-
-            if (mission == j)
-            {
-                if (ranges[j].minRange < 0 && ranges[j].maxRange < 0) return;
-
-                if (minBeacon.accuracy < ranges[j].minRange)
-                {
-                    Handheld.Vibrate();
-                    GameMissions.instance.ShowMission(mission);
-                }
-                else if (minBeacon.accuracy > ranges[j].minRange && minBeacon.accuracy < ranges[j].maxRange)
-                {
-                    GameModals.instance.RoundNotify(mission);
-                }
-                else if (minBeacon.accuracy > ranges[j].maxRange)
-                {
-                    GameModals.instance.CloseModal();
-                }
-            }
-        }
-        */
     }
 
     private void SetPosition()

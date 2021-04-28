@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8277111823220518542}
   m_Layer: 0
-  m_Name: ticket
+  m_Name: meat
   m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,7 +372,7 @@ Transform:
   m_GameObject: {fileID: 8761161494836474932}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0.03, y: 0, z: -0.0197}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children:
   - {fileID: 8639725915346596117}
   - {fileID: 8911464778413576926}

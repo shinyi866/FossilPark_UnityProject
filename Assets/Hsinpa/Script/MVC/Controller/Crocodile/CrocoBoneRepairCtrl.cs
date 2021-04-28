@@ -105,8 +105,7 @@ namespace Hsinpa.Ctrl
             Debug.Log("Croco PerformNoARAction");
             crocodileTargetTimelineAnim.gameObject.SetActive(true);
             crocodileTargetTimelineAnim.ShowConfirmBtn(false);
-
-            _arHelper.arCamera.transform.position = Compass.Instance.transform.position;
+            
             //_arHelper.SetARCameraPos(new Vector3(0, 0.5f, 0), Quaternion.Euler(90, 0, 0));
             _state = GeneralFlag.GeneralState.UnderGoing;
 
@@ -129,10 +128,8 @@ namespace Hsinpa.Ctrl
                 //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
                 //_arHelper.arCamera.transform.position = Compass.Instance.transform.position;
 
-                var faceDir = Compass.Instance.transform.rotation.eulerAngles;
-                faceDir.y += yRotationOffset;
-                _worldContainer.gameObject.transform.rotation = Quaternion.Euler(faceDir);
-                
+                Compass.Instance.SetUp(_worldContainer.gameObject, yRotationOffset);
+
                 OnPlaneARReadyClick();
                 }
                 catch (System.Exception e)

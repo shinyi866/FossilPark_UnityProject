@@ -28,7 +28,7 @@ namespace GameMission
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Original);
             
             rhinoCtrl.OnEndGameEvent += EndGame;
-            rhinoCtrl.EnterGame(100);
+            rhinoCtrl.EnterGame(90);
         }
 
         public void EndGame(bool isSuccess)
