@@ -45,12 +45,14 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
         text.text = $"minDistance: {minBeacon.accuracy}, minIndex: {minBeacon.minor}";
 
         int mission = minBeacon.minor;
+        int limit = minBeacon.major;
 
         if (ranges[mission].minRange < 0 && ranges[mission].maxRange < 0) return;
 
         if (minBeacon.accuracy < ranges[mission].minRange)
         {
             Handheld.Vibrate();
+            SoundPlayerController.Instance.AlertSoundEffect();
             GameMissions.instance.ShowMission(mission);
         }
         else if (minBeacon.accuracy > ranges[mission].minRange && minBeacon.accuracy < ranges[mission].maxRange)
@@ -60,6 +62,12 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
         else if (minBeacon.accuracy > ranges[mission].maxRange)
         {
             GameModals.instance.CloseModal();
+        }
+
+        if(limit == 1)
+        {
+            Debug.Log("alert");
+            //TODO: Alert view
         }
     }
 

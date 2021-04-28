@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SoundData
   m_EditorClassIdentifier: 
   SoundItems:
-  - bgm: {fileID: 8300000, guid: 6d9f2c8692d1f4f5eaf093a45cc3d6f6, type: 3}
+    bgm: {fileID: 8300000, guid: 6d9f2c8692d1f4f5eaf093a45cc3d6f6, type: 3}
     alertMission: {fileID: 8300000, guid: 93911bd1398314bc3ae82fa502180ce4, type: 3}
     bonematch: {fileID: 8300000, guid: 60b291720c10a43f7aa806394bf5e054, type: 3}
     enterMission: {fileID: 8300000, guid: 1d48a65d927014374b1af274f7cf32bb, type: 3}

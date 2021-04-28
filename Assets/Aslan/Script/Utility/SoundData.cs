@@ -19,6 +19,6 @@ public class Sound
 public class SoundData : ScriptableObject
 {
     [SerializeField]
-    public Sound[] SoundItems;
+    public Sound SoundItems;
 
 }

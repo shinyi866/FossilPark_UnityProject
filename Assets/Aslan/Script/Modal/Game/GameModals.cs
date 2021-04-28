@@ -116,6 +116,7 @@ namespace View
             model.ShowInfo(index, TypeFlag.TitleType.EnterGame0);
             model.Game0ConfirmButton.onClick.AddListener(() =>
             {
+                SoundPlayerController.Instance.EnterSoundEffect();
                 iBeaconMissionSetting.Instance.IBeaconNotDetect(index);
                 GuideModel(index);
             });
@@ -128,6 +129,7 @@ namespace View
             model.ShowInfo(index, TypeFlag.TitleType.EnterTitle);
             model.ConfirmButton.onClick.AddListener(() =>
             {
+                SoundPlayerController.Instance.EnterSoundEffect();
                 iBeaconMissionSetting.Instance.IBeaconNotDetect(index);
                 EnterModel(index);
                 GameMissions.instance.EnterGame();
