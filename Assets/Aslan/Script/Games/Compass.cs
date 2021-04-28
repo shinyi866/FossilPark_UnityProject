@@ -19,11 +19,10 @@ public class Compass : Singleton<Compass>
     public void SetUp(GameObject gameObject, float rotationOffset)
     {
         _camera = CameraCtrl.instance.GetCurrentCamera();
-        //_camera.transform.position = new Vector3(0, 0, 0);
-
+        
         var faceDir = this.transform.rotation.eulerAngles;
         faceDir.y += rotationOffset;
-        gameObject.transform.position = this.transform.position;
+        gameObject.transform.position = _camera.transform.position;
         gameObject.transform.rotation = Quaternion.Euler(faceDir);
 
         text2.text = $"set up: {_camera.transform.position}, gameObject: {gameObject.transform.position}, current camera: {_camera.transform.position}";
