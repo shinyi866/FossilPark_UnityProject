@@ -39,7 +39,7 @@ namespace GameMission
         // set thorw ball parameter
         private float Xmin = -0.2f;
         private float Xmax = 0.1f;
-        private int speed = 176;
+        private int speed = 197;
         private int passCount = 1;
 
         // unsupport AR
@@ -83,7 +83,7 @@ namespace GameMission
         {
             if (time > 0)
             {
-                Compass.Instance.SetUp(Object, 85);
+                Compass.Instance.SetUp(Object, 75);
                 time -= Time.deltaTime;
             }
         }

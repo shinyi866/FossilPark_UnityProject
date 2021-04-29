@@ -28,12 +28,15 @@ namespace GameMission
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Original);
 
             crocoCtrl.OnEndGameEvent += EndGame;
-            crocoCtrl.EnterGame(110);
+            crocoCtrl.EnterGame(90);
         }
 
         public void EndGame(bool isSuccess)
         {
             crocoCtrl.OnEndGameEvent -= EndGame;
+
+            var ARmodal = GameModals.instance.OpenModal<ARGameModal>();
+            ARmodal.CloseAllPanel();
 
             var model = GameModals.instance.OpenModal<DialogModal>();
             model.ShowInfo(missionIndex, TypeFlag.DialogType.EndDialog);

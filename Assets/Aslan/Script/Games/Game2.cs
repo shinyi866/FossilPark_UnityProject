@@ -27,7 +27,7 @@ namespace GameMission
         private bool isUnARGameStart;
         private bool isGameStart;
         private int successTimes;
-        private float time = 3;
+        private float time = 2;
         private Camera _camera;
         private GameObject placeObject;
         private ARGameModal modal;
@@ -58,7 +58,7 @@ namespace GameMission
         {
             if(time > 0)
             {
-                Compass.Instance.SetUp(Object, 0);
+                Compass.Instance.SetUp(Object, 2);
                 time -= Time.deltaTime;
             }
         }

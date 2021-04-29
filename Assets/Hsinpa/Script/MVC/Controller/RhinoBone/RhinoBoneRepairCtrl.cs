@@ -129,7 +129,7 @@ namespace Hsinpa.Ctrl {
             _rhinoBoneHelper.Clean();
 
             //spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(1000, 500, 0), Quaternion.identity);
-            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(0, -0.5f, 1.5f), Quaternion.identity);
+            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(0, -1.5f, 1f), Quaternion.identity);
             spawnRandomBoneTemplate = _rhinoBoneHelper.CreateBoneRandomSet(spawnCorrectBoneTemplate.transform.position, spawnCorrectBoneTemplate.transform.rotation);
             
             Initialization();

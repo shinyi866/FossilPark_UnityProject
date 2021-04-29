@@ -20,13 +20,13 @@ public class SoundPlayerController : Singleton<SoundPlayerController>
     public void AlertSoundEffect()
     {
         soundEffectAudio.clip = soundData.SoundItems.alertMission;
-        bgmAudio.Play();
+        soundEffectAudio.Play();
     }
 
     public void MatchSoundEffect()
     {
         soundEffectAudio.clip = soundData.SoundItems.bonematch;
-        bgmAudio.Play();
+        soundEffectAudio.Play();
     }
 
     public void EnterSoundEffect()
@@ -38,30 +38,30 @@ public class SoundPlayerController : Singleton<SoundPlayerController>
     public void ErrorSoundEffect()
     {
         soundEffectAudio.clip = soundData.SoundItems.error;
-        bgmAudio.Play();
+        soundEffectAudio.Play();
     }
 
     public void FinishSoundEffect()
     {
         soundEffectAudio.clip = soundData.SoundItems.fnish;
-        bgmAudio.Play();
+        soundEffectAudio.Play();
     }
 
     public void FInishAllSoundEffect()
     {
         soundEffectAudio.clip = soundData.SoundItems.finishAll;
-        bgmAudio.Play();
+        soundEffectAudio.Play();    
     }
 
     public void NextSoundEffect()
     {
         soundEffectAudio.clip = soundData.SoundItems.next;
-        bgmAudio.Play();
+        soundEffectAudio.Play();
     }
 
     public void TakePictureSoundEffect()
     {
         soundEffectAudio.clip = soundData.SoundItems.takePicture;
-        bgmAudio.Play();
+        soundEffectAudio.Play();
     }
 }

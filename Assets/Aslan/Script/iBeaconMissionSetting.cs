@@ -16,6 +16,8 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
     private Transform setTransform;
     [SerializeField]
     private Text text;
+    [SerializeField]
+    private GameObject alert;
 
     private List<GameObject> cloneTransform = new List<GameObject>();
     private Beacon minBeacon;
@@ -28,9 +30,48 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
     public void MissionSearch(List<Beacon> mybeacons)
 	{
         if (mybeacons.Count == 0 || mybeacons == null || isEnterGame) return;
+        /*
+        foreach (Beacon b in mybeacons)
+        {
+            int mission = b.minor;
+            int limit = b.major;
 
+            if (ranges[mission].minRange < 0 && ranges[mission].maxRange < 0) return;
+            if (b.accuracy < 0) return;
+
+            if (b.accuracy < ranges[mission].minRange)
+            {
+                Handheld.Vibrate();
+                SoundPlayerController.Instance.AlertSoundEffect();
+                GameMissions.instance.ShowMission(mission);
+            }
+            else if (b.accuracy > ranges[mission].minRange && b.accuracy < ranges[mission].maxRange)
+            {
+                GameModals.instance.RoundNotify(mission);
+            }
+            else if (b.accuracy > ranges[mission].maxRange)
+            {
+                GameModals.instance.CloseModal();
+            }
+
+            if (limit == 1)
+            {
+                Debug.Log("alert");
+                if(b.accuracy < 0.3)
+                {
+                    alert.SetActive(true);
+                }
+                else
+                {
+                    alert.SetActive(false);
+                }
+                
+            }
+        }
+        */
+        
         double minDistance = Mathf.Infinity;
-
+        
         foreach(Beacon b in mybeacons)
         {
             // TODO: search 2,8 mission
@@ -64,11 +105,20 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
             GameModals.instance.CloseModal();
         }
 
-        if(limit == 1)
+        if (limit == 1)
         {
             Debug.Log("alert");
-            //TODO: Alert view
+            if (minBeacon.accuracy < 0.3)
+            {
+                alert.SetActive(true);
+            }
+            else
+            {
+                alert.SetActive(false);
+            }
+
         }
+
     }
 
     private void SetPosition()

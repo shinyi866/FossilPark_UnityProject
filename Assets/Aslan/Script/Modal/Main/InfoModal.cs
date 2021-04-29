@@ -54,6 +54,7 @@ namespace View
                 if (dinosaurlView)
                 {
                     Modals.instance.OpenModal<DinosaurlModal>();
+                    iBeaconMissionSetting.Instance.isEnterGame = false;
                     dinosaurlView = false;                    
                 }
             });
@@ -62,6 +63,7 @@ namespace View
             {
                 var arIndex = currentIndex + 2;
                 Modals.instance.OpenAR(arIndex, currentType);
+                iBeaconMissionSetting.Instance.isEnterGame = true;
 
                 currentSprites = null;
             });

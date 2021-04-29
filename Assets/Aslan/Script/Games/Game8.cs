@@ -51,7 +51,7 @@ namespace GameMission
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
 
-            Compass.Instance.SetUp(Object, 74);
+            Compass.Instance.SetUp(Object, 185);
             //planeManager.enabled = true;
             //planeManager.planesChanged += PlaneChange;
 
@@ -378,9 +378,6 @@ namespace GameMission
         private void LateUpdate()
         {
             if (!isGameStart) return;
-
-            _camera.transform.rotation = Quaternion.Euler(_camera.transform.rotation.eulerAngles.x, Input.compass.trueHeading, _camera.transform.rotation.eulerAngles.z);
-            txt2.text = $"_camera.transform.rotation: {_camera.transform.rotation}, headingAccuracy: {Input.compass.headingAccuracy},  magneticHeading: {Input.compass.magneticHeading},  rawVector: {Input.compass.rawVector},  timestamp: {Input.compass.timestamp}, trueHeading: {Input.compass.trueHeading}";
 
             if(!TestMode)
             {
