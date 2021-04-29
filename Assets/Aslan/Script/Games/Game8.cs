@@ -11,7 +11,6 @@ namespace GameMission
     public class Game8 : Game
     {
         public Text txt1;
-        public Text txt2;
         public Text txt3;
         public ARTrackedImageManager ARTrackedImage;
         public ARPlaneManager planeManager;
@@ -32,7 +31,6 @@ namespace GameMission
         private Dictionary<string, GameObject> arObjects = new Dictionary<string, GameObject>();
         // AR place
         private Vector2 touchPosition = default;
-        private Camera _camera;
 
         private string currentImageName;
         private int missionIndex = 8;
@@ -49,9 +47,6 @@ namespace GameMission
 
         public void Init()
         {
-            _camera = CameraCtrl.instance.GetCurrentCamera();
-
-            Compass.Instance.SetUp(Object, 185);
             //planeManager.enabled = true;
             //planeManager.planesChanged += PlaneChange;
 
@@ -76,6 +71,7 @@ namespace GameMission
 
         public void GameStart()
         {
+            Compass.Instance.SetUp(Object, 185);
             SwitchDinosaurlScene((int)TypeFlag.DinosaurlsType.Brachiosaurus);
             isGameStart = true;
         }
@@ -129,7 +125,6 @@ namespace GameMission
                 modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game8);
 
                 ARPlane aRPlane = args.added[0];
-                txt1.text = "1aRPlane " + aRPlane.transform.position;
 
                 placeObject = aRPlane;
                 dinosaurlScenes[currentIndex].SetActive(true);
@@ -268,7 +263,7 @@ namespace GameMission
                     switch (dinosaurlsType)
                     {
                         case TypeFlag.DinosaurlsType.Brachiosaurus:
-                            DinosaursEat(dotResult, 5f, 4.8f, 4f, 0.04f);
+                            DinosaursEat(dotResult, 4.5f, 4f, 4f, 0.04f);
                             break;
                         case TypeFlag.DinosaurlsType.TRex:
                             DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
