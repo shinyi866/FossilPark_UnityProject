@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class FeedDinosaur : MonoBehaviour
 {
+    public int DinosaurNumber;
+    public GameObject[] Dinosaurs;
     public Transform addPos;
     static public GameObject food;
     public GameObject[] foodPrefab;
+    public delegate void stfood();
+    public static event stfood _stfood;
     // Start is called before the first frame update
     void Start()
     {
-
+        Dinosaurs[DinosaurNumber].SetActive(true);
         addPos.SetParent(Camera.main.transform);
         
         addPos.localPosition = Vector3.zero;
@@ -25,6 +29,7 @@ public class FeedDinosaur : MonoBehaviour
 
     public void addFood(int i)
     {
-        food = Instantiate(foodPrefab[i], addPos.GetChild(0).position, addPos.rotation);
+        //food = Instantiate(foodPrefab[i], addPos.GetChild(0).position, addPos.rotation);
+        _stfood();
     }
 }

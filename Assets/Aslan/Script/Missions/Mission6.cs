@@ -30,6 +30,7 @@ namespace GameMission
 
         public override void StartGame()
         {
+            SoundPlayerController.Instance.PauseBackgroundMusic();
             game.GameStart();
         }
 
@@ -43,6 +44,7 @@ namespace GameMission
             {
                 Games.instance.ClosGame();
                 MediaPlayerController.instance.CloseVideo();
+                SoundPlayerController.Instance.PlayBackgroundMusic();
                 GameModals.instance.CloseModal();
                 GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
             });

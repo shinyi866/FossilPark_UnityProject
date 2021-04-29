@@ -238,7 +238,7 @@ namespace GameMission
                 switch (dinosaurlsType)
                 {
                     case TypeFlag.DinosaurlsType.Brachiosaurus:
-                        DinosaursEat(dotResult, 5f, 4.8f, 4f, 0.04f);
+                        DinosaursEat(dotResult, 4.5f, 4f, 3.5f, 0.04f);
                         break;
                     case TypeFlag.DinosaurlsType.TRex:
                         DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
@@ -263,7 +263,7 @@ namespace GameMission
                     switch (dinosaurlsType)
                     {
                         case TypeFlag.DinosaurlsType.Brachiosaurus:
-                            DinosaursEat(dotResult, 4.5f, 4f, 4f, 0.04f);
+                            DinosaursEat(dotResult, 4.5f, 4f, 3.5f, 0.04f);
                             break;
                         case TypeFlag.DinosaurlsType.TRex:
                             DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);

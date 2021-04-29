@@ -36,7 +36,7 @@ namespace GameMission
             crocoCtrl.OnEndGameEvent -= EndGame;
 
             var ARmodal = GameModals.instance.OpenModal<ARGameModal>();
-            ARmodal.CloseAllPanel();
+            ARmodal.ShowPanel(ARmodal.gamePromptPanel.canvasGroup, false);
 
             var model = GameModals.instance.OpenModal<DialogModal>();
             model.ShowInfo(missionIndex, TypeFlag.DialogType.EndDialog);

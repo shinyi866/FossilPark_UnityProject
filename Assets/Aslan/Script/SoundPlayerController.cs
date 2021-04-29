@@ -17,6 +17,11 @@ public class SoundPlayerController : Singleton<SoundPlayerController>
         bgmAudio.Play();
     }
 
+    public void PauseBackgroundMusic()
+    {
+        bgmAudio.clip = null;
+    }
+
     public void AlertSoundEffect()
     {
         soundEffectAudio.clip = soundData.SoundItems.alertMission;

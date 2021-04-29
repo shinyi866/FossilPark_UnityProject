@@ -86,6 +86,7 @@ namespace GameMission
                 if (!reault)
                 {
                     ReSetPosition();
+                    SoundPlayerController.Instance.ErrorSoundEffect();
                 }
                 else
                 {
@@ -93,6 +94,8 @@ namespace GameMission
                     GameModals.instance.CloseModal();
                     MediaPlayerController.instance.CloseVideo();
                     MediaPlayerController.instance.LoadAndPlayVideoNotLoop(successVidePath);
+                    SoundPlayerController.Instance.PauseBackgroundMusic();
+                    SoundPlayerController.Instance.FInishAllSoundEffect();
                     finishGame = true;
                 }
             });
