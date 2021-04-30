@@ -277,7 +277,7 @@ MonoBehaviour:
       type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: cc7c3e4af88a54caabfb5b2a64e76f64,
       type: 3}
-    guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    guidePicture1: {fileID: 21300000, guid: 20a2603ecd6a4445e88427c0ffec6f7f, type: 3}
     guidePicture2: {fileID: 0}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}
@@ -302,9 +302,9 @@ MonoBehaviour:
     - "\u7559\u4E0B\u7F8E\u597D\u7684\u7D00\u5FF5\uFF01"
     endMessage: []
     pictureNotify: 
-    animalDialogPicture: {fileID: 21300000, guid: 9e2527c75c5da43768c771c1849bf49c,
+    animalDialogPicture: {fileID: 21300000, guid: 064819750d4414df78a06715a392dab5,
       type: 3}
-    animalNotifyPicture: {fileID: 21300000, guid: 9e2527c75c5da43768c771c1849bf49c,
+    animalNotifyPicture: {fileID: 21300000, guid: 064819750d4414df78a06715a392dab5,
       type: 3}
     guidePicture1: {fileID: 21300000, guid: 064819750d4414df78a06715a392dab5, type: 3}
     guidePicture2: {fileID: 21300000, guid: 123706fc1a297489eb8493a226f2f0f3, type: 3}

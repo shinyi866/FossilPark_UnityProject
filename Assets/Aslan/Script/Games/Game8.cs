@@ -216,13 +216,13 @@ namespace GameMission
                 switch (dinosaurlsType)
                 {
                     case TypeFlag.DinosaurlsType.Brachiosaurus:
-                        DinosaursEat(dotResult, 6f, 5.7f, 4.5f, 0.04f);
+                        DinosaursEat(dotResult, 5.7f, 5.5f, 4.5f, 0.04f);
                         break;
                     case TypeFlag.DinosaurlsType.TRex:
-                        DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
+                        DinosaursEat(dotResult, 2.9f, 2.6f, 1.6f, 1f);
                         break;
                     case TypeFlag.DinosaurlsType.Triceratop:
-                        DinosaursEat(dotResult, 3.2f, 2.8f, 2.5f, 0.05f);
+                        DinosaursEat(dotResult, 3f, 2.6f, 2.3f, 0.05f);
                         break;
                 }
                 Debug.Log("TestMode ");
@@ -232,7 +232,6 @@ namespace GameMission
                 if(showARfood != null && resetEatFood)
                 {
                     arToFood = showARfood.transform.position - currentDinosaurl.transform.position;
-                    //currentDinosaurl.GetComponent<CCDIK>().solver.target = showARfood.transform;
                     Vector3 lookAtTarget = new Vector3(arToFood.x, currentDinosaurl.transform.position.y, arToFood.z);
                     currentDinosaurl.transform.LookAt(lookAtTarget);
                     dotResult = Vector3.Dot(forward, arToFood);
@@ -241,13 +240,13 @@ namespace GameMission
                     switch (dinosaurlsType)
                     {
                         case TypeFlag.DinosaurlsType.Brachiosaurus:
-                            DinosaursEat(dotResult, 6f, 5.7f, 4.5f, 0.04f);
+                            DinosaursEat(dotResult, 5.7f, 5.5f, 4.5f, 0.04f);
                             break;
                         case TypeFlag.DinosaurlsType.TRex:
-                            DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
+                            DinosaursEat(dotResult, 2.9f, 2.6f, 1.6f, 1f);
                             break;
                         case TypeFlag.DinosaurlsType.Triceratop:
-                            DinosaursEat(dotResult, 3.2f, 2.8f, 2.5f, 0.05f);
+                            DinosaursEat(dotResult, 3f, 2.6f, 2.3f, 0.05f);
                             break;
                     }                    
                 }
@@ -261,7 +260,7 @@ namespace GameMission
         {
             ccidWeight = currentDinosaurl.GetComponent<CCDIK>().solver.GetIKPositionWeight();
             
-            if (dotResult > walkDotResult && arObjects[currentImageName].activeSelf) // && testTarget.gameObject.activeSelf)// 
+            if (dotResult > walkDotResult && arObjects[currentImageName].activeInHierarchy) // && testTarget.gameObject.activeSelf)// 
             {
                 currentDinosaurl.GetComponent<Animator>().SetBool("walk", true);                
             }
@@ -283,7 +282,7 @@ namespace GameMission
                         }
 
                         Debug.Log("Eat");
-                        txt3.text = "Eat";
+                        txt3.text = $"Eat, ccid: {ccidWeight}";
                     }
                     else
                     {
@@ -295,8 +294,7 @@ namespace GameMission
                         resetEatFood = false;
 
                         Debug.Log("End Eat");
-                        txt3.text = "End Eat";
-                        
+                        txt3.text = $"End Eat, ccid: {ccidWeight}";
                     }
                 }
                 else
@@ -308,7 +306,7 @@ namespace GameMission
                     currentDinosaurl.GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
 
                     Debug.Log("Not Eat");
-                    txt3.text = "Not Eat";
+                    txt3.text = $"Not Eat, ccid: {ccidWeight}";
                 }
             }
         }

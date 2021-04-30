@@ -14,7 +14,7 @@ namespace GameMission
         public System.Action gameOverEvent;
 
         private int missionIndex = 1;
-        private float time = 3;
+        private float time = 8;
         private bool isGameStart;
         private bool isVideoEnd;
         private bool isSetVideoPlane;
@@ -46,7 +46,7 @@ namespace GameMission
         {
             if (time > 0)
             {
-                Compass.Instance.SetUp(Object, 10);
+                Compass.Instance.SetUp(Object, 12); //10
                 time -= Time.deltaTime;
             }
         }
