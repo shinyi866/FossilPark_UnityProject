@@ -35,6 +35,7 @@ namespace GameMission
         private string currentImageName;
         private int missionIndex = 8;
         private int currentIndex = 0;
+        private double time = 3;
         private float ccidWeight = 0.0f;
         private bool isGameStart;
 
@@ -47,9 +48,6 @@ namespace GameMission
 
         public void Init()
         {
-            //planeManager.enabled = true;
-            //planeManager.planesChanged += PlaneChange;
-
             foreach (var b in dinosaurlScenes) { b.SetActive(false); }
 
             // setup all game objects in dictionary
@@ -71,12 +69,18 @@ namespace GameMission
 
         public void GameStart()
         {
-            Compass.Instance.SetUp(Object, 185);
             SwitchDinosaurlScene((int)TypeFlag.DinosaurlsType.Brachiosaurus);
             isGameStart = true;
         }
 
-        
+        private void ResetDirection()
+        {
+            if (time > 0)
+            {
+                Compass.Instance.SetUp(Object, 275);
+                time -= Time.deltaTime;
+            }
+        }
 
         private void ButtonSetUp()
         {
@@ -97,43 +101,17 @@ namespace GameMission
             foreach (var o in dinosaurlScenes) { o.SetActive(false); }
             foreach (var b in foodButton) { b.interactable = true; }
             foreach(var f in foodinMouth) { f.SetActive(false); }
+
             ResetDinosaurls();
-            //if (currentDinosaurl != null)
-            //    Destroy(currentDinosaurl);
-
-            currentDinosaurl = dinosaurs[index]; // Instantiate(dinosaurs[index]);
-            //currentFood = arObjects[foodGameObject[index].name];
-            //currentDinosaurl.transform.SetParent(dinosaurlScenes[index].transform);
-
+            currentDinosaurl = dinosaurs[index];
             dinosaurlScenes[index].SetActive(true);
-
             foodButton[index].interactable = false;
-
             isEat = false;
-            //placeObject = null;
+            
             var eggModal = Modals.instance.GetModel<EggModal>();
             eggModal.type = index;
             eggModal.RotateTimes();
             eggModal.startMachine = true;
-        }
-
-        // AR Plane Track
-        private void PlaneChange(ARPlanesChangedEventArgs args)
-        {
-            if (args.added != null && placeObject == null)
-            {
-                modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game8);
-
-                ARPlane aRPlane = args.added[0];
-
-                placeObject = aRPlane;
-                dinosaurlScenes[currentIndex].SetActive(true);
-                currentDinosaurl.transform.position = new Vector3(currentDinosaurl.transform.position.x, aRPlane.transform.position.y-1, currentDinosaurl.transform.position.z);                               
-            }
-            else
-            {
-                modal.text.text = "請掃描周遭地面";
-            }
         }
 
         // AR Image Track
@@ -238,7 +216,7 @@ namespace GameMission
                 switch (dinosaurlsType)
                 {
                     case TypeFlag.DinosaurlsType.Brachiosaurus:
-                        DinosaursEat(dotResult, 4.5f, 4f, 3.5f, 0.04f);
+                        DinosaursEat(dotResult, 6f, 5.7f, 4.5f, 0.04f);
                         break;
                     case TypeFlag.DinosaurlsType.TRex:
                         DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
@@ -263,7 +241,7 @@ namespace GameMission
                     switch (dinosaurlsType)
                     {
                         case TypeFlag.DinosaurlsType.Brachiosaurus:
-                            DinosaursEat(dotResult, 4.5f, 4f, 3.5f, 0.04f);
+                            DinosaursEat(dotResult, 6f, 5.7f, 4.5f, 0.04f);
                             break;
                         case TypeFlag.DinosaurlsType.TRex:
                             DinosaursEat(dotResult, 2.8f, 2.5f, 1.5f, 1f);
@@ -283,7 +261,7 @@ namespace GameMission
         {
             ccidWeight = currentDinosaurl.GetComponent<CCDIK>().solver.GetIKPositionWeight();
             
-            if (dotResult > walkDotResult && arObjects[currentImageName].activeSelf) //&& testTarget.gameObject.activeSelf)//
+            if (dotResult > walkDotResult && arObjects[currentImageName].activeSelf) // && testTarget.gameObject.activeSelf)// 
             {
                 currentDinosaurl.GetComponent<Animator>().SetBool("walk", true);                
             }
@@ -351,30 +329,13 @@ namespace GameMission
             }
         }
 
-        /*
-        private bool CheckFoodDinosaurls(string foodName)
-        {
-            bool returnValue = false;
-
-            if (foodName == null) return false;
-
-            for (int i = 0; i < foodGameObject.Length; i++)
-            {
-                if (foodName == foodGameObject[i].name)
-                {
-                    if (i == currentIndex)
-                        returnValue = true;
-                }
-            }
-
-            return returnValue;
-        }
-        */
-        private void LateUpdate()
+        private void Update()
         {
             if (!isGameStart) return;
 
-            if(!TestMode)
+            ResetDirection();
+
+            if (!TestMode)
             {
                 if (currentImageName == null) return; //AR mode
                 TargetDirection();

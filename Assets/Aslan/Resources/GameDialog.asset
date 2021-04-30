@@ -292,7 +292,7 @@ MonoBehaviour:
     - "\u767C\u73FE\u8E64\u8DE1"
     - "\u6211\u5011\u597D\u50CF\u767C\u73FE\u4E86\u4E0D\u53EF\u4EE5\u601D\u8B70\u7684\u53E4\u751F\u7269\uFF01\n\u5FEB\u4E0A\u524D\u53BB\u770B\u770B\uFF01"
     titleButton: "\u524D\u5F80\u89C0\u770B"
-    guideID: 1
+    guideID: 0
     gameGuide:
     - "\u62FF\u53D6\u9580\u7968\u53EF\u4EE5\u9935\u98DF\u6050\u9F8D\u5594\uFF01"
     guideButton: "\u958B\u59CB"
@@ -304,9 +304,9 @@ MonoBehaviour:
     pictureNotify: 
     animalDialogPicture: {fileID: 21300000, guid: 9e2527c75c5da43768c771c1849bf49c,
       type: 3}
-    animalNotifyPicture: {fileID: 21300000, guid: 064819750d4414df78a06715a392dab5,
+    animalNotifyPicture: {fileID: 21300000, guid: 9e2527c75c5da43768c771c1849bf49c,
       type: 3}
-    guidePicture1: {fileID: 21300000, guid: 123706fc1a297489eb8493a226f2f0f3, type: 3}
-    guidePicture2: {fileID: 0}
+    guidePicture1: {fileID: 21300000, guid: 064819750d4414df78a06715a392dab5, type: 3}
+    guidePicture2: {fileID: 21300000, guid: 123706fc1a297489eb8493a226f2f0f3, type: 3}
     endPicutre: {fileID: 0}
     endPicutre2: {fileID: 0}

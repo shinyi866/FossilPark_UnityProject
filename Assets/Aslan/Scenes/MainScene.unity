@@ -1415,8 +1415,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1087477135}
   m_HandleRect: {fileID: 1087477134}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.85991573
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2346,8 +2346,8 @@ MonoBehaviour:
     maxRange: 2.5
   - minRange: 3
     maxRange: 4
-  - minRange: 0.8
-    maxRange: 1
+  - minRange: 1.2
+    maxRange: 1.5
   - minRange: 2
     maxRange: 3
   - minRange: 1
@@ -4233,7 +4233,7 @@ GameObject:
   - component: {fileID: 255754504}
   - component: {fileID: 255754500}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: AlertPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4247,7 +4247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255754498}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.5, y: 0, z: 0}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1052394602}
@@ -5182,7 +5182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.9973369, y: 1}
-  m_AnchoredPosition: {x: 0, y: 13212609}
+  m_AnchoredPosition: {x: 0, y: 13383495}
   m_SizeDelta: {x: 0, y: 114.55005}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &303376007
@@ -5819,7 +5819,7 @@ MonoBehaviour:
   ARTrackedImage: {fileID: 1651309125}
   planeManager: {fileID: 1651309121}
   foodGameObject:
-  - {fileID: 1975279712902707392, guid: d76fbe0f33b084ec1b1c1a9dceae4efc, type: 3}
+  - {fileID: 8657880868930426972, guid: c57c57a956a3b48fdb8b56a9be34a89f, type: 3}
   - {fileID: 235664843120856041, guid: 0e074977646ec4e60845a12c5cf48b9f, type: 3}
   - {fileID: 8761161494836474932, guid: b7ccbe74481fc4bea928f08c9e7fab93, type: 3}
   foodinMouth:
@@ -31171,7 +31171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.9973369, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.5564892}
+  m_AnchoredPosition: {x: 0, y: -0.000006618134}
   m_SizeDelta: {x: 0, y: 140}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1816851092
