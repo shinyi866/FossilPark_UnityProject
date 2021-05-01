@@ -48,6 +48,8 @@ public class PlaceARObject : MonoBehaviour
 
         if(currentType == TypeFlag.ARObjectType.Animals)
             material.mainTexture = animalMarkTexture[currentAnimal - 2];
+        if (currentType == TypeFlag.ARObjectType.Dinosaurls)
+            material.mainTexture = animalMarkTexture[animalMarkTexture.Length - 1];
     }
 
     public void CloseAR()
@@ -75,7 +77,7 @@ public class PlaceARObject : MonoBehaviour
             if (!TryGetTouchPosition(out Vector2 touchPosition))
                 return;
 
-            if (raycastManager.Raycast(touchPosition, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes))
+            if (raycastManager.Raycast(touchPosition, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon))
             {
                 var hitPos = hits[0].pose;
 
@@ -103,11 +105,11 @@ public class PlaceARObject : MonoBehaviour
         switch (currentType)
         {
             case TypeFlag.ARObjectType.Animals:
-                spawnedObject = Instantiate(animalObjects[currentAnimal-2], new Vector3(placementPose.position.x, -1, placementPose.position.z), placementPose.rotation);
-                spawnedObject.transform.rotation = Quaternion.LookRotation(_camera.transform.forward);
+                spawnedObject = Instantiate(animalObjects[currentAnimal-2], placementPose.position, animalObjects[currentAnimal - 2].transform.rotation);
+                //spawnedObject.transform.rotation = Quaternion.LookRotation(_camera.transform.forward);
                 break;
             case TypeFlag.ARObjectType.Dinosaurls:
-                spawnedObject = Instantiate(dinosaurlObjects[currentAnimal], placementPose.position, placementPose.rotation);
+                spawnedObject = Instantiate(dinosaurlObjects[currentAnimal-2], placementPose.position, placementPose.rotation);
                 spawnedObject.transform.rotation = Quaternion.LookRotation(_camera.transform.forward);
                 break;
         }        
