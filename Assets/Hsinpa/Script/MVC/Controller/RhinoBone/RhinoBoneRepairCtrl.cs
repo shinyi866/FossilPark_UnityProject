@@ -135,24 +135,7 @@ namespace Hsinpa.Ctrl {
             Initialization();
 
             try {
-                /*
-                var forwardDir = _arHelper.arCamera.transform.forward;
-                    forwardDir.y = -1;
-                    forwardDir *= 0.3f;
-                    //Quaternion.FromToRotation(Compass.Instance.transform.rotation, offsetRotation)
-
-                    spawnCorrectBoneTemplate.transform.position = _arHelper.arCamera.transform.position + forwardDir;
-                    
-                //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
-                
-                var faceDir = Compass.Instance.transform.rotation.eulerAngles;
-                    faceDir.y += yRotationOffset;
-                    faceDir.x = 0;
-                    faceDir.z = 0;
-
-                    spawnCorrectBoneTemplate.transform.rotation = Quaternion.Euler(faceDir);
-                    spawnCorrectBoneTemplate.transform.rotation = Compass.Instance.transform.rotation;
-                    */
+  
 
                 Compass.Instance.SetUp(_worldContainer.gameObject, yRotationOffset);
 
@@ -290,6 +273,8 @@ namespace Hsinpa.Ctrl {
 
                 if (spawnRandomBoneTemplate.IsAllMetricMeet())
                     ShowRhinoTimelineAnim();
+
+                SoundPlayerController.Instance.MatchSoundEffect();
             }
         }
 

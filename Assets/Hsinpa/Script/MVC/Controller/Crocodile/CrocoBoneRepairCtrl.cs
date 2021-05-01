@@ -77,6 +77,7 @@ namespace Hsinpa.Ctrl
             crocodileTargetTimelineAnim.gameObject.SetActive(false);
             crocodileTarget.gameObject.SetActive(false);
             _paintingManager.OnTargetDirtIsClear += OnPaintIsDone;
+            _paintingManager.OnTargetPainting += OnTargetPainting;
             _raycastInputHandler.OnInputEvent += OnRaycastInputEvent;
 
             crocodileTargetTimelineAnim.SetUp(OnPlaneARReadyClick);
@@ -247,9 +248,14 @@ namespace Hsinpa.Ctrl
             _paintingManager.EquipTool((ToolSRP.ToolEnum)nextCurrentToolIndex);
         }
 
+        private void OnTargetPainting(bool isOnTarget) {
+        
+        }
+
         private void OnDestroy()
         {
             _paintingManager.OnTargetDirtIsClear -= OnPaintIsDone;
+            _paintingManager.OnTargetPainting -= OnTargetPainting;
         }
 
         private void OpenHintUIModal(TypeFlag.ARGameType type) {

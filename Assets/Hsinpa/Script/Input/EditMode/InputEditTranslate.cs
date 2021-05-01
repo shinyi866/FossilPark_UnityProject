@@ -53,10 +53,14 @@ namespace LightHouse.Edit
 
         private void MoveObjectAround() {
             Vector3 offSet = (Input.mousePosition - lastMousePosition).normalized * dragSpeed * Time.deltaTime;
-            offSet.z = offSet.y;
-            offSet.y = 0;
 
-            targetObject.transform.position = targetObject.transform.position + (offSet);
+            Vector3 forward = targetObject.transform.forward * offSet.y;
+            forward.y = 0;
+
+            Vector3 right = targetObject.transform.right * offSet.x;
+            right.y = 0;
+
+            targetObject.transform.position = targetObject.transform.position + forward + right;
         }
 
         public void Reset() { 
