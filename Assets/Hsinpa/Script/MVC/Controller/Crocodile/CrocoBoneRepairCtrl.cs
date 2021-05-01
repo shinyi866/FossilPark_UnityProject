@@ -231,7 +231,7 @@ namespace Hsinpa.Ctrl
                 _ = UtilityMethod.DoDelayWork((float)EndPlayableAnim.duration, () =>
                 {
                     crocodileTargetTimelineAnim.gameObject.SetActive(false);
-                    OpenHintUIModal(TypeFlag.ARGameType.GamePrompt5);
+                    OpenHintUIModal(TypeFlag.ARGameType.GamePrompt3);
 
                     if (OnEndGameEvent != null)
                         OnEndGameEvent(true);
@@ -241,7 +241,7 @@ namespace Hsinpa.Ctrl
             }
 
             if (nextCurrentToolIndex == (int)ToolSRP.ToolEnum.Tool_2)
-                OpenHintUIModal(TypeFlag.ARGameType.GamePrompt3);
+                OpenHintUIModal(TypeFlag.ARGameType.GamePrompt2);
 
 
             currentToolIndex = nextCurrentToolIndex;

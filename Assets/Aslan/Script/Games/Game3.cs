@@ -83,7 +83,7 @@ namespace GameMission
         {
             if (time > 0)
             {
-                Compass.Instance.SetUp(Object, 86);
+                Compass.Instance.SetUp(Object, 83);
                 time -= Time.deltaTime;
             }
         }
