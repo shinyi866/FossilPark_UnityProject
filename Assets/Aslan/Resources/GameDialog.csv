@@ -1,9 +1,9 @@
 missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleButton,guideID,gameGuide,guideButton,gameNotify,gamePrompt,endMessage,pictureNotify,animalDialogPicture,animalNotifyPicture,guidePicture1,guidePicture2,endPicutre,endPicutre2
-0,"發現蹤跡,附近似乎有逆走鐘，趕緊找找看吧！",前方就是我們看到的就是逆走鐘時光機！它是很厲害的時光機！快去跟他拍照吧！,體驗開始,請將圓形對準正中央的逆走鐘後按下,逆走鐘,前往拍照,0,請將圓形對準正中央的逆走鐘後按下,前往拍照,請將下方圓圈對齊台上的大逆走鐘後按下,,,,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100_1.png,Assets/Aslan/ArtSprite/GameUI/00/example.png,,
-1,"發現蹤跡,附近似乎有時光機器，趕緊找找看吧！",這就是時光機器！快上去看看！,帶回管理員,這就是時光機器！快上去看看！,"時光機器,這就是時光機器！快上去看看！",前往觀看,0,KiKi KoKo 正在為了孵化恐龍蛋化石爭吵著,,觀看時光機動畫,四處尋找看看有逆走中的建築在哪？它就是時光機喔！,"糟糕！時光機故障了！
+0,"發現蹤跡,附近似乎有逆走鐘，趕緊找找看吧！",前方就是逆走鐘！快去跟他拍照吧！,體驗開始,請將圓形對準正中央的逆走鐘後按下,逆走鐘,前往拍照,0,請將圓形對準正中央的逆走鐘後按下,前往拍照,請將下方圓圈對齊台上的大逆走鐘後按下,,,,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100_1.png,Assets/Aslan/ArtSprite/GameUI/00/example.png,,
+1,"發現蹤跡,附近似乎有時光機器，趕緊找找看吧！",這就是時光機器！快上去看看！,帶回管理員,這就是時光機器！快上去看看！,"時光機器,這就是時光機器！快上去看看！",前往觀看,0,KiKi KoKo 得到了恐龍蛋化石,,觀看動畫影片,四處尋找看看有逆走中的建築在哪？它就是時光機喔！,"糟糕！時光機故障了！
 剛剛還在上面的六位管理員不見了！
 我們要找到管理時鐘的管理員們，修復逆走鐘，就可以再次使用時間回朔的功能了！
-我們去尋找他們，並使用相機拍攝他們，讓他們重新啟動時光機吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/01/time.png,Assets/Aslan/ArtSprite/GameUI/01/time.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100.png,Assets/Aslan/ArtSprite/GameUI/01/pic.png,
+我們去尋找他們，並使用相機拍攝他們，讓他們重新啟動時光機吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/01/time.png,Assets/Aslan/ArtSprite/GameUI/01/time.png,Assets/Aslan/ArtSprite/GameUI/01/01.png,Assets/Aslan/ArtSprite/GameUI/01/pic.png,
 2,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"你好我是時間管理員的梅花鹿 
 這裡是左鎮菜寮溪溪床！
@@ -35,16 +35,12 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 7,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是臺灣長吻鱷！
 我躺在這個地方很久了，土層中有許多我的化石碎 片，可以幫我清修並復原成原來的樣子嗎？","小小清修師,化石五步驟:  清理 -> 分類 -> 修補 -> 固化 -> 組架
-",開始清修,1,讓我們一起組裝完化石吧！,開始,"步驟提示: 點按畫面上使用工具清理石膏與碎石。,步驟提示: 點按畫面上的灰塵使用毛刷將化石刷乾淨。,步驟提示:  點按畫面上的斷裂處使用膠水將化石沾黏。,步驟提示: 點按化石，將固化液塗抹於化石上。, 一起組裝完化石吧！","第一步、清理敲掉化石上的石膏與碎石  
-點按畫面兩下會有提示歐！, 第二步:用毛刷刷掉灰塵。
- 點按畫面上的灰塵使用毛刷將化石刷乾淨。, 第三步:將斷裂處用膠水沾黏
- 點按畫面上的斷裂處使用膠水將化石沾黏。, 第四步:將斷裂處用膠水沾黏
- 點按畫面上的斷裂處使用膠水將化石沾黏。, 第五步:到最後的步驟了！讓我們一起組裝完化石吧！","你真的把化石清理乾淨了噎！
+",開始清修,1,讓我們一起組裝完化石吧！,開始,"步驟提示: 用電器筆清除髒污，點按畫面兩下會有提示歐！。,步驟提示: 用毛刷刷掉灰塵，點按畫面兩下會有提示歐！。,將固化液塗抹於化石上。, 一起組裝完化石吧！","第一步清理敲掉化石上的石膏與碎石後，我們執行第二部用電器筆清除髒污。, 第三步: 用毛刷刷掉灰塵, 第四步:將斷裂處用膠水沾黏, 第五步:到最後的步驟了！讓我們一起組裝完化石吧！","你真的把化石清理乾淨了噎！
 化石清修的步驟是
 
 清理 -> 分類 -> 修補 -> 固化 -> 組架 
 記熟了嗎？
 使用相機拍攝我讓我回到時光機中吧！
-",拍照,Assets/Aslan/ArtSprite/GameUI/animals/06crocodile.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png,Assets/Aslan/ArtSprite/GameUI/07/example1.png,Assets/Aslan/ArtSprite/GameUI/06/example2.png,,
+",拍照,Assets/Aslan/ArtSprite/GameUI/animals/06crocodile.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/crocodile.png,Assets/Aslan/ArtSprite/GameUI/07/finish.png,Assets/Aslan/ArtSprite/GameUI/07/example2.png,Assets/Aslan/ArtSprite/GameUI/07/example1.png,
 8,"發現蹤跡,附近似乎有特別的動物，趕緊找找看吧！",時光機被漸漸地修復了，我們正⼀點點地回到過去！草原上好像有什麼特別的⽣物快去看看！,前往觀看,拿取⾁塊與樹葉可以餵食恐龍喔！,"發現蹤跡,我們好像發現了不可以思議的古生物！
 快上前去看看！",前往觀看,0,拿取門票可以餵食恐龍喔！,開始,拿取⾁塊與樹葉可以餵食恐龍喔！,留下美好的紀念！,,,Assets/Aslan/ArtSprite/GameUI/08/dinosaurfootprints.png,Assets/Aslan/ArtSprite/GameUI/08/dinosaurfootprints.png,Assets/Aslan/ArtSprite/GameUI/08/dinosaurfootprints.png,Assets/Aslan/ArtSprite/GameUI/08/example.png,,

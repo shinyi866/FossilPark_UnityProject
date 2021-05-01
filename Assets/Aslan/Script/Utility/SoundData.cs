@@ -12,6 +12,9 @@ public class Sound
     public AudioClip finishAll;
     public AudioClip next;
     public AudioClip takePicture;
+    public AudioClip brush;
+    public AudioClip pen;
+    public AudioClip river;
 
 }
 

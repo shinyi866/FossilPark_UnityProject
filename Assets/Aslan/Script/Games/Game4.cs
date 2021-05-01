@@ -260,8 +260,8 @@ namespace GameMission
         {
             var _cameraFront = _camera.transform.forward;
             var _frontPos = _cameraFront * 3;
-            var _leftPos = _camera.transform.right * -2f;
-            var _rightPos = _camera.transform.right * 2f;
+            var _leftPos = _camera.transform.right * -1.6f;
+            var _rightPos = _camera.transform.right * 1.6f;
             var _upPos = _camera.transform.up * 0.8f;
 
             var rotateSpeed = 20f * Time.deltaTime;

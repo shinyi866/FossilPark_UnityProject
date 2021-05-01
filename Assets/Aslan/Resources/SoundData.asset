@@ -22,3 +22,6 @@ MonoBehaviour:
     finishAll: {fileID: 8300000, guid: 74ae284447a4949d0af918225b9bfa62, type: 3}
     next: {fileID: 8300000, guid: bce942402384d483194bca3bee101657, type: 3}
     takePicture: {fileID: 8300000, guid: d2ac6e7524db1463da6cc6a1fe75a19d, type: 3}
+    brush: {fileID: 8300000, guid: 4b2c24313f0194a1d9822a49b99c5fcc, type: 3}
+    pen: {fileID: 8300000, guid: 3825fec73a5494b7f89d5338404c2635, type: 3}
+    river: {fileID: 8300000, guid: 902f42c6940b142a69cd35e572166a9a, type: 3}

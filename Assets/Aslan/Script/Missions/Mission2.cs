@@ -43,6 +43,7 @@ namespace GameMission
         {
             TypeFlag.DialogType type = isSuccess ? TypeFlag.DialogType.EndDialog : TypeFlag.DialogType.FailDialog;
             game.gameOverEvent -= EndGame;
+            SoundPlayerController.Instance.StopSoundEffect();
 
             var ARmodal = GameModals.instance.OpenModal<ARGameModal>();
             ARmodal.CloseAllPanel();
@@ -61,6 +62,7 @@ namespace GameMission
         public void AREndGame(bool isSuccess)
         {
             fossilClass.gameOverEvent -= AREndGame;
+            SoundPlayerController.Instance.StopSoundEffect();
 
             var model = GameModals.instance.OpenModal<DialogModal>();
             model.ShowInfo(missionIndex, TypeFlag.DialogType.EndDialog);

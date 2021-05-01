@@ -40,6 +40,7 @@ namespace GameMission
         public void GameStart(bool isARsupport)
         {
             UIobject.SetActive(true);
+            SoundPlayerController.Instance.RiverSoundEffect();
 
             if (isARsupport)
             {
