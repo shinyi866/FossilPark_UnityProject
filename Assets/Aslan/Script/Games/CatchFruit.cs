@@ -14,6 +14,7 @@ public class CatchFruit : MonoBehaviour
         {
             fruitCount++;
             enter = true;
+            SoundPlayerController.Instance.FinishSoundEffect();
         }
 
         if (other.gameObject.tag == "Wall1")

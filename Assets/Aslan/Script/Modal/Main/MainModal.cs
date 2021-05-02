@@ -81,8 +81,24 @@ namespace View
             }
 
             dinosaurButton.onClick.AddListener(() => {
-                var modal = Modals.instance.OpenModal<DinosaurlModal>();
-                modal.Setup();
+
+                if(Mission8.backToDinosaur)
+                {
+                    var modal = Modals.instance.OpenModal<DinosaurlModal>();
+                    foreach (var btn in modal.dinosaurlButtons)
+                    {
+                        btn.interactable = true;
+                    }
+                    modal.Setup();
+                }
+                else
+                {
+                    var modal = Modals.instance.OpenModal<DinosaurlModal>();
+                    foreach(var btn in modal.dinosaurlButtons)
+                    {
+                        btn.interactable = false;
+                    }
+                }
             });
 
             eggButton.onClick.AddListener(() => {

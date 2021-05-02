@@ -10,6 +10,8 @@ public class SoundPlayerController : Singleton<SoundPlayerController>
     private AudioSource bgmAudio;
     [SerializeField]
     private AudioSource soundEffectAudio;
+    [SerializeField]
+    private AudioSource soundEffectAudio2;
 
     public void PlayBackgroundMusic()
     {
@@ -52,9 +54,9 @@ public class SoundPlayerController : Singleton<SoundPlayerController>
 
     public void FinishSoundEffect()
     {
-        soundEffectAudio.clip = soundData.SoundItems.fnish;
-        soundEffectAudio.Play();
-        soundEffectAudio.loop = false;
+        soundEffectAudio2.clip = soundData.SoundItems.fnish;
+        soundEffectAudio2.Play();
+        soundEffectAudio2.loop = false;
     }
 
     public void FInishAllSoundEffect()

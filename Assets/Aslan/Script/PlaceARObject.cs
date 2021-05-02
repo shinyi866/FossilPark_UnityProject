@@ -9,10 +9,12 @@ public class PlaceARObject : MonoBehaviour
 {
     public GameObject[] animalObjects;
     public GameObject[] dinosaurlObjects;
+    public GameObject[] dinosaurlBabyObjects;
     public Texture[] animalMarkTexture;
     public ARPlaneManager planeManager;
     public GameObject placeMark;
     public Material material;
+    public GameObject spawnedObject;
 
     private ARRaycastManager raycastManager;
     private Pose placementPose;
@@ -21,7 +23,6 @@ public class PlaceARObject : MonoBehaviour
     private Camera _camera;
     private int currentAnimal;
     private TypeFlag.ARObjectType currentType;
-    private GameObject spawnedObject;
 
     private static PlaceARObject _instance;
 
@@ -48,7 +49,7 @@ public class PlaceARObject : MonoBehaviour
 
         if(currentType == TypeFlag.ARObjectType.Animals)
             material.mainTexture = animalMarkTexture[currentAnimal - 2];
-        if (currentType == TypeFlag.ARObjectType.Dinosaurls)
+        if (currentType == TypeFlag.ARObjectType.Dinosaurls || currentType == TypeFlag.ARObjectType.DinosaurlBaby)
             material.mainTexture = animalMarkTexture[animalMarkTexture.Length - 1];
     }
 
@@ -101,16 +102,26 @@ public class PlaceARObject : MonoBehaviour
     private void PlaceObject()
     {
         placeMark.SetActive(false);
-        
+        Vector3 lookAtTarget;
         switch (currentType)
         {
             case TypeFlag.ARObjectType.Animals:
                 spawnedObject = Instantiate(animalObjects[currentAnimal-2], placementPose.position, animalObjects[currentAnimal - 2].transform.rotation);
                 //spawnedObject.transform.rotation = Quaternion.LookRotation(_camera.transform.forward);
+                lookAtTarget = new Vector3(_camera.transform.forward.x, spawnedObject.transform.position.y, _camera.transform.forward.z);
+                spawnedObject.transform.LookAt(lookAtTarget);
                 break;
             case TypeFlag.ARObjectType.Dinosaurls:
-                spawnedObject = Instantiate(dinosaurlObjects[currentAnimal-2], placementPose.position, placementPose.rotation);
-                spawnedObject.transform.rotation = Quaternion.LookRotation(_camera.transform.forward);
+                spawnedObject = Instantiate(dinosaurlObjects[currentAnimal-2], placementPose.position, animalObjects[currentAnimal - 2].transform.rotation);
+                //spawnedObject.transform.rotation = Quaternion.LookRotation(_camera.transform.forward);
+                lookAtTarget = new Vector3(_camera.transform.forward.x, spawnedObject.transform.position.y, _camera.transform.forward.z);
+                spawnedObject.transform.LookAt(lookAtTarget);
+                break;
+            case TypeFlag.ARObjectType.DinosaurlBaby:
+                spawnedObject = Instantiate(dinosaurlBabyObjects[currentAnimal], placementPose.position, animalObjects[currentAnimal].transform.rotation);
+                //spawnedObject.transform.rotation = Quaternion.LookRotation(_camera.transform.forward);
+                lookAtTarget = new Vector3(_camera.transform.forward.x, spawnedObject.transform.position.y, _camera.transform.forward.z);
+                spawnedObject.transform.LookAt(lookAtTarget);
                 break;
         }        
     }

@@ -107,11 +107,10 @@ namespace GameMission
             dinosaurlScenes[index].SetActive(true);
             foodButton[index].interactable = false;
             isEat = false;
-            
-            var eggModal = Modals.instance.GetModel<EggModal>();
-            eggModal.type = index;
-            eggModal.RotateTimes();
-            eggModal.startMachine = true;
+
+            EggModal.dinosaurIndex = index;
+            Modals.instance.GetModel<EggModal>().RotateTimes();
+            EggModal.startMachine = true;
         }
 
         // AR Image Track

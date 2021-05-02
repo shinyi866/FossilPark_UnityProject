@@ -7,8 +7,7 @@ namespace View
 {
     public class DinosaurlModal : Modal
     {
-        [SerializeField]
-        private Button[] dinosaurlButtons;
+        public Button[] dinosaurlButtons;
 
         [SerializeField]
         private Button BackButton;

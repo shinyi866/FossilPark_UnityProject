@@ -81,6 +81,9 @@ namespace View
             arModal.ShowView(true);
             arModal.Show(true);
 
+            if (type == TypeFlag.ARObjectType.DinosaurlBaby)
+                arModal.feedButtonGameObject.SetActive(true);
+
             PlaceARObject.instance.EnterAR(index, type);
         }
 

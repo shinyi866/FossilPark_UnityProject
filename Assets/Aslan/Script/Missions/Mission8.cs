@@ -10,15 +10,18 @@ namespace GameMission
         private Game8 game;
         private int missionIndex = 8;
 
+        public static bool backToDinosaur;
+
         public override void EnterGame()
         {
-
+            
         }
 
         public override void StartGame()
         {
             GameModals.instance.OpenAR();
-            
+
+            backToDinosaur = true;
             game = Games.instance.OpenGame<Game8>();
             game.Init();
             game.gameOverEvent += EndGame;

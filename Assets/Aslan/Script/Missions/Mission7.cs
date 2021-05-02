@@ -26,7 +26,7 @@ namespace GameMission
         {
             var modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Original);
-
+            
             crocoCtrl.OnEndGameEvent += EndGame;
             crocoCtrl.EnterGame(90);
         }

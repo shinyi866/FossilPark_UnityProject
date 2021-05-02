@@ -28,14 +28,13 @@ namespace View
         [SerializeField]
         private GameObject pictureGameObject;
 
-        //[SerializeField]
-        //private GameObject imageGameObject;
-
         [SerializeField]
         private GameObject mainSaveButton;
 
         [SerializeField]
         private GameObject gameSaveButton;
+
+        public GameObject feedButtonGameObject;
 
         private Texture2D currentImage;
         private Button PictureButton;
@@ -56,13 +55,12 @@ namespace View
         private void Awake()
         {
             PictureButton = pictureGameObject.GetComponent<Button>();
-
             PictureButton.onClick.AddListener(() => { TakePicture(); });
-
 
             BackButton.onClick.AddListener(() =>
             {
                 Modals.instance.CloseARInMain(); // TODO error?
+                feedButtonGameObject.SetActive(false);
             });
 
             mainSaveButton.GetComponent<Button>().onClick.AddListener(() =>
