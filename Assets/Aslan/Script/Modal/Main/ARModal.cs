@@ -118,10 +118,10 @@ namespace View
 
             yield return new WaitForSeconds(0.1f);
 
-            _camera.targetTexture = new RenderTexture(_camera.pixelWidth, _camera.pixelHeight, 0); // (222, 128, 0);
+            _camera.targetTexture = new RenderTexture(_camera.pixelWidth, _camera.pixelHeight, 1); // (222, 128, 0);
 
             RenderTexture renderTexture = _camera.targetTexture;
-            Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.ARGB32, false);
+            Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGBA32, false);
             _camera.Render();
             RenderTexture.active = renderTexture;
             Rect rect = new Rect(0, 0, renderTexture.width, renderTexture.height);

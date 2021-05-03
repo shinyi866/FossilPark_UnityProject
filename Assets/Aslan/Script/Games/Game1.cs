@@ -9,12 +9,12 @@ namespace GameMission
     {
         [SerializeField]
         private GameObject ARObject;
-        [SerializeField]
-        private GameObject videoPlane;
+        //[SerializeField]
+        //private GameObject videoPlane;
         public System.Action gameOverEvent;
 
         private int missionIndex = 1;
-        private float time = 8;
+        private float time = 5f;
         private bool isGameStart;
         private bool isVideoEnd;
         private bool isSetVideoPlane;
@@ -27,7 +27,6 @@ namespace GameMission
         public void Init()
         {
             Modals.instance.CloseAllModal();            
-            GameModals.instance.OpenAR(); // Stop AR Camera rotate
             
             _camera = CameraCtrl.instance.GetCurrentCamera();
             modal = GameModals.instance.OpenModal<ARGameModal>();
@@ -66,13 +65,14 @@ namespace GameMission
             if (MediaPlayerController.instance.isVideoFinish() && !isVideoEnd)
             {
                 Debug.Log("video end");
+
                 ShowARObject();
-                isVideoEnd = true;
+                isVideoEnd = true;               
             }
             if(!isSetVideoPlane)
             {
-                var frontPos = _camera.transform.forward * 5;
-                videoPlane.transform.position = _camera.transform.position + frontPos;
+                //var frontPos = _camera.transform.forward * 5;
+                //videoPlane.transform.position = _camera.transform.position + frontPos;
             }
 
             if(isARanimationEnd)
@@ -83,13 +83,15 @@ namespace GameMission
 
         private void ShowARObject()
         {
+            GameModals.instance.OpenAR(); // Stop AR Camera rotate
+            MediaPlayerController.instance.Destroy2DPlane();
+
             modal.SwitchConfirmButton(true);
             modal.text.text = data.m_Data[missionIndex].gamePrompt[0];
             modal.gamePromptPanel.image.sprite = data.m_Data[missionIndex].endPicutre;
             modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt1);            
             modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
             {
-                MediaPlayerController.instance.Destroy2DPlane();
                 modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
                 modal.SwitchConfirmButton(false);
                 ARObject.SetActive(true);

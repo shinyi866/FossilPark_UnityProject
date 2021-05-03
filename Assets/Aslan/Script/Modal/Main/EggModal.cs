@@ -26,13 +26,13 @@ namespace View
 
         private void Awake()
         {
-            
+            /*
             if (PlayerPrefs.HasKey("dinosaurBaby"))
             {
                 StartButton.interactable = false;
                 ARButton.interactable = true;
             }
-            
+            */
             BackButton.onClick.AddListener(() =>
             {
                 Modals.instance.CloseModal(); // TODO error?

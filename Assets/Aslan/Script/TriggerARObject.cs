@@ -10,8 +10,10 @@ public class TriggerARObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider target)
     {
+        
         if (target.tag == "Fruit")
         {
+            target = null;
             Game8.isEat = true;
             foodInMouth.SetActive(true);
             target.transform.parent.gameObject.SetActive(false);
@@ -22,14 +24,9 @@ public class TriggerARObject : MonoBehaviour
 
     private IEnumerator WaitToEat()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(7);
 
         foodInMouth.SetActive(false);
-        
-        yield return new WaitForSeconds(3);
-        // Reset eat parameter
-        Game8.resetEatFood = true;
         Game8.isEat = false;
-        
     }
 }
