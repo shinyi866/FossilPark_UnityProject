@@ -13,11 +13,10 @@ public class TriggerARObject : MonoBehaviour
         
         if (target.tag == "Fruit")
         {
-            target = null;
-            Game8.isEat = true;
             foodInMouth.SetActive(true);
             target.transform.parent.gameObject.SetActive(false);
             StartCoroutine(WaitToEat());
+            Game8.isEat = true;
             Debug.Log("eating");
         }
     }
