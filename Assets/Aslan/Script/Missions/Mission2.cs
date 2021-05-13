@@ -11,7 +11,6 @@ namespace GameMission
         private Game2 game;
         private int missionIndex = 2;
         private bool isARsupport;
-        private string videoPath = "Video/4096.mp4";
 
         public override void EnterGame()
         {
@@ -19,44 +18,17 @@ namespace GameMission
 
             game = Games.instance.OpenGame<Game2>();
             game.Init();
-            game.gameOverEvent += EndGame;
-            //fossilClass.gameOverEvent += EndGame;
             fossilClass.gameOverEvent += AREndGame;
 
-            if (!isARsupport)
-            {
-                MediaPlayerController.instance.LoadVideo(videoPath);
-                MediaPlayerController.instance.PlayVideo();
-            }
-            else
-            {
+            if (isARsupport)
                 GameModals.instance.OpenAR();
-            }
+            else
+                Modals.instance.CloseAllModal();
         }
 
         public override void StartGame()
         {
             game.GameStart(isARsupport);
-        }
-
-        public void EndGame(bool isSuccess)
-        {
-            TypeFlag.DialogType type = isSuccess ? TypeFlag.DialogType.EndDialog : TypeFlag.DialogType.FailDialog;
-            game.gameOverEvent -= EndGame;
-            SoundPlayerController.Instance.StopSoundEffect();
-
-            var ARmodal = GameModals.instance.OpenModal<ARGameModal>();
-            ARmodal.CloseAllPanel();
-
-            var model = GameModals.instance.OpenModal<DialogModal>();
-            model.ShowInfo(missionIndex, type);
-            model.ConfirmButton.onClick.AddListener(() =>
-            {
-                Games.instance.ClosGame();
-                MediaPlayerController.instance.CloseVideo();
-                GameModals.instance.CloseModal();
-                GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
-            });
         }
 
         public void AREndGame(bool isSuccess)
@@ -71,7 +43,12 @@ namespace GameMission
                 Games.instance.ClosGame();
                 MediaPlayerController.instance.CloseVideo();
                 GameModals.instance.CloseModal();
-                GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
+
+                if (isARsupport)
+                    GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
+                else
+                    GameModals.instance.GetBackAnimalNoAR(missionIndex);
+
             });
         }
     }

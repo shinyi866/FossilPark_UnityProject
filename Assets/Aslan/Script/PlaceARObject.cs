@@ -39,8 +39,14 @@ public class PlaceARObject : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        raycastManager = FindObjectOfType<ARRaycastManager>();
+    }
+
     public void EnterAR(int index, TypeFlag.ARObjectType type)
     {
+        _camera = CameraCtrl.instance.GetCurrentCamera();
         isARpage = true;
         currentType = type;
         currentAnimal = index;
@@ -53,18 +59,21 @@ public class PlaceARObject : MonoBehaviour
             material.mainTexture = animalMarkTexture[animalMarkTexture.Length - 1];
     }
 
+    public void EnterNoAR(int index)
+    {
+        var animalTransform = animalObjects[index - 2].transform;
+        _camera = CameraCtrl.instance.GetCurrentCamera();
+
+        Instantiate(animalObjects[index - 2], new Vector3(animalTransform.position.x, animalTransform.position.y, 1.5f), animalTransform.rotation);
+        _camera.transform.position = new Vector3(0 ,0.5f, 0);
+    }
+
     public void CloseAR()
     {
         isARpage = false;
         planeManager.enabled = false;
         Destroy(spawnedObject);
         spawnedObject = null;
-    }
-
-    private void Start()
-    {
-        raycastManager = FindObjectOfType<ARRaycastManager>();
-        _camera = CameraCtrl.instance.GetCurrentCamera();
     }
     
     private void Update()

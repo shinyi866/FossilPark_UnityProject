@@ -28,7 +28,7 @@ namespace GameMission
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Original);
             
             crocoCtrl.OnEndGameEvent += EndGame;
-            crocoCtrl.EnterGame(90);
+            crocoCtrl.EnterGame(15);
         }
 
         public void EndGame(bool isSuccess)

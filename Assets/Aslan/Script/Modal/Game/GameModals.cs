@@ -102,6 +102,20 @@ namespace View
             PlaceARObject.instance.EnterAR(index, type);
         }
 
+        public void GetBackAnimalNoAR(int index)
+        {
+            foreach (Modal modal in modals) { modal.Show(false); }
+
+            var mainModal = Modals.instance.GetModel<MainModal>();
+            mainModal.GetBackAnimal(index);
+
+            ARModal arModal = Modals.instance.GetModel<ARModal>(); // call ARModal direct, will not change currentModal(last modal)
+            arModal.ShowView(false);
+            arModal.Show(true);
+
+            PlaceARObject.instance.EnterNoAR(index);
+        }
+
         // Round missions notify (3-8m)
         public void RoundNotify(int index)
         {

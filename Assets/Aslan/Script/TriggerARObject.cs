@@ -16,6 +16,7 @@ public class TriggerARObject : MonoBehaviour
             foodInMouth.SetActive(true);
             target.transform.parent.gameObject.SetActive(false);
             StartCoroutine(WaitToEat());
+            Game8.currentDinosaurl.GetComponent<Animator>().SetBool("eat", true);
             Game8.isEat = true;
             Debug.Log("eating");
         }

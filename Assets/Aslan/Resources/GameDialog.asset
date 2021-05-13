@@ -198,8 +198,8 @@ MonoBehaviour:
       type: 3}
     animalNotifyPicture: {fileID: 21300000, guid: 7e9963564df53418c9fbd21cc081a2e5,
       type: 3}
-    guidePicture1: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
-    guidePicture2: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
+    guidePicture1: {fileID: 21300000, guid: d0b05527fa90f47df92bac315a6d8e0e, type: 3}
+    guidePicture2: {fileID: 21300000, guid: ca947a9ec8e3245baa87e862a57ba2b3, type: 3}
     endPicutre: {fileID: 21300000, guid: b056b9614cf7e47159410a2df2d127a6, type: 3}
     endPicutre2: {fileID: 0}
   - missionID: 6

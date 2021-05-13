@@ -39,7 +39,7 @@ namespace GameMission
         private float ccidWeight = 0.0f;
         private bool isGameStart;
 
-        private GameObject currentDinosaurl;
+        public static GameObject currentDinosaurl;
         private GameObject currentFood;
         private GameObject showARfood;
         private ARGameModal modal;
@@ -219,10 +219,10 @@ namespace GameMission
                         DinosaursEat(dotResult, 5f, 4.95f, 4f, 0.04f);
                         break;
                     case TypeFlag.DinosaurlsType.TRex:
-                        DinosaursEat(dotResult, 2.9f, 2.6f, 1.6f, 1f);
+                        DinosaursEat(dotResult, 2.7f, 2.67f, 1.6f, 0.4f);
                         break;
                     case TypeFlag.DinosaurlsType.Triceratop:
-                        DinosaursEat(dotResult, 2.6f, 2.2f, 1.9f, 0.05f);
+                        DinosaursEat(dotResult, 2.5f, 2.45f, 1.9f, 0.05f);
                         break;
                 }
                 Debug.Log("TestMode ");
@@ -231,22 +231,22 @@ namespace GameMission
             {
                 if(showARfood != null)
                 {
-                    arToFood = showARfood.transform.position - currentDinosaurl.transform.position;
-                    Vector3 lookAtTarget = new Vector3(arToFood.x, currentDinosaurl.transform.position.y, arToFood.z);
+                    Vector3 lookAtTarget = new Vector3(showARfood.transform.position.x, currentDinosaurl.transform.position.y, showARfood.transform.position.z);
                     currentDinosaurl.transform.LookAt(lookAtTarget);
+                    arToFood = showARfood.transform.position - currentDinosaurl.transform.position;
                     dotResult = Vector3.Dot(forward, arToFood);
                     //Debug.Log("resetEatFood " + resetEatFood);
 
                     switch (dinosaurlsType)
                     {
                         case TypeFlag.DinosaurlsType.Brachiosaurus:
-                            DinosaursEat(dotResult, 5f, 4.95f, 4f, 0.04f);
+                            DinosaursEat(dotResult, 5f, 4.97f, 4f, 0.04f);
                             break;
                         case TypeFlag.DinosaurlsType.TRex:
-                            DinosaursEat(dotResult, 2.9f, 2.6f, 1.6f, 1f);
+                            DinosaursEat(dotResult, 2.7f, 2.67f, 1.6f, 0.4f);
                             break;
                         case TypeFlag.DinosaurlsType.Triceratop:
-                            DinosaursEat(dotResult, 2.6f, 2.2f, 1.9f, 0.05f);
+                            DinosaursEat(dotResult, 2.5f, 2.45f, 1.9f, 0.05f);
                             break;
                     }                    
                 }
@@ -276,7 +276,7 @@ namespace GameMission
 
                     if(isEat)
                     {
-                        currentDinosaurl.GetComponent<Animator>().SetBool("eat", true);
+                        //currentDinosaurl.GetComponent<Animator>().SetBool("eat", true);
                         ccidWeight -= Time.deltaTime * trackSpeed;
                         currentDinosaurl.GetComponent<CCDIK>().solver.SetIKPositionWeight(ccidWeight);
                         txt3.text = $"Eat, ccid: {ccidWeight}";

@@ -14,7 +14,7 @@ namespace GameMission
         public System.Action gameOverEvent;
 
         private int missionIndex = 1;
-        private float time = 5f;
+        private float time = 2f;
         private bool isGameStart;
         private bool isVideoEnd;
         private bool isSetVideoPlane;
@@ -22,7 +22,7 @@ namespace GameMission
         private GameDialogData data;
         private ARGameModal modal;
         private Camera _camera;
-        private string videoPath = "AVProVideoSamples/BigBuckBunny_720p30.mp4";
+        private string videoPath = "Video/animation.mp4";
 
         public void Init()
         {
@@ -45,7 +45,7 @@ namespace GameMission
         {
             if (time > 0)
             {
-                Compass.Instance.SetUp(Object, 12); //10
+                Compass.Instance.SetUp(Object, 0); //10
                 time -= Time.deltaTime;
             }
         }
@@ -60,12 +60,9 @@ namespace GameMission
         {
             if (!isGameStart) return;
 
-            ResetDirection();
-
             if (MediaPlayerController.instance.isVideoFinish() && !isVideoEnd)
             {
                 Debug.Log("video end");
-
                 ShowARObject();
                 isVideoEnd = true;               
             }
@@ -84,7 +81,8 @@ namespace GameMission
         private void ShowARObject()
         {
             GameModals.instance.OpenAR(); // Stop AR Camera rotate
-            MediaPlayerController.instance.Destroy2DPlane();
+            ResetDirection();
+            MediaPlayerController.instance.Close2DPlane();
 
             modal.SwitchConfirmButton(true);
             modal.text.text = data.m_Data[missionIndex].gamePrompt[0];

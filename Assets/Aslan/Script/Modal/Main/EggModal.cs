@@ -41,6 +41,7 @@ namespace View
             ARButton.onClick.AddListener(() =>
             {
                 Modals.instance.OpenAR(PlayerPrefs.GetInt("dinosaurBaby"), TypeFlag.ARObjectType.DinosaurlBaby);
+                //Modals.instance.OpenAR(dinosaurIndex, TypeFlag.ARObjectType.DinosaurlBaby);
             });
 
             StartButton.onClick.AddListener(() =>

@@ -90,7 +90,6 @@ namespace View
                 //GameModals.instance.CloseModal();
 
                 //SaveImage();
-                // TODO play video
             });
 
             ExitButton.onClick.AddListener(() => { SavePhotoPanel(false); });

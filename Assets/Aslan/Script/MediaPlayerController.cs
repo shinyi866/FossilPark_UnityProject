@@ -65,6 +65,7 @@ public class MediaPlayerController : MonoBehaviour
     public void CloseVideo()
     {
         _mediaPlayer.Control.CloseVideo();
+        OpenSphereVideo(false);
     }
 
     public void OpenVideo()
@@ -89,7 +90,7 @@ public class MediaPlayerController : MonoBehaviour
         planeVideo.SetActive(isOpen);
     }
     
-    public void Destroy2DPlane()
+    public void Close2DPlane()
     {
         planeVideo.SetActive(false);
     }
