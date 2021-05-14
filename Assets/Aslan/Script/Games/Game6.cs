@@ -16,18 +16,10 @@ namespace GameMission
         private bool isGameStart;
         private int missionIndex = 6;
         private int successTimes = 0;
-        //private int failTimes;
-        //private int times = 3;
 
         public void Init()
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
-
-            var addPosition = 90;
-            //TODO: set cube position
-
-            //Object.transform.position = _camera.transform.position + videoSphere.transform.right * addPosition * i;
-            //Object.transform.rotation = videoSphere.transform.rotation;
 
             Modals.instance.CloseAllModal();
             MediaPlayerController.instance.LoadVideo(videoPath);
@@ -38,7 +30,7 @@ namespace GameMission
             isGameStart = true;
             modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game6);
-            MediaPlayerController.instance.PlayVideo();            
+            MediaPlayerController.instance.LoadAndPlayVideoNotLoop(videoPath);
             RaycastHit hit;
 
             modal.game6Panel.button.onClick.AddListener(() =>
@@ -85,10 +77,6 @@ namespace GameMission
         private void Update()
         {
             if (!isGameStart) return;
-
-            //TODO: update cube position
-            //trackAnimal[0].transform.position = _camera.transform.position + videoSphere.transform.right * 150;
-            //trackAnimal[0].transform.rotation = videoSphere.transform.rotation;
 
             if (successTimes == 2)
             {

@@ -10,22 +10,13 @@ namespace GameMission
         private Game4 game;
 
         private int missionIndex = 4;
+        private bool isARsupport;
 
         public override void EnterGame()
         {
             game = Games.instance.OpenGame<Game4>();
             game.Init();
             game.gameOverEvent += EndGame;
-
-            /*
-            var model = GameModals.instance.OpenModal<DialogModal>();
-            //model.ShowInfo(missionIndex, TypeFlag.NotifyType.GameNotify);
-            model.ConfirmButton.onClick.AddListener(() =>
-            {
-                GameModals.instance.CloseModal();
-                game.GameStart();
-            });
-            */
         }
 
         public override void StartGame()
@@ -45,7 +36,11 @@ namespace GameMission
                 MediaPlayerController.instance.CloseVideo();
                 SoundPlayerController.Instance.PlayBackgroundMusic();
                 GameModals.instance.CloseModal();
-                GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
+
+                if (MainApp.Instance.isARsupport)
+                    GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
+                else
+                    GameModals.instance.GetBackAnimalNoAR(missionIndex);
             });
         }
     }

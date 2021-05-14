@@ -126,7 +126,7 @@ namespace View
                     gamePromptPanel.text.text = gameData.gamePrompt[1];
                     ShowPanel(gamePromptPanel.canvasGroup, true);
 
-                    if (gameData.gamePrompt.Length > 3)
+                    if (gameData.gamePrompt.Length > 4)
                     {
                         text.text = gameData.gameNotify[1];
                         gamePromptPanel.image.sprite = gameData.endPicutre;
@@ -136,21 +136,21 @@ namespace View
                     gamePromptPanel.text.text = gameData.gamePrompt[2];
                     ShowPanel(gamePromptPanel.canvasGroup, true);
 
-                    if (gameData.gamePrompt.Length > 3)
+                    if (gameData.gamePrompt.Length > 4)
                         text.text = gameData.gameNotify[2];
                     break;
                 case TypeFlag.ARGameType.GamePrompt4:
                     gamePromptPanel.text.text = gameData.gamePrompt[3];
                     ShowPanel(gamePromptPanel.canvasGroup, true);
 
-                    if (gameData.gamePrompt.Length > 3)
+                    if (gameData.gamePrompt.Length > 4)
                         text.text = gameData.gameNotify[3];
                     break;
                 case TypeFlag.ARGameType.GamePrompt5:
                     gamePromptPanel.text.text = gameData.gamePrompt[4];
                     ShowPanel(gamePromptPanel.canvasGroup, true);
 
-                    if (gameData.gamePrompt.Length > 3)
+                    if (gameData.gamePrompt.Length > 4)
                         text.text = gameData.gameNotify[4];
                     break;
                 case TypeFlag.ARGameType.PicturePrompt:

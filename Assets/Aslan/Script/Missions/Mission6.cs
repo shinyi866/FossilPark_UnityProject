@@ -7,36 +7,32 @@ namespace GameMission
 {
     public class Mission6 : Mission
     {
+        public Material material;
+
         private Game6 game;
         private int missionIndex = 6;
+        private Material currentMaterial;
 
         public override void EnterGame()
         {
             game = Games.instance.OpenGame<Game6>();
             game.Init();
             game.gameOverEvent += EndGame;
-
-            /*
-            var model = GameModals.instance.OpenModal<TitleModal>();
-            model.ShowInfo(missionIndex, TypeFlag.TitleType.GameTitle);
-            model.ConfirmButton.onClick.AddListener(() =>
-            {
-                var gameModel = GameModals.instance.OpenModal<PictureModal>();
-                gameModel.ShowInfo(missionIndex, TypeFlag.PictureType.MissionType);
-                game.GameStart();
-            });
-            */
         }
 
         public override void StartGame()
         {
             SoundPlayerController.Instance.PauseBackgroundMusic();
             game.GameStart();
+
+            currentMaterial = RenderSettings.skybox;
+            RenderSettings.skybox = material;
         }
 
         public void EndGame(bool isSuccess)
         {
             game.gameOverEvent -= EndGame;
+            RenderSettings.skybox = currentMaterial;
 
             var modal = GameModals.instance.OpenModal<PictureModal>();
             modal.ShowInfo(missionIndex, TypeFlag.PictureType.EndGuide);
@@ -46,7 +42,11 @@ namespace GameMission
                 MediaPlayerController.instance.CloseVideo();
                 SoundPlayerController.Instance.PlayBackgroundMusic();
                 GameModals.instance.CloseModal();
-                GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
+                
+                if (MainApp.Instance.isARsupport)
+                    GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
+                else
+                    GameModals.instance.GetBackAnimalNoAR(missionIndex);
             });
         }
     }

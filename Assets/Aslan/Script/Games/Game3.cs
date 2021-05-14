@@ -29,7 +29,7 @@ namespace GameMission
         private bool isARStart;
         private bool isThrowing;
         private bool isCreateHandBall;
-        private int fruit = 5;
+        private int fruit = 3;
         private int count;
         private int currentFruitIndex;
         private float time = 3;
@@ -43,9 +43,7 @@ namespace GameMission
         private int passCount = 1;
 
         // unsupport AR
-        private Button leftButton;
-        private Button rightButton;
-        public GameObject walls;
+        public GameObject tools;
 
         public void Init()
         {
@@ -55,8 +53,8 @@ namespace GameMission
             playableDirector = monkey.GetComponent<PlayableDirector>();
 
             count = fruit;
-            leftButton = gameModal.game3Panel.leftButton;
-            rightButton = gameModal.game3Panel.rightButton;
+            //leftButton = gameModal.game3Panel.leftButton;
+            //rightButton = gameModal.game3Panel.rightButton;
         }
 
         public void GameStart()
@@ -107,7 +105,11 @@ namespace GameMission
         {
             if (!isGameStart) return;
 
-            ResetDirection();
+            SetBasketPosition();
+
+            if (isARStart)
+                ResetDirection();
+
             gameModal.game3Panel.text.text = CatchFruit.fruitCount.ToString();// "接到果子數： " + CatchFruit.fruitCount.ToString();
 
             if (TriggerFruitPlane.fruitTouchPlane == fruit)
@@ -138,42 +140,16 @@ namespace GameMission
                     isThrowing = true;
                 }
             }
-
-            if (isARStart)
-            {
-                SetBasketPosition();
-            }
         }
 
         // Unsupport AR Game
         private void UnsupportAR()
         {
-            var left = 0f;
-            var right = 0f;
-            // set basket position
             var _cameraFront = _camera.transform.forward;
             _cameraFront.y = -0.8f;
             basket.transform.position = _camera.transform.position + _cameraFront;
 
-            walls.SetActive(true);
-
-            leftButton.onClick.AddListener(() =>
-            {
-                var moviePosition = basket.transform.position;
-                left -= 0.3f;
-                Debug.Log("left " + left);
-                moviePosition.x = left;
-                basket.transform.position = Vector3.Lerp(basket.transform.position, moviePosition, 3 * Time.deltaTime);
-            });
-
-            rightButton.onClick.AddListener(() =>
-            {
-                var moviePosition = basket.transform.position;
-                right += 0.3f;
-                Debug.Log("right " + right);
-                moviePosition.x = right;
-                basket.transform.position = Vector3.Lerp(basket.transform.position, moviePosition, 3 * Time.deltaTime);
-            });
+            tools.SetActive(true);
         }
     }
 }
