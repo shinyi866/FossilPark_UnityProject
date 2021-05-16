@@ -16,6 +16,7 @@ namespace GameMission
         private int missionIndex = 1;
         private float time = 2f;
         private bool isGameStart;
+        private bool isARsupport;
         private bool isVideoEnd;
         private bool isSetVideoPlane;
         private bool isARanimationEnd; // wait real animation, use animation end etect
@@ -26,8 +27,9 @@ namespace GameMission
 
         public void Init()
         {
-            Modals.instance.CloseAllModal();            
-            
+            Modals.instance.CloseAllModal();
+
+            isARsupport = MainApp.Instance.isARsupport;
             _camera = CameraCtrl.instance.GetCurrentCamera();
             modal = GameModals.instance.OpenModal<ARGameModal>();
             data = MainApp.Instance.database;
@@ -45,8 +47,18 @@ namespace GameMission
         {
             if (time > 0)
             {
-                Compass.Instance.SetUp(Object, 0); //10
-                time -= Time.deltaTime;
+                if (isARsupport)
+                {
+                    Compass.Instance.SetUp(Object, 0);
+                    time -= Time.deltaTime;
+                }
+                else
+                {
+                    var faceDir = this.transform.rotation.eulerAngles;
+                    faceDir.y += 180;
+                    Object.transform.position = new Vector3(9,-1,5);
+                    Object.transform.rotation = Quaternion.Euler(faceDir);
+                }
             }
         }
 
