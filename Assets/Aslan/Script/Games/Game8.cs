@@ -38,6 +38,7 @@ namespace GameMission
         private double time = 3;
         private float ccidWeight = 0.0f;
         private bool isGameStart;
+        private bool isARsupport;
 
         public static GameObject currentDinosaurl;
         private GameObject currentFood;
@@ -50,9 +51,9 @@ namespace GameMission
         public void Init()
         {
             foreach (var b in dinosaurlScenes) { b.SetActive(false); }
-
+            isARsupport = MainApp.Instance.isARsupport;
             // setup all game objects in dictionary
-            for(int i = 0; i < foodGameObject.Length; i++)
+            for (int i = 0; i < foodGameObject.Length; i++)
             {
                 GameObject newARObject = Instantiate(foodGameObject[i], foodGameObject[i].transform.position, foodGameObject[i].transform.rotation);
                 newARObject.name = foodGameObject[i].name;
@@ -76,10 +77,19 @@ namespace GameMission
 
         private void ResetDirection()
         {
-            if (time > 0)
+            if(time > 0)
             {
-                Compass.Instance.SetUp(Object, 275);
-                time -= Time.deltaTime;
+                if (isARsupport)
+                {
+                    Compass.Instance.SetUp(Object, 275);
+                    time -= Time.deltaTime;
+                }
+                else
+                {
+                    var faceDir = this.transform.rotation.eulerAngles;
+                    faceDir.y += 90;
+                    Object.transform.rotation = Quaternion.Euler(faceDir);
+                }
             }
         }
 
@@ -112,6 +122,21 @@ namespace GameMission
             EggModal.dinosaurIndex = index;
             Modals.instance.GetModel<EggModal>().RotateTimes();
             EggModal.startMachine = true;
+
+            if(!isARsupport)
+            {
+                foreach (GameObject b in arObjects.Values) { b.SetActive(false); }
+                Vector3 vector = new Vector3(0, 0, 0);
+
+                currentImageName = foodGameObject[index].name;
+
+                if (currentImageName == "meat") { vector = new Vector3(0, 0.5f, 2.5f); }
+                else { vector = new Vector3(0, -0.6f, 2.5f); }
+
+                showARfood = arObjects[currentImageName];
+                showARfood.transform.position = vector;
+                showARfood.SetActive(true);
+            }
         }
 
         // AR Image Track
@@ -199,30 +224,32 @@ namespace GameMission
         private void TargetDirection()
         {
             Vector3 forward = currentDinosaurl.transform.TransformDirection(Vector3.forward);
-            Vector3 testToFood = testTarget.position - currentDinosaurl.transform.position;
+            //Vector3 testToFood = testTarget.position - currentDinosaurl.transform.position;
             Vector3 arToFood;
 
             float dotResult = 0;
 
             dinosaurlsType = GetCurrentType(currentIndex);
             
-            if (TestMode)
+            if (!isARsupport)
             {
                 //resetEatFood = true;
-                Vector3 lookAtTarget = new Vector3(testTarget.position.x, currentDinosaurl.transform.position.y, testTarget.position.z);
-                currentDinosaurl.transform.LookAt(lookAtTarget);                
-                dotResult = Vector3.Dot(forward, testToFood);
-                currentDinosaurl.GetComponent<CCDIK>().solver.target = testTarget;
+                //Vector3 lookAtTarget = new Vector3(testTarget.position.x, currentDinosaurl.transform.position.y, testTarget.position.z);
+                Vector3 lookAtTarget = new Vector3(showARfood.transform.position.x, currentDinosaurl.transform.position.y, showARfood.transform.position.z);
+                currentDinosaurl.transform.LookAt(lookAtTarget);
+                arToFood = showARfood.transform.position - currentDinosaurl.transform.position;
+                dotResult = Vector3.Dot(forward, arToFood);
+                //currentDinosaurl.GetComponent<CCDIK>().solver.target = showARfood.transform;
                 switch (dinosaurlsType)
                 {
                     case TypeFlag.DinosaurlsType.Brachiosaurus:
-                        DinosaursEat(dotResult, 5f, 4.95f, 4f, 0.04f);
+                        DinosaursEat(dotResult, 5f, 4.99f, 4f, 0.04f);
                         break;
                     case TypeFlag.DinosaurlsType.TRex:
-                        DinosaursEat(dotResult, 2.7f, 2.67f, 1.6f, 0.4f);
+                        DinosaursEat(dotResult, 2.7f, 2.69f, 1.6f, 0.4f);
                         break;
                     case TypeFlag.DinosaurlsType.Triceratop:
-                        DinosaursEat(dotResult, 2.5f, 2.45f, 1.9f, 0.05f);
+                        DinosaursEat(dotResult, 2.51f, 2.5f, 1.9f, 0.05f);
                         break;
                 }
                 Debug.Log("TestMode ");
@@ -240,13 +267,13 @@ namespace GameMission
                     switch (dinosaurlsType)
                     {
                         case TypeFlag.DinosaurlsType.Brachiosaurus:
-                            DinosaursEat(dotResult, 5f, 4.97f, 4f, 0.04f);
+                            DinosaursEat(dotResult, 5f, 4.99f, 4f, 0.04f);
                             break;
                         case TypeFlag.DinosaurlsType.TRex:
-                            DinosaursEat(dotResult, 2.7f, 2.67f, 1.6f, 0.4f);
+                            DinosaursEat(dotResult, 2.7f, 2.69f, 1.6f, 0.4f);
                             break;
                         case TypeFlag.DinosaurlsType.Triceratop:
-                            DinosaursEat(dotResult, 2.5f, 2.45f, 1.9f, 0.05f);
+                            DinosaursEat(dotResult, 2.51f, 2.5f, 1.9f, 0.05f);
                             break;
                     }                    
                 }
@@ -327,7 +354,7 @@ namespace GameMission
 
             ResetDirection();
 
-            if (!TestMode)
+            if (isARsupport)
             {
                 if (currentImageName == null) return; //AR mode
                 TargetDirection();
