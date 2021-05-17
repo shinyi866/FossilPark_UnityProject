@@ -71,7 +71,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Take 001
+    m_DisplayName: SwimDown
   - m_Version: 1
     m_Start: 6.666666666666667
     m_ClipIn: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 1827226128182048838, guid: 3cb875817c08b484c8a119ad3e53a2f1, type: 3}
+  m_Clip: {fileID: 1827226128182048838, guid: bc73545fbd3197d4294065248133f066, type: 3}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1

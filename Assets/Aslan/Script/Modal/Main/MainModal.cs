@@ -129,6 +129,8 @@ namespace View
                 clockImage.sprite = clockSprite[3];
                 var eggModal = Modals.instance.GetModel<EggModal>();
                 eggModal.StartButton.interactable = true;
+
+                iBeaconMissionSetting.Instance.isLastMissionOpen = true;  // Finish all mission will open
             }
         }
 

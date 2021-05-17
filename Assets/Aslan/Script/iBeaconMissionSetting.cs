@@ -23,52 +23,14 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
     private Beacon minBeacon;
 
     public bool isEnterGame;
+    public bool isLastMissionOpen;
 
     private void Start() { SetPosition(); }
 
     /* search mission */
     public void MissionSearch(List<Beacon> mybeacons)
 	{
-        if (mybeacons.Count == 0 || mybeacons == null || isEnterGame) return;
-        /*
-        foreach (Beacon b in mybeacons)
-        {
-            int mission = b.minor;
-            int limit = b.major;
-
-            if (ranges[mission].minRange < 0 && ranges[mission].maxRange < 0) return;
-            if (b.accuracy < 0) return;
-
-            if (b.accuracy < ranges[mission].minRange)
-            {
-                Handheld.Vibrate();
-                SoundPlayerController.Instance.AlertSoundEffect();
-                GameMissions.instance.ShowMission(mission);
-            }
-            else if (b.accuracy > ranges[mission].minRange && b.accuracy < ranges[mission].maxRange)
-            {
-                GameModals.instance.RoundNotify(mission);
-            }
-            else if (b.accuracy > ranges[mission].maxRange)
-            {
-                GameModals.instance.CloseModal();
-            }
-
-            if (limit == 1)
-            {
-                Debug.Log("alert");
-                if(b.accuracy < 0.3)
-                {
-                    alert.SetActive(true);
-                }
-                else
-                {
-                    alert.SetActive(false);
-                }
-                
-            }
-        }
-        */
+        if (mybeacons.Count <= 0 || mybeacons == null || isEnterGame) return;
         
         double minDistance = Mathf.Infinity;
         
@@ -83,6 +45,7 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
             }
         }
 
+        if (minBeacon.minor > 8) return;
         text.text = $"minDistance: {minBeacon.accuracy}, minIndex: {minBeacon.minor}";
 
         int mission = minBeacon.minor;
@@ -91,6 +54,8 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 
         if(minBeacon.major == 0)
         {
+            if (minBeacon.accuracy == 8 && !isLastMissionOpen) return; // Finish all mission will open
+
             if (minBeacon.accuracy < ranges[mission].minRange)
             {
                 Handheld.Vibrate();

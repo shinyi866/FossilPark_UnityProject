@@ -35,9 +35,11 @@ namespace View
         private GameObject gameSaveButton;
 
         public GameObject feedButtonGameObject;
+        public Image feedImage;
+        public Button feedButton;
 
         private Texture2D currentImage;
-        private Button PictureButton;
+        private Button PictureButton;        
 
         [SerializeField]
         private ARPlaneManager planeManager;

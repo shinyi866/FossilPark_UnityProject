@@ -24,6 +24,12 @@ namespace View
         [SerializeField]
         private Sprite[] dinosaurBabySprites;
 
+        [SerializeField]
+        private Sprite[] feedDinosaurSprites;
+
+        [SerializeField]
+        private Sprite[] feedDinosaurPressSprites;
+
         public static int dinosaurIndex;
         public static bool startMachine;
 
@@ -45,6 +51,11 @@ namespace View
 
             ARButton.onClick.AddListener(() =>
             {
+                ARModal arModal = Modals.instance.GetModel<ARModal>();
+                var SpriteState = arModal.feedButton.spriteState;
+                arModal.feedImage.sprite = feedDinosaurSprites[PlayerPrefs.GetInt("dinosaurBaby")];
+                SpriteState.pressedSprite = feedDinosaurPressSprites[PlayerPrefs.GetInt("dinosaurBaby")];
+
                 Modals.instance.OpenAR(PlayerPrefs.GetInt("dinosaurBaby"), TypeFlag.ARObjectType.DinosaurlBaby);
                 //Modals.instance.OpenAR(dinosaurIndex, TypeFlag.ARObjectType.DinosaurlBaby);
             });

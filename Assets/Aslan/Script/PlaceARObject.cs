@@ -116,20 +116,19 @@ public class PlaceARObject : MonoBehaviour
         {
             case TypeFlag.ARObjectType.Animals:
                 spawnedObject = Instantiate(animalObjects[currentAnimal-2], placementPose.position, animalObjects[currentAnimal - 2].transform.rotation);
-                //spawnedObject.transform.rotation = Quaternion.LookRotation(_camera.transform.forward);
-                lookAtTarget = new Vector3(_camera.transform.forward.x, spawnedObject.transform.position.y, _camera.transform.forward.z);
+                lookAtTarget = new Vector3(_camera.transform.position.x, spawnedObject.transform.position.y, _camera.transform.position.z);
                 spawnedObject.transform.LookAt(lookAtTarget);
+
+                if(currentAnimal - 2 == 1) { spawnedObject.transform.rotation = Quaternion.Euler(new Vector3(0,90,0)); }
                 break;
             case TypeFlag.ARObjectType.Dinosaurls:
                 spawnedObject = Instantiate(dinosaurlObjects[currentAnimal-2], placementPose.position, animalObjects[currentAnimal - 2].transform.rotation);
-                //spawnedObject.transform.rotation = Quaternion.LookRotation(_camera.transform.forward);
-                lookAtTarget = new Vector3(_camera.transform.forward.x, spawnedObject.transform.position.y, _camera.transform.forward.z);
+                lookAtTarget = new Vector3(_camera.transform.position.x, spawnedObject.transform.position.y, _camera.transform.position.z);
                 spawnedObject.transform.LookAt(lookAtTarget);
                 break;
             case TypeFlag.ARObjectType.DinosaurlBaby:
                 spawnedObject = Instantiate(dinosaurlBabyObjects[currentAnimal], placementPose.position, animalObjects[currentAnimal].transform.rotation);
-                //spawnedObject.transform.rotation = Quaternion.LookRotation(_camera.transform.forward);
-                lookAtTarget = new Vector3(_camera.transform.forward.x, spawnedObject.transform.position.y, _camera.transform.forward.z);
+                lookAtTarget = new Vector3(_camera.transform.position.x, spawnedObject.transform.position.y, _camera.transform.position.z);
                 spawnedObject.transform.LookAt(lookAtTarget);
                 break;
         }        

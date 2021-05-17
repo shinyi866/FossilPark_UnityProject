@@ -176,7 +176,7 @@ namespace GameMission
 
             if (dinosaurlScenes != null)
             {
-                if(currentImageName != "ticket")
+                if(currentImageName != "ticket2")
                 {
                     GameObject showARObject = arObjects[currentImageName];
                     showARObject.SetActive(true);
@@ -287,7 +287,7 @@ namespace GameMission
         {
             ccidWeight = currentDinosaurl.GetComponent<CCDIK>().solver.GetIKPositionWeight();
             
-            if (dotResult > walkDotResult && arObjects[currentImageName].activeInHierarchy)  //  && arObjects[currentImageName].activeInHierarchy)  // 
+            if (dotResult > walkDotResult && arObjects[currentImageName].activeInHierarchy)
             {
                 currentDinosaurl.GetComponent<Animator>().SetBool("walk", true);                
             }
