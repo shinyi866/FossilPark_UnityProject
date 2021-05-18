@@ -118,8 +118,6 @@ public class PlaceARObject : MonoBehaviour
                 spawnedObject = Instantiate(animalObjects[currentAnimal-2], placementPose.position, animalObjects[currentAnimal - 2].transform.rotation);
                 lookAtTarget = new Vector3(_camera.transform.position.x, spawnedObject.transform.position.y, _camera.transform.position.z);
                 spawnedObject.transform.LookAt(lookAtTarget);
-
-                if(currentAnimal - 2 == 1) { spawnedObject.transform.rotation = Quaternion.Euler(new Vector3(0,90,0)); }
                 break;
             case TypeFlag.ARObjectType.Dinosaurls:
                 spawnedObject = Instantiate(dinosaurlObjects[currentAnimal-2], placementPose.position, animalObjects[currentAnimal - 2].transform.rotation);

@@ -18,6 +18,8 @@ namespace GameMission
         public override void EnterGame()
         {
             GameModals.instance.OpenAR();
+            if (!MainApp.Instance.isARsupport) { CameraCtrl.instance.SwitchCameraForHsinpaMission(true); } //Ar support for hsinpa check
+
             planeManager.enabled = true;
             hisnpaPrefab.SetActive(true);
         }

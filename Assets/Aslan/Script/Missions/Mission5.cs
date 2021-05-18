@@ -18,6 +18,8 @@ namespace GameMission
         public override void EnterGame()
         {
             GameModals.instance.OpenAR();
+            if (!MainApp.Instance.isARsupport) { CameraCtrl.instance.SwitchCameraForHsinpaMission(true); } //Ar support for hsinpa check
+            
             planeManager.enabled = true;
             hisnpaPrefab.SetActive(true);
         }
@@ -26,7 +28,7 @@ namespace GameMission
         {
             var modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Original);
-            
+
             rhinoCtrl.OnEndGameEvent += EndGame;
             rhinoCtrl.EnterGame(87);
         }

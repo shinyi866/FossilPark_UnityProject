@@ -19,8 +19,8 @@ namespace GameMission
         public GameObject[] dinosaurlScenes; // 0:brachiosaurus, 1:triceratop 2:TRex
         public GameObject[] dinosaurs; // 0:brachiosaurus, 1:triceratop 2:TRex
         public Transform[] dinosaursTransform;
-        public Transform testTarget;
-        public bool TestMode;
+        //public Transform testTarget;
+        //public bool TestMode;
 
         public static bool isEat;
         //public static bool resetEatFood;
@@ -44,8 +44,8 @@ namespace GameMission
         private GameObject currentFood;
         private GameObject showARfood;
         private ARGameModal modal;
-        private ARPlane placeObject;
-        private TriggerARObject triggerARObject;
+        //private ARPlane placeObject;
+        //private TriggerARObject triggerARObject;
         private TypeFlag.DinosaurlsType dinosaurlsType;        
 
         public void Init()

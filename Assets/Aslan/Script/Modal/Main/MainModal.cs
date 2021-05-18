@@ -14,6 +14,8 @@ namespace View
         private Image introImage;
         [SerializeField]
         private GuideView guideView;
+        [SerializeField]
+        private GameObject remindObject;
 
         [Header("Buttons")]
         [SerializeField]
@@ -131,6 +133,7 @@ namespace View
                 eggModal.StartButton.interactable = true;
 
                 iBeaconMissionSetting.Instance.isLastMissionOpen = true;  // Finish all mission will open
+                remindObject.SetActive(true); // Finish all mission will open
             }
         }
 

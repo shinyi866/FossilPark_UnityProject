@@ -67,6 +67,7 @@ namespace View
                 ShowPanel(game8Panel.canvasGroup, false);
                 Modals.instance.OpenModal<MainModal>();
                 iBeaconMissionSetting.Instance.isEnterGame = false;
+                CameraCtrl.instance.DisableOcclusionManager();
             });
 
         }
