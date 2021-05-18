@@ -95,8 +95,9 @@ namespace Hsinpa.Ctrl {
             _lighthouseAnchorView.OnMainAnchorDetectEvent += OnAzureAnchorIsFind;
         }
 
-        public void EnterGame(float yRotationOffset)
+        public void EnterGame(float yRotationOffset, bool p_arEnable)
         {
+            this._arEnable = p_arEnable;
             if (_arEnable)
             {
                 CheckAndProcessWithCompassAR(yRotationOffset);

@@ -66,9 +66,12 @@ namespace Hsinpa.App {
                     drawToTexture.DrawOnMesh(m_Results[0].textureCoord, _toolSRP.tools[toolIndex].mask_color);
 
                     toolSwitcher.gameObject.SetActive(true);
+                    toolSwitcher.EnableCurrentToolParticle(true);
+
                     toolSwitcher.transform.position = m_Results[0].point;
                 }
                 else {
+                    toolSwitcher.EnableCurrentToolParticle(false);
                     toolSwitcher.gameObject.SetActive(false);
                 }
 

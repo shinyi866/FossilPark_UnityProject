@@ -83,8 +83,10 @@ namespace Hsinpa.Ctrl
             crocodileTargetTimelineAnim.SetUp(OnPlaneARReadyClick);
         }
 
-        public void EnterGame(float yRotationOffset)
+        public void EnterGame(float yRotationOffset, bool p_arEnable)
         {
+            this._arEnable = p_arEnable;
+
             OpenHintUIModal(TypeFlag.ARGameType.GamePrompt1);
 
             _paintingManager.ResetPaint();
@@ -106,8 +108,9 @@ namespace Hsinpa.Ctrl
             Debug.Log("Croco PerformNoARAction");
             crocodileTargetTimelineAnim.gameObject.SetActive(true);
             crocodileTargetTimelineAnim.ShowConfirmBtn(false);
-            
-            //_arHelper.SetARCameraPos(new Vector3(0, 0.5f, 0), Quaternion.Euler(90, 0, 0));
+            crocodileTargetTimelineAnim.transform.position = new Vector3(0, 0, 0);
+
+            _arHelper.SetARCameraPos(new Vector3(0, 0.5f, 0), Quaternion.Euler(90, 0, 0));
             _state = GeneralFlag.GeneralState.UnderGoing;
 
             InitPaintProcedure();
@@ -119,15 +122,6 @@ namespace Hsinpa.Ctrl
             crocodileTargetTimelineAnim.gameObject.SetActive(true);
 
             try {
-                //var forwardDir = _arHelper.arCamera.transform.forward;
-                //    forwardDir.y = -1;
-                //    forwardDir *= 0.3f;
-                //Quaternion.FromToRotation(Compass.Instance.transform.rotation, offsetRotation)
-
-                //crocodileTargetTimelineAnim.transform.position = new Vector3(0, 0, 0.3f); //_arHelper.arCamera.transform.position + forwardDir;
-
-                //var faceDir = (_arHelper.arCamera.transform.position - crocodileTargetTimelineAnim.transform.position).normalized;
-                //_arHelper.arCamera.transform.position = Compass.Instance.transform.position;
 
                 Compass.Instance.SetUp(_worldContainer.gameObject, yRotationOffset);
 
