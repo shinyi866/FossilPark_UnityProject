@@ -23,6 +23,7 @@ public class PlaceARObject : MonoBehaviour
     private Camera _camera;
     private int currentAnimal;
     private TypeFlag.ARObjectType currentType;
+    private GameObject noARanimalObject;
 
     private static PlaceARObject _instance;
 
@@ -64,7 +65,7 @@ public class PlaceARObject : MonoBehaviour
         var animalTransform = animalObjects[index - 2].transform;
         _camera = CameraCtrl.instance.GetCurrentCamera();
 
-        Instantiate(animalObjects[index - 2], new Vector3(animalTransform.position.x, animalTransform.position.y, 1.5f), animalTransform.rotation);
+        noARanimalObject = Instantiate(animalObjects[index - 2], new Vector3(animalTransform.position.x, animalTransform.position.y, 1.5f), animalTransform.rotation);
         _camera.transform.position = new Vector3(0 ,0.5f, 0);
     }
 
@@ -73,6 +74,7 @@ public class PlaceARObject : MonoBehaviour
         isARpage = false;
         planeManager.enabled = false;
         Destroy(spawnedObject);
+        Destroy(noARanimalObject);
         spawnedObject = null;
     }
     

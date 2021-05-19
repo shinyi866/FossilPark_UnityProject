@@ -46,9 +46,12 @@ namespace GameMission
             model.ConfirmButton.onClick.AddListener(() =>
             {
                 Games.instance.ClosGame();
-                //MediaPlayerController.instance.CloseVideo();
                 GameModals.instance.CloseModal();
-                GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
+
+                if (MainApp.Instance.isARsupport)
+                    GameModals.instance.GetBackAnimalAR(missionIndex, TypeFlag.ARObjectType.Animals);
+                else
+                    GameModals.instance.GetBackAnimalNoAR(missionIndex);
             });
         }
     }
