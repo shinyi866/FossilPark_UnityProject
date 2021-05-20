@@ -47,7 +47,7 @@ public class MainApp : Singleton<MainApp>
     {
         Debug.Log("Checking for AR support...");
 
-        yield return ARSession.CheckAvailability();        
+        yield return ARSession.CheckAvailability();
 
         switch (ARSession.state)
         {
@@ -64,6 +64,26 @@ public class MainApp : Singleton<MainApp>
             case ARSessionState.NeedsInstall:
                 isARsupport = false;
                 text.text = "supportResult: NeedsInstall";
+                break;
+
+            case ARSessionState.CheckingAvailability:
+                isARsupport = false;
+                text.text = "supportResult: CheckingAvailability";
+                break;
+
+            case ARSessionState.Installing:
+                isARsupport = false;
+                text.text = "supportResult: Installing";
+                break;
+
+            case ARSessionState.SessionInitializing:
+                isARsupport = false;
+                text.text = "supportResult: SessionInitializing";
+                break;
+
+            case ARSessionState.SessionTracking:
+                isARsupport = false;
+                text.text = "supportResult: SessionTracking";
                 break;
 
             case ARSessionState.Ready:

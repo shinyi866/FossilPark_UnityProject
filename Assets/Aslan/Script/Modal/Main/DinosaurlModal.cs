@@ -18,6 +18,8 @@ namespace View
             {
                 Modals.instance.CloseModal(); // TODO error?
             });
+
+            Setup();
         }
 
         public void Setup()

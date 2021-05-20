@@ -113,7 +113,7 @@ namespace View
             arModal.ShowView(false);
             arModal.Show(true);
 
-            PlaceARObject.instance.EnterNoAR(index);
+            PlaceARObject.instance.EnterNoAR(index, TypeFlag.ARObjectType.Animals);
         }
 
         // Round missions notify (3-8m)

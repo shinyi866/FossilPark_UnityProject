@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using RenderHeads.Media.AVProVideo;
 using RenderHeads.Media.AVProVideo;
 
 public class MediaPlayerController : MonoBehaviour
@@ -30,14 +31,14 @@ public class MediaPlayerController : MonoBehaviour
     public void LoadAndPlayVideo(string filePath)
     {
         OpenSphereVideo(true);
-        _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, true);
+        _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, true);
         _mediaPlayer.Control.SetLooping(true);
     }
 
     public void LoadAndPlayVideoNotLoop(string filePath)
     {
         OpenSphereVideo(true);
-        _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, true);
+        _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, true);
         _mediaPlayer.Control.SetLooping(false);
     }
 
@@ -46,14 +47,14 @@ public class MediaPlayerController : MonoBehaviour
         SwitchTo2DPlane(true);
         OpenSphereVideo(false);
 
-        _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, true);
+        _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, true);
         _mediaPlayer.Control.SetLooping(false);
     }
 
     public void LoadVideo(string filePath)
     {
         OpenSphereVideo(true);
-        _mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder, filePath, false);
+        _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, false);
         _mediaPlayer.Control.SetLooping(true);
     }
 
@@ -64,14 +65,14 @@ public class MediaPlayerController : MonoBehaviour
 
     public void CloseVideo()
     {
-        _mediaPlayer.Control.CloseVideo();
+        _mediaPlayer.Control.CloseMedia();
         OpenSphereVideo(false);
     }
 
-    public void OpenVideo()
-    {
+    //public void OpenVideo()
+    //{
         //_mediaPlayer.VideoOpened();
-    }
+    //}
 
     public void OpenSphereVideo(bool isOpen)
     {

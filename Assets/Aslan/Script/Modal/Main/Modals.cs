@@ -87,6 +87,22 @@ namespace View
             PlaceARObject.instance.EnterAR(index, type);
         }
 
+        public void OpenNotSupportAR(int index, TypeFlag.ARObjectType type)
+        {
+            foreach (Modal modal in modals) { modal.Show(false); }
+
+            CameraCtrl.instance.SwitchCamera(true);
+
+            ARModal arModal = _instance.GetModel<ARModal>(); // call ARModal direct, will not change currentModal(last modal)
+            arModal.ShowView(true);
+            arModal.Show(true);
+
+            if (type == TypeFlag.ARObjectType.DinosaurlBaby)
+                arModal.feedButtonGameObject.SetActive(true);
+
+            PlaceARObject.instance.EnterNoAR(index, type);
+        }
+
         public void CloseARInMain()
         {
             foreach (Modal modal in modals) { modal.Show(false); }

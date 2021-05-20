@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Hsinpa/Scene/DinosaurRepairPlayground.unity
     guid: 08708d97c40572944bcd3302349f215b
+  - enabled: 0
+    path: Assets/AVProVideo/Demos/Scenes/Demo_360Stereo.unity
+    guid: ca8fdd4aa85509743878be7fbacf5a4f
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: a2b5fc26993c44033b1e21a4d864b107,
       type: 2}

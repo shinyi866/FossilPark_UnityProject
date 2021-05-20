@@ -21,7 +21,6 @@ namespace GameMission
 
         private Camera _camera;
         private ARGameModal gameModal;
-        private Animator monleyAnimator;
         private PlayableDirector playableDirector;
 
         private bool isGameStart;
@@ -49,7 +48,7 @@ namespace GameMission
         {
             gameModal = GameModals.instance.GetModal<ARGameModal>();
             _camera = CameraCtrl.instance.GetCurrentCamera();
-            monleyAnimator = monkey.GetComponent<Animator>();
+            //monleyAnimator = monkey.GetComponent<Animator>();
             playableDirector = monkey.GetComponent<PlayableDirector>();
 
             count = fruit;

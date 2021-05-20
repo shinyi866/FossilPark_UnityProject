@@ -60,12 +60,22 @@ public class PlaceARObject : MonoBehaviour
             material.mainTexture = animalMarkTexture[animalMarkTexture.Length - 1];
     }
 
-    public void EnterNoAR(int index)
-    {
-        var animalTransform = animalObjects[index - 2].transform;
+    public void EnterNoAR(int index, TypeFlag.ARObjectType type)
+    {   
         _camera = CameraCtrl.instance.GetCurrentCamera();
 
-        noARanimalObject = Instantiate(animalObjects[index - 2], new Vector3(animalTransform.position.x, animalTransform.position.y, 1.5f), animalTransform.rotation);
+        switch (currentType)
+        {
+            case TypeFlag.ARObjectType.Animals:
+                var animalTransform = animalObjects[index - 2].transform;
+                noARanimalObject = Instantiate(animalObjects[index - 2], new Vector3(animalTransform.position.x, animalTransform.position.y, 1.5f), animalTransform.rotation);
+                break;
+            case TypeFlag.ARObjectType.Dinosaurls:
+                var dinosaurlTransform = dinosaurlObjects[index - 2].transform;
+                noARanimalObject = Instantiate(dinosaurlObjects[index - 2], new Vector3(dinosaurlTransform.position.x, dinosaurlTransform.position.y, 1.5f), dinosaurlTransform.rotation);
+                break;
+        }
+
         _camera.transform.position = new Vector3(0 ,0.5f, 0);
     }
 

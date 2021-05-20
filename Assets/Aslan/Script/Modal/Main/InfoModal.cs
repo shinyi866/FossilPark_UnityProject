@@ -62,7 +62,12 @@ namespace View
             ARButton.onClick.AddListener(() =>
             {
                 var arIndex = currentIndex + 2;
-                Modals.instance.OpenAR(arIndex, currentType);
+                
+                if(MainApp.Instance.isARsupport)
+                    Modals.instance.OpenAR(arIndex, currentType);
+                else
+                    Modals.instance.OpenNotSupportAR(arIndex, currentType);
+                    
                 iBeaconMissionSetting.Instance.isEnterGame = true;
 
                 currentSprites = null;
