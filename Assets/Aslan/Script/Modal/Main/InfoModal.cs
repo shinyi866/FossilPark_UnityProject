@@ -8,6 +8,7 @@ namespace View
 {
     public class InfoModal : Modal
     {
+        
         [Range(0, 25)]
         public int speed = 15;
         [Header("Info Item")]
@@ -40,7 +41,7 @@ namespace View
 
         private int currentIndex;
         private TypeFlag.ARObjectType currentType;
-
+        
         private void Awake()
         {
             beforeButton = nextGameObject[0].GetComponent<Button>();
@@ -72,10 +73,12 @@ namespace View
 
                 currentSprites = null;
             });
+            
         }
-
+        
         public void ShowInfo(int index, TypeFlag.InfoType type)
         {
+            
             currentIndex = index;
             
             switch (type)
@@ -101,8 +104,9 @@ namespace View
                     currentType = TypeFlag.ARObjectType.Dinosaurls;
                     break;
             }
+            
         }
-
+        
         private void NextClick(int index)
         {
             beforeButton.onClick.AddListener(() =>
@@ -125,12 +129,13 @@ namespace View
                 InfoText.text = animalItemObj.DinosaurlItems[index].text;
             });
         }
-
+        
         private void Update()
         {
-            if (currentSprites == null || currentSprites.Length < 1) return;
+            if (currentSprites == null || currentSprites.Length < 1 || this.canvasGroup.alpha == 0) return;
             
             MainImage.sprite = currentSprites[(int)(Time.time* speed) % currentSprites.Length];
         }
+        
     }
 }
