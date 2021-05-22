@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Compass : Singleton<Compass>
 {
-    [SerializeField]
+    //[SerializeField]
     private Text text;
-    [SerializeField]
+    //[SerializeField]
     private Text text1;
-    [SerializeField]
+    //[SerializeField]
     private Text text2;
 
     private Camera _camera;
@@ -25,7 +25,7 @@ public class Compass : Singleton<Compass>
         gameObject.transform.position = _camera.transform.position;
         gameObject.transform.rotation = Quaternion.Euler(faceDir);
 
-        text2.text = $"set up: {_camera.transform.position}, gameObject: {gameObject.transform.position}, current camera: {_camera.transform.position}";
+        //text2.text = $"set up: {_camera.transform.position}, gameObject: {gameObject.transform.position}, current camera: {_camera.transform.position}";
     }
 
     private void Start()
@@ -54,7 +54,7 @@ public class Compass : Singleton<Compass>
 
         transform.eulerAngles = new Vector3(0, (_camera.transform.rotation.eulerAngles.y - (float)ARLocation.ARLocationProvider.Instance.CurrentHeading.heading), 0);
         var r = Quaternion.Euler(0, 0, (float)ARLocation.ARLocationProvider.Instance.CurrentHeading.heading);
-        text.text = $"transform.eulerAngles: {transform.eulerAngles}, _camera.transform.rotation: {_camera.transform.rotation.eulerAngles.y}, r: {r}, CurrentHeading.heading: {(float)ARLocation.ARLocationProvider.Instance.CurrentHeading.heading}";
-        text1.text = $"this pos: {this.transform.position}, current camera pos: {_camera.transform.position}"; 
+        //text.text = $"transform.eulerAngles: {transform.eulerAngles}, _camera.transform.rotation: {_camera.transform.rotation.eulerAngles.y}, r: {r}, CurrentHeading.heading: {(float)ARLocation.ARLocationProvider.Instance.CurrentHeading.heading}";
+        //text1.text = $"this pos: {this.transform.position}, current camera pos: {_camera.transform.position}"; 
     }
 }

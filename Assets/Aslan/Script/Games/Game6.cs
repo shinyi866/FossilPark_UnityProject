@@ -22,7 +22,7 @@ namespace GameMission
             _camera = CameraCtrl.instance.GetCurrentCamera();
 
             Modals.instance.CloseAllModal();
-            MediaPlayerController.instance.LoadVideo(videoPath);
+            MediaPlayerController.instance.LoadAndPlayVideo(videoPath);
         }
 
         public void GameStart()
@@ -30,7 +30,6 @@ namespace GameMission
             isGameStart = true;
             modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game6);
-            MediaPlayerController.instance.LoadAndPlayVideoNotLoop(videoPath);
             RaycastHit hit;
 
             modal.game6Panel.button.onClick.AddListener(() =>

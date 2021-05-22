@@ -65,7 +65,7 @@ namespace GameMission
             _camera = CameraCtrl.instance.GetCurrentCamera();
 
             Modals.instance.CloseAllModal();
-            MediaPlayerController.instance.LoadAndPlayVideoNotLoop(videoPath);
+            MediaPlayerController.instance.LoadVideo(videoPath);
         }
 
         public void GameStart()
@@ -92,7 +92,7 @@ namespace GameMission
                 {
                     Object.SetActive(false);
                     GameModals.instance.CloseModal();
-                    MediaPlayerController.instance.CloseVideo();
+                    //MediaPlayerController.instance.CloseVideo();
                     MediaPlayerController.instance.LoadAndPlayVideoNotLoop(successVidePath);
                     SoundPlayerController.Instance.PauseBackgroundMusic();
                     SoundPlayerController.Instance.FInishAllSoundEffect();

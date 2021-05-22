@@ -32,14 +32,14 @@ public class MediaPlayerController : MonoBehaviour
     {
         OpenSphereVideo(true);
         _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, true);
-        _mediaPlayer.Control.SetLooping(true);
+        _mediaPlayer.Loop = true;
     }
 
     public void LoadAndPlayVideoNotLoop(string filePath)
     {
         OpenSphereVideo(true);
         _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, true);
-        _mediaPlayer.Control.SetLooping(false);
+        _mediaPlayer.Loop = false;
     }
 
     public void LoadAndPlay2DVideoNotLoop(string filePath)
@@ -48,19 +48,19 @@ public class MediaPlayerController : MonoBehaviour
         OpenSphereVideo(false);
 
         _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, true);
-        _mediaPlayer.Control.SetLooping(false);
+        _mediaPlayer.Loop = false;
     }
 
     public void LoadVideo(string filePath)
     {
         OpenSphereVideo(true);
         _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, false);
-        _mediaPlayer.Control.SetLooping(true);
+        _mediaPlayer.Loop = true;
     }
 
     public void PlayVideo()
     {
-        _mediaPlayer.Control.Play();
+        _mediaPlayer.Play();
     }
 
     public void CloseVideo()
