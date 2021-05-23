@@ -11,12 +11,15 @@ namespace GameMission
         [SerializeField]
         private GameObject ClockObject;
         [SerializeField]
+        private GameObject DirectObject;
+        [SerializeField]
         private Text text;
         [SerializeField]
         private GameObject image;
 
         public System.Action gameOverEvent;
 
+        private float time = 2;
         private int missionIndex;
         private Camera _camera;
         private bool isGameStart;
@@ -38,10 +41,20 @@ namespace GameMission
             ClockObject.SetActive(false);
 
             modal.game0Panel.button.onClick.AddListener(()=> {
-                placeClock = true;
-                ClockObject.SetActive(true);
-                modal.CloseAllPanel();
-                GameResult();
+                RaycastHit hit;
+
+                if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 3))
+                {
+                    placeClock = true;
+                    ClockObject.SetActive(true);
+                    modal.CloseAllPanel();
+                    GameResult();
+                }
+                else
+                {
+                    modal.ShowPrompt(0, TypeFlag.ARGameType.GamePrompt1);
+                    modal.gamePromptPanel.image.sprite = MainApp.Instance.database.m_Data[0].animalDialogPicture;
+                }
             });
         }
 
@@ -56,11 +69,23 @@ namespace GameMission
                 gameOverEvent();
         }
 
+        private void ResetDirection()
+        {
+            if (time > 0)
+            {
+                Compass.Instance.SetUp(DirectObject, 0);
+                DirectObject.transform.position = new Vector3(0, 0, 3);
+                time -= Time.deltaTime;
+            }
+        }
+
         void Update()
         {
             if (!isGameStart) return;
 
-            if(!placeClock)
+            ResetDirection();
+
+            if (!placeClock)
             {
                 var _cameraFront = _camera.transform.forward;
                 var _cameraUp = _camera.transform.up;

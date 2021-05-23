@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +9,8 @@ namespace View
     {
         
         [Range(0, 25)]
-        public int speed = 15;
-        [Header("Info Item")]
-        [SerializeField]
-        private AnimalItemObj animalItemObj;
-
+        public int speed = 15;               
+        
         [SerializeField]
         private Image MainImage;
 
@@ -38,12 +34,16 @@ namespace View
         private Button beforeButton;
         private Button afterButton;
         private Sprite[] currentSprites;
+        [HideInInspector]
+        public AnimalItemObj animalItemObj;
 
         private int currentIndex;
         private TypeFlag.ARObjectType currentType;
         
         private void Awake()
         {
+            animalItemObj = Resources.Load("AnimalItemObj", typeof(AnimalItemObj)) as AnimalItemObj;
+
             beforeButton = nextGameObject[0].GetComponent<Button>();
             afterButton = nextGameObject[1].GetComponent<Button>();
 
@@ -75,12 +75,11 @@ namespace View
             });
             
         }
-        
+
         public void ShowInfo(int index, TypeFlag.InfoType type)
         {
-            
             currentIndex = index;
-            
+
             switch (type)
             {
                 case TypeFlag.InfoType.Animal:
@@ -104,7 +103,6 @@ namespace View
                     currentType = TypeFlag.ARObjectType.Dinosaurls;
                     break;
             }
-            
         }
         
         private void NextClick(int index)
@@ -129,7 +127,7 @@ namespace View
                 InfoText.text = animalItemObj.DinosaurlItems[index].text;
             });
         }
-        
+
         private void Update()
         {
             if (currentSprites == null || currentSprites.Length < 1 || this.canvasGroup.alpha == 0) return;

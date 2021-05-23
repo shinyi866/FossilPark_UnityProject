@@ -19,7 +19,13 @@ namespace View
         private Image eggImage;
 
         [SerializeField]
+        private Image babyImage;
+
+        [SerializeField]
         private GameObject eggAnimation;
+
+        [SerializeField]
+        private GameObject babyObject;
 
         [SerializeField]
         private Sprite[] dinosaurBabySprites;
@@ -34,16 +40,24 @@ namespace View
         public static bool startMachine;
 
         private bool backAnimation;
+        private Sprite[] currentSprites;
+        private InfoModal arModal;
 
         private void Awake()
         {
-         /*   
+            arModal = Modals.instance.GetModel<InfoModal>();
+            /*  
             if (PlayerPrefs.HasKey("dinosaurBaby"))
             {
                 StartButton.interactable = false;
                 ARButton.interactable = true;
+
+                eggAnimation.SetActive(false);
+                babyObject.SetActive(true);
+                eggImage.enabled = false;          
+                currentSprites = arModal.animalItemObj.DinosaurlBabyItems[dinosaurIndex].MainImage;
             }
-            */
+             */  
             BackButton.onClick.AddListener(() =>
             {
                 Modals.instance.CloseModal(); // TODO error?
@@ -90,7 +104,7 @@ namespace View
                     time1.localPosition = Vector3.Lerp(time1.localPosition, time1Pos, 0.04f);
                     time2.localPosition = Vector3.Lerp(time2.localPosition, time2Pos, 0.08f);
                     Debug.Log("1");
-                    if (time2.localPosition.x <= 44 && time2.localPosition.x >= 43) { startMachine = false;}
+                    if (time2.localPosition.x <= 45 && time2.localPosition.x >= 43) { startMachine = false;}
                     break;
                 case (int)TypeFlag.DinosaurlsType.TRex:
                     time2Pos = new Vector3(-36, -58, 0);
@@ -107,11 +121,14 @@ namespace View
 
         private void Update()
         {
+            if (currentSprites != null && currentSprites.Length > 1 && canvasGroup.alpha != 0)
+                babyImage.sprite = currentSprites[(int)(Time.time * 13) % currentSprites.Length];
+
             if (!startMachine) return;
             
             RotateTimes();
 
-            if(backAnimation) { StartCoroutine(EggToDinosaurBaby());}
+            if(backAnimation) { StartCoroutine(EggToDinosaurBaby());}            
         }
 
         private IEnumerator EggToDinosaurBaby()
@@ -120,11 +137,15 @@ namespace View
             
             yield return new WaitForSeconds(1.5f);
 
-            eggAnimation.SetActive(true);
+            eggAnimation.SetActive(true);            
 
             yield return new WaitForSeconds(6f);
             eggAnimation.SetActive(false);
-            eggImage.sprite = dinosaurBabySprites[dinosaurIndex];
+            babyObject.SetActive(true);
+            eggImage.enabled = false;
+            //babyImage.sprite = dinosaurBabySprites[dinosaurIndex];            
+            currentSprites = arModal.animalItemObj.DinosaurlBabyItems[dinosaurIndex].MainImage;
+            Debug.Log("count " + currentSprites.Length);
         }
     }
 }

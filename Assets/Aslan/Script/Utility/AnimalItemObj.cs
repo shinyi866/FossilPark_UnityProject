@@ -17,4 +17,7 @@ public class AnimalItemObj : ScriptableObject
     [SerializeField]
     public Item[] DinosaurlItems;
 
+    [SerializeField]
+    public Item[] DinosaurlBabyItems;
+
 }
