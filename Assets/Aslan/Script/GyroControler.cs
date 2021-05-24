@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GyroControler : MonoBehaviour
 {
+    public Text text;
     private Gyroscope gyroscope;
     private Quaternion rot;
     private bool gyroEnable;
@@ -62,6 +64,7 @@ public class GyroControler : MonoBehaviour
         {
             // Invert the z and w of the gyro attitude
             this.transform.localRotation = new Quaternion(Input.gyro.attitude.x, Input.gyro.attitude.y, -Input.gyro.attitude.z, -Input.gyro.attitude.w);
+            text.text = "this.transform.localRotation" + this.transform.localRotation;
         }
     }
 }

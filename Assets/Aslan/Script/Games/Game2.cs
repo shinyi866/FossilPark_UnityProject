@@ -1,10 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using View;
-using UnityEngine.UI;
-using UnityEngine.Events;
-using UnityEngine.XR.ARFoundation;
 
 namespace GameMission
 {
