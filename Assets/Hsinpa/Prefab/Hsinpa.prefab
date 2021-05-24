@@ -2494,6 +2494,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1865134979286990326}
     m_Modifications:
+    - target: {fileID: 879029869319461275, guid: 9c40c867ed070e4459e0c1437de1501c,
+        type: 3}
+      propertyPath: deltaOrientation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1251247825171712536, guid: 9c40c867ed070e4459e0c1437de1501c,
         type: 3}
       propertyPath: m_Name
@@ -2685,6 +2690,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: airpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030040686008659273, guid: ea3d45b1600fe534eb71bc80b4f07604,
+        type: 3}
+      propertyPath: vibrate
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea3d45b1600fe534eb71bc80b4f07604, type: 3}

@@ -9,6 +9,9 @@ namespace Hsinpa.View
         [SerializeField]
         private ParticleSystem particle;
 
+        public bool vibrate;
+        public bool deltaOrientation;
+
         public void EnableParticle(bool p_enable)
         {
             if (p_enable && !particle.isPlaying)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Hsinpa.Shader;
 using Hsinpa.Input;
+using UnityEngine.SocialPlatforms;
 
 namespace Hsinpa.App {
     public class PaintingManager : MonoBehaviour
@@ -37,6 +38,8 @@ namespace Hsinpa.App {
 
         private float checkCompleteTime = 3f;
         private float recordCompleteTime = 0;
+        private Vector2 previousMousePoint = new Vector2();
+        private Quaternion orientationAngle = Quaternion.identity;
 
         private void Start()
         {
@@ -69,6 +72,21 @@ namespace Hsinpa.App {
                     toolSwitcher.EnableCurrentToolParticle(true);
 
                     toolSwitcher.transform.position = m_Results[0].point;
+                    Vector2 currentScreenPoint = new Vector2(m_Results[0].point.x, m_Results[0].point.z);
+                    Vector2 deltaScreenPoint = (previousMousePoint - currentScreenPoint).normalized;
+
+                    //Vibration
+                    if (toolSwitcher.currentObject != null && toolSwitcher.currentObject.vibrate) {
+                        Vector3 currentPosition = m_Results[0].point;
+                        float randomRange = 0.001f;
+                        toolSwitcher.transform.position= new Vector3(currentPosition.x + Random.Range(-randomRange, randomRange), 
+                                                                    currentPosition.y, currentPosition.z + Random.Range(-randomRange, randomRange));
+                    }
+
+                    if (toolSwitcher.currentObject != null && toolSwitcher.currentObject.deltaOrientation)
+                        HandleItemOrientation(deltaScreenPoint, toolSwitcher.currentObject);
+
+                    previousMousePoint.Set(m_Results[0].point.x, m_Results[0].point.z);
                 }
                 else {
                     toolSwitcher.EnableCurrentToolParticle(false);
@@ -131,6 +149,20 @@ namespace Hsinpa.App {
             }
         }
 
+        private void HandleItemOrientation(Vector2 normalizeDelta, View.ToolItemObject toolItem) {
+            float diff = normalizeDelta.magnitude;
+
+            if (diff < 0.01f) return;
+
+            float m_Angle = -(Mathf.Atan2(normalizeDelta.y, normalizeDelta.x) * Mathf.Rad2Deg - 90);
+            Quaternion currentDir = Quaternion.Euler(-112.26f, m_Angle, 0);
+
+            orientationAngle = Quaternion.Lerp(orientationAngle, currentDir, 0.1f);
+
+            //Debug.Log("m_Angle " + m_Angle);
+            toolItem.transform.localRotation = orientationAngle;
+        }
+
         public void ShowColorHintEvent(HintState hState)
         {
             _hintState = hState;
@@ -140,6 +172,8 @@ namespace Hsinpa.App {
         public ToolSRP.Tool EquipTool(ToolSRP.ToolEnum toolEnum) {
             toolIndex = (int)toolEnum;
             _hintState = HintState.None;
+            previousMousePoint = Vector2.zero;
+            orientationAngle = Quaternion.identity;
             drawToTexture.SetPaintColor(_toolSRP.tools[toolIndex].mask_color);
 
             toolSwitcher.EnableTool((int)toolEnum);
@@ -152,6 +186,7 @@ namespace Hsinpa.App {
             _hintState = HintState.None;
             drawToTexture.EnableColorHint( HintState.None );
             toolSwitcher.HideAll();
+            previousMousePoint = Vector2.zero;
         }
 
         public void ResetPaint() {

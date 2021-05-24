@@ -16,15 +16,18 @@ namespace Hsinpa.View
                 _currentObject.EnableParticle(p_enable);
         }
 
-        public void EnableTool(int index)
+        public ToolItemObject EnableTool(int index)
         {
             for (int i = 0; i < toolHolders.Length; i++)
             {
                 toolHolders[i].gameObject.SetActive(index == i);
 
-                if (index == i)
+                if (index == i) {
                     _currentObject = toolHolders[i];
+                }
             }
+
+            return _currentObject;
         }
 
         public void HideAll()
