@@ -24,6 +24,7 @@ public class PlaceARObject : MonoBehaviour
     private int currentAnimal;
     private TypeFlag.ARObjectType currentType;
     private GameObject noARanimalObject;
+    private float rotateSpeed = 0.1f;
 
     private static PlaceARObject _instance;
 
@@ -103,10 +104,18 @@ public class PlaceARObject : MonoBehaviour
             {
                 var hitPos = hits[0].pose;
 
-                if (Input.GetTouch(0).phase == TouchPhase.Moved || Input.GetTouch(0).phase == TouchPhase.Began)
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
                 {
                     spawnedObject.transform.position = hitPos.position;
                 }
+            }
+
+            if (Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                var rotateY = Quaternion.Euler(0f, Input.GetTouch(0).deltaPosition.x * rotateSpeed, 0f);
+                spawnedObject.transform.rotation = rotateY * spawnedObject.transform.rotation;
+
+                //spawnedObject.transform.Rotate(new Vector3(0, 10, 0) * Time.deltaTime * rotateSpeed);
             }
         }
         else

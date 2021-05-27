@@ -10,11 +10,6 @@ using System.Linq;
 public class iBeaconData : MonoBehaviour
 {
 	[SerializeField]
-	private Text pointText;
-	[SerializeField]
-	private Text dText;
-
-	[SerializeField]
     private Text _statusText;
 	[SerializeField]
 	private Button _bluetoothButton;

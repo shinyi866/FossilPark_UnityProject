@@ -19,11 +19,8 @@ namespace GameMission
         public GameObject[] dinosaurlScenes; // 0:brachiosaurus, 1:triceratop 2:TRex
         public GameObject[] dinosaurs; // 0:brachiosaurus, 1:triceratop 2:TRex
         public Transform[] dinosaursTransform;
-        //public Transform testTarget;
-        //public bool TestMode;
 
         public static bool isEat;
-        //public static bool resetEatFood;
         public System.Action<bool> gameOverEvent;
 
         private ARTrackedImage _trackImage;
@@ -44,8 +41,6 @@ namespace GameMission
         private GameObject currentFood;
         private GameObject showARfood;
         private ARGameModal modal;
-        //private ARPlane placeObject;
-        //private TriggerARObject triggerARObject;
         private TypeFlag.DinosaurlsType dinosaurlsType;        
 
         public void Init()
@@ -65,6 +60,7 @@ namespace GameMission
 
             modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game8);
+            Modals.instance.OpenModal<ARModal>();
 
             ButtonSetUp();
         }
@@ -246,7 +242,7 @@ namespace GameMission
                         DinosaursEat(dotResult, 5f, 4.99f, 4f, 0.04f);
                         break;
                     case TypeFlag.DinosaurlsType.TRex:
-                        DinosaursEat(dotResult, 2.7f, 2.69f, 1.6f, 0.4f);
+                        DinosaursEat(dotResult, 2.7f, 2.695f, 1.8f, 0.4f);
                         break;
                     case TypeFlag.DinosaurlsType.Triceratop:
                         DinosaursEat(dotResult, 2.51f, 2.5f, 1.9f, 0.05f);
@@ -270,7 +266,7 @@ namespace GameMission
                             DinosaursEat(dotResult, 5f, 4.99f, 4f, 0.04f);
                             break;
                         case TypeFlag.DinosaurlsType.TRex:
-                            DinosaursEat(dotResult, 2.7f, 2.69f, 1.6f, 0.4f);
+                            DinosaursEat(dotResult, 2.7f, 2.695f, 1.8f, 0.4f);
                             break;
                         case TypeFlag.DinosaurlsType.Triceratop:
                             DinosaursEat(dotResult, 2.51f, 2.5f, 1.9f, 0.05f);

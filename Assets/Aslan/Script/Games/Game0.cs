@@ -17,7 +17,7 @@ namespace GameMission
         [SerializeField]
         private GameObject image;
 
-        public System.Action gameOverEvent;
+        //public System.Action gameOverEvent;
 
         private float time = 2;
         private int missionIndex;
@@ -40,9 +40,16 @@ namespace GameMission
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game0);
             ClockObject.SetActive(false);
 
-            modal.game0Panel.button.onClick.AddListener(()=> {
+            modal.game0Panel.button_go.onClick.AddListener(()=> {
                 RaycastHit hit;
-
+                placeClock = true;
+                ClockObject.SetActive(true);
+                modal.CloseAllPanel();
+                GameModals.instance.CloseModal();
+                Modals.instance.OpenModal<ARModal>();
+                //ARmodal.ShowView(false);
+                //GameResult();
+                /*
                 if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 3))
                 {
                     placeClock = true;
@@ -54,8 +61,10 @@ namespace GameMission
                 {
                     modal.ShowPrompt(0, TypeFlag.ARGameType.GamePrompt1);
                     modal.gamePromptPanel.image.sprite = MainApp.Instance.database.m_Data[0].animalDialogPicture;
-                }
+                }*/
             });
+
+            
         }
 
         public void GameStart()
@@ -63,17 +72,11 @@ namespace GameMission
             isGameStart = true;
         }
 
-        private void GameResult()
-        {
-            if (gameOverEvent != null)
-                gameOverEvent();
-        }
-
         private void ResetDirection()
         {
             if (time > 0)
             {
-                Compass.Instance.SetUp(DirectObject, 0);
+                Compass.Instance.SetUp(DirectObject, 270);
                 DirectObject.transform.position = new Vector3(0, 0, 3);
                 time -= Time.deltaTime;
             }

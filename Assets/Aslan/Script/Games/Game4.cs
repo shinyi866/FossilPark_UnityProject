@@ -85,7 +85,7 @@ namespace GameMission
 
                 if (!reault)
                 {
-                    ReSetPosition();
+                    //ReSetPosition();
                     SoundPlayerController.Instance.ErrorSoundEffect();
                 }
                 else
@@ -151,7 +151,7 @@ namespace GameMission
 
                 containRect.sizeDelta = new Vector2(400, 300);
 
-                var setPos = new Vector2(1000f, contain - revertical * (i + 1) + 500f);
+                var setPos = new Vector2(700f, contain - revertical * (i + 1) + 500f);
                 ansRectTransform.anchoredPosition = new Vector2(-95f, contain - vertical * (i + 1));
                 ansRectTransform.GetComponentInChildren<Text>().text = ans1[i];
 
@@ -168,7 +168,7 @@ namespace GameMission
 
                 containRect2.sizeDelta = new Vector2(400, 300);
 
-                var setPos = new Vector2(1510f, contain - revertical * (i + 1) + 500f); 
+                var setPos = new Vector2(1110f, contain - revertical * (i + 1) + 500f); 
                 ansRectTransform2.anchoredPosition = new Vector2(125f, contain - vertical * (i + 1));
                 ansRectTransform2.GetComponentInChildren<Text>().text = ans2[i];
 
@@ -237,6 +237,8 @@ namespace GameMission
                 {
                     if (Vector3.Distance(AnsBox[i].transform.position, Ans[j].transform.position) < errorRound)
                     {
+                        Ans[j].GetComponent<Image>().color = Color.white;
+
                         if (i % 2 == 0 && j < Ans.Count / 2)
                         {
                             Debug.Log("Bingo!");
@@ -246,6 +248,10 @@ namespace GameMission
                         {
                             Debug.Log("Bingo!!!!!");
                             countRight++;
+                        }
+                        else
+                        {
+                            Ans[j].GetComponent<Image>().color = Color.red;
                         }
                     }
                 }
@@ -262,7 +268,7 @@ namespace GameMission
             var _frontPos = _cameraFront * 3;
             var _leftPos = _camera.transform.right * -1.6f;
             var _rightPos = _camera.transform.right * 1.6f;
-            var _upPos = _camera.transform.up * 0.8f;
+            var _upPos = _camera.transform.up * 0.7f;
 
             var rotateSpeed = 20f * Time.deltaTime;
 

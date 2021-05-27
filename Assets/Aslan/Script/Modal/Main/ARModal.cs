@@ -14,22 +14,16 @@ namespace View
         private Button BackButton;
 
         [SerializeField]
-        private CanvasGroup picturePanel;
+        private PicturePanel picturePanel;
 
         [SerializeField]
-        private Button ExitButton;
-
-        [SerializeField]
-        private GameObject image;
+        private LeavePanel leavePanel;
 
         [SerializeField]
         private GameObject backGameObject;
 
         [SerializeField]
         private GameObject pictureGameObject;
-
-        [SerializeField]
-        private GameObject mainSaveButton;
 
         [SerializeField]
         private GameObject gameSaveButton;
@@ -48,7 +42,7 @@ namespace View
         public void ShowView(bool isMainView)
         {
             backGameObject.SetActive(isMainView);
-            mainSaveButton.SetActive(isMainView);
+            picturePanel.mainSaveButton.SetActive(isMainView);
 
             //imageGameObject.SetActive(!isMainView);
             gameSaveButton.SetActive(!isMainView);
@@ -59,42 +53,55 @@ namespace View
             PictureButton = pictureGameObject.GetComponent<Button>();
             PictureButton.onClick.AddListener(() => { TakePicture(); });
 
-            BackButton.onClick.AddListener(() =>
+            BackButton.onClick.AddListener(() => { ShowPanel(leavePanel.canvasGroup, true); });
+
+            leavePanel.button_confirm.onClick.AddListener(()=>
             {
-                Modals.instance.CloseARInMain(); // TODO error?
                 feedButtonGameObject.SetActive(false);
+                ShowPanel(leavePanel.canvasGroup, false);
+
+                Games.instance.ClosGame();
+                GameModals.instance.GetModal<ARGameModal>().CloseAllPanel();
+                GameModals.instance.CloseModal();
+                Modals.instance.CloseModal();
+                Modals.instance.CloseARInMain();
+                Modals.instance.CloseARInGame();
+                
+                iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon
+                CameraCtrl.instance.DisableOcclusionManager();
+                CloseARPlane();
             });
 
-            mainSaveButton.GetComponent<Button>().onClick.AddListener(() =>
+            leavePanel.button_cancle.onClick.AddListener(() => { ShowPanel(leavePanel.canvasGroup, false); });
+
+            picturePanel.mainSaveButton.GetComponent<Button>().onClick.AddListener(() =>
             {
-                //Modals.instance.CloseModal();
-                //GameModals.instance.CloseModal();
-                //Games.instance.ClosGame();
-                SavePhotoPanel(false);
+                /*
                 ClosePicturePanel(false);
                 Modals.instance.CloseARInMain();
                 iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon???
                 CloseARPlane();
-                //SaveImage();
+                */
+                ShowPanel(picturePanel.canvasGroup, false);
+                SaveImage();
             });
 
             gameSaveButton.GetComponent<Button>().onClick.AddListener(() =>
             {
                 ShowView(true);
-                SavePhotoPanel(false);
+                ShowPanel(picturePanel.canvasGroup, false);
+                /*
                 ClosePicturePanel(false);
                 Games.instance.ClosGame();
                 Modals.instance.CloseARInGame();
 
                 iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon
                 CloseARPlane();
-                //Modals.instance.CloseModal();
-                //GameModals.instance.CloseModal();
-
-                //SaveImage();
+                */
+                SaveImage();
             });
 
-            ExitButton.onClick.AddListener(() => { SavePhotoPanel(false); });
+            picturePanel.button_exit.onClick.AddListener(() => { ShowPanel(picturePanel.canvasGroup, false); });
         }
 
         private void CloseARPlane()
@@ -131,30 +138,25 @@ namespace View
             renderResult.Apply();
 
             Sprite screenShot = Sprite.Create(renderResult, rect, Vector2.zero);
-            image.GetComponent<Image>().sprite = screenShot;
+            picturePanel.image.GetComponent<Image>().sprite = screenShot;
             currentImage = renderResult;
-            SavePhotoPanel(true);
+            //SavePhotoPanel(true);
+            ShowPanel(picturePanel.canvasGroup, true);
 
             _camera.targetTexture = null;
         }
 
-        private void SavePhotoPanel(bool isShow)
+        public void ShowPanel(CanvasGroup canvasGroup, bool isShow)
         {
-            if (picturePanel != null)
+            if (canvasGroup != null)
             {
-                picturePanel.alpha = (isShow) ? 1 : 0;
-                picturePanel.interactable = isShow;
-                picturePanel.blocksRaycasts = isShow;
+                canvasGroup.alpha = (isShow) ? 1 : 0;
+                canvasGroup.interactable = isShow;
+                canvasGroup.blocksRaycasts = isShow;
 
-                pictureGameObject.SetActive(!isShow);
+                if (canvasGroup == picturePanel.canvasGroup)
+                    pictureGameObject.SetActive(!isShow);
             }
-        }
-
-        private void ClosePicturePanel(bool isShow)
-        {
-            this.canvasGroup.alpha = (isShow) ? 1 : 0;
-            this.canvasGroup.interactable = isShow;
-            this.canvasGroup.blocksRaycasts = isShow;
         }
 
         private void SaveImage()
@@ -172,4 +174,23 @@ namespace View
         }
 
     }
+}
+
+
+[System.Serializable]
+public class PicturePanel
+{
+    public CanvasGroup canvasGroup;
+    public Button button_exit;
+    public Image image;
+    public GameObject mainSaveButton;
+    public GameObject gameSaveButton;
+}
+
+[System.Serializable]
+public class LeavePanel
+{
+    public CanvasGroup canvasGroup;
+    public Button button_cancle;
+    public Button button_confirm;
 }

@@ -17,16 +17,14 @@ namespace GameMission
 
         public override void StartGame()
         {
-            CameraCtrl.instance.OcclusionForHuman();
-
             game = Games.instance.OpenGame<Game1>();
-            game.gameOverEvent += EndGame;
+            //game.gameOverEvent += EndGame;
             game.Init();
             game.GameStart();
         }
 
         public void EndGame()
-        {
+        {/*
             game.gameOverEvent -= EndGame;
 
             GameModals.instance.CloseModal();
@@ -34,6 +32,7 @@ namespace GameMission
 
             var modal = Modals.instance.OpenModal<ARModal>();
             modal.ShowView(false);
+            */
         }
     }
 }

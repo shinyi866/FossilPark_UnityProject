@@ -30,7 +30,7 @@ namespace GameMission
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Original);
             
             crocoCtrl.OnEndGameEvent += EndGame;
-            crocoCtrl.EnterGame(15, MainApp.Instance.isARsupport);
+            crocoCtrl.EnterGame(92, MainApp.Instance.isARsupport);
         }
 
         public void EndGame(bool isSuccess)

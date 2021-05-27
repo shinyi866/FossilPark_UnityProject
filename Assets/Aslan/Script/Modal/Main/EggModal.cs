@@ -46,7 +46,7 @@ namespace View
         private void Awake()
         {
             arModal = Modals.instance.GetModel<InfoModal>();
-            /*  
+            
             if (PlayerPrefs.HasKey("dinosaurBaby"))
             {
                 StartButton.interactable = false;
@@ -57,7 +57,7 @@ namespace View
                 eggImage.enabled = false;          
                 currentSprites = arModal.animalItemObj.DinosaurlBabyItems[dinosaurIndex].MainImage;
             }
-             */  
+              
             BackButton.onClick.AddListener(() =>
             {
                 Modals.instance.CloseModal(); // TODO error?

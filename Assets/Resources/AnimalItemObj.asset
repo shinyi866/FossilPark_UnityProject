@@ -26,12 +26,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 9bfcff8e5a1884999a6b68ac2c51050f, type: 3}
     - {fileID: 21300000, guid: 05a5da4b2753c486daf8bcb1b7f4db73, type: 3}
     - {fileID: 21300000, guid: 1bf0299eacab7489da7e0ee59628672c, type: 3}
-    - {fileID: 21300000, guid: 21033afb4d1a444588dd8c488cafef29, type: 3}
-    - {fileID: 21300000, guid: 0fec7468fafe047d6871f5ad1c27093b, type: 3}
-    - {fileID: 21300000, guid: 272cb29948a364ad586f626368fb3a42, type: 3}
-    - {fileID: 21300000, guid: 7a89e0e9eb31e48d4b98e4da455d9a97, type: 3}
-    - {fileID: 21300000, guid: 40e62ffb1f465455db4cd34146db2b0f, type: 3}
-    - {fileID: 21300000, guid: 2d3055447eb2f4464b87ee4385a8d7d6, type: 3}
     NameImage: {fileID: 21300000, guid: 577a8c9dd138e4bb3995ff800aee28e9, type: 3}
     text: "\u53F0\u7063\u6885\u82B1\u9E7F\u6210\u7378\u9AD4\u9577\u7D04150\u516C\u5206\uFF0C\u8EAB\u9AD890\u516C\u5206\u5DE6\u53F3\uFF0C\u89D2\u957740\u523050\u516C\u5206\uFF0C\u96C4\u6027\u6885\u82B1\u9E7F\u6709\u8907\u96DC\u7684\u53C9\u89D2\uFF0C\u7D04\u4E00\u6B72\u5DE6\u53F3\u958B\u59CB\u5206\u679D\uFF0C\u4EE5\u5F8C\u6BCF\u5E74\u589E\u52A0\u4E00\u652F\u5206\u679D\uFF0C\u9054\u4E00\u5B9A\u6578\u76EE\u5F8C\u505C\u6B62\uFF0C\u6885\u82B1\u9E7F\u4E00\u822C\u68F2\u606F\u65BC\u91DD\u62EC\u6DF7\u5408\u6797\uFF0C\u5C71\u5730\u8349\u539F\uFF0C\u548C\u68EE\u6797\u908A\u7DE3\u9644\u8FD1\u3002"
   - MainImage:
@@ -47,12 +41,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: c8bf137d2c3864f2facdfda8ca870c3a, type: 3}
     - {fileID: 21300000, guid: abcefea498eab43d1b5479c14f0ab80d, type: 3}
     - {fileID: 21300000, guid: d298089008c7c401a892301756ae8efb, type: 3}
-    - {fileID: 21300000, guid: be26acb16c7a64e18aa52b56290b6706, type: 3}
-    - {fileID: 21300000, guid: fbe2387b8abd6440d90b9c528b09e9e0, type: 3}
-    - {fileID: 21300000, guid: 096688f6bb6524c7982a9db03d44d7f4, type: 3}
-    - {fileID: 21300000, guid: 4159344a72d2444648e4e9c8cf2acfd1, type: 3}
-    - {fileID: 21300000, guid: a56dab6b43f6c4ec282d81605a68ba45, type: 3}
-    - {fileID: 21300000, guid: 93de4c209b13441ecb7a8ac381ce98c6, type: 3}
     NameImage: {fileID: 21300000, guid: b7dde79b9338b44418f05898f70bffe5, type: 3}
     text: "\u7531\u65BC\u4E16\u754C\u4E0A\u6700\u65E9\u767C\u73FE\u7684\u4EF0\u9F3B\u7334\u662F\u9577\u6709\u91D1\u9EC3\u8272\u76AE\u6BDB\u3001\u751F\u6D3B\u5728\u4E2D\u570B\u7684\u56DB\u5DDD\u3001\u965D\u897F\u3001\u7518\u8085\u7684\u5DDD\u91D1\u7D72\u7334\uFF0C\u6240\u4EE5\u9019\u4E00\u5C6C\u7684\u52D5\u7269\u901A\u5E38\u88AB\u7A31\u70BA\u91D1\u7D72\u7334\uFF0C\u800C\u5B83\u7684\u82F1\u6587\u540D\u5B57\u76F4\u8B6F\u6210\u4E2D\u6587\u5247\u662F\u4EF0\u9F3B\u7334\u3002"
   - MainImage:
@@ -68,12 +56,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 51b6c38061cbb411893ae9b39359677c, type: 3}
     - {fileID: 21300000, guid: 83675485798984652a8642bdbf68f349, type: 3}
     - {fileID: 21300000, guid: 9756dff0b56d445769e168ecaae0f7e6, type: 3}
-    - {fileID: 21300000, guid: 01eb6c04e1890452c8de68bc13593681, type: 3}
-    - {fileID: 21300000, guid: f43d5dd6438b744a0880caf0918b9867, type: 3}
-    - {fileID: 21300000, guid: fef69fe1bbc7e4a09afe005897ef5829, type: 3}
-    - {fileID: 21300000, guid: 019e4bde81eab4f00a33bf5ccac7663a, type: 3}
-    - {fileID: 21300000, guid: 52c1b9ea11b0642b1ae70e073d2bcc52, type: 3}
-    - {fileID: 21300000, guid: dc4625bcc64b94b8c9aac4d9ffef8aee, type: 3}
     NameImage: {fileID: 21300000, guid: 7042abd7618b04d409beeaf4598bc189, type: 3}
     text: "\u662F\u4E00\u7A2E\u80CC\u9C2D\u57FA\u90E8\u9686\u8D77\u7684\u6D77\u8C5A\u79D1\u52D5\u7269\uFF0C\u5EE3\u6CDB\u5206\u5E03\u65BC\u897F\u592A\u5E73\u6D0B\u548C\u6771\u5370\u5EA6\u6D0B\u7684\u71B1\u5E36\u53CA\u6EAB\u5E36\u6CBF\u5CB8\u6D77\u57DF\uFF0C\u5076\u723E\u51FA\u73FE\u5728\u6DE1\u6C34\u4E2D\uFF0C\u819A\u8272\u56E0\u5730\u57DF\u3001\u7A2E\u7FA4\u800C\u7570\uFF0C\u591A\u5448\u7070\u767D\u76F8\u9593\u7684\u96DC\u8272\uFF0C\u4E14\u5E36\u6709\u6DF1\u8272\u6591\u9EDE\u3002"
   - MainImage:
@@ -89,14 +71,8 @@ MonoBehaviour:
     - {fileID: 21300000, guid: d6443fd7cde88453fabb8512cdb64493, type: 3}
     - {fileID: 21300000, guid: 3be03d977100d44f7b056bedc7d68b72, type: 3}
     - {fileID: 21300000, guid: 476016777067a4e6e973468471617370, type: 3}
-    - {fileID: 21300000, guid: dfb66ae2f18184fa89d9f0123197b48e, type: 3}
-    - {fileID: 21300000, guid: 6b1f6033157234613ab05f9cd234c29f, type: 3}
-    - {fileID: 21300000, guid: 964b480239e2245a1a5e6a9ab309fc7a, type: 3}
-    - {fileID: 21300000, guid: e0153f81467834e30a1fa26aff59465a, type: 3}
-    - {fileID: 21300000, guid: 9b5d42a79ef1f4eb7acb9a863b09bcf5, type: 3}
-    - {fileID: 21300000, guid: ada8bab0c07bb46218267599bc6c435c, type: 3}
     NameImage: {fileID: 21300000, guid: 768d7222a304a4a60af8b6a05afa6cd5, type: 3}
-    text: "\u5B78\u540D\u70BARhinoceros hayasakai SHIKAMA & OTSUKA\uFF0C\u4E2D\u6587\u5B9A\u540D\u70BA\u65E9\u5742\u7280\u725B\u3002
+    text: "\u5B78\u540D<i>Rhinoceros hayasakai SHIKAMA & OTSUKA</i>\uFF0C\u4E2D\u6587\u5B9A\u540D\u70BA\u65E9\u5742\u7280\u725B\u3002
       \u6BD4\u904E\u53BB\u5F9E\u4E2D\u570B\u5927\u9678\u6240\u7522\u7684\u4E2D\u570B\u7280\u725B\u53CA\u5176\u4ED6\u5E7E\u7A2E\u7280\u725B\u6642\u4EE3\u66F4\u65E9\uFF0C\u9AD4\u5F62\u66F4\u5C0F\uFF0C\u53EF\u8B02\u4E2D\u570B\u7280\u725B\u7684\u7956\u5148\u578B\u3002 "
   - MainImage:
     - {fileID: 21300000, guid: be846ccb5324b4be289547180267e6bf, type: 3}
@@ -111,12 +87,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: e6932e24de3c74a81868f3926eb024c3, type: 3}
     - {fileID: 21300000, guid: 6d7716e7a331745dea8818278be6390a, type: 3}
     - {fileID: 21300000, guid: b0e486342f3bd443f83148b24258262b, type: 3}
-    - {fileID: 21300000, guid: 98cff133ab8704550b0194960392c446, type: 3}
-    - {fileID: 21300000, guid: 0545481d4cb2d403f9d791568b3c634d, type: 3}
-    - {fileID: 21300000, guid: bf2d066c2aac84e74b78847ec3152482, type: 3}
-    - {fileID: 21300000, guid: 03e6866a4a11b42238ac940782987603, type: 3}
-    - {fileID: 21300000, guid: 908b1d88ebe154d7ba4d33a2def5b1b9, type: 3}
-    - {fileID: 21300000, guid: e3db27baec4c946279fc90263aaee40f, type: 3}
     NameImage: {fileID: 21300000, guid: c4c01a175374f4534a3f68dad0f3f40f, type: 3}
     text: "\u8D77\u6E90\u65BC\u4E2D\u570B\u5927\u9678\u6CE5\u6CB3\u7063\u5730\u5340\uFF0C\u8349\u539F\u731B\u7341\u8C61\u81FC\u9F52\u743A\u746F\u8CEA\u8584,\u4F46\u9F52\u677F\u6578\u76EE\u591A\uFF0C\u589E\u52A0\u4E86\u78E8\u8755\u7684\u6548\u7387\uFF0C\u81FC\u9F52\u9069\u61C9\u5480\u56BC\u7C97\u7CD9\u7E96\u7DAD\u8207\u8F03\u70BA\u7121\u6C41\u7684\u98DF\u7269,\u4E5F\u5C31\u662F\u6BD4\u8F03\u5C6C\u65BC\u8349\u539F\u578B\u7684\u74B0\u5883\u3002"
   - MainImage:
@@ -132,12 +102,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 0723baef550c6456ea90dce3b09e7c67, type: 3}
     - {fileID: 21300000, guid: 47b06ba28979f4cd488627bc5f67ad73, type: 3}
     - {fileID: 21300000, guid: fe25e844a00af4743b29895097b8dda7, type: 3}
-    - {fileID: 21300000, guid: 0ea5fdc5dccea46c6a6abf42cc7c252a, type: 3}
-    - {fileID: 21300000, guid: 2298233e508f04da397972c2f2ed160c, type: 3}
-    - {fileID: 21300000, guid: d65e6c8ce38764334b02cfcf8f531bb7, type: 3}
-    - {fileID: 21300000, guid: 3b5a3fdb2935948e9aaa1b7e59733061, type: 3}
-    - {fileID: 21300000, guid: 43aae5b09da9f441eb204b51c9e21246, type: 3}
-    - {fileID: 21300000, guid: 1e743879e53744540b4facf4be8c47cb, type: 3}
     NameImage: {fileID: 21300000, guid: 107436985b0e84c609c1a43663f216a7, type: 3}
     text: "\u81FA\u5357\u5DE6\u93AE\u83DC\u5BEE\u6EAA\u4E09\u91CD\u6EAA\u7684\u6CB3\u5E8A\u9732\u982D\u6240\u767C\u73FE\u7684\u300C\u81FA\u7063\u53E4\u9C77\u300D\uFF0C\u5177\u6709\u8F03\u9577\u7684\u5634\u543B\uFF0C\u64C1\u6709\u5713\u9310\u578B\u7684\u540C\u578B\u9F52\uFF0C\u751F\u7269\u5206\u985E\u70BA\u9577\u543B\u9C77\u79D1\uFF0C\u73FE\u591A\u7A31\u70BA\u300C\u81FA\u7063\u9577\u543B\u9C77\u300D\uFF0C\u9577\u543B\u9C77\u79D1\u76EE\u524D\u4E16\u754C\u5C1A\u5B58\u6046\u6CB3\u9C77\u548C\u99AC\u4F86\u9C77\u3002"
   DinosaurlItems:
@@ -154,12 +118,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 173ce617dbf354437abd4756b8bc3b07, type: 3}
     - {fileID: 21300000, guid: 1648463b1eabe46e6adfba24853a9043, type: 3}
     - {fileID: 21300000, guid: a2e848e7d4459487999914de69edd20a, type: 3}
-    - {fileID: 21300000, guid: 62d3a73c74ce6460ebd63db54922044e, type: 3}
-    - {fileID: 21300000, guid: 4b7bcd1c643864511890cf9d68700bdb, type: 3}
-    - {fileID: 21300000, guid: 8fb89a4229cb0440fa59523c511d23ab, type: 3}
-    - {fileID: 21300000, guid: 8c593513db9dc42989721b3680c6bd65, type: 3}
-    - {fileID: 21300000, guid: dfad0e0ee7bd648b68239694856e25fd, type: 3}
-    - {fileID: 21300000, guid: 74e41b46d225944639732ab3424d3055, type: 3}
     NameImage: {fileID: 21300000, guid: fb22083c92e014f1c88e929b6a958d14, type: 3}
     text: "\u4E09\u89D2\u9F8D\u7E3D\u5171\u64C1\u6709432\u5230800\u9846\u7259\u9F52\uFF0C\u5176\u4E2D\u53EA\u6709\u5C11\u90E8\u4EFD\u6B63\u5728\u4F7F\u7528\u3002\u4E09\u89D2\u9F8D\u7684\u773E\u591A\u7259\u9F52\uFF0C\u986F\u793A\u7260\u5011\u4EE5\u9AD4\u7A4D\u5927\u7684\u6709\u7E96\u7DAD\u690D\u7269\u70BA\u98DF\uFF0C\u5176\u4E2D\u53EF\u80FD\u5305\u542B\u68D5\u6ADA\u79D1\u8207\u8607\u9435\u3002\u7260\u751F\u6D3B\u65BC\u5145\u6EFF\u8568\u985E\u3001\u8607\u9435\u76EE\u53CA\u6728\u8CCA\u5C6C\u7684\u8349\u539F\uFF0C\u4E26\u7A7F\u8D8A\u5927\u91CF\u677E\u79D1\u3001\u8607\u9435\u79D1\u3001\u6A39\u8568\u53CA\u9280\u674F\u7684\u6A39\u6797\u3002"
   - MainImage:
@@ -175,12 +133,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 5c51aa50e9230443eb58dd834f6fd025, type: 3}
     - {fileID: 21300000, guid: c0bd2815819a7489ab7838393b705fef, type: 3}
     - {fileID: 21300000, guid: 5f84d8befd7a34419bef08930d511aa6, type: 3}
-    - {fileID: 21300000, guid: 153b61000468a47d586d6c795bb7d9de, type: 3}
-    - {fileID: 21300000, guid: 880804ed3e6e54740b160bdfc347cfff, type: 3}
-    - {fileID: 21300000, guid: 18820ebae6ce54c5cb2eefa46abecffa, type: 3}
-    - {fileID: 21300000, guid: 2e82ce3051d41484fa28d608911caaaa, type: 3}
-    - {fileID: 21300000, guid: 2f6a94001b6b9432bbc145f087926f23, type: 3}
-    - {fileID: 21300000, guid: 80e82bae89dfa4acfaffe6bcc81a4eee, type: 3}
     NameImage: {fileID: 21300000, guid: 7231f2dfa62a646a68d52e0137dd1a45, type: 3}
     text: "\u9738\u738B\u9F8D\u662F\u8089\u98DF\u6027\u6050\u9F8D\uFF0C\u64C1\u6709\u5DE8\u5927\u7684\u9871\u9AA8\uFF0C\u4E26\u85C9\u7531\u9577\u800C\u91CD\u7684\u5C3E\u5DF4\u4F86\u4FDD\u6301\u5E73\u8861\u3002
       \u76F8\u5C0D\u65BC\u7260\u5011\u5F37\u58EF\u7684\u5F8C\u80A2\u548C\u5DE8\u5927\u7684\u8EAB\u9AD4\uFF0C\u66B4\u9F8D\u7684\u524D\u80A2\u975E\u5E38\u5C0F\uFF0C\u4F46\u6709\u7814\u7A76\u767C\u73FE\u5979\u7684\u5C0F\u624B\u5341\u5206\u5F37\u58EF\u3002"
@@ -197,12 +149,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 1779ee8777215473c8f7c1eeebe3d052, type: 3}
     - {fileID: 21300000, guid: 0155ec8afcb3d4c22a3c49e81f102a1a, type: 3}
     - {fileID: 21300000, guid: 474314bdd59a845ecb32bdbabbaab3c6, type: 3}
-    - {fileID: 21300000, guid: d51afc09dbc2b4a9583e7c54e947fe18, type: 3}
-    - {fileID: 21300000, guid: 4d3f25ccc3f0740fda30fda37ab27256, type: 3}
-    - {fileID: 21300000, guid: efac0213be0d7465993c454df8235f81, type: 3}
-    - {fileID: 21300000, guid: 290264b55b30a4ad68ab437b6d16342b, type: 3}
-    - {fileID: 21300000, guid: 0771d634ee6c94d39b1697fb9d7fe12b, type: 3}
-    - {fileID: 21300000, guid: ec3c12c742cd04b088d0f4b4421c7882, type: 3}
     NameImage: {fileID: 21300000, guid: a9ea87f3cc1f942428c2843698d6dbfe, type: 3}
     text: "\u8155\u9F8D\u662F\u4F8F\u7F85\u7D00\u6642\u4EE3\u6700\u5DE8\u5927\u7684\u6050\u9F8D\u4E4B\u4E00\u3002\u7260\u751F\u6D3B\u65BC\u5145\u6EFF\u8568\u985E\u3001\u8607\u9435\u76EE\u53CA\u6728\u8CCA\u5C6C\u7684\u8349\u539F\uFF0C\u4E26\u7A7F\u8D8A\u5927\u91CF\u677E\u79D1\u3001\u8607\u9435\u79D1\u3001\u6A39\u8568\u53CA\u9280\u674F\u7684\u6A39\u6797\u3002"
   DinosaurlBabyItems:
@@ -219,12 +165,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 2b674b51c37394f8f837e66cbd86864f, type: 3}
     - {fileID: 21300000, guid: 67f570efb8ed248469e4555ab719af60, type: 3}
     - {fileID: 21300000, guid: e3c2d4de8ca444c75bd5eba729ddbd34, type: 3}
-    - {fileID: 21300000, guid: 186386bdfc69243cbbcabc05e8d50bb1, type: 3}
-    - {fileID: 21300000, guid: a30413d41031a45f4930f7650a0be71d, type: 3}
-    - {fileID: 21300000, guid: e118f69d179f14481bd26ddff4e87fca, type: 3}
-    - {fileID: 21300000, guid: 756477cf64e9a4cfea73309d3eb2ea0e, type: 3}
-    - {fileID: 21300000, guid: df39b67a44b0f4a6e8a047a738f2758a, type: 3}
-    - {fileID: 21300000, guid: a98428805244445369ef60b0d59f4fa8, type: 3}
     NameImage: {fileID: 0}
     text: 
   - MainImage:
@@ -240,12 +180,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: b7b6b3a5f8b7a4c83b3d745a945ccf2a, type: 3}
     - {fileID: 21300000, guid: 51ed683f0e6a747a9b1c474ce9a087a2, type: 3}
     - {fileID: 21300000, guid: ea884c5eec2f148378ea7c583dc1b7d8, type: 3}
-    - {fileID: 21300000, guid: ea884c5eec2f148378ea7c583dc1b7d8, type: 3}
-    - {fileID: 21300000, guid: 8599b1d0499bd4eb994b62c4ef4d50bf, type: 3}
-    - {fileID: 21300000, guid: 8599b1d0499bd4eb994b62c4ef4d50bf, type: 3}
-    - {fileID: 21300000, guid: 20d57e531f6754c72899d457c66f5c1a, type: 3}
-    - {fileID: 21300000, guid: 96a8d5ff0f4e54427b568884b9070fe2, type: 3}
-    - {fileID: 21300000, guid: 96a8d5ff0f4e54427b568884b9070fe2, type: 3}
     NameImage: {fileID: 0}
     text: 
   - MainImage:
@@ -261,11 +195,5 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 96d9e225e1e2b48108a9503577a00abc, type: 3}
     - {fileID: 21300000, guid: 424e5bef3263d4a49b8b0d1091b3d24d, type: 3}
     - {fileID: 21300000, guid: 9305e1850d91e414783bb188f4d6d0df, type: 3}
-    - {fileID: 21300000, guid: b9293e13eab324c64bb0a56ec6cff34f, type: 3}
-    - {fileID: 21300000, guid: 73cfcf4fe5e274e51b4ae2c56ee54733, type: 3}
-    - {fileID: 21300000, guid: 01b497848b40b472882e5d2409bdf91a, type: 3}
-    - {fileID: 21300000, guid: bb017d5fdbae9404bb7e9638bb16da63, type: 3}
-    - {fileID: 21300000, guid: 305236965c79f41f5acf1d41ff35f578, type: 3}
-    - {fileID: 21300000, guid: 447434d1787824d05b4277f8cf4f5c5a, type: 3}
     NameImage: {fileID: 0}
     text: 

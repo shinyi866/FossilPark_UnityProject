@@ -49,7 +49,7 @@ namespace GameMission
             {
                 if (isARsupport)
                 {
-                    Compass.Instance.SetUp(Object, 0);
+                    Compass.Instance.SetUp(Object, 20);
                     time -= Time.deltaTime;
                 }
                 else
@@ -93,8 +93,8 @@ namespace GameMission
         private void ShowARObject()
         {
             GameModals.instance.OpenAR(); // Stop AR Camera rotate
-            ResetDirection();
             MediaPlayerController.instance.Close2DPlane();
+            CameraCtrl.instance.OcclusionForHuman();
 
             modal.SwitchConfirmButton(true);
             modal.text.text = data.m_Data[missionIndex].gamePrompt[0];
@@ -105,6 +105,7 @@ namespace GameMission
                 modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
                 modal.SwitchConfirmButton(false);
                 ARObject.SetActive(true);
+                ResetDirection();
 
                 isSetVideoPlane = false;
                 isARanimationEnd = true;
@@ -122,8 +123,9 @@ namespace GameMission
             dialogmodel.ConfirmButton.onClick.AddListener(() =>
             {
                 GameModals.instance.CloseModal();
+                Modals.instance.OpenModal<ARModal>();
                 isGameStart = false;
-                GameResult();
+                //GameResult();
             });
             
             isARanimationEnd = false;

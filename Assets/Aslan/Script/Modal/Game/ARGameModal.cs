@@ -36,7 +36,7 @@ namespace View
 
             // save picture
             gamePromptPanel.button_save.onClick.AddListener(() => {
-                //SaveImage();
+                SaveImage();
 
                 gamePromptPanel.button.gameObject.SetActive(true); //default button
                 gamePromptPanel.buttonsObject.SetActive(false); //default button
@@ -54,7 +54,7 @@ namespace View
                 currentImage = null;
             });
 
-
+            /*
             game8Panel.pictureButton.onClick.AddListener(() =>
             {
                 TakePicture();
@@ -69,7 +69,7 @@ namespace View
                 iBeaconMissionSetting.Instance.isEnterGame = false;
                 CameraCtrl.instance.DisableOcclusionManager();
             });
-
+            */
         }
 
         public void ShowModal(int index, TypeFlag.ARGameType type)
@@ -186,25 +186,7 @@ namespace View
 
         public void TakePicture()
         {
-            //StartCoroutine(StartPhoto());
             StartCoroutine(RenderScreenShot());
-        }
-
-        IEnumerator StartPhoto()
-        {
-            yield return new WaitForEndOfFrame();
-
-            RenderTexture renderTexture = new RenderTexture(Screen.width, Screen.height, 0);
-            ScreenCapture.CaptureScreenshotIntoRenderTexture(renderTexture);
-            Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGBA32, false);
-            Rect rect = new Rect(0, 0, renderTexture.width, renderTexture.height);
-
-            renderResult.ReadPixels(rect, 0, 0);
-            renderResult.Apply();
-            
-            Sprite screenShot = Sprite.Create(renderResult, rect, Vector2.zero);
-            gamePromptPanel.image.sprite = screenShot;
-            currentImage = renderResult;
         }
 
         private IEnumerator RenderScreenShot()
@@ -215,18 +197,14 @@ namespace View
             _camera.targetTexture = new RenderTexture(_camera.pixelWidth, _camera.pixelHeight, 0); // (222, 128, 0);
 
             RenderTexture renderTexture = _camera.targetTexture;
-            Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGBA32, false);//TextureFormat.ARGB32
+            Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGBA32, false);
             _camera.Render();
             RenderTexture.active = renderTexture;
             Rect rect = new Rect(0, 0, renderTexture.width, renderTexture.height);
 
             renderResult.ReadPixels(rect, 0, 0);
             renderResult.Apply();
-            //byte[] bytes = renderResult.EncodeToPNG();
-            //string s = string.Format("{0}/good.png", Application.dataPath);
-            //System.IO.File.WriteAllBytes(s, bytes);
-            //Texture2D newTexture = new Texture2D(renderTexture.width, renderTexture.height);
-            //newTexture.LoadImage(bytes);
+
             Sprite screenShot = Sprite.Create(renderResult, rect, Vector2.zero);
             gamePromptPanel.image.sprite = screenShot;
             currentImage = renderResult;
@@ -254,7 +232,7 @@ namespace View
 public class Game0Panel
 {
     public CanvasGroup canvasGroup;
-    public Button button;
+    public Button button_go;
 }
 
 [System.Serializable]
@@ -288,8 +266,8 @@ public class Game8Panel
 {
     public CanvasGroup canvasGroup;
     public Button[] foodButtons;
-    public Button pictureButton;
-    public Button backButton;
+    //public Button pictureButton;
+    //public Button backButton;
 }
 
 [System.Serializable]

@@ -20,12 +20,12 @@ namespace GameMission
         public override void StartGame()
         {
             GameModals.instance.OpenAR();
-            CameraCtrl.instance.OcclusionForEnviroment();
+            CameraCtrl.instance.OcclusionForHuman();
 
             backToDinosaur = true;
             game = Games.instance.OpenGame<Game8>();
             game.Init();
-            game.gameOverEvent += EndGame;
+            //game.gameOverEvent += EndGame;
             game.GameStart();
         }
 
