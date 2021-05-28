@@ -112,7 +112,7 @@ public class PlaceARObject : MonoBehaviour
 
             if (Input.GetTouch(0).phase == TouchPhase.Moved)
             {
-                var rotateY = Quaternion.Euler(0f, Input.GetTouch(0).deltaPosition.x * rotateSpeed, 0f);
+                var rotateY = Quaternion.Euler(0f, -Input.GetTouch(0).deltaPosition.x * rotateSpeed, 0f);
                 spawnedObject.transform.rotation = rotateY * spawnedObject.transform.rotation;
 
                 //spawnedObject.transform.Rotate(new Vector3(0, 10, 0) * Time.deltaTime * rotateSpeed);

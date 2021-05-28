@@ -96,7 +96,7 @@ namespace View
             mainModal.GetBackAnimal(index);
 
             ARModal arModal = Modals.instance.GetModel<ARModal>(); // call ARModal direct, will not change currentModal(last modal)
-            arModal.ShowView(false);
+            //arModal.ShowView(false);
             arModal.Show(true);
 
             PlaceARObject.instance.EnterAR(index, type);
@@ -110,7 +110,7 @@ namespace View
             mainModal.GetBackAnimal(index);
 
             ARModal arModal = Modals.instance.GetModel<ARModal>(); // call ARModal direct, will not change currentModal(last modal)
-            arModal.ShowView(false);
+            //arModal.ShowView(false);
             arModal.Show(true);
 
             PlaceARObject.instance.EnterNoAR(index, TypeFlag.ARObjectType.Animals);

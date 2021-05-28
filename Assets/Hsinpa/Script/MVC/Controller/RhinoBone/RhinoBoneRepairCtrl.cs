@@ -57,6 +57,9 @@ namespace Hsinpa.Ctrl {
         public GeneralFlag.GeneralState _state = GeneralFlag.GeneralState.Idle;
         private int waitForSecondPlaneARActivate = 1000;  //1000 == 1 second
 
+        float resetRotate;
+        float time = 2f;
+        bool resetDirection;
         bool _arEnable = false;
         public System.Action<bool> OnEndGameEvent;
         #endregion
@@ -136,9 +139,10 @@ namespace Hsinpa.Ctrl {
             Initialization();
 
             try {
-  
 
-                Compass.Instance.SetUp(_worldContainer.gameObject, yRotationOffset);
+                resetRotate = yRotationOffset;
+                resetDirection = true;
+                //Compass.Instance.SetUp(_worldContainer.gameObject, yRotationOffset);
 
                 OnPlaneARReadyClick();
                 }
@@ -146,6 +150,16 @@ namespace Hsinpa.Ctrl {
             {
                 Debug.Log("Exception " + e.Message);
                 PerformPlaneARAction();
+            }
+        }
+
+        // reset compass direction for 2 seconds
+        private void ResetDirection()
+        {
+            if (time > 0)
+            {
+                Compass.Instance.SetUp(_worldContainer.gameObject, resetRotate);
+                time -= Time.deltaTime;
             }
         }
 
@@ -250,6 +264,7 @@ namespace Hsinpa.Ctrl {
 
         private void Update()
         {
+            if (resetDirection) { ResetDirection(); }
             if (_state != GeneralFlag.GeneralState.UnderGoing || selectedARItem == null) return;
 
             var targetBone = spawnCorrectBoneTemplate.GetItemByName(selectedARItem.name);

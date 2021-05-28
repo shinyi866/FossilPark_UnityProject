@@ -16,7 +16,7 @@ MonoBehaviour:
   - tool_id: tool_01
     mask_color: {r: 1, g: 0, b: 0, a: 1}
     audioClip: {fileID: 0}
-    difficulty: 0.008
+    difficulty: 0.01
   - tool_id: tool_02
     mask_color: {r: 0, g: 1, b: 0, a: 1}
     audioClip: {fileID: 0}

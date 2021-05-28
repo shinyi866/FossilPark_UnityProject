@@ -46,6 +46,9 @@ namespace Hsinpa.Ctrl
         public System.Action<bool> OnEndGameEvent;
 
         private Vector3 offsetRotation = Vector3.zero;
+        private float resetRotate;
+        private float time = 2f;
+        private bool resetDirection;
 
         public override void OnNotify(string p_event, params object[] p_objects)
         {
@@ -123,7 +126,9 @@ namespace Hsinpa.Ctrl
 
             try {
 
-                Compass.Instance.SetUp(_worldContainer.gameObject, yRotationOffset);
+                resetRotate = yRotationOffset;
+                resetDirection = true;
+                //Compass.Instance.SetUp(_worldContainer.gameObject, yRotationOffset);
 
                 OnPlaneARReadyClick();
                 }
@@ -133,6 +138,16 @@ namespace Hsinpa.Ctrl
 
                     PerformPlaneARAction();
                 }
+        }
+
+        // reset compass direction for 2 seconds
+        private void ResetDirection()
+        {
+            if (time > 0)
+            {
+                Compass.Instance.SetUp(_worldContainer.gameObject, resetRotate);
+                time -= Time.deltaTime;
+            }
         }
 
         private void PerformPlaneARAction()
@@ -265,6 +280,11 @@ namespace Hsinpa.Ctrl
 
             if (modal != null)
                 modal.ShowPrompt(missionindex, type);
+        }
+
+        private void Update()
+        {
+            if (resetDirection) { ResetDirection(); }
         }
     }
 }

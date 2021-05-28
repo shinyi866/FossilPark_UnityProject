@@ -126,7 +126,7 @@ namespace View
 
             yield return new WaitForSeconds(0.1f);
 
-            _camera.targetTexture = new RenderTexture(_camera.pixelWidth, _camera.pixelHeight, 1); // (222, 128, 0);
+            _camera.targetTexture = new RenderTexture(440, 250, 1); // (_camera.pixelWidth, _camera.pixelHeight, 1);
 
             RenderTexture renderTexture = _camera.targetTexture;
             Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGBA32, false);

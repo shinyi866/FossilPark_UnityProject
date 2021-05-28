@@ -121,9 +121,10 @@ namespace View
 
         private void Update()
         {
+            /*
             if (currentSprites != null && currentSprites.Length > 1 && canvasGroup.alpha != 0)
                 babyImage.sprite = currentSprites[(int)(Time.time * 13) % currentSprites.Length];
-
+*/
             if (!startMachine) return;
             
             RotateTimes();
@@ -145,6 +146,7 @@ namespace View
             eggImage.enabled = false;
             //babyImage.sprite = dinosaurBabySprites[dinosaurIndex];            
             currentSprites = arModal.animalItemObj.DinosaurlBabyItems[dinosaurIndex].MainImage;
+            babyImage.sprite = currentSprites[0];
             Debug.Log("count " + currentSprites.Length);
         }
     }

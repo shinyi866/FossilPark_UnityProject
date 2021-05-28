@@ -85,6 +85,7 @@ namespace View
                 case TypeFlag.InfoType.Animal:
                     foreach (var gameObject in nextGameObject) { gameObject.SetActive(false); }
                     currentSprites = animalItemObj.AnimalItems[index].MainImage;
+                    MainImage.sprite = currentSprites[0];
                     NameImage.sprite = animalItemObj.AnimalItems[index].NameImage;
                     InfoText.text = animalItemObj.AnimalItems[index].text;
 
@@ -94,6 +95,7 @@ namespace View
                 case TypeFlag.InfoType.Dinosaurl:
                     foreach (var gameObject in nextGameObject) { gameObject.SetActive(true); }
                     currentSprites = animalItemObj.DinosaurlItems[index].MainImage;
+                    MainImage.sprite = currentSprites[0];
                     NameImage.sprite = animalItemObj.DinosaurlItems[index].NameImage;
                     InfoText.text = animalItemObj.DinosaurlItems[index].text;
 
@@ -113,6 +115,7 @@ namespace View
                 index--;
                 currentIndex = index;
                 currentSprites = animalItemObj.DinosaurlItems[index].MainImage;
+                MainImage.sprite = currentSprites[0];
                 NameImage.sprite = animalItemObj.DinosaurlItems[index].NameImage;
                 InfoText.text = animalItemObj.DinosaurlItems[index].text;
             });
@@ -123,17 +126,18 @@ namespace View
                 index++;
                 currentIndex = index;
                 currentSprites = animalItemObj.DinosaurlItems[index].MainImage;
+                MainImage.sprite = currentSprites[0];
                 NameImage.sprite = animalItemObj.DinosaurlItems[index].NameImage;
                 InfoText.text = animalItemObj.DinosaurlItems[index].text;
             });
         }
-
+        /*
         private void Update()
         {
             if (currentSprites == null || currentSprites.Length < 1 || this.canvasGroup.alpha == 0) return;
             
             MainImage.sprite = currentSprites[(int)(Time.time* speed) % currentSprites.Length];
         }
-        
+        */
     }
 }

@@ -49,7 +49,7 @@ namespace GameMission
             {
                 if (isARsupport)
                 {
-                    Compass.Instance.SetUp(Object, 20);
+                    Compass.Instance.SetUp(Object, 96);
                     time -= Time.deltaTime;
                 }
                 else
@@ -78,14 +78,10 @@ namespace GameMission
                 ShowARObject();
                 isVideoEnd = true;               
             }
-            if(!isSetVideoPlane)
-            {
-                //var frontPos = _camera.transform.forward * 5;
-                //videoPlane.transform.position = _camera.transform.position + frontPos;
-            }
 
             if(isARanimationEnd)
             {
+                ResetDirection();
                 StartCoroutine(CheckARSupport());
             }
         }
@@ -105,7 +101,6 @@ namespace GameMission
                 modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
                 modal.SwitchConfirmButton(false);
                 ARObject.SetActive(true);
-                ResetDirection();
 
                 isSetVideoPlane = false;
                 isARanimationEnd = true;

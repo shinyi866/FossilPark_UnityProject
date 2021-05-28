@@ -38,7 +38,7 @@ namespace GameMission
         // set thorw ball parameter
         private float Xmin = -0.2f;
         private float Xmax = 0.1f;
-        private int speed = 180;
+        private int speed = 175;
         private int passCount = 1;
 
         // unsupport AR
@@ -48,8 +48,6 @@ namespace GameMission
         {
             gameModal = GameModals.instance.GetModal<ARGameModal>();
             _camera = CameraCtrl.instance.GetCurrentCamera();
-            _camera.transform.position = new Vector3(0, 2.2f, 0);
-            //monleyAnimator = monkey.GetComponent<Animator>();
             playableDirector = monkey.GetComponent<PlayableDirector>();
 
             count = fruit;
@@ -88,13 +86,10 @@ namespace GameMission
 
         private void SetBasketPosition()
         {
-            var _cameraFront = _camera.transform.forward;
+            var _frontPos = _camera.transform.forward * 1.9f;
+            var _upPos = _camera.transform.up * -1.1f;
 
-            _cameraFront.y += -1.2f;
-            _cameraFront.z *= 1.7f;
-
-            basket.transform.position = _camera.transform.position + _cameraFront;
-            basket.transform.rotation = _camera.transform.rotation;
+            basket.transform.position = _camera.transform.position + _frontPos + _upPos;
         }
 
         private void GameResult(bool isSuccess)
@@ -117,7 +112,8 @@ namespace GameMission
             if (TriggerFruitPlane.fruitTouchPlane == fruit)
             {
                 bool isSuccess = CatchFruit.fruitCount >= passCount;
-                CameraCtrl.instance.GetCurrentCamera().transform.position = Vector3.zero;
+                //CameraCtrl.instance.GetCurrentCamera().transform.position = Vector3.zero;
+                //basket.transform.SetParent(Object.transform);
                 GameResult(isSuccess);
                 isGameStart = false;
             }
@@ -148,12 +144,10 @@ namespace GameMission
         // Unsupport AR Game
         private void UnsupportAR()
         {
-            _camera.transform.position = new Vector3(0, 2.2f, 0);
+            var _frontPos = _camera.transform.forward * 1.9f;
+            var _upPos = _camera.transform.up * -1.1f;
 
-            var _cameraFront = _camera.transform.forward;
-            _cameraFront.y += -1.2f;
-            _cameraFront.z *= 1.7f;
-            basket.transform.position = _camera.transform.position + _cameraFront;
+            basket.transform.position = _camera.transform.position + _frontPos + _upPos;
 
             tools.SetActive(true);
         }
