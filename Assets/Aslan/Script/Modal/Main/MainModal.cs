@@ -11,6 +11,8 @@ namespace View
         [SerializeField]
         private CanvasGroup introView;
         [SerializeField]
+        private CanvasGroup promptView;
+        [SerializeField]
         private Image introImage;
         [SerializeField]
         private GuideView guideView;
@@ -24,6 +26,10 @@ namespace View
         private Button dinosaurButton;
         [SerializeField]
         private Button eggButton;
+        [SerializeField]
+        private Button promptButton;
+        [SerializeField]
+        private Button promptCloseButton;
 
         [SerializeField]
         private Button[] missionButtons;
@@ -105,6 +111,16 @@ namespace View
 
             eggButton.onClick.AddListener(() => {
                 Modals.instance.OpenModal<EggModal>();
+            });
+
+            promptButton.onClick.AddListener(() => {
+                ShowPanel(promptView, true);
+                iBeaconMissionSetting.Instance.isEnterGame = true;
+            });
+
+            promptCloseButton.onClick.AddListener(() => {
+                ShowPanel(promptView, false);
+                iBeaconMissionSetting.Instance.isEnterGame = false;
             });
         }
 

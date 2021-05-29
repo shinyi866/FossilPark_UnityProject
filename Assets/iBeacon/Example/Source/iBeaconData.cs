@@ -67,6 +67,8 @@ public class iBeaconData : MonoBehaviour
 	private float f_ScrollViewContentRectHeight;
 	private int i_BeaconCounter = 0;
 
+    public bool isPaused = false;
+
 	// Receive
 	private static List<Beacon> _mybeacons = new List<Beacon>();
 
@@ -87,7 +89,7 @@ public class iBeaconData : MonoBehaviour
 		BluetoothStatus();
 	}
 
-    private void setBeaconPropertiesAtStart()
+	public void setBeaconPropertiesAtStart()
     {
 		bm_Mode = BroadcastMode.receive;
 		bt_Type = BeaconType.iBeacon;
@@ -132,7 +134,7 @@ public class iBeaconData : MonoBehaviour
 		txt_BroadcastState_LabelText.text = bs_State.ToString();
 	}
 
-    private void BluetoothStatus()
+    public void BluetoothStatus()
     {
 		_bluetoothButton.onClick.AddListener(delegate () {
 			BluetoothState.EnableBluetooth();
@@ -265,7 +267,11 @@ public class iBeaconData : MonoBehaviour
         }
 
 		DisplayOnBeaconFound();
-		iBeaconMissionSetting.Instance.MissionSearch(mybeacons);
+
+		if (isPaused)
+			iBeaconMissionSetting.Instance.MissionSearchInBackGround(mybeacons);
+        else
+            iBeaconMissionSetting.Instance.MissionSearch(mybeacons);
 	}
 
 	private void DisplayOnBeaconFound()

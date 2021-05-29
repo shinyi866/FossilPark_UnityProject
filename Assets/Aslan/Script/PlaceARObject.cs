@@ -65,7 +65,7 @@ public class PlaceARObject : MonoBehaviour
     {   
         _camera = CameraCtrl.instance.GetCurrentCamera();
 
-        switch (currentType)
+        switch (type)
         {
             case TypeFlag.ARObjectType.Animals:
                 var animalTransform = animalObjects[index - 2].transform;
@@ -74,6 +74,10 @@ public class PlaceARObject : MonoBehaviour
             case TypeFlag.ARObjectType.Dinosaurls:
                 var dinosaurlTransform = dinosaurlObjects[index - 2].transform;
                 noARanimalObject = Instantiate(dinosaurlObjects[index - 2], new Vector3(dinosaurlTransform.position.x, dinosaurlTransform.position.y, 1.5f), dinosaurlTransform.rotation);
+                break;
+            case TypeFlag.ARObjectType.DinosaurlBaby:
+                var dinosaurlBabyTransform = dinosaurlBabyObjects[index].transform;
+                noARanimalObject = Instantiate(dinosaurlBabyObjects[index], new Vector3(dinosaurlBabyTransform.position.x, dinosaurlBabyTransform.position.y, 1.5f), dinosaurlBabyTransform.rotation);
                 break;
         }
 

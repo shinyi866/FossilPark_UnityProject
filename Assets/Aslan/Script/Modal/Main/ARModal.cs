@@ -59,6 +59,7 @@ namespace View
             {
                 feedButtonGameObject.SetActive(false);
                 ShowPanel(leavePanel.canvasGroup, false);
+                ShowPanel(picturePanel.canvasGroup, false);
 
                 Games.instance.ClosGame();
                 GameModals.instance.GetModal<ARGameModal>().CloseAllPanel();
