@@ -69,9 +69,12 @@ namespace View
                 var SpriteState = arModal.feedButton.spriteState;
                 arModal.feedImage.sprite = feedDinosaurSprites[PlayerPrefs.GetInt("dinosaurBaby")];
                 SpriteState.pressedSprite = feedDinosaurPressSprites[PlayerPrefs.GetInt("dinosaurBaby")];
-
-                Modals.instance.OpenAR(PlayerPrefs.GetInt("dinosaurBaby"), TypeFlag.ARObjectType.DinosaurlBaby);
                 //Modals.instance.OpenAR(dinosaurIndex, TypeFlag.ARObjectType.DinosaurlBaby);
+
+                if (MainApp.Instance.isARsupport)
+                    Modals.instance.OpenAR(PlayerPrefs.GetInt("dinosaurBaby"), TypeFlag.ARObjectType.DinosaurlBaby);
+                else
+                    Modals.instance.OpenNotSupportAR(PlayerPrefs.GetInt("dinosaurBaby"), TypeFlag.ARObjectType.DinosaurlBaby);
             });
 
             StartButton.onClick.AddListener(() =>
