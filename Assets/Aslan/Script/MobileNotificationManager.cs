@@ -41,7 +41,7 @@ public class MobileNotificationManager : Singleton<MobileNotificationManager>
         }
     }
 #endif
-
+    /*
     void OnApplicationPause(bool pause)
     {
         if (pause)
@@ -49,4 +49,5 @@ public class MobileNotificationManager : Singleton<MobileNotificationManager>
             SendNotificationAndroid();
         }
     }
+    */
 }

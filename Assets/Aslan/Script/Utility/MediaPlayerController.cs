@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using RenderHeads.Media.AVProVideo;
 using RenderHeads.Media.AVProVideo;
 
 public class MediaPlayerController : MonoBehaviour
@@ -55,12 +54,17 @@ public class MediaPlayerController : MonoBehaviour
     {
         OpenSphereVideo(true);
         _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, false);
-        _mediaPlayer.Loop = true;
+        _mediaPlayer.Loop = false;
     }
 
     public void PlayVideo()
     {
         _mediaPlayer.Play();
+    }
+
+    public void StopVideo()
+    {
+        _mediaPlayer.Control.CloseMedia();
     }
 
     public void CloseVideo()
@@ -94,5 +98,11 @@ public class MediaPlayerController : MonoBehaviour
     public void Close2DPlane()
     {
         planeVideo.SetActive(false);
+    }
+
+    private void Start()
+    {
+        if (!MainApp.Instance.isARsupport)
+            sphereVideo.SetActive(true);
     }
 }

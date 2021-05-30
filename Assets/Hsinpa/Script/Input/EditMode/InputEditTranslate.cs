@@ -8,7 +8,7 @@ namespace LightHouse.Edit
     public class InputEditTranslate
     {
         float threshold = 4;
-        float dragSpeed = 0.6f;
+        float dragSpeed = 0.8f;
 
         GameObject targetObject;
 

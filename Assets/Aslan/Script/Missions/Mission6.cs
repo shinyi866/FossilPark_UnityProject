@@ -7,7 +7,7 @@ namespace GameMission
 {
     public class Mission6 : Mission
     {
-        public Material material;
+        //public Material material;
 
         private Game6 game;
         private int missionIndex = 6;
@@ -26,7 +26,7 @@ namespace GameMission
             game.GameStart();
 
             currentMaterial = RenderSettings.skybox;
-            RenderSettings.skybox = material;
+            //RenderSettings.skybox = material;
         }
 
         public void EndGame(bool isSuccess)

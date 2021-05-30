@@ -93,6 +93,11 @@ namespace View
 
             CameraCtrl.instance.SwitchCamera(true);
 
+            if (index != 6)
+                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
+            else
+                MediaPlayerController.instance.LoadVideo("Video/dolphin360.mp4");
+
             ARModal arModal = _instance.GetModel<ARModal>(); // call ARModal direct, will not change currentModal(last modal)
             arModal.ShowView(true);
             arModal.Show(true);

@@ -67,7 +67,7 @@ namespace View
                 Modals.instance.CloseModal();
                 Modals.instance.CloseARInMain();
                 Modals.instance.CloseARInGame();
-                
+                MediaPlayerController.instance.StopVideo();
                 iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon
                 CameraCtrl.instance.DisableOcclusionManager();
                 CloseARPlane();
@@ -127,7 +127,7 @@ namespace View
 
             yield return new WaitForSeconds(0.1f);
 
-            _camera.targetTexture = new RenderTexture(440, 250, 1); // (_camera.pixelWidth, _camera.pixelHeight, 1);
+            _camera.targetTexture = new RenderTexture(_camera.pixelWidth, _camera.pixelHeight, 1);  // (440, 250, 1); // (_camera.pixelWidth, _camera.pixelHeight, 1);
 
             RenderTexture renderTexture = _camera.targetTexture;
             Texture2D renderResult = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGBA32, false);

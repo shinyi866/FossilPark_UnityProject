@@ -18,7 +18,13 @@ namespace GameMission
         public override void EnterGame()
         {
             GameModals.instance.OpenAR();
-            if (!MainApp.Instance.isARsupport) { CameraCtrl.instance.SwitchCameraForHsinpaMission(true); } //Ar support for hsinpa check
+
+            //Ar support for hsinpa check
+            if (!MainApp.Instance.isARsupport)
+            {
+                CameraCtrl.instance.SwitchCameraForHsinpaMission(true);
+                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
+            } 
             
             planeManager.enabled = true;
             hisnpaPrefab.SetActive(true);

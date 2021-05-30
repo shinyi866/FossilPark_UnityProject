@@ -41,6 +41,8 @@ namespace GameMission
         private int speed = 175;
         private int passCount = 1;
 
+        private string videoPath = "Video/monkey.mp4";
+
         // unsupport AR
         public GameObject tools;
 
@@ -49,6 +51,7 @@ namespace GameMission
             gameModal = GameModals.instance.GetModal<ARGameModal>();
             _camera = CameraCtrl.instance.GetCurrentCamera();
             playableDirector = monkey.GetComponent<PlayableDirector>();
+            MediaPlayerController.instance.LoadVideo(videoPath);
 
             count = fruit;
             //leftButton = gameModal.game3Panel.leftButton;
@@ -106,14 +109,32 @@ namespace GameMission
 
             if (isARStart)
                 ResetDirection();
+            else
+            {
+                _camera.transform.position = new Vector3(_camera.transform.position.x, _camera.transform.position.y, 0);
+
+                if (_camera.transform.position.x < -5)
+                {
+                    _camera.transform.position = new Vector3(-5f, _camera.transform.position.y, _camera.transform.position.z);
+                }
+
+                if (_camera.transform.position.x > 5)
+                {
+                    _camera.transform.position = new Vector3(5f, _camera.transform.position.y, _camera.transform.position.z);
+                }
+            }
 
             gameModal.game3Panel.text.text = CatchFruit.fruitCount.ToString();// "接到果子數： " + CatchFruit.fruitCount.ToString();
 
             if (TriggerFruitPlane.fruitTouchPlane == fruit)
             {
+                if (!MainApp.Instance.isARsupport)
+                {
+                    _camera.transform.position = new Vector3(0, 0, 0);
+                    tools.SetActive(false);
+                }
+
                 bool isSuccess = CatchFruit.fruitCount >= passCount;
-                //CameraCtrl.instance.GetCurrentCamera().transform.position = Vector3.zero;
-                //basket.transform.SetParent(Object.transform);
                 GameResult(isSuccess);
                 isGameStart = false;
             }
@@ -144,11 +165,13 @@ namespace GameMission
         // Unsupport AR Game
         private void UnsupportAR()
         {
+            _camera.transform.position = new Vector3(0,3,0);
+            monkeyScene.transform.position = new Vector3(-2.5f, 3.46f, -0.5f);
+
             var _frontPos = _camera.transform.forward * 1.9f;
             var _upPos = _camera.transform.up * -1.1f;
 
             basket.transform.position = _camera.transform.position + _frontPos + _upPos;
-
             tools.SetActive(true);
         }
     }

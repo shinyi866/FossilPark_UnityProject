@@ -8,6 +8,7 @@ public class CameraCtrl : MonoBehaviour
 
     private Camera currentCamera;
     private AROcclusionManager occlusionManager;
+    private ARPlaneManager ARPlaneManager;
 
     private static CameraCtrl _instance;
 
@@ -38,6 +39,7 @@ public class CameraCtrl : MonoBehaviour
     {
         currentCamera = MainCamera.GetComponent<Camera>();
         occlusionManager = ARcamera.GetComponent<AROcclusionManager>();
+        ARPlaneManager = ARcamera.GetComponentInParent<ARPlaneManager>();
 
         if (ARcamera == null) Debug.Log("AR camera is null");
     }
@@ -80,7 +82,7 @@ public class CameraCtrl : MonoBehaviour
     {
         var isARsupport = MainApp.Instance.isARsupport;
         if (!isARsupport) return;
-        Debug.Log("OcclusionForEnviroment");
+        
         occlusionManager.enabled = true;
         occlusionManager.requestedEnvironmentDepthMode = UnityEngine.XR.ARSubsystems.EnvironmentDepthMode.Medium;
         occlusionManager.requestedHumanDepthMode = UnityEngine.XR.ARSubsystems.HumanSegmentationDepthMode.Disabled;
@@ -92,7 +94,7 @@ public class CameraCtrl : MonoBehaviour
     {
         var isARsupport = MainApp.Instance.isARsupport;
         if (!isARsupport) return;
-        Debug.Log("OcclusionForHuman");
+        
         occlusionManager.enabled = true;
         occlusionManager.requestedEnvironmentDepthMode = UnityEngine.XR.ARSubsystems.EnvironmentDepthMode.Disabled;
         occlusionManager.requestedHumanDepthMode = UnityEngine.XR.ARSubsystems.HumanSegmentationDepthMode.Fastest;
@@ -103,5 +105,10 @@ public class CameraCtrl : MonoBehaviour
     public void DisableOcclusionManager()
     {
         occlusionManager.enabled = false;
+    }
+
+    public void OpenARPlaneManager(bool open)
+    {
+        ARPlaneManager.enabled = open;
     }
 }

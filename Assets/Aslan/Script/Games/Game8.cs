@@ -13,7 +13,6 @@ namespace GameMission
         public Text txt1;
         public Text txt3;
         public ARTrackedImageManager ARTrackedImage;
-        public ARPlaneManager planeManager;
         public GameObject[] foodGameObject; // 0:plant2, 1:plant, 2:meat
         public GameObject[] foodinMouth;
         public GameObject[] dinosaurlScenes; // 0:brachiosaurus, 1:triceratop 2:TRex
@@ -47,6 +46,10 @@ namespace GameMission
         {
             foreach (var b in dinosaurlScenes) { b.SetActive(false); }
             isARsupport = MainApp.Instance.isARsupport;
+
+            if (!isARsupport)
+                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
+
             // setup all game objects in dictionary
             for (int i = 0; i < foodGameObject.Length; i++)
             {

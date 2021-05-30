@@ -11,17 +11,24 @@ namespace GameMission
     {
         public GameObject hisnpaPrefab;
         public CrocoBoneRepairCtrl crocoCtrl;
-        public ARPlaneManager planeManager;
+        //public ARPlaneManager planeManager;
 
         private int missionIndex = 7;
 
         public override void EnterGame()
         {
             GameModals.instance.OpenAR();
-            if (!MainApp.Instance.isARsupport) { CameraCtrl.instance.SwitchCameraForHsinpaMission(true); } //Ar support for hsinpa check
 
-            planeManager.enabled = true;
+            //Ar support for hsinpa check
+            if (!MainApp.Instance.isARsupport)
+            {
+                CameraCtrl.instance.SwitchCameraForHsinpaMission(true);
+                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
+            }
+
+            //planeManager.enabled = true;
             hisnpaPrefab.SetActive(true);
+            CameraCtrl.instance.OpenARPlaneManager(true);
         }
 
         public override void StartGame()

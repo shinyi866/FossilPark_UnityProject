@@ -109,6 +109,11 @@ namespace View
             var mainModal = Modals.instance.GetModel<MainModal>();
             mainModal.GetBackAnimal(index);
 
+            if(index != 4)
+                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
+            else
+                MediaPlayerController.instance.LoadVideo("Video/dolphin360.mp4");
+
             ARModal arModal = Modals.instance.GetModel<ARModal>(); // call ARModal direct, will not change currentModal(last modal)
             //arModal.ShowView(false);
             arModal.Show(true);

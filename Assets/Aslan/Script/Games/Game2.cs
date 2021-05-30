@@ -81,6 +81,33 @@ namespace GameMission
 
             if(isARGameStart)
                 ResetDirection();
+            else
+            {
+                if(_camera.transform.position.x < -1.65)
+                {
+                    _camera.transform.position = new Vector3(-1.65f, _camera.transform.position.y, _camera.transform.position.z);
+                }
+
+                if (_camera.transform.position.x > 1.65)
+                {
+                    _camera.transform.position = new Vector3(1.65f, _camera.transform.position.y, _camera.transform.position.z);
+                }
+
+                if (_camera.transform.position.y > -1)
+                {
+                    _camera.transform.position = new Vector3(_camera.transform.position.x, -1, _camera.transform.position.z);
+                }
+
+                if (_camera.transform.position.z > 5)
+                {
+                    _camera.transform.position = new Vector3(_camera.transform.position.x, _camera.transform.position.y, 5);
+                }
+
+                if (_camera.transform.position.z < 0)
+                {
+                    _camera.transform.position = new Vector3(_camera.transform.position.x, _camera.transform.position.y, 0);
+                }
+            }
         }
     }
 }

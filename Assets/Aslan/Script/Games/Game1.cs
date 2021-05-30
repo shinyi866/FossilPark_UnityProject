@@ -24,6 +24,7 @@ namespace GameMission
         private ARGameModal modal;
         private Camera _camera;
         private string videoPath = "Video/animation.mp4";
+        private string videoBGPath = "Video/entrance.mp4";
 
         public void Init()
         {
@@ -74,7 +75,12 @@ namespace GameMission
 
             if (MediaPlayerController.instance.isVideoFinish() && !isVideoEnd)
             {
-                Debug.Log("video end");
+                if (!MainApp.Instance.isARsupport)
+                {
+                    MediaPlayerController.instance.LoadVideo(videoBGPath);
+                    ARObject.transform.localScale = new Vector3(7, 7, 7);
+                }                    
+
                 ShowARObject();
                 isVideoEnd = true;               
             }

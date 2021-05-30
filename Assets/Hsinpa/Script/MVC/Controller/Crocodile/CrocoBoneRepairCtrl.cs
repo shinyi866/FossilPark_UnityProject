@@ -148,6 +148,12 @@ namespace Hsinpa.Ctrl
                 Compass.Instance.SetUp(_worldContainer.gameObject, resetRotate);
                 time -= Time.deltaTime;
             }
+#if UNITY_ANDROID
+            else
+            {
+                CameraCtrl.instance.OpenARPlaneManager(false);
+            }
+#endif
         }
 
         private void PerformPlaneARAction()
