@@ -26,7 +26,7 @@ namespace GameMission
             }
             else
             {
-                CameraCtrl.instance.SwitchToARCamera(true);
+                //CameraCtrl.instance.SwitchToARCamera(true);
                 CameraCtrl.instance.OpenARPlaneManager(true);
             }
 
