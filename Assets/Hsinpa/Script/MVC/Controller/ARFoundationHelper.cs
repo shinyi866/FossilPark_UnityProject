@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
@@ -13,22 +14,22 @@ namespace Hsinpa.Ctrl
         private ARPlaneManager _arPlaneManager;
         public ARPlaneManager arPlaneManager => _arPlaneManager;
 
-        private ARCameraManager _arCamera;
-        public ARCameraManager arCamera => _arCamera;
+        private Camera _arCamera;
+        public Camera arCamera => _arCamera;
 
         private ARRaycastManager _arRaycast;
         public ARRaycastManager arRaycast => _arRaycast;
 
 
-        private ARPoseDriver _arPoseDriver;
-        public ARPoseDriver arPoseDriver {
-            get {
-                if (_arPoseDriver == null)
-                    _arPoseDriver = _arCamera.GetComponent<ARPoseDriver>();
+        //private ARPoseDriver _arPoseDriver;
+        //public ARPoseDriver arPoseDriver {
+        //    get {
+        //        if (_arPoseDriver == null)
+        //            _arPoseDriver = _arCamera.GetComponent<ARPoseDriver>();
 
-                return _arPoseDriver;
-            }
-        }
+        //        return _arPoseDriver;
+        //    }
+        //}
 
         private List<ARPlane> arplanes = new List<ARPlane>();
 
@@ -36,11 +37,18 @@ namespace Hsinpa.Ctrl
         {
             _arSession = GameObject.FindObjectOfType<ARSession>();
             _arPlaneManager = GameObject.FindObjectOfType<ARPlaneManager>();
-            _arCamera = GameObject.FindObjectOfType<ARCameraManager>();
+
+            var aRCameraManager = GameObject.FindObjectOfType<ARCameraManager>();
+
+            if (aRCameraManager == null)
+                _arCamera = CameraCtrl.instance.GetCurrentCamera();
+            else
+                _arCamera = aRCameraManager.GetComponent<Camera>();
+
             _arRaycast = _arPlaneManager.GetComponent<ARRaycastManager>();
 
-
-            _arPlaneManager.planesChanged += OnARPlaneChange;
+            if (_arPlaneManager != null)
+                _arPlaneManager.planesChanged += OnARPlaneChange;
         }
 
         private void OnARPlaneChange(ARPlanesChangedEventArgs p_arPlanesChangedEventArgs)
@@ -50,9 +58,12 @@ namespace Hsinpa.Ctrl
         }
 
         public void ActivateAR(bool activate) {
-            arPoseDriver.enabled = activate;
-            _arCamera.enabled = activate;
-            _arSession.enabled = activate;
+            //arPoseDriver.enabled = activate;
+            if (_arCamera != null)
+                _arCamera.enabled = activate;
+
+            if (_arSession != null)
+                _arSession.enabled = activate;
         }
 
         public void ActivateFullAR(bool activate) {
@@ -73,11 +84,14 @@ namespace Hsinpa.Ctrl
 
             }
 
-            _arPlaneManager.enabled = p_active;
+            if (_arPlaneManager)
+                _arPlaneManager.enabled = p_active;
         }
 
         public void SetARCameraPos(Vector3 position, Quaternion quaternion)
         {
+            if (_arCamera == null) return; 
+
             _arCamera.transform.rotation = quaternion;
             _arCamera.transform.position = position;
         }

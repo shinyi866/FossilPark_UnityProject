@@ -41,7 +41,7 @@ namespace Hsinpa.GameInput
 
         private void Start()
         {
-            this._camera = arHelper.arCamera.GetComponent<Camera>();
+            this._camera = arHelper.arCamera;
             eventData = new PointerEventData(EventSystem.current);
             _inputStruct = new InputStruct();
             lightHouseEditMode.SetUp(_camera);
