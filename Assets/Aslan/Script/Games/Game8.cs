@@ -36,19 +36,25 @@ namespace GameMission
         private bool isGameStart;
         private bool isARsupport;
 
-        public static GameObject currentDinosaurl;
         private GameObject currentFood;
         private GameObject showARfood;
         private ARGameModal modal;
-        private TypeFlag.DinosaurlsType dinosaurlsType;        
+        private TypeFlag.DinosaurlsType dinosaurlsType;
+
+        public static GameObject currentDinosaurl;
+        private bool haveEnetrMission8;
 
         public void Init()
         {
             foreach (var b in dinosaurlScenes) { b.SetActive(false); }
             isARsupport = MainApp.Instance.isARsupport;
+            haveEnetrMission8 = true;
 
             if (!isARsupport)
+            {
                 MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
+                Object.transform.position = new Vector3(0,-0.6f,0);
+            }
 
             // setup all game objects in dictionary
             for (int i = 0; i < foodGameObject.Length; i++)
@@ -74,9 +80,10 @@ namespace GameMission
             isGameStart = true;
         }
 
-        public void DestoryFoods()
+        public void CloseFoods()
         {
-            foreach (var b in foodGameObject) { Destroy(b); }
+            if(haveEnetrMission8)
+                foreach (var b in foodGameObject) { b.SetActive(true); }
         }
 
         private void ResetDirection()

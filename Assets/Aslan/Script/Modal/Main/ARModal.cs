@@ -60,8 +60,7 @@ namespace View
                 feedButtonGameObject.SetActive(false);
                 ShowPanel(leavePanel.canvasGroup, false);
                 ShowPanel(picturePanel.canvasGroup, false);
-
-                //Games.instance.OpenGame<Game8>().DestoryFoods();
+                
                 Games.instance.ClosGame();
                 GameModals.instance.GetModal<ARGameModal>().CloseAllPanel();
                 GameModals.instance.CloseModal();
@@ -71,7 +70,7 @@ namespace View
                 MediaPlayerController.instance.StopVideo();
                 iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon
                 CameraCtrl.instance.DisableOcclusionManager();
-                
+
                 CloseARPlane();
             });
 

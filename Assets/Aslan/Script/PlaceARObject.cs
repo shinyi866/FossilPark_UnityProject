@@ -70,8 +70,18 @@ public class PlaceARObject : MonoBehaviour
             case TypeFlag.ARObjectType.Animals:
                 var animalTransform = animalObjects[index - 2].transform;
                 noARanimalObject = Instantiate(animalObjects[index - 2], new Vector3(animalTransform.position.x, animalTransform.position.y, 1.5f), animalTransform.rotation);
-                noARanimalObject.transform.position = new Vector3(0, -1.7f, 2);
-                noARanimalObject.transform.rotation = Quaternion.Euler(0, 140, 0);
+
+                if(index == 3)
+                {
+                    noARanimalObject.transform.position = new Vector3(0, -1.7f, 1);
+                    noARanimalObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                else
+                {
+                    noARanimalObject.transform.position = new Vector3(0, -1.7f, 2);
+                    noARanimalObject.transform.rotation = Quaternion.Euler(0, 140, 0);
+                }
+                
                 break;
             case TypeFlag.ARObjectType.Dinosaurls:
                 var dinosaurlTransform = dinosaurlObjects[index - 2].transform;
