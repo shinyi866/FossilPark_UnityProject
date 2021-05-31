@@ -11,7 +11,6 @@ namespace GameMission
     {
         public GameObject hisnpaPrefab;
         public RhinoBoneRepairCtrl rhinoCtrl;
-        public ARPlaneManager planeManager;
 
         private int missionIndex = 5;
 
@@ -22,11 +21,15 @@ namespace GameMission
             //Ar support for hsinpa check
             if (!MainApp.Instance.isARsupport)
             {
-                CameraCtrl.instance.SwitchCameraForHsinpaMission(true);
+                CameraCtrl.instance.SwitchToARCamera(true);
                 MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
-            } 
-            
-            planeManager.enabled = true;
+            }
+            else
+            {
+                CameraCtrl.instance.SwitchToARCamera(true);
+                CameraCtrl.instance.OpenARPlaneManager(true);
+            }
+
             hisnpaPrefab.SetActive(true);
         }
 
@@ -43,7 +46,7 @@ namespace GameMission
         {
             rhinoCtrl.OnEndGameEvent -= EndGame;
             var data = MainApp.Instance.database;
-            planeManager.enabled = false;
+            CameraCtrl.instance.OpenARPlaneManager(false);
 
             var model = GameModals.instance.OpenModal<DialogModal>();
             model.ShowInfo(missionIndex, TypeFlag.DialogType.EnterDialog);

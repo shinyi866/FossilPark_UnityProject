@@ -76,13 +76,17 @@ namespace View
         public void OpenAR()
         {
             Modals.instance.CloseAllModal();
-            CameraCtrl.instance.SwitchCamera(true);
+
+            if(MainApp.Instance.isARsupport)
+                CameraCtrl.instance.SwitchToARCamera(true);
+            else
+                CameraCtrl.instance.SwitchToARCamera(false);
         }
 
         public void CloseAR()
         {
             Modals.instance.CloseAllModal();
-            CameraCtrl.instance.SwitchCamera(false);
+            CameraCtrl.instance.SwitchToARCamera(false);
             //PlaceARObject.instance.CloseAR(); //TODO: test
         }
 
@@ -90,7 +94,7 @@ namespace View
         {
             foreach (Modal modal in modals) { modal.Show(false); }
 
-            CameraCtrl.instance.SwitchCamera(true);
+            CameraCtrl.instance.SwitchToARCamera(true);
 
             var mainModal = Modals.instance.GetModel<MainModal>();
             mainModal.GetBackAnimal(index);
@@ -106,10 +110,12 @@ namespace View
         {
             foreach (Modal modal in modals) { modal.Show(false); }
 
+            CameraCtrl.instance.SwitchToARCamera(false);
+
             var mainModal = Modals.instance.GetModel<MainModal>();
             mainModal.GetBackAnimal(index);
-
-            if(index != 4)
+            Debug.Log("====== GameModal index " + index);
+            if (index != 4)
                 MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
             else
                 MediaPlayerController.instance.LoadVideo("Video/dolphin360.mp4");

@@ -75,7 +75,7 @@ namespace View
         {
             foreach (Modal modal in modals) { modal.Show(false); }
 
-            CameraCtrl.instance.SwitchCamera(true);
+            CameraCtrl.instance.SwitchToARCamera(true);
 
             ARModal arModal = _instance.GetModel<ARModal>(); // call ARModal direct, will not change currentModal(last modal)
             arModal.ShowView(true);
@@ -91,9 +91,9 @@ namespace View
         {
             foreach (Modal modal in modals) { modal.Show(false); }
 
-            CameraCtrl.instance.SwitchCamera(true);
-
-            if (index != 6)
+            CameraCtrl.instance.SwitchToARCamera(false);
+            Debug.Log("====== Modal index "  + index);
+            if (index != 4)
                 MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
             else
                 MediaPlayerController.instance.LoadVideo("Video/dolphin360.mp4");
@@ -115,7 +115,7 @@ namespace View
             if (currentModal == null) return;
             currentModal.Show(true);
 
-            CameraCtrl.instance.SwitchCamera(false);
+            CameraCtrl.instance.SwitchToARCamera(false);
             MediaPlayerController.instance.CloseVideo();
             MainModal mainModal = _instance.GetModel<MainModal>();
             mainModal.Show(true);
@@ -127,7 +127,7 @@ namespace View
         {
             foreach (Modal modal in modals) { modal.Show(false); }
 
-            CameraCtrl.instance.SwitchCamera(false);
+            CameraCtrl.instance.SwitchToARCamera(false);
             MediaPlayerController.instance.CloseVideo();
             MainModal mainModal = _instance.GetModel<MainModal>();
             mainModal.Show(true);

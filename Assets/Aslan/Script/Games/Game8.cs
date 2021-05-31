@@ -74,6 +74,11 @@ namespace GameMission
             isGameStart = true;
         }
 
+        public void DestoryFoods()
+        {
+            foreach (var b in foodGameObject) { Destroy(b); }
+        }
+
         private void ResetDirection()
         {
             if(time > 0)

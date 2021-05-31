@@ -10,8 +10,8 @@ namespace View
     {
         [SerializeField]
         private CanvasGroup introView;
-        [SerializeField]
-        private CanvasGroup promptView;
+        
+        public CanvasGroup promptView;
         [SerializeField]
         private Image introImage;
         [SerializeField]
@@ -189,7 +189,7 @@ namespace View
             });
         }
 
-        private void ShowPanel(CanvasGroup canvasGroup, bool isShow)
+        public void ShowPanel(CanvasGroup canvasGroup, bool isShow)
         {
             if (canvasGroup != null)
             {

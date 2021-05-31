@@ -44,13 +44,13 @@ public class CameraCtrl : MonoBehaviour
         if (ARcamera == null) Debug.Log("AR camera is null");
     }
 
-    public void SwitchCamera(bool isAR)
+    public void SwitchToARCamera(bool isAR)
     {
         var isARsupport = MainApp.Instance.isARsupport;
         currentCamera = MainCamera.GetComponent<Camera>();
         SetUp();
 
-        if (!isARsupport) return;
+        //if (!isARsupport) return;
 
         MainCamera.SetActive(!isAR);
         ARcamera.SetActive(isAR);

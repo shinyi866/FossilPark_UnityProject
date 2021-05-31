@@ -40,7 +40,7 @@ namespace GameMission
         private GameObject canvas;
 
         [SerializeField, Range(10f, 60f)]
-        private float errorRound = 50f;
+        private float errorRound = 40f;
 
         public System.Action<bool> gameOverEvent;
         public static int AnsInBoxCount;

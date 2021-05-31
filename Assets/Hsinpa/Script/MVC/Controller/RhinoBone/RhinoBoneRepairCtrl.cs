@@ -244,7 +244,7 @@ namespace Hsinpa.Ctrl {
 
             if (inputStruct.gameObject.layer == GeneralFlag.Layer.PlaneInt && _state == GeneralFlag.GeneralState.Preparation)
             {
-                Vector3 dir = (inputStruct.raycastPosition - _arHelper.arCamera.transform.position).normalized;
+                Vector3 dir = (inputStruct.raycastPosition - _arHelper.arCamera.transform.position).normalized ;
                 dir.y = 0;
                 Quaternion faceQuat = Quaternion.LookRotation(dir);
 

@@ -113,9 +113,9 @@ namespace GameMission
             {
                 _camera.transform.position = new Vector3(_camera.transform.position.x, _camera.transform.position.y, 0);
 
-                if (_camera.transform.position.x < -5)
+                if (_camera.transform.position.x < -8)
                 {
-                    _camera.transform.position = new Vector3(-5f, _camera.transform.position.y, _camera.transform.position.z);
+                    _camera.transform.position = new Vector3(-8f, _camera.transform.position.y, _camera.transform.position.z);
                 }
 
                 if (_camera.transform.position.x > 5)
@@ -165,8 +165,9 @@ namespace GameMission
         // Unsupport AR Game
         private void UnsupportAR()
         {
+            speed = 170;
             _camera.transform.position = new Vector3(0,3,0);
-            monkeyScene.transform.position = new Vector3(-2.5f, 3.46f, -0.5f);
+            monkeyScene.transform.position = new Vector3(-2.5f, 0, -0.5f);//3.46f
 
             var _frontPos = _camera.transform.forward * 1.9f;
             var _upPos = _camera.transform.up * -1.1f;

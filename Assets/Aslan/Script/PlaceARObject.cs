@@ -70,18 +70,20 @@ public class PlaceARObject : MonoBehaviour
             case TypeFlag.ARObjectType.Animals:
                 var animalTransform = animalObjects[index - 2].transform;
                 noARanimalObject = Instantiate(animalObjects[index - 2], new Vector3(animalTransform.position.x, animalTransform.position.y, 1.5f), animalTransform.rotation);
+                noARanimalObject.transform.position = new Vector3(0, -1.7f, 2);
+                noARanimalObject.transform.rotation = Quaternion.Euler(0, 140, 0);
                 break;
             case TypeFlag.ARObjectType.Dinosaurls:
                 var dinosaurlTransform = dinosaurlObjects[index - 2].transform;
                 noARanimalObject = Instantiate(dinosaurlObjects[index - 2], new Vector3(dinosaurlTransform.position.x, dinosaurlTransform.position.y, 1.5f), dinosaurlTransform.rotation);
+                noARanimalObject.transform.position = new Vector3(0, -1.7f, 5);
+                noARanimalObject.transform.rotation = Quaternion.Euler(0, 110, 0);
                 break;
             case TypeFlag.ARObjectType.DinosaurlBaby:
                 var dinosaurlBabyTransform = dinosaurlBabyObjects[index].transform;
                 noARanimalObject = Instantiate(dinosaurlBabyObjects[index], new Vector3(dinosaurlBabyTransform.position.x, dinosaurlBabyTransform.position.y, 1.5f), dinosaurlBabyTransform.rotation);
                 break;
         }
-
-        _camera.transform.position = new Vector3(0 ,0.5f, 0);
     }
 
     public void CloseAR()
