@@ -93,19 +93,15 @@ namespace View
                 if(Mission8.backToDinosaur)
                 {
                     var modal = Modals.instance.OpenModal<DinosaurlModal>();
-                    foreach (var btn in modal.dinosaurlButtons)
-                    {
-                        btn.interactable = true;
-                    }
+                    modal.BackToDinosaurl(true);
                     modal.Setup();
+
+                    Games.instance.GetGame<Game8>().CloseFoods();
                 }
                 else
                 {
                     var modal = Modals.instance.OpenModal<DinosaurlModal>();
-                    foreach(var btn in modal.dinosaurlButtons)
-                    {
-                        btn.interactable = false;
-                    }
+                    modal.BackToDinosaurl(false);
                 }
             });
 

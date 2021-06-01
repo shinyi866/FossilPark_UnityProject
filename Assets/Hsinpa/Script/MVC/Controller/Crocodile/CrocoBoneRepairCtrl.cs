@@ -106,7 +106,7 @@ namespace Hsinpa.Ctrl
 
         private void PerformNoARAction()
         {
-            _arHelper.ActivateFullAR(false);
+            //_arHelper.ActivateFullAR(false);
 
             Debug.Log("Croco PerformNoARAction");
             crocodileTargetTimelineAnim.gameObject.SetActive(true);

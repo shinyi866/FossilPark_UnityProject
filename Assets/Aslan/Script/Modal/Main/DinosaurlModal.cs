@@ -7,7 +7,10 @@ namespace View
 {
     public class DinosaurlModal : Modal
     {
+        [SerializeField]
         public Button[] dinosaurlButtons;
+        [SerializeField]
+        private GameObject promptObject;
 
         [SerializeField]
         private Button BackButton;
@@ -33,6 +36,12 @@ namespace View
                     modal.ShowInfo(closureIndex, TypeFlag.InfoType.Dinosaurl);
                 });
             }
+        }
+
+        public void BackToDinosaurl(bool back)
+        {
+            foreach (var btn in dinosaurlButtons) { btn.interactable = back; }
+            promptObject.SetActive(!back);
         }
     }
 }

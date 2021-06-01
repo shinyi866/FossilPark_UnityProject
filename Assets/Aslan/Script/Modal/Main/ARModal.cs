@@ -20,6 +20,9 @@ namespace View
         private LeavePanel leavePanel;
 
         [SerializeField]
+        private ScanARPanel scanARPanel;
+
+        [SerializeField]
         private GameObject backGameObject;
 
         [SerializeField]
@@ -54,6 +57,11 @@ namespace View
             PictureButton.onClick.AddListener(() => { TakePicture(); });
 
             BackButton.onClick.AddListener(() => { ShowPanel(leavePanel.canvasGroup, true); });
+
+            if(!MainApp.Instance.isARsupport)
+                ShowPanel(scanARPanel.canvasGroup, false);
+            else
+                scanARPanel.button_confirm.onClick.AddListener(() => { ShowPanel(scanARPanel.canvasGroup, false); });
 
             leavePanel.button_confirm.onClick.AddListener(()=>
             {
@@ -194,5 +202,13 @@ public class LeavePanel
 {
     public CanvasGroup canvasGroup;
     public Button button_cancle;
+    public Button button_confirm;
+}
+
+
+[System.Serializable]
+public class ScanARPanel
+{
+    public CanvasGroup canvasGroup;
     public Button button_confirm;
 }

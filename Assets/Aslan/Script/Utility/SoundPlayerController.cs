@@ -82,16 +82,23 @@ public class SoundPlayerController : Singleton<SoundPlayerController>
 
     public void BrushSoundEffect()
     {
-        soundEffectAudio.clip = soundData.SoundItems.brush;
-        soundEffectAudio.Play();
-        soundEffectAudio.loop = false;
+        if(!soundEffectAudio.isPlaying)
+        {
+            soundEffectAudio.clip = soundData.SoundItems.brush;
+            soundEffectAudio.Play();
+            soundEffectAudio.loop = false;
+        }
+        
     }
 
     public void PenSoundEffect()
     {
-        soundEffectAudio.clip = soundData.SoundItems.pen;
-        soundEffectAudio.Play();
-        soundEffectAudio.loop = false;
+        if (!soundEffectAudio.isPlaying)
+        {
+            soundEffectAudio.clip = soundData.SoundItems.pen;
+            soundEffectAudio.Play();
+            soundEffectAudio.loop = false;
+        }       
     }
 
     public void RiverSoundEffect()

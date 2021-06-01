@@ -41,7 +41,7 @@ namespace Hsinpa.Ctrl
             var aRCameraManager = GameObject.FindObjectOfType<ARCameraManager>();
 
             if (aRCameraManager == null)
-            { _arCamera = CameraCtrl.instance.GetCurrentCamera(); Debug.Log("ooooo _arCamera " + arCamera.name); }
+            { _arCamera = CameraCtrl.instance.GetCurrentCamera(); }
             else
                 _arCamera = aRCameraManager.GetComponent<Camera>();
 

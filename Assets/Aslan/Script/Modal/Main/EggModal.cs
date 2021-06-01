@@ -46,7 +46,7 @@ namespace View
         private void Awake()
         {
             arModal = Modals.instance.GetModel<InfoModal>();
-            
+            /*
             if (PlayerPrefs.HasKey("dinosaurBaby"))
             {
                 StartButton.interactable = false;
@@ -57,7 +57,7 @@ namespace View
                 eggImage.enabled = false;          
                 currentSprites = arModal.animalItemObj.DinosaurlBabyItems[dinosaurIndex].MainImage;
             }
-              
+             */ 
             BackButton.onClick.AddListener(() =>
             {
                 Modals.instance.CloseModal(); // TODO error?
@@ -67,20 +67,20 @@ namespace View
             {
                 ARModal arModal = Modals.instance.GetModel<ARModal>();
                 var SpriteState = arModal.feedButton.spriteState;
-                arModal.feedImage.sprite = feedDinosaurSprites[PlayerPrefs.GetInt("dinosaurBaby")];
-                SpriteState.pressedSprite = feedDinosaurPressSprites[PlayerPrefs.GetInt("dinosaurBaby")];
+                arModal.feedImage.sprite = feedDinosaurSprites[dinosaurIndex];
+                SpriteState.pressedSprite = feedDinosaurPressSprites[dinosaurIndex];
                 //Modals.instance.OpenAR(dinosaurIndex, TypeFlag.ARObjectType.DinosaurlBaby);
 
                 if (MainApp.Instance.isARsupport)
-                    Modals.instance.OpenAR(PlayerPrefs.GetInt("dinosaurBaby"), TypeFlag.ARObjectType.DinosaurlBaby);
+                    Modals.instance.OpenAR(dinosaurIndex, TypeFlag.ARObjectType.DinosaurlBaby);
                 else
-                    Modals.instance.OpenNotSupportAR(PlayerPrefs.GetInt("dinosaurBaby"), TypeFlag.ARObjectType.DinosaurlBaby);
+                    Modals.instance.OpenNotSupportAR(dinosaurIndex, TypeFlag.ARObjectType.DinosaurlBaby);
             });
 
             StartButton.onClick.AddListener(() =>
             {
                 dinosaurIndex = Random.Range(0,3);
-                PlayerPrefs.SetInt("dinosaurBaby", dinosaurIndex);
+                //PlayerPrefs.SetInt("dinosaurBaby", dinosaurIndex);
                 startMachine = true;
                 StartButton.interactable = false;
                 ARButton.interactable = true;

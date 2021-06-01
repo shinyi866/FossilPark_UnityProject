@@ -64,6 +64,9 @@ public class PlaceARObject : MonoBehaviour
     public void EnterNoAR(int index, TypeFlag.ARObjectType type)
     {   
         _camera = CameraCtrl.instance.GetCurrentCamera();
+        _camera.transform.position = new Vector3(0, 0, 0);
+        var _frontPos = _camera.transform.forward;
+        var _upPos = _camera.transform.up;
 
         switch (type)
         {
@@ -73,12 +76,12 @@ public class PlaceARObject : MonoBehaviour
 
                 if(index == 3)
                 {
-                    noARanimalObject.transform.position = new Vector3(0, -1.7f, 1);
+                    noARanimalObject.transform.position = _camera.transform.position + _upPos * -1 + _frontPos * 1.5f;
                     noARanimalObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
                 else
                 {
-                    noARanimalObject.transform.position = new Vector3(0, -1.7f, 2);
+                    noARanimalObject.transform.position = _camera.transform.position + _upPos * -0.8f + _frontPos * 2f;
                     noARanimalObject.transform.rotation = Quaternion.Euler(0, 140, 0);
                 }
                 
@@ -86,7 +89,7 @@ public class PlaceARObject : MonoBehaviour
             case TypeFlag.ARObjectType.Dinosaurls:
                 var dinosaurlTransform = dinosaurlObjects[index - 2].transform;
                 noARanimalObject = Instantiate(dinosaurlObjects[index - 2], new Vector3(dinosaurlTransform.position.x, dinosaurlTransform.position.y, 1.5f), dinosaurlTransform.rotation);
-                noARanimalObject.transform.position = new Vector3(0, -1.7f, 5);
+                noARanimalObject.transform.position = _camera.transform.position + _upPos * -1 + _frontPos * 5f;
                 noARanimalObject.transform.rotation = Quaternion.Euler(0, 110, 0);
                 break;
             case TypeFlag.ARObjectType.DinosaurlBaby:

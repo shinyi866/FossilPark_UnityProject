@@ -38,7 +38,7 @@ namespace GameMission
         // set thorw ball parameter
         private float Xmin = -0.2f;
         private float Xmax = 0.1f;
-        private int speed = 175;
+        private int speed = 181;
         private int passCount = 1;
 
         private string videoPath = "Video/monkey.mp4";
@@ -51,7 +51,9 @@ namespace GameMission
             gameModal = GameModals.instance.GetModal<ARGameModal>();
             _camera = CameraCtrl.instance.GetCurrentCamera();
             playableDirector = monkey.GetComponent<PlayableDirector>();
-            MediaPlayerController.instance.LoadVideo(videoPath);
+
+            if(!MainApp.Instance.isARsupport)
+                MediaPlayerController.instance.LoadVideo(videoPath);
 
             count = fruit;
             //leftButton = gameModal.game3Panel.leftButton;
@@ -167,7 +169,7 @@ namespace GameMission
         {
             speed = 167;
             _camera.transform.position = new Vector3(0,3,0);
-            monkeyScene.transform.position = new Vector3(-2.5f, 0, -0.5f);//3.46f
+            monkeyScene.transform.position = new Vector3(-2.5f, 2.46f, -0.5f);//3.46f
 
             var _frontPos = _camera.transform.forward * 1.9f;
             var _upPos = _camera.transform.up * -1.1f;
