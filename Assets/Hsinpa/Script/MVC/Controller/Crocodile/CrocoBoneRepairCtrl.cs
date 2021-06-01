@@ -264,7 +264,8 @@ namespace Hsinpa.Ctrl
         }
 
         private void OnTargetPainting(bool isOnTarget) {
-            SoundPlayerController.Instance.BrushSoundEffect();
+            if (isOnTarget)
+                SoundPlayerController.Instance.BrushSoundEffect();
         }
 
         private void OnDestroy()
