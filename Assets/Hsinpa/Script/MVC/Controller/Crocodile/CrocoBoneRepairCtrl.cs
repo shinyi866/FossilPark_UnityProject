@@ -263,8 +263,11 @@ namespace Hsinpa.Ctrl
             _paintingManager.EquipTool((ToolSRP.ToolEnum)nextCurrentToolIndex);
         }
 
-        private void OnTargetPainting(bool isOnTarget) {
-            if (isOnTarget)
+        private void OnTargetPainting(int itemIndex, bool isOnTarget) {
+            if (isOnTarget && itemIndex == 0)
+                SoundPlayerController.Instance.PenSoundEffect();
+
+            if (isOnTarget && itemIndex == 1)
                 SoundPlayerController.Instance.BrushSoundEffect();
         }
 
