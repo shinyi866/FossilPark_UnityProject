@@ -114,13 +114,14 @@ namespace Hsinpa.Ctrl {
     #region State => Preparation Mode
     private void PerformNoARAction() {
             //_arHelper.ActivateFullAR(false);
-            _arHelper.SetARCameraPos(new Vector3(0, 2f, 0), Quaternion.Euler(90, 0, 0));
+            _arHelper.SetARCameraPos(new Vector3(0, 0, 0), Quaternion.Euler(80, 0, 0));
 
             _rhinoBoneHelper.Clean();
-            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(Vector3.zero, Quaternion.identity);
+            spawnCorrectBoneTemplate = _rhinoBoneHelper.CreateBoneTemplate(new Vector3(0,-1.7f,0.5f), Quaternion.identity);
             spawnRandomBoneTemplate = _rhinoBoneHelper.CreateBoneRandomSet(spawnCorrectBoneTemplate.transform.position, spawnCorrectBoneTemplate.transform.rotation);
 
             Initialization();
+
             _state = GeneralFlag.GeneralState.UnderGoing;
         }
 

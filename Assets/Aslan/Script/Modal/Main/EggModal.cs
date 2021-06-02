@@ -8,6 +8,7 @@ namespace View
     public class EggModal : Modal
     {
         public Button StartButton;
+        public GameObject erroObject;
 
         [SerializeField]
         private Button BackButton, ARButton;

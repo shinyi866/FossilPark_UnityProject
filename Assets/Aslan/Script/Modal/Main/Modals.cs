@@ -84,7 +84,11 @@ namespace View
             if (type == TypeFlag.ARObjectType.DinosaurlBaby)
                 arModal.feedButtonGameObject.SetActive(true);
 
+#if UNITY_IOS
             PlaceARObject.instance.EnterAR(index, type);
+#elif UNITY_ANDROID
+            PlaceARObject.instance.EnterNoAR(index, type);
+#endif
         }
 
         public void OpenNotSupportAR(int index, TypeFlag.ARObjectType type)

@@ -103,7 +103,11 @@ namespace View
             //arModal.ShowView(false);
             arModal.Show(true);
 
+#if UNITY_IOS
             PlaceARObject.instance.EnterAR(index, type);
+#elif UNITY_ANDROID
+            PlaceARObject.instance.EnterNoAR(index, type);
+#endif
         }
 
         public void GetBackAnimalNoAR(int index)
@@ -114,14 +118,13 @@ namespace View
 
             var mainModal = Modals.instance.GetModel<MainModal>();
             mainModal.GetBackAnimal(index);
-            Debug.Log("====== GameModal index " + index);
+            
             if (index != 4)
                 MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
             else
                 MediaPlayerController.instance.LoadVideo("Video/dolphin360.mp4");
 
             ARModal arModal = Modals.instance.GetModel<ARModal>(); // call ARModal direct, will not change currentModal(last modal)
-            //arModal.ShowView(false);
             arModal.Show(true);
 
             PlaceARObject.instance.EnterNoAR(index, TypeFlag.ARObjectType.Animals);

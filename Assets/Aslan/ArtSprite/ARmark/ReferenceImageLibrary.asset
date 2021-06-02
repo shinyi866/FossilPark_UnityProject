@@ -59,11 +59,11 @@ MonoBehaviour:
       m_GuidLow: 5480909253472037151
       m_GuidHigh: 7297386236700395930
     m_SerializedTextureGuid:
-      m_GuidLow: 16489327470830731623
-      m_GuidHigh: 15663604199788104794
-    m_Size: {x: 0.3, y: 0.27414116}
+      m_GuidLow: 16500676917816100808
+      m_GuidHigh: 10042564677648545546
+    m_Size: {x: 0.4, y: 0.83431154}
     m_SpecifySize: 1
-    m_Name: logo
+    m_Name: ticket3
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4689397435081612117

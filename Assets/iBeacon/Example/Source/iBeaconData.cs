@@ -268,10 +268,7 @@ public class iBeaconData : MonoBehaviour
 
 		DisplayOnBeaconFound();
 
-		if (isPaused)
-			iBeaconMissionSetting.Instance.MissionSearchInBackGround(mybeacons);
-        else
-            iBeaconMissionSetting.Instance.MissionSearch(mybeacons);
+        iBeaconMissionSetting.Instance.MissionSearch(mybeacons);
 	}
 
 	private void DisplayOnBeaconFound()

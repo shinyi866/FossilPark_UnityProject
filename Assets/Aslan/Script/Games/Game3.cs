@@ -38,7 +38,7 @@ namespace GameMission
         // set thorw ball parameter
         private float Xmin = -0.2f;
         private float Xmax = 0.1f;
-        private int speed = 181;
+        private int speed = 184;
         private int passCount = 1;
 
         private string videoPath = "Video/monkey.mp4";
@@ -167,14 +167,13 @@ namespace GameMission
         // Unsupport AR Game
         private void UnsupportAR()
         {
-            speed = 167;
-            _camera.transform.position = new Vector3(0,3,0);
-            monkeyScene.transform.position = new Vector3(-2.5f, 2.46f, -0.5f);//3.46f
+            speed = 180;
 
-            var _frontPos = _camera.transform.forward * 1.9f;
-            var _upPos = _camera.transform.up * -1.1f;
+            var _frontPos = _camera.transform.forward;
+            var _upPos = _camera.transform.up;
 
-            basket.transform.position = _camera.transform.position + _frontPos + _upPos;
+            monkeyScene.transform.position = _camera.transform.position + _frontPos + _upPos * 1.2f;
+            basket.transform.position = _camera.transform.position + _frontPos * 1.9f + _upPos * -1.1f;
             tools.SetActive(true);
         }
     }

@@ -34,8 +34,8 @@ namespace View
         [SerializeField]
         private Button[] missionButtons;
 
-        [Header("Image")]
-        public Image scoreImage;
+        //[Header("Image")]
+        //public Image scoreImage;
         [SerializeField]
         private Image clockImage;
         [SerializeField]
@@ -143,6 +143,7 @@ namespace View
                 clockImage.sprite = clockSprite[3];
                 var eggModal = Modals.instance.GetModel<EggModal>();
                 eggModal.StartButton.interactable = true;
+                eggModal.erroObject.SetActive(false);
 
                 iBeaconMissionSetting.Instance.isLastMissionOpen = true;  // Finish all mission will open
                 remindObject.SetActive(true); // Finish all mission will open

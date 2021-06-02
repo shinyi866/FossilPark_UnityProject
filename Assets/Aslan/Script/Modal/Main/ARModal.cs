@@ -58,10 +58,7 @@ namespace View
 
             BackButton.onClick.AddListener(() => { ShowPanel(leavePanel.canvasGroup, true); });
 
-            if(!MainApp.Instance.isARsupport)
-                ShowPanel(scanARPanel.canvasGroup, false);
-            else
-                scanARPanel.button_confirm.onClick.AddListener(() => { ShowPanel(scanARPanel.canvasGroup, false); });
+            scanARPanel.button_confirm.onClick.AddListener(() => { ShowPanel(scanARPanel.canvasGroup, false); });
 
             leavePanel.button_confirm.onClick.AddListener(()=>
             {
@@ -86,12 +83,6 @@ namespace View
 
             picturePanel.mainSaveButton.GetComponent<Button>().onClick.AddListener(() =>
             {
-                /*
-                ClosePicturePanel(false);
-                Modals.instance.CloseARInMain();
-                iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon???
-                CloseARPlane();
-                */
                 ShowPanel(picturePanel.canvasGroup, false);
                 SaveImage();
             });
@@ -100,18 +91,16 @@ namespace View
             {
                 ShowView(true);
                 ShowPanel(picturePanel.canvasGroup, false);
-                /*
-                ClosePicturePanel(false);
-                Games.instance.ClosGame();
-                Modals.instance.CloseARInGame();
-
-                iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon
-                CloseARPlane();
-                */
                 SaveImage();
             });
 
             picturePanel.button_exit.onClick.AddListener(() => { ShowPanel(picturePanel.canvasGroup, false); });
+        }
+
+        private void Start()
+        {
+            if (MainApp.Instance.isARsupport)
+                ShowPanel(scanARPanel.canvasGroup, true);
         }
 
         private void CloseARPlane()

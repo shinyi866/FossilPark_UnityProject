@@ -116,9 +116,6 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 
             if (minBeacon.accuracy > ranges[mission].minRange && minBeacon.accuracy < ranges[mission].maxRange)
             {
-#if UNITY_ANDROID
-                MobileNotificationManager.Instance.SendNotificationAndroid();
-#endif
             }
             
         }

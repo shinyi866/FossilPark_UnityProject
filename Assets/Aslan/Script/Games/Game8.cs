@@ -42,13 +42,11 @@ namespace GameMission
         private TypeFlag.DinosaurlsType dinosaurlsType;
 
         public static GameObject currentDinosaurl;
-        private bool haveEnetrMission8;
 
         public void Init()
         {
             foreach (var b in dinosaurlScenes) { b.SetActive(false); }
             isARsupport = MainApp.Instance.isARsupport;
-            haveEnetrMission8 = true;
 
             if (!isARsupport)
             {
@@ -82,8 +80,7 @@ namespace GameMission
 
         public void CloseFoods()
         {
-            if(haveEnetrMission8)
-                foreach (var b in foodGameObject) { b.SetActive(true); }
+            showARfood.SetActive(false);
         }
 
         private void ResetDirection()
@@ -187,14 +184,12 @@ namespace GameMission
 
             if (dinosaurlScenes != null)
             {
-                if(currentImageName != "ticket2")
+                if(currentImageName != "ticket3")
                 {
                     GameObject showARObject = arObjects[currentImageName];
                     showARObject.SetActive(true);
                     showARObject.transform.position = imagePosition;
-                    //showARObject.transform.rotation = trackImage.transform.rotation;
                     showARfood = arObjects[currentImageName];
-                    //resetEatFood = true;
 
                     foreach (GameObject b in arObjects.Values)
                     {
@@ -215,7 +210,6 @@ namespace GameMission
                     showARObject.transform.position = imagePosition;
 
                     showARfood = arObjects[currentImageName];
-                    //resetEatFood = true;
 
                     foreach (GameObject b in arObjects.Values)
                     {
