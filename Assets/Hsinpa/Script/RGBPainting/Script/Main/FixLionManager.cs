@@ -161,7 +161,7 @@ namespace Expect.App {
             //UniversalAudioSolution.instance.PlayAudio(UniversalAudioSolution.AudioType.UI, ToolCompleteSound);
         }
 
-        private void OnTargetPaintingEvent(bool isHit) {
+        private void OnTargetPaintingEvent(int toolIndex, bool isHit) {
             if (currentHoldItem == null) return;
 
             currentHoldItem.EnableParticles(isHit);

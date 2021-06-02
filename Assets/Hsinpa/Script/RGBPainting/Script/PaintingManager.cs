@@ -30,7 +30,7 @@ namespace Hsinpa.App {
         private int layerMask = 1 << 22;
 
         public System.Action<bool> OnTargetDirtIsClear;
-        public System.Action<bool> OnTargetPainting;
+        public System.Action<int, bool> OnTargetPainting;
 
         public enum HintState { None, Flash };
         private HintState _hintState;
@@ -99,7 +99,7 @@ namespace Hsinpa.App {
                 }
 
                 if (OnTargetPainting != null)
-                    OnTargetPainting(hits > 0);
+                    OnTargetPainting(toolIndex, hits > 0);
 
                 CheckShowColorHintEvent();
             }
