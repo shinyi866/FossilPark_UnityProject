@@ -81,7 +81,7 @@ namespace ARLocation
                 }
 
                 arPlaneManager = arSessionOrigin.gameObject.AddComponent<ARPlaneManager>();
-                arPlaneManager.detectionMode = PlaneDetectionMode.Horizontal;
+                Utils.Misc.RequestPlaneDetectionMode(arPlaneManager, PlaneDetectionMode.Horizontal);
             }
 
             if (Settings.UseArLocationConfigSettings)
@@ -99,17 +99,19 @@ namespace ARLocation
             UpdateObjectHeight();
         }
 
-        void OnEnable() {
+        void OnEnable()
+        {
             if (arPlaneManager)
             {
                 arPlaneManager.planesChanged += ArPlaneManagerOnPlanesChanged;
             }
         }
 
-        void OnDisable() {
-            if (arPlaneManager) 
+        void OnDisable()
+        {
+            if (arPlaneManager)
             {
-                arPlaneManager.planesChanged -= ArPlaneManagerOnPlanesChanged; 
+                arPlaneManager.planesChanged -= ArPlaneManagerOnPlanesChanged;
             }
         }
 
@@ -237,9 +239,9 @@ namespace ARLocation
         }
 
 #endif
-        private void UpdateObjectHeight()
+        public void UpdateObjectHeight(bool force = false)
         {
-            if (!state.NeedsUpdate) return;
+            if (!state.NeedsUpdate && !force) return;
 
             // Debug.Log("[AR+GPS][GroundHeight#UpdateObjectHeight]: Setting Y to " + state.CurrentGroundY);
 

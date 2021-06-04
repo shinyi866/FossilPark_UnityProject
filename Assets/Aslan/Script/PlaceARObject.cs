@@ -54,11 +54,51 @@ public class PlaceARObject : MonoBehaviour
         currentAnimal = index;
         planeManager.enabled = true;        
         placeMark.SetActive(true);
-        Debug.Log("ios");
+        
         if (currentType == TypeFlag.ARObjectType.Animals)
             material.mainTexture = animalMarkTexture[currentAnimal - 2];
         if (currentType == TypeFlag.ARObjectType.Dinosaurls || currentType == TypeFlag.ARObjectType.DinosaurlBaby)
             material.mainTexture = animalMarkTexture[animalMarkTexture.Length - 1];
+    }
+
+    public void EnterARAndroid(int index, TypeFlag.ARObjectType type)
+    {
+        _camera = CameraCtrl.instance.GetCurrentCamera();
+        _camera.transform.position = new Vector3(0, 0, 0);
+
+        var _frontPos = _camera.transform.forward;
+        var _upPos = _camera.transform.up;
+
+        switch (type)
+        {
+            case TypeFlag.ARObjectType.Animals:
+                var animalTransform = animalObjects[index - 2].transform;
+                spawnedObject = Instantiate(animalObjects[index - 2], new Vector3(animalTransform.position.x, animalTransform.position.y, 1.5f), animalTransform.rotation);
+
+                if (index == 3)
+                {
+                    spawnedObject.transform.position = _camera.transform.position + _upPos * -1.5f + _frontPos * 1.5f;
+                    spawnedObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                else
+                {
+                    spawnedObject.transform.position = _camera.transform.position + _upPos * -1.8f + _frontPos * 2f;
+                    spawnedObject.transform.rotation = Quaternion.Euler(0, 140, 0);
+                }
+
+                break;
+            case TypeFlag.ARObjectType.Dinosaurls:
+                var dinosaurlTransform = dinosaurlObjects[index - 2].transform;
+                spawnedObject = Instantiate(dinosaurlObjects[index - 2], new Vector3(dinosaurlTransform.position.x, dinosaurlTransform.position.y, 1.5f), dinosaurlTransform.rotation);
+                spawnedObject.transform.position = _camera.transform.position + _upPos * -1.8f + _frontPos * 5f;
+                spawnedObject.transform.rotation = Quaternion.Euler(0, 110, 0);
+                break;
+            case TypeFlag.ARObjectType.DinosaurlBaby:
+                var dinosaurlBabyTransform = dinosaurlBabyObjects[index].transform;
+                spawnedObject = Instantiate(dinosaurlBabyObjects[index], new Vector3(dinosaurlBabyTransform.position.x, dinosaurlBabyTransform.position.y, 1.5f), dinosaurlBabyTransform.rotation);
+                spawnedObject.transform.position = _camera.transform.position + _upPos * -1.8f + _frontPos * 2f;
+                break;
+        }
     }
 
     public void EnterNoAR(int index, TypeFlag.ARObjectType type)
@@ -67,7 +107,7 @@ public class PlaceARObject : MonoBehaviour
         _camera.transform.position = new Vector3(0, 0, 0);
         var _frontPos = _camera.transform.forward;
         var _upPos = _camera.transform.up;
-        Debug.Log("android");
+        
         switch (type)
         {
             case TypeFlag.ARObjectType.Animals:
@@ -95,6 +135,7 @@ public class PlaceARObject : MonoBehaviour
             case TypeFlag.ARObjectType.DinosaurlBaby:
                 var dinosaurlBabyTransform = dinosaurlBabyObjects[index].transform;
                 noARanimalObject = Instantiate(dinosaurlBabyObjects[index], new Vector3(dinosaurlBabyTransform.position.x, dinosaurlBabyTransform.position.y, 1.5f), dinosaurlBabyTransform.rotation);
+                noARanimalObject.transform.position = _camera.transform.position + _upPos * -1.8f + _frontPos * 2f;
                 break;
         }
     }

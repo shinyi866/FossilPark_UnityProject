@@ -15,7 +15,7 @@ namespace ARLocation
         {
             get
             {
-                return "v3.5.0";
+                return "v3.5.5";
             }
         }
 

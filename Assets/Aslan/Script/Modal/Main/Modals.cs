@@ -87,7 +87,7 @@ namespace View
 #if UNITY_IOS
             PlaceARObject.instance.EnterAR(index, type);
 #elif UNITY_ANDROID
-            PlaceARObject.instance.EnterNoAR(index, type);
+            PlaceARObject.instance.EnterARAndroid(index, type);
 #endif
         }
 

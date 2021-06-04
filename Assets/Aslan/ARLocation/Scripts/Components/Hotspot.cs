@@ -39,6 +39,9 @@ namespace ARLocation {
 
             [Tooltip("If 'PositionMode' is set to 'CameraPosition', how far from the camera the instantiated object should be placed.")]
             public float DistanceFromCamera = 3.0f;
+
+            [Tooltip("If true, use raw GPS data, instead of the filtered GPS data.")]
+            public bool UseRawLocation = true;
         }
 
         [Serializable]
@@ -96,7 +99,15 @@ namespace ARLocation {
         void Start()
         {
             var arLocationProvider = ARLocationProvider.Instance;
-            arLocationProvider.Provider.LocationUpdatedRaw += Provider_LocationUpdatedRaw;
+
+            if (HotspotSettings.UseRawLocation) 
+            {
+                arLocationProvider.Provider.LocationUpdatedRaw += Provider_LocationUpdated;
+            }
+            else
+            {
+                arLocationProvider.Provider.LocationUpdated += Provider_LocationUpdated;
+            }
 
             root = ARLocationManager.Instance.gameObject.transform;
 
@@ -109,7 +120,23 @@ namespace ARLocation {
 
             if (arLocationProvider.IsEnabled)
             {
-                Provider_LocationUpdatedRaw(arLocationProvider.CurrentLocation, arLocationProvider.LastLocation);
+                Provider_LocationUpdated(arLocationProvider.CurrentLocation, arLocationProvider.LastLocation);
+            }
+        }
+
+        public void OnDisable()
+        {
+            var arLocationProvider = ARLocationProvider.Instance;
+
+            if (!arLocationProvider) return;
+
+            if (HotspotSettings.UseRawLocation) 
+            {
+                arLocationProvider.Provider.LocationUpdatedRaw -= Provider_LocationUpdated;
+            }
+            else
+            {
+                arLocationProvider.Provider.LocationUpdated -= Provider_LocationUpdated;
             }
         }
 
@@ -123,7 +150,7 @@ namespace ARLocation {
         }
 
 
-        private void Provider_LocationUpdatedRaw(LocationReading currentLocation, LocationReading lastLocation)
+        private void Provider_LocationUpdated(LocationReading currentLocation, LocationReading lastLocation)
         {
             if (state.Activated) return;
 

@@ -1,5 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
+
+#if !ARGPS_USE_VUFORIA
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
+#endif
 
 namespace ARLocation.Utils
 {
@@ -12,6 +18,26 @@ namespace ARLocation.Utils
                 Application.platform == RuntimePlatform.IPhonePlayer
             );
         }
+
+        public static bool WebRequestResultIsError(UnityWebRequest request)
+        {
+#if UNITY_2020_3_OR_NEWER
+            return (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError);
+#else
+            return (request.isNetworkError || request.isHttpError);
+#endif
+        }
+
+#if !ARGPS_USE_VUFORIA
+        public static void RequestPlaneDetectionMode(ARPlaneManager manager, PlaneDetectionMode mode)
+        {
+#if UNITY_2020_3_OR_NEWER
+            manager.requestedDetectionMode = mode;
+#else
+            manager.detectionMode = mode;
+#endif
+        }
+#endif
 
         public static float FloatListAverage(List<float> list)
         {

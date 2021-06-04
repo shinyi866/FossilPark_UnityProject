@@ -434,6 +434,7 @@ namespace ARLocation
         public static PlaceAtLocation AddPlaceAtComponent(GameObject go, Location location, PlaceAtOptions options,
             bool useDebugMode = false)
         {
+            go.SetActive(false);
             var placeAt = go.AddComponent<PlaceAtLocation>();
 
             placeAt.PlacementOptions = options;
@@ -442,8 +443,18 @@ namespace ARLocation
             placeAt.LocationOptions.LocationInput.Location = location.Clone();
             placeAt.DebugMode = useDebugMode;
 
+            go.SetActive(true);
+
             return placeAt;
         }
+
+        public static GameObject CreatePlacedInstanceAtWorldPosition(GameObject go, Vector3 worldPosition, PlaceAtOptions options, out Location location, bool useDebugMode = false)
+        {
+            location = ARLocationProvider.Instance.GetLocationForWorldPosition(worldPosition);
+
+            return CreatePlacedInstance(go, location, options, useDebugMode);
+        }
+
 
         private void OnDestroy()
         {

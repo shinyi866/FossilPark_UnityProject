@@ -95,7 +95,7 @@ namespace GameMission
                     //MediaPlayerController.instance.CloseVideo();
                     MediaPlayerController.instance.LoadAndPlayVideoNotLoop(successVidePath);
                     SoundPlayerController.Instance.PauseBackgroundMusic();
-                    SoundPlayerController.Instance.FInishAllSoundEffect();
+                    SoundPlayerController.Instance.FinishAllSoundEffect();
                     finishGame = true;
                 }
             });

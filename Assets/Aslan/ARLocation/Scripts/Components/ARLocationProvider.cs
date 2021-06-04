@@ -115,6 +115,7 @@ namespace ARLocation
         public event CompassUpdateDelegate OnCompassUpdateDelegate;
         public event Action OnRestartDelegate;
 
+        private Vector3 cameraPositionAtLastUpdate;
         public override void Awake()
         {
             base.Awake();
@@ -134,7 +135,6 @@ namespace ARLocation
 #else
         Provider = new UnityLocationProvider();
 #endif
-
             Logger.LogFromMethod("ARLocationProvider", "Awake",": Using provider " + Provider.Name, DebugMode);
         }
 
@@ -211,6 +211,7 @@ namespace ARLocation
 
             Logger.LogFromMethod("ARLocationProvider", "Provider_LocationUpdated",$"New location {currentLocation}.", DebugMode);
 
+            cameraPositionAtLastUpdate = ARLocationManager.Instance.MainCamera.transform.position;
             OnLocationUpdatedDelegate?.Invoke(currentLocation, lastLocation);
             OnLocationUpdated?.Invoke(currentLocation.ToLocation());
         }
@@ -312,6 +313,16 @@ namespace ARLocation
         public void OnFailedEvent(LocationFailedDelegate del)
         {
             Provider.OnFail(del);
+        }
+
+        /// <summary>
+        /// Given a world position vector, return the corresponding geographical Location.
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        public Location GetLocationForWorldPosition(Vector3 position)
+        {
+            return Location.GetLocationForWorldPosition(gameObject.transform, cameraPositionAtLastUpdate, CurrentLocation.ToLocation(), position);
         }
     }
 }

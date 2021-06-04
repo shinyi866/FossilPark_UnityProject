@@ -41,6 +41,7 @@ namespace GameMission
         public void GameStart()
         {
             isGameStart = true;
+            SoundPlayerController.Instance.PauseBackgroundMusic();
             MediaPlayerController.instance.LoadAndPlay2DVideoNotLoop(videoPath);
         }
 
@@ -96,6 +97,7 @@ namespace GameMission
         {
             GameModals.instance.OpenAR(); // Stop AR Camera rotate
             MediaPlayerController.instance.Close2DPlane();
+            SoundPlayerController.Instance.PlayBackgroundMusic();
             CameraCtrl.instance.OcclusionForHuman();
 
             modal.SwitchConfirmButton(true);

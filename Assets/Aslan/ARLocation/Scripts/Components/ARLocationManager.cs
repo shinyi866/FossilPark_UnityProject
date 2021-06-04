@@ -90,6 +90,8 @@ namespace ARLocation
                 throw new NullReferenceException("[AR+GPS][ARLocationManager#Start]: Missing Camera. " +
                                                  "Either set the 'Camera' property to the AR Camera, or tag it as a 'MainCamera'.");
             }
+
+            transform.localPosition = new Vector3(0, 0, 0);
         }
 
         private void Start()

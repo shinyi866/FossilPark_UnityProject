@@ -83,6 +83,11 @@ namespace ARLocation
             return ToDVector3().toVector3();
         }
 
+        /// <summary>
+        /// Given a Location returns the corresponding (x, y, z) ECEF coordinates.
+        /// </summary>
+        /// <param name="l"></param>
+        /// <returns></returns>
         public static DVector3 LocationToEcef(Location l) {
             var rad = Math.PI / 180;
 
@@ -98,7 +103,13 @@ namespace ARLocation
 
             return new DVector3(x, y, z);
         }
-    
+
+        /// <summary>
+        /// Given a pair of locations, returns the local-plane ENU coordinates, considering the first location, l1, to be the center of the local plane.
+        /// </summary>
+        /// <param name="l1"></param>
+        /// <param name="l2"></param>
+        /// <returns></returns>
         public static DVector2 VectorFromToEcefEnu(Location l1, Location l2) {
             var rad = Math.PI / 180;
             var lat = l1.Latitude * rad; 
@@ -116,6 +127,80 @@ namespace ARLocation
             var n = -clon * slat * delta.x -slat * slon * delta.y+ clat*delta.z;
             
             return new DVector2(n, e);
+        }
+
+        /// <summary>
+        /// Given a center location, and the local-plane ENU coordinates of a second point, calculates the Location of the second point.
+        /// </summary>
+        /// <param name="center"></param>
+        /// <param name="e"></param>
+        /// <param name="n"></param>
+        /// <param name="u"></param>
+        /// <returns></returns>
+        public static Location LocationFromEnu(Location center, double e, double n, double u)
+        {
+            var lat = DegToRad(center.Latitude);
+            var lon = DegToRad(center.Longitude);
+
+            var slat = Math.Sin(lat);
+            var clat = Math.Cos(lat);
+            var slon = Math.Sin(lon);
+            var clon = Math.Cos(lon);
+
+            var dx = -e * slon - n * clon * slat + u * clon * clat;
+            var dy = e * clon - n * slon * slat + u * slon * clat;
+            var dz = n * clat + u * slat;
+
+            var centerEcef = LocationToEcef(center);
+
+            var pointEcef = centerEcef + new DVector3(dx, dy, dz);
+
+            var pointLocation = EcefToLocation(pointEcef);
+
+            return pointLocation;
+        }
+
+        /// <summary>
+        /// Converts from (x, y, z) ECEF coordinates to a wgs84 Location.
+        /// </summary>
+        /// <param name="ecef"></param>
+        /// <returns></returns>
+        public static Location EcefToLocation(DVector3 ecef)
+        {
+            var a = ARLocation.Config.EarthEquatorialRadiusInKM * 1000.0;
+            var e2 = ARLocation.Config.EarthFirstEccentricitySquared;
+            var b = a * Math.Sqrt(1 - e2);
+
+            var x = ecef.x;
+            var y = ecef.y;
+            var z = ecef.z;
+
+            var r = Math.Sqrt(x * x + y * y);
+            var E2 = (a * a - b * b) / (b * b);
+            var F = 54 * b * b * z * z;
+            var G = r * r + (1 - e2) * z * z - e2 * (a * a - b * b);
+            var c = (e2 * e2 * F * r * r) / (G * G * G);
+            var s = Math.Pow(1 + c + Math.Sqrt(c*c + 2*c), 1.0 / 3.0);
+            var P = F / (3 * Math.Pow(s + (1.0/s) +1, 2.0) * G * G);
+            var Q = Math.Sqrt(1 + 2 * e2 * e2 * P);
+            var r0 = -(P * e2 * r) / (1 + Q) + Math.Sqrt(((a * a * 0.5) * (1.0 + (1.0 / Q))) - ((P * (1 - e2) * z * z) / (Q * (1.0 + Q))) - (P*r*r*0.5));
+            var U = Math.Sqrt(Math.Pow(r - e2 * r0, 2) + z*z);
+            var V = Math.Sqrt(Math.Pow(r - e2 * r0, 2) + (1 - e2) * z * z);
+            var z0 = (b * b * z) / (a * V);
+
+            var h = U * (1 - ((b * b) / (a * V)));
+            var phi = Math.Atan((z + E2 * z0) / r);
+            var lambda = Math.Atan2(y, x);
+
+            var rad2deg = 180.0 / Math.PI;
+
+            return new Location()
+            {
+                Latitude = rad2deg * phi,
+                Longitude = rad2deg * lambda,
+                Altitude = h,
+                AltitudeMode = AltitudeMode.GroundRelative
+            };
         }
 
 
@@ -228,11 +313,41 @@ namespace ARLocation
             transform.position = GetGameObjectPositionForLocation(arLocationRoot, user, userLocation, objectLocation, heightIsRelative);
         }
 
+        /// <summary>
+        /// Calculates the wgs84 Location for a given world position vector.
+        /// </summary>
+        /// <param name="arLocationRoot">The ARLocationRoot game object transform.</param>
+        /// <param name="center">The position of the center (i.e., the device).</param>
+        /// <param name="userLocation">The wgs84 Location of the center/device.</param>
+        /// <param name="worldPosition">The world position.</param>
+        /// <returns></returns>
+        public static Location GetLocationForWorldPosition(Transform arLocationRoot, Vector3 center, Location userLocation, Vector3 worldPosition)
+        {
+            center = arLocationRoot.InverseTransformVector(center);
+            Vector3 position = arLocationRoot.InverseTransformVector(worldPosition);
+            var n = position.z - center.z;
+            var e = position.x - center.x;
+            var u = 0;
+            var loc = LocationFromEnu(userLocation, e, n, u);
+
+            return loc;
+        }
+
         public static bool Equal(Location a, Location b, double eps = 0.0000001)
         {
             return (Math.Abs(a.Latitude - b.Latitude) <= eps) &&
                 (Math.Abs(a.Longitude - b.Longitude) <= eps) &&
                 (Math.Abs(a.Altitude - b.Altitude) <= eps);
+        }
+
+        public static double RadToDeg(double rad)
+        {
+            return (180.0 * Math.PI) * rad;
+        }
+
+        public static double DegToRad(double deg)
+        {
+            return (Math.PI/ 180.0) * deg;
         }
     }
 }

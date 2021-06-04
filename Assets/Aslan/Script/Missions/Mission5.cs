@@ -25,7 +25,9 @@ namespace GameMission
             }
             else
             {
+#if UNITY_IOS
                 CameraCtrl.instance.OpenARPlaneManager(true);
+#endif
             }
 
             hisnpaPrefab.SetActive(true);

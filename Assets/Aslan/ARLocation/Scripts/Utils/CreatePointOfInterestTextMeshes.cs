@@ -98,7 +98,7 @@ namespace ARLocation.Utils
 
             yield return www.SendWebRequest();
 
-            if (www.isNetworkError || www.isHttpError)
+            if (Utils.Misc.WebRequestResultIsError(www))
             {
                 Debug.Log(www.error);
                 Debug.Log(GetOverpassRequestURL(openStreetMapOptions.overPassRequestData));

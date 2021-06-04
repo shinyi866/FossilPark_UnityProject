@@ -59,7 +59,7 @@ public class SoundPlayerController : Singleton<SoundPlayerController>
         soundEffectAudio2.loop = false;
     }
 
-    public void FInishAllSoundEffect()
+    public void FinishAllSoundEffect()
     {
         soundEffectAudio.clip = soundData.SoundItems.finishAll;
         soundEffectAudio.Play();
