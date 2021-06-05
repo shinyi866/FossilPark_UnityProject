@@ -63,8 +63,8 @@ public class PlaceARObject : MonoBehaviour
 
     public void EnterARAndroid(int index, TypeFlag.ARObjectType type)
     {
-        _camera = CameraCtrl.instance.GetCurrentCamera();
-        _camera.transform.position = new Vector3(0, 0, 0);
+        _camera = CameraCtrl.instance.ARcamera.GetComponent<Camera>();
+        //_camera.transform.position = new Vector3(0, 0, 0);
 
         var _frontPos = _camera.transform.forward;
         var _upPos = _camera.transform.up;
