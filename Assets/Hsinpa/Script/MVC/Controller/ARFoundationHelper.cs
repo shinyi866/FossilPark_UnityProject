@@ -11,14 +11,14 @@ namespace Hsinpa.Ctrl
         private ARSession _arSession;
         public ARSession arSession => _arSession;
 
-        private ARPlaneManager _arPlaneManager;
-        public ARPlaneManager arPlaneManager => _arPlaneManager;
+        //private ARPlaneManager _arPlaneManager;
+        //public ARPlaneManager arPlaneManager => _arPlaneManager;
 
         private Camera _arCamera;
         public Camera arCamera => _arCamera;
 
-        private ARRaycastManager _arRaycast;
-        public ARRaycastManager arRaycast => _arRaycast;
+        //private ARRaycastManager _arRaycast;
+        //public ARRaycastManager arRaycast => _arRaycast;
 
 
         //private ARPoseDriver _arPoseDriver;
@@ -36,7 +36,7 @@ namespace Hsinpa.Ctrl
         public void Awake()
         {
             _arSession = GameObject.FindObjectOfType<ARSession>();
-            _arPlaneManager = GameObject.FindObjectOfType<ARPlaneManager>();
+            //_arPlaneManager = GameObject.FindObjectOfType<ARPlaneManager>();
 
             var aRCameraManager = GameObject.FindObjectOfType<ARCameraManager>();
 
@@ -45,10 +45,11 @@ namespace Hsinpa.Ctrl
             else
                 _arCamera = aRCameraManager.GetComponent<Camera>();
 
-            _arRaycast = _arPlaneManager.GetComponent<ARRaycastManager>();
-
+            //_arRaycast = _arPlaneManager.GetComponent<ARRaycastManager>();
+            /*
             if (_arPlaneManager != null)
                 _arPlaneManager.planesChanged += OnARPlaneChange;
+                */
         }
 
         private void OnARPlaneChange(ARPlanesChangedEventArgs p_arPlanesChangedEventArgs)
@@ -84,8 +85,8 @@ namespace Hsinpa.Ctrl
 
             }
 
-            if (_arPlaneManager)
-                _arPlaneManager.enabled = p_active;
+            //if (_arPlaneManager)
+            //    _arPlaneManager.enabled = p_active;
         }
 
         public void SetARCameraPos(Vector3 position, Quaternion quaternion)

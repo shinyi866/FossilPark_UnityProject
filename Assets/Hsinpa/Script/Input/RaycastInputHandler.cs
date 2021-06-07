@@ -170,6 +170,7 @@ namespace Hsinpa.GameInput
                 _inputStruct.gameObject = anchorHits[0].collider.gameObject;
             }
 #else
+            /*
             arRaycastResults.Clear();
             bool hasHit = arHelper.arRaycast.Raycast(UnityEngine.Input.mousePosition, arRaycastResults, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon);
             if (hasHit) {
@@ -177,6 +178,7 @@ namespace Hsinpa.GameInput
                 _inputStruct.raycastPosition = arRaycastResults[0].pose.position;
                 _inputStruct.gameObject = arRaycastResults[0].trackable.gameObject;
             }
+            */
 #endif
 
             return _inputStruct;

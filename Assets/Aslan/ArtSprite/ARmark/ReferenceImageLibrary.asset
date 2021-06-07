@@ -16,36 +16,6 @@ MonoBehaviour:
   m_GuidHigh: 14216230006748106655
   m_Images:
   - m_SerializedGuid:
-      m_GuidLow: 5649882441207419699
-      m_GuidHigh: 7201238260031914415
-    m_SerializedTextureGuid:
-      m_GuidLow: 9529093621765764808
-      m_GuidHigh: 15746274341084918987
-    m_Size: {x: 0.3, y: 0.3}
-    m_SpecifySize: 1
-    m_Name: plant
-    m_Texture: {fileID: 0}
-  - m_SerializedGuid:
-      m_GuidLow: 4810081055742671644
-      m_GuidHigh: 13003888429786413500
-    m_SerializedTextureGuid:
-      m_GuidLow: 9524738819740052593
-      m_GuidHigh: 7917641147575549320
-    m_Size: {x: 0.3, y: 0.30014396}
-    m_SpecifySize: 1
-    m_Name: meat
-    m_Texture: {fileID: 0}
-  - m_SerializedGuid:
-      m_GuidLow: 4646285937088079282
-      m_GuidHigh: 11233822407752070564
-    m_SerializedTextureGuid:
-      m_GuidLow: 1452896732683732744
-      m_GuidHigh: 18148152096502987162
-    m_Size: {x: 0.3, y: 0.3}
-    m_SpecifySize: 1
-    m_Name: plant2
-    m_Texture: {fileID: 0}
-  - m_SerializedGuid:
       m_GuidLow: 5586923334647981568
       m_GuidHigh: 3065071419336262808
     m_SerializedTextureGuid:

@@ -25,7 +25,7 @@ namespace GameMission
         private bool isGameStart;
         private bool placeClock;
         private ARGameModal modal;
-        private string videoPath = "Video/entrance.mp4";
+        private string videoPath = "Video/clock_360.mp4";
 
         private string crocString = "臺灣古鱷\n臺南左鎮菜寮溪三重溪的河床露頭所發現的「臺灣古鱷」，具有較長的嘴吻，擁有圓錐型的同型齒。化石陳列於園區第四館。";
         private string deerString = "台灣梅花鹿\n梅花鹿一般棲息於針括混合林，山地草原，和森林邊緣附近。化石陳列於園區第四館。";

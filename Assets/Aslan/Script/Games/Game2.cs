@@ -60,7 +60,6 @@ namespace GameMission
 
         private void UnsupportAR()
         {
-            Debug.Log("unsupport AR");
             movieObject.SetActive(true);
             modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game2);

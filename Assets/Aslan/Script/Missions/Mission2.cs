@@ -23,7 +23,10 @@ namespace GameMission
             if (isARsupport)
                 GameModals.instance.OpenAR();
             else
+            {
+                MediaPlayerController.instance.OpenSphereVideo(true);
                 Modals.instance.CloseAllModal();
+            }                
         }
 
         public override void StartGame()

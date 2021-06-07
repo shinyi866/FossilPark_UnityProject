@@ -99,10 +99,4 @@ public class MediaPlayerController : MonoBehaviour
     {
         planeVideo.SetActive(false);
     }
-
-    private void Start()
-    {
-        if (!MainApp.Instance.isARsupport)
-            sphereVideo.SetActive(true);
-    }
 }
