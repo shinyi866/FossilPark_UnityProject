@@ -5,15 +5,15 @@ using RenderHeads.Media.AVProVideo;
 
 public class MediaPlayerController : MonoBehaviour
 {
-    //[SerializeField]
+    [SerializeField]
     private MediaPlayer _mediaPlayer = null;
-    //[SerializeField]
-    //[SerializeField]
+
     private GameObject video2D;
     private GameObject video3D;
+    private GameObject currentVideo;
+    private bool isSetUp;
 
     public GameObject videoObject;
-    private GameObject currentVideo;
 
     private static MediaPlayerController _instance;
 
@@ -30,8 +30,22 @@ public class MediaPlayerController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Application.lowMemory += OnLowMemory;
+    }
+
+    private void OnLowMemory()
+    {
+        // release all cached textures
+        _mediaPlayer = null;
+        currentVideo = null;
+        Resources.UnloadUnusedAssets();
+    }
+
     public void SetUp()
     {
+        isSetUp = true;
         currentVideo = Instantiate(videoObject);
         video3D = currentVideo.transform.GetChild(0).gameObject;
         video2D = currentVideo.transform.GetChild(1).gameObject;
@@ -79,10 +93,14 @@ public class MediaPlayerController : MonoBehaviour
 
     public void DestroyVideo()
     {
-        _mediaPlayer.Control.CloseMedia();
+        if (isSetUp)
+        {
+            _mediaPlayer.Control.CloseMedia();
+            _mediaPlayer = null;
 
-        if(currentVideo != null)
             Destroy(currentVideo);
+        }
+            
         //SwitchToVideo360(false);
     }
 

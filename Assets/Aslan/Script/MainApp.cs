@@ -33,7 +33,8 @@ public class MainApp : Singleton<MainApp>
     private void Start()
     {
         var modal = Modals.instance.OpenModal<MainModal>();
-        
+
+        //Application.lowMemory += OnLowMemory;
         playerGuide = PlayerPrefs.GetInt("guide"); // 0: strat guide view, 1: main view
 
         if (playerGuide != 1)
@@ -41,6 +42,11 @@ public class MainApp : Singleton<MainApp>
         else
             modal.StarMainView();
             
+    }
+
+    private void OnLowMemory()
+    {
+        Resources.UnloadUnusedAssets();
     }
 
     private IEnumerator CheckARSupport()
