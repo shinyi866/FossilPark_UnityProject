@@ -65,7 +65,7 @@ namespace GameMission
             if (currentGame != null)
                 currentGame.OpenGame(false);
 
-            MediaPlayerController.instance.CloseVideo();
+            //MediaPlayerController.instance.CloseVideo();
             GameModals.instance.CloseAllModal();
             //GameModals.instance.CloseModal();
             GameModals.instance.CloseAR();

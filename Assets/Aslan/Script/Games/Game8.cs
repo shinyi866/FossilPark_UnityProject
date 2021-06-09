@@ -50,6 +50,7 @@ namespace GameMission
 
             if (!isARsupport)
             {
+                MediaPlayerController.instance.SetUp();
                 MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
                 Object.transform.position = new Vector3(0,-0.6f,0);
             }
@@ -251,10 +252,10 @@ namespace GameMission
                         DinosaursEat(dotResult, 5f, 4.99f, 4f, 0.04f);
                         break;
                     case TypeFlag.DinosaurlsType.TRex:
-                        DinosaursEat(dotResult, 2.6f, 2.595f, 2.3f, 0.3f);
+                        DinosaursEat(dotResult, 2.6f, 2.595f, 1f, 0.3f);
                         break;
                     case TypeFlag.DinosaurlsType.Triceratop:
-                        DinosaursEat(dotResult, 2.4f, 2.395f, 2.2f, 0.05f);
+                        DinosaursEat(dotResult, 2.68f, 2.65f, 1f, 0.05f);
                         break;
                 }
                 Debug.Log("TestMode ");
@@ -275,10 +276,10 @@ namespace GameMission
                             DinosaursEat(dotResult, 5f, 4.99f, 4f, 0.04f);
                             break;
                         case TypeFlag.DinosaurlsType.TRex:
-                            DinosaursEat(dotResult, 2.6f, 2.595f, 2.3f, 0.3f);
+                            DinosaursEat(dotResult, 2.6f, 2.595f, 1f, 0.3f);
                             break;
                         case TypeFlag.DinosaurlsType.Triceratop:
-                            DinosaursEat(dotResult, 2.4f, 2.395f, 2.2f, 0.05f);
+                            DinosaursEat(dotResult, 2.68f, 2.65f, 1f, 0.05f);
                             break;
                     }                    
                 }

@@ -72,7 +72,7 @@ namespace View
                 Modals.instance.CloseModal();
                 Modals.instance.CloseARInMain();
                 Modals.instance.CloseARInGame();
-                MediaPlayerController.instance.StopVideo();
+                MediaPlayerController.instance.DestroyVideo();
                 iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon
                 CameraCtrl.instance.DisableOcclusionManager();
 

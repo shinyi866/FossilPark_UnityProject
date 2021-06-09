@@ -120,7 +120,7 @@ namespace View
             currentModal.Show(true);
 
             CameraCtrl.instance.SwitchToARCamera(false);
-            MediaPlayerController.instance.CloseVideo();
+            //MediaPlayerController.instance.CloseVideo();
             MainModal mainModal = _instance.GetModel<MainModal>();
             mainModal.Show(true);
 
@@ -132,7 +132,7 @@ namespace View
             foreach (Modal modal in modals) { modal.Show(false); }
 
             CameraCtrl.instance.SwitchToARCamera(false);
-            MediaPlayerController.instance.CloseVideo();
+            //MediaPlayerController.instance.CloseVideo();
             MainModal mainModal = _instance.GetModel<MainModal>();
             mainModal.Show(true);
 

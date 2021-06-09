@@ -14,6 +14,8 @@ namespace GameMission
 
         public override void EnterGame()
         {
+            MediaPlayerController.instance.SetUp();
+
             game = Games.instance.OpenGame<Game4>();
             game.Init();
             game.gameOverEvent += EndGame;
@@ -33,7 +35,7 @@ namespace GameMission
             modal.GuideConfirmButtonTwo.onClick.AddListener(() =>
             {
                 Games.instance.ClosGame();
-                MediaPlayerController.instance.CloseVideo();
+                //MediaPlayerController.instance.CloseVideo();
                 SoundPlayerController.Instance.PlayBackgroundMusic();
                 GameModals.instance.CloseModal();
 

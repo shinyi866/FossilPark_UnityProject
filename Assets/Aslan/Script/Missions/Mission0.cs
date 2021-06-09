@@ -15,9 +15,12 @@ namespace GameMission
         }
 
         public override void StartGame()
-        {            
+        {
+            if(!MainApp.Instance.isARsupport)
+                MediaPlayerController.instance.SetUp();
+
             GameModals.instance.OpenAR();
-            Debug.Log("0");
+            
             game = Games.instance.OpenGame<Game0>();
             //game.gameOverEvent += EndGame;
             game.Init();

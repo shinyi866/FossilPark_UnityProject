@@ -5,12 +5,15 @@ using RenderHeads.Media.AVProVideo;
 
 public class MediaPlayerController : MonoBehaviour
 {
-    [SerializeField]
+    //[SerializeField]
     private MediaPlayer _mediaPlayer = null;
-    [SerializeField]
-    private GameObject sphereVideo;
-    [SerializeField]
-    private GameObject planeVideo;
+    //[SerializeField]
+    //[SerializeField]
+    private GameObject video2D;
+    private GameObject video3D;
+
+    public GameObject videoObject;
+    private GameObject currentVideo;
 
     private static MediaPlayerController _instance;
 
@@ -27,24 +30,31 @@ public class MediaPlayerController : MonoBehaviour
         }
     }
 
+    public void SetUp()
+    {
+        currentVideo = Instantiate(videoObject);
+        video3D = currentVideo.transform.GetChild(0).gameObject;
+        video2D = currentVideo.transform.GetChild(1).gameObject;
+        _mediaPlayer = currentVideo.transform.GetChild(2).gameObject.GetComponent<MediaPlayer>();
+    }
+
     public void LoadAndPlayVideo(string filePath)
     {
-        OpenSphereVideo(true);
+        SwitchToVideo360(true);
         _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, true);
         _mediaPlayer.Loop = true;
     }
 
     public void LoadAndPlayVideoNotLoop(string filePath)
     {
-        OpenSphereVideo(true);
+        SwitchToVideo360(true);
         _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, true);
         _mediaPlayer.Loop = false;
     }
 
     public void LoadAndPlay2DVideoNotLoop(string filePath)
     {        
-        SwitchTo2DPlane(true);
-        OpenSphereVideo(false);
+        SwitchToVideo360(false);
 
         _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, true);
         _mediaPlayer.Loop = false;
@@ -52,7 +62,7 @@ public class MediaPlayerController : MonoBehaviour
 
     public void LoadVideo(string filePath)
     {
-        OpenSphereVideo(true);
+        SwitchToVideo360(true);
         _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, false);
         _mediaPlayer.Loop = false;
     }
@@ -67,36 +77,32 @@ public class MediaPlayerController : MonoBehaviour
         _mediaPlayer.Control.CloseMedia();
     }
 
-    public void CloseVideo()
+    public void DestroyVideo()
     {
         _mediaPlayer.Control.CloseMedia();
-        OpenSphereVideo(false);
+
+        if(currentVideo != null)
+            Destroy(currentVideo);
+        //SwitchToVideo360(false);
     }
 
-    //public void OpenVideo()
-    //{
-        //_mediaPlayer.VideoOpened();
-    //}
-
-    public void OpenSphereVideo(bool isOpen)
+    public void SwitchToVideo360(bool isOpen)
     {
-        sphereVideo.SetActive(isOpen);
-        //meshRenderer.enabled = isOpen;
+        video3D.SetActive(isOpen);
+        video2D.SetActive(!isOpen);
     }
 
     public bool isVideoFinish()
-    {
-        return _mediaPlayer.Control.IsFinished();
+    {        
+        if(_mediaPlayer != null)
+            return _mediaPlayer.Control.IsFinished();
+        else
+            return false;
     }
     
-    public void SwitchTo2DPlane(bool isOpen)
+    public void CloseVideo()
     {
-        sphereVideo.SetActive(!isOpen);
-        planeVideo.SetActive(isOpen);
-    }
-    
-    public void Close2DPlane()
-    {
-        planeVideo.SetActive(false);
+        video2D.SetActive(false);
+        video3D.SetActive(false);
     }
 }

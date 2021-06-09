@@ -24,7 +24,8 @@ namespace GameMission
                 GameModals.instance.OpenAR();
             else
             {
-                MediaPlayerController.instance.OpenSphereVideo(true);
+                MediaPlayerController.instance.SetUp();
+                //MediaPlayerController.instance.SwitchToVideo360(true);
                 Modals.instance.CloseAllModal();
             }                
         }
@@ -44,7 +45,7 @@ namespace GameMission
             model.ConfirmButton.onClick.AddListener(() =>
             {
                 Games.instance.ClosGame();
-                MediaPlayerController.instance.CloseVideo();
+                //MediaPlayerController.instance.CloseVideo();
                 GameModals.instance.CloseModal();
 
                 if (isARsupport)

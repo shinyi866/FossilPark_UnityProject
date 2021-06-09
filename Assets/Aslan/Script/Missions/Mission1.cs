@@ -17,6 +17,8 @@ namespace GameMission
 
         public override void StartGame()
         {
+            MediaPlayerController.instance.SetUp();
+
             game = Games.instance.OpenGame<Game1>();
             //game.gameOverEvent += EndGame;
             game.Init();
@@ -24,15 +26,7 @@ namespace GameMission
         }
 
         public void EndGame()
-        {/*
-            game.gameOverEvent -= EndGame;
-
-            GameModals.instance.CloseModal();
-            CameraCtrl.instance.DisableOcclusionManager();
-
-            var modal = Modals.instance.OpenModal<ARModal>();
-            modal.ShowView(false);
-            */
+        {
         }
     }
 }

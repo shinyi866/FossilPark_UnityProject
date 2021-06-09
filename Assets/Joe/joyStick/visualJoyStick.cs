@@ -15,13 +15,14 @@ public class visualJoyStick : MonoBehaviour
 	[SerializeField] private bool IsFloatJoystick;
 	private bool IsTouch;
 	public Vector2 joyStickVec;
-	public Transform cam;
+	private Transform cam;
 	Vector3 v3;
 	public float speed;
 	// Use this for initialization
 
 	void Start()
 	{
+		cam = CameraCtrl.instance.GetCurrentCamera().transform;
 		joyStickVec = Vector2.zero;
 		RectTransform = GetComponent<RectTransform>();
 		Width = RectTransform.sizeDelta.x;

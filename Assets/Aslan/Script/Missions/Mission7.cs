@@ -22,6 +22,7 @@ namespace GameMission
             //Ar support for hsinpa check
             if (!MainApp.Instance.isARsupport)
             {
+                MediaPlayerController.instance.SetUp();
                 MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
             }
             else

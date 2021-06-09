@@ -14,8 +14,7 @@ namespace GameMission
 
         public override void EnterGame()
         {
-            if (!MainApp.Instance.isARsupport)
-                MediaPlayerController.instance.OpenSphereVideo(true);
+                
         }
 
         public override void StartGame()

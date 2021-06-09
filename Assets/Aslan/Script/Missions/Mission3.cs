@@ -12,6 +12,9 @@ namespace GameMission
 
         public override void EnterGame()
         {
+            if (!MainApp.Instance.isARsupport)
+                MediaPlayerController.instance.SetUp();
+
             GameModals.instance.OpenAR();
 
             game = Games.instance.OpenGame<Game3>();

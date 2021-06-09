@@ -96,7 +96,12 @@ namespace GameMission
         private void ShowARObject()
         {
             GameModals.instance.OpenAR(); // Stop AR Camera rotate
-            MediaPlayerController.instance.Close2DPlane();
+
+            if (MainApp.Instance.isARsupport)
+                MediaPlayerController.instance.CloseVideo();
+            else
+                MediaPlayerController.instance.SwitchToVideo360(true);
+
             SoundPlayerController.Instance.PlayBackgroundMusic();
             CameraCtrl.instance.OcclusionForHuman();
 
