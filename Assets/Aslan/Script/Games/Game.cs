@@ -16,6 +16,11 @@ namespace GameMission
                 Object.SetActive(isOpen);
             }
         }
+
+        public GameObject GetGameObject()
+        {
+            return Object;
+        }
     }
 
 }

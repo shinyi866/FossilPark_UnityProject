@@ -1,6 +1,6 @@
 missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleButton,guideID,gameGuide,guideButton,gameNotify,gamePrompt,endMessage,pictureNotify,animalDialogPicture,animalNotifyPicture,guidePicture1,guidePicture2,endPicutre,endPicutre2
 0,"發現蹤跡,附近似乎有逆走鐘，趕緊找找看吧！",前方就是逆走鐘！快去跟他拍照吧！,體驗開始,請將圓形對準正中央的逆走鐘後按下,逆走鐘,前往拍照,0,請將圓形對準正中央的逆走鐘後按下,前往拍照,請將下方圓圈對齊台上的大逆走鐘後按下,這裡沒有逆走鐘歐！再找找看吧！,,,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100_1.png,Assets/Aslan/ArtSprite/GameUI/00/example.png,,
-1,"發現蹤跡,附近似乎有時光機器，趕緊找找看吧！",這就是時光機器！快上去看看！,帶回管理員,這就是時光機器！快上去看看！,"時光機器,這就是時光機器！快上去看看！",前往觀看,0,KiKi KoKo 得到了恐龍蛋化石,,觀看動畫影片,四處尋找看看有逆走中的建築在哪？它就是時光機喔！,"糟糕！時光機故障了！
+1,"發現蹤跡,附近似乎有時光機器，趕緊找找看吧！",這就是時光機器！快上去看看！,帶回管理員,這就是時光機器！快上去看看！,"時光機器,這就是時光機器！快上去看看！",前往觀看,0,KiKi KoKo 得到了恐龍蛋化石,,觀看動畫影片,"下方的照片就是逆走鐘的建築喔！, 四處尋找看看有逆走鐘的建築在哪？它就是時光機喔！","糟糕！時光機故障了！
 剛剛還在上面的六位管理員不見了！
 我們要找到管理時鐘的管理員們，修復逆走鐘，就可以再次使用時間回朔的功能了！
 我們去尋找他們，並使用相機拍攝他們，讓他們重新啟動時光機吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/01/time.png,Assets/Aslan/ArtSprite/GameUI/01/time.png,Assets/Aslan/ArtSprite/GameUI/01/01.png,Assets/Aslan/ArtSprite/GameUI/01/pic.png,

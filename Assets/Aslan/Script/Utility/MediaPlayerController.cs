@@ -38,8 +38,8 @@ public class MediaPlayerController : MonoBehaviour
     private void OnLowMemory()
     {
         // release all cached textures
-        _mediaPlayer = null;
-        currentVideo = null;
+        //_mediaPlayer = null;
+        //currentVideo = null;
         Resources.UnloadUnusedAssets();
     }
 
@@ -99,6 +99,7 @@ public class MediaPlayerController : MonoBehaviour
             _mediaPlayer = null;
 
             Destroy(currentVideo);
+            isSetUp = false;
         }
             
         //SwitchToVideo360(false);

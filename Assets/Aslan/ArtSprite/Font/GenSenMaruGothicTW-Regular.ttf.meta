@@ -11,7 +11,8 @@ TrueTypeFontImporter:
   fontName: GenSenMaruGothic TW TTF
   fontNames:
   - GenSenMaruGothic TW TTF
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 60586c0bbe8f74999baa2608e9fa618a, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

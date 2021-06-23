@@ -106,7 +106,7 @@ namespace GameMission
             CameraCtrl.instance.OcclusionForHuman();
 
             modal.SwitchConfirmButton(true);
-            modal.text.text = data.m_Data[missionIndex].gamePrompt[0];
+            modal.text.text = data.m_Data[missionIndex].gamePrompt[1];
             modal.gamePromptPanel.image.sprite = data.m_Data[missionIndex].endPicutre;
             modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt1);            
             modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
