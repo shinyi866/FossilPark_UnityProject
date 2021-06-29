@@ -86,7 +86,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 1.5
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -95,7 +95,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.70013225
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -107,9 +107,9 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.45506868, g: 0.14509805, b: 0.78431374, a: 1}
-      key1: {r: 0.19215687, g: 1, b: 0.9245283, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.98382556, g: 1, b: 0.0047169924, a: 1}
+      key1: {r: 0.16509432, g: 1, b: 0.9229942, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -125,7 +125,7 @@ TrailRenderer:
       ctime7: 0
       atime0: 0
       atime1: 65535
-      atime2: 0
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
@@ -135,12 +135,12 @@ TrailRenderer:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
-    numCapVertices: 0
+    numCapVertices: 1
     alignment: 0
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!1 &8053340585826155047

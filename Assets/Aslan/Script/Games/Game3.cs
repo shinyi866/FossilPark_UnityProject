@@ -15,6 +15,7 @@ namespace GameMission
         public GameObject handBall;
         public GameObject monkey;
         public GameObject monkeyScene;
+        public GameObject alertObject;
 
         public System.Action<bool> gameOverEvent;
         private int missionIndex = 3;
@@ -24,7 +25,6 @@ namespace GameMission
         private PlayableDirector playableDirector;
 
         private bool isGameStart;
-        private bool isUnARStart;
         private bool isARStart;
         private bool isThrowing;
         private bool isCreateHandBall;
@@ -32,6 +32,7 @@ namespace GameMission
         private int count;
         private int currentFruitIndex;
         private float time = 3;
+        private float alertTime = 1;
         private GameObject _ball;
         private GameObject currentBall;
 
@@ -74,7 +75,6 @@ namespace GameMission
             }
             else
             {
-                isUnARStart = true;
                 UnsupportAR();
             }
         }
@@ -85,6 +85,12 @@ namespace GameMission
             {
                 Compass.Instance.SetUp(Object, 83);
                 time -= Time.deltaTime;
+            }
+
+            if(time < 0 && alertTime > 0)
+            {
+                alertTime -= Time.deltaTime;
+                alertObject.transform.position = new Vector3(monkey.transform.position.x, alertObject.transform.position.y, monkey.transform.position.z);
             }
         }
 

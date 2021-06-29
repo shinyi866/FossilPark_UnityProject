@@ -13,10 +13,11 @@ namespace GameMission
         public Text txt1;
         public Text txt3;
         public ARTrackedImageManager ARTrackedImage;
+        public GameObject alertObject;
         public GameObject[] foodGameObject; // 0:plant2, 1:plant, 2:meat
         public GameObject[] foodinMouth;
         public GameObject[] dinosaurlScenes; // 0:brachiosaurus, 1:triceratop 2:TRex
-        public GameObject[] dinosaurs; // 0:brachiosaurus, 1:triceratop 2:TRex
+        public GameObject[] dinosaurs; // 0:brachiosaurus, 1:triceratop 2:TRex        
         public Transform[] dinosaursTransform;
 
         public static bool isEat;
@@ -33,6 +34,7 @@ namespace GameMission
         private int currentIndex = 0;
         private double time = 3;
         private float ccidWeight = 0.0f;
+        private float alertTime = 1;
         private bool isGameStart;
         private bool isARsupport;
 
@@ -99,6 +101,12 @@ namespace GameMission
                     faceDir.y += 90;
                     Object.transform.rotation = Quaternion.Euler(faceDir);
                 }
+            }
+
+            if (time < 0 && alertTime > 0 && isARsupport)
+            {
+                alertTime -= Time.deltaTime;
+                alertObject.transform.position = new Vector3(dinosaurs[2].transform.position.x, alertObject.transform.position.y, dinosaurs[2].transform.position.z);
             }
         }
 
