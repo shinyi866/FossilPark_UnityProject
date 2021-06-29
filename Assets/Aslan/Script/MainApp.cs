@@ -36,17 +36,13 @@ public class MainApp : Singleton<MainApp>
 
         //Application.lowMemory += OnLowMemory;
         playerGuide = PlayerPrefs.GetInt("guide"); // 0: strat guide view, 1: main view
-
+        modal.StarIntroView();
+        /*
         if (playerGuide != 1)
             modal.StarIntroView();
         else
             modal.StarMainView();
-            
-    }
-
-    private void OnLowMemory()
-    {
-        Resources.UnloadUnusedAssets();
+           */
     }
 
     private IEnumerator CheckARSupport()

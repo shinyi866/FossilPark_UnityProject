@@ -64,18 +64,17 @@ namespace GameMission
         {
             isGameStart = true;
             monkey.SetActive(true);
+            GameModals.instance.OpenModal<ARGameModal>();
+            gameModal.ShowModal(missionIndex, TypeFlag.ARGameType.Game3);
 
             if (MainApp.Instance.isARsupport)
             {
                 isARStart = true;
-                GameModals.instance.OpenModal<ARGameModal>();
-                gameModal.ShowModal(missionIndex, TypeFlag.ARGameType.Game3);
                 SetBasketPosition();
             }
             else
             {
                 isUnARStart = true;
-
                 UnsupportAR();
             }
         }

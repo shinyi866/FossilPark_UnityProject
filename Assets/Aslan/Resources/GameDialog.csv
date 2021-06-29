@@ -1,40 +1,40 @@
 missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleButton,guideID,gameGuide,guideButton,gameNotify,gamePrompt,endMessage,pictureNotify,animalDialogPicture,animalNotifyPicture,guidePicture1,guidePicture2,endPicutre,endPicutre2
-0,"發現蹤跡,附近似乎有逆走鐘，趕緊找找看吧！",前方就是逆走鐘！快去跟他拍照吧！,體驗開始,請將圓形對準正中央的逆走鐘後按下,逆走鐘,前往拍照,0,請將圓形對準正中央的逆走鐘後按下,前往拍照,請將下方圓圈對齊台上的大逆走鐘後按下,這裡沒有逆走鐘歐！再找找看吧！,,,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100_1.png,Assets/Aslan/ArtSprite/GameUI/00/example.png,,
+0,"發現蹤跡,附近似乎有逆走鐘，趕緊找找看吧！",前方就是逆走鐘！快去跟它拍照吧！,體驗開始,請將圓形對準正中央的逆走鐘後按下,逆走鐘,前往拍照,0,請將圓形對準正中央的逆走鐘後按下,前往拍照,請將下方圓圈對齊台上的大逆走鐘後按下,這裡沒有逆走鐘歐！再找找看吧！,,,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100_1.png,Assets/Aslan/ArtSprite/GameUI/00/example.png,,
 1,"發現蹤跡,附近似乎有時光機器，趕緊找找看吧！",這就是時光機器！快上去看看！,帶回管理員,這就是時光機器！快上去看看！,"時光機器,這就是時光機器！快上去看看！",前往觀看,0,KiKi KoKo 得到了恐龍蛋化石,,觀看動畫影片,"下方的照片就是逆走鐘的建築喔！, 四處尋找看看有逆走鐘的建築在哪？它就是時光機喔！","糟糕！時光機故障了！
 剛剛還在上面的六位管理員不見了！
 我們要找到管理時鐘的管理員們，修復逆走鐘，就可以再次使用時間回朔的功能了！
 我們去尋找他們，並使用相機拍攝他們，讓他們重新啟動時光機吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/01/time.png,Assets/Aslan/ArtSprite/GameUI/01/time.png,Assets/Aslan/ArtSprite/GameUI/01/01.png,Assets/Aslan/ArtSprite/GameUI/01/pic.png,
 2,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
-趕緊找找看他們在哪裡吧！",帶回管理員,"你好我是時間管理員的梅花鹿 
+趕緊找找看他們在哪裡吧！",帶回管理員,"您好我是時間管理員的梅花鹿 
 這裡是左鎮菜寮溪溪床！
 當時陳春木先生在該溪床撿到奇石！
 經由早坂一郎教授的檢驗下為哺乳類化石，因而開啟了 菜寮溪化石採集的開端。","化石在哪裡,既然來到此處，仔細觀察溪床。
-試著找找看三個化石吧！",尋找化石,2,"觀察溪床，點按你找到的化石，即可完成蒐集！,點按化石,成功採集",開始,觀察溪床，蒐集三個化石！,"成功採集！你採集到的是鹿角化石,成功採集！你採集到的是犀牛左下顎,成功採集！你採集到的是劍齒象臼齒","太棒了！
+試著找找看三個化石吧！",尋找化石,2,"觀察溪床，點按您找到的化石，即可完成蒐集！,點按化石,成功採集",開始,觀察溪床，蒐集三個化石！,"成功採集！您採集到的是鹿角化石,成功採集！您採集到的是犀牛臼齒,成功採集！您採集到的是劍齒象臼齒","太棒了！
 近幾年台灣各地陸續發現哺乳類化石，在菜寮溪地區出土的種類和數目最多。
 包括古象、野牛、梅花鹿、犀牛、貝類等，也有古鹿的化石歐！
 使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/01Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Sika_deer.png,Assets/Aslan/ArtSprite/GameUI/02/example1.png,Assets/Aslan/ArtSprite/GameUI/02/example2.png,,
 3,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是金絲猴！
-距今90-45萬年前我們遷徙到台灣尋找新天地，但面臨 台灣獼猴強大的壓力，現在很難找到食物，你可以幫幫我嗎？","果子蒐集趣,幫助金絲猴收集果子！
+距今90-45萬年前我們遷徙到台灣尋找新天地，但面臨 台灣獼猴強大的生存競爭壓力，現在很難找到食物，您可以幫幫我嗎？","果子蒐集趣,幫助金絲猴收集果子！
 接下金絲猴摘下的果子吧！",蒐集果子,1,左右移動，可以接下金絲猴丟下的果子！,開始,左右移動時請注意週遭安全！,,"謝謝！\n有這麼多應該夠了！我們是雜食性動物！\n使用相機拍攝我讓我回到時光機中吧！,糟糕！果子好像不太夠\n我們是雜食性動物！\n使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/02monkey.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/monkey.png,Assets/Aslan/ArtSprite/GameUI/03/example.png,,,
 4,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
-趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！你好！
-左鎮出土的化石中發現許多鬚鯨類和齒鯨類化石，兩 者最大的區別是鬚鯨類的口中有鬚，沒有牙齒，外鼻 孔有兩個；而齒鯨類的口中沒有鬚，有牙齒，外鼻孔 只有一個。","鯨豚知多少,你可以從兩種不同的骨頭中， 分辨出那個是齒鯨頭骨，哪個是鬚鯨頭骨嗎？",分辨鯨豚,2,"觀察化石，將標籤移動到正確的化石上！,鬚鯨頭骨,齒鯨頭骨",開始,觀察化石貼上正確的標籤！,,"你真是太厲害了！
+趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！您好！
+左鎮出土的化石中發現許多鬚鯨類和齒鯨類化石，兩 者最大的區別是鬚鯨類的口中有鬚，沒有牙齒，外鼻 孔有兩個；而齒鯨類的口中沒有鬚，有牙齒，外鼻孔 只有一個。","鯨豚知多少,您可以從兩種不同的骨頭中， 分辨出那個是齒鯨頭骨，哪個是鬚鯨頭骨嗎？",分辨鯨豚,2,"觀察化石，將標籤移動到正確的化石上！,鬚鯨頭骨,齒鯨頭骨",開始,觀察化石貼上正確的標籤！,,"您真是太厲害了！
 使用相機拍攝我讓我回到時光機中吧！,鬚鯨,齒鯨",拍照,Assets/Aslan/ArtSprite/GameUI/animals/03dolphin.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/dolphin.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6toothed_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8toothed_whale.png
 5,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
-趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！你好我是早坂犀牛！
-「左鎮動物群」的動物化石，多在溪床被發現，甚少直 接從地層露頭中被採集。 而我！早坂中國犀為原地埋藏，因此出土化石的完整度 高達7成。","沙坑中的犀牛化石,你能將挖掘出來的化石，排列到正確的位子上嗎？",排列犀牛,2,"點按犀牛化石，將化石移動到正確的位置上！,點按化石,成功擺放",開始,請將犀牛的化石放置於正確的位置上！,,"根據我們出土的犀牛化石特徵，可確定牠屬於犀科犀屬，學名為早坂中國犀牛(<i>Rhinoceros sinensis hayasakai</i>)。\n但最近有學者認為我名字應該要改成早坂島犀(<i>Nesohinus hayasakai</i>)\n，與菲律賓島犀同屬於島犀家族喔！
-所以，我可以幫助科學家了解我們的遷徙與演化歷史，在學術上是重要的化石標本喔！,成功！看來你非常了解本園區最重要的犀牛呢！
+趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！您好我是早坂犀牛！
+「左鎮動物群」的動物化石，多在溪床被發現，甚少直 接從地層露頭中被採集。 而我！早坂中國犀為原地埋藏，出土化石的完整度 高達7成。","沙坑中的犀牛化石,您能將挖掘出來的化石，排列到正確的位子上嗎？",排列犀牛,2,"點按犀牛化石，將化石移動到正確的位置上！,點按化石,成功擺放",開始,請將犀牛的化石放置於正確的位置上！,,"根據我們出土的犀牛化石特徵，可確定牠屬於犀科犀屬，學名為早坂中國犀牛(<i>Rhinoceros sinensis hayasakai</i>)。\n但最近有學者認為我名字應該要改成早坂島犀(<i>Nesohinus hayasakai</i>)\n，與菲律賓島犀同屬於島犀家族，而相關的研究還在進行中歐！
+所以，我可以幫助科學家了解我們的遷徙與演化歷史，在學術上是重要的化石標本喔！,成功！看來您非常了解本園區最重要的犀牛呢！
 園區的Logo就是在說我喔！
 使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/04Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/05/example2.png,Assets/Aslan/ArtSprite/GameUI/05/example1.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,
 6,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是臺灣猛獁象！
-你知道嗎！
-台灣更新世「左鎮動物群」中，長鼻目除了猛獁象外 還有劍齒象兩大類。劍齒象有著像一把短利刃的門牙 ，而猛獁象則身披長長的毛，並且門齒劇烈彎曲。","大象小學堂,你可以從場景中分辨出誰是猛獁象哪個是劍齒象嗎？",分辨大象,1,找到正確的大象後，按下拍照按鈕拍攝大象。,開始,"拍攝草原猛獁象！, 拍攝劍齒象！","你成功分辨了！他是猛獁象！,你成功分辨了！他是劍齒象！,剛剛拍過了喔！,錯了！再找找看！","居然能分出我們的差別，真是太厲害了！,猛獁象,劍齒象",拍照,Assets/Aslan/ArtSprite/GameUI/animals/05mammoth.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/mammoth.png,Assets/Aslan/ArtSprite/GameUI/06/example.png,,Assets/Aslan/ArtSprite/GameUI/06/mammoth.png,Assets/Aslan/ArtSprite/GameUI/06/sabertooth.png
+您知道嗎！
+台灣更新世「左鎮動物群」中，長鼻目除了猛獁象外 還有劍齒象兩大類。劍齒象有著像一把短利刃的門牙 ，而猛獁象則身披長長的毛，並且門齒劇烈彎曲。","大象小學堂,您可以從場景中分辨出誰是猛獁象哪個是劍齒象嗎？",分辨大象,1,找到正確的大象後，按下拍照按鈕拍攝大象。,開始,"拍攝草原猛獁象！, 拍攝劍齒象！","您成功分辨了！他是猛獁象！,您成功分辨了！他是劍齒象！,剛剛拍過了喔！,錯了！再找找看！","居然能分出我們的差別，真是太厲害了！,猛獁象,劍齒象",拍照,Assets/Aslan/ArtSprite/GameUI/animals/05mammoth.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/mammoth.png,Assets/Aslan/ArtSprite/GameUI/06/example.png,,Assets/Aslan/ArtSprite/GameUI/06/mammoth.png,Assets/Aslan/ArtSprite/GameUI/06/sabertooth.png
 7,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是臺灣長吻鱷！
 我躺在這個地方很久了，地層中有許多我的化石碎 片，可以幫我清修並復原成原來的樣子嗎？","小小清修師,化石五步驟:\n  清理 -> 分類 -> 修補 -> 固化 -> 組架
-",開始清修,1,讓我們一起組裝完化石吧！,開始,"步驟提示: 用清修筆清除髒污，點按畫面兩下會有提示歐！,步驟提示: 用毛刷刷掉灰塵，點按畫面兩下會有提示歐！,將固化液塗抹於化石上。, 一起組裝完化石吧！","敲掉化石上的石膏與碎石後\n我們執行第二部用清修筆清除髒污。, 第三步: 用毛刷刷掉灰塵, 第四步:將斷裂處用膠水沾黏, 第五步:到最後的步驟了！讓我們一起組裝完化石吧！, 第五步:到最後的步驟了！讓我們一起組裝完化石吧！","你真的把化石清理乾淨了噎！
+",開始清修,1,讓我們一起組裝完化石吧！,開始,"步驟提示: 用清修筆清除髒污，點按畫面兩下會有提示歐！,步驟提示: 用毛刷刷掉灰塵，點按畫面兩下會有提示歐！,將固化液塗抹於化石上。, 一起組裝完化石吧！","敲掉化石上的石膏與碎石後\n我們執行第二部用清修筆清除髒污。, 第三步: 用毛刷刷掉灰塵, 第四步:將斷裂處用膠水沾黏, 第五步:到最後的步驟了！讓我們一起組裝完化石吧！, 第五步:到最後的步驟了！讓我們一起組裝完化石吧！","您真的把化石清理乾淨了耶！
 化石清修的步驟是
 
 清理 -> 分類 -> 修補 -> 固化 -> 組架 

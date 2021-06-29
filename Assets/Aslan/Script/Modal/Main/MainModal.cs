@@ -155,20 +155,24 @@ namespace View
             modal.IntroEndAction -= GuideUIView;
             introImage.enabled = false;
             foreach (var b in guideView.gameObjects) { b.SetActive(false); }
+            foreach (var b in guideView.gameObjectImages) { b.SetActive(false); }
 
             var i = 0;
             ShowPanel(guideView.canvasGroup, true);
             guideView.gameObjects[i].SetActive(true);
+            guideView.gameObjectImages[i].SetActive(true);
             guideView.gameObjects[i].GetComponentInChildren<Text>().text = MainApp.Instance.guideData.m_Data[0].gamePrompt[i];
 
             guideView.button.onClick.AddListener(()=>
             {
                 foreach (var b in guideView.gameObjects) { b.SetActive(false); }
+                foreach (var b in guideView.gameObjectImages) { b.SetActive(false); }
 
-                if( i != guideView.gameObjects.Length - 1)
+                if ( i != guideView.gameObjects.Length - 1)
                 {
                     i++;
                     guideView.gameObjects[i].SetActive(true);
+                    guideView.gameObjectImages[i].SetActive(true);
                     guideView.gameObjects[i].GetComponentInChildren<Text>().text = MainApp.Instance.guideData.m_Data[0].gamePrompt[i];
                     Debug.Log("i: " + i);
 
@@ -202,6 +206,7 @@ namespace View
 public class GuideView
 {
     public CanvasGroup canvasGroup;
-    public GameObject[] gameObjects; // guideImage1, guideImage2, guideImage3
+    public GameObject[] gameObjects; // guideImage1, guideImage3, guideImage2
+    public GameObject[] gameObjectImages;
     public Button button;
 }

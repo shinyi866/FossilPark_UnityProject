@@ -11,6 +11,7 @@ namespace GameMission
         private Game2 game;
         private int missionIndex = 2;
         private bool isARsupport;
+        private string videoPath = "Video/scence_360.mp4";
 
         public override void EnterGame()
         {
@@ -25,7 +26,7 @@ namespace GameMission
             else
             {
                 MediaPlayerController.instance.SetUp();
-                //MediaPlayerController.instance.SwitchToVideo360(true);
+                MediaPlayerController.instance.LoadVideo(videoPath);
                 Modals.instance.CloseAllModal();
             }                
         }
