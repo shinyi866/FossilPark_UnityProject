@@ -39,7 +39,7 @@ namespace GameMission
         // set thorw ball parameter
         private float Xmin = -0.2f;
         private float Xmax = 0.1f;
-        private int speed = 184;
+        private int speed = 185;
         private int passCount = 1;
 
         private string videoPath = "Video/monkey.mp4";
@@ -91,6 +91,7 @@ namespace GameMission
             {
                 alertTime -= Time.deltaTime;
                 alertObject.transform.position = new Vector3(monkey.transform.position.x, alertObject.transform.position.y, monkey.transform.position.z);
+                alertObject.SetActive(true);
             }
         }
 

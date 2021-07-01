@@ -1,5 +1,5 @@
 missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleButton,guideID,gameGuide,guideButton,gameNotify,gamePrompt,endMessage,pictureNotify,animalDialogPicture,animalNotifyPicture,guidePicture1,guidePicture2,endPicutre,endPicutre2
-0,"發現蹤跡,附近似乎有逆走鐘，趕緊找找看吧！",前方就是逆走鐘！快去跟它拍照吧！,體驗開始,請將圓形對準正中央的逆走鐘後按下,逆走鐘,前往拍照,0,請將圓形對準正中央的逆走鐘後按下,前往拍照,請將下方圓圈對齊台上的大逆走鐘後按下,這裡沒有逆走鐘歐！再找找看吧！,,,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100_1.png,Assets/Aslan/ArtSprite/GameUI/00/example.png,,
+0,"發現蹤跡,附近似乎有逆走鐘，趕緊找找看吧！",前方就是逆走鐘！快去跟它拍照吧！,體驗開始,請將圓形對準正中央的逆走鐘後按下,逆走鐘,前往拍照,0,請將圓形對準正中央的逆走鐘後按下,前往拍照,請將下方圓圈對齊台上的大逆走鐘後按下,這裡沒有逆走鐘歐！再找找看吧！,,,Assets/Aslan/ArtSprite/GameUI/animals/00Kiki.png,Assets/Aslan/ArtSprite/GameUI/animals/non.png,Assets/Aslan/ArtSprite/GameUI/00/clock_100_1.png,Assets/Aslan/ArtSprite/GameUI/00/example.png,,
 1,"發現蹤跡,附近似乎有時光機器，趕緊找找看吧！",這就是時光機器！快上去看看！,帶回管理員,這就是時光機器！快上去看看！,"時光機器,這就是時光機器！快上去看看！",前往觀看,0,KiKi KoKo 得到了恐龍蛋化石,,觀看動畫影片,"下方的照片就是逆走鐘的建築喔！, 四處尋找看看有逆走鐘的建築在哪？它就是時光機喔！","糟糕！時光機故障了！
 剛剛還在上面的六位管理員不見了！
 我們要找到管理時鐘的管理員們，修復逆走鐘，就可以再次使用時間回朔的功能了！
@@ -19,7 +19,7 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 接下金絲猴摘下的果子吧！",蒐集果子,1,左右移動，可以接下金絲猴丟下的果子！,開始,左右移動時請注意週遭安全！,,"謝謝！\n有這麼多應該夠了！我們是雜食性動物！\n使用相機拍攝我讓我回到時光機中吧！,糟糕！果子好像不太夠\n我們是雜食性動物！\n使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/02monkey.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/monkey.png,Assets/Aslan/ArtSprite/GameUI/03/example.png,,,
 4,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！您好！
-左鎮出土的化石中發現許多鬚鯨類和齒鯨類化石，兩 者最大的區別是鬚鯨類的口中有鬚，沒有牙齒，外鼻 孔有兩個；而齒鯨類的口中沒有鬚，有牙齒，外鼻孔 只有一個。","鯨豚知多少,您可以從兩種不同的骨頭中， 分辨出那個是齒鯨頭骨，哪個是鬚鯨頭骨嗎？",分辨鯨豚,2,"觀察化石，將標籤移動到正確的化石上！,鬚鯨頭骨,齒鯨頭骨",開始,觀察化石貼上正確的標籤！,,"您真是太厲害了！
+左鎮出土的化石中發現許多鬚鯨類和齒鯨類化石，兩 者最大的區別是鬚鯨類的口中有鬚，沒有牙齒，外鼻 孔有兩個；而齒鯨類的口中沒有鬚，有牙齒，外鼻孔 只有一個。","鯨豚知多少,您可以從兩種不同的骨頭中， 分辨出那個是齒鯨頭骨，哪個是鬚鯨頭骨嗎？",分辨鯨豚,2,"觀察化石，將標籤移動到正確的化石上！,鬚鯨頭骨,齒鯨頭骨",開始,提示：左邊為齒鯨頭骨，右邊為鬚鯨頭骨,,"您真是太厲害了！
 使用相機拍攝我讓我回到時光機中吧！,鬚鯨,齒鯨",拍照,Assets/Aslan/ArtSprite/GameUI/animals/03dolphin.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/dolphin.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6toothed_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8toothed_whale.png
 5,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！您好我是早坂犀牛！
@@ -34,7 +34,7 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 7,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！我是臺灣長吻鱷！
 我躺在這個地方很久了，地層中有許多我的化石碎 片，可以幫我清修並復原成原來的樣子嗎？","小小清修師,化石五步驟:\n  清理 -> 分類 -> 修補 -> 固化 -> 組架
-",開始清修,1,讓我們一起組裝完化石吧！,開始,"步驟提示: 用清修筆清除髒污，點按畫面兩下會有提示歐！,步驟提示: 用毛刷刷掉灰塵，點按畫面兩下會有提示歐！,將固化液塗抹於化石上。, 一起組裝完化石吧！","敲掉化石上的石膏與碎石後\n我們執行第二部用清修筆清除髒污。, 第三步: 用毛刷刷掉灰塵, 第四步:將斷裂處用膠水沾黏, 第五步:到最後的步驟了！讓我們一起組裝完化石吧！, 第五步:到最後的步驟了！讓我們一起組裝完化石吧！","您真的把化石清理乾淨了耶！
+",開始清修,1,讓我們一起組裝完化石吧！,開始,"步驟提示: 用清修筆清除髒污，點按畫面兩下會有提示！,步驟提示: 用毛刷刷掉灰塵，點按畫面兩下會有提示！,將固化液塗抹於化石上。, 一起組裝完化石！","敲掉化石上的石膏與碎石後\n我們執行第二部用清修筆清除髒污。, 第三步: 用毛刷刷掉灰塵, 第四步:將斷裂處用膠水沾黏, 第五步:到最後的步驟了！讓我們一起組裝完化石吧！, 第五步:到最後的步驟了！讓我們一起組裝完化石吧！","您真的把化石清理乾淨了耶！
 化石清修的步驟是
 
 清理 -> 分類 -> 修補 -> 固化 -> 組架 
