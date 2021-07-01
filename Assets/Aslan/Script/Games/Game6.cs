@@ -22,7 +22,7 @@ namespace GameMission
             _camera = CameraCtrl.instance.GetCurrentCamera();
 
             Modals.instance.CloseAllModal();
-            MediaPlayerController.instance.LoadAndPlayVideo(videoPath);
+            MediaPlayerController.instance.LoadAndPlayVideoNotLoop(videoPath);
         }
 
         public void GameStart()
