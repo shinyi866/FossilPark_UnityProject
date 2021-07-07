@@ -63,11 +63,12 @@ namespace GameMission
         public void ClosGame()
         {
             if (currentGame != null)
+            {
+                currentGame.Init();
                 currentGame.OpenGame(false);
+            }
 
-            //MediaPlayerController.instance.CloseVideo();
             GameModals.instance.CloseAllModal();
-            //GameModals.instance.CloseModal();
             GameModals.instance.CloseAR();
         }
     }

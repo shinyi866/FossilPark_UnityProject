@@ -51,5 +51,13 @@ namespace GameMission
                     GameModals.instance.GetBackAnimalNoAR(missionIndex);
             });
         }
+
+        public void BackToMain()
+        {
+            if(currentMaterial != null)
+                RenderSettings.skybox = currentMaterial;
+
+            SoundPlayerController.Instance.PlayBackgroundMusic();
+        }
     }
 }

@@ -100,6 +100,7 @@ namespace Hsinpa.Ctrl {
 
         public void EnterGame(float yRotationOffset, bool p_arEnable)
         {
+            _worldContainer.gameObject.SetActive(true);
             this._arEnable = p_arEnable;
             if (_arEnable)
             {
@@ -312,7 +313,7 @@ namespace Hsinpa.Ctrl {
             });
         }
 
-        private void DoEndGameAction() {
+        private void DoEndGameAction() {            
             _rhinoBoneHelper.Clean();
             _state = GeneralFlag.GeneralState.Idle;
 
@@ -332,5 +333,10 @@ namespace Hsinpa.Ctrl {
             //return false;
         }
 
+        public void CleanBone()
+        {
+            _worldContainer.gameObject.transform.SetPositionAndRotation(new Vector3(0, 0, 0), Quaternion.identity);
+            _worldContainer.gameObject.SetActive(false);
+        }
     }
 }

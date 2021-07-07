@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using GameMission;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.ARFoundation;
 
 namespace View
 {
     public class ARGameModal : Modal
     {
+        [SerializeField]
+        private ARPlaneManager planeManager;
+        
+        private Mission5 mission5;
+        private Mission6 mission6;
+        private Mission7 mission7;
+
         public Text text;
+        public Button backButton;
 
         public GamePromptPanel gamePromptPanel;
         public Game0Panel game0Panel;
@@ -25,6 +34,9 @@ namespace View
         {
             data = MainApp.Instance.database;
             GameCanvasGroups = new CanvasGroup[] { game0Panel.canvasGroup, game2Panel.canvasGroup, game3Panel.canvasGroup, game6Panel.canvasGroup, game8Panel.canvasGroup };
+            mission5 = GameMissions.instance.GetMission<Mission5>();
+            mission6 = GameMissions.instance.GetMission<Mission6>();
+            mission7 = GameMissions.instance.GetMission<Mission7>();
 
             SwitchConfirmButton(false); //default button
             gamePromptPanel.buttonsObject.SetActive(false); //default button
@@ -54,22 +66,33 @@ namespace View
                 currentImage = null;
             });
 
-            /*
-            game8Panel.pictureButton.onClick.AddListener(() =>
+            backButton.onClick.AddListener(() =>
             {
-                TakePicture();
-                ShowPrompt(8, TypeFlag.ARGameType.PicturePrompt);
-            });
-
-            game8Panel.backButton.onClick.AddListener(() => {
                 Games.instance.ClosGame();
+                GameModals.instance.GetModal<ARGameModal>().CloseAllPanel();
                 GameModals.instance.CloseModal();
-                ShowPanel(game8Panel.canvasGroup, false);
-                Modals.instance.OpenModal<MainModal>();
-                iBeaconMissionSetting.Instance.isEnterGame = false;
+                Modals.instance.CloseModal();
+                Modals.instance.CloseARInMain();
+                Modals.instance.CloseARInGame();
+                MediaPlayerController.instance.DestroyVideo();
+                iBeaconMissionSetting.Instance.IBeaconNotDetect(false);
                 CameraCtrl.instance.DisableOcclusionManager();
+                mission5.BackToMain();
+                mission6.BackToMain();
+                mission7.BackToMain();                
+
+                CloseARPlane();
             });
-            */
+        }
+
+        private void CloseARPlane()
+        {
+            planeManager.enabled = false;
+
+            foreach (ARPlane aRPlane in planeManager.trackables)
+            {
+                aRPlane.gameObject.SetActive(false);
+            }
         }
 
         public void ShowModal(int index, TypeFlag.ARGameType type)
@@ -79,6 +102,7 @@ namespace View
 
             CloseAllPanel();
 
+            backButton.image.enabled = true;
             text.text = gameData.gameNotify[0];
             SwitchConfirmButton(false);
 
@@ -87,11 +111,14 @@ namespace View
                 case TypeFlag.ARGameType.Game0:
                     ShowPanel(game0Panel.canvasGroup, true);
                     break;
+                case TypeFlag.ARGameType.Game1:
+                    text.text = gameData.gamePrompt[1];
+                    gamePromptPanel.image.sprite = gameData.endPicutre;
+                    break;
                 case TypeFlag.ARGameType.Game2:
                     ShowPanel(game2Panel.canvasGroup, true);
                     break;
                 case TypeFlag.ARGameType.Game3:
-                    //===if (!supportAR) { unSupportView.SetActive(true); }
                     ShowPanel(game3Panel.canvasGroup, true);
                     break;
                 case TypeFlag.ARGameType.Game6:
@@ -99,6 +126,7 @@ namespace View
                     break;
                 case TypeFlag.ARGameType.Game8:
                     ShowPanel(game8Panel.canvasGroup, true);
+                    backButton.image.enabled = false;
                     break;
                 default:
                     text.text = gameData.gameNotify[0];
@@ -165,6 +193,7 @@ namespace View
 
         public void SwitchConfirmButton(bool switchToConfirm)
         {
+            Debug.Log("switch!!!!  " + switchToConfirm);
             gamePromptPanel.button.gameObject.SetActive(!switchToConfirm);
             gamePromptPanel.button_confirm.gameObject.SetActive(switchToConfirm);
         }

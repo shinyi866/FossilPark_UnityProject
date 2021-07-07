@@ -64,8 +64,10 @@ namespace GameMission
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
 
+            AnsClear();
             Modals.instance.CloseAllModal();
             MediaPlayerController.instance.LoadVideo(videoPath);
+            canvas.SetActive(false);
         }
 
         public void GameStart()
@@ -85,7 +87,6 @@ namespace GameMission
 
                 if (!reault)
                 {
-                    //ReSetPosition();
                     SoundPlayerController.Instance.ErrorSoundEffect();
                 }
                 else
@@ -93,7 +94,7 @@ namespace GameMission
                     Object.SetActive(false);
                     GameModals.instance.CloseModal();
                     //MediaPlayerController.instance.CloseVideo();
-                    MediaPlayerController.instance.LoadAndPlayVideoNotLoop(successVidePath);
+                    MediaPlayerController.instance.LoadAndPlayVideo(successVidePath,false);
                     SoundPlayerController.Instance.PauseBackgroundMusic();
                     SoundPlayerController.Instance.FinishAllSoundEffect();
                     finishGame = true;
@@ -193,20 +194,13 @@ namespace GameMission
             }
         }
 
-        private void ReSetPosition()
+        private void AnsClear()
         {
-            for(int i = 0; i < AnsOrgPos.Count; i++)
+            if(Ans.Count != 0)
             {
-                for (int j = 0; j < Ans.Count; j++)
-                {
-                    if(i == j)
-                    {
-                        Ans[j].transform.position = AnsOrgPos[i];
-                    }
-                }
+                foreach (var a in Ans) { Destroy(a); }
+                Ans.Clear();
             }
-
-            RandomAnsPosition();
         }
 
 

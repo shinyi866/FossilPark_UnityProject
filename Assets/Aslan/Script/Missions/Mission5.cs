@@ -13,6 +13,7 @@ namespace GameMission
         public RhinoBoneRepairCtrl rhinoCtrl;
 
         private int missionIndex = 5;
+        private bool isEventOpen;
 
         public override void EnterGame()
         {
@@ -22,7 +23,7 @@ namespace GameMission
             if (!MainApp.Instance.isARsupport)
             {
                 MediaPlayerController.instance.SetUp();
-                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
+                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4", true);
             }
             else
             {
@@ -39,12 +40,14 @@ namespace GameMission
             var modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Original);
 
+            isEventOpen = true;
             rhinoCtrl.OnEndGameEvent += EndGame;
             rhinoCtrl.EnterGame(87, MainApp.Instance.isARsupport);
         }
 
         public void EndGame(bool isSuccess)
         {
+            isEventOpen = false;
             rhinoCtrl.OnEndGameEvent -= EndGame;
             var data = MainApp.Instance.database;
             CameraCtrl.instance.OpenARPlaneManager(false);
@@ -71,6 +74,18 @@ namespace GameMission
                         GameModals.instance.GetBackAnimalNoAR(missionIndex);
                 });
             });
+        }
+
+        public void BackToMain()
+        {
+            if (isEventOpen)
+            {
+                rhinoCtrl.OnEndGameEvent -= EndGame;
+                rhinoCtrl.CleanBone();
+                hisnpaPrefab.SetActive(false);
+                isEventOpen = false;
+            }
+            
         }
     }
 }

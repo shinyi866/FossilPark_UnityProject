@@ -98,7 +98,7 @@ namespace View
             CameraCtrl.instance.SwitchToARCamera(false);
             Debug.Log("====== Modal index "  + index);
             if (index != 4)
-                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
+                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4", true);
             else
                 MediaPlayerController.instance.LoadVideo("Video/dolphin360.mp4");
 

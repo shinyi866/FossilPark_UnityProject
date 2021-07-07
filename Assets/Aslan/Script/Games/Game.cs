@@ -21,6 +21,11 @@ namespace GameMission
         {
             return Object;
         }
+
+        public void Init()
+        {
+            Object.transform.SetPositionAndRotation(new Vector3(0, 0, 0), Quaternion.identity);
+        }
     }
 
 }

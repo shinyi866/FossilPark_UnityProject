@@ -16,7 +16,7 @@ namespace GameMission
 
         private int missionIndex = 2;
 
-        private bool isARGameStart;
+        public bool isARGameStart;
         private bool isUnARGameStart;
         private bool isGameStart;
         private float time = 2;

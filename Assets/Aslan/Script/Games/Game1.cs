@@ -30,11 +30,10 @@ namespace GameMission
         {
             Modals.instance.CloseAllModal();
 
+            data = MainApp.Instance.database;
             isARsupport = MainApp.Instance.isARsupport;
             _camera = CameraCtrl.instance.GetCurrentCamera();
             modal = GameModals.instance.OpenModal<ARGameModal>();
-            data = MainApp.Instance.database;
-            modal.text.text = data.m_Data[missionIndex].gameNotify[0];
             ARObject.SetActive(false);
         }
 
@@ -104,16 +103,15 @@ namespace GameMission
 
             SoundPlayerController.Instance.PlayBackgroundMusic();
             CameraCtrl.instance.OcclusionForHuman();
-
+            modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game1);
+            modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt1);
             modal.SwitchConfirmButton(true);
-            modal.text.text = data.m_Data[missionIndex].gamePrompt[1];
-            modal.gamePromptPanel.image.sprite = data.m_Data[missionIndex].endPicutre;
-            modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt1);            
             modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
             {
-                modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
-                modal.SwitchConfirmButton(false);
+                //modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);                
                 ARObject.SetActive(true);
+                modal.CloseAllPanel();
+                modal.SwitchConfirmButton(false);
 
                 isSetVideoPlane = false;
                 isARanimationEnd = true;

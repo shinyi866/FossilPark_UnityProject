@@ -14,6 +14,7 @@ namespace GameMission
         //public ARPlaneManager planeManager;
 
         private int missionIndex = 7;
+        private bool isEventOpen;
 
         public override void EnterGame()
         {
@@ -23,7 +24,7 @@ namespace GameMission
             if (!MainApp.Instance.isARsupport)
             {
                 MediaPlayerController.instance.SetUp();
-                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
+                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4", true);
             }
             else
             {
@@ -38,13 +39,15 @@ namespace GameMission
         {
             var modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Original);
-            
+
+            isEventOpen = true;
             crocoCtrl.OnEndGameEvent += EndGame;
             crocoCtrl.EnterGame(87, MainApp.Instance.isARsupport);
         }
 
         public void EndGame(bool isSuccess)
         {
+            isEventOpen = false;
             crocoCtrl.OnEndGameEvent -= EndGame;
 
             var ARmodal = GameModals.instance.OpenModal<ARGameModal>();
@@ -63,6 +66,16 @@ namespace GameMission
                 else
                     GameModals.instance.GetBackAnimalNoAR(missionIndex);
             });
+        }
+
+        public void BackToMain()
+        {
+            if(isEventOpen)
+            {
+                crocoCtrl.OnEndGameEvent -= EndGame;
+                hisnpaPrefab.SetActive(false);
+                isEventOpen = false;
+            }
         }
     }
 }

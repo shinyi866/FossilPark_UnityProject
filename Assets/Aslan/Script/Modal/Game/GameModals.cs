@@ -120,7 +120,7 @@ namespace View
             mainModal.GetBackAnimal(index);
             
             if (index != 4)
-                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
+                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4", true);
             else
                 MediaPlayerController.instance.LoadVideo("Video/dolphin360.mp4");
 
@@ -145,7 +145,8 @@ namespace View
             model.Game0ConfirmButton.onClick.AddListener(() =>
             {
                 SoundPlayerController.Instance.EnterSoundEffect();
-                iBeaconMissionSetting.Instance.IBeaconNotDetect(index);
+                iBeaconMissionSetting.Instance.IBeaconNotDetect(true);
+                MainApp.Instance.currentMission = index;
                 GuideModel(index);
             });
         }
@@ -158,7 +159,8 @@ namespace View
             model.ConfirmButton.onClick.AddListener(() =>
             {
                 SoundPlayerController.Instance.EnterSoundEffect();
-                iBeaconMissionSetting.Instance.IBeaconNotDetect(index);
+                iBeaconMissionSetting.Instance.IBeaconNotDetect(true);
+                MainApp.Instance.currentMission = index;
                 EnterModel(index);
                 GameMissions.instance.EnterGame();
             });

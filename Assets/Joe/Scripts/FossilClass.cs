@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using View;
+using GameMission;
 
 public class FossilClass : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class FossilClass : MonoBehaviour
     private void GameResult(bool isSuccess)
     {
         isGameStart = false;
+        Games.instance.GetGame<Game2>().isARGameStart = false;
 
         if (gameOverEvent != null)            
             gameOverEvent(isSuccess);

@@ -89,7 +89,9 @@ namespace Hsinpa.Ctrl
         public void EnterGame(float yRotationOffset, bool p_arEnable)
         {
             this._arEnable = p_arEnable;
-
+            crocodileTargetTimelineAnim.gameObject.SetActive(false);
+            crocodileTarget.gameObject.SetActive(false);
+            _worldContainer.gameObject.transform.SetPositionAndRotation(new Vector3(0, 0, 0), Quaternion.identity);
             OpenHintUIModal(TypeFlag.ARGameType.GamePrompt1);
 
             _paintingManager.ResetPaint();

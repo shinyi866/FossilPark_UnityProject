@@ -29,41 +29,22 @@ public class MediaPlayerController : MonoBehaviour
             return _instance;
         }
     }
-
-    private void Start()
-    {
-        Application.lowMemory += OnLowMemory;
-    }
-
-    private void OnLowMemory()
-    {
-        // release all cached textures
-        //_mediaPlayer = null;
-        //currentVideo = null;
-        Resources.UnloadUnusedAssets();
-    }
-
+    
     public void SetUp()
     {
         isSetUp = true;
         currentVideo = Instantiate(videoObject);
+        //currentVideo = videoObject;
         video3D = currentVideo.transform.GetChild(0).gameObject;
         video2D = currentVideo.transform.GetChild(1).gameObject;
         _mediaPlayer = currentVideo.transform.GetChild(2).gameObject.GetComponent<MediaPlayer>();
     }
 
-    public void LoadAndPlayVideo(string filePath)
+    public void LoadAndPlayVideo(string filePath, bool isLoop)
     {
         SwitchToVideo360(true);
         _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, true);
-        _mediaPlayer.Loop = true;
-    }
-
-    public void LoadAndPlayVideoNotLoop(string filePath)
-    {
-        SwitchToVideo360(true);
-        _mediaPlayer.OpenMedia(MediaPathType.RelativeToStreamingAssetsFolder, filePath, true);
-        _mediaPlayer.Loop = false;
+        _mediaPlayer.Loop = isLoop;
     }
 
     public void LoadAndPlay2DVideoNotLoop(string filePath)

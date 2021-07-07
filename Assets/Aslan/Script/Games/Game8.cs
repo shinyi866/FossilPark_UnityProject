@@ -53,7 +53,7 @@ namespace GameMission
             if (!isARsupport)
             {
                 MediaPlayerController.instance.SetUp();
-                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4");
+                MediaPlayerController.instance.LoadAndPlayVideo("Video/scence_360.mp4", true);
                 Object.transform.position = new Vector3(0,-0.6f,0);
             }
 

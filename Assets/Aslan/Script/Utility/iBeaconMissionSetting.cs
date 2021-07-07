@@ -21,6 +21,8 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 
     private List<GameObject> cloneTransform = new List<GameObject>();
     private Beacon minBeacon;
+    private double curMinRange;
+    private double curMaxRange;
 
     public bool isEnterGame;
     public bool isLastMissionOpen;
@@ -86,41 +88,6 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 
     }
 
-    /* search mission */
-    public void MissionSearchInBackGround(List<Beacon> mybeacons)
-    {
-        if (mybeacons.Count <= 0 || mybeacons == null || isEnterGame) return;
-
-        double minDistance = Mathf.Infinity;
-
-        foreach (Beacon b in mybeacons)
-        {
-            // TODO: search 2,8 mission
-
-            if (b.accuracy > 0 && b.accuracy < minDistance)
-            {
-                minDistance = b.accuracy;
-                minBeacon = b;
-            }
-        }
-
-        if (minBeacon.minor > 8) return;
-
-        int mission = minBeacon.minor;
-
-        if (ranges[mission].minRange < 0 && ranges[mission].maxRange < 0) return;
-
-        if (minBeacon.major == 0)
-        {
-            if (minBeacon.accuracy == 8 && !isLastMissionOpen) return; // Finish all mission will open
-
-            if (minBeacon.accuracy > ranges[mission].minRange && minBeacon.accuracy < ranges[mission].maxRange)
-            {
-            }
-            
-        }
-    }
-
     private void SetPosition()
     {
         float height = 62f;
@@ -183,12 +150,25 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
         RefreshValue();
     }
 
-    public void IBeaconNotDetect(int index)
+    public void IBeaconNotDetect(bool isEnter)
     {
-        isEnterGame = true;
+        var index = MainApp.Instance.currentMission;
+        isEnterGame = isEnter;
 
-        ranges[index].minRange = -1;
-        ranges[index].maxRange = -1;
+        if(isEnter)
+        {
+            curMinRange = ranges[index].minRange;
+            curMaxRange = ranges[index].maxRange;
+
+            ranges[index].minRange = -1;
+            ranges[index].maxRange = -1;
+        }
+        else
+        {
+            ranges[index].minRange = curMinRange;
+            ranges[index].maxRange = curMaxRange;
+        }
+        
         RefreshValue();
     }
 }

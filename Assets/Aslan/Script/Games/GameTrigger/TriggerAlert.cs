@@ -7,7 +7,7 @@ public class TriggerAlert : MonoBehaviour
     [SerializeField]
     private GameObject alert;
 
-    private void OnTriggerEnter(Collider target)
+    private void OnTriggerStay(Collider target)
     {
         if (target.tag == "MainCamera")
         {
