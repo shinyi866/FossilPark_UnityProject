@@ -64,6 +64,7 @@ namespace GameMission
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
 
+            AnsInBoxCount = 0;
             AnsClear();
             Modals.instance.CloseAllModal();
             MediaPlayerController.instance.LoadVideo(videoPath);
@@ -200,6 +201,12 @@ namespace GameMission
             {
                 foreach (var a in Ans) { Destroy(a); }
                 Ans.Clear();
+            }
+
+            if(AnsBox.Count != 0)
+            {
+                foreach (var a in AnsBox) { Destroy(a); }
+                AnsBox.Clear();
             }
         }
 

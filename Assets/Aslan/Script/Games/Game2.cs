@@ -26,6 +26,7 @@ namespace GameMission
         public void Init()
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
+            time = 2;
             isGameStart = true;
             movieObject.SetActive(false);
         }

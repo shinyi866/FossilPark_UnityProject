@@ -30,6 +30,7 @@ namespace GameMission
         {
             Modals.instance.CloseAllModal();
 
+            time = 2;
             data = MainApp.Instance.database;
             isARsupport = MainApp.Instance.isARsupport;
             _camera = CameraCtrl.instance.GetCurrentCamera();

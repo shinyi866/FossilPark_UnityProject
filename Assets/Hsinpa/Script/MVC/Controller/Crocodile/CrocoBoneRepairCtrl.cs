@@ -88,6 +88,7 @@ namespace Hsinpa.Ctrl
 
         public void EnterGame(float yRotationOffset, bool p_arEnable)
         {
+            time = 2;
             this._arEnable = p_arEnable;
             crocodileTargetTimelineAnim.gameObject.SetActive(false);
             crocodileTarget.gameObject.SetActive(false);

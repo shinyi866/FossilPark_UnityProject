@@ -49,6 +49,7 @@ namespace GameMission
 
         public void Init()
         {
+            time = 2;
             gameModal = GameModals.instance.GetModal<ARGameModal>();
             _camera = CameraCtrl.instance.GetCurrentCamera();
             playableDirector = monkey.GetComponent<PlayableDirector>();

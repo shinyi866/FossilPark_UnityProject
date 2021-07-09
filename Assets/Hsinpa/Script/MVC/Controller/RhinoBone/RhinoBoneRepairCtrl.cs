@@ -100,6 +100,7 @@ namespace Hsinpa.Ctrl {
 
         public void EnterGame(float yRotationOffset, bool p_arEnable)
         {
+            time = 2;
             _worldContainer.gameObject.SetActive(true);
             this._arEnable = p_arEnable;
             if (_arEnable)

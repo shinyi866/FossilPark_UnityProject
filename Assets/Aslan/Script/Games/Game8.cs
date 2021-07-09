@@ -49,6 +49,7 @@ namespace GameMission
         {
             foreach (var b in dinosaurlScenes) { b.SetActive(false); }
             isARsupport = MainApp.Instance.isARsupport;
+            time = 3;
 
             if (!isARsupport)
             {

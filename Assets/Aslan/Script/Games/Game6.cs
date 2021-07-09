@@ -10,6 +10,10 @@ namespace GameMission
         //public GameObject target;
         public System.Action<bool> gameOverEvent;
 
+        [SerializeField]
+        private Transform cube1;
+        [SerializeField]
+        private Transform cube2;
         private Camera _camera;
         private ARGameModal modal;
         private string videoPath = "Video/ele.mp4";
@@ -20,6 +24,9 @@ namespace GameMission
         public void Init()
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
+            cube1.position = new Vector3(2.8f, 0, 3.4f);
+            cube2.position = new Vector3(-5.6f, 0, 1.4f);
+            successTimes = 0;
 
             Modals.instance.CloseAllModal();
             MediaPlayerController.instance.LoadAndPlayVideo(videoPath,true);
@@ -30,44 +37,56 @@ namespace GameMission
             isGameStart = true;
             modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game6);
+            modal.game6Panel.button.onClick.RemoveAllListeners();
             RaycastHit hit;
 
             modal.game6Panel.button.onClick.AddListener(() =>
             {
-                modal.TakePicture();
-
-                if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 6))
+                if (successTimes == 2)
                 {
-                    var cube = hit.transform;
-                    var tag = hit.transform.gameObject.tag;
-                    
-                    if (tag == "Cube1" && successTimes == 0)
+                    modal.SwitchConfirmButton(true);
+                    modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
                     {
-                        cube.position = cube.position + new Vector3(-2, 0, 0);
-                        modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt1);
-                        modal.text.text = MainApp.Instance.database.m_Data[missionIndex].gameNotify[1];
-                        successTimes++;
+                        isGameStart = false;
+                        modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
+                        GameResult(true);
+                    });
+                }
+                else
+                {
+                    modal.TakePicture();
+
+                    if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 6))
+                    {
+                        var cube = hit.transform;
+                        var tag = hit.transform.gameObject.tag;
+
+                        if (tag == "Cube1" && successTimes == 0)
+                        {
+                            cube.position = cube.position + new Vector3(-2, 0, 0);
+                            modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt1);
+                            modal.text.text = MainApp.Instance.database.m_Data[missionIndex].gameNotify[1];
+                            successTimes++;
+                        }
+                        else if (tag == "Cube2" && successTimes == 1)
+                        {
+                            cube.position = cube.position + new Vector3(2, 0, 0);
+                            modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt2);
+                            successTimes++;
+                        }
+                        else
+                        {
+                            modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt4);
+                        }
                     }
-                    else if (tag == "Cube2" && successTimes == 1)
+                    else if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 7))
                     {
-                        cube.position = cube.position + new Vector3(2, 0, 0);
-                        modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt2);
-                        successTimes++;
+                        modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt3);
                     }
                     else
                     {
                         modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt4);
                     }
-
-
-                }
-                else if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 7))
-                {
-                    modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt3);
-                }
-                else
-                {
-                    modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt4);
                 }
                 
             });
@@ -76,7 +95,7 @@ namespace GameMission
         private void Update()
         {
             if (!isGameStart) return;
-
+            /*
             if (successTimes == 2)
             {
                 modal.SwitchConfirmButton(true);
@@ -87,7 +106,7 @@ namespace GameMission
                     GameResult(true);
                 });
             }
-
+            */
         }
 
         private void GameResult(bool isSuccess)
