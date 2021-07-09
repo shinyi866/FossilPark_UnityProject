@@ -28,10 +28,10 @@ namespace GameMission
         private bool isARStart;
         private bool isThrowing;
         private bool isCreateHandBall;
-        private int fruit = 3;
-        private int count;
         private int currentFruitIndex;
-        private float time = 3;
+        private int count;
+        private int fruit = 3;
+        private float time = 2.5f;
         private float alertTime = 1;
         private GameObject _ball;
         private GameObject currentBall;
@@ -49,7 +49,12 @@ namespace GameMission
 
         public void Init()
         {
-            time = 2;
+            time = 2.5f;
+            fruit = 3;
+            alertTime = 1;
+            CatchFruit.fruitCount = 0;
+            TriggerFruitPlane.fruitTouchPlane = 0;
+
             gameModal = GameModals.instance.GetModal<ARGameModal>();
             _camera = CameraCtrl.instance.GetCurrentCamera();
             playableDirector = monkey.GetComponent<PlayableDirector>();
@@ -58,8 +63,6 @@ namespace GameMission
                 MediaPlayerController.instance.LoadVideo(videoPath);
 
             count = fruit;
-            //leftButton = gameModal.game3Panel.leftButton;
-            //rightButton = gameModal.game3Panel.rightButton;
         }
 
         public void GameStart()

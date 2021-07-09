@@ -35,8 +35,6 @@ namespace GameMission
             modal.GuideConfirmButtonTwo.onClick.AddListener(() =>
             {
                 Games.instance.ClosGame();
-                Destroy(game.GetGameObject());
-                //MediaPlayerController.instance.CloseVideo();
                 SoundPlayerController.Instance.PlayBackgroundMusic();
                 GameModals.instance.CloseModal();
 

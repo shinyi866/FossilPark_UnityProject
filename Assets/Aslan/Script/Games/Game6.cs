@@ -42,52 +42,40 @@ namespace GameMission
 
             modal.game6Panel.button.onClick.AddListener(() =>
             {
-                if (successTimes == 2)
-                {
-                    modal.SwitchConfirmButton(true);
-                    modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
-                    {
-                        isGameStart = false;
-                        modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);
-                        GameResult(true);
-                    });
-                }
-                else
-                {
-                    modal.TakePicture();
+                modal.TakePicture();
 
-                    if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 6))
-                    {
-                        var cube = hit.transform;
-                        var tag = hit.transform.gameObject.tag;
+                if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 6))
+                {
+                    var cube = hit.transform;
+                    var tag = hit.transform.gameObject.tag;
 
-                        if (tag == "Cube1" && successTimes == 0)
-                        {
-                            cube.position = cube.position + new Vector3(-2, 0, 0);
-                            modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt1);
-                            modal.text.text = MainApp.Instance.database.m_Data[missionIndex].gameNotify[1];
-                            successTimes++;
-                        }
-                        else if (tag == "Cube2" && successTimes == 1)
-                        {
-                            cube.position = cube.position + new Vector3(2, 0, 0);
-                            modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt2);
-                            successTimes++;
-                        }
-                        else
-                        {
-                            modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt4);
-                        }
+                    if (tag == "Cube1" && successTimes == 0)
+                    {
+                        cube.position = cube.position + new Vector3(-2, 0, 0);
+                        modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt1);
+                        modal.text.text = MainApp.Instance.database.m_Data[missionIndex].gameNotify[1];
+                        successTimes++;
                     }
-                    else if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 7))
+                    else if (tag == "Cube2" && successTimes == 1)
                     {
-                        modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt3);
+                        cube.position = cube.position + new Vector3(2, 0, 0);
+                        modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt2);
+                        successTimes++;
                     }
                     else
                     {
                         modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt4);
                     }
                 }
+                else if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 7))
+                {
+                    modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt3);
+                }
+                else
+                {
+                    modal.ShowPrompt(6, TypeFlag.ARGameType.GamePrompt4);
+                }
+                
                 
             });
         }
@@ -95,7 +83,7 @@ namespace GameMission
         private void Update()
         {
             if (!isGameStart) return;
-            /*
+            
             if (successTimes == 2)
             {
                 modal.SwitchConfirmButton(true);
@@ -106,7 +94,7 @@ namespace GameMission
                     GameResult(true);
                 });
             }
-            */
+            
         }
 
         private void GameResult(bool isSuccess)

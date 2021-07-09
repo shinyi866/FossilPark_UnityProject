@@ -242,6 +242,8 @@ namespace Hsinpa.Ctrl
             if (nextCurrentToolIndex > (int)ToolSRP.ToolEnum.Tool_2) {
                 _paintingManager.ResetPaint();
 
+                GameModals.instance.GetModal<ARGameModal>().CloseBackButton(); // close UI back button
+
                 crocodileTarget.gameObject.SetActive(false);
 
                 crocodileTargetTimelineAnim.SetAndPlayTimelineAnim(EndPlayableAnim);

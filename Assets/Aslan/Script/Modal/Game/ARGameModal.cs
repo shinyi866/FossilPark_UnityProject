@@ -82,6 +82,7 @@ namespace View
                 mission7.BackToMain();                
 
                 CloseARPlane();
+                CloseAllPanel();
             });
         }
 
@@ -126,7 +127,7 @@ namespace View
                     break;
                 case TypeFlag.ARGameType.Game8:
                     ShowPanel(game8Panel.canvasGroup, true);
-                    backButton.image.enabled = false;
+                    CloseBackButton();
                     break;
                 default:
                     text.text = gameData.gameNotify[0];
@@ -196,6 +197,10 @@ namespace View
             Debug.Log("switch!!!!  " + switchToConfirm);
             gamePromptPanel.button.gameObject.SetActive(!switchToConfirm);
             gamePromptPanel.button_confirm.gameObject.SetActive(switchToConfirm);
+        }
+        public void CloseBackButton()
+        {
+            backButton.image.enabled = false;
         }
 
         public void ShowPanel(CanvasGroup canvasGroup,bool isShow)
