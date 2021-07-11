@@ -22,7 +22,6 @@ public class MainApp : Singleton<MainApp>
 
     public Text text;
     public bool arModel;
-    public int currentMission;
 
     private int playerGuide;
 

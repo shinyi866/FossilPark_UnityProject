@@ -146,7 +146,6 @@ namespace View
             {
                 SoundPlayerController.Instance.EnterSoundEffect();
                 iBeaconMissionSetting.Instance.IBeaconNotDetect(true);
-                MainApp.Instance.currentMission = index;
                 GuideModel(index);
             });
         }
@@ -160,7 +159,6 @@ namespace View
             {
                 SoundPlayerController.Instance.EnterSoundEffect();
                 iBeaconMissionSetting.Instance.IBeaconNotDetect(true);
-                MainApp.Instance.currentMission = index;
                 EnterModel(index);
                 GameMissions.instance.EnterGame();
             });

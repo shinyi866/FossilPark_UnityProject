@@ -11,6 +11,7 @@ using Hsinpa.CloudAnchor;
 using System.Threading.Tasks;
 using UnityEngine.Playables;
 using Utility;
+using View;
 
 namespace Hsinpa.Ctrl {
 
@@ -308,6 +309,7 @@ namespace Hsinpa.Ctrl {
             var timelineObj = gRhinoFinishObj.GetComponentInChildren<PlayableDirector>();
             spawnRandomBoneTemplate.gameObject.SetActive(false);
             spawnCorrectBoneTemplate.gameObject.SetActive(false);
+            GameModals.instance.GetModal<ARGameModal>().CloseBackButton(true); // close UI back button
 
             _ = UtilityMethod.DoDelayWork((float)timelineObj.duration * 0.5f, () => {
                 DoEndGameAction();

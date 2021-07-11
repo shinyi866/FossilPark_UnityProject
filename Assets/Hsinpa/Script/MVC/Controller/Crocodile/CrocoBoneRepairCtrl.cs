@@ -75,10 +75,15 @@ namespace Hsinpa.Ctrl
             }
         }
 
-        public void Start()
+        public void ReSetBone()
         {
             crocodileTargetTimelineAnim.gameObject.SetActive(false);
             crocodileTarget.gameObject.SetActive(false);
+        }
+
+        public void Start()
+        {
+            ReSetBone();
             _paintingManager.OnTargetDirtIsClear += OnPaintIsDone;
             _paintingManager.OnTargetPainting += OnTargetPainting;
             _raycastInputHandler.OnInputEvent += OnRaycastInputEvent;
@@ -87,11 +92,10 @@ namespace Hsinpa.Ctrl
         }
 
         public void EnterGame(float yRotationOffset, bool p_arEnable)
-        {
+        {   
             time = 2;
+            ReSetBone();
             this._arEnable = p_arEnable;
-            crocodileTargetTimelineAnim.gameObject.SetActive(false);
-            crocodileTarget.gameObject.SetActive(false);
             _worldContainer.gameObject.transform.SetPositionAndRotation(new Vector3(0, 0, 0), Quaternion.identity);
             OpenHintUIModal(TypeFlag.ARGameType.GamePrompt1);
 
@@ -190,7 +194,7 @@ namespace Hsinpa.Ctrl
                 currentToolIndex = 0;
                 _paintingManager.EquipTool((ToolSRP.ToolEnum)currentToolIndex);
 
-
+                GameModals.instance.GetModal<ARGameModal>().CloseBackButton(false);
                 crocodileTargetTimelineAnim.gameObject.SetActive(false);
                 crocodileTarget.gameObject.SetActive(true);
                 crocodileTarget.transform.position = crocodileTargetTimelineAnim.transform.position;
@@ -242,7 +246,7 @@ namespace Hsinpa.Ctrl
             if (nextCurrentToolIndex > (int)ToolSRP.ToolEnum.Tool_2) {
                 _paintingManager.ResetPaint();
 
-                GameModals.instance.GetModal<ARGameModal>().CloseBackButton(); // close UI back button
+                GameModals.instance.GetModal<ARGameModal>().CloseBackButton(true); // close UI back button
 
                 crocodileTarget.gameObject.SetActive(false);
 

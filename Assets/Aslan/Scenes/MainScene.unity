@@ -2476,8 +2476,27 @@ MonoBehaviour:
     maxRange: 1.9
   - minRange: 2.4
     maxRange: 2.7
-  - minRange: 2.6
-    maxRange: 3.5
+  - minRange: 2.4
+    maxRange: 3
+  - minRange: 0.75
+    maxRange: 1
+  - minRange: 0.6
+    maxRange: 0.9
+  - minRange: 1
+    maxRange: 1.4
+  - minRange: 1.15
+    maxRange: 1.35
+  - minRange: 2.7
+    maxRange: 2.9
+  originRanges:
+  - minRange: 1
+    maxRange: 3
+  - minRange: 1.6
+    maxRange: 1.9
+  - minRange: 2.4
+    maxRange: 2.7
+  - minRange: 2.4
+    maxRange: 3
   - minRange: 0.75
     maxRange: 1
   - minRange: 0.6
@@ -4483,8 +4502,8 @@ GameObject:
   - component: {fileID: 175781970}
   - component: {fileID: 175781972}
   - component: {fileID: 175781971}
-  - component: {fileID: 175781974}
   - component: {fileID: 175781973}
+  - component: {fileID: 175781974}
   m_Layer: 5
   m_Name: Image_ans1
   m_TagString: Ans
@@ -4568,11 +4587,11 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175781969}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 64d84d3edc2acd747bbb0413825fa2ef, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 195, y: 60, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &177578220
 GameObject:
@@ -6586,7 +6605,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.9973369, y: 1}
-  m_AnchoredPosition: {x: 0, y: 38087710}
+  m_AnchoredPosition: {x: 0, y: 38314424}
   m_SizeDelta: {x: 0, y: 114.55005}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &293957960
@@ -6881,6 +6900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Object: {fileID: 91621531}
   ARObject: {fileID: 1937798358621160829}
+  isMisssionEnd: 0
 --- !u!1 &320752740
 GameObject:
   m_ObjectHideFlags: 0
@@ -22677,7 +22697,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 503798833}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.70636046
+  m_Size: 0.6708827
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -26854,8 +26874,8 @@ GameObject:
   - component: {fileID: 1435971594}
   - component: {fileID: 1435971596}
   - component: {fileID: 1435971595}
-  - component: {fileID: 1435971598}
   - component: {fileID: 1435971597}
+  - component: {fileID: 1435971598}
   m_Layer: 5
   m_Name: Image_ans2
   m_TagString: Ans
@@ -26939,11 +26959,11 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435971593}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 64d84d3edc2acd747bbb0413825fa2ef, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 195, y: 60, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1436007027
 GameObject:
@@ -28200,8 +28220,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 30, y: -65}
-  m_SizeDelta: {x: 360, y: 360}
+  m_AnchoredPosition: {x: 30, y: -35}
+  m_SizeDelta: {x: 330, y: 330}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1473967307
 MonoBehaviour:
@@ -33046,7 +33066,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.5815278}
-  m_AnchoredPosition: {x: 321.536, y: 0}
+  m_AnchoredPosition: {x: 321.53516, y: 0}
   m_SizeDelta: {x: -643.072, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1714421680
@@ -35188,7 +35208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.9973369, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000032424927}
+  m_AnchoredPosition: {x: 0, y: -0.000038027763}
   m_SizeDelta: {x: 0, y: 140}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1816851092
@@ -36924,6 +36944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582dc9809c71e4a55aee24ed60a09d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentIndex: 0
 --- !u!1 &1875234171
 GameObject:
   m_ObjectHideFlags: 0
@@ -38592,7 +38613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1982783430
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40431,7 +40452,6 @@ MonoBehaviour:
   isARsupport: 0
   text: {fileID: 114835640}
   arModel: 1
-  currentMission: 0
 --- !u!1 &2055817641
 GameObject:
   m_ObjectHideFlags: 0

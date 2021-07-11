@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GameMission;
@@ -11,6 +10,8 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
     [SerializeField]
     private MissionRange[] ranges;
     [SerializeField]
+    private MissionRange[] originRanges;
+    [SerializeField]
     private Transform container;
     [SerializeField]
     private Transform setTransform;
@@ -21,13 +22,14 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 
     private List<GameObject> cloneTransform = new List<GameObject>();
     private Beacon minBeacon;
-    private double curMinRange;
-    private double curMaxRange;
 
     public bool isEnterGame;
     public bool isLastMissionOpen;
 
-    private void Start() { SetPosition(); }
+    private void Start()
+    {
+        SetPosition();
+    }
 
     /* search mission */
     public void MissionSearch(List<Beacon> mybeacons)
@@ -152,21 +154,26 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 
     public void IBeaconNotDetect(bool isEnter)
     {
-        var index = MainApp.Instance.currentMission;
+        //var index = MainApp.Instance.currentMission;
+        var index = GameMissions.instance.currentIndex;
         isEnterGame = isEnter;
 
         if(isEnter)
-        {
-            curMinRange = ranges[index].minRange;
-            curMaxRange = ranges[index].maxRange;
-
+        {   
             ranges[index].minRange = -1;
             ranges[index].maxRange = -1;
+            foreach (var o in originRanges) { Debug.Log("0001 " + o.maxRange); }
+            if (index == 0 && !Games.instance.GetGame<Game1>().isMisssionEnd)
+            {
+                ranges[1].minRange = originRanges[1].minRange;
+                ranges[1].maxRange = originRanges[1].maxRange;
+            }
         }
         else
         {
-            ranges[index].minRange = curMinRange;
-            ranges[index].maxRange = curMaxRange;
+            Debug.Log("originRanges[index].minRange " + originRanges[index].minRange);
+            ranges[index].minRange = originRanges[index].minRange;
+            ranges[index].maxRange = originRanges[index].maxRange;
         }
         
         RefreshValue();

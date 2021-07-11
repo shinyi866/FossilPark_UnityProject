@@ -43,6 +43,7 @@ namespace GameMission
             isEventOpen = true;
             crocoCtrl.OnEndGameEvent += EndGame;
             crocoCtrl.EnterGame(87, MainApp.Instance.isARsupport);
+            modal.CloseBackButton(true);
         }
 
         public void EndGame(bool isSuccess)
@@ -72,6 +73,7 @@ namespace GameMission
         {
             if(isEventOpen)
             {
+                crocoCtrl.ReSetBone();
                 crocoCtrl.OnEndGameEvent -= EndGame;
                 hisnpaPrefab.SetActive(false);
                 isEventOpen = false;

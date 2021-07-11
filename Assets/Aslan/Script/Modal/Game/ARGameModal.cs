@@ -79,10 +79,9 @@ namespace View
                 CameraCtrl.instance.DisableOcclusionManager();
                 mission5.BackToMain();
                 mission6.BackToMain();
-                mission7.BackToMain();                
-
+                mission7.BackToMain();
+                ShowPanel(gamePromptPanel.canvasGroup, false);
                 CloseARPlane();
-                CloseAllPanel();
             });
         }
 
@@ -107,6 +106,7 @@ namespace View
             text.text = gameData.gameNotify[0];
             SwitchConfirmButton(false);
 
+
             switch (type)
             {
                 case TypeFlag.ARGameType.Game0:
@@ -127,7 +127,7 @@ namespace View
                     break;
                 case TypeFlag.ARGameType.Game8:
                     ShowPanel(game8Panel.canvasGroup, true);
-                    CloseBackButton();
+                    CloseBackButton(true);
                     break;
                 default:
                     text.text = gameData.gameNotify[0];
@@ -198,9 +198,9 @@ namespace View
             gamePromptPanel.button.gameObject.SetActive(!switchToConfirm);
             gamePromptPanel.button_confirm.gameObject.SetActive(switchToConfirm);
         }
-        public void CloseBackButton()
+        public void CloseBackButton(bool isClose)
         {
-            backButton.image.enabled = false;
+            backButton.image.enabled = !isClose;
         }
 
         public void ShowPanel(CanvasGroup canvasGroup,bool isShow)

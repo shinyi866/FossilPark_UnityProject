@@ -13,6 +13,8 @@ namespace GameMission
         //private GameObject videoPlane;
         public System.Action gameOverEvent;
 
+        public bool isMisssionEnd;
+
         private int missionIndex = 1;
         private float time = 2f;
         private bool isGameStart;
@@ -132,6 +134,7 @@ namespace GameMission
                 GameModals.instance.CloseModal();
                 Modals.instance.OpenModal<ARModal>();
                 isGameStart = false;
+                isMisssionEnd = true;
                 //GameResult();
             });
             

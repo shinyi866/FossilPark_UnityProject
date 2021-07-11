@@ -11,7 +11,7 @@ namespace GameMission
         private static GameMissions _instance;
 
         private Mission currentMission;
-        private int currentIndex;
+        public int currentIndex;
 
         public static GameMissions instance
         {
@@ -43,7 +43,7 @@ namespace GameMission
 
             currentMission = missions[index];
             currentIndex = index;
-
+            
             if (index == 0 || index == 1 || index == 8)
                 GameModals.instance.ShowNotifyOther(index);
             else
