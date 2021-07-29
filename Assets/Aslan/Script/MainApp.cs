@@ -33,8 +33,8 @@ public class MainApp : Singleton<MainApp>
     private void Start()
     {
         var modal = Modals.instance.OpenModal<MainModal>();
-
-        //Application.lowMemory += OnLowMemory;
+        
+        PlayerPersistent.LoadData();
         playerGuide = PlayerPrefs.GetInt("guide"); // 0: strat guide view, 1: main view
         
         if (playerGuide != 1)

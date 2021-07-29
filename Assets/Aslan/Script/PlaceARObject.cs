@@ -13,6 +13,7 @@ public class PlaceARObject : MonoBehaviour
     public Texture[] animalMarkTexture;
     public ARPlaneManager planeManager;
     public GameObject placeMark;
+    public GameObject findeMark;
     public Material material;
     public GameObject spawnedObject;
 
@@ -200,9 +201,6 @@ public class PlaceARObject : MonoBehaviour
                 lookAtTarget = new Vector3(_camera.transform.position.x, spawnedObject.transform.position.y, _camera.transform.position.z);
                 spawnedObject.transform.LookAt(lookAtTarget);
 
-                if (currentAnimal == 5)
-                    noARanimalObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-
                 break;
             case TypeFlag.ARObjectType.Dinosaurls:
                 spawnedObject = Instantiate(dinosaurlObjects[currentAnimal-2], placementPose.position, animalObjects[currentAnimal - 2].transform.rotation);
@@ -234,11 +232,17 @@ public class PlaceARObject : MonoBehaviour
             placementPose.rotation = Quaternion.LookRotation(cameraBearing);
 
             placeMark.SetActive(true);
+#if UNITY_IOS
+            findeMark.SetActive(false);
+#endif
             placeMark.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
         }
         else
         {
             placeMark.SetActive(false);
+#if UNITY_IOS
+            findeMark.SetActive(true);
+#endif
         }
     }
 

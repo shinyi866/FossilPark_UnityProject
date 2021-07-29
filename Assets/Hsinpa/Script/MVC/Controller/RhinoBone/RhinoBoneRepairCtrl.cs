@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using UnityEngine.Playables;
 using Utility;
 using View;
+using GameMission;
 
 namespace Hsinpa.Ctrl {
 
@@ -56,11 +57,11 @@ namespace Hsinpa.Ctrl {
         private RhinoBoneHelper _rhinoBoneHelper;
 
         public GeneralFlag.GeneralState _state = GeneralFlag.GeneralState.Idle;
+        public bool resetDirection;
         private int waitForSecondPlaneARActivate = 1000;  //1000 == 1 second
 
         float resetRotate;
         float time = 2f;
-        bool resetDirection;
         bool _arEnable = false;
         public System.Action<bool> OnEndGameEvent;
         #endregion

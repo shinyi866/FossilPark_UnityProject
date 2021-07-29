@@ -35,7 +35,7 @@ namespace GameMission
         private double time = 3;
         private float ccidWeight = 0.0f;
         private float alertTime = 1;
-        private bool isGameStart;
+        //private bool isGameStart;
         private bool isARsupport;
 
         private GameObject currentFood;
@@ -84,7 +84,8 @@ namespace GameMission
 
         public void CloseFoods()
         {
-            showARfood.SetActive(false);
+            if(showARfood != null)
+                showARfood.SetActive(false);
         }
 
         private void ResetDirection()

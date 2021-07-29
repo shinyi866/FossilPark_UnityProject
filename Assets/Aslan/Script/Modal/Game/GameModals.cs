@@ -145,7 +145,7 @@ namespace View
             model.Game0ConfirmButton.onClick.AddListener(() =>
             {
                 SoundPlayerController.Instance.EnterSoundEffect();
-                iBeaconMissionSetting.Instance.IBeaconNotDetect(true);
+                iBeaconMissionSetting.Instance.IbeaconNotDetect(true);
                 GuideModel(index);
             });
         }
@@ -158,7 +158,7 @@ namespace View
             model.ConfirmButton.onClick.AddListener(() =>
             {
                 SoundPlayerController.Instance.EnterSoundEffect();
-                iBeaconMissionSetting.Instance.IBeaconNotDetect(true);
+                iBeaconMissionSetting.Instance.IbeaconNotDetect(true);
                 EnterModel(index);
                 GameMissions.instance.EnterGame();
             });

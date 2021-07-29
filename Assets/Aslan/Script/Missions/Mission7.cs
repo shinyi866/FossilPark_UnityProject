@@ -28,7 +28,6 @@ namespace GameMission
             }
             else
             {
-                //CameraCtrl.instance.SwitchToARCamera(true);
                 CameraCtrl.instance.OpenARPlaneManager(true);
             }
 
@@ -73,6 +72,7 @@ namespace GameMission
         {
             if(isEventOpen)
             {
+                crocoCtrl.resetDirection = false;
                 crocoCtrl.ReSetBone();
                 crocoCtrl.OnEndGameEvent -= EndGame;
                 hisnpaPrefab.SetActive(false);

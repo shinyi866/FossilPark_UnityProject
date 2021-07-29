@@ -9,6 +9,8 @@ namespace GameMission
         [SerializeField]
         protected GameObject Object;
 
+        public bool isGameStart;
+
         public virtual void OpenGame(bool isOpen)
         {
             if (Object != null)

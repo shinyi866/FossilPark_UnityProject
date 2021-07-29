@@ -152,17 +152,18 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
         RefreshValue();
     }
 
-    public void IBeaconNotDetect(bool isEnter)
+    public void IbeaconNotDetect(bool isEnter)
     {
-        //var index = MainApp.Instance.currentMission;
         var index = GameMissions.instance.currentIndex;
         isEnterGame = isEnter;
 
         if(isEnter)
-        {   
+        {
+            PlayerPersistent.playerData.missions[index] = true;
+
             ranges[index].minRange = -1;
             ranges[index].maxRange = -1;
-            foreach (var o in originRanges) { Debug.Log("0001 " + o.maxRange); }
+            
             if (index == 0 && !Games.instance.GetGame<Game1>().isMisssionEnd)
             {
                 ranges[1].minRange = originRanges[1].minRange;
@@ -171,11 +172,21 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
         }
         else
         {
-            Debug.Log("originRanges[index].minRange " + originRanges[index].minRange);
+            PlayerPersistent.playerData.missions[index] = false;
+
             ranges[index].minRange = originRanges[index].minRange;
             ranges[index].maxRange = originRanges[index].maxRange;
         }
-        
+
+        PlayerPersistent.SaveData();
+        RefreshValue();
+    }
+
+    public void IbeaconLoadData(int index)
+    {
+        ranges[index].minRange = -1;
+        ranges[index].maxRange = -1;
+
         RefreshValue();
     }
 }

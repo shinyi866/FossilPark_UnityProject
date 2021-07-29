@@ -69,13 +69,14 @@ namespace View
             backButton.onClick.AddListener(() =>
             {
                 Games.instance.ClosGame();
+                Games.instance.StopGame();
                 GameModals.instance.GetModal<ARGameModal>().CloseAllPanel();
                 GameModals.instance.CloseModal();
                 Modals.instance.CloseModal();
                 Modals.instance.CloseARInMain();
                 Modals.instance.CloseARInGame();
                 MediaPlayerController.instance.DestroyVideo();
-                iBeaconMissionSetting.Instance.IBeaconNotDetect(false);
+                iBeaconMissionSetting.Instance.IbeaconNotDetect(false);
                 CameraCtrl.instance.DisableOcclusionManager();
                 mission5.BackToMain();
                 mission6.BackToMain();

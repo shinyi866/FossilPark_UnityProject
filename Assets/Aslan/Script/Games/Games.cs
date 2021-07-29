@@ -71,6 +71,12 @@ namespace GameMission
             GameModals.instance.CloseAllModal();
             GameModals.instance.CloseAR();
         }
+
+        public void StopGame()
+        {
+            if(currentGame != null)
+                currentGame.isGameStart = false;
+        }
     }
 }
 

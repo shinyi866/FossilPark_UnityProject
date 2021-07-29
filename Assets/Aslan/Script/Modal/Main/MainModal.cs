@@ -66,6 +66,7 @@ namespace View
         public void GetBackAnimal(int index)
         {
             Debug.Log("get back");
+            
             var buttonIndex = index - 2;
             clockOutSide++;
 
@@ -73,6 +74,11 @@ namespace View
             {
                 animalButtons[buttonIndex].GetComponent<Button>().interactable = true;
                 ChangeClock();
+            }
+
+            if(index == 8)
+            {
+                Mission8.backToDinosaur = true;
             }
         }
 

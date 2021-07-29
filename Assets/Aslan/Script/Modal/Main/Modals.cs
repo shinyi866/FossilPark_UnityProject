@@ -95,6 +95,7 @@ namespace View
         {
             foreach (Modal modal in modals) { modal.Show(false); }
 
+            MediaPlayerController.instance.SetUp();
             CameraCtrl.instance.SwitchToARCamera(false);
             Debug.Log("====== Modal index "  + index);
             if (index != 4)

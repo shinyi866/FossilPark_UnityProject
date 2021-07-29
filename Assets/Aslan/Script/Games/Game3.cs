@@ -24,7 +24,7 @@ namespace GameMission
         private ARGameModal gameModal;
         private PlayableDirector playableDirector;
 
-        private bool isGameStart;
+        //private bool isGameStart;
         private bool isARStart;
         private bool isThrowing;
         private bool isCreateHandBall;
@@ -54,6 +54,7 @@ namespace GameMission
             alertTime = 1;
             CatchFruit.fruitCount = 0;
             TriggerFruitPlane.fruitTouchPlane = 0;
+            monkey.SetActive(false);
 
             gameModal = GameModals.instance.GetModal<ARGameModal>();
             _camera = CameraCtrl.instance.GetCurrentCamera();

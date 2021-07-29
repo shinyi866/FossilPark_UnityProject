@@ -46,8 +46,6 @@ namespace View
 
             GameCanvasGroups = new CanvasGroup[] { arPicturePanel.canvasGroup, onePictureGuidePanel.canvasGroup, twoPictureGuidePanel.canvasGroup};
 
-            //===PictureButton.onClick.AddListener(() => { TakePicture(); });
-
             SaveButton.onClick.AddListener(() =>
             {
                 // TODO save picture to phone
@@ -57,7 +55,6 @@ namespace View
 
             ConfirmButton.onClick.AddListener(() =>
             {
-                //===ShowPhotoPanel(photoButtonPanel, true);
                 ShowPanel(onePictureGuidePanel.canvasGroup, false);
             });
         }

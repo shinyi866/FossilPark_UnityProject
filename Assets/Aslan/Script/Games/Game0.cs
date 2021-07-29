@@ -22,7 +22,7 @@ namespace GameMission
         private float time = 2;
         private int missionIndex;
         private Camera _camera;
-        private bool isGameStart;
+        //private bool isGameStart;
         private bool placeClock;
         private ARGameModal modal;
         private string videoPath = "Video/clock_360.mp4";
@@ -55,21 +55,6 @@ namespace GameMission
                 var mainModals = Modals.instance.GetModel<MainModal>();
                 mainModals.ShowPanel(mainModals.promptView, true);
                 iBeaconMissionSetting.Instance.isEnterGame = true;
-                //ARmodal.ShowView(false);
-                //GameResult();
-                /*
-                if (Physics.Raycast(transform.position, _camera.transform.forward, out hit, 3))
-                {
-                    placeClock = true;
-                    ClockObject.SetActive(true);
-                    modal.CloseAllPanel();
-                    GameResult();
-                }
-                else
-                {
-                    modal.ShowPrompt(0, TypeFlag.ARGameType.GamePrompt1);
-                    modal.gamePromptPanel.image.sprite = MainApp.Instance.database.m_Data[0].animalDialogPicture;
-                }*/
             });
 
             

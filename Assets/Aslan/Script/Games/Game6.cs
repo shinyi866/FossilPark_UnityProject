@@ -17,7 +17,7 @@ namespace GameMission
         private Camera _camera;
         private ARGameModal modal;
         private string videoPath = "Video/ele.mp4";
-        private bool isGameStart;
+        //private bool isGameStart;
         private int missionIndex = 6;
         private int successTimes = 0;
 

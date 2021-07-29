@@ -19,20 +19,18 @@ public class CameraCtrl : MonoBehaviour
             if (_instance == null)
             {
                 _instance = FindObjectOfType<CameraCtrl>();
-                _instance.SetUp();
+                //_instance.SetUp(currentCamera);
             }
 
             return _instance;
         }
     }
 
-    public void SetUp()
+    public void SetUp(Camera _camera)
     {
-        MainCamera.transform.position = new Vector3(0, 0, 0);
-        MainCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
-
-        ARcamera.transform.position = new Vector3(0, 0, 0);
-        ARcamera.transform.rotation = Quaternion.Euler(0, 0, 0);
+        _camera.transform.position = new Vector3(0, 0, 0);
+        _camera.transform.rotation = Quaternion.identity;
+        _camera.transform.localRotation = Quaternion.identity;
     }
 
     private void Awake()
@@ -46,29 +44,26 @@ public class CameraCtrl : MonoBehaviour
 
     public void SwitchToARCamera(bool isAR)
     {
-        var isARsupport = MainApp.Instance.isARsupport;
         currentCamera = MainCamera.GetComponent<Camera>();
-        SetUp();
-
-        //if (!isARsupport) return;
 
         MainCamera.SetActive(!isAR);
         ARcamera.SetActive(isAR);
 
         currentCamera = isAR? ARcamera.GetComponent<Camera>() : MainCamera.GetComponent<Camera>();
-        //MediaPlayerController.instance.OpenSphereVideo(!isAR);
+
+        SetUp(currentCamera);
     }
 
     public void SwitchCameraForHsinpaMission(bool isAR)
     {
         currentCamera = MainCamera.GetComponent<Camera>();
-        SetUp();
 
         MainCamera.SetActive(!isAR);
         ARcamera.SetActive(isAR);
 
         currentCamera = isAR ? ARcamera.GetComponent<Camera>() : MainCamera.GetComponent<Camera>();
-        //MediaPlayerController.instance.OpenSphereVideo(!isAR);
+
+        SetUp(currentCamera);
     }
 
     public Camera GetCurrentCamera()

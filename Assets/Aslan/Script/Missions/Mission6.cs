@@ -40,8 +40,10 @@ namespace GameMission
             modal.ShowInfo(missionIndex, TypeFlag.PictureType.EndGuide);
             modal.GuideConfirmButtonTwo.onClick.AddListener(() =>
             {
-                Games.instance.ClosGame();
-                //MediaPlayerController.instance.CloseVideo();
+                if (MainApp.Instance.isARsupport)
+                    MediaPlayerController.instance.DestroyVideo();
+
+                Games.instance.ClosGame();                
                 SoundPlayerController.Instance.PlayBackgroundMusic();
                 GameModals.instance.CloseModal();
                 

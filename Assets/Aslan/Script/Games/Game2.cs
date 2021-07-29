@@ -8,35 +8,36 @@ namespace GameMission
         [SerializeField]
         private GameObject riverObject;
         [SerializeField]
-        private GameObject UIobject;
-        [SerializeField]
         private GameObject movieObject;
         [SerializeField]
         private bool TestMode;
 
-        private int missionIndex = 2;
-
+        public GameObject UIobject;
+        [HideInInspector]
         public bool isARGameStart;
+
+        private int missionIndex = 2;
         private bool isUnARGameStart;
-        private bool isGameStart;
+        //private bool isGameStart;
         private float time = 2;
         private Camera _camera;
         private ARGameModal modal;
 
         public void Init()
-        {
+        {            
             _camera = CameraCtrl.instance.GetCurrentCamera();
             time = 2;
             isGameStart = true;
             movieObject.SetActive(false);
+            UIobject.SetActive(false);
         }
 
         public void GameStart(bool isARsupport)
-        {
-            UIobject.SetActive(true);
+        {            
             SoundPlayerController.Instance.RiverSoundEffect();
             modal = GameModals.instance.OpenModal<ARGameModal>();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game2);
+            UIobject.SetActive(true);
 
             if (isARsupport)
             {

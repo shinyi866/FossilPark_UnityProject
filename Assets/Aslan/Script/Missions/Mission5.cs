@@ -28,7 +28,7 @@ namespace GameMission
             else
             {
 #if UNITY_IOS
-                CameraCtrl.instance.OpenARPlaneManager(true);
+                //CameraCtrl.instance.OpenARPlaneManager(true);
 #endif
             }
 
@@ -64,8 +64,6 @@ namespace GameMission
                 model.ConfirmButton.onClick.AddListener(() =>
                 {
                     model.logoImage.enabled = false;
-                    //Games.instance.ClosGame();
-                    //MediaPlayerController.instance.CloseVideo();
                     GameModals.instance.CloseModal();
 
                     if (MainApp.Instance.isARsupport)
@@ -80,6 +78,7 @@ namespace GameMission
         {
             if (isEventOpen)
             {
+                rhinoCtrl.resetDirection = false;
                 rhinoCtrl.OnEndGameEvent -= EndGame;
                 rhinoCtrl.CleanBone();
                 hisnpaPrefab.SetActive(false);

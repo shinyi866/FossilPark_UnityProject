@@ -45,7 +45,7 @@ namespace GameMission
         public System.Action<bool> gameOverEvent;
         public static int AnsInBoxCount;
 
-        private bool isGameStart;
+        //private bool isGameStart;
         private bool finishGame;
         private int missionIndex = 4;
 

@@ -23,8 +23,7 @@ missionID,roundMessage,enterMessage,enterButton,gameDescription,gameTitle,titleB
 使用相機拍攝我讓我回到時光機中吧！,鬚鯨,齒鯨",拍照,Assets/Aslan/ArtSprite/GameUI/animals/03dolphin.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/dolphin.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_6toothed_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8baleen_whale.png,Assets/Aslan/ArtSprite/GameUI/04/03_1_8toothed_whale.png
 5,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！
 趕緊找找看他們在哪裡吧！",帶回管理員,"嗨！您好我是早坂犀牛！
-「左鎮動物群」的動物化石，多在溪床被發現，甚少直 接從地層露頭中被採集。 而我！早坂中國犀為原地埋藏，出土化石的完整度 高達7成。","沙坑中的犀牛化石,您能將挖掘出來的化石，排列到正確的位子上嗎？",排列犀牛,2,"點按犀牛化石，將化石移動到正確的位置上！,點按化石,成功擺放",開始,請將犀牛的化石放置於正確的位置上！,,"根據我們出土的犀牛化石特徵，可確定牠屬於犀科犀屬，學名為早坂中國犀牛(<i>Rhinoceros sinensis hayasakai</i>)。\n但最近有學者認為我名字應該要改成早坂島犀(<i>Nesohinus hayasakai</i>)\n，與菲律賓島犀同屬於島犀家族，而相關的研究還在進行中歐！
-所以，我可以幫助科學家了解我們的遷徙與演化歷史，在學術上是重要的化石標本喔！,成功！看來您非常了解本園區最重要的犀牛呢！
+「左鎮動物群」的動物化石，多在溪床被發現，甚少直 接從地層露頭中被採集。 而我！早坂中國犀為原地埋藏，出土化石的完整度 高達7成。","沙坑中的犀牛化石,您能將挖掘出來的化石，排列到正確的位子上嗎？",排列犀牛,2,"點按犀牛化石，將化石移動到正確的位置上！,點按化石,成功擺放",開始,請將犀牛的化石放置於正確的位置上！,,"根據我們出土的犀牛化石特徵，可確定牠屬於犀科犀屬，學名為早坂中國犀牛(<i>Rhinoceros sinensis hayasakai</i>)。\n但最近有學者認為我名字應該要改成早坂島犀(<i>Nesohinus hayasakai</i>)\n與菲律賓島犀同屬於島犀家族，而相關的研究還在進行中歐！所以，我可以幫助科學家了解我們的遷徙與演化歷史，在學術上是重要的化石標本喔！,成功！看來您非常了解本園區最重要的犀牛呢！
 園區的Logo就是在說我喔！
 使用相機拍攝我讓我回到時光機中吧！",拍照,Assets/Aslan/ArtSprite/GameUI/animals/04Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/02_induction2/Hayasaka.png,Assets/Aslan/ArtSprite/GameUI/05/example2.png,Assets/Aslan/ArtSprite/GameUI/05/example1.png,Assets/Aslan/ArtSprite/GameUI/ar_planMark/01Sika_deer.png,
 6,"發現蹤跡,附近似乎有管理員們的蹤跡，趕緊找找看他們在哪裡吧！","附近似乎有管理員們的蹤跡！

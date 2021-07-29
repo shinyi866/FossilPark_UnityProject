@@ -17,7 +17,7 @@ namespace GameMission
 
         private int missionIndex = 1;
         private float time = 2f;
-        private bool isGameStart;
+        //private bool isGameStart;
         private bool isARsupport;
         private bool isVideoEnd;
         private bool isSetVideoPlane;
@@ -105,13 +105,13 @@ namespace GameMission
                 MediaPlayerController.instance.SwitchToVideo360(true);
 
             SoundPlayerController.Instance.PlayBackgroundMusic();
-            CameraCtrl.instance.OcclusionForHuman();
+            //CameraCtrl.instance.OcclusionForHuman();
             modal.ShowModal(missionIndex, TypeFlag.ARGameType.Game1);
             modal.ShowPrompt(missionIndex, TypeFlag.ARGameType.GamePrompt1);
             modal.SwitchConfirmButton(true);
             modal.gamePromptPanel.button_confirm.onClick.AddListener(() =>
             {
-                //modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);                
+                modal.ShowPanel(modal.gamePromptPanel.canvasGroup, false);                
                 ARObject.SetActive(true);
                 modal.CloseAllPanel();
                 modal.SwitchConfirmButton(false);

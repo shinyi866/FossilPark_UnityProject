@@ -44,11 +44,11 @@ namespace Hsinpa.Ctrl
         private int currentToolIndex = -1;
 
         public System.Action<bool> OnEndGameEvent;
+        public bool resetDirection;
 
         private Vector3 offsetRotation = Vector3.zero;
         private float resetRotate;
-        private float time = 2f;
-        private bool resetDirection;
+        private float time = 2f;        
 
         public override void OnNotify(string p_event, params object[] p_objects)
         {
@@ -128,7 +128,7 @@ namespace Hsinpa.Ctrl
 
         private void CheckAndProcessWithCompassAR(float yRotationOffset) {
             _arHelper.ActivateAR(true);
-
+            
             crocodileTargetTimelineAnim.gameObject.SetActive(true);
 
             try {
