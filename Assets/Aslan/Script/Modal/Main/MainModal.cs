@@ -68,18 +68,16 @@ namespace View
             Debug.Log("get back");
             
             var buttonIndex = index - 2;
-            clockOutSide++;
 
             if (buttonIndex >= 0 && buttonIndex < animalButtons.Length)
             {
+                clockOutSide++;
                 animalButtons[buttonIndex].GetComponent<Button>().interactable = true;
                 ChangeClock();
-            }
+            } 
 
-            if(index == 8)
-            {
-                Mission8.backToDinosaur = true;
-            }
+            if (index == 8)
+                Mission8.backToDinosaur = true;            
         }
 
         private void MainButtonClick()
@@ -146,13 +144,20 @@ namespace View
             if (clockOutSide == 4) { clockImage.sprite = clockSprite[2]; }
             if (clockOutSide == 6)
             {
-                clockImage.sprite = clockSprite[3];
                 var eggModal = Modals.instance.GetModel<EggModal>();
-                eggModal.StartButton.interactable = true;
-                eggModal.erroObject.SetActive(false);
-
+                clockImage.sprite = clockSprite[3];
                 iBeaconMissionSetting.Instance.isLastMissionOpen = true;  // Finish all mission will open
-                remindObject.SetActive(true); // Finish all mission will open
+
+                if (PlayerPrefs.HasKey("dinosaurBaby"))
+                {
+                    eggModal.SetButtonStatus();
+                }
+                else
+                {
+                    eggModal.StartButton.interactable = true;
+                    eggModal.erroObject.SetActive(false);
+                    remindObject.SetActive(true); // Finish all mission will open
+                }                    
             }
         }
 

@@ -47,21 +47,10 @@ namespace View
         private void Awake()
         {
             arModal = Modals.instance.GetModel<InfoModal>();
-            /*
-            if (PlayerPrefs.HasKey("dinosaurBaby"))
-            {
-                StartButton.interactable = false;
-                ARButton.interactable = true;
-
-                eggAnimation.SetActive(false);
-                babyObject.SetActive(true);
-                eggImage.enabled = false;          
-                currentSprites = arModal.animalItemObj.DinosaurlBabyItems[dinosaurIndex].MainImage;
-            }
-             */ 
+            
             BackButton.onClick.AddListener(() =>
             {
-                Modals.instance.CloseModal(); // TODO error?
+                Modals.instance.CloseModal();
             });
 
             ARButton.onClick.AddListener(() =>
@@ -81,12 +70,26 @@ namespace View
             StartButton.onClick.AddListener(() =>
             {
                 dinosaurIndex = Random.Range(0,3);
-                //PlayerPrefs.SetInt("dinosaurBaby", dinosaurIndex);
+                PlayerPrefs.SetInt("dinosaurBaby", dinosaurIndex);
                 startMachine = true;
                 StartButton.interactable = false;
                 ARButton.interactable = true;
                 backAnimation = true;
             });
+        }
+
+        public void SetButtonStatus()
+        {
+            dinosaurIndex = PlayerPrefs.GetInt("dinosaurBaby");
+
+            StartButton.interactable = false;
+            ARButton.interactable = true;
+
+            eggAnimation.SetActive(false);
+            erroObject.SetActive(false);
+            babyObject.SetActive(true);
+            eggImage.enabled = false;
+            currentSprites = arModal.animalItemObj.DinosaurlBabyItems[dinosaurIndex].MainImage;
         }
 
         public void RotateTimes()
