@@ -85,7 +85,7 @@ namespace GameMission
         public void CloseFoods()
         {
             if(showARfood != null)
-                showARfood.SetActive(false);
+                foreach (var b in arObjects.Values) { b.SetActive(false); }
         }
 
         private void ResetDirection()
@@ -131,6 +131,7 @@ namespace GameMission
             foreach (var o in dinosaurlScenes) { o.SetActive(false); }
             foreach (var b in foodButton) { b.interactable = true; }
             foreach(var f in foodinMouth) { f.SetActive(false); }
+            foreach (var b in arObjects.Values) { b.SetActive(false); }
 
             ResetDinosaurls();
             currentDinosaurl = dinosaurs[index];

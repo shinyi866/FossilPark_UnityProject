@@ -29,7 +29,7 @@ namespace GameMission
             successTimes = 0;
 
             Modals.instance.CloseAllModal();
-            MediaPlayerController.instance.LoadAndPlayVideo(videoPath,true);
+            MediaPlayerController.instance.LoadAndPlayVideo(videoPath,false);
         }
 
         public void GameStart()

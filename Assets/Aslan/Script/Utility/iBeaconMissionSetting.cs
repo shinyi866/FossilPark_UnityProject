@@ -184,6 +184,8 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
 
     public void IbeaconLoadData(int index)
     {
+        if (index == 8) return;
+
         ranges[index].minRange = -1;
         ranges[index].maxRange = -1;
 

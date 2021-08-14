@@ -13,6 +13,11 @@ namespace View
         
         public CanvasGroup promptView;
         [SerializeField]
+        private CanvasGroup finishView;
+        [SerializeField]
+        private Text finishText;
+
+        [SerializeField]
         private Image introImage;
         [SerializeField]
         private GuideView guideView;
@@ -30,6 +35,8 @@ namespace View
         private Button promptButton;
         [SerializeField]
         private Button promptCloseButton;
+        [SerializeField]
+        private Button finishCloseButton;
 
         [SerializeField]
         private Button[] missionButtons;
@@ -43,6 +50,7 @@ namespace View
 
         private int clockOutSide = 0;
         private DialogModal modal;
+        private string[] missionName = {"梅花鹿","金絲猴","鯨豚", "早坂犀牛", "臺灣猛獁象", "臺灣長吻鱷" };
 
         public void StarIntroView()
         {
@@ -77,7 +85,18 @@ namespace View
             } 
 
             if (index == 8)
-                Mission8.backToDinosaur = true;            
+                Mission8.backToDinosaur = true;     
+        }
+
+        public void ShowFinishView(int index)
+        {
+            var number = index - 2;
+
+            if (number < 0 || number == 7) return;
+
+            var s = string.Format("恭喜您完成{0}關卡！", missionName[number]);
+            finishText.text = s;
+            ShowPanel(finishView, true);
         }
 
         private void MainButtonClick()
@@ -111,6 +130,10 @@ namespace View
 
             eggButton.onClick.AddListener(() => {
                 Modals.instance.OpenModal<EggModal>();
+            });
+
+            finishCloseButton.onClick.AddListener(() => {
+                ShowPanel(finishView, false);
             });
 
             promptButton.onClick.AddListener(() => {
