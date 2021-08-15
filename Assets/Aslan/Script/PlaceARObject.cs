@@ -26,6 +26,7 @@ public class PlaceARObject : MonoBehaviour
     private TypeFlag.ARObjectType currentType;
     private GameObject noARanimalObject;
     private float rotateSpeed = 0.1f;
+    private float time = 0;
 
     private static PlaceARObject _instance;
 
@@ -64,40 +65,59 @@ public class PlaceARObject : MonoBehaviour
 
     public void EnterARAndroid(int index, TypeFlag.ARObjectType type)
     {
-        _camera = CameraCtrl.instance.ARcamera.GetComponent<Camera>();
-        //_camera.transform.position = new Vector3(0, 0, 0);
+        isARpage = false;
+        currentType = type;
+        currentAnimal = index;
+        time = 2f;
+
+        switch (currentType)
+        {
+            case TypeFlag.ARObjectType.Animals:
+                var animalTransform = animalObjects[currentAnimal - 2].transform;
+                spawnedObject = Instantiate(animalObjects[currentAnimal - 2], new Vector3(animalTransform.position.x, animalTransform.position.y, 1.5f), animalTransform.rotation);
+                break;
+            case TypeFlag.ARObjectType.Dinosaurls:
+                var dinosaurlTransform = dinosaurlObjects[currentAnimal - 2].transform;
+                spawnedObject = Instantiate(dinosaurlObjects[currentAnimal - 2], new Vector3(dinosaurlTransform.position.x, dinosaurlTransform.position.y, 1.5f), dinosaurlTransform.rotation);
+                break;
+            case TypeFlag.ARObjectType.DinosaurlBaby:
+                var dinosaurlBabyTransform = dinosaurlBabyObjects[currentAnimal].transform;
+                spawnedObject = Instantiate(dinosaurlBabyObjects[currentAnimal], new Vector3(dinosaurlBabyTransform.position.x, dinosaurlBabyTransform.position.y, 1.5f), dinosaurlBabyTransform.rotation);
+                break;
+        }
+    }
+
+    private void ResetDirection()
+    {
+        _camera = CameraCtrl.instance.GetCurrentCamera();
 
         var _frontPos = _camera.transform.forward;
         var _upPos = _camera.transform.up;
 
-        switch (type)
+        switch (currentType)
         {
             case TypeFlag.ARObjectType.Animals:
-                var animalTransform = animalObjects[index - 2].transform;
-                spawnedObject = Instantiate(animalObjects[index - 2], new Vector3(animalTransform.position.x, animalTransform.position.y, 1.5f), animalTransform.rotation);
 
-                if (index == 3)
+                if (currentAnimal == 3)
                 {
-                    spawnedObject.transform.position = _camera.transform.position + _upPos * -1.5f + _frontPos * 1.5f;
+                    spawnedObject.transform.position = _camera.transform.position + _upPos * -0.8f + _frontPos * 3f;
                     spawnedObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
                 else
                 {
-                    spawnedObject.transform.position = _camera.transform.position + _upPos * -1.8f + _frontPos * 2f;
+                    spawnedObject.transform.position = _camera.transform.position + _upPos * -0.8f + _frontPos * 3f;
                     spawnedObject.transform.rotation = Quaternion.Euler(0, 140, 0);
                 }
 
                 break;
+
             case TypeFlag.ARObjectType.Dinosaurls:
-                var dinosaurlTransform = dinosaurlObjects[index - 2].transform;
-                spawnedObject = Instantiate(dinosaurlObjects[index - 2], new Vector3(dinosaurlTransform.position.x, dinosaurlTransform.position.y, 1.5f), dinosaurlTransform.rotation);
-                spawnedObject.transform.position = _camera.transform.position + _upPos * -1.8f + _frontPos * 5f;
+                spawnedObject.transform.position = _camera.transform.position + _upPos * -1f + _frontPos * 5f;
                 spawnedObject.transform.rotation = Quaternion.Euler(0, 110, 0);
                 break;
+
             case TypeFlag.ARObjectType.DinosaurlBaby:
-                var dinosaurlBabyTransform = dinosaurlBabyObjects[index].transform;
-                spawnedObject = Instantiate(dinosaurlBabyObjects[index], new Vector3(dinosaurlBabyTransform.position.x, dinosaurlBabyTransform.position.y, 1.5f), dinosaurlBabyTransform.rotation);
-                spawnedObject.transform.position = _camera.transform.position + _upPos * -1.8f + _frontPos * 2f;
+                spawnedObject.transform.position = _camera.transform.position + _upPos * -1f + _frontPos * 3f;
                 break;
         }
     }
@@ -152,6 +172,14 @@ public class PlaceARObject : MonoBehaviour
     
     private void Update()
     {
+        // Android animal position
+        if (time > 0)
+        {
+            Debug.Log("time " + time);
+            ResetDirection();
+            time -= Time.deltaTime;
+        }
+
         if (!isARpage) return;
         
         var hits = new List<ARRaycastHit>();

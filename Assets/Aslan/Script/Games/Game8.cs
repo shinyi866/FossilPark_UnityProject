@@ -157,6 +157,13 @@ namespace GameMission
                 showARfood.transform.position = vector;
                 showARfood.SetActive(true);
             }
+
+            if (index == 0)
+                SoundPlayerController.Instance.BrachiosaurusSoundEffect();
+            if (index == 1)
+                SoundPlayerController.Instance.TriceratopSoundEffect();
+            if (index == 2)
+                SoundPlayerController.Instance.TRexSoundEffect();
         }
 
         // AR Image Track

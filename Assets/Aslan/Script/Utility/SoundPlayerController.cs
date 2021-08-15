@@ -108,8 +108,30 @@ public class SoundPlayerController : Singleton<SoundPlayerController>
         soundEffectAudio.loop = true;
     }
 
+    public void TRexSoundEffect()
+    {
+        soundEffectAudio.clip = soundData.SoundItems.TRex;
+        soundEffectAudio.Play();
+        soundEffectAudio.loop = true;
+    }
+
+    public void BrachiosaurusSoundEffect()
+    {
+        soundEffectAudio.clip = soundData.SoundItems.Brachiosaurus;
+        soundEffectAudio.Play();
+        soundEffectAudio.loop = true;
+    }
+
+    public void TriceratopSoundEffect()
+    {
+        soundEffectAudio.clip = soundData.SoundItems.Triceratop;
+        soundEffectAudio.Play();
+        soundEffectAudio.loop = true;
+    }
+
     public void StopSoundEffect()
     {
-        soundEffectAudio.clip = null;
+        if (soundEffectAudio.clip != null)
+            soundEffectAudio.clip = null;
     }
 }

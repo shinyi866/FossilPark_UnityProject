@@ -15,7 +15,9 @@ public class Sound
     public AudioClip brush;
     public AudioClip pen;
     public AudioClip river;
-
+    public AudioClip TRex;
+    public AudioClip Brachiosaurus;
+    public AudioClip Triceratop;
 }
 
 [CreateAssetMenu(fileName = "SoundData", menuName = "ScriptableObjects/SoundData", order = 0)]
