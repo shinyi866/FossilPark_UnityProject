@@ -78,9 +78,15 @@ namespace Hsinpa.App {
                     //Vibration
                     if (toolSwitcher.currentObject != null && toolSwitcher.currentObject.vibrate) {
                         Vector3 currentPosition = m_Results[0].point;
+
+                        Vector3 objectFront = toolSwitcher.currentObject.transform.forward,
+                                objectRight = toolSwitcher.currentObject.transform.right;
+
+                        Vector3 offsetPosition = currentPosition - (objectFront * 0.05f) - (objectRight * 0.025f);
+
                         float randomRange = 0.001f;
-                        toolSwitcher.transform.position= new Vector3(currentPosition.x + Random.Range(-randomRange, randomRange), 
-                                                                    currentPosition.y, currentPosition.z + Random.Range(-randomRange, randomRange));
+                        toolSwitcher.transform.position= new Vector3(offsetPosition.x + Random.Range(-randomRange, randomRange), 
+                                                                    currentPosition.y, offsetPosition.z + Random.Range(-randomRange, randomRange));
                     }
 
                     if (toolSwitcher.currentObject != null && toolSwitcher.currentObject.deltaOrientation)
