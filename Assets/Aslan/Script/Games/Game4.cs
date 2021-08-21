@@ -38,6 +38,8 @@ namespace GameMission
         [Header("Canvas")]
         [SerializeField]
         private GameObject canvas;
+        [SerializeField]
+        private GameObject remindCanvas;
 
         [SerializeField, Range(10f, 60f)]
         private float errorRound = 40f;
@@ -45,7 +47,7 @@ namespace GameMission
         public System.Action<bool> gameOverEvent;
         public static int AnsInBoxCount;
 
-        //private bool isGameStart;
+        private float time = 3.5f;
         private bool finishGame;
         private int missionIndex = 4;
 
@@ -63,12 +65,13 @@ namespace GameMission
         public void Init()
         {
             _camera = CameraCtrl.instance.GetCurrentCamera();
-
+            
             AnsInBoxCount = 0;
             AnsClear();
             Modals.instance.CloseAllModal();
             MediaPlayerController.instance.LoadVideo(videoPath);
             canvas.SetActive(false);
+            remindCanvas.SetActive(false);
         }
 
         public void GameStart()
@@ -94,7 +97,7 @@ namespace GameMission
                 {
                     Object.SetActive(false);
                     GameModals.instance.CloseModal();
-                    //MediaPlayerController.instance.CloseVideo();
+
                     MediaPlayerController.instance.LoadAndPlayVideo(successVidePath,false);
                     SoundPlayerController.Instance.PauseBackgroundMusic();
                     SoundPlayerController.Instance.FinishAllSoundEffect();
@@ -289,7 +292,17 @@ namespace GameMission
                 DetectAnswer();
                 SetBonePosition();
             }
-            
+            else
+            {
+                if (time > 0)
+                {
+                    time -= Time.deltaTime;
+                    remindCanvas.SetActive(true);
+                }
+                else
+                    remindCanvas.SetActive(false);
+            }
+
             if (AnsInBoxCount == 6) { button.SetActive(true); }
             else { button.SetActive(false); Debug.Log("Ans Count " + AnsInBoxCount); }
 

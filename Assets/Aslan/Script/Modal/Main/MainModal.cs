@@ -28,6 +28,8 @@ namespace View
         [SerializeField]
         private Button[] animalButtons;
         [SerializeField]
+        private Button[] remiindButtons;
+        [SerializeField]
         private Button dinosaurButton;
         [SerializeField]
         private Button eggButton;
@@ -49,8 +51,13 @@ namespace View
         private Sprite[] clockSprite;
 
         private int clockOutSide = 0;
+        private int buttonIndex;
+        private float t = 24f;
+        private float currentAphla = 1;
+        private bool fadeAnimate;
+        public bool fadeStart;
         private DialogModal modal;
-        private string[] missionName = {"梅花鹿","金絲猴","鯨豚", "早坂犀牛", "臺灣猛獁象", "臺灣長吻鱷" };
+        //private string[] missionName = {"尋找逆走鐘","失控的逆走鐘","梅花鹿","金絲猴","鯨豚", "早坂犀牛", "臺灣猛獁象", "臺灣長吻鱷" };
 
         public void StarIntroView()
         {
@@ -75,12 +82,13 @@ namespace View
         {
             Debug.Log("get back");
             
-            var buttonIndex = index - 2;
+            buttonIndex = index - 2;
 
             if (buttonIndex >= 0 && buttonIndex < animalButtons.Length)
             {
                 clockOutSide++;
                 animalButtons[buttonIndex].GetComponent<Button>().interactable = true;
+
                 ChangeClock();
             } 
 
@@ -90,15 +98,14 @@ namespace View
 
         public void ShowFinishView(int index)
         {
-            var number = index - 2;
+            if (index == 8) return;
 
-            if (number < 0 || number == 7) return;
-
-            var s = string.Format("恭喜您完成{0}關卡！", missionName[number]);
+            var s = string.Format("恭喜您完成{0}關卡！\n 再去園區尋找下一個關卡吧！", StringAsset.Finish.missionName[index]);
             finishText.text = s;
+            t = 10;
             ShowPanel(finishView, true);
-        }
-
+        }       
+        
         private void MainButtonClick()
         {
             for (int i = 0; i < animalButtons.Length; i++)
@@ -145,6 +152,15 @@ namespace View
                 ShowPanel(promptView, false);
                 iBeaconMissionSetting.Instance.isEnterGame = false;
             });
+
+            for(int i = 0; i < remiindButtons.Length; i++)
+            {
+                var index = i;
+                remiindButtons[index].onClick.AddListener(() => {
+                    ShowPanel(finishView, true);
+                    finishText.text = StringAsset.Remind.location[index];
+                });
+            }
         }
 
         private void MissionsButtonClick()
@@ -232,6 +248,40 @@ namespace View
                 canvasGroup.interactable = isShow;
                 canvasGroup.blocksRaycasts = isShow;
             }
+        }
+
+        private void Update()
+        {
+            if (!fadeStart) return;
+            if (buttonIndex < 0) return;
+            if (buttonIndex == 7) return;
+
+            t -= Time.deltaTime;
+
+            if(t > 0)
+            {
+                if (animalButtons[buttonIndex].gameObject.GetComponent<Image>().color.a < 0.41f)
+                    fadeAnimate = false;
+                else if (animalButtons[buttonIndex].gameObject.GetComponent<Image>().color.a > 0.99f)
+                    fadeAnimate = true;
+
+                FadeImage(fadeAnimate);
+            }
+            else
+            {
+                animalButtons[buttonIndex].gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                fadeStart = false;
+            }
+        }
+
+        private void FadeImage(bool isFadeOut)
+        {
+            if(isFadeOut)
+                currentAphla -= 0.3f * Time.deltaTime;
+            else
+                currentAphla += 0.3f * Time.deltaTime;
+
+            animalButtons[buttonIndex].gameObject.GetComponent<Image>().color = new Color(1, 1, 1, currentAphla);
         }
     }
 }

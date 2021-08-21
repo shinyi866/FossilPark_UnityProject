@@ -23,6 +23,7 @@ namespace GameMission
             //game.gameOverEvent += EndGame;
             game.Init();
             game.GameStart();
+            Modals.instance.GetModel<MainModal>().ShowFinishView(missionIndex);
         }
 
         public void EndGame()

@@ -69,6 +69,7 @@ namespace View
                 Games.instance.ClosGame();
                 GameModals.instance.GetModal<ARGameModal>().CloseAllPanel();
                 GameModals.instance.CloseModal();
+                Modals.instance.GetModel<MainModal>().fadeStart = true;
                 Modals.instance.CloseModal();
                 Modals.instance.CloseARInMain();
                 Modals.instance.CloseARInGame();

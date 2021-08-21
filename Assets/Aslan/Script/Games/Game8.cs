@@ -270,7 +270,7 @@ namespace GameMission
                         DinosaursEat(dotResult, 5f, 4.99f, 4f, 0.04f);
                         break;
                     case TypeFlag.DinosaurlsType.TRex:
-                        DinosaursEat(dotResult, 2.6f, 2.595f, 1f, 0.3f);
+                        DinosaursEat(dotResult, 2.8f, 2.595f, 1f, 0.3f);
                         break;
                     case TypeFlag.DinosaurlsType.Triceratop:
                         DinosaursEat(dotResult, 2.68f, 2.65f, 1f, 0.05f);
@@ -294,7 +294,7 @@ namespace GameMission
                             DinosaursEat(dotResult, 5f, 4.99f, 4f, 0.04f);
                             break;
                         case TypeFlag.DinosaurlsType.TRex:
-                            DinosaursEat(dotResult, 2.6f, 2.595f, 1f, 0.3f);
+                            DinosaursEat(dotResult, 2.8f, 2.595f, 1f, 0.3f);
                             break;
                         case TypeFlag.DinosaurlsType.Triceratop:
                             DinosaursEat(dotResult, 2.68f, 2.65f, 1f, 0.05f);

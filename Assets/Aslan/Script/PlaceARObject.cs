@@ -16,17 +16,21 @@ public class PlaceARObject : MonoBehaviour
     public GameObject findeMark;
     public Material material;
     public GameObject spawnedObject;
+    public Text text;//delete
 
     private ARRaycastManager raycastManager;
     private Pose placementPose;
     private bool placePosIsValid = false;
     private bool isARpage;
+    private bool isAndroidARpage;
     private Camera _camera;
     private int currentAnimal;
     private TypeFlag.ARObjectType currentType;
     private GameObject noARanimalObject;
     private float rotateSpeed = 0.1f;
     private float time = 0;
+    private float initialFingersDistance;
+    private Vector3 initialScale;
 
     private static PlaceARObject _instance;
 
@@ -52,6 +56,7 @@ public class PlaceARObject : MonoBehaviour
     {
         _camera = CameraCtrl.instance.GetCurrentCamera();
         isARpage = true;
+        isAndroidARpage = false;
         currentType = type;
         currentAnimal = index;
         planeManager.enabled = true;        
@@ -66,6 +71,7 @@ public class PlaceARObject : MonoBehaviour
     public void EnterARAndroid(int index, TypeFlag.ARObjectType type)
     {
         isARpage = false;
+        isAndroidARpage = true;
         currentType = type;
         currentAnimal = index;
         time = 2f;
@@ -164,15 +170,17 @@ public class PlaceARObject : MonoBehaviour
     public void CloseAR()
     {
         isARpage = false;
+        isAndroidARpage = false;
         planeManager.enabled = false;
         Destroy(spawnedObject);
         Destroy(noARanimalObject);
         spawnedObject = null;
     }
-    
+
     private void Update()
     {
-        // Android animal position
+#if UNITY_ANDROID
+        
         if (time > 0)
         {
             Debug.Log("time " + time);
@@ -180,8 +188,75 @@ public class PlaceARObject : MonoBehaviour
             time -= Time.deltaTime;
         }
 
+        if (!isAndroidARpage) return;
+
+        //var hits = new List<ARRaycastHit>();
+
+        if (spawnedObject != null)
+        {
+            if (!TryGetTouchPosition(out Vector2 touchPosition))
+                return;
+            
+            if (Input.touchCount == 2)
+            {
+
+                if (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Canceled || Input.GetTouch(1).phase == TouchPhase.Ended || Input.GetTouch(1).phase == TouchPhase.Canceled)
+                    return;
+
+                if (Input.GetTouch(0).phase == TouchPhase.Began || Input.GetTouch(1).phase == TouchPhase.Began)
+                {
+                    initialFingersDistance = Vector2.Distance(Input.GetTouch(0).position, Input.GetTouch(1).position);
+                    initialScale = spawnedObject.transform.localScale;
+                }
+                else
+                {
+                    var currentDistance = Vector2.Distance(Input.GetTouch(0).position, Input.GetTouch(1).position);
+
+                    if (Mathf.Approximately(initialFingersDistance, 0))
+                        return;
+
+                    var scaleFactor = currentDistance / initialFingersDistance;
+                    spawnedObject.transform.localScale = initialScale * scaleFactor;
+                }
+            }
+            else
+            {
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    text.text = "========touch Began";
+
+                    RaycastHit hit;
+                    Ray ray = _camera.ScreenPointToRay(Input.GetTouch(0).position);
+
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        text.text = "========touch Began Hit";
+                        var pointPos = hit.transform.position;
+                        var dis = _camera.WorldToScreenPoint(pointPos);
+                        var posX = Input.GetTouch(0).position.x - dis.x;
+                        var posY = Input.GetTouch(0).position.y - dis.y;
+
+                        spawnedObject.transform.position = new Vector3(posX, posY, dis.z);
+                    }
+                }
+
+                if (Input.GetTouch(0).phase == TouchPhase.Moved)
+                {
+                    text.text = "========touch Moved";
+                    var rotateY = Quaternion.Euler(0f, -Input.GetTouch(0).deltaPosition.x * rotateSpeed, 0f);
+                    spawnedObject.transform.rotation = rotateY * spawnedObject.transform.rotation;
+
+                    //spawnedObject.transform.Rotate(new Vector3(0, 10, 0) * Time.deltaTime * rotateSpeed);
+                }
+            }
+            
+        }
+#endif
+
+#if UNITY_IOS
+
         if (!isARpage) return;
-        
+
         var hits = new List<ARRaycastHit>();
 
         if (spawnedObject != null)
@@ -206,6 +281,24 @@ public class PlaceARObject : MonoBehaviour
 
                 //spawnedObject.transform.Rotate(new Vector3(0, 10, 0) * Time.deltaTime * rotateSpeed);
             }
+
+            if (Input.touchCount == 2)
+            {
+                text.text = "========touch 2";
+                //First set the initial distance between fingers so you can compare.
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    initialFingersDistance = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
+                    initialScale = spawnedObject.transform.localScale;
+                }
+                else
+                {
+                    var currentFingersDistance = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
+                    var scaleFactor = currentFingersDistance / initialFingersDistance;
+                    spawnedObject.transform.localScale = initialScale * scaleFactor;
+                }
+            }
+
         }
         else
         {
@@ -216,8 +309,9 @@ public class PlaceARObject : MonoBehaviour
                 PlaceObject();
             }
         }
+#endif
     }
-    
+
     private void PlaceObject()
     {
         placeMark.SetActive(false);

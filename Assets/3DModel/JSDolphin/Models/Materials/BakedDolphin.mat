@@ -10,7 +10,7 @@ Material:
   m_Name: BakedDolphin
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _NORMALMAP
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -75,5 +75,5 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
+    - _EmissionColor: {r: 0.7379107, g: 0.7379107, b: 0.7379107, a: 1}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
