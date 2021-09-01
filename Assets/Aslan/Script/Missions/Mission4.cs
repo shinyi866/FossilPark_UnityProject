@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using View;
@@ -29,6 +30,7 @@ namespace GameMission
         public void EndGame(bool isSuccess)
         {
             game.gameOverEvent -= EndGame;
+            GC.Collect();
 
             var modal = GameModals.instance.OpenModal<PictureModal>();
             modal.ShowInfo(missionIndex, TypeFlag.PictureType.EndGuide);

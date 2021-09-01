@@ -189,14 +189,12 @@ namespace View
             {
                 CloseModal();
                 GameMissions.instance.StartGame();
-                Debug.Log("yo1");
             });
 
             model.GuideConfirmButtonTwo.onClick.AddListener(() =>
             {
                 CloseModal();
                 GameMissions.instance.StartGame();
-                Debug.Log("yo2");
             });
         }
     }

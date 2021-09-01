@@ -23,7 +23,9 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
     private List<GameObject> cloneTransform = new List<GameObject>();
     private Beacon minBeacon;
 
+    [HideInInspector]
     public bool isEnterGame;
+    [HideInInspector]
     public bool isLastMissionOpen;
 
     private void Start()
@@ -34,6 +36,7 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
     /* search mission */
     public void MissionSearch(List<Beacon> mybeacons)
 	{
+
         if (mybeacons.Count <= 0 || mybeacons == null || isEnterGame) return;
         
         double minDistance = Mathf.Infinity;
@@ -60,11 +63,10 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
         {
             if (minBeacon.accuracy == 8 && !isLastMissionOpen) return; // Finish all mission will open
 
-            if (minBeacon.accuracy < ranges[mission].minRange)
+            if (minBeacon.accuracy < ranges[mission].minRange && !MainApp.Instance.isARsupport)
             {
                 Handheld.Vibrate();
-                //SoundPlayerController.Instance.AlertSoundEffect();
-                GameMissions.instance.ShowMission(mission);        
+                GameMissions.instance.ShowMission(mission);    // AR Mark start
             }
             else if (minBeacon.accuracy > ranges[mission].minRange && minBeacon.accuracy < ranges[mission].maxRange)
             {

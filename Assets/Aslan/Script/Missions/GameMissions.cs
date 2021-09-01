@@ -1,17 +1,24 @@
 ﻿using UnityEngine;
 using System.Linq;
+using UnityEngine.XR.ARFoundation;
 using View;
 
 namespace GameMission
 {
     public class GameMissions : MonoBehaviour
     {
+        [HideInInspector]
+        public int currentIndex;
+
+        //[SerializeField]
+        //private ARTrackedImageManager ARTrackedImage;
+
         private Mission[] missions;
 
         private static GameMissions _instance;
 
         private Mission currentMission;
-        public int currentIndex;
+        //private string currentImageName;
 
         public static GameMissions instance
         {
@@ -59,6 +66,7 @@ namespace GameMission
         {
             currentMission.StartGame();
         }
+        
     }
 }
 

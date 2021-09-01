@@ -130,6 +130,9 @@ namespace View
                     ShowPanel(game8Panel.canvasGroup, true);
                     CloseBackButton(true);
                     break;
+                case TypeFlag.ARGameType.ARImageTrack:
+                    text.text = "將相機對準時間管理員的地貼，便能進入關卡";
+                    break;
                 default:
                     text.text = gameData.gameNotify[0];
                     break;

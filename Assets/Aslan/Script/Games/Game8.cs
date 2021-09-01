@@ -5,6 +5,7 @@ using View;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using RootMotion.FinalIK;
+using GameMission;
 
 namespace GameMission
 {
@@ -25,13 +26,13 @@ namespace GameMission
 
         private ARTrackedImage _trackImage;
         private Button[] foodButton = new Button[3]; // 0:brachiosaurus, 1:triceratop 2:TRex
-        private Dictionary<string, GameObject> arObjects = new Dictionary<string, GameObject>();
+        public Dictionary<string, GameObject> arObjects = new Dictionary<string, GameObject>();
         // AR place
         private Vector2 touchPosition = default;
 
-        private string currentImageName;
+        public string currentImageName;
         private int missionIndex = 8;
-        private int currentIndex = 0;
+        public int currentIndex = 0;
         private double time = 3;
         private float ccidWeight = 0.0f;
         private float alertTime = 1;
@@ -39,7 +40,7 @@ namespace GameMission
         private bool isARsupport;
 
         private GameObject currentFood;
-        private GameObject showARfood;
+        public GameObject showARfood;
         private ARGameModal modal;
         private TypeFlag.DinosaurlsType dinosaurlsType;
 
@@ -79,12 +80,13 @@ namespace GameMission
         public void GameStart()
         {
             SwitchDinosaurlScene((int)TypeFlag.DinosaurlsType.Brachiosaurus);
+            ARImageTrackManager.Instance.isEnterGame = true;
             isGameStart = true;
         }
 
         public void CloseFoods()
         {
-            if(showARfood != null)
+            if (showARfood != null)
                 foreach (var b in arObjects.Values) { b.SetActive(false); }
         }
 
@@ -165,7 +167,7 @@ namespace GameMission
             if (index == 2)
                 SoundPlayerController.Instance.TRexSoundEffect();
         }
-
+        /*
         // AR Image Track
         private void OnEnable()
         {
@@ -201,6 +203,7 @@ namespace GameMission
             currentImageName = trackImage.referenceImage.name;
             var imagePosition = trackImage.transform.position;
 
+
             if (dinosaurlScenes != null)
             {
                 if(currentImageName != "ticket3")
@@ -208,6 +211,7 @@ namespace GameMission
                     GameObject showARObject = arObjects[currentImageName];
                     showARObject.SetActive(true);
                     showARObject.transform.position = imagePosition;
+
                     showARfood = arObjects[currentImageName];
 
                     foreach (GameObject b in arObjects.Values)
@@ -222,7 +226,7 @@ namespace GameMission
                     if (isEat) { showARObject.SetActive(false); }
                 }
                 else
-                {
+                {                    
                     currentImageName = foodGameObject[currentIndex].name;
                     GameObject showARObject = arObjects[currentImageName];
                     showARObject.SetActive(true);
@@ -243,7 +247,7 @@ namespace GameMission
                 }
             }
         }
-
+        */
         // Dinosaurl find need walk or not
         private void TargetDirection()
         {

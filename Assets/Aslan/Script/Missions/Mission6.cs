@@ -15,6 +15,8 @@ namespace GameMission
 
         public override void EnterGame()
         {
+            MediaPlayerController.instance.SetUp();
+
             game = Games.instance.OpenGame<Game6>();
             game.Init();
             game.gameOverEvent += EndGame;

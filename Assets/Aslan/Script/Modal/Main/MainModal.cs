@@ -29,6 +29,8 @@ namespace View
         private Button[] animalButtons;
         [SerializeField]
         private Button[] remiindButtons;
+        
+        public Button cameraButton;
         [SerializeField]
         private Button dinosaurButton;
         [SerializeField]
@@ -62,6 +64,7 @@ namespace View
         public void StarIntroView()
         {
             iBeaconMissionSetting.Instance.isEnterGame = true;
+            ARImageTrackManager.Instance.isEnterGame = true;
             PlayerPrefs.SetInt("guide", 1);
             ShowPanel(introView, true);
 
@@ -74,6 +77,7 @@ namespace View
         {
             SoundPlayerController.Instance.PlayBackgroundMusic();
             iBeaconMissionSetting.Instance.isEnterGame = false;
+            ARImageTrackManager.Instance.isEnterGame = false;
             MainButtonClick();
             MissionsButtonClick();
         }
@@ -146,14 +150,21 @@ namespace View
             promptButton.onClick.AddListener(() => {
                 ShowPanel(promptView, true);
                 iBeaconMissionSetting.Instance.isEnterGame = true;
+                ARImageTrackManager.Instance.isEnterGame = true;
             });
 
             promptCloseButton.onClick.AddListener(() => {
                 ShowPanel(promptView, false);
                 iBeaconMissionSetting.Instance.isEnterGame = false;
+                ARImageTrackManager.Instance.isEnterGame = false;
             });
 
-            for(int i = 0; i < remiindButtons.Length; i++)
+            cameraButton.onClick.AddListener(() => {
+                GameModals.instance.OpenAR();
+                GameModals.instance.OpenModal<ARGameModal>().ShowModal(0, TypeFlag.ARGameType.ARImageTrack);
+            });
+
+            for (int i = 0; i < remiindButtons.Length; i++)
             {
                 var index = i;
                 remiindButtons[index].onClick.AddListener(() => {
@@ -170,6 +181,7 @@ namespace View
                 int closureIndex = i;
                 missionButtons[closureIndex].onClick.AddListener(() =>
                 {
+                    GameModals.instance.OpenModal<ARGameModal>();
                     GameMissions.instance.ShowMission(closureIndex);
                 });
             }

@@ -76,6 +76,7 @@ namespace View
                 MediaPlayerController.instance.DestroyVideo();
                 SoundPlayerController.Instance.StopSoundEffect();
                 iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon
+                ARImageTrackManager.Instance.isEnterGame = false;
                 CameraCtrl.instance.DisableOcclusionManager();
 
                 CloseARPlane();

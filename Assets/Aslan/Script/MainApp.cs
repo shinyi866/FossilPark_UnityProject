@@ -96,8 +96,12 @@ public class MainApp : Singleton<MainApp>
                 break;
         }
 
+        if (!isARsupport)
+            Modals.instance.GetModel<MainModal>().cameraButton.image.enabled = false;
+        else
+            Modals.instance.GetModel<MainModal>().cameraButton.image.enabled = true;
+
         if (arModel) { isARsupport = true; }
-        
     }
 
     /*** 石尚 maybe use socre system
