@@ -148,6 +148,7 @@ namespace View
             {
                 SoundPlayerController.Instance.EnterSoundEffect();
                 iBeaconMissionSetting.Instance.IbeaconNotDetect(true);
+                ARImageTrackManager.Instance.isEnterGame = true;
                 GuideModel(index);
             });
         }
@@ -161,7 +162,9 @@ namespace View
             {
                 SoundPlayerController.Instance.EnterSoundEffect();
                 iBeaconMissionSetting.Instance.IbeaconNotDetect(true);
+                ARImageTrackManager.Instance.isEnterGame = true;
                 EnterModel(index);
+                GameModals.instance.CloseAR();
                 GameMissions.instance.EnterGame();
             });
         }

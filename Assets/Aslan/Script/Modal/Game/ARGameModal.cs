@@ -77,6 +77,7 @@ namespace View
                 Modals.instance.CloseARInGame();
                 MediaPlayerController.instance.DestroyVideo();
                 iBeaconMissionSetting.Instance.IbeaconNotDetect(false);
+                ARImageTrackManager.Instance.isEnterGame = true;
                 CameraCtrl.instance.DisableOcclusionManager();
                 mission5.BackToMain();
                 mission6.BackToMain();

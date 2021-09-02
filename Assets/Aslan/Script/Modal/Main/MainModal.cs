@@ -77,7 +77,7 @@ namespace View
         {
             SoundPlayerController.Instance.PlayBackgroundMusic();
             iBeaconMissionSetting.Instance.isEnterGame = false;
-            ARImageTrackManager.Instance.isEnterGame = false;
+            ARImageTrackManager.Instance.isEnterGame = true;
             MainButtonClick();
             MissionsButtonClick();
         }
@@ -162,6 +162,7 @@ namespace View
             cameraButton.onClick.AddListener(() => {
                 GameModals.instance.OpenAR();
                 GameModals.instance.OpenModal<ARGameModal>().ShowModal(0, TypeFlag.ARGameType.ARImageTrack);
+                ARImageTrackManager.Instance.isEnterGame = false;
             });
 
             for (int i = 0; i < remiindButtons.Length; i++)
@@ -265,6 +266,7 @@ namespace View
         private void Update()
         {
             if (!fadeStart) return;
+            /*
             if (buttonIndex < 0) return;
             if (buttonIndex == 7) return;
 
@@ -284,6 +286,7 @@ namespace View
                 animalButtons[buttonIndex].gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
                 fadeStart = false;
             }
+            */
         }
 
         private void FadeImage(bool isFadeOut)

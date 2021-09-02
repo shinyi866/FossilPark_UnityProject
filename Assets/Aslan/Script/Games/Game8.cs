@@ -87,7 +87,10 @@ namespace GameMission
         public void CloseFoods()
         {
             if (showARfood != null)
+            {
+                foreach(var f in foodGameObject) { f.SetActive(false); }
                 foreach (var b in arObjects.Values) { b.SetActive(false); }
+            }                
         }
 
         private void ResetDirection()

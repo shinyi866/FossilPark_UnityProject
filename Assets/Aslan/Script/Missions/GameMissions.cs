@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Linq;
-using UnityEngine.XR.ARFoundation;
 using View;
 
 namespace GameMission
@@ -10,15 +9,11 @@ namespace GameMission
         [HideInInspector]
         public int currentIndex;
 
-        //[SerializeField]
-        //private ARTrackedImageManager ARTrackedImage;
-
         private Mission[] missions;
 
         private static GameMissions _instance;
 
         private Mission currentMission;
-        //private string currentImageName;
 
         public static GameMissions instance
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine;
 using GameMission;
+using View;
 
 public class ARImageTrackManager : Singleton<ARImageTrackManager>
 {
@@ -15,6 +16,7 @@ public class ARImageTrackManager : Singleton<ARImageTrackManager>
     private string currentImageName;
     private GameMissions gameMissions;
     private Game8 game8;
+    private int currentShow;
 
     private void Awake()
     {
@@ -50,16 +52,43 @@ public class ARImageTrackManager : Singleton<ARImageTrackManager>
         {
             UpdateARMissionImage(trackImage);
         }
+
+        foreach (ARTrackedImage trackImage in eventArgs.removed)
+        {
+            GameModals.instance.OpenModal<ARGameModal>().ShowModal(0, TypeFlag.ARGameType.ARImageTrack);
+        }
     }
 
     private void UpdateARMissionImage(ARTrackedImage trackImage)
     {
         currentImageName = trackImage.referenceImage.name;
         var imagePosition = trackImage.transform.position;
+        Debug.Log("================ currentImageName: " + currentImageName);        
 
-        Debug.Log("=========================== currentImageName: " + currentImageName);        
+        if (!isEnterGame)
+        {
+            TypeFlag.ImageTrackMissions reault = (TypeFlag.ImageTrackMissions)System.Enum.Parse(typeof(TypeFlag.ImageTrackMissions), currentImageName);
+            string reaultString = reault.ToString();
+            int mission = int.Parse(reaultString.Substring(reaultString.Length - 1));
 
-        if(gameMissions.currentIndex == 8)
+            if (currentShow == mission) return;
+
+            for (int i = 0; i < PlayerPersistent.playerData.missions.Length - 1; i++)
+            {
+                if (i == mission && PlayerPersistent.playerData.missions[i])
+                {
+                    GameModals.instance.GetModal<TitleModal>().Show(false);
+                    GameModals.instance.OpenModal<ARGameModal>().ShowModal(0, TypeFlag.ARGameType.ARImageTrack);
+                    return;
+                }
+            }
+            Debug.Log("================ mission: " + mission);
+            gameMissions.ShowMission(mission);
+            currentShow = mission;
+
+        }
+
+        if (gameMissions.currentIndex == 8)
         {
             if (!isEnterGame) return;
 
@@ -106,19 +135,6 @@ public class ARImageTrackManager : Singleton<ARImageTrackManager>
 
                     if (Game8.isEat) { showARObject.SetActive(false); }
                 }
-            }
-        }
-        else
-        {
-            if(!isEnterGame)
-            {
-                TypeFlag.ImageTrackMissions reault = (TypeFlag.ImageTrackMissions)System.Enum.Parse(typeof(TypeFlag.ImageTrackMissions), currentImageName);
-                string reaultString = reault.ToString();
-                int mission = int.Parse(reaultString.Substring(reaultString.Length - 1));
-
-                gameMissions.ShowMission(mission);
-
-                Debug.Log("=========================== reault: " + reault + " mission: " + mission);
             }
         }
     }

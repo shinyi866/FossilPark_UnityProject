@@ -55,7 +55,7 @@ namespace GameMission
                 var mainModals = Modals.instance.GetModel<MainModal>();
                 mainModals.ShowPanel(mainModals.promptView, true);
                 iBeaconMissionSetting.Instance.isEnterGame = true;
-                ARImageTrackManager.Instance.isEnterGame = true;
+                //ARImageTrackManager.Instance.isEnterGame = true;
             });
 
             
