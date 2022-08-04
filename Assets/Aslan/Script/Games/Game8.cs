@@ -5,7 +5,7 @@ using View;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using RootMotion.FinalIK;
-using GameMission;
+using System.Linq;
 
 namespace GameMission
 {
@@ -88,8 +88,10 @@ namespace GameMission
         {
             if (showARfood != null)
             {
-                foreach(var f in foodGameObject) { f.SetActive(false); }
-                foreach (var b in arObjects.Values) { b.SetActive(false); }
+                var items = arObjects.Keys.ToList();
+
+                foreach (var b in arObjects.Values) { Destroy(b); }
+                foreach (var item in items) { arObjects.Remove(item); }                
             }                
         }
 
@@ -170,87 +172,7 @@ namespace GameMission
             if (index == 2)
                 SoundPlayerController.Instance.TRexSoundEffect();
         }
-        /*
-        // AR Image Track
-        private void OnEnable()
-        {
-            ARTrackedImage.trackedImagesChanged += OnTrackedImagesStart;
-        }
-
-        private void OnDisable()
-        {
-            ARTrackedImage.trackedImagesChanged -= OnTrackedImagesStart;
-        }
-
-        private void OnTrackedImagesStart(ARTrackedImagesChangedEventArgs eventArgs)
-        {
-
-            foreach (ARTrackedImage trackImage in eventArgs.added)
-            {
-                UpdateARImage(trackImage);
-            }
-
-            foreach (ARTrackedImage trackImage in eventArgs.updated)
-            {
-                UpdateARImage(trackImage);
-            }
-
-            foreach (ARTrackedImage trackImage in eventArgs.removed)
-            {
-                arObjects[trackImage.referenceImage.name].SetActive(false);
-            }
-        }
-
-        private void UpdateARImage(ARTrackedImage trackImage)
-        {
-            currentImageName = trackImage.referenceImage.name;
-            var imagePosition = trackImage.transform.position;
-
-
-            if (dinosaurlScenes != null)
-            {
-                if(currentImageName != "ticket3")
-                {
-                    GameObject showARObject = arObjects[currentImageName];
-                    showARObject.SetActive(true);
-                    showARObject.transform.position = imagePosition;
-
-                    showARfood = arObjects[currentImageName];
-
-                    foreach (GameObject b in arObjects.Values)
-                    {
-                        Debug.Log($"Show in arObjects.Values: {b.name}");
-                        if (b.name != currentImageName)
-                        {
-                            b.SetActive(false);
-                        }
-                    }
-
-                    if (isEat) { showARObject.SetActive(false); }
-                }
-                else
-                {                    
-                    currentImageName = foodGameObject[currentIndex].name;
-                    GameObject showARObject = arObjects[currentImageName];
-                    showARObject.SetActive(true);
-                    showARObject.transform.position = imagePosition;
-
-                    showARfood = arObjects[currentImageName];
-
-                    foreach (GameObject b in arObjects.Values)
-                    {
-                        Debug.Log($"Show in arObjects.Values: {b.name}");
-                        if (b.name != currentImageName)
-                        {
-                            b.SetActive(false);
-                        }                        
-                    }
-
-                    if (isEat) { showARObject.SetActive(false); }
-                }
-            }
-        }
-        */
+        
         // Dinosaurl find need walk or not
         private void TargetDirection()
         {

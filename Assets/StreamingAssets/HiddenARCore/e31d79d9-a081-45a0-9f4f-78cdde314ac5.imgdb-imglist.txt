@@ -1,0 +1,10 @@
+4b5a291f19ed4c109a095a7b1e864565|Assets/Aslan/ArtSprite/ARmark/ticket3.jpg|0.4
+476c38f2a45f4e93ba4c06e5d12eac30|Assets/Aslan/ArtSprite/ARmark/0.png|0.3
+748615a3e6464705b517e0aabe2e887e|Assets/Aslan/ArtSprite/ARmark/1.png|0.3
+92749d0487e94f0ea4f7407a24ab1c54|Assets/Aslan/ArtSprite/ARmark/2.png|0.5
+3ad2beea427048bb85d77093a9dd4168|Assets/Aslan/ArtSprite/ARmark/3.png|0.5
+bae98d7d07f34ad793979bf58675e289|Assets/Aslan/ArtSprite/ARmark/4.png|0.5
+e8ec8fa970954a3b9fe9c7602e789ea1|Assets/Aslan/ArtSprite/ARmark/5.png|0.3
+332f610301494320a4684fbb61cfe526|Assets/Aslan/ArtSprite/ARmark/6.png|0.3
+eaca8b45f8dc464ca8cbb6c305414849|Assets/Aslan/ArtSprite/ARmark/7.png|0.3
+5822c5c61320425cb066757416cdee58|Assets/Aslan/ArtSprite/ARmark/Mark0.png|1

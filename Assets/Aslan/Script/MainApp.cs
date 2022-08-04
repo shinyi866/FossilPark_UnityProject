@@ -96,11 +96,12 @@ public class MainApp : Singleton<MainApp>
                 break;
         }
 
+        /* turn to ibeacon
         if (!isARsupport)
             Modals.instance.GetModel<MainModal>().cameraButton.image.enabled = false;
         else
             Modals.instance.GetModel<MainModal>().cameraButton.image.enabled = true;
-
+            */
         if (arModel) { isARsupport = true; }
     }
 

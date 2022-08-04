@@ -148,7 +148,7 @@ namespace View
             {
                 SoundPlayerController.Instance.EnterSoundEffect();
                 iBeaconMissionSetting.Instance.IbeaconNotDetect(true);
-                ARImageTrackManager.Instance.isEnterGame = true;
+                //ARImageTrackManager.Instance.isEnterGame = true; // 8.17 turn off
                 GuideModel(index);
             });
         }
@@ -162,7 +162,7 @@ namespace View
             {
                 SoundPlayerController.Instance.EnterSoundEffect();
                 iBeaconMissionSetting.Instance.IbeaconNotDetect(true);
-                ARImageTrackManager.Instance.isEnterGame = true;
+                //ARImageTrackManager.Instance.isEnterGame = true; // 8.17 turn off
                 EnterModel(index);
                 GameModals.instance.CloseAR();
                 GameMissions.instance.EnterGame();

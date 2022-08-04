@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 17c5ed17abe27427a8c1b138e8b05751
   - enabled: 1
     path: Assets/Aslan/Scenes/MainScene.unity
-    guid: 1047bcab061604c49b9e22a29dbc52a9
+    guid: 0249fea6d5aed4790be7d1abb2942196
   - enabled: 0
     path: Assets/Hsinpa/Scene/DinosaurRepairPlayground.unity
     guid: 08708d97c40572944bcd3302349f215b

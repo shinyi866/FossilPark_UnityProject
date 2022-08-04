@@ -78,6 +78,8 @@ namespace View
                 iBeaconMissionSetting.Instance.isEnterGame = false; // start detect ibeacon
                 CameraCtrl.instance.DisableOcclusionManager();
 
+                Games.instance.GetGame<Game8>().CloseFoods();
+
                 CloseARPlane();
             });
 

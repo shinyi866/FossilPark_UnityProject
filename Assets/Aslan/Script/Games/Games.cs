@@ -64,6 +64,7 @@ namespace GameMission
         {
             if (currentGame != null)
             {
+                currentGame.isGameStart = false;
                 currentGame.Init();
                 currentGame.OpenGame(false);
             }

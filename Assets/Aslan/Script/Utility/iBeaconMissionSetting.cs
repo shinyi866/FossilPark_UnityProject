@@ -63,7 +63,7 @@ public class iBeaconMissionSetting : Singleton<iBeaconMissionSetting>
         {
             if (minBeacon.accuracy == 8 && !isLastMissionOpen) return; // Finish all mission will open
 
-            if (minBeacon.accuracy < ranges[mission].minRange && !MainApp.Instance.isARsupport)
+            if (minBeacon.accuracy < ranges[mission].minRange) //&& MainApp.Instance.isARsupport) // AR support and sane ibeacon 8.17
             {
                 Handheld.Vibrate();
                 GameMissions.instance.ShowMission(mission);    // AR Mark start

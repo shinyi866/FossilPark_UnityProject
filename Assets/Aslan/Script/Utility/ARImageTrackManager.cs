@@ -26,18 +26,12 @@ public class ARImageTrackManager : Singleton<ARImageTrackManager>
 
     private void OnEnable()
     {
-        //if (gameMissions.currentIndex == 8)
-          //  ARTrackedImage.trackedImagesChanged += Games.instance.OpenGame<Game8>().Game8TrackedImagesStart;
-        //else
-            ARTrackedImage.trackedImagesChanged += OnTrackedImagesStart;
+        ARTrackedImage.trackedImagesChanged += OnTrackedImagesStart; //turn to ibeacon
     }
 
     private void OnDisable()
     {
-        //if (gameMissions.currentIndex == 8)
-          //  ARTrackedImage.trackedImagesChanged -= Games.instance.OpenGame<Game8>().Game8TrackedImagesStart;
-        //else
-            ARTrackedImage.trackedImagesChanged -= OnTrackedImagesStart;
+        ARTrackedImage.trackedImagesChanged -= OnTrackedImagesStart; //turn to ibeacon
     }
 
     private void OnTrackedImagesStart(ARTrackedImagesChangedEventArgs eventArgs)
@@ -87,11 +81,10 @@ public class ARImageTrackManager : Singleton<ARImageTrackManager>
             currentShow = mission;
 
         }
-
-        if (gameMissions.currentIndex == 8)
+        else
         {
-            if (!isEnterGame) return;
-
+            if (gameMissions.currentIndex != 8) return;
+            Debug.Log("================ mission8 ");
             if (game8.dinosaurlScenes != null)
             {
                 game8.currentImageName = currentImageName;
@@ -103,7 +96,7 @@ public class ARImageTrackManager : Singleton<ARImageTrackManager>
                     showARObject.transform.position = imagePosition;
 
                     game8.showARfood = game8.arObjects[game8.currentImageName];
-
+                    Debug.Log("================ ticket3 ");
                     foreach (GameObject b in game8.arObjects.Values)
                     {
                         Debug.Log($"Show in arObjects.Values: {b.name}");
